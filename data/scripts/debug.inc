@@ -75,10 +75,10 @@ Debug_Script_1::
 	msgbox Debug_Text_YoureUsingOutfitSwapIt, MSGBOX_YESNO
 	goto_if_ne VAR_RESULT, YES, Debug_Script_1_End
 	specialvar VAR_RESULT, GetCurrentOutfitGfxId
-	setorcopyvar VAR_TEMP_1, OUTFIT_B
+	setorcopyvar VAR_TEMP_1, OUTFIT_UNUSUAL_RED
 	call_if_eq VAR_RESULT, OBJ_EVENT_GFX_BRENDAN_NORMAL, Debug_Script_1_OutfitRest
 Debug_Script_1_OutfitA:
-	setorcopyvar VAR_TEMP_1, OUTFIT_A
+	setorcopyvar VAR_TEMP_1, OUTFIT_USUAL_GREEN
 Debug_Script_1_OutfitRest:
 	fadescreen FADE_TO_BLACK
 	closemessage
