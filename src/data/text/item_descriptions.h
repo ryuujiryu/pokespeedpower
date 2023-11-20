@@ -3918,3 +3918,8 @@ static const u8 sBerserkGene[] = _(
     "Sharply boosts\n"
     "Attack, but causes\n"
     "lasting confusion.");
+
+static const u8 sOutfitBoxDesc[] = _(
+    "A BOX for storing\n"
+    "your collections of\n"
+    "OUTFITS safely.");
