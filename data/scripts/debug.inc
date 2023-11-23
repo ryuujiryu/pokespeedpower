@@ -70,39 +70,7 @@ Debug_BoxFilledMessage_Text:
 	.string "Storage boxes filled!$"
 
 Debug_Script_1::
-	lockall
-	callnative BufferCurrentOutfitName
-	msgbox Debug_Text_YoureUsingOutfitSwapIt, MSGBOX_YESNO
-	goto_if_ne VAR_RESULT, YES, Debug_Script_1_End
-	specialvar VAR_RESULT, GetCurrentOutfitGfxId
-	setorcopyvar VAR_TEMP_1, OUTFIT_UNUSUAL_RED
-	call_if_eq VAR_RESULT, OBJ_EVENT_GFX_BRENDAN_NORMAL, Debug_Script_1_OutfitRest
-Debug_Script_1_OutfitA:
-	setorcopyvar VAR_TEMP_1, OUTFIT_USUAL_GREEN
-Debug_Script_1_OutfitRest:
-	fadescreen FADE_TO_BLACK
-	closemessage
-	callnative SwapCurrentOutfit
-	fadescreen FADE_FROM_BLACK
-Debug_Script_1_End:
-	releaseall
 	end
-
-Debug_Text_YoureUsingOutfitSwapIt:
-	.string "You're using the {STR_VAR_1}\n"
-	.string "OUTFIT.\p"
-	.string "Would you like to wear\n"
-	.string "another OUTFIT?$"
-
-Debug_Text_ChooseAOutfit:
-	.string "Choose a new OUTFIT\n"
-	.string "to wear.$"
-
-Debug_Text_OptionA:
-	.string "BASIC A$"
-
-Debug_Text_OptionB:
-	.string "BASIC B$"
 
 Debug_Script_2::
 	end
