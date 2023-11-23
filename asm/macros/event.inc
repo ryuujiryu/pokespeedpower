@@ -1735,6 +1735,30 @@
 	.2byte \quantity
 	.endm
 
+	@! Unlocks a locked outfit
+	.macro unlockoutfit outfitId:req
+	.byte 0xe3
+	.2byte \outfitId
+	.endm
+
+	@! Gets the current status of the specified outfit where:
+	@! OUTFIT_MENU_CHECK_UNLOCKED is for checking if it's unlocked
+	@! OUTFIT_MENU_CHECK_LOCKED is for checking if it's still locked
+	@! OUTFIT_MENU_CHECK_USED is for checking if it's currently used
+	.macro getoutfitstatus outfitId:req, data:req
+	.byte 0xe4
+	.2byte \outfitId
+	.byte \data
+	.endm
+
+	@! Buffers either the name or the description strings of an outfit
+	@! to a str var
+	.macro bufferoutfitstr stringVarId:req, outfitId:req, type:req
+	.byte 0xe5
+	stringvar \stringVarId
+	.2byte \outfitId
+	.byte \type
+	.endm
 
 @ Supplementary
 
@@ -2024,4 +2048,28 @@
 	setvar VAR_0x8004, \trainer1
 	callnative CreateTrainerPartyForPlayer
 	trainerbattle_no_intro \trainer2, NULL
+	.endm
+
+	@! neat shortcuts for getoutfitstatus
+
+	.macro isoutfitunlocked outfitId:req
+	getoutfitstatus \outfitId, OUTFIT_MENU_CHECK_UNLOCKED
+	.endm
+
+	.macro isoutfitlocked outfitId:req
+	getoutfitstatus \outfitId, OUTFIT_MENU_CHECK_LOCKED
+	.endm
+
+	.macro iswearingoutfit outfitId:req
+	getoutfitstatus \outfitId, OUTFIT_MENU_CHECK_USED
+	.endm
+
+	@! neat shortcuts for bufferoutfitstr
+
+	.macro bufferoutfitname stringVarId:req, outfitId:req
+	bufferoutfitstr \stringVarId, \outfitId, OUTFIT_MENU_BUFFER_NAME
+	.endm
+
+	.macro bufferoutfitdesc stringVarId:req, outfitId:req
+	bufferoutfitstr \stringVarId, \outfitId, OUTFIT_MENU_BUFFER_DESC
 	.endm
