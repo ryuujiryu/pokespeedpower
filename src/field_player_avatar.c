@@ -1174,7 +1174,7 @@ u8 GetRivalAvatarGraphicsIdByStateIdAndGender(u8 state, u8 gender)
 
 u8 GetPlayerAvatarGraphicsIdByStateIdAndGender(u8 state, u8 gender)
 {
-    return gPlayerAvatarGfxIds[gSaveBlock2Ptr->currOutfitId][state][gender];
+    return gOutfits[gSaveBlock2Ptr->currOutfitId].avatarGfxIds[gender][state];
 }
 
 u8 GetFRLGAvatarGraphicsIdByGender(u8 gender)
@@ -1316,7 +1316,7 @@ void SetPlayerInvisibility(bool8 invisible)
 
 static void SetPlayerAvatarAnimation(u32 playerAnimId, u32 animNum)
 {
-    u16 gfxId = gPlayerAvatarAnimGfxIds[gSaveBlock2Ptr->currOutfitId][playerAnimId][gSaveBlock2Ptr->playerGender];
+    u16 gfxId = gOutfits[gSaveBlock2Ptr->currOutfitId].animGfxIds[gSaveBlock2Ptr->playerGender][animNum];
     ObjectEventSetGraphicsId(&gObjectEvents[gPlayerAvatar.objectEventId], gfxId);
     StartSpriteAnim(&gSprites[gPlayerAvatar.spriteId], animNum);
 }
