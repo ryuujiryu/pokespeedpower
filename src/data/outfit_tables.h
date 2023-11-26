@@ -2,6 +2,14 @@
 #include "constants/event_objects.h"
 #include "constants/trainers.h"
 
+static const u8 sText_OutfitName_UsualGreen[] = _("USUAL GREEN");
+static const u8 sText_OutfitDesc_UsualGreen[] = _(
+    "The usual, but basic OUTFIT.");
+
+static const u8 sText_OutfitName_UnusualRed[] = _("UNUSUAL RED");
+static const u8 sText_OutfitDesc_UnusualRed[] = _(
+    "Rather unusual, but still basic OUTFIT.");
+
 static const u8 sRegionMapPlayerIcon_BrendanGfx[] = INCBIN_U8("graphics/pokenav/region_map/brendan_icon.4bpp");
 static const u16 sRegionMapPlayerIcon_BrendanPal[] = INCBIN_U16("graphics/pokenav/region_map/brendan_icon.gbapal");
 
@@ -73,6 +81,9 @@ static const u16 sMugshotPal_May[] = INCBIN_U16("graphics/battle_transitions/may
     [MALE] = { sFrontierPassPlayerIcons_ ## id ## _Gfx, sFrontierPassPlayerIcons_ ## m ## _Pal }, \
     [FEMALE] = { sFrontierPassPlayerIcons_ ## id ## _Gfx + 1 * 0x80, sFrontierPassPlayerIcons_ ## f ## _Pal },
 
+#define TRAINER_PIC_RUBY_SAPPHIRE_BRENDAN TRAINER_PIC_RS_BRENDAN
+#define TRAINER_PIC_RUBY_SAPPHIRE_MAY     TRAINER_PIC_RS_MAY
+
 const struct Outfit gOutfits[OUTFIT_COUNT] =
 {
     [OUTFIT_USUAL_GREEN] = {
@@ -83,10 +94,10 @@ const struct Outfit gOutfits[OUTFIT_COUNT] =
         .prices = { 0, 0 }, //! DESC: prices for purchasing them.
 
         //! DESC: outfit's name
-        .name = COMPOUND_STRING("USUAL GREEN"),
+        .name = sText_OutfitName_UsualGreen,
 
         //! DESC: outfit's description
-        .desc = COMPOUND_STRING("The usual, but basic OUTFIT."),
+        .desc = sText_OutfitDesc_UsualGreen,
 
         //! DESC: palettes for the bg of the mugshot battle transition
         .mugshotPals = { sMugshotPal_Brendan, sMugshotPal_May },
@@ -114,10 +125,10 @@ const struct Outfit gOutfits[OUTFIT_COUNT] =
     [OUTFIT_UNUSUAL_RED] = {
         .isHidden = FALSE,
         .prices = { 200, 500 },
-        .name = COMPOUND_STRING("UNUSUAL RED"),
-        .desc = COMPOUND_STRING("Rather unusual, but still basic OUTFIT."),
+        .name = sText_OutfitName_UnusualRed,
+        .desc = sText_OutfitDesc_UnusualRed,
         .mugshotPals = { sMugshotPal_Brendan, sMugshotPal_May },
-        .trainerPics = TRAINER_ID(RS_BRENDAN, RS_MAY),
+        .trainerPics = TRAINER_ID(RUBY_SAPPHIRE_BRENDAN, RUBY_SAPPHIRE_MAY),
         .avatarGfxIds = AVATAR_GFX_ID(BRENDAN, MAY),
         .animGfxIds = ANIM_GFX_ID(BRENDAN, MAY),
         .iconsRM = { REGION_MAP_GFX(RSBrendan, RSMay) },
