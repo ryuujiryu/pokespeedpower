@@ -557,16 +557,14 @@ void SpawnLinkPartnerObjectEvent(void)
                     linkSpriteId = OBJ_EVENT_GFX_LINK_RS_MAY;
                 break;
             case VERSION_EMERALD:
-                if (gLinkPlayers[i].gender == 0)
-                    linkSpriteId = OBJ_EVENT_GFX_RIVAL_BRENDAN_NORMAL;
-                else
-                    linkSpriteId = OBJ_EVENT_GFX_RIVAL_MAY_NORMAL;
-                break;
             default:
-                if (gLinkPlayers[i].gender == 0)
-                    linkSpriteId = OBJ_EVENT_GFX_RIVAL_BRENDAN_NORMAL;
+            {
+                u8 outfit = gLinkPlayers[i].currOutfitId, gender = gLinkPlayers[i].gender;
+                if (gLinkPlayers[i].hasOutfit && outfit < OUTFIT_COUNT)
+                    linkSpriteId = gOutfits[outfit].avatarGfxIds[gender][PLAYER_AVATAR_STATE_NORMAL];
                 else
-                    linkSpriteId = OBJ_EVENT_GFX_RIVAL_MAY_NORMAL;
+                    linkSpriteId = (gender == 0) ? OBJ_EVENT_GFX_RIVAL_BRENDAN_NORMAL : OBJ_EVENT_GFX_RIVAL_MAY_NORMAL;
+            }
                 break;
             }
             SpawnSpecialObjectEventParameterized(linkSpriteId, movementTypes[j], 240 - i, coordOffsets[j][0] + x + MAP_OFFSET, coordOffsets[j][1] + y + MAP_OFFSET, 0);
@@ -580,37 +578,22 @@ void SpawnLinkPartnerObjectEvent(void)
 
 static void LoadLinkPartnerObjectEventSpritePalette(u8 graphicsId, u8 localEventId, u8 paletteNum)
 {
-    u8 adjustedPaletteNum;
-    // Note: This temp var is necessary; paletteNum += 6 doesn't match.
-    adjustedPaletteNum = paletteNum + 6;
-    if (graphicsId == OBJ_EVENT_GFX_LINK_RS_BRENDAN ||
-        graphicsId == OBJ_EVENT_GFX_LINK_RS_MAY ||
-        graphicsId == OBJ_EVENT_GFX_RIVAL_BRENDAN_NORMAL ||
-        graphicsId == OBJ_EVENT_GFX_RIVAL_MAY_NORMAL)
+    u32 i, outfit = gLinkPlayers[i].currOutfitId, gender = gLinkPlayers[i].gender;
+    u8 adjustedPaletteNum = paletteNum + 6, obj = GetObjectEventIdByLocalIdAndMap(localEventId, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup);
+
+    if (!gLinkPlayers[i].hasOutfit)
+        return;
+
+    while (graphicsId == gOutfits[outfit].avatarGfxIds[gender][PLAYER_AVATAR_STATE_NORMAL] && i < MAX_LINK_PLAYERS)
     {
-        u8 obj = GetObjectEventIdByLocalIdAndMap(localEventId, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup);
         if (obj != OBJECT_EVENTS_COUNT)
         {
             u8 spriteId = gObjectEvents[obj].spriteId;
             struct Sprite *sprite = &gSprites[spriteId];
             sprite->oam.paletteNum = adjustedPaletteNum;
-
-            switch (graphicsId)
-            {
-            case OBJ_EVENT_GFX_LINK_RS_BRENDAN:
-                LoadPalette(gObjectEventPal_RubySapphireBrendan, OBJ_PLTT_ID(adjustedPaletteNum), PLTT_SIZE_4BPP);
-                break;
-            case OBJ_EVENT_GFX_LINK_RS_MAY:
-                LoadPalette(gObjectEventPal_RubySapphireMay, OBJ_PLTT_ID(adjustedPaletteNum), PLTT_SIZE_4BPP);
-                break;
-            case OBJ_EVENT_GFX_RIVAL_BRENDAN_NORMAL:
-                LoadPalette(gObjectEventPal_Brendan, OBJ_PLTT_ID(adjustedPaletteNum), PLTT_SIZE_4BPP);
-                break;
-            case OBJ_EVENT_GFX_RIVAL_MAY_NORMAL:
-                LoadPalette(gObjectEventPal_May, OBJ_PLTT_ID(adjustedPaletteNum), PLTT_SIZE_4BPP);
-                break;
-            }
+            PatchObjectPalette(GetObjectEventGraphicsInfo(graphicsId)->paletteTag, adjustedPaletteNum);
         }
+        i++;
     }
 }
 
