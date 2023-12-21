@@ -2133,3 +2133,8 @@ static u8 TrySpinPlayerForWarp(struct ObjectEvent *object, s16 *delayTimer)
     *delayTimer = 0;
     return sSpinDirections[object->facingDirection];
 }
+
+void SetPlayerAvatarVsSeeker(void)
+{
+    SetPlayerAvatarAnimation(PLAYER_AVATAR_GFX_VSSEEKER, 0);
+}
