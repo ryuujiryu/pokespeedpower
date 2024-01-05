@@ -560,8 +560,8 @@ void SpawnLinkPartnerObjectEvent(void)
             default:
             {
                 u8 outfit = gLinkPlayers[i].currOutfitId, gender = gLinkPlayers[i].gender;
-                if (gLinkPlayers[i].hasOutfit && outfit < OUTFIT_COUNT)
-                    linkSpriteId = gOutfits[outfit].avatarGfxIds[gender][PLAYER_AVATAR_STATE_NORMAL];
+                if (outfit < OUTFIT_COUNT)
+                    linkSpriteId = GetLinkPlayerAvatarGraphicsIdByStateIdLinkIdAndGender(PLAYER_AVATAR_STATE_NORMAL, i, gender);
                 else
                     linkSpriteId = (gender == 0) ? OBJ_EVENT_GFX_RIVAL_BRENDAN_NORMAL : OBJ_EVENT_GFX_RIVAL_MAY_NORMAL;
             }
@@ -578,18 +578,22 @@ void SpawnLinkPartnerObjectEvent(void)
 
 static void LoadLinkPartnerObjectEventSpritePalette(u8 graphicsId, u8 localEventId, u8 paletteNum)
 {
-    u32 i, outfit = gLinkPlayers[i].currOutfitId, gender = gLinkPlayers[i].gender;
-    u8 adjustedPaletteNum = paletteNum + 6, obj = GetObjectEventIdByLocalIdAndMap(localEventId, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup);
+    u32 i = 0;
+    u8 outfit = 0;
+    u8 gender = 0;
+    u8 adjustedPaletteNum = paletteNum + 6;
+    u8 obj = GetObjectEventIdByLocalIdAndMap(localEventId, gSaveBlock1Ptr->location.mapNum, gSaveBlock1Ptr->location.mapGroup);
+    u16 gfx = 0;
+    u8 spriteId = gObjectEvents[obj].spriteId;
+    struct Sprite *sprite = &gSprites[spriteId];
 
-    if (!gLinkPlayers[i].hasOutfit)
-        return;
-
-    while (graphicsId == gOutfits[outfit].avatarGfxIds[gender][PLAYER_AVATAR_STATE_NORMAL] && i < MAX_LINK_PLAYERS)
+    while (i < MAX_LINK_PLAYERS)
     {
-        if (obj != OBJECT_EVENTS_COUNT)
+        gender = gLinkPlayers[i].gender;
+        outfit = gLinkPlayers[i].currOutfitId;
+        gfx = GetPlayerAvatarGraphicsIdByOutfitStateIdAndGender(outfit, PLAYER_AVATAR_STATE_NORMAL, gender);
+        if (graphicsId == gfx && obj != OBJECT_EVENTS_COUNT)
         {
-            u8 spriteId = gObjectEvents[obj].spriteId;
-            struct Sprite *sprite = &gSprites[spriteId];
             sprite->oam.paletteNum = adjustedPaletteNum;
             PatchObjectPalette(GetObjectEventGraphicsInfo(graphicsId)->paletteTag, adjustedPaletteNum);
         }

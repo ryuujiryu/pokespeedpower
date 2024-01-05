@@ -12,6 +12,11 @@ This is _not_ a faithful port of Gen 6's Outfits System. So, if you want it to b
 
 Note that this feature branch is still missing some of the features that's necessary, such as the ability to purchase outfits. So, stay tune for more until then!
 
+## Known Bugs
+
+<!-- TODO: Too busy to fix, so I'll put it here -->
+### - Trainer Card shows Player's trainer pic for Link (Cable) Players
+
 ## Credits
 
 I would like to give credits to Slawter666 for their original costumes system that inspires me for doing this. And also SDH for his commit that simplify the player states system.
