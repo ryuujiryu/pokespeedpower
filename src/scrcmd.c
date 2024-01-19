@@ -2345,12 +2345,10 @@ bool8 ScrCmd_getoutfitstatus(struct ScriptContext *ctx)
 
 bool8 ScrCmd_bufferoutfitstr(struct ScriptContext *ctx)
 {
-    u8 stringVarIndex = ScriptReadByte(ctx);
+    u8 strVarIdx = ScriptReadByte(ctx);
     u16 outfit = VarGet(ScriptReadHalfword(ctx));
     u8 type = ScriptReadByte(ctx);
-    const u8 *str = NULL;
 
-    str = (type == OUTFIT_MENU_BUFFER_DESC) ? gOutfits[outfit].desc : gOutfits[outfit].name;
-    StringCopy(sScriptStringVars[stringVarIndex], str);
-    return FALSE;
+    BufferOutfitStrings(sScriptStringVars[strVarIdx], outfit, type);
+    return TRUE;
 }
