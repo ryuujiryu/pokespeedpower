@@ -700,10 +700,10 @@ void BufferOutfitStrings(u8 *dest, u8 outfitId, u8 dataType)
     {
     default:
     case OUTFIT_MENU_BUFFER_NAME:
-        src = gOutfits[sOutfitMenu->idx].name;
+        src = gOutfits[outfitId].name;
         break;
     case OUTFIT_MENU_BUFFER_DESC:
-        src = gOutfits[sOutfitMenu->idx].desc;
+        src = gOutfits[outfitId].desc;
         break;
     }
     StringCopy(dest, src);
