@@ -528,8 +528,6 @@ static inline void UpdateOutfitInfo(void)
 
     SetupOutfitMenu_Sprites_DrawOverworldSprite(TRUE, gSaveBlock2Ptr->outfits[sOutfitMenu->idx]);
     SetupOutfitMenu_Sprites_DrawTrainerSprite(TRUE, gSaveBlock2Ptr->outfits[sOutfitMenu->idx]);
-    DebugPrintf("sOutfitMenu->spriteIds[GFX_OW] = %d", sOutfitMenu->spriteIds[GFX_OW]);
-    DebugPrintf("sOutfitMenu->spriteIds[GFX_TS] = %d", sOutfitMenu->spriteIds[GFX_TS]);
 }
 
 static void Task_WaitFadeInOutfitMenu(u8 taskId)
