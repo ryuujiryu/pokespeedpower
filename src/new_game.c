@@ -43,6 +43,7 @@
 #include "field_specials.h"
 #include "berry_powder.h"
 #include "mystery_gift.h"
+#include "outfit_menu.h"
 #include "union_room_chat.h"
 #include "constants/items.h"
 
@@ -148,12 +149,14 @@ void ResetMenuAndMonGlobals(void)
 
 static void ResetOutfitData(void)
 {
-    u16 i;
+    u32 i, byteOff;
 
     for (i = 0; i < OUTFIT_END; i++)
+    {
         gSaveBlock2Ptr->outfits[i] = FALSE;
-
-    gSaveBlock2Ptr->outfits[DEFAULT_OUTFIT] = TRUE;
+        byteOff = i / 8;
+        gSaveBlock2Ptr->outfits[byteOff] = FALSE;
+    }
 }
 
 void NewGameInitData(void)
