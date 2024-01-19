@@ -149,14 +149,8 @@ void ResetMenuAndMonGlobals(void)
 
 static void ResetOutfitData(void)
 {
-    u32 i, byteOff;
-
-    for (i = 0; i < OUTFIT_END; i++)
-    {
-        gSaveBlock2Ptr->outfits[i] = FALSE;
-        byteOff = i / 8;
-        gSaveBlock2Ptr->outfits[byteOff] = FALSE;
-    }
+    memset(gSaveBlock2Ptr->outfits, 0, sizeof(gSaveBlock2Ptr->outfits));
+    UnlockOutfit(DEFAULT_OUTFIT);
 }
 
 void NewGameInitData(void)

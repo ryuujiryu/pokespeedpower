@@ -675,11 +675,6 @@ static void Task_CloseOutfitMenu(u8 taskId)
 
 //! misc funcs
 
-void UnlockOutfit(u8 outfitId)
-{
-    gSaveBlock2Ptr->outfits[outfitId] = TRUE;
-}
-
 u16 GetOutfitData(u8 outfitId, u8 dataType)
 {
     switch(dataType)
@@ -743,4 +738,64 @@ const void *GetPlayerHeadGfxOrPal(u8 which, bool32 isFP)
         else
             return gOutfits[gSaveBlock2Ptr->currOutfitId].iconsRM[gSaveBlock2Ptr->playerGender][PAL];
     }
+}
+
+u16 *GetOutfitPointer(u16 id)
+{
+    if (id > OUTFIT_COUNT)
+        return NULL;
+    else
+        return &gSaveBlock2Ptr->outfits[id / 8];
+}
+
+u16 UnlockOutfit(u16 id)
+{
+    u16 *ptr = GetOutfitPointer(id);
+    if (ptr)
+        *ptr |= 1 << (id & 7);
+    return 0;
+}
+
+u16 ToggleOutfit(u16 id)
+{
+    u16 *ptr = GetOutfitPointer(id);
+    if (ptr)
+        *ptr ^= 1 << (id & 7);
+    return 0;
+}
+
+u16 LockOutfit(u16 id)
+{
+    u16 *ptr = GetOutfitPointer(id);
+    if (ptr)
+        *ptr &= ~(1 << (id & 7));
+    return 0;
+}
+
+bool8 GetOutfitStatus(u16 id)
+{
+    u16 *ptr = GetOutfitPointer(id);
+
+    // return false if GetOutfitPointer returns NULL
+    if (!ptr)
+        return FALSE;
+
+    // return false if flag is not set
+    if (!(((*ptr) >> (id & 7)) & 1))
+        return FALSE;
+
+    // rest
+    return TRUE;
+}
+
+bool8 IsPlayerWearingOutfit(u16 id)
+{
+    if (gSaveBlock2Ptr->currOutfitId == id)
+    {
+        DebugPrintf("TRUE");
+        return TRUE;
+    }
+
+    DebugPrintf("FALSE");
+    return FALSE;
 }
