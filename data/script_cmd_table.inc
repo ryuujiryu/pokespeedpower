@@ -227,7 +227,7 @@ gScriptCmdTable::
 	.4byte ScrCmd_warpwhitefade                     @ 0xe0
 	.4byte ScrCmd_buffercontestname                 @ 0xe1
 	.4byte ScrCmd_bufferitemnameplural              @ 0xe2
-	.4byte ScrCmd_unlockoutfit                      @ 0xe3
+	.4byte ScrCmd_toggleoutfit                      @ 0xe3
 	.4byte ScrCmd_getoutfitstatus                   @ 0xe4
 	.4byte ScrCmd_bufferoutfitstr                   @ 0xe5
 

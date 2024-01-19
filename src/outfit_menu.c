@@ -673,34 +673,16 @@ static void Task_CloseOutfitMenu(u8 taskId)
 
 //! misc funcs
 
-u16 GetOutfitData(u8 outfitId, u8 dataType)
-{
-    switch(dataType)
-    {
-    case OUTFIT_MENU_CHECK_UNLOCKED:
-        return gSaveBlock2Ptr->outfits[outfitId] == TRUE;
-        break;
-    case OUTFIT_MENU_CHECK_LOCKED:
-        return gSaveBlock2Ptr->outfits[outfitId] == FALSE;
-        break;
-    case OUTFIT_MENU_CHECK_USED:
-        return gSaveBlock2Ptr->currOutfitId == gSaveBlock2Ptr->outfits[outfitId];
-        break;
-    }
-
-    return 0xFF;
-}
-
 void BufferOutfitStrings(u8 *dest, u8 outfitId, u8 dataType)
 {
     const u8 *src = NULL;
     switch(dataType)
     {
     default:
-    case OUTFIT_MENU_BUFFER_NAME:
+    case OUTFIT_BUFFER_NAME:
         src = gOutfits[outfitId].name;
         break;
-    case OUTFIT_MENU_BUFFER_DESC:
+    case OUTFIT_BUFFER_DESC:
         src = gOutfits[outfitId].desc;
         break;
     }
@@ -789,11 +771,7 @@ bool8 GetOutfitStatus(u16 id)
 bool8 IsPlayerWearingOutfit(u16 id)
 {
     if (gSaveBlock2Ptr->currOutfitId == id)
-    {
-        DebugPrintf("TRUE");
         return TRUE;
-    }
 
-    DebugPrintf("FALSE");
     return FALSE;
 }
