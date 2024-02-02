@@ -1760,6 +1760,13 @@
 	.byte \type
 	.endm
 
+	@ Opens the Pokemart system, offering the specified outfit products for sale.
+	@ Products should be a list of .2byte item values preceded by an .align 2
+	.macro pokemartoutfit products:req
+	.byte 0xe6
+	.4byte \products
+	.endm
+
 @ Supplementary
 
 	.macro goto_if_unset flag:req, dest:req
