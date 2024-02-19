@@ -115,7 +115,6 @@ struct Outfit
     u32 prices[GENDER_COUNT]; //! heh
     const u8 *name;
     const u8 *desc;
-    const u16 *mugshotPals[GENDER_COUNT]; //! mugshot battle transition palette
     u16 trainerPics[GENDER_COUNT][2];
     u16 avatarGfxIds[GENDER_COUNT][PLAYER_AVATAR_STATE_COUNT];
     u16 animGfxIds[GENDER_COUNT][PLAYER_AVATAR_GFX_COUNT];

@@ -1,6 +1,5 @@
 #include "constants/global.h"
 #include "constants/event_objects.h"
-#include "constants/trainers.h"
 
 #if MODERN == 0
 static const u8 sText_OutfitName_UsualGreen[] = _("USUAL GREEN");
@@ -33,9 +32,6 @@ static const u16 sFrontierPassPlayerIcons_May_Pal[] = INCBIN_U16("graphics/front
 static const u8 sFrontierPassPlayerIcons_RSBrendanMay_Gfx[] = INCBIN_U8("graphics/frontier_pass/rs_map_heads.4bpp");
 static const u16 sFrontierPassPlayerIcons_RSBrendan_Pal[] = INCBIN_U16("graphics/frontier_pass/rs_map_heads.gbapal");
 static const u16 sFrontierPassPlayerIcons_RSMay_Pal[] = INCBIN_U16("graphics/frontier_pass/rs_map_heads_female.gbapal");
-
-static const u16 sMugshotPal_Brendan[] = INCBIN_U16("graphics/battle_transitions/brendan_bg.gbapal");
-static const u16 sMugshotPal_May[] = INCBIN_U16("graphics/battle_transitions/may_bg.gbapal");
 
 #define TRAINER_ID(m, f) \
 { \
@@ -112,9 +108,6 @@ const struct Outfit gOutfits[OUTFIT_COUNT] =
         .desc = sText_OutfitDesc_UsualGreen,
         #endif
 
-        //! DESC: palettes for the bg of the mugshot battle transition
-        .mugshotPals = { sMugshotPal_Brendan, sMugshotPal_May },
-
         //! DESC: trainer front & back pic index
         //! (see include/constants/trainers.h)
         .trainerPics = TRAINER_ID(BRENDAN, MAY),
@@ -145,7 +138,6 @@ const struct Outfit gOutfits[OUTFIT_COUNT] =
         .name = sText_OutfitName_UnusualRed,
         .desc = sText_OutfitDesc_UnusualRed,
         #endif
-        .mugshotPals = { sMugshotPal_Brendan, sMugshotPal_May },
         .trainerPics = TRAINER_ID(RUBY_SAPPHIRE_BRENDAN, RUBY_SAPPHIRE_MAY),
         .avatarGfxIds = AVATAR_GFX_ID(BRENDAN, MAY),
         .animGfxIds = ANIM_GFX_ID(BRENDAN, MAY),
