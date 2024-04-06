@@ -54,7 +54,7 @@ enum States {
 enum Windows {
     WIN_NAME = 0,
     WIN_DESC,
-    WIN_HEADER,
+    WIN_MSGBOX,
     WIN_OUTFIT_MAX = 2,
     WIN_COUNT,
 };
@@ -64,6 +64,7 @@ enum Sprites {
     GFX_TS,
     GFX_LOCK,
     GFX_INDICATOR,
+    GFX_TS_SHADOW,
     GFX_COUNT,
 };
 
@@ -82,7 +83,7 @@ enum ColorId {
 };
 
 static const u8 sFontColors[][3] = { // bgColor, textColor, shadowColor
-    [COLORID_NORMAL] = {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_WHITE,      TEXT_COLOR_DARK_GRAY},
+    [COLORID_NORMAL] = {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_DARK_GRAY,  TEXT_COLOR_LIGHT_GRAY},
     [COLORID_HEADER] = {15,                     TEXT_COLOR_WHITE,      TEXT_COLOR_DARK_GRAY},
     [COLORID_MSGBOX] = {TEXT_COLOR_WHITE,       TEXT_COLOR_DARK_GRAY,  TEXT_COLOR_LIGHT_GRAY},
 };
@@ -108,11 +109,6 @@ static void SetupOutfitMenu_Sprites(void);
 static void Task_WaitFadeInOutfitMenu(u8 taskId);
 static void Task_OutfitMenuHandleInput(u8 taskId);
 static void Task_CloseOutfitMenu(u8 taskId);
-
-static const u8 sText_Controls[] =
-_(
-    "{DPAD_LEFTRIGHT}PICK {A_BUTTON}CONFIRM {START_BUTTON}{B_BUTTON}CLOSE"
-);
 
 static const u8 sText_OutfitLocked[] = _("???");
 static const u8 sText_OutfitLockedMsg[] =
@@ -145,10 +141,12 @@ static const u8 sText_OutfitError_Default[] = _(
     "now!"
 );
 
-static const u16 sTiles[] = INCBIN_U16("graphics/outfit_menu/tiles.4bpp");
-static const u32 sScrollingBG_Tilemap[] = INCBIN_U32("graphics/outfit_menu/tilemap.bin.lz");
-static const u32 sMsgbox_Tilemap[] = INCBIN_U32("graphics/outfit_menu/msgbox.bin.lz");
-static const u16 sPalette[] = INCBIN_U16("graphics/outfit_menu/tiles.gbapal");
+static const u16 sTiles[] = INCBIN_U16("graphics/outfit_menu/main.4bpp");
+static const u16 sPalette[] = INCBIN_U16("graphics/outfit_menu/main.gbapal");
+static const u32 sTilemap[] = INCBIN_U32("graphics/outfit_menu/main.bin.lz");
+static const u16 sScrollingBG_Tiles[] = INCBIN_U16("graphics/outfit_menu/scroll.4bpp");
+static const u16 sScrollingBG_Palette[] = INCBIN_U16("graphics/outfit_menu/scroll.gbapal");
+static const u32 sScrollingBG_Tilemap[] = INCBIN_U32("graphics/outfit_menu/scroll.bin.lz");
 
 static const u16 sLockSprite_Gfx[] = INCBIN_U16("graphics/outfit_menu/lock.4bpp");
 static const u16 sLockIndicatorSprite_Pal[] = INCBIN_U16("graphics/outfit_menu/lock.gbapal");
@@ -210,8 +208,8 @@ static const struct WindowTemplate sWindowTemplates[] =
     [WIN_NAME] =
     {
         .bg = 0,
-        .tilemapLeft = 2,
-        .tilemapTop = 14,
+        .tilemapLeft = 0,
+        .tilemapTop = 11,
         .width = 12,
         .height = 2,
         .paletteNum = 15,
@@ -220,20 +218,20 @@ static const struct WindowTemplate sWindowTemplates[] =
     [WIN_DESC] =
     {
         .bg = 0,
-        .tilemapLeft = 1,
-        .tilemapTop = 16,
-        .width = 27,
-        .height = 4,
+        .tilemapLeft = 0,
+        .tilemapTop = 13,
+        .width = 12,
+        .height = 6,
         .paletteNum = 15,
         .baseBlock = 25,
     },
-    [WIN_HEADER] =
+    [WIN_MSGBOX] =
     {
         .bg = 0,
-        .tilemapLeft = 0,
-        .tilemapTop = 0,
-        .width = 30,
-        .height = 2,
+        .tilemapLeft = 2,
+        .tilemapTop = 15,
+        .width = 27,
+        .height = 4,
         .paletteNum = 15,
         .baseBlock = 0x90,
     },
@@ -408,9 +406,6 @@ static void SetupOutfitMenu_BGs(void)
     ShowBg(BG_0);
     ShowBg(BG_1);
     ShowBg(BG_2);
-    SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_TGT1_BG1 | BLDCNT_TGT2_BG2 | BLDCNT_EFFECT_BLEND);
-    SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(1, 9));
-    SetGpuReg(REG_OFFSET_BLDY, 0);
 }
 
 static bool32 SetupOutfitMenu_Graphics(void)
@@ -419,7 +414,8 @@ static bool32 SetupOutfitMenu_Graphics(void)
     {
     case 0:
         ResetTempTileDataBuffers();
-        LoadBgTiles(BG_1, &sTiles, 512, 0);
+        LoadBgTiles(BG_1, &sTiles, 2560, 0x1);
+        LoadBgTiles(BG_1, &sScrollingBG_Tiles, 320, 0x51);
         LoadMessageBoxGfx(BG_0, 0x100, BG_PLTT_ID(13));
         LoadUserWindowBorderGfx(BG_0, 0x10D, BG_PLTT_ID(14));
         sOutfitMenu->gfxState++;
@@ -427,7 +423,7 @@ static bool32 SetupOutfitMenu_Graphics(void)
     case 1:
         if (FreeTempTileDataBuffersIfPossible() != TRUE)
         {
-            LZDecompressWram(sMsgbox_Tilemap, sOutfitMenu->tilemapBuffers[0]);
+            LZDecompressWram(sTilemap, sOutfitMenu->tilemapBuffers[0]);
             LZDecompressWram(sScrollingBG_Tilemap, sOutfitMenu->tilemapBuffers[1]);
             sOutfitMenu->gfxState++;
         }
@@ -463,16 +459,13 @@ static void SetupOutfitMenu_Windows(void)
     for (i = 0; i < WIN_OUTFIT_MAX; i++)
         FillWindow(i, PIXEL_FILL(0));
 
-    FillWindow(WIN_HEADER, PIXEL_FILL(15));
     ScheduleBgCopyTilemapToVram(BG_0);
 }
 
 static void SetupOutfitMenu_PrintStr(void)
 {
-    PrintTexts(WIN_NAME, FONT_NORMAL, 0, 0, 0, 0, COLORID_NORMAL, gOutfits[sOutfitMenu->idx].name);
-    PrintTexts(WIN_DESC, FONT_NORMAL, 0, 0, 0, 0, COLORID_NORMAL, gOutfits[sOutfitMenu->idx].desc);
-
-    PrintTexts(WIN_HEADER, FONT_SMALL, 0, 0, 0, 0, COLORID_HEADER, sText_Controls);
+    PrintTexts(WIN_NAME, FONT_NORMAL, 4, 0, 0, 0, COLORID_NORMAL, gOutfits[gSaveBlock2Ptr->currOutfitId].name);
+    PrintTexts(WIN_DESC, FONT_NORMAL, 4, 0, 0, 0, COLORID_NORMAL, gOutfits[gSaveBlock2Ptr->currOutfitId].desc);
 }
 
 static inline void DestroyPocketSwitchArrowPair(void)
@@ -490,7 +483,7 @@ static inline void CreateOutfitSwitchArrowPair(void)
         sOutfitMenu->switchArrowsTask = AddScrollIndicatorArrowPair(&sOutfitMenuScrollArrowsTemplate, &sOutfitMenu->switchArrowsPos);
 }
 
-static inline void SetupOutfitMenu_Sprites_DrawOverworldSprite(bool32 update, bool32 locked)
+static inline void SetupOutfitMenu_Sprites_DrawOverworldSprite(bool32 update, bool32 unlocked)
 {
     u16 gfxId = GetPlayerAvatarGraphicsIdByOutfitStateIdAndGender(sOutfitMenu->idx, PLAYER_AVATAR_STATE_NORMAL, gSaveBlock2Ptr->playerGender);
 
@@ -499,15 +492,41 @@ static inline void SetupOutfitMenu_Sprites_DrawOverworldSprite(bool32 update, bo
 
     sOutfitMenu->spriteIds[GFX_OW] = CreateObjectGraphicsSprite(gfxId, SpriteCallbackDummy, 88, 76, 0);
     StartSpriteAnim(&gSprites[sOutfitMenu->spriteIds[GFX_OW]], ANIM_STD_GO_SOUTH);
+
+    if (!unlocked)
+    {
+        // bc we're directly tint to idx 1-15, skipping idx 0
+        // there's no point of tinting idx 0
+        u32 i = OBJ_PLTT_ID(gSprites[sOutfitMenu->spriteIds[GFX_OW]].oam.paletteNum)+1;
+        TintPalette_GrayScale(&gPlttBufferUnfaded[i], PLTT_SIZE_4BPP-1);
+        CpuCopy16(&gPlttBufferUnfaded[i], &gPlttBufferFaded[i], PLTT_SIZE_4BPP-1);
+    }
 }
 
-static inline void SetupOutfitMenu_Sprites_DrawTrainerSprite(bool32 update, bool32 locked)
+static const u16 sTSShadowPal[] = INCBIN_U16("graphics/outfit_menu/shadow.gbapal");
+static inline void SetupOutfitMenu_Sprites_DrawTrainerSprite(bool32 update, bool32 unlocked)
 {
     u16 id = GetPlayerTrainerPicIdByOutfitGenderType(sOutfitMenu->idx, gSaveBlock2Ptr->playerGender, 0);
     if (update)
+    {
         FreeAndDestroyTrainerPicSprite(sOutfitMenu->spriteIds[GFX_TS]);
+        FreeAndDestroyTrainerPicSprite(sOutfitMenu->spriteIds[GFX_TS_SHADOW]);
+    }
 
-    sOutfitMenu->spriteIds[GFX_TS] = CreateTrainerPicSprite(id, TRUE, 128, 60, 8, id);
+    sOutfitMenu->spriteIds[GFX_TS] = CreateTrainerPicSprite(id, TRUE, 48, 48, 8, TAG_NONE);
+    sOutfitMenu->spriteIds[GFX_TS_SHADOW] = CreateTrainerPicSprite(id, TRUE, 50, 48, 9, TAG_NONE);
+    LoadPalette(&sTSShadowPal, OBJ_PLTT_ID(9), PLTT_SIZE_4BPP);
+    gSprites[sOutfitMenu->spriteIds[GFX_TS_SHADOW]].oam.objMode = ST_OAM_OBJ_BLEND;
+    gSprites[sOutfitMenu->spriteIds[GFX_TS_SHADOW]].oam.priority = 2;
+    SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_TGT2_ALL);
+    SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(7, 11));
+    if (!unlocked)
+    {
+        // bc we're directly tint to idx 1-15, skipping idx 0
+        // there's no point of tinting idx 0
+        TintPalette_GrayScale(&gPlttBufferUnfaded[OBJ_PLTT_ID(8)+1], PLTT_SIZE_4BPP-1);
+        CpuCopy16(&gPlttBufferUnfaded[OBJ_PLTT_ID(8)+1], &gPlttBufferFaded[OBJ_PLTT_ID(8)+1], PLTT_SIZE_4BPP-1);
+    }
 }
 
 //! these sprites are sets to true for easier toggling.
@@ -523,7 +542,7 @@ static inline void SetupOutfitMenu_Sprites_DrawIndicatorSprite(void)
 {
     LoadSpriteSheet(&sIndicatorSpriteSheet);
     // the palette is sLockIndicatorSpritePalette
-    sOutfitMenu->spriteIds[GFX_INDICATOR] = CreateSprite(&sIndicatorSpriteTemplate, 104, 120, 0);
+    sOutfitMenu->spriteIds[GFX_INDICATOR] = CreateSprite(&sIndicatorSpriteTemplate, 16, 80, 0);
     gSprites[sOutfitMenu->spriteIds[GFX_INDICATOR]].invisible = FALSE;
 }
 
@@ -533,7 +552,7 @@ static void SetupOutfitMenu_Sprites(void)
     SetupOutfitMenu_Sprites_DrawTrainerSprite(FALSE, GetOutfitStatus(sOutfitMenu->idx));
     SetupOutfitMenu_Sprites_DrawLockSprite();
     SetupOutfitMenu_Sprites_DrawIndicatorSprite();
-    CreateOutfitSwitchArrowPair();
+    // CreateOutfitSwitchArrowPair();
 }
 
 //! Similar to above, but without redrawing the frame
@@ -545,14 +564,14 @@ static inline void UpdateOutfitInfo(void)
 
     if (GetOutfitStatus(sOutfitMenu->idx) == FALSE)
     {
-        PrintTexts(WIN_NAME, FONT_NORMAL, 0, 0, 0, 0, COLORID_NORMAL, sText_OutfitLocked);
-        PrintTexts(WIN_DESC, FONT_NORMAL, 0, 0, 0, 0, COLORID_NORMAL, sText_OutfitLocked);
+        PrintTexts(WIN_NAME, FONT_NORMAL, 4, 0, 0, 0, COLORID_NORMAL, sText_OutfitLocked);
+        PrintTexts(WIN_DESC, FONT_NORMAL, 4, 0, 0, 0, COLORID_NORMAL, sText_OutfitLocked);
         gSprites[sOutfitMenu->spriteIds[GFX_LOCK]].invisible = FALSE;
     }
     else
     {
-        PrintTexts(WIN_NAME, FONT_NORMAL, 0, 0, 0, 0, COLORID_NORMAL, gOutfits[sOutfitMenu->idx].name);
-        PrintTexts(WIN_DESC, FONT_NORMAL, 0, 0, 0, 0, COLORID_NORMAL, gOutfits[sOutfitMenu->idx].desc);
+        PrintTexts(WIN_NAME, FONT_NORMAL, 4, 0, 0, 0, COLORID_NORMAL, gOutfits[sOutfitMenu->idx].name);
+        PrintTexts(WIN_DESC, FONT_NORMAL, 4, 0, 0, 0, COLORID_NORMAL, gOutfits[sOutfitMenu->idx].desc);
         gSprites[sOutfitMenu->spriteIds[GFX_LOCK]].invisible = TRUE;
     }
     gSprites[sOutfitMenu->spriteIds[GFX_INDICATOR]].invisible = IsPlayerWearingOutfit(sOutfitMenu->idx) ? FALSE : TRUE;
@@ -574,9 +593,7 @@ static void Task_WaitMessage(u8 taskId)
 {
     if (--gTasks[taskId].data[0] == 0)
     {
-        ClearDialogWindowAndFrame(WIN_DESC, TRUE);
-        gWindows[WIN_DESC].window.tilemapTop = sWindowTemplates[WIN_DESC].tilemapTop;
-        gWindows[WIN_DESC].window.tilemapLeft = sWindowTemplates[WIN_DESC].tilemapLeft;
+        ClearDialogWindowAndFrame(WIN_MSGBOX, TRUE);
         UpdateOutfitInfo();
         gTasks[taskId].func = Task_OutfitMenuHandleInput;
     }
@@ -585,14 +602,12 @@ static void Task_WaitMessage(u8 taskId)
 static inline void PrintDialogueBoxWithDescWin(const u8 *str, bool32 expandPlaceholders, u8 taskId)
 {
     const u8 *txt = expandPlaceholders ? gStringVar4 : str;
-    gWindows[WIN_DESC].window.tilemapTop = 15;
-    gWindows[WIN_DESC].window.tilemapLeft = 2;
-    DrawDialogFrameWithCustomTileAndPalette(WIN_DESC, TRUE, 0x100, 13);
+    DrawDialogFrameWithCustomTileAndPalette(WIN_MSGBOX, TRUE, 0x100, 13);
 
     if (expandPlaceholders)
         StringExpandPlaceholders(gStringVar4, str);
 
-    PrintTexts(WIN_DESC, FONT_NORMAL, 0, 0, 0, 0, COLORID_MSGBOX, txt);
+    PrintTexts(WIN_MSGBOX, FONT_NORMAL, 0, 0, 0, 0, COLORID_MSGBOX, txt);
     gTasks[taskId].data[0] = 70;
     gTasks[taskId].func = Task_WaitMessage;
 }
@@ -705,9 +720,10 @@ static void FreeOutfitMenuResources(void)
 {
     DestroySprite(&gSprites[sOutfitMenu->spriteIds[GFX_OW]]);
     FreeAndDestroyTrainerPicSprite(sOutfitMenu->spriteIds[GFX_TS]);
+    FreeAndDestroyTrainerPicSprite(sOutfitMenu->spriteIds[GFX_TS_SHADOW]);
     DestroySprite(&gSprites[sOutfitMenu->spriteIds[GFX_LOCK]]);
     DestroySprite(&gSprites[sOutfitMenu->spriteIds[GFX_INDICATOR]]);
-    DestroyPocketSwitchArrowPair();
+    // DestroyPocketSwitchArrowPair();
     TRY_FREE_AND_SET_NULL(sOutfitMenu);
     ResetSpriteData();
     FreeAllSpritePalettes();

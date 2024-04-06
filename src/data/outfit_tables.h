@@ -4,11 +4,11 @@
 #if MODERN == 0
 static const u8 sText_OutfitName_UsualGreen[] = _("USUAL GREEN");
 static const u8 sText_OutfitDesc_UsualGreen[] = _(
-    "The usual, but basic OUTFIT.");
+    "The usual, but\nbasic OUTFIT.");
 
 static const u8 sText_OutfitName_UnusualRed[] = _("UNUSUAL RED");
 static const u8 sText_OutfitDesc_UnusualRed[] = _(
-    "Rather unusual, but still basic OUTFIT.");
+    "Rather unusual,\nbut still basic\nOUTFIT.");
 #endif
 
 static const u16 sRegionMapPlayerIcon_BrendanGfx[] = INCBIN_U16("graphics/pokenav/region_map/brendan_icon.4bpp");
@@ -114,7 +114,7 @@ const struct Outfit gOutfits[OUTFIT_COUNT] =
 
         //! DESC: outfit's description
         #if MODERN == 1
-        .desc = COMPOUND_STRING("The usual, but basic OUTFIT."),
+        .desc = COMPOUND_STRING("The usual, but\nbasic OUTFIT."),
         #else
         .desc = sText_OutfitDesc_UsualGreen,
         #endif
@@ -144,7 +144,7 @@ const struct Outfit gOutfits[OUTFIT_COUNT] =
         .prices = { 200, 500 },
         #if MODERN == 1
         .name = COMPOUND_STRING("UNUSUAL RED"),
-        .desc = COMPOUND_STRING("Rather unusual, but still basic OUTFIT."),
+        .desc = COMPOUND_STRING("Rather unusual,\nbut still basic\nOUTFIT."),
         #else
         .name = sText_OutfitName_UnusualRed,
         .desc = sText_OutfitDesc_UnusualRed,
