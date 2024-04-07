@@ -491,7 +491,7 @@ static bool32 SetupOutfitMenu_Graphics(void)
     {
     case 0:
         ResetTempTileDataBuffers();
-        LoadBgTiles(BG_1, &sTiles, 2560, 0x1);
+        LoadBgTiles(BG_1, &sTiles, 2560, 0x0);
         LoadBgTiles(BG_1, &sScrollingBG_Tiles, 320, 0x51);
         LoadMessageBoxGfx(BG_0, 0x100, BG_PLTT_ID(13));
         LoadUserWindowBorderGfx(BG_0, 0x10D, BG_PLTT_ID(14));
