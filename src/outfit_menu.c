@@ -618,13 +618,20 @@ static void SetupOutfitMenu_Sprites(void)
 
 static u32 CountAndFilterTotalOutfit(void)
 {
-    u32 i, j;
-    for (i = 0, j = 0; i < OUTFIT_COUNT; i++)
+    u32 i = 0, j = OUTFIT_BEGIN;
+    while (j < OUTFIT_COUNT)
     {
-        if ((gOutfits[i].isHidden && GetOutfitStatus(i)) || i != OUTFIT_NONE)
+        if ((gOutfits[j].isHidden && !GetOutfitStatus(j)))
+        {
             j++;
+            continue; // skip
+        }
+
+        DebugPrintf("i: %d, j: %d, list: %S", i, j, gOutfits[j].name);
+        i++;
+        j++;
     }
-    return j;
+    return i;
 }
 
 static void ForEachCB_PopulateOutfitOverworlds(u32 idx, u32 col, u32 row)
@@ -691,11 +698,14 @@ static void InputCB_Fail(void)
 static u32 BuildOutfitLists(void)
 {
     u32 i = 0, j = 1;
-    sOutfitMenu->list = AllocZeroed(CountAndFilterTotalOutfit());
-    while (j != OUTFIT_COUNT)
+    sOutfitMenu->list = AllocZeroed(CountAndFilterTotalOutfit() * sizeof(u8));
+    while (j < OUTFIT_COUNT)
     {
         if ((gOutfits[j].isHidden && !GetOutfitStatus(j)))
+        {
+            j++;
             continue; // skip
+        }
 
         sOutfitMenu->list[i] = j;
         DebugPrintf("i: %d, j: %d, list: %S", i, j, gOutfits[sOutfitMenu->list[i]].name);
