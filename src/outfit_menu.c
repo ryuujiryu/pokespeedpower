@@ -275,9 +275,10 @@ static const struct SpriteSheet sIndicatorSpriteSheet = {
 
 static const struct OamData sLockSpriteOamData = {
     .affineMode = ST_OAM_AFFINE_OFF,
-    .objMode = ST_OAM_OBJ_NORMAL,
+    .objMode = ST_OAM_OBJ_BLEND,
     .mosaic = FALSE,
     .bpp = ST_OAM_4BPP,
+    .priority = 2,
     .shape = SPRITE_SHAPE(32x32),
     .size = SPRITE_SIZE(32x32),
 };
@@ -584,15 +585,6 @@ static inline void SetupOutfitMenu_Sprites_DrawTrainerSprite(bool32 update, bool
     }
 }
 
-//! these sprites are sets to true for easier toggling.
-static inline void SetupOutfitMenu_Sprites_DrawLockSprite(void)
-{
-    LoadSpriteSheet(&sLockSpriteSheet);
-    LoadSpritePalette(&sLockIndicatorSpritePalette);
-    sOutfitMenu->spriteIds[GFX_LOCK] = CreateSprite(&sLockSpriteTemplate, 120, 59, 0);
-    gSprites[sOutfitMenu->spriteIds[GFX_LOCK]].invisible = TRUE;
-}
-
 static inline void SetupOutfitMenu_Sprites_DrawIndicatorSprite(void)
 {
     LoadSpriteSheet(&sIndicatorSpriteSheet);
@@ -611,7 +603,7 @@ static inline void SetupOutfitMenu_Sprites_DrawCursorSprite(void)
 static void SetupOutfitMenu_Sprites(void)
 {
     SetupOutfitMenu_Sprites_DrawTrainerSprite(FALSE, GetOutfitStatus(sOutfitMenu->idx));
-    SetupOutfitMenu_Sprites_DrawLockSprite();
+    // SetupOutfitMenu_Sprites_DrawLockSprite();
     SetupOutfitMenu_Sprites_DrawIndicatorSprite();
     SetupOutfitMenu_Sprites_DrawCursorSprite();
     // CreateOutfitSwitchArrowPair();
@@ -633,6 +625,40 @@ static u32 CountAndFilterTotalOutfit(void)
         j++;
     }
     return i;
+}
+
+static inline void ForAllCB_DrawOverworldShadowSprites(u32 idx, u32 col, u32 row)
+{
+    u32 x, y;
+    if (idx >= sOutfitMenu->listCount)
+        return;
+
+    x = ((col % 3) < ARRAY_COUNT(sGridPosX)) ? sGridPosX[col] : sGridPosX[0]+8;
+    y = ((row % 3) < ARRAY_COUNT(sGridPosY)) ? sGridPosY[row] : sGridPosY[0]+16;
+    sOutfitMenu->shadowSpriteIds[idx] = CreateSprite(&sLockSpriteTemplate, x, y, 2);
+}
+
+static inline void ForAllCB_HideOverworldShadowSpritesIfPossible(u32 idx, u32 col, u32 row)
+{
+    switch (idx)
+    {
+    case 6:
+    case 7:
+    case 8:
+        // when scrolling, there's a chance where there's no overworld icon
+        // at the 7/8/9th index
+        if (sOutfitMenu->grid->iconSpriteIds[idx] == SPRITE_NONE)
+        {
+            gSprites[sOutfitMenu->shadowSpriteIds[idx]].invisible = TRUE;
+        }
+        else
+        {
+            gSprites[sOutfitMenu->shadowSpriteIds[idx]].invisible = FALSE;
+        }
+        break;
+    default:
+        break;
+    }
 }
 
 static void ForEachCB_PopulateOutfitOverworlds(u32 idx, u32 col, u32 row)
@@ -675,6 +701,7 @@ static void InputCB_UpDownScroll(void)
     sOutfitMenu->idx = sOutfitMenu->list[GridMenu_SelectedIndex(sOutfitMenu->grid)];
     GridMenu_ForAll(sOutfitMenu->grid, ForAllCB_FreeOutfitOverworlds);
     GridMenu_ForEach(sOutfitMenu->grid, ForEachCB_PopulateOutfitOverworlds);
+    GridMenu_ForAll(sOutfitMenu->grid, ForAllCB_HideOverworldShadowSpritesIfPossible);
     UpdateOutfitInfo();
     if (!IsSEPlaying())
         PlaySE(SE_RG_BAG_CURSOR);
@@ -721,7 +748,10 @@ static void SetupOutfitMenu_Grids(void)
 {
     sOutfitMenu->grid = GridMenu_Init(3, 3, CountAndFilterTotalOutfit());
 
+    LoadSpriteSheet(&sLockSpriteSheet);
+    LoadSpritePalette(&sLockIndicatorSpritePalette);
     GridMenu_ForEach(sOutfitMenu->grid, ForEachCB_PopulateOutfitOverworlds);
+    GridMenu_ForAll(sOutfitMenu->grid, ForAllCB_DrawOverworldShadowSprites);
     GridMenu_SetInputCallback(sOutfitMenu->grid, InputCB_Move, DIRECTION_UP, TYPE_MOVE);
     GridMenu_SetInputCallback(sOutfitMenu->grid, InputCB_Move, DIRECTION_DOWN, TYPE_MOVE);
     GridMenu_SetInputCallback(sOutfitMenu->grid, InputCB_Move, DIRECTION_LEFT, TYPE_MOVE);
@@ -745,13 +775,11 @@ static inline void UpdateOutfitInfo(void)
     {
         PrintTexts(WIN_NAME, FONT_NORMAL, 4, 0, 0, 0, COLORID_NORMAL, sText_OutfitLocked);
         PrintTexts(WIN_DESC, FONT_NORMAL, 4, 0, 0, 0, COLORID_NORMAL, sText_OutfitLocked);
-        gSprites[sOutfitMenu->spriteIds[GFX_LOCK]].invisible = FALSE;
     }
     else
     {
         PrintTexts(WIN_NAME, FONT_NORMAL, 4, 0, 0, 0, COLORID_NORMAL, gOutfits[sOutfitMenu->idx].name);
         PrintTexts(WIN_DESC, FONT_NORMAL, 4, 0, 0, 0, COLORID_NORMAL, gOutfits[sOutfitMenu->idx].desc);
-        gSprites[sOutfitMenu->spriteIds[GFX_LOCK]].invisible = TRUE;
     }
     gSprites[sOutfitMenu->spriteIds[GFX_INDICATOR]].invisible = IsPlayerWearingOutfit(sOutfitMenu->idx) ? FALSE : TRUE;
 
@@ -869,11 +897,15 @@ static void Task_OutfitMenuHandleInput(u8 taskId)
 
 static void FreeOutfitMenuResources(void)
 {
+    u32 i;
     DestroySprite(&gSprites[sOutfitMenu->spriteIds[GFX_OW]]);
     FreeAndDestroyTrainerPicSprite(sOutfitMenu->spriteIds[GFX_TS]);
     FreeAndDestroyTrainerPicSprite(sOutfitMenu->spriteIds[GFX_TS_SHADOW]);
-    DestroySprite(&gSprites[sOutfitMenu->spriteIds[GFX_LOCK]]);
     DestroySprite(&gSprites[sOutfitMenu->spriteIds[GFX_INDICATOR]]);
+    for (i = 0; i < sOutfitMenu->grid->maxSize; i++)
+    {
+        DestroySprite(&gSprites[sOutfitMenu->shadowSpriteIds[i]]);
+    }
     // DestroyPocketSwitchArrowPair();
     GridMenu_Destroy(sOutfitMenu->grid);
     TRY_FREE_AND_SET_NULL(sOutfitMenu->list);
