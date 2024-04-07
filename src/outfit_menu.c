@@ -621,6 +621,21 @@ static inline void ForAllCB_HideOverworldShadowSpritesIfPossible(u32 idx, u32 co
     }
 }
 
+static void SpriteCB_Overworld(struct Sprite *s)
+{
+    u32 idx = s->data[0];
+    u32 i = sOutfitMenu->list[sOutfitMenu->grid->topLeftItemIndex + idx];
+    // play anim only if it's currecntly picked AND that it's unlocked
+    if (idx == sOutfitMenu->grid->selectedItem && GetOutfitStatus(i))
+    {
+        StartSpriteAnimIfDifferent(s, ANIM_STD_GO_SOUTH);
+    }
+    else
+    {
+        StartSpriteAnimIfDifferent(s, ANIM_STD_FACE_SOUTH);
+    }
+}
+
 static void ForEachCB_PopulateOutfitOverworlds(u32 idx, u32 col, u32 row)
 {
     u32 i = sOutfitMenu->list[sOutfitMenu->grid->topLeftItemIndex + idx];
@@ -632,7 +647,8 @@ static void ForEachCB_PopulateOutfitOverworlds(u32 idx, u32 col, u32 row)
     x = ((col % 3) < ARRAY_COUNT(sGridPosX)) ? sGridPosX[col] : sGridPosX[0]+8;
     y = ((row % 3) < ARRAY_COUNT(sGridPosY)) ? sGridPosY[row] : sGridPosY[0]+16;
 
-    sOutfitMenu->grid->iconSpriteIds[idx] = CreateObjectGraphicsSprite(gfx, SpriteCallbackDummy, x, y, 1);
+    sOutfitMenu->grid->iconSpriteIds[idx] = CreateObjectGraphicsSprite(gfx, SpriteCB_Overworld, x, y, 1);
+    gSprites[sOutfitMenu->grid->iconSpriteIds[idx]].data[0] = idx;
     if (!GetOutfitStatus(i))
     {
         // bc we're directly tint to idx 1-15, skipping idx 0
