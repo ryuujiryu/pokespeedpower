@@ -67,7 +67,6 @@ enum Windows {
 enum Sprites {
     GFX_OW = 0,
     GFX_TS,
-    GFX_LOCK,
     GFX_INDICATOR,
     GFX_TS_SHADOW,
     GFX_CURSOR,
@@ -76,24 +75,19 @@ enum Sprites {
 
 enum SpriteTags {
     TAG_SCROLL_ARROWS = 0x9000,
-    GFXTAG_LOCK = 0x9001,
+    GFXTAG_SHADOW = 0x9001,
     GFXTAG_INDICATOR = 0x9002,
-    GFXTAG_SHADOW = 0x9999,
-    PALTAG_LOCKINDICATOR = 0x9900,
+    PALTAG_SHADOW_INDICATOR = 0x9900,
     PALTAG_CURSOR = 0x9920,
-    PALTAG_SHADOW = 0x9922,
 };
 
 enum ColorId {
     COLORID_NORMAL = 0,
-    COLORID_HEADER,
     COLORID_MSGBOX,
-    COLORID_NONE,
 };
 
 static const u8 sFontColors[][3] = { // bgColor, textColor, shadowColor
     [COLORID_NORMAL] = {TEXT_COLOR_TRANSPARENT, TEXT_COLOR_DARK_GRAY,  TEXT_COLOR_LIGHT_GRAY},
-    [COLORID_HEADER] = {15,                     TEXT_COLOR_WHITE,      TEXT_COLOR_DARK_GRAY},
     [COLORID_MSGBOX] = {TEXT_COLOR_WHITE,       TEXT_COLOR_DARK_GRAY,  TEXT_COLOR_LIGHT_GRAY},
 };
 
@@ -103,8 +97,6 @@ typedef struct {
     u8 gfxState;
     u8 tilemapBuffers[2][BG_SCREEN_SIZE];
     u8 spriteIds[GFX_COUNT];
-    u8 switchArrowsTask;
-    u16 switchArrowsPos;
     struct GridMenu *grid;
     u8 *list;
     u8 listCount;
@@ -172,20 +164,6 @@ static const u16 sCursorSprite_Gfx[] = INCBIN_U16("graphics/outfit_menu/cursor.4
 static const u32 sCursorSprite_Pal[] = INCBIN_U32("graphics/outfit_menu/cursor.gbapal.lz");
 
 static EWRAM_DATA OutfitMenuResources *sOutfitMenu = NULL;
-
-static const struct ScrollArrowsTemplate sOutfitMenuScrollArrowsTemplate = {
-    .firstArrowType = SCROLL_ARROW_LEFT,
-    .firstX = 72,
-    .firstY = 56,
-    .secondArrowType = SCROLL_ARROW_RIGHT,
-    .secondX = 168,
-    .secondY = 56,
-    .fullyUpThreshold = -1,
-    .fullyDownThreshold = -1,
-    .tileTag = TAG_SCROLL_ARROWS,
-    .palTag = TAG_SCROLL_ARROWS,
-    .palNum = 0,
-};
 
 static const struct BgTemplate sBGTemplates[] =
 {
@@ -259,12 +237,12 @@ static const struct WindowTemplate sWindowTemplates[] =
 static const struct SpriteSheet sLockSpriteSheet = {
     .data = sLockSprite_Gfx,
     .size = 0x200,
-    .tag = GFXTAG_LOCK,
+    .tag = GFXTAG_SHADOW,
 };
 
 static const struct SpritePalette sLockIndicatorSpritePalette = {
     .data = sLockIndicatorSprite_Pal,
-    .tag = PALTAG_LOCKINDICATOR,
+    .tag = PALTAG_SHADOW_INDICATOR,
 };
 
 static const struct SpriteSheet sIndicatorSpriteSheet = {
@@ -293,8 +271,8 @@ static const struct OamData sIndicatorSpriteOamData = {
 };
 
 static const struct SpriteTemplate sLockSpriteTemplate = {
-    .tileTag = GFXTAG_LOCK,
-    .paletteTag = PALTAG_LOCKINDICATOR,
+    .tileTag = GFXTAG_SHADOW,
+    .paletteTag = PALTAG_SHADOW_INDICATOR,
     .callback = SpriteCallbackDummy,
     .anims = gDummySpriteAnimTable,
     .affineAnims = gDummySpriteAffineAnimTable,
@@ -304,7 +282,7 @@ static const struct SpriteTemplate sLockSpriteTemplate = {
 
 static const struct SpriteTemplate sIndicatorSpriteTemplate = {
     .tileTag = GFXTAG_INDICATOR,
-    .paletteTag = PALTAG_LOCKINDICATOR,
+    .paletteTag = PALTAG_SHADOW_INDICATOR,
     .callback = SpriteCallbackDummy,
     .anims = gDummySpriteAnimTable,
     .affineAnims = gDummySpriteAffineAnimTable,
@@ -383,7 +361,6 @@ void OpenOutfitMenu(MainCallback retCB)
         SetMainCallback2(retCB);
     }
     sOutfitMenu->retCB = retCB;
-    sOutfitMenu->switchArrowsTask = TASK_NONE;
     SetMainCallback2(CB2_SetupOutfitMenu);
 }
 
@@ -546,21 +523,6 @@ static void SetupOutfitMenu_PrintStr(void)
     PrintTexts(WIN_DESC, FONT_NORMAL, 4, 0, 0, 0, COLORID_NORMAL, gOutfits[gSaveBlock2Ptr->currOutfitId].desc);
 }
 
-static inline void DestroyPocketSwitchArrowPair(void)
-{
-    if (sOutfitMenu->switchArrowsTask != TASK_NONE)
-    {
-        RemoveScrollIndicatorArrowPair(sOutfitMenu->switchArrowsTask);
-        sOutfitMenu->switchArrowsTask = TASK_NONE;
-    }
-}
-
-static inline void CreateOutfitSwitchArrowPair(void)
-{
-    if (sOutfitMenu->switchArrowsTask == TASK_NONE)
-        sOutfitMenu->switchArrowsTask = AddScrollIndicatorArrowPair(&sOutfitMenuScrollArrowsTemplate, &sOutfitMenu->switchArrowsPos);
-}
-
 static const u16 sTSShadowPal[] = INCBIN_U16("graphics/outfit_menu/shadow.gbapal");
 static inline void SetupOutfitMenu_Sprites_DrawTrainerSprite(bool32 update, bool32 unlocked)
 {
@@ -603,10 +565,8 @@ static inline void SetupOutfitMenu_Sprites_DrawCursorSprite(void)
 static void SetupOutfitMenu_Sprites(void)
 {
     SetupOutfitMenu_Sprites_DrawTrainerSprite(FALSE, GetOutfitStatus(sOutfitMenu->idx));
-    // SetupOutfitMenu_Sprites_DrawLockSprite();
     SetupOutfitMenu_Sprites_DrawIndicatorSprite();
     SetupOutfitMenu_Sprites_DrawCursorSprite();
-    // CreateOutfitSwitchArrowPair();
 }
 
 static u32 CountAndFilterTotalOutfit(void)
@@ -906,7 +866,6 @@ static void FreeOutfitMenuResources(void)
     {
         DestroySprite(&gSprites[sOutfitMenu->shadowSpriteIds[i]]);
     }
-    // DestroyPocketSwitchArrowPair();
     GridMenu_Destroy(sOutfitMenu->grid);
     TRY_FREE_AND_SET_NULL(sOutfitMenu->list);
     TRY_FREE_AND_SET_NULL(sOutfitMenu);
