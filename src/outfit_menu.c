@@ -480,6 +480,9 @@ static void SetupOutfitMenu_BGs(void)
     ShowBg(BG_0);
     ShowBg(BG_1);
     ShowBg(BG_2);
+    SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_TGT2_ALL);
+    SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(7, 11));
+    SetGpuReg(REG_OFFSET_BLDY, 0);
 }
 
 static bool32 SetupOutfitMenu_Graphics(void)
@@ -567,19 +570,17 @@ static inline void SetupOutfitMenu_Sprites_DrawTrainerSprite(bool32 update, bool
         FreeAndDestroyTrainerPicSprite(sOutfitMenu->spriteIds[GFX_TS_SHADOW]);
     }
 
-    sOutfitMenu->spriteIds[GFX_TS] = CreateTrainerPicSprite(id, TRUE, 48, 48, 8, TAG_NONE);
-    sOutfitMenu->spriteIds[GFX_TS_SHADOW] = CreateTrainerPicSprite(id, TRUE, 50, 48, 9, TAG_NONE);
-    LoadPalette(&sTSShadowPal, OBJ_PLTT_ID(9), PLTT_SIZE_4BPP);
+    sOutfitMenu->spriteIds[GFX_TS] = CreateTrainerPicSprite(id, TRUE, 48, 48, 9, TAG_NONE);
+    sOutfitMenu->spriteIds[GFX_TS_SHADOW] = CreateTrainerPicSprite(id, TRUE, 50, 48, 10, TAG_NONE);
+    LoadPalette(&sTSShadowPal, OBJ_PLTT_ID(10), PLTT_SIZE_4BPP);
     gSprites[sOutfitMenu->spriteIds[GFX_TS_SHADOW]].oam.objMode = ST_OAM_OBJ_BLEND;
     gSprites[sOutfitMenu->spriteIds[GFX_TS_SHADOW]].oam.priority = 2;
-    SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_TGT2_ALL);
-    SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(7, 11));
     if (!unlocked)
     {
         // bc we're directly tint to idx 1-15, skipping idx 0
         // there's no point of tinting idx 0
-        TintPalette_GrayScale(&gPlttBufferUnfaded[OBJ_PLTT_ID(8)+1], PLTT_SIZE_4BPP-1);
-        CpuCopy16(&gPlttBufferUnfaded[OBJ_PLTT_ID(8)+1], &gPlttBufferFaded[OBJ_PLTT_ID(8)+1], PLTT_SIZE_4BPP-1);
+        TintPalette_GrayScale(&gPlttBufferUnfaded[OBJ_PLTT_ID(9)+1], PLTT_SIZE_4BPP-1);
+        CpuCopy16(&gPlttBufferUnfaded[OBJ_PLTT_ID(9)+1], &gPlttBufferFaded[OBJ_PLTT_ID(9)+1], PLTT_SIZE_4BPP-1);
     }
 }
 
