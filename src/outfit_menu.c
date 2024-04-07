@@ -552,7 +552,7 @@ static inline void SetupOutfitMenu_Sprites_DrawIndicatorSprite(void)
     LoadSpriteSheet(&sIndicatorSpriteSheet);
     // the palette is sLockIndicatorSpritePalette
     sOutfitMenu->spriteIds[GFX_INDICATOR] = CreateSprite(&sIndicatorSpriteTemplate, 16, 80, 0);
-    gSprites[sOutfitMenu->spriteIds[GFX_INDICATOR]].invisible = FALSE;
+    gSprites[sOutfitMenu->spriteIds[GFX_INDICATOR]].invisible = IsPlayerWearingOutfit(sOutfitMenu->idx) ? FALSE : TRUE;
 }
 
 static inline void SetupOutfitMenu_Sprites_DrawCursorSprite(void)
