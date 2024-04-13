@@ -2461,7 +2461,12 @@ bool8 ScrCmd_pokemartoutfit(struct ScriptContext *ctx)
 {
     const void *ptr = (void *)ScriptReadWord(ctx);
 
+    #ifdef MUDSKIP_SHOP_UI
+    NewShop_CreateOutfitShopMenu(ptr);
+    #else
     CreateOutfitShopMenu(ptr);
+    #endif // MUDSKIP_SHOP_UI
+
     ScriptContext_Stop();
     return TRUE;
 }
