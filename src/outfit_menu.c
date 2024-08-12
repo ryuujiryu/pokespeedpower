@@ -117,6 +117,7 @@ static void Task_OutfitMenuHandleInput(u8 taskId);
 static void Task_CloseOutfitMenu(u8 taskId);
 static u32 BuildOutfitLists(void);
 static inline void UpdateOutfitInfo(void);
+static void UpdateCursorPosition(void);
 
 static const u8 sText_OutfitLocked[] = _("???");
 static const u8 sText_OutfitLockedMsg[] =
@@ -560,6 +561,7 @@ static inline void SetupOutfitMenu_Sprites_DrawCursorSprite(void)
     LoadCompressedSpritePalette(&sCursor_SpritePalette);
     sOutfitMenu->spriteIds[GFX_CURSOR] = CreateSprite(&sCursor_SpriteTemplate, CURSOR_START_X, CURSOR_START_Y, 0);
     StartSpriteAnim(&gSprites[sOutfitMenu->spriteIds[GFX_CURSOR]], 0);
+    UpdateCursorPosition();
 }
 
 static void SetupOutfitMenu_Sprites(void)
@@ -738,6 +740,7 @@ static void SetupOutfitMenu_Grids(void)
     GridMenu_SetInputCallback(sOutfitMenu->grid, InputCB_Fail, DIRECTION_RIGHT, TYPE_FAIL);
     GridMenu_SetInputCallback(sOutfitMenu->grid, InputCB_UpDownScroll, DIRECTION_UP, TYPE_SCROLL);
     GridMenu_SetInputCallback(sOutfitMenu->grid, InputCB_UpDownScroll, DIRECTION_DOWN, TYPE_SCROLL);
+    sOutfitMenu->grid->selectedItem = gSaveBlock2Ptr->currOutfitId - 1;
 }
 
 //! Similar to above, but without redrawing the frame
