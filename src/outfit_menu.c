@@ -361,6 +361,12 @@ void OpenOutfitMenu(MainCallback retCB)
         //! Alloc failed, exit
         SetMainCallback2(retCB);
     }
+    // measures for existing saves
+    if (gSaveBlock2Ptr->currOutfitId == OUTFIT_NONE)
+    {
+        UnlockOutfit(DEFAULT_OUTFIT);
+        gSaveBlock2Ptr->currOutfitId = DEFAULT_OUTFIT;
+    }
     sOutfitMenu->retCB = retCB;
     SetMainCallback2(CB2_SetupOutfitMenu);
 }
@@ -908,6 +914,12 @@ static void Task_CloseOutfitMenu(u8 taskId)
 void BufferOutfitStrings(u8 *dest, u8 outfitId, u8 dataType)
 {
     const u8 *src = NULL;
+
+    if (outfitId == OUTFIT_NONE || outfitId >= OUTFIT_COUNT)
+    {
+        outfitId = DEFAULT_OUTFIT;
+    }
+
     switch(dataType)
     {
     default:
@@ -923,7 +935,7 @@ void BufferOutfitStrings(u8 *dest, u8 outfitId, u8 dataType)
 
 u32 GetPlayerTrainerPicIdByOutfitGenderType(u32 outfitId, u32 gender, bool32 type)
 {
-    if (outfitId < OUTFIT_COUNT)
+    if (outfitId > OUTFIT_NONE && outfitId < OUTFIT_COUNT)
         return gOutfits[outfitId].trainerPics[gender][type];
     else
         return gOutfits[0].trainerPics[gender][type];
@@ -940,6 +952,11 @@ const void *GetPlayerHeadGfxOrPal(u8 which, bool32 isFP)
     }
     else
     {
+        if (gSaveBlock2Ptr->currOutfitId == OUTFIT_NONE || gSaveBlock2Ptr->currOutfitId >= OUTFIT_COUNT)
+        {
+            gSaveBlock2Ptr->currOutfitId = DEFAULT_OUTFIT;
+        }
+
         if (isFP)
         {
             return gSaveBlock2Ptr->playerGender ?
