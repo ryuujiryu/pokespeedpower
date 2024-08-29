@@ -2496,10 +2496,10 @@ bool8 ScrCmd_getoutfitstatus(struct ScriptContext *ctx)
     {
         default:
         case OUTFIT_CHECK_FLAG:
-            ctx->comparisonResult = GetOutfitStatus(outfitId);
+            gSpecialVar_Result = GetOutfitStatus(outfitId);
             break;
         case OUTFIT_CHECK_USED:
-            ctx->comparisonResult = IsPlayerWearingOutfit(outfitId);
+            gSpecialVar_Result = IsPlayerWearingOutfit(outfitId);
             break;
     }
     return TRUE;
