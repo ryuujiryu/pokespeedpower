@@ -515,7 +515,6 @@ KinglerBackpic:      INCBIN "gfx/pokemon/kingler/back.2bpp.lz"
 GengarBackpic:       INCBIN "gfx/pokemon/gengar/back.2bpp.lz"
 RattataBackpic:      INCBIN "gfx/pokemon/rattata/back.2bpp.lz"
 YoungsterPic:        INCBIN "gfx/trainers/youngster.2bpp.lz"
-WillPic:             INCBIN "gfx/trainers/will.2bpp.lz"
 SchoolboyPic:        INCBIN "gfx/trainers/schoolboy.2bpp.lz"
 MagnemiteFrontpic:   INCBIN "gfx/pokemon/magnemite/front.animated.2bpp.lz"
 ErikaPic:            INCBIN "gfx/trainers/erika.2bpp.lz"
@@ -779,6 +778,8 @@ INCBIN "gfx/pokemon/unown_r/back.2bpp.lz"
 ; but entries for their banks exist in FixPicBank (see engine/gfx/load_pics.asm).
 
 SECTION "Pics 20", ROMX
+
+WillPic:             INCBIN "gfx/trainers/will.2bpp.lz"
 
 SECTION "Pics 21", ROMX
 
