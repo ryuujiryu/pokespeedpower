@@ -14,12 +14,7 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "map": "MAP_OLDALE_TOWN",
-      "offset": 0,
-      "direction": "up"
-    },
-    {
-      "map": "MAP_LITTLEROOT_TOWN",
+      "map": "MAP_PRELUDIO_TOWN",
       "offset": -3,
       "direction": "down"
     }
