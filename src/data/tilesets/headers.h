@@ -836,3 +836,14 @@ const struct Tileset gTileset_Preludiosharport =
     .metatileAttributes = gMetatileAttributes_Preludiosharport,
     .callback = NULL,
 };
+
+const struct Tileset gTileset_Zelkovalab =
+{
+    .isCompressed = TRUE,
+    .isSecondary = TRUE,
+    .tiles = gTilesetTiles_Zelkovalab,
+    .palettes = gTilesetPalettes_Zelkovalab,
+    .metatiles = gMetatiles_Zelkovalab,
+    .metatileAttributes = gMetatileAttributes_Zelkovalab,
+    .callback = NULL,
+};

@@ -210,3 +210,6 @@ const u16 gMetatileAttributes_UnionRoom[] = INCBIN_U16("data/tilesets/secondary/
 
 const u16 gMetatiles_Preludiosharport[] = INCBIN_U16("data/tilesets/secondary/preludiosharport/metatiles.bin");
 const u16 gMetatileAttributes_Preludiosharport[] = INCBIN_U16("data/tilesets/secondary/preludiosharport/metatile_attributes.bin");
+
+const u16 gMetatiles_Zelkovalab[] = INCBIN_U16("data/tilesets/secondary/zelkovalab/metatiles.bin");
+const u16 gMetatileAttributes_Zelkovalab[] = INCBIN_U16("data/tilesets/secondary/zelkovalab/metatile_attributes.bin");
