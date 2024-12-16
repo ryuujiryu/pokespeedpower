@@ -164,8 +164,8 @@
     {
       "id": "LAYOUT_ROUTE101",
       "name": "Route101_Layout",
-      "width": 20,
-      "height": 23,
+      "width": 23,
+      "height": 25,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Preludiosharport",
       "border_filepath": "data/layouts/Route101/border.bin",
@@ -4414,7 +4414,7 @@
     {
       "id": "LAYOUT_PRELUDIO_TOWN",
       "name": "PreludioTown_Layout",
-      "width": 25,
+      "width": 28,
       "height": 25,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Preludiosharport",
@@ -4430,6 +4430,16 @@
       "secondary_tileset": "gTileset_Preludiosharport",
       "border_filepath": "data/layouts/MelodyCity/border.bin",
       "blockdata_filepath": "data/layouts/MelodyCity/map.bin"
+    },
+    {
+      "id": "LAYOUT_ZELKOVALAB",
+      "name": "Zelkovalab_Layout",
+      "width": 13,
+      "height": 13,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Lab",
+      "border_filepath": "data/layouts/Zelkovalab/border.bin",
+      "blockdata_filepath": "data/layouts/Zelkovalab/map.bin"
     }
   ]
 }

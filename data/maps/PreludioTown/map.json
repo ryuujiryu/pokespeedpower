@@ -28,7 +28,27 @@
 
   ],
   "warp_events": [
-
+    {
+      "x": 7,
+      "y": 4,
+      "elevation": 0,
+      "dest_map": "MAP_PRELUDIO_TOWN",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 3,
+      "y": 14,
+      "elevation": 0,
+      "dest_map": "MAP_DYNAMIC",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 18,
+      "y": 10,
+      "elevation": 0,
+      "dest_map": "MAP_PRELUDIO_TOWN",
+      "dest_warp_id": "0"
+    }
   ],
   "coord_events": [
 
