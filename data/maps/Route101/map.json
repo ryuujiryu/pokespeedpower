@@ -15,7 +15,7 @@
   "connections": [
     {
       "map": "MAP_PRELUDIO_TOWN",
-      "offset": -3,
+      "offset": -1,
       "direction": "down"
     }
   ],
