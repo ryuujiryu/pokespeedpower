@@ -4852,4 +4852,7 @@ gCryTable_Reverse::
 .if P_FAMILY_PECHARUNT == TRUE
 	cry_reverse Cry_Pecharunt
 .endif @ P_FAMILY_PECHARUNT
+.if P_FAMILY_LOTPOLE == TRUE
+	cry_reverse Cry_Lotpole
+.endif @ P_FAMILY_LOTPOLE
 .endif @ P_CRIES_ENABLED

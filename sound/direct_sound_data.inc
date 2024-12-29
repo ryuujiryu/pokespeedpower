@@ -6156,6 +6156,12 @@ Cry_Pecharunt::
 .endif @ P_FAMILY_PECHARUNT
 .endif @ P_CRIES_ENABLED
 
+.if P_FAMILY_LOTPOLE == TRUE
+	.align 2
+Cry_Lotpole::
+	.incbin "sound/direct_sound_samples/cries/lotpole.bin"
+.endif @ P_FAMILY_LOTPOLE
+
 	.align 2
 DirectSoundWaveData_register_noise::
 	.incbin "sound/direct_sound_samples/register_noise.bin"
