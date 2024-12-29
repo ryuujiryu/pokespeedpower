@@ -1157,3 +1157,9 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/MelodyCity/scripts.inc"
 
 	.include "data/maps/Zelkovalab/scripts.inc"
+
+	.include "data/maps/NeighborHouse/scripts.inc"
+
+	.include "data/maps/PlayerHouse/scripts.inc"
+
+	.include "data/maps/PlayerRoom/scripts.inc"

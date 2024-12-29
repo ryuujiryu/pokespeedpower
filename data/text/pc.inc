@@ -1,17 +1,17 @@
 Text_BootUpPC:
-	.string "{PLAYER} booted up the PC.$"
+	.string "{PLAYER} connected to the\nPHAROS NETWORK.$"
 
 gText_WhichPCShouldBeAccessed::
-	.string "Which PC should be accessed?$"
+	.string "Please select your desired service.$"
 
 gText_AccessedSomeonesPC::
-	.string "Accessed SOMEONE'S PC.$"
+	.string "Hosting & Retrieval System selected.$"
 
 gText_StorageSystemOpened::
-	.string "POKéMON Storage System opened.$"
+	.string "Welcome, {PKMN} CODEWEAVER {PLAYER}.$"
 
 gText_AccessedPlayersPC::
-	.string "Accessed {PLAYER}'s PC.$"
+	.string "Accessed {PLAYER}'s CODEWEAVER\nFORUM account.$"
 
 gText_AccessedLanettesPC::
 	.string "Accessed LANETTE's PC.$"

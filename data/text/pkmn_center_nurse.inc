@@ -1,21 +1,22 @@
 gText_WouldYouLikeToRestYourPkmn::
-	.string "Hello, and welcome to\n"
-	.string "the POKéMON CENTER.\p"
-	.string "We restore your tired POKéMON\n"
+	.string "Welcome to the POKéMON STATION.\n"
+	.string "Looks like you need our help, huh?\p"
+	.string "We will fix your POKéMON up\n"
 	.string "to full health.\p"
-	.string "Would you like to rest your POKéMON?$"
+	.string "Are you handing them over or not?$"
 
 gText_IllTakeYourPkmn::
-	.string "Okay, I'll take your POKéMON\n"
-	.string "for a few seconds.$"
+	.string "Ugh, fine. Give me a second.\n"
+	.string "This shouldn’t take long... probably.$"
 
 gText_RestoredPkmnToFullHealth::
-	.string "Thank you for waiting.\p"
-	.string "We've restored your POKéMON\n"
-	.string "to full health.$"
+	.string "Not leaving a tip, huh? Then maybe\n"
+	.string "I should keep your POKéMON... ... ...\p"
+	.string "...Relax, I was kidding. Mostly.$"
 
 gText_WeHopeToSeeYouAgain::
-	.string "We hope to see you again!$"
+	.string "We both know you will be back, but...\n"
+	.string "try to not get your POKéMON hurt, okay?$"
 
 gText_WelcomeCutShort::
 	.string "Hello, and welcome to\n"

@@ -4440,6 +4440,36 @@
       "secondary_tileset": "gTileset_Lab",
       "border_filepath": "data/layouts/Zelkovalab/border.bin",
       "blockdata_filepath": "data/layouts/Zelkovalab/map.bin"
+    },
+    {
+      "id": "LAYOUT_NEIGHBOR_HOUSE",
+      "name": "NeighborHouse_Layout",
+      "width": 11,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BrendansMaysHouse",
+      "border_filepath": "data/layouts/NeighborHouse/border.bin",
+      "blockdata_filepath": "data/layouts/NeighborHouse/map.bin"
+    },
+    {
+      "id": "LAYOUT_PLAYER_HOUSE",
+      "name": "PlayerHouse_Layout",
+      "width": 11,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BrendansMaysHouse",
+      "border_filepath": "data/layouts/PlayerHouse/border.bin",
+      "blockdata_filepath": "data/layouts/PlayerHouse/map.bin"
+    },
+    {
+      "id": "LAYOUT_PLAYER_ROOM",
+      "name": "PlayerRoom_Layout",
+      "width": 9,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BrendansMaysHouse",
+      "border_filepath": "data/layouts/PlayerRoom/border.bin",
+      "blockdata_filepath": "data/layouts/PlayerRoom/map.bin"
     }
   ]
 }

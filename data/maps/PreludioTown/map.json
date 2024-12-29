@@ -32,14 +32,14 @@
       "x": 7,
       "y": 4,
       "elevation": 0,
-      "dest_map": "MAP_PRELUDIO_TOWN",
+      "dest_map": "MAP_ZELKOVALAB",
       "dest_warp_id": "0"
     },
     {
-      "x": 3,
-      "y": 14,
+      "x": 5,
+      "y": 15,
       "elevation": 0,
-      "dest_map": "MAP_DYNAMIC",
+      "dest_map": "MAP_OLDALE_TOWN_POKEMON_CENTER_1F",
       "dest_warp_id": "0"
     },
     {
