@@ -35838,3 +35838,20 @@ static const u16 sPecharuntTeachableLearnset[] = {
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_PECHARUNT
+
+static const u16 sLotpoleTeachableLearnset[] = {
+    MOVE_POUND,
+    MOVE_GROWL,
+    MOVE_WATER_GUN,
+    MOVE_SAND_ATTACK,
+    MOVE_SYNTHESIS,
+    MOVE_HYPNOSIS,
+    MOVE_MEGA_DRAIN,
+    MOVE_RISING_VOLTAGE,
+    MOVE_AMNESIA,
+    MOVE_PETAL_DANCE,
+    MOVE_CALM_MIND,
+    MOVE_FUTURE_SIGHT,
+    MOVE_AQUA_RING,
+    MOVE_UNAVAILABLE,
+};

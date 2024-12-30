@@ -6,7 +6,7 @@ Zelkovalab_EventScript_Pokeball::
 # 5 "data/maps/Zelkovalab/scripts.pory"
 	lockall
 # 6 "data/maps/Zelkovalab/scripts.pory"
-	showmonpic SPECIES_CHIKORITA, 10, 3
+	showmonpic SPECIES_LOTPOLE, 10, 3
 # 7 "data/maps/Zelkovalab/scripts.pory"
 	msgbox Zelkovalab_EventScript_Pokeball_Text_0, MSGBOX_YESNO
 # 8 "data/maps/Zelkovalab/scripts.pory"
@@ -14,18 +14,16 @@ Zelkovalab_EventScript_Pokeball::
 	goto_if_eq Zelkovalab_EventScript_Pokeball_2
 # 31 "data/maps/Zelkovalab/scripts.pory"
 	hidemonpic
-# 32 "data/maps/Zelkovalab/scripts.pory"
-	msgbox Zelkovalab_NotChosen
 Zelkovalab_EventScript_Pokeball_1:
-# 34 "data/maps/Zelkovalab/scripts.pory"
+# 33 "data/maps/Zelkovalab/scripts.pory"
 	waitmessage
-# 35 "data/maps/Zelkovalab/scripts.pory"
+# 34 "data/maps/Zelkovalab/scripts.pory"
 	releaseall
 	end
 
 Zelkovalab_EventScript_Pokeball_2:
 # 9 "data/maps/Zelkovalab/scripts.pory"
-	givemon SPECIES_CHIKORITA, 15, ITEM_MASTER_BALL
+	givemon SPECIES_LOTPOLE, 5, ITEM_ORAN_BERRY
 # 10 "data/maps/Zelkovalab/scripts.pory"
 	compare VAR_RESULT, MON_GIVEN_TO_PARTY
 	goto_if_eq Zelkovalab_EventScript_Pokeball_5
@@ -35,7 +33,7 @@ Zelkovalab_EventScript_Pokeball_2:
 # 26 "data/maps/Zelkovalab/scripts.pory"
 	hidemonpic
 # 27 "data/maps/Zelkovalab/scripts.pory"
-	msgbox Zelkovalab_EventScript_Pokeball_Text_2
+	msgbox Zelkovalab_EventScript_Pokeball_Text_3
 	goto Zelkovalab_EventScript_Pokeball_1
 
 Zelkovalab_EventScript_Pokeball_5:
@@ -57,7 +55,7 @@ Zelkovalab_EventScript_Pokeball_6:
 # 19 "data/maps/Zelkovalab/scripts.pory"
 	playfanfare MUS_OBTAIN_ITEM
 # 20 "data/maps/Zelkovalab/scripts.pory"
-	msgbox Zelkovalab_EventScript_Pokeball_Text_1
+	msgbox Zelkovalab_EventScript_Pokeball_Text_2
 # 21 "data/maps/Zelkovalab/scripts.pory"
 	removeobject 1
 # 22 "data/maps/Zelkovalab/scripts.pory"
@@ -68,58 +66,62 @@ Zelkovalab_EventScript_Pokeball_6:
 
 
 NicknamePartyMon::
-# 42 "data/maps/Zelkovalab/scripts.pory"
+# 41 "data/maps/Zelkovalab/scripts.pory"
 	msgbox NicknamePartyMon_Text_0, MSGBOX_YESNO
-# 43 "data/maps/Zelkovalab/scripts.pory"
+# 42 "data/maps/Zelkovalab/scripts.pory"
 	hidemonpic
-# 44 "data/maps/Zelkovalab/scripts.pory"
+# 43 "data/maps/Zelkovalab/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq NicknamePartyMon_1
 	return
 
 NicknamePartyMon_1:
-# 45 "data/maps/Zelkovalab/scripts.pory"
+# 44 "data/maps/Zelkovalab/scripts.pory"
 	call Common_EventScript_GetGiftMonPartySlot
-# 46 "data/maps/Zelkovalab/scripts.pory"
+# 45 "data/maps/Zelkovalab/scripts.pory"
 	call Common_EventScript_NameReceivedPartyMon
 	return
 
 
 NicknameBoxMon::
-# 54 "data/maps/Zelkovalab/scripts.pory"
+# 53 "data/maps/Zelkovalab/scripts.pory"
 	msgbox NicknamePartyMon_Text_0, MSGBOX_YESNO
-# 55 "data/maps/Zelkovalab/scripts.pory"
+# 54 "data/maps/Zelkovalab/scripts.pory"
 	hidemonpic
-# 56 "data/maps/Zelkovalab/scripts.pory"
+# 55 "data/maps/Zelkovalab/scripts.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq NicknameBoxMon_2
 NicknameBoxMon_1:
-# 59 "data/maps/Zelkovalab/scripts.pory"
+# 58 "data/maps/Zelkovalab/scripts.pory"
 	call Common_EventScript_TransferredToPC
 	return
 
 NicknameBoxMon_2:
-# 57 "data/maps/Zelkovalab/scripts.pory"
+# 56 "data/maps/Zelkovalab/scripts.pory"
 	call Common_EventScript_NameReceivedBoxMon
 	goto NicknameBoxMon_1
 
 
 Zelkovalab_EventScript_Pokeball_Text_0:
 # 7 "data/maps/Zelkovalab/scripts.pory"
-	.string "Do you want to choose CHIKORITA?$"
+	.string "Do you want to choose LOTPOLE?$"
 
 Zelkovalab_EventScript_Pokeball_Text_1:
 # 12 "data/maps/Zelkovalab/scripts.pory"
-	.string "Recieved CHIKORITA$"
+	.string "{PLAYER} received the LOTPOLE!$"
 
 Zelkovalab_EventScript_Pokeball_Text_2:
+# 20 "data/maps/Zelkovalab/scripts.pory"
+	.string "Recieved CHIKORITA$"
+
+Zelkovalab_EventScript_Pokeball_Text_3:
 # 27 "data/maps/Zelkovalab/scripts.pory"
 	.string "No More Room$"
 
 NicknamePartyMon_Text_0:
-# 42 "data/maps/Zelkovalab/scripts.pory"
+# 41 "data/maps/Zelkovalab/scripts.pory"
 	.string "Give it a nickname?$"
 
 Zelkovalab_NotChosen::
-# 63 "data/maps/Zelkovalab/scripts.pory"
+# 62 "data/maps/Zelkovalab/scripts.pory"
 	.string "You did not choose the Pokemon$"

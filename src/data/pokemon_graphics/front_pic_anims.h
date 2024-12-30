@@ -10149,6 +10149,13 @@ static const union AnimCmd sAnim_Egg_1[] =
     ANIMCMD_END,
 };
 
+static const union AnimCmd sAnim_Lotpole_1[] =
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+
+
 #define SINGLE_ANIMATION(name)                      \
 static const union AnimCmd *const sAnims_##name[] = \
 {                                                   \
@@ -12813,4 +12820,5 @@ SINGLE_ANIMATION(TerapagosStellar);
 #if P_FAMILY_PECHARUNT
 SINGLE_ANIMATION(Pecharunt);
 #endif //P_FAMILY_PECHARUNT
+SINGLE_ANIMATION(Lotpole);
 SINGLE_ANIMATION(Egg);

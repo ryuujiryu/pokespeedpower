@@ -3,13 +3,13 @@ mapscripts Zelkovalab_MapScripts {}
 script Zelkovalab_EventScript_Pokeball{
  
     lockall
-    showmonpic(SPECIES_CHIKORITA, 10,3)
-    msgbox("Do you want to choose CHIKORITA?", MSGBOX_YESNO)
+    showmonpic(SPECIES_LOTPOLE, 10,3)
+    msgbox("Do you want to choose LOTPOLE?", MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES){
-        givemon(SPECIES_CHIKORITA, 15, ITEM_MASTER_BALL)
+        givemon(SPECIES_LOTPOLE, 5, ITEM_ORAN_BERRY)
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Recieved CHIKORITA")
+            msgbox("{PLAYER} received the LOTPOLE!")
             removeobject(1)
             setflag(FLAG_UNUSED_0x020)
             setflag(FLAG_SYS_POKEMON_GET)
@@ -29,7 +29,6 @@ script Zelkovalab_EventScript_Pokeball{
     }
     else{
         hidemonpic
-        msgbox(Zelkovalab_NotChosen)
     }
     waitmessage
     releaseall

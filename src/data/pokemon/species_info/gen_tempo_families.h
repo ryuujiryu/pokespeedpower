@@ -3,7 +3,6 @@ const struct SpeciesInfo gSpeciesInfoGenTempo[] =
 {
 #endif
 
-#if P_FAMILY_LOTPOLE
     [SPECIES_LOTPOLE] =
     {
         .baseHP        = 48,
@@ -30,43 +29,42 @@ const struct SpeciesInfo gSpeciesInfoGenTempo[] =
         .height = 4,
         .weight = 41,
         .description = COMPOUND_STRING(
-            "The sweet scent its body gives off\n"
-            "mesmerizes those around it. The\n"
-            "scent grows stronger when this\n"
-            "Pokémon is in the sun."),
+            "It is often found either meditating\n"
+            "or sleeping. If suddenly woken up,\n"
+            "it will jump very high in response\n"
+            "from fear, with its leaf standing up."),
         .pokemonScale = 356,
         .pokemonOffset = 17,
         .trainerScale = 256,
         .trainerOffset = 0,
-        .frontPic = gMonFrontPic_Sprigatito,
+        .frontPic = gMonFrontPic_Lotpole,
         .frontPicSize = MON_COORDS_SIZE(64, 64),
         .frontPicYOffset = 8,
-        .frontAnimFrames = sAnims_Sprigatito,
+        .frontAnimFrames = sAnims_Lotpole,
         //.frontAnimId = ANIM_V_SQUISH_AND_BOUNCE,
-        .backPic = gMonBackPic_Sprigatito,
+        .backPic = gMonBackPic_Lotpole,
         .backPicSize = MON_COORDS_SIZE(64, 64),
         .backPicYOffset = 7,
         //.backAnimId = BACK_ANIM_NONE,
-        .palette = gMonPalette_Sprigatito,
-        .shinyPalette = gMonShinyPalette_Sprigatito,
-        .iconSprite = gMonIcon_Sprigatito,
-        .iconPalIndex = 1,
+        .palette = gMonPalette_Lotpole,
+        .shinyPalette = gMonShinyPalette_Lotpole,
+        .iconSprite = gMonIcon_Lotpole,
+        .iconPalIndex = 4,
         SHADOW(-2, 5, SHADOW_SIZE_S)
-        FOOTPRINT(Sprigatito)
+        FOOTPRINT(Sliggoo)
         OVERWORLD(
-            sPicTable_Sprigatito,
+            sPicTable_Sliggoo,
             SIZE_32x32,
             SHADOW_SIZE_S,
             TRACKS_FOOT,
-            gOverworldPalette_Sprigatito,
-            gShinyOverworldPalette_Sprigatito
+            gOverworldPalette_Sliggoo,
+            gShinyOverworldPalette_Sliggoo
         )
-        .levelUpLearnset = sSprigatitoLevelUpLearnset,
-        .teachableLearnset = sSprigatitoTeachableLearnset,
-        .eggMoveLearnset = sSprigatitoEggMoveLearnset,
+        .levelUpLearnset = sLotpoleLevelUpLearnset,
+        .teachableLearnset = sLotpoleTeachableLearnset,
+        .eggMoveLearnset = sSkiddoEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 16, SPECIES_FLORAGATO}),
     },
-#endif //P_FAMILY_LOTPOLE
 
 #ifdef __INTELLISENSE__
 };
