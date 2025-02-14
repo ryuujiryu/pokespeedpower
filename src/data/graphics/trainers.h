@@ -280,12 +280,12 @@ const u32 gTrainerPalette_RubySapphireBrendan[] = INCBIN_U32("graphics/trainers/
 const u32 gTrainerFrontPic_RubySapphireMay[] = INCBIN_U32("graphics/trainers/front_pics/may_rs.4bpp.lz");
 const u32 gTrainerPalette_RubySapphireMay[] = INCBIN_U32("graphics/trainers/palettes/may_rs.gbapal.lz");
 
-const u32 gTrainerBackPic_Brendan[] = INCBIN_U32("graphics/trainers/back_pics/brendan.4bpp.lz");
-const u32 gTrainerBackPic_May[] = INCBIN_U32("graphics/trainers/back_pics/may.4bpp.lz");
+const u8 gTrainerBackPic_Brendan[] = INCBIN_U8("graphics/trainers/back_pics/brendan.4bpp");
+const u8 gTrainerBackPic_May[] = INCBIN_U8("graphics/trainers/back_pics/may.4bpp");
 const u8 gTrainerBackPic_Red[] = INCBIN_U8("graphics/trainers/back_pics/red.4bpp");
 const u8 gTrainerBackPic_Leaf[] = INCBIN_U8("graphics/trainers/back_pics/leaf.4bpp");
-const u32 gTrainerBackPic_RubySapphireBrendan[] = INCBIN_U32("graphics/trainers/back_pics/brendan_rs.4bpp.lz");
-const u32 gTrainerBackPic_RubySapphireMay[] = INCBIN_U32("graphics/trainers/back_pics/may_rs.4bpp.lz");
+const u8 gTrainerBackPic_RubySapphireBrendan[] = INCBIN_U8("graphics/trainers/back_pics/brendan_rs.4bpp");
+const u8 gTrainerBackPic_RubySapphireMay[] = INCBIN_U8("graphics/trainers/back_pics/may_rs.4bpp");
 const u8 gTrainerBackPic_Wally[] = INCBIN_U8("graphics/trainers/back_pics/wally.4bpp");
 const u8 gTrainerBackPic_Steven[] = INCBIN_U8("graphics/trainers/back_pics/steven.4bpp");
 
@@ -530,7 +530,7 @@ const struct SpriteFrameImage gTrainerBackPicTable_Steven[] =
     [trainerPic] =                                                                           \
     {                                                                                        \
         .coordinates = {.size = 8, .y_offset = yOffset},                                     \
-        .backPic = {(const u32 *)sprite, TRAINER_PIC_SIZE * ARRAY_COUNT(table), trainerPic}, \
+        .backPic = {sprite, TRAINER_PIC_SIZE * ARRAY_COUNT(table), trainerPic},              \
         .palette = {pal, trainerPic},                                                        \
         .animation = anim,                                                                   \
     }
