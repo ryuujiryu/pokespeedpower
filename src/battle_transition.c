@@ -2261,7 +2261,7 @@ static bool8 Mugshot_SetGfx(struct Task *task)
     s16 i, j;
     u16 *tilemap, *tileset;
     const u16 *mugshotsMap = sMugshotsTilemap;
-    u8 mugshotColor = GetTrainerMugshotColorFromId(gTrainerBattleOpponent_A);
+    u8 mugshotColor = GetTrainerMugshotColorFromId(TRAINER_BATTLE_PARAM.opponentA);
 
     GetBg0TilesDst(&tilemap, &tileset);
     CpuSet(sEliteFour_Tileset, tileset, 0xF0);
@@ -2519,7 +2519,7 @@ static void HBlankCB_Mugshots(void)
 static void Mugshots_CreateTrainerPics(struct Task *task)
 {
     struct Sprite *opponentSprite, *playerSprite;
-    u32 trainerPicId = GetTrainerPicFromId(gTrainerBattleOpponent_A);
+    u32 trainerPicId = GetTrainerPicFromId(TRAINER_BATTLE_PARAM.opponentA);
     u32 playerPicId = GetPlayerTrainerPicIdByOutfitGenderType(gSaveBlock2Ptr->currOutfitId, gSaveBlock2Ptr->playerGender, 0);
     s16 opponentRotationScales = 0;
 
@@ -2527,10 +2527,10 @@ static void Mugshots_CreateTrainerPics(struct Task *task)
     task->tOpponentSpriteId = CreateTrainerSprite(trainerPicId,
                                                   gTrainerSprites[trainerPicId].mugshotCoords.x - 32,
                                                   gTrainerSprites[trainerPicId].mugshotCoords.y + 42,
-                                                  0, gDecompressionBuffer);
+                                                  0, NULL);
     gReservedSpritePaletteCount = 12;
 
-    task->tPlayerSpriteId = CreateTrainerSprite(playerPicId, DISPLAY_WIDTH + 32, 106, 0, gDecompressionBuffer);
+    task->tPlayerSpriteId = CreateTrainerSprite(playerPicId, DISPLAY_WIDTH + 32, 106, 0, NULL);
 
     opponentSprite = &gSprites[task->tOpponentSpriteId];
     playerSprite = &gSprites[task->tPlayerSpriteId];

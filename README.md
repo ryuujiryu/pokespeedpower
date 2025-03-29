@@ -1,4 +1,4 @@
-# pokeemerald: Outfits System
+# Outfits System
 
 ## What is this?
 
