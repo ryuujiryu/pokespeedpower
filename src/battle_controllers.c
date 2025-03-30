@@ -2093,11 +2093,20 @@ void StartSendOutAnim(u32 battler, bool32 dontClearTransform, bool32 dontClearSu
         BattleLoadMonSpriteGfx(&party[gBattlerPartyIndexes[battler]], battler);
     SetMultiuseSpriteTemplateToPokemon(species, GetBattlerPosition(battler));
 
+    // the game just won't respond and update this sprite's data at all!
+    // this includes invisibility and the x,y pos, so we have to do it when
+    // it spawns, not after.
+    // i don't get why either, the outfit system only changes the trainer id
+    // stuff.. so this is what i can do best for it.
+    s32 x = (side == B_SIDE_PLAYER && doSlideIn) ? -33 : GetBattlerSpriteCoord(battler, BATTLER_COORD_X_2);
     gBattlerSpriteIds[battler] = CreateSprite(&gMultiuseSpriteTemplate,
-                                        GetBattlerSpriteCoord(battler, BATTLER_COORD_X_2),
+                                        x,
                                         GetBattlerSpriteDefault_Y(battler),
                                         GetBattlerSpriteSubpriority(battler));
-
+    if (x == -33)
+    {
+        gSprites[gBattlerSpriteIds[battler]].data[5] = GetBattlerSpriteCoord(battler, BATTLER_COORD_X_2);
+    }
     gSprites[gBattlerSpriteIds[battler]].data[0] = battler;
     gSprites[gBattlerSpriteIds[battler]].data[2] = species;
     gSprites[gBattlerSpriteIds[battler]].oam.paletteNum = battler;
