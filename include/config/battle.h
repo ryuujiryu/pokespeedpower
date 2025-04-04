@@ -294,4 +294,8 @@
 // Pokémon battle sprite settings
 #define B_ENEMY_MON_SHADOW_STYLE        GEN_LATEST // In Gen4+, all enemy Pokemon will have a shadow drawn beneath them.
 
+// custom stuff
+#define B_INTRO_SLIDE_SPEED     (5) // Controls how fast the sliding into battle intro goes.
+#define B_INTRO_TERRAIN_SPEED  (24) // Controls how long the terrain slides until it goes down the screen.
+
 #endif // GUARD_CONFIG_BATTLE_H

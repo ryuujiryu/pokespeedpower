@@ -2505,7 +2505,7 @@ void BtlController_HandleDrawTrainerPic(u32 battler, u32 trainerPicId, bool32 is
 
         gSprites[gBattleStruct->trainerSlideSpriteIds[battler]].oam.paletteNum = IndexOfSpritePaletteTag(gTrainerSprites[trainerPicId].palette.tag);
         gSprites[gBattleStruct->trainerSlideSpriteIds[battler]].x2 = -DISPLAY_WIDTH;
-        gSprites[gBattleStruct->trainerSlideSpriteIds[battler]].sSpeedX = 2;
+        gSprites[gBattleStruct->trainerSlideSpriteIds[battler]].sSpeedX = B_INTRO_SLIDE_SPEED;
         gSprites[gBattleStruct->trainerSlideSpriteIds[battler]].oam.affineParam = trainerPicId;
     }
     else // Player's side
@@ -2542,7 +2542,7 @@ void BtlController_HandleDrawTrainerPic(u32 battler, u32 trainerPicId, bool32 is
             gSprites[gBattleStruct->trainerSlideSpriteIds[battler]].oam.paletteNum = battler;
         }
         gSprites[gBattleStruct->trainerSlideSpriteIds[battler]].x2 = DISPLAY_WIDTH;
-        gSprites[gBattleStruct->trainerSlideSpriteIds[battler]].sSpeedX = -2;
+        gSprites[gBattleStruct->trainerSlideSpriteIds[battler]].sSpeedX = -B_INTRO_SLIDE_SPEED;
     }
     if (B_FAST_INTRO_NO_SLIDE || gTestRunnerHeadless)
         gSprites[gBattleStruct->trainerSlideSpriteIds[battler]].callback = SpriteCB_TrainerSpawn;
