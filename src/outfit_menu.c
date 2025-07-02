@@ -158,7 +158,7 @@ static const u32 sScrollingBG_Tilemap[] = INCBIN_U32("graphics/outfit_menu/scrol
 static const u16 sIndicatorSprite_Gfx[] = INCBIN_U16("graphics/outfit_menu/indicator.4bpp");
 static const u16 sIndicatorSprite_Pal[] = INCBIN_U16("graphics/outfit_menu/indicator.gbapal");
 static const u16 sCursorSprite_Gfx[] = INCBIN_U16("graphics/outfit_menu/cursor.4bpp");
-static const u32 sCursorSprite_Pal[] = INCBIN_U32("graphics/outfit_menu/cursor.gbapal.lz");
+static const u16 sCursorSprite_Pal[] = INCBIN_U16("graphics/outfit_menu/cursor.gbapal");
 
 static EWRAM_DATA OutfitMenuResources *sOutfitMenu = NULL;
 
@@ -248,7 +248,7 @@ static const struct SpritePalette sIndicator_SpritePalette = {
     .tag = TAG_INDICATOR,
 };
 
-static const struct CompressedSpritePalette sCursor_SpritePalette = {
+static const struct SpritePalette sCursor_SpritePalette = {
     .data = sCursorSprite_Pal,
     .tag = TAG_CURSOR,
 };
@@ -518,7 +518,7 @@ static inline void SetupOutfitMenu_Sprites_DrawTrainerSprite(bool32 update, bool
 
     sOutfitMenu->spriteIds[GFX_FTS] = CreateTrainerPicSprite(frontSpriteId, TRUE, 32+27, 32+32, frontPalSlot, TAG_NONE);
     sOutfitMenu->spriteIds[GFX_BTS] = CreateTrainerPicSprite(backSpriteId, FALSE, 32+117, 32+32, backPalSlot, TAG_NONE);
-    LoadCompressedPalette(gTrainerBacksprites[backSpriteId].palette.data, OBJ_PLTT_ID(backPalSlot), PLTT_SIZE_4BPP);
+    LoadPalette(gTrainerBacksprites[backSpriteId].palette.data, OBJ_PLTT_ID(backPalSlot), PLTT_SIZE_4BPP);
     gSprites[sOutfitMenu->spriteIds[GFX_BTS]].anims = gTrainerBacksprites[backSpriteId].animation;
     StartSpriteAnim(&gSprites[sOutfitMenu->spriteIds[GFX_BTS]], 0);
     if (!unlocked)
@@ -545,7 +545,7 @@ static inline void SetupOutfitMenu_Sprites_DrawCursorSprite(void)
     u32 y = ((row % GRID_ROWS) < ARRAY_COUNT(sGridPosY)) ? sGridPosY[row] : sGridPosY[0];
 
     LoadSpriteSheet(&sCursor_SpriteSheet);
-    LoadCompressedSpritePalette(&sCursor_SpritePalette);
+    LoadSpritePalette(&sCursor_SpritePalette);
     sOutfitMenu->spriteIds[GFX_CURSOR] = CreateSprite(&sCursor_SpriteTemplate, x, y, 2);
 }
 
