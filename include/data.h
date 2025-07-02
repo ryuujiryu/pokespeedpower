@@ -41,9 +41,9 @@ struct TrainerSprite
 
 struct TrainerBacksprite
 {
-    struct MonCoords coordinates;
-    struct SpriteSheet backPic;
-    struct SpritePalette palette;
+    const struct MonCoords coordinates;
+    const struct SpriteFrameImage backPic;
+    const struct SpritePalette palette;
     const union AnimCmd *const *const animation;
 };
 
