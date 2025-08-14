@@ -4,6 +4,7 @@
 #include "battle.h"
 #include "bg.h"
 #include "coins.h"
+#include "caps.h"
 #include "data.h"
 #include "daycare.h"
 #include "decompress.h"
@@ -142,24 +143,19 @@ struct Gacha {
     u8 newMonOdds;
     u8 ArrowsSpriteId;
     u8 CTAspriteId;
-    u16 wager;
     u8 cursorPosition;
-    u8 Trigger;
+    bool8 canBetWager;
     u8 Rarity; // 0 = Common, 1 = Uncommon, 2 = Rare, 3 = Ultra Rare
     u8 ownedCommon;
     u8 ownedUncommon;
     u8 ownedRare;
     u8 ownedUltraRare;
-    u8 commonChance;
-    u8 uncommonChance;
-    u8 rareChance;
-    u8 ultraRareChance;
-    u16 CalculatedSpecies;
     u8 bouncingPokeballSpriteId;
     u8 timer;
     u8 monSpriteId;
+    u16 CalculatedSpecies;
+    u16 wager;
     u32 waitTimer;
-    u8 Input;
 };    
 
 static const u8 sText_FromGacha[] = _("You got {STR_VAR_1}!");
@@ -382,73 +378,78 @@ static const struct WindowTemplate sYesNoWinTemplate =
 #define GFXTAG_PLAYER_DIGIT 8
 #define GFXTAG_MENU_1 9
 #define GFXTAG_MENU_2 10
-#define GFXTAG_BELOSSOM 11
-#define GFXTAG_PHANPY 12
-#define GFXTAG_TEDDIURSA 13
-#define GFXTAG_ELEKID 14
-#define GFXTAG_HOPPIP 15
-#define GFXTAG_ARROWS 16
-#define GFXTAG_PRESS_A 17
+#define GFXTAG_MASCOT 11
+#define GFXTAG_ARROWS 12
+#define GFXTAG_PRESS_A 13
 
 #define GFXTAG_POKEBALL        5557
 
-#define BG_BASIC_PAL 1
-#define BG_GREAT_PAL 2
-#define BG_ULTRA_PAL 3
-#define BG_MASTER_PAL 4
-#define PALTAG_KNOB 5
-#define DIGITAL_TEXT_PAL 6
-#define LOTTERY_JPN_PAL 7
-#define PALTAG_INTERFACE 8
-#define PALTAG_INTERFACEPLAYER 9
-#define PALTAG_MENU_BASIC 10
-#define PALTAG_MENU_GREAT 11
-#define PALTAG_MENU_ULTRA 12
-#define PALTAG_MENU_MASTER 13
+#define PALTAG_KNOB 1
+#define DIGITAL_TEXT_PAL 2
+#define LOTTERY_JPN_PAL 3
+#define PALTAG_INTERFACE 4
+#define PALTAG_INTERFACEPLAYER 5
+#define PALTAG_MENU_ID 6
 
-#define PALTAG_BELOSSOM 14
-#define PALTAG_PHANPY 15
-#define PALTAG_TEDDIURSA 16
-#define PALTAG_ELEKID 17
-#define PALTAG_HOPPIP 18
-#define PALTAG_ARROWS 19
-#define PALTAG_PRESS_A 20
+#define PALTAG_MASCOT 7
+#define PALTAG_ARROWS 8
+#define PALTAG_PRESS_A 9
 
 #define PALTAG_POKEBALL  5558
 
-static const struct SpritePalette sSpritePalettes[] =
+static const struct SpritePalette sSpritePalettesBasic[] =
 {
-    { .data = Gacha_BG_Basic_Pal,      .tag = BG_BASIC_PAL },
-    { .data = Gacha_BG_Great_Pal,      .tag = BG_GREAT_PAL },
-    { .data = Gacha_BG_Ultra_Pal,      .tag = BG_ULTRA_PAL },
-    { .data = Gacha_BG_Master_Pal,     .tag = BG_MASTER_PAL },
-    {}
-};
-
-static const struct SpritePalette sSpritePalettes2[] =
-{
-    { .data = BelossomPAL,             .tag = PALTAG_BELOSSOM },
-    { .data = PhanpyPal,               .tag = PALTAG_PHANPY },
-    { .data = TeddiursaPAL,            .tag = PALTAG_TEDDIURSA },
-    { .data = ElekidPAL,               .tag = PALTAG_ELEKID },
-    { .data = HoppipPAL,               .tag = PALTAG_HOPPIP },
-    { .data = sCredit_Pal,             .tag = PALTAG_ARROWS },
     { .data = Gacha_press_a_Pal,       .tag = PALTAG_PRESS_A },
     { .data = Gacha_Knob_Pal,          .tag = PALTAG_KNOB },
     { .data = Gacha_Digital_Text_Pal,  .tag = DIGITAL_TEXT_PAL },
     { .data = sCredit_Pal,             .tag = PALTAG_INTERFACE },
     { .data = sPlayer_Pal,             .tag = PALTAG_INTERFACEPLAYER },
     { .data = Gacha_Lottery_Pal,       .tag = LOTTERY_JPN_PAL },
-    { .data = Gacha_Menu_Basic_Pal,    .tag = PALTAG_MENU_BASIC },
-    { .data = Gacha_Menu_Great_Pal,    .tag = PALTAG_MENU_GREAT },
-    { .data = Gacha_Menu_Ultra_Pal,    .tag = PALTAG_MENU_ULTRA },
-    { .data = Gacha_Menu_Master_Pal,   .tag = PALTAG_MENU_MASTER },
+    { .data = Gacha_Menu_Basic_Pal,    .tag = PALTAG_MENU_ID },
+    { .data = HoppipPAL,               .tag = PALTAG_MASCOT },
+    { .data = sCredit_Pal,             .tag = PALTAG_ARROWS },
     {}
 };
 
-static const struct SpritePalette sBall[] =
+static const struct SpritePalette sSpritePalettesGreat[] =
 {
-    { .data = sPokeball_Pal,               .tag = PALTAG_POKEBALL },
+    { .data = Gacha_press_a_Pal,       .tag = PALTAG_PRESS_A },
+    { .data = Gacha_Knob_Pal,          .tag = PALTAG_KNOB },
+    { .data = Gacha_Digital_Text_Pal,  .tag = DIGITAL_TEXT_PAL },
+    { .data = sCredit_Pal,             .tag = PALTAG_INTERFACE },
+    { .data = sPlayer_Pal,             .tag = PALTAG_INTERFACEPLAYER },
+    { .data = Gacha_Lottery_Pal,       .tag = LOTTERY_JPN_PAL },
+    { .data = Gacha_Menu_Great_Pal,    .tag = PALTAG_MENU_ID },
+    { .data = PhanpyPal,               .tag = PALTAG_MASCOT },
+    { .data = sCredit_Pal,             .tag = PALTAG_ARROWS },
+    {}
+};
+
+static const struct SpritePalette sSpritePalettesUltra[] =
+{
+    { .data = Gacha_press_a_Pal,       .tag = PALTAG_PRESS_A },
+    { .data = Gacha_Knob_Pal,          .tag = PALTAG_KNOB },
+    { .data = Gacha_Digital_Text_Pal,  .tag = DIGITAL_TEXT_PAL },
+    { .data = sCredit_Pal,             .tag = PALTAG_INTERFACE },
+    { .data = sPlayer_Pal,             .tag = PALTAG_INTERFACEPLAYER },
+    { .data = Gacha_Lottery_Pal,       .tag = LOTTERY_JPN_PAL },
+    { .data = Gacha_Menu_Ultra_Pal,    .tag = PALTAG_MENU_ID },
+    { .data = TeddiursaPAL,            .tag = PALTAG_MASCOT },
+    { .data = sCredit_Pal,             .tag = PALTAG_ARROWS },
+    {}
+};
+
+static const struct SpritePalette sSpritePalettesMaster[] =
+{
+    { .data = Gacha_press_a_Pal,       .tag = PALTAG_PRESS_A },
+    { .data = Gacha_Knob_Pal,          .tag = PALTAG_KNOB },
+    { .data = Gacha_Digital_Text_Pal,  .tag = DIGITAL_TEXT_PAL },
+    { .data = sCredit_Pal,             .tag = PALTAG_INTERFACE },
+    { .data = sPlayer_Pal,             .tag = PALTAG_INTERFACEPLAYER },
+    { .data = Gacha_Lottery_Pal,       .tag = LOTTERY_JPN_PAL },
+    { .data = Gacha_Menu_Master_Pal,   .tag = PALTAG_MENU_ID },
+    { .data = BelossomPAL,             .tag = PALTAG_MASCOT },
+    { .data = sCredit_Pal,             .tag = PALTAG_ARROWS },
     {}
 };
 
@@ -470,35 +471,35 @@ static const struct CompressedSpriteSheet sSpriteSheet_Hoppip =
 {
     .data = HoppipGFX,
     .size = 0x800,
-    .tag = GFXTAG_HOPPIP,
+    .tag = GFXTAG_MASCOT,
 };
 
 static const struct CompressedSpriteSheet sSpriteSheet_Elekid =
 {
     .data = ElekidGFX,
     .size = 0x800,
-    .tag = GFXTAG_ELEKID,
+    .tag = GFXTAG_MASCOT,
 };
 
 static const struct CompressedSpriteSheet sSpriteSheet_Teddiursa =
 {
     .data = TeddiursaGFX,
     .size = 0x800,
-    .tag = GFXTAG_TEDDIURSA,
+    .tag = GFXTAG_MASCOT,
 };
 
 static const struct CompressedSpriteSheet sSpriteSheet_Phanpy =
 {
     .data = PhanpyGFX,
     .size = 0x800,
-    .tag = GFXTAG_PHANPY,
+    .tag = GFXTAG_MASCOT,
 };
 
 static const struct CompressedSpriteSheet sSpriteSheet_Belossom =
 {
     .data = BelossomGFX,
     .size = 0x800,
-    .tag = GFXTAG_BELOSSOM,
+    .tag = GFXTAG_MASCOT,
 };
 
 static const struct CompressedSpriteSheet sSpriteSheet_Menu_1 =
@@ -873,8 +874,8 @@ static const union AnimCmd *const sHoppipAnimCmds[] = {
 
 static const struct SpriteTemplate sSpriteTemplate_Hoppip =
 {
-    .tileTag = GFXTAG_HOPPIP,
-    .paletteTag = PALTAG_HOPPIP,
+    .tileTag = GFXTAG_MASCOT,
+    .paletteTag = PALTAG_MASCOT,
     .oam = &sOamData_Hoppip,
     .anims = sHoppipAnimCmds,
     .images = NULL,
@@ -902,8 +903,8 @@ static const union AnimCmd *const sElekidAnimCmds[] = {
 
 static const struct SpriteTemplate sSpriteTemplate_Elekid =
 {
-    .tileTag = GFXTAG_ELEKID,
-    .paletteTag = PALTAG_ELEKID,
+    .tileTag = GFXTAG_MASCOT,
+    .paletteTag = PALTAG_MASCOT,
     .oam = &sOamData_Elekid,
     .anims = sElekidAnimCmds,
     .images = NULL,
@@ -942,8 +943,8 @@ static const union AnimCmd *const sTeddiursaAnimCmds[] = {
 
 static const struct SpriteTemplate sSpriteTemplate_Teddiursa =
 {
-    .tileTag = GFXTAG_TEDDIURSA,
-    .paletteTag = PALTAG_TEDDIURSA,
+    .tileTag = GFXTAG_MASCOT,
+    .paletteTag = PALTAG_MASCOT,
     .oam = &sOamData_Teddiursa,
     .anims = sTeddiursaAnimCmds,
     .images = NULL,
@@ -968,8 +969,8 @@ static const union AnimCmd *const sPhanpyAnimCmds[] = {
 
 static const struct SpriteTemplate sSpriteTemplate_Phanpy =
 {
-    .tileTag = GFXTAG_PHANPY,
-    .paletteTag = PALTAG_PHANPY,
+    .tileTag = GFXTAG_MASCOT,
+    .paletteTag = PALTAG_MASCOT,
     .oam = &sOamData_Phanpy,
     .anims = sPhanpyAnimCmds,
     .images = NULL,
@@ -996,8 +997,8 @@ static const union AnimCmd *const sBelossomAnimCmds[] = {
 
 static const struct SpriteTemplate sSpriteTemplate_Belossom =
 {
-    .tileTag = GFXTAG_BELOSSOM,
-    .paletteTag = PALTAG_BELOSSOM,
+    .tileTag = GFXTAG_MASCOT,
+    .paletteTag = PALTAG_MASCOT,
     .oam = &sOamData_Belossom,
     .anims = sBelossomAnimCmds,
     .images = NULL,
@@ -1008,7 +1009,7 @@ static const struct SpriteTemplate sSpriteTemplate_Belossom =
 static const struct SpriteTemplate sSpriteTemplate_Menu_1_Master =
 {
     .tileTag = GFXTAG_MENU_1,
-    .paletteTag = PALTAG_MENU_MASTER,
+    .paletteTag = PALTAG_MENU_ID,
     .oam = &sOamData_Menu,
     .anims = gDummySpriteAnimTable,
     .images = NULL,
@@ -1019,7 +1020,7 @@ static const struct SpriteTemplate sSpriteTemplate_Menu_1_Master =
 static const struct SpriteTemplate sSpriteTemplate_Menu_2_Master =
 {
     .tileTag = GFXTAG_MENU_2,
-    .paletteTag = PALTAG_MENU_MASTER,
+    .paletteTag = PALTAG_MENU_ID,
     .oam = &sOamData_Menu_2,
     .anims = sMenu2AnimCmds,
     .images = NULL,
@@ -1030,7 +1031,7 @@ static const struct SpriteTemplate sSpriteTemplate_Menu_2_Master =
 static const struct SpriteTemplate sSpriteTemplate_Menu_1_Ultra =
 {
     .tileTag = GFXTAG_MENU_1,
-    .paletteTag = PALTAG_MENU_ULTRA,
+    .paletteTag = PALTAG_MENU_ID,
     .oam = &sOamData_Menu,
     .anims = gDummySpriteAnimTable,
     .images = NULL,
@@ -1041,7 +1042,7 @@ static const struct SpriteTemplate sSpriteTemplate_Menu_1_Ultra =
 static const struct SpriteTemplate sSpriteTemplate_Menu_2_Ultra =
 {
     .tileTag = GFXTAG_MENU_2,
-    .paletteTag = PALTAG_MENU_ULTRA,
+    .paletteTag = PALTAG_MENU_ID,
     .oam = &sOamData_Menu_2,
     .anims = sMenu2AnimCmds,
     .images = NULL,
@@ -1052,7 +1053,7 @@ static const struct SpriteTemplate sSpriteTemplate_Menu_2_Ultra =
 static const struct SpriteTemplate sSpriteTemplate_Menu_1_Great =
 {
     .tileTag = GFXTAG_MENU_1,
-    .paletteTag = PALTAG_MENU_GREAT,
+    .paletteTag = PALTAG_MENU_ID,
     .oam = &sOamData_Menu,
     .anims = gDummySpriteAnimTable,
     .images = NULL,
@@ -1063,7 +1064,7 @@ static const struct SpriteTemplate sSpriteTemplate_Menu_1_Great =
 static const struct SpriteTemplate sSpriteTemplate_Menu_2_Great =
 {
     .tileTag = GFXTAG_MENU_2,
-    .paletteTag = PALTAG_MENU_GREAT,
+    .paletteTag = PALTAG_MENU_ID,
     .oam = &sOamData_Menu_2,
     .anims = sMenu2AnimCmds,
     .images = NULL,
@@ -1074,7 +1075,7 @@ static const struct SpriteTemplate sSpriteTemplate_Menu_2_Great =
 static const struct SpriteTemplate sSpriteTemplate_Menu_1_Basic =
 {
     .tileTag = GFXTAG_MENU_1,
-    .paletteTag = PALTAG_MENU_BASIC,
+    .paletteTag = PALTAG_MENU_ID,
     .oam = &sOamData_Menu,
     .anims = gDummySpriteAnimTable,
     .images = NULL,
@@ -1085,7 +1086,7 @@ static const struct SpriteTemplate sSpriteTemplate_Menu_1_Basic =
 static const struct SpriteTemplate sSpriteTemplate_Menu_2_Basic =
 {
     .tileTag = GFXTAG_MENU_2,
-    .paletteTag = PALTAG_MENU_BASIC,
+    .paletteTag = PALTAG_MENU_ID,
     .oam = &sOamData_Menu_2,
     .anims = sMenu2AnimCmds,
     .images = NULL,
@@ -1630,551 +1631,546 @@ static void CreateKnob(void)
     gSprites[sGacha->KnobSpriteId].animNum = 0; // No Rotation
 }
 
-typedef struct  {
-    int customNumber;
-    u16 species;
-} SpeciesGacha;
-
-static const SpeciesGacha sSpeciesGachaBasicCommon[] = {
-    {0, SPECIES_SUNKERN},
-    {1, SPECIES_AZURILL},
-    {2, SPECIES_CATERPIE},
-    {3, SPECIES_WURMPLE},
-    {4, SPECIES_IGGLYBUFF},
-    {5, SPECIES_WOOPER},
-    {6, SPECIES_MAGIKARP},
-    {7, SPECIES_SENTRET},
-    {8, SPECIES_CLEFFA},
-    {9, SPECIES_POOCHYENA},
-    {10, SPECIES_LOTAD},
-    {11, SPECIES_SEEDOT},
-    {12, SPECIES_ZIGZAGOON},
-    {13, SPECIES_WHISMUR},
-    {14, SPECIES_ZUBAT},
-    {15, SPECIES_SPINARAK},
-    {16, SPECIES_HOPPIP},
-    {17, SPECIES_PIDGEY},
-    {18, SPECIES_RATTATA},
-    {19, SPECIES_SPEAROW},
-    {20, SPECIES_HOOTHOOT},
-    {21, SPECIES_LEDYBA},
-    {22, SPECIES_SURSKIT},
-    {23, SPECIES_TAILLOW},
-    {24, SPECIES_WINGULL},
-    {25, SPECIES_NIDORAN_M},
-    {26, SPECIES_NIDORAN_F},
-    {27, SPECIES_PARAS},
-    {28, SPECIES_SHROOMISH},
-    {29, SPECIES_POLIWAG},
-    {30, SPECIES_BELLSPROUT},
-    {31, SPECIES_VENONAT},
-    {32, SPECIES_SMOOCHUM},
-    {33, SPECIES_ODDISH},
-    {34, SPECIES_PSYDUCK},
-    {35, SPECIES_GOLDEEN},
-    {36, SPECIES_FEEBAS}
+static const u16 sGachaBasicSpeciesCommon[] = {
+    SPECIES_SUNKERN,
+    SPECIES_AZURILL,
+    SPECIES_CATERPIE,
+    SPECIES_WURMPLE,
+    SPECIES_IGGLYBUFF,
+    SPECIES_WOOPER,
+    SPECIES_MAGIKARP,
+    SPECIES_SENTRET,
+    SPECIES_CLEFFA,
+    SPECIES_POOCHYENA,
+    SPECIES_LOTAD,
+    SPECIES_SEEDOT,
+    SPECIES_ZIGZAGOON,
+    SPECIES_WHISMUR,
+    SPECIES_ZUBAT,
+    SPECIES_SPINARAK,
+    SPECIES_HOPPIP,
+    SPECIES_PIDGEY,
+    SPECIES_RATTATA,
+    SPECIES_SPEAROW,
+    SPECIES_HOOTHOOT,
+    SPECIES_LEDYBA,
+    SPECIES_SURSKIT,
+    SPECIES_TAILLOW,
+    SPECIES_WINGULL,
+    SPECIES_NIDORAN_M,
+    SPECIES_NIDORAN_F,
+    SPECIES_PARAS,
+    SPECIES_SHROOMISH,
+    SPECIES_POLIWAG,
+    SPECIES_BELLSPROUT,
+    SPECIES_VENONAT,
+    SPECIES_SMOOCHUM,
+    SPECIES_ODDISH,
+    SPECIES_PSYDUCK,
+    SPECIES_GOLDEEN,
+    SPECIES_FEEBAS
 };
 
-static const SpeciesGacha sSpeciesGachaBasicUncommon[] = {
-    {0, SPECIES_METAPOD},
-    {1, SPECIES_KAKUNA},
-    {2, SPECIES_PICHU},
-    {3, SPECIES_SILCOON},
-    {4, SPECIES_CASCOON},
-    {5, SPECIES_MAKUHITA},
-    {6, SPECIES_MARILL},
-    {7, SPECIES_SLUGMA},
-    {8, SPECIES_SWINUB},
-    {9, SPECIES_DIGLETT},
-    {10, SPECIES_MAREEP},
-    {11, SPECIES_MEDITITE},
-    {12, SPECIES_EKANS},
-    {13, SPECIES_BARBOACH},
-    {14, SPECIES_HORSEA},
-    {15, SPECIES_SANDSHREW},
-    {16, SPECIES_GEODUDE},
-    {17, SPECIES_GULPIN},
-    {18, SPECIES_MANKEY},
-    {19, SPECIES_MACHOP},
-    {20, SPECIES_SHELLDER},
-    {21, SPECIES_GRIMER},
-    {22, SPECIES_VOLTORB},
-    {23, SPECIES_PLUSLE},
-    {24, SPECIES_MINUN},
-    {25, SPECIES_NATU},
-    {26, SPECIES_NINCADA},
-    {27, SPECIES_SPOINK}
+static const u16 sGachaBasicSpeciesUncommon[] = {
+    SPECIES_METAPOD,
+    SPECIES_KAKUNA,
+    SPECIES_PICHU,
+    SPECIES_SILCOON,
+    SPECIES_CASCOON,
+    SPECIES_MAKUHITA,
+    SPECIES_MARILL,
+    SPECIES_SLUGMA,
+    SPECIES_SWINUB,
+    SPECIES_DIGLETT,
+    SPECIES_MAREEP,
+    SPECIES_MEDITITE,
+    SPECIES_EKANS,
+    SPECIES_BARBOACH,
+    SPECIES_HORSEA,
+    SPECIES_SANDSHREW,
+    SPECIES_GEODUDE,
+    SPECIES_GULPIN,
+    SPECIES_MANKEY,
+    SPECIES_MACHOP,
+    SPECIES_SHELLDER,
+    SPECIES_GRIMER,
+    SPECIES_VOLTORB,
+    SPECIES_PLUSLE,
+    SPECIES_MINUN,
+    SPECIES_NATU,
+    SPECIES_NINCADA,
+    SPECIES_SPOINK
 };
 
-static const SpeciesGacha sSpeciesGachaBasicRare[] = {
-    {0, SPECIES_RALTS},
-    {1, SPECIES_TYROGUE},
-    {2, SPECIES_SKITTY},
-    {3, SPECIES_SLAKOTH},
-    {4, SPECIES_MEOWTH},
-    {5, SPECIES_PINECO},
-    {6, SPECIES_TRAPINCH},
-    {7, SPECIES_SPHEAL},
-    {8, SPECIES_VULPIX},
-    {9, SPECIES_SNUBBULL},
-    {10, SPECIES_REMORAID},
-    {11, SPECIES_CORPHISH},
-    {12, SPECIES_ABRA},
-    {13, SPECIES_ELEKID},
-    {14, SPECIES_MAGBY},
-    {15, SPECIES_CORSOLA}
+static const u16 sGachaBasicSpeciesRare[] = {
+    SPECIES_RALTS,
+    SPECIES_TYROGUE,
+    SPECIES_SKITTY,
+    SPECIES_SLAKOTH,
+    SPECIES_MEOWTH,
+    SPECIES_PINECO,
+    SPECIES_TRAPINCH,
+    SPECIES_SPHEAL,
+    SPECIES_VULPIX,
+    SPECIES_SNUBBULL,
+    SPECIES_REMORAID,
+    SPECIES_CORPHISH,
+    SPECIES_ABRA,
+    SPECIES_ELEKID,
+    SPECIES_MAGBY,
+    SPECIES_CORSOLA
 };
 
-static const SpeciesGacha sSpeciesGachaBasicUltraRare[] = {
-    {0, SPECIES_TOGEPI},
-    {1, SPECIES_CHARMANDER},
-    {2, SPECIES_CYNDAQUIL},
-    {3, SPECIES_TREECKO},
-    {4, SPECIES_TORCHIC},
-    {5, SPECIES_MUDKIP},
-    {6, SPECIES_SQUIRTLE},
-    {7, SPECIES_TOTODILE},
-    {8, SPECIES_BULBASAUR},
-    {9, SPECIES_CHIKORITA},
-    {10, SPECIES_SHUCKLE}
+static const u16 sGachaBasicSpeciesUltraRare[] = {
+    SPECIES_TOGEPI,
+    SPECIES_CHARMANDER,
+    SPECIES_CYNDAQUIL,
+    SPECIES_TREECKO,
+    SPECIES_TORCHIC,
+    SPECIES_MUDKIP,
+    SPECIES_SQUIRTLE,
+    SPECIES_TOTODILE,
+    SPECIES_BULBASAUR,
+    SPECIES_CHIKORITA,
+    SPECIES_SHUCKLE
 };
 
-static const SpeciesGacha sSpeciesGreatCommon[] = {
-    {0, SPECIES_JIGGLYPUFF},
-    {1, SPECIES_CLEFAIRY},
-    {2, SPECIES_KIRLIA},
-    {3, SPECIES_ELECTRIKE},
-    {4, SPECIES_SHUPPET},
-    {5, SPECIES_DUSKULL},
-    {6, SPECIES_SHELLDER},
-    {7, SPECIES_MACHOP},
-    {8, SPECIES_MANKEY},
-    {9, SPECIES_GULPIN},
-    {10, SPECIES_MAREEP},
-    {11, SPECIES_PINECO},
-    {12, SPECIES_REMORAID},
-    {13, SPECIES_CARVANHA},
-    {14, SPECIES_NUMEL},
-    {15, SPECIES_CORPHISH},
-    {16, SPECIES_SWABLU},
-    {17, SPECIES_SLOWPOKE},
-    {18, SPECIES_PIKACHU},
-    {19, SPECIES_PSYDUCK},
-    {20, SPECIES_GRIMER},
-    {21, SPECIES_KRABBY},
-    {22, SPECIES_EXEGGCUTE},
-    {23, SPECIES_VOLTORB},
-    {24, SPECIES_NATU},
-    {25, SPECIES_PHANPY},
-    {26, SPECIES_ARON},
-    {27, SPECIES_SPOINK},
-    {28, SPECIES_TENTACOOL},
-    {29, SPECIES_KOFFING},
-    {30, SPECIES_SKIPLOOM},
-    {31, SPECIES_LOMBRE},
-    {32, SPECIES_NUZLEAF},
-    {33, SPECIES_RHYHORN},
-    {34, SPECIES_CLAMPERL},
-    {35, SPECIES_PIDGEOTTO},
-    {36, SPECIES_ELEKID},
-    {37, SPECIES_LOUDRED},
-    {38, SPECIES_NIDORINA},
-    {39, SPECIES_NIDORINO},
-    {40, SPECIES_MAGBY},
-    {41, SPECIES_POLIWHIRL},
-    {42, SPECIES_ONIX},
-    {43, SPECIES_GRAVELER},
-    {44, SPECIES_GLOOM},
-    {45, SPECIES_PLUSLE},
-    {46, SPECIES_MINUN},
-    {47, SPECIES_PONYTA},
-    {48, SPECIES_FURRET},
-    {49, SPECIES_LINOONE},
-    {50, SPECIES_SUNFLORA},
-    {51, SPECIES_CHIMECHO},
-    {52, SPECIES_QUAGSIRE},
-    {53, SPECIES_TAILLOW},
-    {54, SPECIES_PELIPPER},
-    {55, SPECIES_PERSIAN},
-    {56, SPECIES_SEADRA},
-    {57, SPECIES_NOCTOWL},
-    {58, SPECIES_SANDSLASH},
-    {59, SPECIES_VENOMOTH},
-    {60, SPECIES_SEAKING},
-    {61, SPECIES_GOLBAT},
-    {62, SPECIES_TYROGUE},
-    {63, SPECIES_TORKOAL},
-    {64, SPECIES_ELECTRODE}
+static const u16 sGachaGreatSpeciesCommon[] = {
+    SPECIES_JIGGLYPUFF,
+    SPECIES_CLEFAIRY,
+    SPECIES_KIRLIA,
+    SPECIES_ELECTRIKE,
+    SPECIES_SHUPPET,
+    SPECIES_DUSKULL,
+    SPECIES_SHELLDER,
+    SPECIES_MACHOP,
+    SPECIES_MANKEY,
+    SPECIES_GULPIN,
+    SPECIES_MAREEP,
+    SPECIES_PINECO,
+    SPECIES_REMORAID,
+    SPECIES_CARVANHA,
+    SPECIES_NUMEL,
+    SPECIES_CORPHISH,
+    SPECIES_SWABLU,
+    SPECIES_SLOWPOKE,
+    SPECIES_PIKACHU,
+    SPECIES_PSYDUCK,
+    SPECIES_GRIMER,
+    SPECIES_KRABBY,
+    SPECIES_EXEGGCUTE,
+    SPECIES_VOLTORB,
+    SPECIES_NATU,
+    SPECIES_PHANPY,
+    SPECIES_ARON,
+    SPECIES_SPOINK,
+    SPECIES_TENTACOOL,
+    SPECIES_KOFFING,
+    SPECIES_SKIPLOOM,
+    SPECIES_LOMBRE,
+    SPECIES_NUZLEAF,
+    SPECIES_RHYHORN,
+    SPECIES_CLAMPERL,
+    SPECIES_PIDGEOTTO,
+    SPECIES_ELEKID,
+    SPECIES_LOUDRED,
+    SPECIES_NIDORINA,
+    SPECIES_NIDORINO,
+    SPECIES_MAGBY,
+    SPECIES_POLIWHIRL,
+    SPECIES_ONIX,
+    SPECIES_GRAVELER,
+    SPECIES_GLOOM,
+    SPECIES_PLUSLE,
+    SPECIES_MINUN,
+    SPECIES_PONYTA,
+    SPECIES_FURRET,
+    SPECIES_LINOONE,
+    SPECIES_SUNFLORA,
+    SPECIES_CHIMECHO,
+    SPECIES_QUAGSIRE,
+    SPECIES_TAILLOW,
+    SPECIES_PELIPPER,
+    SPECIES_PERSIAN,
+    SPECIES_SEADRA,
+    SPECIES_NOCTOWL,
+    SPECIES_SANDSLASH,
+    SPECIES_VENOMOTH,
+    SPECIES_SEAKING,
+    SPECIES_GOLBAT,
+    SPECIES_TYROGUE,
+    SPECIES_TORKOAL,
+    SPECIES_ELECTRODE
 };
 
-static const SpeciesGacha sSpeciesGreatUncommon[] = {
-    {0, SPECIES_FEEBAS},
-    {1, SPECIES_BALTOY},
-    {2, SPECIES_SNORUNT},
-    {3, SPECIES_DODUO},
-    {4, SPECIES_GASTLY},
-    {5, SPECIES_ABRA},
-    {6, SPECIES_CUBONE},
-    {7, SPECIES_MAGNEMITE},
-    {8, SPECIES_SEEL},
-    {9, SPECIES_DROWZEE},
-    {10, SPECIES_CHINCHOU},
-    {11, SPECIES_TEDDIURSA},
-    {12, SPECIES_HOUNDOUR},
-    {13, SPECIES_CACNEA},
-    {14, SPECIES_GROWLITHE},
-    {15, SPECIES_SPINDA},
-    {16, SPECIES_FLAAFFY},
-    {17, SPECIES_CORSOLA},
-    {18, SPECIES_DELCATTY},
-    {19, SPECIES_DUSTOX},
-    {20, SPECIES_WEEPINBELL},
-    {21, SPECIES_LEDIAN},
-    {22, SPECIES_ARIADOS},
-    {23, SPECIES_BUTTERFREE},
-    {24, SPECIES_BEEDRILL},
-    {25, SPECIES_BEAUTIFLY},
-    {26, SPECIES_VOLBEAT},
-    {27, SPECIES_ILLUMISE},
-    {28, SPECIES_ROSELIA},
-    {29, SPECIES_WAILMER},
-    {30, SPECIES_MACHOKE},
-    {31, SPECIES_MURKROW},
-    {32, SPECIES_MAGCARGO},
-    {33, SPECIES_RATICATE},
-    {34, SPECIES_MASQUERAIN},
-    {35, SPECIES_MIGHTYENA},
-    {36, SPECIES_CASTFORM},
-    {37, SPECIES_GLIGAR},
-    {38, SPECIES_QWILFISH},
-    {39, SPECIES_TANGELA},
-    {40, SPECIES_VIGOROTH},
-    {41, SPECIES_FEAROW},
-    {42, SPECIES_PILOSWINE},
-    {43, SPECIES_PRIMEAPE},
-    {44, SPECIES_BRELOOM},
-    {45, SPECIES_TROPIUS},
-    {46, SPECIES_STANTLER},
-    {47, SPECIES_SWALOT},
-    {48, SPECIES_XATU},
-    {49, SPECIES_GRUMPIG},
-    {50, SPECIES_HARIYAMA},
-    {51, SPECIES_GOLDUCK}
+static const u16 sGachaGreatSpeciesUncommon[] = {
+    SPECIES_FEEBAS,
+    SPECIES_BALTOY,
+    SPECIES_SNORUNT,
+    SPECIES_DODUO,
+    SPECIES_GASTLY,
+    SPECIES_ABRA,
+    SPECIES_CUBONE,
+    SPECIES_MAGNEMITE,
+    SPECIES_SEEL,
+    SPECIES_DROWZEE,
+    SPECIES_CHINCHOU,
+    SPECIES_TEDDIURSA,
+    SPECIES_HOUNDOUR,
+    SPECIES_CACNEA,
+    SPECIES_GROWLITHE,
+    SPECIES_SPINDA,
+    SPECIES_FLAAFFY,
+    SPECIES_CORSOLA,
+    SPECIES_DELCATTY,
+    SPECIES_DUSTOX,
+    SPECIES_WEEPINBELL,
+    SPECIES_LEDIAN,
+    SPECIES_ARIADOS,
+    SPECIES_BUTTERFREE,
+    SPECIES_BEEDRILL,
+    SPECIES_BEAUTIFLY,
+    SPECIES_VOLBEAT,
+    SPECIES_ILLUMISE,
+    SPECIES_ROSELIA,
+    SPECIES_WAILMER,
+    SPECIES_MACHOKE,
+    SPECIES_MURKROW,
+    SPECIES_MAGCARGO,
+    SPECIES_RATICATE,
+    SPECIES_MASQUERAIN,
+    SPECIES_MIGHTYENA,
+    SPECIES_CASTFORM,
+    SPECIES_GLIGAR,
+    SPECIES_QWILFISH,
+    SPECIES_TANGELA,
+    SPECIES_VIGOROTH,
+    SPECIES_FEAROW,
+    SPECIES_PILOSWINE,
+    SPECIES_PRIMEAPE,
+    SPECIES_BRELOOM,
+    SPECIES_TROPIUS,
+    SPECIES_STANTLER,
+    SPECIES_SWALOT,
+    SPECIES_XATU,
+    SPECIES_GRUMPIG,
+    SPECIES_HARIYAMA,
+    SPECIES_GOLDUCK
 };
 
-static const SpeciesGacha sSpeciesGreatRare[] = {
-    {0, SPECIES_DRATINI},
-    {1, SPECIES_LARVITAR},
-    {2, SPECIES_BAGON},
-    {3, SPECIES_TOGEPI},
-    {4, SPECIES_CHARMANDER},
-    {5, SPECIES_CYNDAQUIL},
-    {6, SPECIES_TREECKO},
-    {7, SPECIES_TORCHIC},
-    {8, SPECIES_MUDKIP},
-    {9, SPECIES_SQUIRTLE},
-    {10, SPECIES_TOTODILE},
-    {11, SPECIES_BULBASAUR},
-    {12, SPECIES_CHIKORITA},
-    {13, SPECIES_LUVDISC},
-    {14, SPECIES_STARYU},
-    {15, SPECIES_VIBRAVA},
-    {16, SPECIES_FARFETCHD},
-    {17, SPECIES_AIPOM},
-    {18, SPECIES_NOSEPASS},
-    {19, SPECIES_SABLEYE},
-    {20, SPECIES_MAWILE},
-    {21, SPECIES_YANMA},
-    {22, SPECIES_KADABRA},
-    {23, SPECIES_DUGTRIO},
-    {24, SPECIES_HAUNTER},
-    {25, SPECIES_SUDOWOODO},
-    {26, SPECIES_KECLEON},
-    {27, SPECIES_MEDICHAM},
-    {28, SPECIES_SEALEO},
-    {29, SPECIES_DUNSPARCE},
-    {30, SPECIES_SNEASEL},
-    {31, SPECIES_ZANGOOSE},
-    {32, SPECIES_SEVIPER},
-    {33, SPECIES_MANTINE},
-    {34, SPECIES_SKARMORY},
-    {35, SPECIES_OCTILLERY},
-    {36, SPECIES_RELICANTH},
-    {37, SPECIES_MILTANK},
-    {38, SPECIES_SCYTHER},
-    {39, SPECIES_PINSIR},
-    {40, SPECIES_SHUCKLE}
+static const u16 sGachaGreatSpeciesRare[] = {
+    SPECIES_DRATINI,
+    SPECIES_LARVITAR,
+    SPECIES_BAGON,
+    SPECIES_TOGEPI,
+    SPECIES_CHARMANDER,
+    SPECIES_CYNDAQUIL,
+    SPECIES_TREECKO,
+    SPECIES_TORCHIC,
+    SPECIES_MUDKIP,
+    SPECIES_SQUIRTLE,
+    SPECIES_TOTODILE,
+    SPECIES_BULBASAUR,
+    SPECIES_CHIKORITA,
+    SPECIES_LUVDISC,
+    SPECIES_STARYU,
+    SPECIES_VIBRAVA,
+    SPECIES_FARFETCHD,
+    SPECIES_AIPOM,
+    SPECIES_NOSEPASS,
+    SPECIES_SABLEYE,
+    SPECIES_MAWILE,
+    SPECIES_YANMA,
+    SPECIES_KADABRA,
+    SPECIES_DUGTRIO,
+    SPECIES_HAUNTER,
+    SPECIES_SUDOWOODO,
+    SPECIES_KECLEON,
+    SPECIES_MEDICHAM,
+    SPECIES_SEALEO,
+    SPECIES_DUNSPARCE,
+    SPECIES_SNEASEL,
+    SPECIES_ZANGOOSE,
+    SPECIES_SEVIPER,
+    SPECIES_MANTINE,
+    SPECIES_SKARMORY,
+    SPECIES_OCTILLERY,
+    SPECIES_RELICANTH,
+    SPECIES_MILTANK,
+    SPECIES_SCYTHER,
+    SPECIES_PINSIR,
+    SPECIES_SHUCKLE
 };
 
-static const SpeciesGacha sSpeciesGreatUltraRare[] = {
-    {0, SPECIES_WYNAUT},
-    {1, SPECIES_DELIBIRD},
-    {2, SPECIES_PORYGON},
-    {3, SPECIES_IVYSAUR},
-    {4, SPECIES_CHARMELEON},
-    {5, SPECIES_WARTORTLE},
-    {6, SPECIES_BAYLEEF},
-    {7, SPECIES_QUILAVA},
-    {8, SPECIES_CROCONAW},
-    {9, SPECIES_GROVYLE},
-    {10, SPECIES_COMBUSKEN},
-    {11, SPECIES_MARSHTOMP},
-    {12, SPECIES_PUPITAR},
-    {13, SPECIES_DRAGONAIR},
-    {14, SPECIES_SHELGON},
-    {15, SPECIES_METANG},
-    {16, SPECIES_MR_MIME},
-    {17, SPECIES_HERACROSS}
+static const u16 sGachaGreatSpeciesUltraRare[] = {
+    SPECIES_WYNAUT,
+    SPECIES_DELIBIRD,
+    SPECIES_PORYGON,
+    SPECIES_IVYSAUR,
+    SPECIES_CHARMELEON,
+    SPECIES_WARTORTLE,
+    SPECIES_BAYLEEF,
+    SPECIES_QUILAVA,
+    SPECIES_CROCONAW,
+    SPECIES_GROVYLE,
+    SPECIES_COMBUSKEN,
+    SPECIES_MARSHTOMP,
+    SPECIES_PUPITAR,
+    SPECIES_DRAGONAIR,
+    SPECIES_SHELGON,
+    SPECIES_METANG,
+    SPECIES_MR_MIME,
+    SPECIES_HERACROSS
 };
 
-static const SpeciesGacha sSpeciesUltraCommon[] = {
-    {0, SPECIES_KRABBY},
-    {1, SPECIES_EXEGGCUTE},
-    {2, SPECIES_MAGNEMITE},
-    {3, SPECIES_TEDDIURSA},
-    {4, SPECIES_ARIADOS},
-    {5, SPECIES_PARASECT},
-    {6, SPECIES_DUGTRIO},
-    {7, SPECIES_SUDOWOODO},
-    {8, SPECIES_MAGCARGO},
-    {9, SPECIES_MEDICHAM},
-    {10, SPECIES_SEALEO},
-    {11, SPECIES_MASQUERAIN},
-    {12, SPECIES_MIGHTYENA},
-    {13, SPECIES_LINOONE},
-    {14, SPECIES_CASTFORM},
-    {15, SPECIES_SUNFLORA},
-    {16, SPECIES_CHIMECHO},
-    {17, SPECIES_SWELLOW},
-    {18, SPECIES_PELIPPER},
-    {19, SPECIES_LAIRON},
-    {20, SPECIES_WIGGLYTUFF},
-    {21, SPECIES_ARBOK},
-    {22, SPECIES_KECLEON},
-    {23, SPECIES_FEAROW},
-    {24, SPECIES_SANDSLASH},
-    {25, SPECIES_SEAKING},
-    {26, SPECIES_NINJASK},
-    {27, SPECIES_ZANGOOSE},
-    {28, SPECIES_SEVIPER},
-    {29, SPECIES_DODRIO},
-    {30, SPECIES_LANTURN},
-    {31, SPECIES_JUMPLUFF},
-    {32, SPECIES_BRELOOM},
-    {33, SPECIES_SHARPEDO},
-    {34, SPECIES_CAMERUPT},
-    {35, SPECIES_SWALOT},
-    {36, SPECIES_CRAWDAUNT},
-    {37, SPECIES_XATU},
-    {38, SPECIES_TORKOAL},
-    {39, SPECIES_GRUMPIG},
-    {40, SPECIES_HARIYAMA},
-    {41, SPECIES_KINGLER},
-    {42, SPECIES_PIDGEOT},
-    {43, SPECIES_CLEFABLE},
-    {44, SPECIES_HYPNO},
-    {45, SPECIES_RAICHU},
-    {46, SPECIES_RHYDON},
-    {47, SPECIES_VILEPLUME},
-    {48, SPECIES_VICTREEBEL},
-    {49, SPECIES_BELLOSSOM},
-    {50, SPECIES_MILTANK},
-    {51, SPECIES_GOLEM},
-    {52, SPECIES_GOLDUCK},
-    {53, SPECIES_RAPIDASH},
-    {54, SPECIES_WAILORD},
-    {55, SPECIES_NIDOQUEEN},
-    {56, SPECIES_NIDOKING},
-    {57, SPECIES_NINETALES},
-    {58, SPECIES_MACHAMP},
-    {59, SPECIES_POLIWRATH},
-    {60, SPECIES_TENTACRUEL},
-    {61, SPECIES_EXEGGUTOR},
-    {62, SPECIES_CLOYSTER}
+static const u16 sGachaUltraSpeciesCommon[] = {
+    SPECIES_KRABBY,
+    SPECIES_EXEGGCUTE,
+    SPECIES_MAGNEMITE,
+    SPECIES_TEDDIURSA,
+    SPECIES_ARIADOS,
+    SPECIES_PARASECT,
+    SPECIES_DUGTRIO,
+    SPECIES_SUDOWOODO,
+    SPECIES_MAGCARGO,
+    SPECIES_MEDICHAM,
+    SPECIES_SEALEO,
+    SPECIES_MASQUERAIN,
+    SPECIES_MIGHTYENA,
+    SPECIES_LINOONE,
+    SPECIES_CASTFORM,
+    SPECIES_SUNFLORA,
+    SPECIES_CHIMECHO,
+    SPECIES_SWELLOW,
+    SPECIES_PELIPPER,
+    SPECIES_LAIRON,
+    SPECIES_WIGGLYTUFF,
+    SPECIES_ARBOK,
+    SPECIES_KECLEON,
+    SPECIES_FEAROW,
+    SPECIES_SANDSLASH,
+    SPECIES_SEAKING,
+    SPECIES_NINJASK,
+    SPECIES_ZANGOOSE,
+    SPECIES_SEVIPER,
+    SPECIES_DODRIO,
+    SPECIES_LANTURN,
+    SPECIES_JUMPLUFF,
+    SPECIES_BRELOOM,
+    SPECIES_SHARPEDO,
+    SPECIES_CAMERUPT,
+    SPECIES_SWALOT,
+    SPECIES_CRAWDAUNT,
+    SPECIES_XATU,
+    SPECIES_TORKOAL,
+    SPECIES_GRUMPIG,
+    SPECIES_HARIYAMA,
+    SPECIES_KINGLER,
+    SPECIES_PIDGEOT,
+    SPECIES_CLEFABLE,
+    SPECIES_HYPNO,
+    SPECIES_RAICHU,
+    SPECIES_RHYDON,
+    SPECIES_VILEPLUME,
+    SPECIES_VICTREEBEL,
+    SPECIES_BELLOSSOM,
+    SPECIES_MILTANK,
+    SPECIES_GOLEM,
+    SPECIES_GOLDUCK,
+    SPECIES_RAPIDASH,
+    SPECIES_WAILORD,
+    SPECIES_NIDOQUEEN,
+    SPECIES_NIDOKING,
+    SPECIES_NINETALES,
+    SPECIES_MACHAMP,
+    SPECIES_POLIWRATH,
+    SPECIES_TENTACRUEL,
+    SPECIES_EXEGGUTOR,
+    SPECIES_CLOYSTER
 };
 
-static const SpeciesGacha sSpeciesUltraUncommon[] = {
-    {0, SPECIES_DELIBIRD},
-    {1, SPECIES_LICKITUNG},
-    {2, SPECIES_YANMA},
-    {3, SPECIES_PORYGON},
-    {4, SPECIES_TOGETIC},
-    {5, SPECIES_AZUMARILL},
-    {6, SPECIES_MAROWAK},
-    {7, SPECIES_LUNATONE},
-    {8, SPECIES_SOLROCK},
-    {9, SPECIES_GRANBULL},
-    {10, SPECIES_HITMONLEE},
-    {11, SPECIES_HITMONCHAN},
-    {12, SPECIES_HITMONTOP},
-    {13, SPECIES_BANETTE},
-    {14, SPECIES_DUSCLOPS},
-    {15, SPECIES_MR_MIME},
-    {16, SPECIES_TROPIUS},
-    {17, SPECIES_MAGNETON},
-    {18, SPECIES_MANTINE},
-    {19, SPECIES_SKARMORY},
-    {20, SPECIES_WHISCASH},
-    {21, SPECIES_DEWGONG},
-    {22, SPECIES_MANECTRIC},
-    {23, SPECIES_OCTILLERY},
-    {24, SPECIES_GLALIE},
-    {25, SPECIES_SLOWBRO},
-    {26, SPECIES_WEEZING},
-    {27, SPECIES_ELECTABUZZ},
-    {28, SPECIES_SLOWKING},
-    {29, SPECIES_EXPLOUD},
-    {30, SPECIES_MAGMAR},
-    {31, SPECIES_MUK},
-    {32, SPECIES_SCYTHER},
-    {33, SPECIES_PINSIR},
-    {34, SPECIES_URSARING},
-    {35, SPECIES_HOUNDOOM},
-    {36, SPECIES_CLAYDOL},
-    {37, SPECIES_AMPHAROS},
-    {38, SPECIES_GARDEVOIR},
-    {39, SPECIES_ABSOL},
-    {40, SPECIES_CACTURNE},
-    {41, SPECIES_LUDICOLO},
-    {42, SPECIES_SHIFTRY},
-    {43, SPECIES_POLITOED},
-    {44, SPECIES_SCIZOR},
-    {45, SPECIES_HERACROSS},
-    {46, SPECIES_STEELIX},
-    {47, SPECIES_ALTARIA},
-    {48, SPECIES_RELICANTH},
-    {49, SPECIES_HUNTAIL},
-    {50, SPECIES_GOREBYSS}
+static const u16 sGachaUltraSpeciesUncommon[] = {
+    SPECIES_DELIBIRD,
+    SPECIES_LICKITUNG,
+    SPECIES_YANMA,
+    SPECIES_PORYGON,
+    SPECIES_TOGETIC,
+    SPECIES_AZUMARILL,
+    SPECIES_MAROWAK,
+    SPECIES_LUNATONE,
+    SPECIES_SOLROCK,
+    SPECIES_GRANBULL,
+    SPECIES_HITMONLEE,
+    SPECIES_HITMONCHAN,
+    SPECIES_HITMONTOP,
+    SPECIES_BANETTE,
+    SPECIES_DUSCLOPS,
+    SPECIES_MR_MIME,
+    SPECIES_TROPIUS,
+    SPECIES_MAGNETON,
+    SPECIES_MANTINE,
+    SPECIES_SKARMORY,
+    SPECIES_WHISCASH,
+    SPECIES_DEWGONG,
+    SPECIES_MANECTRIC,
+    SPECIES_OCTILLERY,
+    SPECIES_GLALIE,
+    SPECIES_SLOWBRO,
+    SPECIES_WEEZING,
+    SPECIES_ELECTABUZZ,
+    SPECIES_SLOWKING,
+    SPECIES_EXPLOUD,
+    SPECIES_MAGMAR,
+    SPECIES_MUK,
+    SPECIES_SCYTHER,
+    SPECIES_PINSIR,
+    SPECIES_URSARING,
+    SPECIES_HOUNDOOM,
+    SPECIES_CLAYDOL,
+    SPECIES_AMPHAROS,
+    SPECIES_GARDEVOIR,
+    SPECIES_ABSOL,
+    SPECIES_CACTURNE,
+    SPECIES_LUDICOLO,
+    SPECIES_SHIFTRY,
+    SPECIES_POLITOED,
+    SPECIES_SCIZOR,
+    SPECIES_HERACROSS,
+    SPECIES_STEELIX,
+    SPECIES_ALTARIA,
+    SPECIES_RELICANTH,
+    SPECIES_HUNTAIL,
+    SPECIES_GOREBYSS
 };
 
-static const SpeciesGacha sSpeciesUltraRare[] = {
-    {0, SPECIES_DITTO},
-    {1, SPECIES_EEVEE},
-    {2, SPECIES_OMANYTE},
-    {3, SPECIES_KABUTO},
-    {4, SPECIES_LILEEP},
-    {5, SPECIES_ANORITH},
-    {6, SPECIES_WOBBUFFET},
-    {7, SPECIES_PUPITAR},
-    {8, SPECIES_DUNSPARCE},
-    {9, SPECIES_DRAGONAIR},
-    {10, SPECIES_SHELGON},
-    {11, SPECIES_METANG},
-    {12, SPECIES_MISDREAVUS},
-    {13, SPECIES_KANGASKHAN},
-    {14, SPECIES_TAUROS},
-    {15, SPECIES_ALAKAZAM},
-    {16, SPECIES_GENGAR},
-    {17, SPECIES_STARMIE},
-    {18, SPECIES_FLYGON},
-    {19, SPECIES_VAPOREON},
-    {20, SPECIES_JOLTEON},
-    {21, SPECIES_FLAREON},
-    {22, SPECIES_AGGRON},
-    {23, SPECIES_WALREIN},
-    {24, SPECIES_CROBAT},
-    {25, SPECIES_GYARADOS},
-    {26, SPECIES_KINGDRA},
-    {27, SPECIES_MILOTIC}
+static const u16 sGachaUltraSpeciesRare[] = {
+    SPECIES_DITTO,
+    SPECIES_EEVEE,
+    SPECIES_OMANYTE,
+    SPECIES_KABUTO,
+    SPECIES_LILEEP,
+    SPECIES_ANORITH,
+    SPECIES_WOBBUFFET,
+    SPECIES_PUPITAR,
+    SPECIES_DUNSPARCE,
+    SPECIES_DRAGONAIR,
+    SPECIES_SHELGON,
+    SPECIES_METANG,
+    SPECIES_MISDREAVUS,
+    SPECIES_KANGASKHAN,
+    SPECIES_TAUROS,
+    SPECIES_ALAKAZAM,
+    SPECIES_GENGAR,
+    SPECIES_STARMIE,
+    SPECIES_FLYGON,
+    SPECIES_VAPOREON,
+    SPECIES_JOLTEON,
+    SPECIES_FLAREON,
+    SPECIES_AGGRON,
+    SPECIES_WALREIN,
+    SPECIES_CROBAT,
+    SPECIES_GYARADOS,
+    SPECIES_KINGDRA,
+    SPECIES_MILOTIC
 };
 
-static const SpeciesGacha sSpeciesUltraUltraRare[] = {
-    {0, SPECIES_SHEDINJA},
-    {1, SPECIES_SMEARGLE},
-    {2, SPECIES_CHANSEY},
-    {3, SPECIES_OMASTAR},
-    {4, SPECIES_KABUTOPS},
-    {5, SPECIES_CRADILY},
-    {6, SPECIES_ARMALDO},
-    {7, SPECIES_AERODACTYL},
-    {8, SPECIES_PORYGON2},
-    {9, SPECIES_VENUSAUR},
-    {10, SPECIES_MEGANIUM},
-    {11, SPECIES_ESPEON},
-    {12, SPECIES_UMBREON},
-    {13, SPECIES_BLASTOISE},
-    {14, SPECIES_FERALIGATR},
-    {15, SPECIES_SCEPTILE},
-    {16, SPECIES_BLAZIKEN},
-    {17, SPECIES_SWAMPERT},
-    {18, SPECIES_CHARIZARD},
-    {19, SPECIES_TYPHLOSION},
-    {20, SPECIES_LAPRAS},
-    {21, SPECIES_SNORLAX},
-    {22, SPECIES_ARCANINE},
-    {23, SPECIES_DRAGONITE},
-    {24, SPECIES_TYRANITAR},
-    {25, SPECIES_SALAMENCE},
-    {26, SPECIES_METAGROSS},
-    {27, SPECIES_SLAKING}
+static const u16 sGachaUltraSpeciesUltraRare[] = {
+    SPECIES_SHEDINJA,
+    SPECIES_SMEARGLE,
+    SPECIES_CHANSEY,
+    SPECIES_OMASTAR,
+    SPECIES_KABUTOPS,
+    SPECIES_CRADILY,
+    SPECIES_ARMALDO,
+    SPECIES_AERODACTYL,
+    SPECIES_PORYGON2,
+    SPECIES_VENUSAUR,
+    SPECIES_MEGANIUM,
+    SPECIES_ESPEON,
+    SPECIES_UMBREON,
+    SPECIES_BLASTOISE,
+    SPECIES_FERALIGATR,
+    SPECIES_SCEPTILE,
+    SPECIES_BLAZIKEN,
+    SPECIES_SWAMPERT,
+    SPECIES_CHARIZARD,
+    SPECIES_TYPHLOSION,
+    SPECIES_LAPRAS,
+    SPECIES_SNORLAX,
+    SPECIES_ARCANINE,
+    SPECIES_DRAGONITE,
+    SPECIES_TYRANITAR,
+    SPECIES_SALAMENCE,
+    SPECIES_METAGROSS,
+    SPECIES_SLAKING
 };
 
-static const SpeciesGacha sSpeciesMasterCommon[] = {
-    {0, SPECIES_DITTO},
-    {1, SPECIES_METANG},
-    {2, SPECIES_SHELGON},
-    {3, SPECIES_PUPITAR},
-    {4, SPECIES_DRAGONAIR},
-    {5, SPECIES_FLYGON},
-    {6, SPECIES_VENUSAUR},
-    {7, SPECIES_VAPOREON},
-    {8, SPECIES_JOLTEON},
-    {9, SPECIES_FLAREON},
-    {10, SPECIES_MEGANIUM},
-    {11, SPECIES_BLASTOISE},
-    {12, SPECIES_FERALIGATR},
-    {13, SPECIES_SCEPTILE},
-    {14, SPECIES_BLAZIKEN},
-    {15, SPECIES_SWAMPERT},
-    {16, SPECIES_CHARIZARD},
-    {17, SPECIES_TYPHLOSION}
+static const u16 sGachaMasterSpeciesCommon[] = {
+    SPECIES_DITTO,
+    SPECIES_METANG,
+    SPECIES_SHELGON,
+    SPECIES_PUPITAR,
+    SPECIES_DRAGONAIR,
+    SPECIES_FLYGON,
+    SPECIES_VENUSAUR,
+    SPECIES_VAPOREON,
+    SPECIES_JOLTEON,
+    SPECIES_FLAREON,
+    SPECIES_MEGANIUM,
+    SPECIES_BLASTOISE,
+    SPECIES_FERALIGATR,
+    SPECIES_SCEPTILE,
+    SPECIES_BLAZIKEN,
+    SPECIES_SWAMPERT,
+    SPECIES_CHARIZARD,
+    SPECIES_TYPHLOSION
 };
 
-static const SpeciesGacha sSpeciesMasterUncommon[] = {
-    {0, SPECIES_OMASTAR},
-    {1, SPECIES_KABUTOPS},
-    {2, SPECIES_CRADILY},
-    {3, SPECIES_ARMALDO},
-    {4, SPECIES_SHUCKLE},
-    {5, SPECIES_AERODACTYL},
-    {6, SPECIES_ESPEON},
-    {7, SPECIES_UMBREON},
-    {8, SPECIES_LAPRAS},
-    {9, SPECIES_SNORLAX},
-    {10, SPECIES_DRAGONITE},
-    {11, SPECIES_SALAMENCE},
-    {12, SPECIES_METAGROSS},
-    {13, SPECIES_SHEDINJA},
-    {14, SPECIES_SMEARGLE},
-    {15, SPECIES_UNOWN},
-    {16, SPECIES_BLISSEY}
+static const u16 sGachaMasterSpeciesUncommon[] = {
+    SPECIES_OMASTAR,
+    SPECIES_KABUTOPS,
+    SPECIES_CRADILY,
+    SPECIES_ARMALDO,
+    SPECIES_SHUCKLE,
+    SPECIES_AERODACTYL,
+    SPECIES_ESPEON,
+    SPECIES_UMBREON,
+    SPECIES_LAPRAS,
+    SPECIES_SNORLAX,
+    SPECIES_DRAGONITE,
+    SPECIES_SALAMENCE,
+    SPECIES_METAGROSS,
+    SPECIES_SHEDINJA,
+    SPECIES_SMEARGLE,
+    SPECIES_UNOWN,
+    SPECIES_BLISSEY
 };
 
-static const SpeciesGacha sSpeciesMasterRare[] = {
-    {0, SPECIES_ARTICUNO},
-    {1, SPECIES_ZAPDOS},
-    {2, SPECIES_MOLTRES},
-    {3, SPECIES_RAIKOU},
-    {4, SPECIES_ENTEI},
-    {5, SPECIES_SUICUNE},
-    {6, SPECIES_REGIROCK},
-    {7, SPECIES_REGICE},
-    {8, SPECIES_REGISTEEL},
-    {9, SPECIES_LATIAS},
-    {10, SPECIES_LATIOS}
+static const u16 sGachaMasterSpeciesRare[] = {
+    SPECIES_ARTICUNO,
+    SPECIES_ZAPDOS,
+    SPECIES_MOLTRES,
+    SPECIES_RAIKOU,
+    SPECIES_ENTEI,
+    SPECIES_SUICUNE,
+    SPECIES_REGIROCK,
+    SPECIES_REGICE,
+    SPECIES_REGISTEEL,
+    SPECIES_LATIAS,
+    SPECIES_LATIOS
 };
 
-static const SpeciesGacha sSpeciesMasterUltraRare[] = {
-    {0, SPECIES_MEW},
-    {1, SPECIES_CELEBI},
-    {2, SPECIES_JIRACHI},
-    {3, SPECIES_DEOXYS},
-    {4, SPECIES_KYOGRE},
-    {5, SPECIES_GROUDON},
-    {6, SPECIES_MEWTWO},
-    {7, SPECIES_LUGIA},
-    {8, SPECIES_HO_OH},
-    {9, SPECIES_RAYQUAZA}
+static const u16 sGachaMasterSpeciesUltraRare[] = {
+    SPECIES_MEW,
+    SPECIES_CELEBI,
+    SPECIES_JIRACHI,
+    SPECIES_DEOXYS,
+    SPECIES_KYOGRE,
+    SPECIES_GROUDON,
+    SPECIES_MEWTWO,
+    SPECIES_LUGIA,
+    SPECIES_HO_OH,
+    SPECIES_RAYQUAZA
 };
 
 static void ShowMessage(void)
@@ -2226,58 +2222,58 @@ static u16 GetMaxAvailableGachaRaritySpecies(u32 gachaId, u32 rarity)
         {
         default:
         case RARITY_COMMON:
-            return ARRAY_COUNT(sSpeciesGachaBasicCommon);
+            return ARRAY_COUNT(sGachaBasicSpeciesCommon);
         case RARITY_UNCOMMON:
-            return ARRAY_COUNT(sSpeciesGachaBasicUncommon);
+            return ARRAY_COUNT(sGachaBasicSpeciesUncommon);
         case RARITY_RARE:
-            return ARRAY_COUNT(sSpeciesGachaBasicRare);
+            return ARRAY_COUNT(sGachaBasicSpeciesRare);
         case RARITY_ULTRA_RARE:
-            return ARRAY_COUNT(sSpeciesGachaBasicUltraRare);
+            return ARRAY_COUNT(sGachaBasicSpeciesUltraRare);
         }
     case GACHA_GREAT:
         switch (rarity)
         {
         default:
         case RARITY_COMMON:
-            return ARRAY_COUNT(sSpeciesGreatCommon);
+            return ARRAY_COUNT(sGachaGreatSpeciesCommon);
         case RARITY_UNCOMMON:
-            return ARRAY_COUNT(sSpeciesGreatUncommon);
+            return ARRAY_COUNT(sGachaGreatSpeciesUncommon);
         case RARITY_RARE:
-            return ARRAY_COUNT(sSpeciesGreatRare);
+            return ARRAY_COUNT(sGachaGreatSpeciesRare);
         case RARITY_ULTRA_RARE:
-            return ARRAY_COUNT(sSpeciesGreatUltraRare);
+            return ARRAY_COUNT(sGachaGreatSpeciesUltraRare);
         }
     case GACHA_ULTRA:
         switch (rarity)
         {
         default:
         case RARITY_COMMON:
-            return ARRAY_COUNT(sSpeciesUltraCommon);
+            return ARRAY_COUNT(sGachaUltraSpeciesCommon);
         case RARITY_UNCOMMON:
-            return ARRAY_COUNT(sSpeciesUltraUncommon);
+            return ARRAY_COUNT(sGachaUltraSpeciesUncommon);
         case RARITY_RARE:
-            return ARRAY_COUNT(sSpeciesUltraRare);
+            return ARRAY_COUNT(sGachaUltraSpeciesRare);
         case RARITY_ULTRA_RARE:
-            return ARRAY_COUNT(sSpeciesUltraUltraRare);
+            return ARRAY_COUNT(sGachaUltraSpeciesUltraRare);
         }
     case GACHA_MASTER:
         switch (rarity)
         {
         default:
         case RARITY_COMMON:
-            return ARRAY_COUNT(sSpeciesMasterCommon);
+            return ARRAY_COUNT(sGachaMasterSpeciesCommon);
         case RARITY_UNCOMMON:
-            return ARRAY_COUNT(sSpeciesMasterUncommon);
+            return ARRAY_COUNT(sGachaMasterSpeciesUncommon);
         case RARITY_RARE:
-            return ARRAY_COUNT(sSpeciesMasterRare);
+            return ARRAY_COUNT(sGachaMasterSpeciesRare);
         case RARITY_ULTRA_RARE:
-            return ARRAY_COUNT(sSpeciesMasterUltraRare);
+            return ARRAY_COUNT(sGachaMasterSpeciesUltraRare);
         }
     }
     return 0; // failsafe
 }
 
-u16 GetGachaBasicSpecies(u16 randNum)
+static inline u16 GetGachaBasicSpecies(u16 randNum)
 {
     int i;
     u16 totalMax;
@@ -2294,39 +2290,19 @@ u16 GetGachaBasicSpecies(u16 randNum)
     {
     default:
     case RARITY_COMMON:
-        for (i = 0; i < totalMax; i++)
-        {
-            if (sSpeciesGachaBasicCommon[i].customNumber == randNum)
-                return sSpeciesGachaBasicCommon[i].species;
-        }
-        break;
+        return sGachaBasicSpeciesCommon[randNum];
     case RARITY_UNCOMMON:
-        for (i = 0; i < totalMax; i++)
-        {
-            if (sSpeciesGachaBasicUncommon[i].customNumber == randNum)
-                return sSpeciesGachaBasicUncommon[i].species;
-        }
-        break;
+        return sGachaBasicSpeciesUncommon[randNum];
     case RARITY_RARE:
-        for (i = 0; i < totalMax; i++)
-        {
-            if (sSpeciesGachaBasicRare[i].customNumber == randNum)
-                return sSpeciesGachaBasicRare[i].species;
-        }
-        break;
+        return sGachaBasicSpeciesRare[randNum];
     case RARITY_ULTRA_RARE:
-        for (i = 0; i < totalMax; i++)
-        {
-            if (sSpeciesGachaBasicUltraRare[i].customNumber == randNum)
-                return sSpeciesGachaBasicUltraRare[i].species;
-        }
-        break;
+        return sGachaBasicSpeciesUltraRare[randNum];
     }
 
     return -1; // Return -1 if customNumber is not found
 }
 
-u16 GetGachaGreatSpecies(u16 randNum)
+static inline u16 GetGachaGreatSpecies(u16 randNum)
 {
     int i;
     u16 totalMax = 0;
@@ -2343,39 +2319,19 @@ u16 GetGachaGreatSpecies(u16 randNum)
     {
     default:
     case RARITY_COMMON:
-        for (i = 0; i < totalMax; i++)
-        {
-            if (sSpeciesGreatCommon[i].customNumber == randNum)
-                return sSpeciesGreatCommon[i].species;
-        }
-        break;
+        return sGachaGreatSpeciesCommon[randNum];
     case RARITY_UNCOMMON:
-        for (i = 0; i < totalMax; i++)
-        {
-            if (sSpeciesGreatUncommon[i].customNumber == randNum)
-                return sSpeciesGreatUncommon[i].species;
-        }
-        break;
+        return sGachaGreatSpeciesUncommon[randNum];
     case RARITY_RARE:
-        for (i = 0; i < totalMax; i++)
-        {
-            if (sSpeciesGreatRare[i].customNumber == randNum)
-                return sSpeciesGreatRare[i].species;
-        }
-        break;
+        return sGachaGreatSpeciesRare[randNum];
     case RARITY_ULTRA_RARE:
-        for (i = 0; i < totalMax; i++)
-        {
-            if (sSpeciesGreatUltraRare[i].customNumber == randNum)
-                return sSpeciesGreatUltraRare[i].species;
-        }
-        break;
+        return sGachaGreatSpeciesUltraRare[randNum];
     }
 
     return -1; // Return -1 if customNumber is not found
 }
 
-u16 GetGachaUltraSpecies(u16 randNum)
+static inline u16 GetGachaUltraSpecies(u16 randNum)
 {
     int i;
     u16 totalMax = 0;
@@ -2392,39 +2348,19 @@ u16 GetGachaUltraSpecies(u16 randNum)
     {
     default:
     case RARITY_COMMON:
-        for (i = 0; i < totalMax; i++)
-        {
-            if (sSpeciesUltraCommon[i].customNumber == randNum)
-                return sSpeciesUltraCommon[i].species;
-        }
-        break;
+        return sGachaUltraSpeciesCommon[randNum];
     case RARITY_UNCOMMON:
-        for (i = 0; i < totalMax; i++)
-        {
-            if (sSpeciesUltraUncommon[i].customNumber == randNum)
-                return sSpeciesUltraUncommon[i].species;
-        }
-        break;
+        return sGachaUltraSpeciesUncommon[randNum];
     case RARITY_RARE:
-        for (i = 0; i < totalMax; i++)
-        {
-            if (sSpeciesUltraRare[i].customNumber == randNum)
-                return sSpeciesUltraRare[i].species;
-        }
-        break;
+        return sGachaUltraSpeciesRare[randNum];
     case RARITY_ULTRA_RARE:
-        for (i = 0; i < totalMax; i++)
-        {
-            if (sSpeciesUltraUltraRare[i].customNumber == randNum)
-                return sSpeciesUltraUltraRare[i].species;
-        }
-        break;
+        return sGachaUltraSpeciesUltraRare[randNum];
     }
 
     return -1; // Return -1 if customNumber is not found
 }
 
-u16 GetGachaMasterSpecies(u16 randNum)
+static inline u16 GetGachaMasterSpecies(u16 randNum)
 {
     int i;
     u16 totalMax = 0;
@@ -2439,39 +2375,19 @@ u16 GetGachaMasterSpecies(u16 randNum)
     {
     default:
     case RARITY_COMMON:
-        for (i = 0; i < totalMax; i++)
-        {
-            if (sSpeciesMasterCommon[i].customNumber == randNum)
-                return sSpeciesMasterCommon[i].species;
-        }
-        break;
+        return sGachaMasterSpeciesCommon[randNum];
     case RARITY_UNCOMMON:
-        for (i = 0; i < totalMax; i++)
-        {
-            if (sSpeciesMasterUncommon[i].customNumber == randNum)
-                return sSpeciesMasterUncommon[i].species;
-        }
-        break;
+        return sGachaMasterSpeciesUncommon[randNum];
     case RARITY_RARE:
-        for (i = 0; i < totalMax; i++)
-        {
-            if (sSpeciesMasterRare[i].customNumber == randNum)
-                return sSpeciesMasterRare[i].species;
-        }
-        break;
+        return sGachaMasterSpeciesRare[randNum];
     case RARITY_ULTRA_RARE:
-        for (i = 0; i < totalMax; i++)
-        {
-            if (sSpeciesMasterUltraRare[i].customNumber == randNum)
-                return sSpeciesMasterUltraRare[i].species;
-        }
-        break;
+        return sGachaMasterSpeciesUltraRare[randNum];
     }
 
     return -1; // Return -1 if customNumber is not found
 }
 
-u16 GetGachaMon(u16 randNum)
+static u16 GetGachaMon(u16 randNum)
 {
     u32 species;
 
@@ -2504,14 +2420,14 @@ static inline bool32 CheckIfOwned(u16 species)
     return GetSetPokedexFlag(nationalDexNo, FLAG_GET_CAUGHT);
 }
 
-bool32 IsNotValidOwnedSpecies(u16 species)
+static inline bool32 IsNotValidOwnedSpecies(u16 species)
 {
     if (species == SPECIES_NONE)
         return TRUE;
     return !CheckIfOwned(species);
 }
 
-bool32 IsNotValidUnownedSpecies(u16 species)
+static inline bool32 IsNotValidUnownedSpecies(u16 species)
 {
     if (species == SPECIES_NONE)
         return TRUE;
@@ -2533,105 +2449,105 @@ static void GetPokemonOwned(void)
     {
     default:
     case GACHA_BASIC:
-        for (i = 0; i < ARRAY_COUNT(sSpeciesGachaBasicCommon); i++)
+        for (i = 0; i < ARRAY_COUNT(sGachaBasicSpeciesCommon); i++)
         {
-            species = sSpeciesGachaBasicCommon[i].species;
+            species = sGachaBasicSpeciesCommon[i];
             nationalDexNo = SpeciesToNationalPokedexNum(species);
             sGacha->ownedCommon = (sGacha->ownedCommon + GetSetPokedexFlag(nationalDexNo, FLAG_GET_CAUGHT));
         }
-        for (i = 0; i < ARRAY_COUNT(sSpeciesGachaBasicUncommon); i++)
+        for (i = 0; i < ARRAY_COUNT(sGachaBasicSpeciesUncommon); i++)
         {
-            species = sSpeciesGachaBasicUncommon[i].species;
+            species = sGachaBasicSpeciesUncommon[i];
             nationalDexNo = SpeciesToNationalPokedexNum(species);
             sGacha->ownedUncommon = (sGacha->ownedUncommon + GetSetPokedexFlag(nationalDexNo, FLAG_GET_CAUGHT));
         }
-        for (i = 0; i < ARRAY_COUNT(sSpeciesGachaBasicRare); i++)
+        for (i = 0; i < ARRAY_COUNT(sGachaBasicSpeciesRare); i++)
         {
-            species = sSpeciesGachaBasicRare[i].species;
+            species = sGachaBasicSpeciesRare[i];
             nationalDexNo = SpeciesToNationalPokedexNum(species);
             sGacha->ownedRare = (sGacha->ownedRare + GetSetPokedexFlag(nationalDexNo, FLAG_GET_CAUGHT));
         }
-        for (i = 0; i < ARRAY_COUNT(sSpeciesGachaBasicUltraRare); i++)
+        for (i = 0; i < ARRAY_COUNT(sGachaBasicSpeciesUltraRare); i++)
         {
-            species = sSpeciesGachaBasicUltraRare[i].species;
+            species = sGachaBasicSpeciesUltraRare[i];
             nationalDexNo = SpeciesToNationalPokedexNum(species);
             sGacha->ownedUltraRare = (sGacha->ownedUltraRare + GetSetPokedexFlag(nationalDexNo, FLAG_GET_CAUGHT));
         }
         break;
     case GACHA_GREAT:
-        for (i = 0; i < ARRAY_COUNT(sSpeciesGreatCommon); i++)
+        for (i = 0; i < ARRAY_COUNT(sGachaGreatSpeciesCommon); i++)
         {
-            species = sSpeciesGreatCommon[i].species;
+            species = sGachaGreatSpeciesCommon[i];
             nationalDexNo = SpeciesToNationalPokedexNum(species);
             sGacha->ownedCommon = (sGacha->ownedCommon + GetSetPokedexFlag(nationalDexNo, FLAG_GET_CAUGHT));
         }
-        for (i = 0; i < ARRAY_COUNT(sSpeciesGreatUncommon); i++)
+        for (i = 0; i < ARRAY_COUNT(sGachaGreatSpeciesUncommon); i++)
         {
-            species = sSpeciesGreatUncommon[i].species;
+            species = sGachaGreatSpeciesUncommon[i];
             nationalDexNo = SpeciesToNationalPokedexNum(species);
             sGacha->ownedUncommon = (sGacha->ownedUncommon + GetSetPokedexFlag(nationalDexNo, FLAG_GET_CAUGHT));
         }
-        for (i = 0; i < ARRAY_COUNT(sSpeciesGreatRare); i++)
+        for (i = 0; i < ARRAY_COUNT(sGachaGreatSpeciesRare); i++)
         {
-            species = sSpeciesGreatRare[i].species;
+            species = sGachaGreatSpeciesRare[i];
             nationalDexNo = SpeciesToNationalPokedexNum(species);
             sGacha->ownedRare = (sGacha->ownedRare + GetSetPokedexFlag(nationalDexNo, FLAG_GET_CAUGHT));
         }
-        for (i = 0; i < ARRAY_COUNT(sSpeciesGreatUltraRare); i++)
+        for (i = 0; i < ARRAY_COUNT(sGachaGreatSpeciesUltraRare); i++)
         {
-            species = sSpeciesGreatUltraRare[i].species;
+            species = sGachaGreatSpeciesUltraRare[i];
             nationalDexNo = SpeciesToNationalPokedexNum(species);
             sGacha->ownedUltraRare = (sGacha->ownedUltraRare + GetSetPokedexFlag(nationalDexNo, FLAG_GET_CAUGHT));
         }
         break;
     case GACHA_ULTRA:
-        for (i = 0; i < ARRAY_COUNT(sSpeciesUltraCommon); i++)
+        for (i = 0; i < ARRAY_COUNT(sGachaUltraSpeciesCommon); i++)
         {
-            species = sSpeciesUltraCommon[i].species;
+            species = sGachaUltraSpeciesCommon[i];
             nationalDexNo = SpeciesToNationalPokedexNum(species);
             sGacha->ownedCommon = (sGacha->ownedCommon + GetSetPokedexFlag(nationalDexNo, FLAG_GET_CAUGHT));
         }
-        for (i = 0; i < ARRAY_COUNT(sSpeciesUltraUncommon); i++)
+        for (i = 0; i < ARRAY_COUNT(sGachaUltraSpeciesUncommon); i++)
         {
-            species = sSpeciesUltraUncommon[i].species;
+            species = sGachaUltraSpeciesUncommon[i];
             nationalDexNo = SpeciesToNationalPokedexNum(species);
             sGacha->ownedUncommon = (sGacha->ownedUncommon + GetSetPokedexFlag(nationalDexNo, FLAG_GET_CAUGHT));
         }
-        for (i = 0; i < ARRAY_COUNT(sSpeciesUltraRare); i++)
+        for (i = 0; i < ARRAY_COUNT(sGachaUltraSpeciesRare); i++)
         {
-            species = sSpeciesUltraRare[i].species;
+            species = sGachaUltraSpeciesRare[i];
             nationalDexNo = SpeciesToNationalPokedexNum(species);
             sGacha->ownedRare = (sGacha->ownedRare + GetSetPokedexFlag(nationalDexNo, FLAG_GET_CAUGHT));
         }
-        for (i = 0; i < ARRAY_COUNT(sSpeciesUltraUltraRare); i++)
+        for (i = 0; i < ARRAY_COUNT(sGachaUltraSpeciesUltraRare); i++)
         {
-            species = sSpeciesUltraUltraRare[i].species;
+            species = sGachaUltraSpeciesUltraRare[i];
             nationalDexNo = SpeciesToNationalPokedexNum(species);
             sGacha->ownedUltraRare = (sGacha->ownedUltraRare + GetSetPokedexFlag(nationalDexNo, FLAG_GET_CAUGHT));
         }
         break;
     case GACHA_MASTER:
-        for (i = 0; i < ARRAY_COUNT(sSpeciesMasterCommon); i++)
+        for (i = 0; i < ARRAY_COUNT(sGachaMasterSpeciesCommon); i++)
         {
-            species = sSpeciesMasterCommon[i].species;
+            species = sGachaMasterSpeciesCommon[i];
             nationalDexNo = SpeciesToNationalPokedexNum(species);
             sGacha->ownedCommon = (sGacha->ownedCommon + GetSetPokedexFlag(nationalDexNo, FLAG_GET_CAUGHT));
         }
-        for (i = 0; i < ARRAY_COUNT(sSpeciesMasterUncommon); i++)
+        for (i = 0; i < ARRAY_COUNT(sGachaMasterSpeciesUncommon); i++)
         {
-            species = sSpeciesMasterUncommon[i].species;
+            species = sGachaMasterSpeciesUncommon[i];
             nationalDexNo = SpeciesToNationalPokedexNum(species);
             sGacha->ownedUncommon = (sGacha->ownedUncommon + GetSetPokedexFlag(nationalDexNo, FLAG_GET_CAUGHT));
         }
-        for (i = 0; i < ARRAY_COUNT(sSpeciesMasterRare); i++)
+        for (i = 0; i < ARRAY_COUNT(sGachaMasterSpeciesRare); i++)
         {
-            species = sSpeciesMasterRare[i].species;
+            species = sGachaMasterSpeciesRare[i];
             nationalDexNo = SpeciesToNationalPokedexNum(species);
             sGacha->ownedRare = (sGacha->ownedRare + GetSetPokedexFlag(nationalDexNo, FLAG_GET_CAUGHT));
         }
-        for (i = 0; i < ARRAY_COUNT(sSpeciesMasterUltraRare); i++)
+        for (i = 0; i < ARRAY_COUNT(sGachaMasterSpeciesUltraRare); i++)
         {
-            species = sSpeciesMasterUltraRare[i].species;
+            species = sGachaMasterSpeciesUltraRare[i];
             nationalDexNo = SpeciesToNationalPokedexNum(species);
             sGacha->ownedUltraRare = (sGacha->ownedUltraRare + GetSetPokedexFlag(nationalDexNo, FLAG_GET_CAUGHT));
         }
@@ -2815,10 +2731,6 @@ static void CalculatePullOdds(void)
     u16 totalRareAvailable;
     u16 totalUltraRareAvailable;
     u16 wager;
-    u8 commonChance;
-    u8 uncommonChance;
-    u8 rareChance;
-    u8 ultraRareChance;
     u8 totalChance;
 
     totalCommonAvailable = GetMaxAvailableGachaRaritySpecies(sGacha->GachaId, RARITY_COMMON);
@@ -2828,29 +2740,21 @@ static void CalculatePullOdds(void)
 
     wager = sGacha->wager;  // Player's wager (0-9999)
 
-    // Calculate the chance for each category
-    commonChance = CalculateChanceForCategory(sGacha->ownedCommon, totalCommonAvailable, RARITY_COMMON_ODDS, wager);
-    uncommonChance = CalculateChanceForCategory(sGacha->ownedUncommon, totalUncommonAvailable, RARITY_UNCOMMON_ODDS, wager);
-    rareChance = CalculateChanceForCategory(sGacha->ownedRare, totalRareAvailable, RARITY_RARE_ODDS, wager);
-    ultraRareChance = CalculateChanceForCategory(sGacha->ownedUltraRare, totalUltraRareAvailable, RARITY_ULTRA_RARE_ODDS, wager);
+    // Add up the chances from each rarity
+    totalChance = CalculateChanceForCategory(sGacha->ownedCommon, totalCommonAvailable, RARITY_COMMON_ODDS, wager);
+    totalChance += CalculateChanceForCategory(sGacha->ownedUncommon, totalUncommonAvailable, RARITY_UNCOMMON_ODDS, wager);
+    totalChance += CalculateChanceForCategory(sGacha->ownedRare, totalRareAvailable, RARITY_RARE_ODDS, wager);
+    totalChance += CalculateChanceForCategory(sGacha->ownedUltraRare, totalUltraRareAvailable, RARITY_ULTRA_RARE_ODDS, wager);
 
-    sGacha->commonChance = commonChance;
-    sGacha->uncommonChance = uncommonChance;
-    sGacha->rareChance = rareChance;
-    sGacha->ultraRareChance = ultraRareChance;
-
-    // Final Odds as a sum of chances
-    
-    totalChance = commonChance + uncommonChance + rareChance + ultraRareChance;
     if (totalChance <= 100)
-        sGacha->newMonOdds = commonChance + uncommonChance + rareChance + ultraRareChance;
+        sGacha->newMonOdds = totalChance;
     else
         sGacha->newMonOdds = 100;
 }
 
 static void AButton(void)
 {
-    if (sGacha->Trigger == 1)
+    if (sGacha->canBetWager)
     {
         sGacha->state = STATE_INIT_A;
     }
@@ -2876,7 +2780,7 @@ static void UpdateCursorPosition(s16 x)
 static void UpdateWagerDigit(int direction)
 {
     u8 place;
-    u16 tempwager;
+    u16 oldWager;
     u8 wagerDigits[4];
     u16 newWager;
     u16 d;
@@ -2886,16 +2790,16 @@ static void UpdateWagerDigit(int direction)
 
     place = sGacha->cursorPosition;
     d = 1000;
-    tempwager = sGacha->wager;
+    oldWager = sGacha->wager;
     
     for (i = 0; i < 4; i++)
     {
-        if (tempwager >= d)
-            wagerDigits[i] = tempwager / d;
+        if (oldWager >= d)
+            wagerDigits[i] = oldWager / d;
         else
             wagerDigits[i] = 0;
 
-        tempwager = tempwager % d;
+        oldWager = oldWager % d;
         d = d / 10;
     }
     maxWager = GetCoins();  // Maximum wager is the current coins
@@ -2922,7 +2826,7 @@ static void UpdateWagerDigit(int direction)
         // Ensure the new wager doesn't exceed max available coins
         newWager = (wagerDigits[0] * 1000) + (wagerDigits[1] * 100) + (wagerDigits[2] * 10) + wagerDigits[3];
         if (newWager > maxWager) // If the new wager exceeds available coins, revert back
-            newWager = GetCoins();
+            newWager = maxWager;
         // Update the wager if it's within the limit
         sGacha->wager = newWager;
     }
@@ -2962,8 +2866,7 @@ static void UpdateWagerDigit(int direction)
     {
         ResetMessage();
         CalculatePullOdds();
-        sGacha->Trigger = 1;
-        //gSprites[sGacha->CTAspriteId].animPaused = FALSE;
+        sGacha->canBetWager = TRUE;
         gSprites[sGacha->CTAspriteId].animNum = 1; // On
         ShowMessage();
     }
@@ -2972,9 +2875,8 @@ static void UpdateWagerDigit(int direction)
         ResetMessage();
         //CalculatePullOdds();
         sGacha->newMonOdds = 0;
-        sGacha->Trigger = 0;        
+        sGacha->canBetWager = FALSE;        
         gSprites[sGacha->CTAspriteId].animNum = 0; // Off
-        //gSprites[sGacha->CTAspriteId].animPaused = TRUE;
         ShowMessage();
     }
 }
@@ -3033,32 +2935,29 @@ static void HandleInput_GachaComplete(void)
 
 static void HandleInput(void)
 {
-    if (sGacha->Input == 0) 
+    if (JOY_NEW(A_BUTTON))
     {
-        if (JOY_NEW(A_BUTTON))
-        {
-            AButton();
-        }
-        else if (JOY_NEW(B_BUTTON))
-        {
-            sGacha->state = GACHA_STATE_START_EXIT;
-        }
-        else if (JOY_NEW(DPAD_UP))
-        {
-            MoveCursor(0);
-        }
-        else if (JOY_NEW(DPAD_RIGHT))
-        {
-            MoveCursor(1);
-        }
-        else if (JOY_NEW(DPAD_DOWN))
-        {
-            MoveCursor(2);
-        }
-        else if (JOY_NEW(DPAD_LEFT))
-        {
-            MoveCursor(3);
-        }
+        AButton();
+    }
+    else if (JOY_NEW(B_BUTTON))
+    {
+        sGacha->state = GACHA_STATE_START_EXIT;
+    }
+    else if (JOY_NEW(DPAD_UP))
+    {
+        MoveCursor(0);
+    }
+    else if (JOY_NEW(DPAD_RIGHT))
+    {
+        MoveCursor(1);
+    }
+    else if (JOY_NEW(DPAD_DOWN))
+    {
+        MoveCursor(2);
+    }
+    else if (JOY_NEW(DPAD_LEFT))
+    {
+        MoveCursor(3);
     }
 }
 
@@ -3116,53 +3015,48 @@ void ShowFinalMessage(void)
     CopyWindowToVram(sTextWindowId, 3);
 }
 
+static u8 GetSpeciesGachaLevel(void)
+{
+    u32 level, levelCap, minLevel, addedLevelRange;
+    static const u32 sLevelGachaFlagMap[][3] =
+    {
+        {FLAG_BADGE01_GET, 5, 6},
+        {FLAG_BADGE02_GET, 7, 5},
+        {FLAG_BADGE03_GET, 13, 7},
+        {FLAG_BADGE04_GET, 18, 5},
+        {FLAG_BADGE05_GET, 19, 9},
+        {FLAG_BADGE06_GET, 21, 9},
+        {FLAG_BADGE07_GET, 28, 8},
+        {FLAG_BADGE08_GET, 36, 14},
+        {FLAG_IS_CHAMPION, 40, 29},
+    };
+
+    minLevel = 2;
+    addedLevelRange = 4;
+
+    for (i = 0; i < ARRAY_COUNT(sLevelGachaFlagMap); i++)
+    {
+        if (FlagGet(sLevelGachaFlagMap[i][0]))
+        {
+            minLevel = sLevelGachaFlagMap[i][1];
+            addedLevelRange = sLevelGachaFlagMap[i][2];
+        }
+    }
+
+    addedLevelRange += 1;
+
+    level = (Random() % addedLevelRange) + minLevel;
+
+    levelCap = GetCurrentLevelCap();
+
+    if (level > levelCap)
+        return levelCap;
+
+    return level;
+}
 
 static void GachaMain(u8 taskId)
 {
-    u16 level;
-    u32 pos = B_POSITION_OPPONENT_RIGHT;
-
-    if (FlagGet(FLAG_IS_CHAMPION) == TRUE)
-    {
-        level = (Random() % 30) + 40;
-    }
-    else if (FlagGet(FLAG_BADGE08_GET) == TRUE)
-    {
-        level = (Random() % 15) + 36;
-    }
-    else if (FlagGet(FLAG_BADGE07_GET) == TRUE)
-    {
-        level = (Random() % 9) + 28;
-    }
-    else if (FlagGet(FLAG_BADGE06_GET) == TRUE)
-    {
-        level = (Random() % 10) + 21;
-    }
-    else if (FlagGet(FLAG_BADGE05_GET) == TRUE)
-    {
-        level = (Random() % 10) + 19;
-    }
-    else if (FlagGet(FLAG_BADGE04_GET) == TRUE)
-    {
-        level = (Random() % 6) + 18;
-    }
-    else if (FlagGet(FLAG_BADGE03_GET) == TRUE)
-    {
-        level = (Random() % 8) + 13;
-    }
-    else if (FlagGet(FLAG_BADGE02_GET) == TRUE)
-    {
-        level = (Random() % 6) + 7;
-    }
-    else if (FlagGet(FLAG_BADGE01_GET) == TRUE)
-    {
-        level = (Random() % 7) + 5;
-    }
-    else
-    {
-        level = (Random() % 5) + 2;
-    }
-    
     switch (sGacha->state)
     {
     case GACHA_STATE_INIT:
@@ -3189,7 +3083,6 @@ static void GachaMain(u8 taskId)
         ExitGacha();
         break;
     case STATE_INIT_A: // Initial state
-        sGacha->Input = 1;
         DeterminePokemonRarityAndNewStatus();
         PlaySE(SE_SHOP);
         RemoveCoins(sGacha->wager);
@@ -3305,18 +3198,18 @@ static void GachaMain(u8 taskId)
     case STATE_POKEBALL_ARRIVE_WAIT:        
         if (gSprites[sGacha->bouncingPokeballSpriteId].callback == SpriteCallbackDummy)
         {
-            CreateMon(&gEnemyParty[0], sGacha->CalculatedSpecies, level, USE_RANDOM_IVS, FALSE, 0, OT_ID_PLAYER_ID, 0);
+            CreateMon(&gEnemyParty[0], sGacha->CalculatedSpecies, GetSpeciesGachaLevel(), USE_RANDOM_IVS, FALSE, 0, OT_ID_PLAYER_ID, 0);
             GiveMonToPlayer(&gEnemyParty[0]);
             GetSetPokedexFlag(SpeciesToNationalPokedexNum(sGacha->CalculatedSpecies), FLAG_SET_SEEN);
             HandleSetPokedexFlag(SpeciesToNationalPokedexNum(sGacha->CalculatedSpecies), FLAG_SET_CAUGHT, GetMonData(&gEnemyParty[0], MON_DATA_PERSONALITY));
             LoadPalette(GetMonFrontSpritePal(&gEnemyParty[0]), OBJ_PLTT_ID(2), PLTT_SIZE_4BPP);
-            SetMultiuseSpriteTemplateToPokemon(sGacha->CalculatedSpecies, pos);
+            SetMultiuseSpriteTemplateToPokemon(sGacha->CalculatedSpecies, B_POSITION_OPPONENT_RIGHT);
             sGacha->monSpriteId = CreateMonPicSprite_Affine(sGacha->CalculatedSpecies, GetMonData(&gEnemyParty[0], MON_DATA_IS_SHINY), GetMonData(&gEnemyParty[0], MON_DATA_PERSONALITY), MON_PIC_AFFINE_FRONT, 120, 60, 14, TAG_NONE);
             gSprites[sGacha->monSpriteId].callback = SpriteCB_Null;
             gSprites[sGacha->monSpriteId].oam.priority = 0;
             gSprites[sGacha->monSpriteId].invisible = TRUE;
             HandleLoadSpecialPokePic(TRUE,
-                                        gMonSpritesGfxPtr->spritesGfx[pos],
+                                        gMonSpritesGfxPtr->spritesGfx[B_POSITION_OPPONENT_RIGHT],
                                         sGacha->CalculatedSpecies,
                                         GetMonData(&gEnemyParty[0], MON_DATA_PERSONALITY));
             sGacha->state++;
@@ -3379,21 +3272,24 @@ static void InitGachaScreen(void)
 
     ResetSpriteData();
     FreeAllSpritePalettes();
-    LoadSpritePalettes(sSpritePalettes2);
 
     switch (sGacha->GachaId)
     {
     default:
     case GACHA_BASIC:
+        LoadSpritePalettes(sSpritePalettesBasic);
         CreateHoppip();
         break;
     case GACHA_GREAT:
+        LoadSpritePalettes(sSpritePalettesGreat);
         CreatePhanpy();
         break;
     case GACHA_ULTRA:
+        LoadSpritePalettes(sSpritePalettesUltra);
         CreateTeddiursa();
         break;
     case GACHA_MASTER:
+        LoadSpritePalettes(sSpritePalettesMaster);
         CreateBelossom();
         break;
     }
@@ -3416,7 +3312,6 @@ static void InitGachaScreen(void)
 
     UpdateCursorPosition(gSprites[sGacha->ArrowsSpriteId].x);
     sGacha->waitTimer = 0;
-    sGacha->Input = 0;
     GetPokemonOwned();
     
     CopyBgTilemapBufferToVram(GACHA_BG_BASE);
