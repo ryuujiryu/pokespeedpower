@@ -2423,6 +2423,7 @@ gCryTable::
 .endif @ P_FAMILY_TERAPAGOS
 .if P_FAMILY_PECHARUNT == TRUE
 	cry Cry_Pecharunt
+	cry Cry_Scavult
 .endif @ P_FAMILY_PECHARUNT
 .endif @ P_CRIES_ENABLED
 
@@ -4851,5 +4852,6 @@ gCryTable_Reverse::
 .endif @ P_FAMILY_TERAPAGOS
 .if P_FAMILY_PECHARUNT == TRUE
 	cry_reverse Cry_Pecharunt
+	cry_reverse Cry_Scavult
 .endif @ P_FAMILY_PECHARUNT
 .endif @ P_CRIES_ENABLED

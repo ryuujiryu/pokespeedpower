@@ -26734,4 +26734,11 @@ const u32 gObjectEventPic_Substitute[] = INCBIN_COMP("graphics/pokemon/question_
 
     const u32 gMonFrontPic_Egg[] = INCBIN_U32("graphics/pokemon/egg/anim_front.4bpp.lz");
     const u16 gMonPalette_Egg[] = INCBIN_U16("graphics/pokemon/egg/normal.gbapal");
-    const u8 gMonIcon_Egg[] = INCBIN_U8("graphics/pokemon/egg/icon.4bpp");
+    const u8 gMonIcon_Egg[] = INCBIN_U8("graphics/pokemon/egg/icon.4bpp");  
+
+    const u32 gMonFrontPic_Scavult[] = INCBIN_U32("graphics/pokemon/scavult/front.4bpp.lz");
+    const u32 gMonBackPic_Scavult[] = INCBIN_U32("graphics/pokemon/scavult/back.4bpp.lz");
+    const u16 gMonPalette_Scavult[] = INCBIN_U16("graphics/pokemon/scavult/normal.gbapal");
+    const u16 gMonShinyPalette_Scavult[] = INCBIN_U16("graphics/pokemon/scavult/shiny.gbapal");
+    const u8 gMonIcon_Scavult[] = INCBIN_U8("graphics/pokemon/scavult/icon.4bpp");
+    const u8 gMonFootprint_Scavult[] = INCBIN_U8("graphics/pokemon/scavult/footprint.1bpp");
