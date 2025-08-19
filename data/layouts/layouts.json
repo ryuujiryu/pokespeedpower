@@ -4424,12 +4424,42 @@
     {
       "id": "LAYOUT_ROUTE1",
       "name": "Route1_Layout",
-      "width": 35,
-      "height": 60,
+      "width": 41,
+      "height": 62,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_CitrusIsland",
+      "secondary_tileset": "gTileset_Slateport",
       "border_filepath": "data/layouts/Route1/border.bin",
       "blockdata_filepath": "data/layouts/Route1/map.bin"
+    },
+    {
+      "id": "LAYOUT_DURIAN_TOWN",
+      "name": "DurianTown_Layout",
+      "width": 28,
+      "height": 25,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Mossdeep",
+      "border_filepath": "data/layouts/DurianTown/border.bin",
+      "blockdata_filepath": "data/layouts/DurianTown/map.bin"
+    },
+    {
+      "id": "LAYOUT_DURIAN_TOWN_POKEMON_CENTER",
+      "name": "DurianTown_PokemonCenter_Layout",
+      "width": 14,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PokemonCenter",
+      "border_filepath": "data/layouts/DurianTown_PokemonCenter/border.bin",
+      "blockdata_filepath": "data/layouts/DurianTown_PokemonCenter/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE51_GATEHOUSE",
+      "name": "Route51_Gatehouse_Layout",
+      "width": 11,
+      "height": 14,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Gatehouse",
+      "border_filepath": "data/layouts/Route51_Gatehouse/border.bin",
+      "blockdata_filepath": "data/layouts/Route51_Gatehouse/map.bin"
     }
   ]
 }

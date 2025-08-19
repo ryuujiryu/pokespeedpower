@@ -12306,7 +12306,7 @@ F_TRAINER_FEMALE |
     [DIFFICULTY_NORMAL][TRAINER_WINONA_1] =
     {
 #line 4986
-        .trainerName = _("WINONA"),
+        .trainerName = _("MIRANDA"),
 #line 4987
         .trainerClass = TRAINER_CLASS_LEADER,
 #line 4988

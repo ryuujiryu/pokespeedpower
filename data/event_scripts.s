@@ -1161,3 +1161,9 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/CitrusIsland/scripts.inc"
 
 	.include "data/maps/Route1/scripts.inc"
+
+	.include "data/maps/DurianTown/scripts.inc"
+
+	.include "data/maps/DurianTown_PokemonCenter/scripts.inc"
+
+	.include "data/maps/Route51_Gatehouse/scripts.inc"

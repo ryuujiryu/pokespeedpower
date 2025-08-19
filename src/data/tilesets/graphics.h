@@ -1653,3 +1653,22 @@ const u16 gTilesetPalettes_CitrusIsland[][16] =
 };
 
 const u32 gTilesetTiles_CitrusIsland[] = INCBIN_U32("data/tilesets/secondary/citrus_island/tiles.4bpp.lz");
+
+const u16 gTilesetPalettes_Gatehouse[][16] =
+{
+    INCBIN_U16("data/tilesets/secondary/gatehouse/palettes/00.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/gatehouse/palettes/01.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/gatehouse/palettes/02.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/gatehouse/palettes/03.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/gatehouse/palettes/04.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/gatehouse/palettes/05.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/gatehouse/palettes/06.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/gatehouse/palettes/07.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/gatehouse/palettes/08.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/gatehouse/palettes/09.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/gatehouse/palettes/10.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/gatehouse/palettes/11.gbapal"),
+    INCBIN_U16("data/tilesets/secondary/gatehouse/palettes/12.gbapal"),
+};
+
+const u32 gTilesetTiles_Gatehouse[] = INCBIN_U32("data/tilesets/secondary/gatehouse/tiles.4bpp.lz");

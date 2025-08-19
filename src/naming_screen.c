@@ -44,7 +44,7 @@ enum {
 };
 
 #define KBROW_COUNT 4
-#define KBCOL_COUNT 8
+#define KBCOL_COUNT 9
 
 enum {
     GFXTAG_BACK_BUTTON,
@@ -291,10 +291,10 @@ static const u8 sKeyboardChars[KBPAGE_COUNT][KBROW_COUNT][KBCOL_COUNT] = {
         __("TUVWXYZ "),
     },
     [KEYBOARD_SYMBOLS] = {
-        __("01234   "),
-        __("56789   "),
+        __("01234ß  "),
+        __("56789œ  "),
         __("!?♂♀/-  "),
-        __("…“”‘'   "),
+        __("…“”‘'Œ  "),
     }
 };
 

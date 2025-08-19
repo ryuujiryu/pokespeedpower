@@ -210,3 +210,6 @@ const u16 gMetatileAttributes_UnionRoom[] = INCBIN_U16("data/tilesets/secondary/
 
 const u16 gMetatiles_CitrusIsland[] = INCBIN_U16("data/tilesets/secondary/citrus_island/metatiles.bin");
 const u16 gMetatileAttributes_CitrusIsland[] = INCBIN_U16("data/tilesets/secondary/citrus_island/metatile_attributes.bin");
+
+const u16 gMetatiles_Gatehouse[] = INCBIN_U16("data/tilesets/secondary/gatehouse/metatiles.bin");
+const u16 gMetatileAttributes_Gatehouse[] = INCBIN_U16("data/tilesets/secondary/gatehouse/metatile_attributes.bin");
