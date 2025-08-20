@@ -344,11 +344,11 @@ const struct TrainerClass gTrainerClasses[TRAINER_CLASS_COUNT] =
     [TRAINER_CLASS_YOUNGSTER] = { _("YOUNGSTER"), 4 },
     [TRAINER_CLASS_CHAMPION] = { _("SHOGUN"), 50 },
     [TRAINER_CLASS_FISHERMAN] = { _("FISHERMAN"), 10, B_TRAINER_CLASS_POKE_BALLS >= GEN_8 ? BALL_DIVE : BALL_LURE },
-    [TRAINER_CLASS_TRIATHLETE] = { _("TRIATHLETE"), 10 },
+    [TRAINER_CLASS_TRIATHLETE] = { _("SPRINTER"), 10 },
     [TRAINER_CLASS_DRAGON_TAMER] = { _("DRAGON TAMER"), 12 },
     [TRAINER_CLASS_NINJA_BOY] = { _("NINJA BOY"), 3 },
     [TRAINER_CLASS_BATTLE_GIRL] = { _("BATTLE GIRL"), 6 },
-    [TRAINER_CLASS_PARASOL_LADY] = { _("TEACHER"), 10 },
+    [TRAINER_CLASS_PARASOL_LADY] = { _("PARASOLADY"), 10 },
     [TRAINER_CLASS_SWIMMER_F] = { _("SWIMMER♀"), 2, BALL_DIVE },
     [TRAINER_CLASS_TWINS] = { _("TWINS"), 3 },
     [TRAINER_CLASS_SAILOR] = { _("SAILOR"), 8 },
@@ -370,6 +370,8 @@ const struct TrainerClass gTrainerClasses[TRAINER_CLASS_COUNT] =
     [TRAINER_CLASS_PIKE_QUEEN] = { _("PIKE QUEEN") },
     [TRAINER_CLASS_PYRAMID_KING] = { _("PYRAMID KING") },
     [TRAINER_CLASS_RS_PROTAG] = { _("{PKMN} TRAINER") },
+    [TRAINER_CLASS_TEACHER] = { _("TEACHER"), 2 },
+    [TRAINER_CLASS_IDOL] = { _("IDOL"), 3 },
 };
 
 static void (*const sTurnActionsFuncsTable[])(void) =

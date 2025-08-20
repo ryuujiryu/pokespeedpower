@@ -1,0 +1,51 @@
+raw `
+DurianGym_MapScripts::
+	.byte 0
+
+DurianGym_EventScript_Junichi::
+	trainerbattle_single TRAINER_JUNICHI, DurianGym_Text_JunichiIntro, DurianGym_Text_JunichiDefeat
+	msgbox DurianGym_Text_JunichiPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+DurianGym_EventScript_Darian::
+	trainerbattle_single TRAINER_DARIAN, DurianGym_Text_DarianIntro, DurianGym_Text_DarianDefeat
+	msgbox DurianGym_Text_DarianPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+DurianGym_EventScript_ShiriAndBanjo::
+	trainerbattle_single TRAINER_SHIRI_AND_BANJO_1, DurianGym_Text_ShiriAndBanjoIntro, DurianGym_Text_ShiriAndBanjoDefeat
+	msgbox DurianGym_Text_ShiriAndBanjoPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+DurianGym_Text_JunichiIntro:
+	.string "Don't take us GYM TRAINERS lightly!\n"
+	.string "I'll show you why we're better!$"
+
+DurianGym_Text_JunichiDefeat:
+	.string "You were too good for me…$"
+
+DurianGym_Text_JunichiPostBattle:
+	.string "You haven't seen anything of the ROCK\n"
+	.string "type's terrifying power!$"
+
+DurianGym_Text_DarianIntro:
+	.string "Don't take us GYM TRAINERS lightly!\n"
+	.string "I'll show you why we're better!$"
+
+DurianGym_Text_DarianDefeat:
+	.string "You were too good for me…$"
+
+DurianGym_Text_DarianPostBattle:
+	.string "You haven't seen anything of the ROCK\n"
+	.string "type's terrifying power!$"
+
+DurianGym_Text_ShiriAndBanjoIntro:
+	.string "Don't take us GYM TRAINERS lightly!\n"
+	.string "I'll show you why we're better!$"
+
+DurianGym_Text_ShiriAndBanjoDefeat:
+	.string "You were too good for me…$"
+
+DurianGym_Text_ShiriAndBanjoPostBattle:
+	.string "You haven't seen anything of the ROCK\n"
+	.string "type's terrifying power!$"

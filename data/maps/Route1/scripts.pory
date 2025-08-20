@@ -1,0 +1,142 @@
+raw `
+Route1_MapScripts::
+	.byte 0
+ 
+Route1_EventScript_Teacher::
+	msgbox Route1_Text_RockyBeach, MSGBOX_NPC
+	end
+
+Route1_EventScript_RouteSignPort::
+	msgbox Route1_Text_RouteSignPort, MSGBOX_SIGN
+	end
+
+Route1_EventScript_RouteSignDurian::
+	msgbox Route1_Text_RouteSignDurian, MSGBOX_SIGN
+	end
+
+Route1_EventScript_AromaGirl::
+	lock
+	faceplayer
+	goto_if_unset FLAG_RECEIVED_WAILMER_PAIL, Route1_EventScript_GiveWailmerPail
+	msgbox Route1_Text_WailmerPailExplanation, MSGBOX_DEFAULT
+	release
+	end
+
+Route1_EventScript_GiveWailmerPail::
+	msgbox Route1_Text_YouCanHaveThis, MSGBOX_DEFAULT
+	giveitem ITEM_WAILMER_PAIL
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	msgbox Route1_Text_WailmerPailExplanation, MSGBOX_DEFAULT
+	setflag FLAG_RECEIVED_WAILMER_PAIL
+	release
+	end
+
+
+Route1_EventScript_SodaPopShop::
+	showmoneybox 0, 0
+	msgbox Route1_Text_WantToBuySodaPop, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, YES, Route1_EventScript_BuySodaPop
+	msgbox Route1_Text_ThatsTooBad, MSGBOX_DEFAULT
+	hidemoneybox
+	release
+	end
+
+
+Route1_EventScript_BuySodaPop::
+	checkmoney 300
+	goto_if_eq VAR_RESULT, FALSE, Route1_EventScript_NotEnoughMoney
+	checkitemspace ITEM_SODA_POP
+	goto_if_eq VAR_RESULT, FALSE, Route1_EventScript_NotEnoughSpace
+	msgbox Route1_Text_HereYouGo, MSGBOX_DEFAULT
+	removemoney 300
+	updatemoneybox
+.if OW_SHOW_ITEM_DESCRIPTIONS != OW_ITEM_DESCRIPTIONS_OFF
+	hidemoneybox
+	giveitem ITEM_SODA_POP
+.else
+	giveitem ITEM_SODA_POP
+	hidemoneybox
+.endif
+	release
+	end
+
+Route1_Text_YouCanHaveThis:
+	.string "La-la-laœ… …\p"
+	.string "Hmm…? Oh, hello!\n"
+	.string "Are you into gardening, too?\p"
+	.string "But I see that you don't have a\n"
+	.string "WAILMER PAIL! Here, I got a spare!$"
+
+Route1_Text_WailmerPailExplanation:
+	.string "While BERRY plants are growing,\n"
+	.string "water them with the WAILMER PAIL.\p"
+	.string "Oh, another thing.\p"
+	.string "If you don't pick BERRIES for a while,\n"
+	.string "they'll drop off onto the ground.\l"
+	.string "But they'll sprout again.\p"
+	.string "Isn't that awesome?\n"
+	.string "It's like they have the will to live.$"
+
+Route1_Text_RockyBeach:
+	.string "Get a vacation, they said!\n"s
+	.string "It will be fun, they said!\p"
+	.string "I can't even swim with all\n"
+	.string "these rocks!$"
+
+Route1_Text_RouteSignPort:
+	.string "ROUTE 51\n"
+	.string "{DOWN_ARROW} ROUTE 51 PORT$"
+
+Route1_Text_RouteSignDurian:
+	.string "ROUTE 51\n"
+	.string "{UP_ARROW} DURIAN TOWN$"
+
+Route1_Text_WantToBuySodaPop:
+	.string "On such a hot beach, only a\n"
+	.string "a SODA POP can quench your thirst!\p"
+	.string "Just ¥300 a bottle!\n"
+	.string "Buy some!$"
+
+Route1_Text_ThatsTooBad:
+	.string "No?\n"
+	.string "That's too bad.$"
+
+Route1_Text_HereYouGo:
+	.string "Here you go!$"
+
+Route1_EventScript_Tiana::
+	trainerbattle_single TRAINER_TIANA, Route1_Text_TianaIntro, Route1_Text_TianaDefeated
+	msgbox Route1_Text_TianaPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Route1_EventScript_Calvin::
+	trainerbattle_single TRAINER_CALVIN, Route1_Text_CalvinIntro, Route1_Text_CalvinDefeated
+	msgbox Route1_Text_CalvinPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Route1_EventScript_Ally::
+	trainerbattle_single TRAINER_ALLY, Route1_Text_AllyIntro, Route1_Text_AllyDefeated
+	msgbox Route1_Text_AllyPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Route1_EventScript_Rick::
+	trainerbattle_single TRAINER_RICK, Route1_Text_RickIntro, Route1_Text_RickDefeated
+	msgbox Route1_Text_RickPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Route1_EventScript_NotEnoughMoney::
+	msgbox Route1_Text_NotEnoughMoney, MSGBOX_DEFAULT
+	hidemoneybox
+	release
+	end
+
+Route1_EventScript_NotEnoughSpace::
+	msgbox gText_TooBadBagIsFull, MSGBOX_DEFAULT
+	hidemoneybox
+	release
+	end
+
+Route1_Text_NotEnoughMoney:
+	.string "You don't have the money.$"
+
+`

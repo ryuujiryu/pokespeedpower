@@ -721,7 +721,7 @@
     },
     {
       "id": "MAPSEC_PEWTER_CITY",
-      "name": "PEWTER CITY",
+      "name": "COCONUT CITY",
       "x": 0,
       "y": 0,
       "width": 1,
@@ -817,7 +817,7 @@
     },
     {
       "id": "MAPSEC_ROUTE_2",
-      "name": "ROUTE 2",
+      "name": "ROUTE 52",
       "x": 0,
       "y": 0,
       "width": 1,
@@ -825,7 +825,7 @@
     },
     {
       "id": "MAPSEC_ROUTE_3",
-      "name": "ROUTE 3",
+      "name": "ROUTE 53",
       "x": 0,
       "y": 0,
       "width": 1,

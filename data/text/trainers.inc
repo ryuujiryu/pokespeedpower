@@ -57,18 +57,6 @@ Route102_Text_RickPostBattle:
 	.string "If you lock eyes with a TRAINER,\n"
 	.string "you have to challenge! It's a rule!$"
 
-Route102_Text_TianaIntro:
-	.string "I'm going to keep winning and aim\n"
-	.string "to be the best TRAINER.\p"
-	.string "Help me further my career!$"
-
-Route102_Text_TianaDefeated:
-	.string "I ended up furthering your career…$"
-
-Route102_Text_TianaPostBattle:
-	.string "To keep winning my way up, I see that\n"
-	.string "I have to catch more POKéMON.$"
-
 Route103_Text_DaisyIntro:
 	.string "Did you feel the tug of our\n"
 	.string "soul-soothing fragrance?$"
@@ -4794,3 +4782,48 @@ VSSeeker_Text_TrainersNotReady::
 	.string "The other Trainers don't appear\n"
 	.string "to be ready for battle.\p"
 	.string "Let's wait till later.{PAUSE_UNTIL_PRESS}$"
+
+Route1_Text_TianaIntro:
+	.string "Arrgh, I'm struggling to get a tan!\n"
+	.string "Help me blow some steam!$"
+
+Route1_Text_TianaDefeated:
+	.string "You blew me away!$"
+
+Route1_Text_TianaPostBattle:
+	.string "Maybe I'll go for a swim...$"
+
+Route1_Text_CalvinIntro:
+	.string "… … … … …\n"
+	.string "… … … … …\p"
+	.string "You find my shorts funny, huh?\n"
+	.string "I'll show you funny!$"
+
+Route1_Text_CalvinDefeated:
+	.string "Maybe I'll start wearin' jeans...$"
+
+Route1_Text_CalvinPostBattle:
+	.string "Wait, no. Who would wear a pair\n"
+	.string "of jeans at the beach?$"
+
+Route1_Text_AllyIntro:
+	.string "I packed lunch, my swimsuit, and\n"
+	.string "sunscreen! I'm ready for everything!$"
+
+Route1_Text_AllyDefeated:
+	.string "I wasn't ready for a defeat…$"
+
+Route1_Text_AllyPostBattle:
+	.string "At least I still have my sandwich…$"
+
+Route1_Text_RickIntro:
+	.string "Ahoy! What about a quick battle\n"
+	.string "before I set sail?$"
+
+Route1_Text_RickDefeated:
+	.string "Ow! Okay, okay, I'll go on deck!$"
+
+Route1_Text_RickPostBattle:
+	.string "You’d make a fine deckhand\n"
+	.string "with skill like that!$"
+	

@@ -137,6 +137,12 @@
       "map": "MAP_PACIFIDLOG_TOWN",
       "x": 7,
       "y": 34
+    },
+    {
+      "id": "HEAL_LOCATION_CITRUS_ISLAND",
+      "map": "MAP_CITRUS_ISLAND",
+      "x": 13,
+      "y": 14
     }
   ]
 }

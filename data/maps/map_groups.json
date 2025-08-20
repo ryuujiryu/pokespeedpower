@@ -35,7 +35,8 @@
     "gMapGroup_IndoorRoute119",
     "gMapGroup_IndoorRoute124",
     "gMapGroup_TenkeiOutdoor",
-    "gMapGroup_DurianTownIndoor"
+    "gMapGroup_DurianTownIndoor",
+    "gMapGroup_CoconutCityIndoor"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PetalburgCity",
@@ -626,10 +627,17 @@
   "gMapGroup_TenkeiOutdoor": [
     "CitrusIsland",
     "Route1",
-    "DurianTown"
+    "DurianTown",
+    "Route52",
+    "Route53",
+    "CoconutCity"
   ],
   "gMapGroup_DurianTownIndoor": [
     "DurianTown_PokemonCenter",
-    "Route51_Gatehouse"
+    "Route51_Gatehouse",
+    "DurianGym"
+  ],
+  "gMapGroup_CoconutCityIndoor": [
+    "Route53_Gatehouse"
   ]
 }

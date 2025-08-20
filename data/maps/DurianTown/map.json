@@ -17,13 +17,18 @@
       "map": "MAP_ROUTE1",
       "offset": -15,
       "direction": "down"
+    },
+    {
+      "map": "MAP_ROUTE52",
+      "offset": 0,
+      "direction": "up"
     }
   ],
   "object_events": [],
   "warp_events": [
     {
       "x": 5,
-      "y": 23,
+      "y": 24,
       "elevation": 0,
       "dest_map": "MAP_ROUTE51_GATEHOUSE",
       "dest_warp_id": "1"
@@ -33,6 +38,13 @@
       "y": 17,
       "elevation": 0,
       "dest_map": "MAP_DURIAN_TOWN_POKEMON_CENTER",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 5,
+      "y": 9,
+      "elevation": 0,
+      "dest_map": "MAP_DURIAN_GYM",
       "dest_warp_id": "0"
     }
   ],

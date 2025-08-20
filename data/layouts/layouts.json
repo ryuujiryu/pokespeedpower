@@ -4460,6 +4460,56 @@
       "secondary_tileset": "gTileset_Gatehouse",
       "border_filepath": "data/layouts/Route51_Gatehouse/border.bin",
       "blockdata_filepath": "data/layouts/Route51_Gatehouse/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE52",
+      "name": "Route52_Layout",
+      "width": 30,
+      "height": 58,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Mossdeep",
+      "border_filepath": "data/layouts/Route52/border.bin",
+      "blockdata_filepath": "data/layouts/Route52/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE53",
+      "name": "Route53_Layout",
+      "width": 52,
+      "height": 25,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Coconut",
+      "border_filepath": "data/layouts/Route53/border.bin",
+      "blockdata_filepath": "data/layouts/Route53/map.bin"
+    },
+    {
+      "id": "LAYOUT_COCONUT_CITY",
+      "name": "CoconutCity_Layout",
+      "width": 56,
+      "height": 55,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Coconut",
+      "border_filepath": "data/layouts/CoconutCity/border.bin",
+      "blockdata_filepath": "data/layouts/CoconutCity/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE53_GATEHOUSE",
+      "name": "Route53_Gatehouse_Layout",
+      "width": 14,
+      "height": 11,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Gatehouse",
+      "border_filepath": "data/layouts/Route53_Gatehouse/border.bin",
+      "blockdata_filepath": "data/layouts/Route53_Gatehouse/map.bin"
+    },
+    {
+      "id": "LAYOUT_DURIAN_GYM",
+      "name": "DurianGym_Layout",
+      "width": 11,
+      "height": 20,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_RustboroGym",
+      "border_filepath": "data/layouts/DurianGym/border.bin",
+      "blockdata_filepath": "data/layouts/DurianGym/map.bin"
     }
   ]
 }
