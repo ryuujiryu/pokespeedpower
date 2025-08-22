@@ -4444,8 +4444,8 @@
     {
       "id": "LAYOUT_DURIAN_TOWN_POKEMON_CENTER",
       "name": "DurianTown_PokemonCenter_Layout",
-      "width": 14,
-      "height": 9,
+      "width": 20,
+      "height": 16,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_PokemonCenter",
       "border_filepath": "data/layouts/DurianTown_PokemonCenter/border.bin",
