@@ -216,3 +216,6 @@ const u16 gMetatileAttributes_Gatehouse[] = INCBIN_U16("data/tilesets/secondary/
 
 const u16 gMetatiles_Coconut[] = INCBIN_U16("data/tilesets/secondary/coconut/metatiles.bin");
 const u16 gMetatileAttributes_Coconut[] = INCBIN_U16("data/tilesets/secondary/coconut/metatile_attributes.bin");
+
+const u16 gMetatiles_JapaneseBuilding[] = INCBIN_U16("data/tilesets/secondary/japanese_building/metatiles.bin");
+const u16 gMetatileAttributes_JapaneseBuilding[] = INCBIN_U16("data/tilesets/secondary/japanese_building/metatile_attributes.bin");

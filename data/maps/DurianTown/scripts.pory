@@ -1,4 +1,34 @@
 raw `
 DurianTown_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, DurianTown_OnTransition
 	.byte 0
 `
+raw `
+
+DurianTown_OnTransition:
+	setflag FLAG_VISITED_DURIAN_TOWN
+	end
+
+DurianTown_EventScript_GymSign::
+	msgbox DurianTown_Text_GymSign, MSGBOX_SIGN
+	end
+
+DurianTown_EventScript_CitySign::
+	msgbox DurianTown_Text_CitySign, MSGBOX_SIGN
+	end
+
+DurianTown_EventScript_KurtHouseSign::
+	msgbox DurianTown_Text_KurtHouseSign, MSGBOX_SIGN
+	end
+
+DurianTown_Text_GymSign:
+	.string "ELEMENTAL TEMPLE OF LIVEHOOD\n"
+	.string "GUARDIANS: SHIRI&BANJO\l"
+	.string "“The fearful harmony!”$"
+
+DurianTown_Text_CitySign:
+	.string "DURIAN TOWN\n"
+	.string "“United with nature and POKéMON”$"
+
+DurianTown_Text_KurtHouseSign:
+	.string "KURT'S HOUSE$"

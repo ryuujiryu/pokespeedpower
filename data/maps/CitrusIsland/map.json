@@ -16,10 +16,45 @@
   "object_events": [],
   "warp_events": [
     {
+      "x": 5,
+      "y": 29,
+      "elevation": 0,
+      "dest_map": "MAP_CITRUS_ISLAND_HOUSE1",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 16,
+      "y": 28,
+      "elevation": 0,
+      "dest_map": "MAP_CITRUS_ISLAND_HOUSE2",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 31,
+      "y": 21,
+      "elevation": 0,
+      "dest_map": "MAP_CITRUS_ISLAND_HOUSE3",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 36,
+      "y": 13,
+      "elevation": 0,
+      "dest_map": "MAP_CITRUS_ISLAND_MITSURU_HOUSE",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 21,
+      "y": 7,
+      "elevation": 0,
+      "dest_map": "MAP_CITRUS_ISLAND_PLAYER_HOUSE",
+      "dest_warp_id": "0"
+    },
+    {
       "x": 22,
       "y": 7,
       "elevation": 0,
-      "dest_map": "MAP_CITRUS_ISLAND",
+      "dest_map": "MAP_CITRUS_ISLAND_PLAYER_HOUSE",
       "dest_warp_id": "0"
     }
   ],

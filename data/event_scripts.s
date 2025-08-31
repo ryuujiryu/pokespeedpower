@@ -1177,3 +1177,17 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/Route53_Gatehouse/scripts.inc"
 
 	.include "data/maps/DurianGym/scripts.inc"
+
+	.include "data/maps/CitrusIsland_House1/scripts.inc"
+
+	.include "data/maps/CitrusIsland_House2/scripts.inc"
+
+	.include "data/maps/CitrusIsland_House3/scripts.inc"
+
+	.include "data/maps/CitrusIsland_MitsuruHouse/scripts.inc"
+
+	.include "data/maps/DurianTown_House/scripts.inc"
+
+	.include "data/maps/DurianTown_KurtsHouse/scripts.inc"
+
+	.include "data/maps/CitrusIsland_PlayerHouse/scripts.inc"

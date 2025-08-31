@@ -33,59 +33,68 @@ EventScript_PkmnCenterNurse_IllTakeYourPkmn2::
 	return
 
 EventScript_PkmnCenterNurse_TakeAndHealPkmn::
-	hidefollower 0
-	applymovement VAR_0x800B, Movement_PkmnCenterNurse_Turn
-	waitmovement 0
-	dofieldeffect FLDEFF_POKECENTER_HEAL
+    applymovement VAR_0x800B, Movement_FaceUp
+    waitmovement 0
+    fadeoutbgm 0
+    dofieldeffect FLDEFF_POKECENTER_HEAL
 .if OW_UNION_DISABLE_CHECK == FALSE && OW_FLAG_MOVE_UNION_ROOM_CHECK != 0
-	setflag OW_FLAG_MOVE_UNION_ROOM_CHECK
-	call CableClub_OnResume
-	clearflag OW_FLAG_MOVE_UNION_ROOM_CHECK
+    setflag OW_FLAG_MOVE_UNION_ROOM_CHECK
+    call CableClub_OnResume
+    clearflag OW_FLAG_MOVE_UNION_ROOM_CHECK
 .endif
-	waitfieldeffect FLDEFF_POKECENTER_HEAL
-	applymovement VAR_0x800B, Common_Movement_WalkInPlaceFasterDown
-	waitmovement 0
-	special HealPlayerParty
-	callnative UpdateFollowingPokemon
-	return
+    waitfieldeffect FLDEFF_POKECENTER_HEAL
+    special HealPlayerParty
+    applymovement VAR_0x800B, Movement_FaceDown
+    playbgm MUS_POKE_CENTER, TRUE
+    waitmovement 0
+    return
 
 EventScript_PkmnCenterNurse_CheckTrainerHillAndUnionRoom::
-	specialvar VAR_RESULT, PlayerNotAtTrainerHillEntrance
-	goto_if_eq VAR_RESULT, 0, EventScript_PkmnCenterNurse_ReturnPkmn
-	specialvar VAR_RESULT, BufferUnionRoomPlayerName
-	copyvar VAR_0x8008, VAR_RESULT
-	goto_if_eq VAR_0x8008, 0, EventScript_PkmnCenterNurse_ReturnPkmn
-	goto_if_eq VAR_0x8008, 1, EventScript_PkmnCenterNurse_PlayerWaitingInUnionRoom
-	end
+    specialvar VAR_RESULT, PlayerNotAtTrainerHillEntrance
+    goto_if_eq VAR_RESULT, 0, EventScript_PkmnCenterNurse_ReturnPkmn
+    specialvar VAR_RESULT, BufferUnionRoomPlayerName
+    copyvar VAR_0x8008, VAR_RESULT
+    goto_if_eq VAR_0x8008, 0, EventScript_PkmnCenterNurse_ReturnPkmn
+    goto EventScript_PkmnCenterNurse_PlayerWaitingInUnionRoom
 
 @ VAR_0x8004 is 1 when player has Gold Card
-EventScript_PkmnCenterNurse_ReturnPkmn::
-	goto_if_eq VAR_0x8004, 1, EventScript_PkmnCenterNurse_ReturnPkmn2
-	message gText_RestoredPkmnToFullHealth
-	waitmessage
-	applymovement VAR_0x800B, Movement_PkmnCenterNurse_Bow
-	waitmovement 0
-	message gText_WeHopeToSeeYouAgain
-	return
+EventScript_PkmnCenterNurse_ReturnPkmn:: @ 82719E2
+    goto_if_eq VAR_0x8004, 1, EventScript_PkmnCenterNurse_ReturnPkmn2
+    message gText_RestoredPkmnToFullHealth
+    goto EventScript_PkmnCenterNurse_ReturnPkmnEnd
 
 EventScript_PkmnCenterNurse_ReturnPkmn2::
-	message gText_ThankYouForWaiting
-	waitmessage
-	applymovement VAR_0x800B, Movement_PkmnCenterNurse_Bow
-	waitmovement 0
-	message gText_WeHopeToSeeYouAgain2
-	return
+    message gText_ThankYouForWaiting
+    goto EventScript_PkmnCenterNurse_ReturnPkmnEnd
 
 EventScript_PkmnCenterNurse_PlayerWaitingInUnionRoom::
-	goto_if_set FLAG_NURSE_UNION_ROOM_REMINDER, EventScript_PkmnCenterNurse_ReturnPkmn
-	msgbox gText_RestoredPkmnToFullHealth, MSGBOX_DEFAULT
-	setflag FLAG_NURSE_UNION_ROOM_REMINDER
-	message CableClub_Text_PlayerIsWaiting
-	waitmessage
-	applymovement VAR_0x800B, Movement_PkmnCenterNurse_Bow
-	waitmovement 0
-	message gText_WeHopeToSeeYouAgain
-	return
+    goto_if_set FLAG_NURSE_UNION_ROOM_REMINDER, EventScript_PkmnCenterNurse_ReturnPkmn
+    msgbox gText_RestoredPkmnToFullHealth, MSGBOX_DEFAULT
+    setflag FLAG_NURSE_UNION_ROOM_REMINDER
+    message CableClub_Text_PlayerIsWaiting
+EventScript_PkmnCenterNurse_ReturnPkmnEnd::
+    waitmessage
+    applymovement VAR_0x800B, Movement_PkmnCenterNurse_Bow
+    waitmovement 0
+    goto EventScript_PkmnCenterNurse_Goodbye
+
+
+Movement_FaceUp:
+    face_up
+    step_end
+
+Movement_FaceDown:
+    face_down
+    step_end
+
+Movement_CameraPanUp:
+    walk_up
+    walk_up
+
+Movement_CameraPanDown:
+    walk_down
+    walk_down
+    step_end
 
 EventScript_PkmnCenterNurse_CheckPokerus::
 	specialvar VAR_RESULT, IsPokerusInParty

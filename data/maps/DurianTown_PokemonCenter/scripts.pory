@@ -1,4 +1,68 @@
 raw `
 DurianTown_PokemonCenter_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, DurianTown_PokemonCenter_OnTransition
+	map_script MAP_SCRIPT_ON_RESUME, CableClub_OnResume
 	.byte 0
+
+DurianTown_PokemonCenter_OnTransition:
+	setrespawn HEAL_LOCATION_DURIAN_TOWN
+	end
+
+DurianTown_PokemonCenter_EventScript_Nurse::
+	setvar VAR_0x800B, LOCALID_VERDANTURF_NURSE
+	call Common_EventScript_PkmnCenterNurse
+	waitmessage
+	waitbuttonpress
+	release
+	end
+
+DurianTown_PokemonCenter_EventScript_Gentleman::
+	msgbox DurianTown_PokemonCenter_Text_FaithInYourPokemon, MSGBOX_NPC
+	end
+
+DurianTown_PokemonCenter_EventScript_ExpertM::
+	msgbox DurianTown_PokemonCenter_Text_VisitForBattleTent, MSGBOX_NPC
+	end
+
+DurianTown_PokemonCenter_Text_FaithInYourPokemon:
+	.string "You can't consider yourself a real\n"
+	.string "TRAINER if you don't have faith\l"
+	.string "in your POKéMON.\p"
+	.string "Only those people who can believe\n"
+	.string "in their battling POKéMON can win\l"
+	.string "through to the very end.$"
+
+DurianTown_PokemonCenter_Text_VisitForBattleTent:
+	.string "The reason why anyone would visit\n"
+	.string "VERDANTURF…\p"
+	.string "It's the BATTLE TENT. It goes without\n"
+	.string "saying.\p"
+	.string "Or is there somebody here that you\n"
+	.string "came to see?$"
+
+DurianTown_PokemonCenter_EventScript_Clerk::
+	lock
+	faceplayer
+	message gText_HowMayIServeYou
+	waitmessage
+	pokemart DurianTown_PokemonCenter_Pokemart
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+	release
+	end
+
+	.align 2
+DurianTown_PokemonCenter_Pokemart:
+	.2byte ITEM_GREAT_BALL
+	.2byte ITEM_MASTER_BALL
+	.2byte ITEM_SUPER_POTION
+	.2byte ITEM_ANTIDOTE
+	.2byte ITEM_PARALYZE_HEAL
+	.2byte ITEM_AWAKENING
+	.2byte ITEM_RARE_CANDY
+	.2byte ITEM_ICE_HEAL
+	.2byte ITEM_REPEL
+	.2byte ITEM_X_SP_ATK
+	.2byte ITEM_FLUFFY_TAIL
+	pokemartlistend
+
 `
