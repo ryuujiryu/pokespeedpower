@@ -13,8 +13,32 @@ DurianGym_EventScript_Darian::
 	end
 
 DurianGym_EventScript_ShiriAndBanjo::
-	trainerbattle_single TRAINER_SHIRI_AND_BANJO_1, DurianGym_Text_ShiriAndBanjoIntro, DurianGym_Text_ShiriAndBanjoDefeat
-	msgbox DurianGym_Text_ShiriAndBanjoPostBattle, MSGBOX_AUTOCLOSE
+	trainerbattle_single TRAINER_SHIRI_AND_BANJO_1, DurianGym_Text_ShiriAndBanjoIntro, DurianGym_Text_ShiriAndBanjoDefeat, DurianGym_EventScript_ShiriAndBanjoDefeated, NO_MUSIC
+	goto_if_unset FLAG_RECEIVED_TM_AERIAL_ACE, DurianGym_EventScript_GiveRound
+	msgbox DurianGym_Text_ShiriAndBanjoPostBattle, MSGBOX_DEFAULT
+	release
+	end
+
+DurianGym_EventScript_ShiriAndBanjoDefeated::
+	message DurianGym_Gym_Text_ReceivedLivehoodStamp
+	waitmessage
+	call Common_EventScript_PlayGymBadgeFanfare
+	msgbox DurianGym_Text_ExplainStamp, MSGBOX_DEFAULT
+	setflag FLAG_DEFEATED_RUSTBORO_GYM
+	setflag FLAG_BADGE01_GET
+	setvar VAR_0x8008, 1
+	call Common_EventScript_SetGymTrainers
+	call DurianGym_EventScript_GiveRound
+	closemessage
+	release
+	end
+
+DurianGym_EventScript_GiveRound::
+	giveitem ITEM_TM_EARTHQUAKE
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	msgbox DurianGym_Text_ExplainTM, MSGBOX_DEFAULT
+	setflag FLAG_RECEIVED_TM_AERIAL_ACE
+	release
 	end
 
 DurianGym_Text_JunichiIntro:
@@ -40,12 +64,57 @@ DurianGym_Text_DarianPostBattle:
 	.string "type's terrifying power!$"
 
 DurianGym_Text_ShiriAndBanjoIntro:
-	.string "Don't take us GYM TRAINERS lightly!\n"
-	.string "I'll show you why we're better!$"
+	.string "BANJO: RIRI, RIRI, we got a challenger!\p"
+	.string "SHIRI: Yes, BANBAN, I can see that,\n"
+	.string "even if the TEMPLE's lights are off…\p"
+	.string "BANJO: Our first challenger together!\p"
+	.string "SHIRI: Then focus, my sweet PSYDUCK!\n"
+	.string "Introduce us!\p"
+	.string "BANJO: Oh yeah! This is the FLASH\n"
+	.string "of my life, my girl RIRI! (Kisses her.)\p"
+	.string "SHIRI: My dear SLOWPOKE… (Sighs.)\n"
+    .string "We are DURIAN TOWN’s PATH GUARDIANS.\l"
+    .string "I am SHIRI, and this airheaded hunk…\p"
+    .string "BANJO: Man, she called me a hunk!\p"
+    .string "SHIRI: …WILL TELL YOU WHAT TYPE WE USE.\n"
+    .string "(The girl is clearly getting annoyed.)p"
+    .string "BANJO: Yes, ma’am! (Mockingly salutes her.)\n"
+    .string "We use… ROCK-types, right?\p"
+    .string "SHIRI: … (Explodes in a fit of rage.)\p"
+    .string "WE USE SOUND-TYPES, SCATTERBUG BRAIN!\n"
+    .string "UGH, that’s ENOUGH! Go, JIGGLYPUFF!$"
 
 DurianGym_Text_ShiriAndBanjoDefeat:
-	.string "You were too good for me…$"
+	.string "BANJO: Dude, that was sick!\n"
+	.string "SHIRI: Tch… quit praising them, we LOST!\p"
+    .string "BANJO: So… we give ‘em their STAMP, right?\n"
+    .string "SHIRI: I can’t do this…\p"
+    .string "(Yanks {PLAYER}’s TRAINER CARD\n"
+    .string "and slaps the LIVEHOOD STAMP on it.)$"
 
-DurianGym_Text_ShiriAndBanjoPostBattle:
-	.string "You haven't seen anything of the ROCK\n"
-	.string "type's terrifying power!$"
+DurianGym_Gym_Text_ReceivedLivehoodStamp:
+	.string "{PLAYER} received the LIVEHOOD STAMP\n"
+	.string "from SHIRI & BANJO.$"
+
+DurianGym_Text_ExplainStamp:
+    .string "BANJO: With the LIVEHOOD STAMP, uh…\n"
+    .string "you can use POKéMON up to… LV 30…?\p"
+    .string "SHIRI: …LV 20. It's LV 20. Also…\n"
+    .string "orders from the LEAGUE. Take this.$"
+
+DurianGym_Text_ExplainTM:
+    .string "SHIRI: It’s TM48, containing ROUND.\n"
+    .string "You DO know what a TECHNICAL MACHINE is,\l"
+    .string "yes? BANBAN is already too much for me.\p"
+    .string "BANJO: He~he… I forgot to teach\n"
+    .string "it to my NOIBAT…\p"
+    .string "SHIRI: You WHAT?!\n"
+    .string "(Whacks BANJO on the head.)\p"
+    .string "ANYWAY! It will teach a POKéMON the move\n"
+    .string "ROUND. Very strong… if two POKéMON use it.$"
+
+ DurianGym_Text_ShiriAndBanjoPostBattle:
+    .string "BANJO: 'Ya smashed us like a guitar!\p"
+    .string "SHIRI: What SEEDOTCASE would smash one?$"
+
+`

@@ -2,7 +2,7 @@
 #include "constants/event_objects.h"
 
 #if MODERN == 0
-static const u8 sText_OutfitName_UsualGreen[] = _("USUAL GREEN");
+static const u8 sText_OutfitName_UsualGreen[] = _("CYBER RONIN");
 static const u8 sText_OutfitDesc_UsualGreen[] = _(
     "The usual, but basic OUTFIT.");
 
@@ -64,14 +64,14 @@ const struct Outfit gOutfits[OUTFIT_COUNT] =
         //! agbcc doesnt like COMPOUND_STRING on my end
         //! DESC: outfit's name
         #if MODERN == 1
-        .name = COMPOUND_STRING("USUAL GREEN"),
+        .name = COMPOUND_STRING("CYBER RONIN"),
         #else
         .name = sText_OutfitName_UsualGreen,
         #endif
 
         //! DESC: outfit's description
         #if MODERN == 1
-        .desc = COMPOUND_STRING("The usual, but basic OUTFIT."),
+        .desc = COMPOUND_STRING("Modern robes to blend in while\non the run, but with style."),
         #else
         .desc = sText_OutfitDesc_UsualGreen,
         #endif
@@ -131,8 +131,8 @@ const struct Outfit gOutfits[OUTFIT_COUNT] =
         .isHidden = FALSE,
         .prices = { 200, 500 },
         #if MODERN == 1
-        .name = COMPOUND_STRING("UNUSUAL RED"),
-        .desc = COMPOUND_STRING("Rather unusual, but still basic\nOUTFIT."),
+        .name = COMPOUND_STRING("TRADITIONAL PAJAMAS"),
+        .desc = COMPOUND_STRING("A reliable outfit which is\nfine for physical activities, too."),
         #else
         .name = sText_OutfitName_UnusualRed,
         .desc = sText_OutfitDesc_UnusualRed,

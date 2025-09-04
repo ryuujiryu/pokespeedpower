@@ -252,6 +252,8 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UnusedMauvi
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_TeacherM;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_OfficerM;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_OfficerF;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Shiri;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Banjo;
 
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
     [OBJ_EVENT_GFX_BRENDAN_NORMAL] =           &gObjectEventGraphicsInfo_BrendanNormal,
@@ -496,6 +498,8 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_TEACHER_M] =                &gObjectEventGraphicsInfo_TeacherM,
     [OBJ_EVENT_GFX_OFFICER_M] =                &gObjectEventGraphicsInfo_OfficerM,
     [OBJ_EVENT_GFX_OFFICER_F] =                &gObjectEventGraphicsInfo_OfficerF,
+    [OBJ_EVENT_GFX_SHIRI] =                    &gObjectEventGraphicsInfo_Shiri,
+    [OBJ_EVENT_GFX_BANJO] =                    &gObjectEventGraphicsInfo_Banjo,
     [OBJ_EVENT_GFX_POKE_BALL] =                &gObjectEventGraphicsInfo_PokeBall,
     [OBJ_EVENT_GFX_OW_MON] =                   &gObjectEventGraphicsInfo_Follower,
     [OBJ_EVENT_GFX_LIGHT_SPRITE] =             &gObjectEventGraphicsInfo_BallLight,

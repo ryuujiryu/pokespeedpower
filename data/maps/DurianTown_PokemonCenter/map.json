@@ -17,7 +17,7 @@
     {
       "local_id": "LOCALID_DURIAN_NURSE",
       "graphics_id": "OBJ_EVENT_GFX_NURSE",
-      "x": 7,
+      "x": 8,
       "y": 3,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
@@ -29,22 +29,22 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_GENTLEMAN",
-      "x": 13,
-      "y": 5,
+      "graphics_id": "OBJ_EVENT_GFX_GIRL_3",
+      "x": 14,
+      "y": 4,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 1,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "DurianTown_PokemonCenter_EventScript_Gentleman",
+      "script": "DurianTown_PokemonCenter_EventScript_Girl",
       "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_EXPERT_M",
-      "x": 4,
-      "y": 12,
+      "x": 1,
+      "y": 15,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
@@ -56,20 +56,33 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_LITTLE_BOY",
-      "x": 4,
-      "y": 11,
+      "x": 1,
+      "y": 14,
       "elevation": 3,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 1,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "VerdanturfTown_PokemonCenter_1F_EventScript_FuryCutterTutor",
+      "script": "DurianTown_PokemonCenter_EventScript_Boy",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MAN_2",
+      "x": 13,
+      "y": 10,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "FallarborTown_MoveRelearnersHouse_EventScript_MoveRelearner",
       "flag": "0"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_MART_EMPLOYEE",
-      "x": 13,
+      "x": 3,
       "y": 10,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
@@ -79,12 +92,25 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "DurianTown_PokemonCenter_EventScript_Clerk",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_4",
+      "x": 15,
+      "y": 4,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "DurianTown_PokemonCenter_EventScript_Woman",
+      "flag": "0"
     }
   ],
   "warp_events": [
     {
-      "x": 7,
-      "y": 15,
+      "x": 8,
+      "y": 18,
       "elevation": 3,
       "dest_map": "MAP_DURIAN_TOWN",
       "dest_warp_id": "1"

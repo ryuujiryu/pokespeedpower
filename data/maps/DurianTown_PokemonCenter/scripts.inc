@@ -21,7 +21,7 @@ DurianTown_PokemonCenter_OnTransition:
 # 11 "data/maps/DurianTown_PokemonCenter/scripts.pory"
 DurianTown_PokemonCenter_EventScript_Nurse::
 # 12 "data/maps/DurianTown_PokemonCenter/scripts.pory"
-	setvar VAR_0x800B, LOCALID_VERDANTURF_NURSE
+	setvar VAR_0x800B, LOCALID_DURIAN_NURSE
 # 13 "data/maps/DurianTown_PokemonCenter/scripts.pory"
 	call Common_EventScript_PkmnCenterNurse
 # 14 "data/maps/DurianTown_PokemonCenter/scripts.pory"
@@ -35,9 +35,9 @@ DurianTown_PokemonCenter_EventScript_Nurse::
 # 18 "data/maps/DurianTown_PokemonCenter/scripts.pory"
 
 # 19 "data/maps/DurianTown_PokemonCenter/scripts.pory"
-DurianTown_PokemonCenter_EventScript_Gentleman::
+DurianTown_PokemonCenter_EventScript_Boy::
 # 20 "data/maps/DurianTown_PokemonCenter/scripts.pory"
-	msgbox DurianTown_PokemonCenter_Text_FaithInYourPokemon, MSGBOX_NPC
+	msgbox DurianTown_PokemonCenter_Text_Grandpa, MSGBOX_NPC
 # 21 "data/maps/DurianTown_PokemonCenter/scripts.pory"
 	end
 # 22 "data/maps/DurianTown_PokemonCenter/scripts.pory"
@@ -45,88 +45,134 @@ DurianTown_PokemonCenter_EventScript_Gentleman::
 # 23 "data/maps/DurianTown_PokemonCenter/scripts.pory"
 DurianTown_PokemonCenter_EventScript_ExpertM::
 # 24 "data/maps/DurianTown_PokemonCenter/scripts.pory"
-	msgbox DurianTown_PokemonCenter_Text_VisitForBattleTent, MSGBOX_NPC
+	msgbox DurianTown_PokemonCenter_Text_OldTimes, MSGBOX_NPC
 # 25 "data/maps/DurianTown_PokemonCenter/scripts.pory"
 	end
 # 26 "data/maps/DurianTown_PokemonCenter/scripts.pory"
 
 # 27 "data/maps/DurianTown_PokemonCenter/scripts.pory"
-DurianTown_PokemonCenter_Text_FaithInYourPokemon:
+DurianTown_PokemonCenter_EventScript_Woman::
 # 28 "data/maps/DurianTown_PokemonCenter/scripts.pory"
-	.string "You can't consider yourself a real\n"
+	msgbox DurianTown_PokemonCenter_Text_Banjo, MSGBOX_NPC
 # 29 "data/maps/DurianTown_PokemonCenter/scripts.pory"
-	.string "TRAINER if you don't have faith\l"
+	end
 # 30 "data/maps/DurianTown_PokemonCenter/scripts.pory"
-	.string "in your POKéMON.\p"
+
 # 31 "data/maps/DurianTown_PokemonCenter/scripts.pory"
-	.string "Only those people who can believe\n"
+DurianTown_PokemonCenter_EventScript_Girl::
 # 32 "data/maps/DurianTown_PokemonCenter/scripts.pory"
-	.string "in their battling POKéMON can win\l"
+	msgbox DurianTown_PokemonCenter_Text_LikeHisLook, MSGBOX_NPC
 # 33 "data/maps/DurianTown_PokemonCenter/scripts.pory"
-	.string "through to the very end.$"
+	end
 # 34 "data/maps/DurianTown_PokemonCenter/scripts.pory"
 
 # 35 "data/maps/DurianTown_PokemonCenter/scripts.pory"
-DurianTown_PokemonCenter_Text_VisitForBattleTent:
+DurianTown_PokemonCenter_Text_Grandpa:
 # 36 "data/maps/DurianTown_PokemonCenter/scripts.pory"
-	.string "The reason why anyone would visit\n"
+	.string "My grandpa only just woke up from\n"
 # 37 "data/maps/DurianTown_PokemonCenter/scripts.pory"
-	.string "VERDANTURF…\p"
+	.string "a coma he got during the DARK DECADE…\p"
 # 38 "data/maps/DurianTown_PokemonCenter/scripts.pory"
-	.string "It's the BATTLE TENT. It goes without\n"
+	.string "The shock of losing the war nearly took\n"
 # 39 "data/maps/DurianTown_PokemonCenter/scripts.pory"
-	.string "saying.\p"
+	.string "him to an early grave.$"
 # 40 "data/maps/DurianTown_PokemonCenter/scripts.pory"
-	.string "Or is there somebody here that you\n"
+
 # 41 "data/maps/DurianTown_PokemonCenter/scripts.pory"
-	.string "came to see?$"
+DurianTown_PokemonCenter_Text_OldTimes:
 # 42 "data/maps/DurianTown_PokemonCenter/scripts.pory"
-
+	.string "At your age, I was a PATH DISCIPLE,\n"
 # 43 "data/maps/DurianTown_PokemonCenter/scripts.pory"
-DurianTown_PokemonCenter_EventScript_Clerk::
+	.string "and our TEMPLE trained ROCK-types,\l"
 # 44 "data/maps/DurianTown_PokemonCenter/scripts.pory"
-	lock
+	.string "not any of this SOUND-type nonsense!\p"
 # 45 "data/maps/DurianTown_PokemonCenter/scripts.pory"
-	faceplayer
+	.string "And now, the darn UNOVANS said they’ll\n"
 # 46 "data/maps/DurianTown_PokemonCenter/scripts.pory"
-	message gText_HowMayIServeYou
+	.string "rename the ELEMENTAL CONQUEST to the\l"
 # 47 "data/maps/DurianTown_PokemonCenter/scripts.pory"
-	waitmessage
+	.string "GYM CHALLENGE after this edition!\p"
 # 48 "data/maps/DurianTown_PokemonCenter/scripts.pory"
-	pokemart DurianTown_PokemonCenter_Pokemart
+	.string "NIHON is doomed, I tell you!$"
 # 49 "data/maps/DurianTown_PokemonCenter/scripts.pory"
-	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
-# 50 "data/maps/DurianTown_PokemonCenter/scripts.pory"
-	release
-# 51 "data/maps/DurianTown_PokemonCenter/scripts.pory"
-	end
-# 52 "data/maps/DurianTown_PokemonCenter/scripts.pory"
 
+# 50 "data/maps/DurianTown_PokemonCenter/scripts.pory"
+DurianTown_PokemonCenter_Text_Banjo:
+# 51 "data/maps/DurianTown_PokemonCenter/scripts.pory"
+	.string "Till this year’s ELEMENTAL CONQUEST,\n"
+# 52 "data/maps/DurianTown_PokemonCenter/scripts.pory"
+	.string "BANJO was the respectable\p"
 # 53 "data/maps/DurianTown_PokemonCenter/scripts.pory"
-	.align 2
+	.string "ISHIKI clan’s heir, musicians who\n"
 # 54 "data/maps/DurianTown_PokemonCenter/scripts.pory"
-DurianTown_PokemonCenter_Pokemart:
+	.string "always guarded our TEMPLE!\p"
 # 55 "data/maps/DurianTown_PokemonCenter/scripts.pory"
-	.2byte ITEM_GREAT_BALL
+	.string "But since he met that SHIRI girl…\p"
 # 56 "data/maps/DurianTown_PokemonCenter/scripts.pory"
-	.2byte ITEM_MASTER_BALL
+	.string "Now he’s looking like a hooligan, and\n"
 # 57 "data/maps/DurianTown_PokemonCenter/scripts.pory"
-	.2byte ITEM_SUPER_POTION
+	.string "he plays those horrible UNOVAN noises!$"
 # 58 "data/maps/DurianTown_PokemonCenter/scripts.pory"
-	.2byte ITEM_ANTIDOTE
+
 # 59 "data/maps/DurianTown_PokemonCenter/scripts.pory"
-	.2byte ITEM_PARALYZE_HEAL
+DurianTown_PokemonCenter_Text_LikeHisLook:
 # 60 "data/maps/DurianTown_PokemonCenter/scripts.pory"
-	.2byte ITEM_AWAKENING
+	.string "I think BANJO’s new look is cool!\n"
 # 61 "data/maps/DurianTown_PokemonCenter/scripts.pory"
-	.2byte ITEM_RARE_CANDY
+	.string "His new haircut is called…\l"
 # 62 "data/maps/DurianTown_PokemonCenter/scripts.pory"
-	.2byte ITEM_ICE_HEAL
+	.string "a “mostaraptor”, right?\p"
 # 63 "data/maps/DurianTown_PokemonCenter/scripts.pory"
-	.2byte ITEM_REPEL
+	.string "Either way, SHIRI brought out\n"
 # 64 "data/maps/DurianTown_PokemonCenter/scripts.pory"
-	.2byte ITEM_X_SP_ATK
+	.string "the real him!$"
 # 65 "data/maps/DurianTown_PokemonCenter/scripts.pory"
-	.2byte ITEM_FLUFFY_TAIL
+
 # 66 "data/maps/DurianTown_PokemonCenter/scripts.pory"
+DurianTown_PokemonCenter_EventScript_Clerk::
+# 67 "data/maps/DurianTown_PokemonCenter/scripts.pory"
+	lock
+# 68 "data/maps/DurianTown_PokemonCenter/scripts.pory"
+	faceplayer
+# 69 "data/maps/DurianTown_PokemonCenter/scripts.pory"
+	message gText_HowMayIServeYou
+# 70 "data/maps/DurianTown_PokemonCenter/scripts.pory"
+	waitmessage
+# 71 "data/maps/DurianTown_PokemonCenter/scripts.pory"
+	pokemart DurianTown_PokemonCenter_Pokemart
+# 72 "data/maps/DurianTown_PokemonCenter/scripts.pory"
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+# 73 "data/maps/DurianTown_PokemonCenter/scripts.pory"
+	release
+# 74 "data/maps/DurianTown_PokemonCenter/scripts.pory"
+	end
+# 75 "data/maps/DurianTown_PokemonCenter/scripts.pory"
+
+# 76 "data/maps/DurianTown_PokemonCenter/scripts.pory"
+	.align 2
+# 77 "data/maps/DurianTown_PokemonCenter/scripts.pory"
+DurianTown_PokemonCenter_Pokemart:
+# 78 "data/maps/DurianTown_PokemonCenter/scripts.pory"
+	.2byte ITEM_GREAT_BALL
+# 79 "data/maps/DurianTown_PokemonCenter/scripts.pory"
+	.2byte ITEM_NEST_BALL
+# 80 "data/maps/DurianTown_PokemonCenter/scripts.pory"
+	.2byte ITEM_SUPER_POTION
+# 81 "data/maps/DurianTown_PokemonCenter/scripts.pory"
+	.2byte ITEM_ANTIDOTE
+# 82 "data/maps/DurianTown_PokemonCenter/scripts.pory"
+	.2byte ITEM_PARALYZE_HEAL
+# 83 "data/maps/DurianTown_PokemonCenter/scripts.pory"
+	.2byte ITEM_AWAKENING
+# 84 "data/maps/DurianTown_PokemonCenter/scripts.pory"
+	.2byte ITEM_BURN_HEAL
+# 85 "data/maps/DurianTown_PokemonCenter/scripts.pory"
+	.2byte ITEM_ICE_HEAL
+# 86 "data/maps/DurianTown_PokemonCenter/scripts.pory"
+	.2byte ITEM_REPEL
+# 87 "data/maps/DurianTown_PokemonCenter/scripts.pory"
+	.2byte ITEM_X_SP_ATK
+# 88 "data/maps/DurianTown_PokemonCenter/scripts.pory"
+	.2byte ITEM_FLUFFY_TAIL
+# 89 "data/maps/DurianTown_PokemonCenter/scripts.pory"
 	pokemartlistend

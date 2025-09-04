@@ -9,36 +9,59 @@ DurianTown_PokemonCenter_OnTransition:
 	end
 
 DurianTown_PokemonCenter_EventScript_Nurse::
-	setvar VAR_0x800B, LOCALID_VERDANTURF_NURSE
+	setvar VAR_0x800B, LOCALID_DURIAN_NURSE
 	call Common_EventScript_PkmnCenterNurse
 	waitmessage
 	waitbuttonpress
 	release
 	end
 
-DurianTown_PokemonCenter_EventScript_Gentleman::
-	msgbox DurianTown_PokemonCenter_Text_FaithInYourPokemon, MSGBOX_NPC
+DurianTown_PokemonCenter_EventScript_Boy::
+	msgbox DurianTown_PokemonCenter_Text_Grandpa, MSGBOX_NPC
 	end
 
 DurianTown_PokemonCenter_EventScript_ExpertM::
-	msgbox DurianTown_PokemonCenter_Text_VisitForBattleTent, MSGBOX_NPC
+	msgbox DurianTown_PokemonCenter_Text_OldTimes, MSGBOX_NPC
 	end
 
-DurianTown_PokemonCenter_Text_FaithInYourPokemon:
-	.string "You can't consider yourself a real\n"
-	.string "TRAINER if you don't have faith\l"
-	.string "in your POKéMON.\p"
-	.string "Only those people who can believe\n"
-	.string "in their battling POKéMON can win\l"
-	.string "through to the very end.$"
+DurianTown_PokemonCenter_EventScript_Woman::
+	msgbox DurianTown_PokemonCenter_Text_Banjo, MSGBOX_NPC
+	end
 
-DurianTown_PokemonCenter_Text_VisitForBattleTent:
-	.string "The reason why anyone would visit\n"
-	.string "VERDANTURF…\p"
-	.string "It's the BATTLE TENT. It goes without\n"
-	.string "saying.\p"
-	.string "Or is there somebody here that you\n"
-	.string "came to see?$"
+DurianTown_PokemonCenter_EventScript_Girl::
+	msgbox DurianTown_PokemonCenter_Text_LikeHisLook, MSGBOX_NPC
+	end
+
+DurianTown_PokemonCenter_Text_Grandpa:
+	.string "My grandpa only just woke up from\n"
+	.string "a coma he got during the DARK DECADE…\p"
+	.string "The shock of losing the war nearly took\n"
+	.string "him to an early grave.$"
+
+DurianTown_PokemonCenter_Text_OldTimes:
+	.string "At your age, I was a PATH DISCIPLE,\n"
+	.string "and our TEMPLE trained ROCK-types,\l"
+	.string "not any of this SOUND-type nonsense!\p"
+	.string "And now, the darn UNOVANS said they’ll\n"
+	.string "rename the ELEMENTAL CONQUEST to the\l"
+	.string "GYM CHALLENGE after this edition!\p"
+	.string "NIHON is doomed, I tell you!$"
+
+DurianTown_PokemonCenter_Text_Banjo:
+	.string "Till this year’s ELEMENTAL CONQUEST,\n"
+	.string "BANJO was the respectable\p"
+	.string "ISHIKI clan’s heir, musicians who\n"
+	.string "always guarded our TEMPLE!\p"
+	.string "But since he met that SHIRI girl…\p"
+	.string "Now he’s looking like a hooligan, and\n"
+	.string "he plays those horrible UNOVAN noises!$"
+
+DurianTown_PokemonCenter_Text_LikeHisLook:
+	.string "I think BANJO’s new look is cool!\n"
+	.string "His new haircut is called…\l"
+	.string "a “mostaraptor”, right?\p"
+	.string "Either way, SHIRI brought out\n"
+	.string "the real him!$"
 
 DurianTown_PokemonCenter_EventScript_Clerk::
 	lock
@@ -53,12 +76,12 @@ DurianTown_PokemonCenter_EventScript_Clerk::
 	.align 2
 DurianTown_PokemonCenter_Pokemart:
 	.2byte ITEM_GREAT_BALL
-	.2byte ITEM_MASTER_BALL
+	.2byte ITEM_NEST_BALL
 	.2byte ITEM_SUPER_POTION
 	.2byte ITEM_ANTIDOTE
 	.2byte ITEM_PARALYZE_HEAL
 	.2byte ITEM_AWAKENING
-	.2byte ITEM_RARE_CANDY
+	.2byte ITEM_BURN_HEAL
 	.2byte ITEM_ICE_HEAL
 	.2byte ITEM_REPEL
 	.2byte ITEM_X_SP_ATK
@@ -66,3 +89,4 @@ DurianTown_PokemonCenter_Pokemart:
 	pokemartlistend
 
 `
+

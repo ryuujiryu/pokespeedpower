@@ -11872,7 +11872,7 @@ F_TRAINER_FEMALE |
         {
             {
 #line 4801
-            .species = SPECIES_HERACROSS,
+            .species = SPECIES_JIGGLYPUFF,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 4803
             .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
@@ -11883,7 +11883,7 @@ F_TRAINER_FEMALE |
             },
             {
 #line 4805
-            .species = SPECIES_PINSIR,
+            .species = SPECIES_NOIBAT,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 4807
             .iv = TRAINER_PARTY_IVS(12, 12, 12, 12, 12, 12),
