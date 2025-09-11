@@ -87,45 +87,45 @@ DurianGym_EventScript_GiveRound::
 # 44 "data/maps/DurianGym/scripts.pory"
 DurianGym_Text_JunichiIntro:
 # 45 "data/maps/DurianGym/scripts.pory"
-	.string "Don't take us GYM TRAINERS lightly!\n"
+	.string "Tell me how handsome I am!$"
 # 46 "data/maps/DurianGym/scripts.pory"
-	.string "I'll show you why we're better!$"
+
 # 47 "data/maps/DurianGym/scripts.pory"
-
-# 48 "data/maps/DurianGym/scripts.pory"
 DurianGym_Text_JunichiDefeat:
+# 48 "data/maps/DurianGym/scripts.pory"
+	.string "I forgot that the TEMPLE's in the dark…$"
 # 49 "data/maps/DurianGym/scripts.pory"
-	.string "You were too good for me…$"
-# 50 "data/maps/DurianGym/scripts.pory"
 
-# 51 "data/maps/DurianGym/scripts.pory"
+# 50 "data/maps/DurianGym/scripts.pory"
 DurianGym_Text_JunichiPostBattle:
+# 51 "data/maps/DurianGym/scripts.pory"
+	.string "BANJO had this 'great idea' to turn the\n"
 # 52 "data/maps/DurianGym/scripts.pory"
-	.string "You haven't seen anything of the ROCK\n"
+	.string "lights off as he couldn't think of a\p"
 # 53 "data/maps/DurianGym/scripts.pory"
-	.string "type's terrifying power!$"
+	.string "SOUND-type themed puzzle…$"
 # 54 "data/maps/DurianGym/scripts.pory"
 
 # 55 "data/maps/DurianGym/scripts.pory"
 DurianGym_Text_DarianIntro:
 # 56 "data/maps/DurianGym/scripts.pory"
-	.string "Don't take us GYM TRAINERS lightly!\n"
+	.string "I will defeat lots of challengers so\n"
 # 57 "data/maps/DurianGym/scripts.pory"
-	.string "I'll show you why we're better!$"
+	.string "SHIRI will notice me!$"
 # 58 "data/maps/DurianGym/scripts.pory"
 
 # 59 "data/maps/DurianGym/scripts.pory"
 DurianGym_Text_DarianDefeat:
 # 60 "data/maps/DurianGym/scripts.pory"
-	.string "You were too good for me…$"
+	.string "SHIRI!$"
 # 61 "data/maps/DurianGym/scripts.pory"
 
 # 62 "data/maps/DurianGym/scripts.pory"
 DurianGym_Text_DarianPostBattle:
 # 63 "data/maps/DurianGym/scripts.pory"
-	.string "You haven't seen anything of the ROCK\n"
+	.string "She should be with me, not BANJO!\n"
 # 64 "data/maps/DurianGym/scripts.pory"
-	.string "type's terrifying power!$"
+	.string "What does she see in that airhead?$"
 # 65 "data/maps/DurianGym/scripts.pory"
 
 # 66 "data/maps/DurianGym/scripts.pory"

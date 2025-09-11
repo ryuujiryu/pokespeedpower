@@ -1192,3 +1192,11 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/DurianTown_KurtsHouse/scripts.inc"
 
 	.include "data/maps/CitrusIsland_PlayerHouse/scripts.inc"
+
+	.include "data/maps/CoconutGym/scripts.inc"
+
+	.include "data/maps/CherryWoods/scripts.inc"
+
+	.include "data/maps/Route52_Gatehouse2/scripts.inc"
+
+	.include "data/maps/Route52_Gatehouse3/scripts.inc"

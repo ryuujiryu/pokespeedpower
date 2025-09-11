@@ -19,14 +19,14 @@
       "x": 5,
       "y": 13,
       "elevation": 0,
-      "dest_map": "MAP_ROUTE1",
+      "dest_map": "MAP_ROUTE52",
       "dest_warp_id": "0"
     },
     {
       "x": 5,
       "y": 1,
       "elevation": 0,
-      "dest_map": "MAP_DURIAN_TOWN",
+      "dest_map": "MAP_CHERRY_WOODS",
       "dest_warp_id": "0"
     }
   ],

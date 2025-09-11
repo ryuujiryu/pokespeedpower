@@ -59,7 +59,7 @@ DurianTown_PokemonCenter_Text_Banjo:
 DurianTown_PokemonCenter_Text_LikeHisLook:
 	.string "I think BANJO’s new look is cool!\n"
 	.string "His new haircut is called…\l"
-	.string "a “mostaraptor”, right?\p"
+	.string "a “MOSTARAPTOR”, right?\p"
 	.string "Either way, SHIRI brought out\n"
 	.string "the real him!$"
 

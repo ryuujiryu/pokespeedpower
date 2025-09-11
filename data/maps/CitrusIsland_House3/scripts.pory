@@ -1,1 +1,14 @@
-mapscripts CitrusIsland_House3_MapScripts {}
+raw `
+CitrusIsland_House3_MapScripts::
+	.byte 0
+
+CitrusIsland_House3_EventScript_Kunoichi::
+	msgbox CitrusIsland_House3_Text_WrongSide, MSGBOX_NPC
+	end
+
+CitrusIsland_House3_Text_WrongSide:
+	.string "Tch. I wonder if it was worth it,\n"
+	.string "being exhiled here just because I\p"
+	.string "supported the SUMERAGI dynasty…$"
+
+`

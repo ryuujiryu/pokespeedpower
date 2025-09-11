@@ -1,0 +1,35 @@
+{
+  "id": "MAP_ROUTE52_GATEHOUSE2",
+  "name": "Route52_Gatehouse2",
+  "layout": "LAYOUT_ROUTE52_GATEHOUSE2",
+  "music": "MUS_SAFARI_ZONE",
+  "region_map_section": "MAPSEC_ROUTE_2",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_NONE",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [],
+  "warp_events": [
+    {
+      "x": 5,
+      "y": 13,
+      "elevation": 0,
+      "dest_map": "MAP_CHERRY_WOODS",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 5,
+      "y": 1,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE52",
+      "dest_warp_id": "1"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": []
+}

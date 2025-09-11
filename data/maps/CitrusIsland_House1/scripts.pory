@@ -1,1 +1,21 @@
-mapscripts CitrusIsland_House1_MapScripts {}
+raw `
+CitrusIsland_House1_MapScripts::
+	.byte 0
+
+CitrusIsland_House1_EventScript_Woman::
+	msgbox CitrusIsland_House1_Text_KidNeverSaw, MSGBOX_NPC
+	end
+
+CitrusIsland_House1_EventScript_LittleBoy::
+	msgbox CitrusIsland_House1_Text_TheMainland, MSGBOX_NPC
+	end
+
+CitrusIsland_House1_Text_KidNeverSaw:
+	.string "My kid never saw the mainland. I wish\n"
+	.string "he was able to go on an adventure.$"
+
+CitrusIsland_House1_Text_TheMainland:
+	.string "{PLAYER}-ehm, YOUR HIGHNESS, when\n"
+	.string "will we ever be allowed to leave?$"
+
+`

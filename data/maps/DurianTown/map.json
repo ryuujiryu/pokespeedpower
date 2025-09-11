@@ -15,48 +15,48 @@
   "connections": [
     {
       "map": "MAP_ROUTE1",
-      "offset": -19,
+      "offset": -24,
       "direction": "down"
     },
     {
       "map": "MAP_ROUTE52",
-      "offset": 0,
+      "offset": 6,
       "direction": "up"
     }
   ],
   "object_events": [],
   "warp_events": [
     {
-      "x": 5,
-      "y": 24,
+      "x": 4,
+      "y": 13,
       "elevation": 0,
       "dest_map": "MAP_ROUTE51_GATEHOUSE",
       "dest_warp_id": "1"
     },
     {
-      "x": 8,
-      "y": 17,
+      "x": 9,
+      "y": 18,
       "elevation": 0,
       "dest_map": "MAP_DURIAN_TOWN_POKEMON_CENTER",
       "dest_warp_id": "0"
     },
     {
-      "x": 5,
-      "y": 9,
+      "x": 6,
+      "y": 10,
       "elevation": 0,
       "dest_map": "MAP_DURIAN_GYM",
       "dest_warp_id": "0"
     },
     {
-      "x": 15,
-      "y": 9,
+      "x": 16,
+      "y": 10,
       "elevation": 0,
       "dest_map": "MAP_DURIAN_TOWN_HOUSE",
       "dest_warp_id": "0"
     },
     {
-      "x": 22,
-      "y": 14,
+      "x": 23,
+      "y": 15,
       "elevation": 0,
       "dest_map": "MAP_DURIAN_TOWN_KURTS_HOUSE",
       "dest_warp_id": "0"
@@ -66,24 +66,24 @@
   "bg_events": [
     {
       "type": "sign",
-      "x": 19,
-      "y": 14,
+      "x": 20,
+      "y": 15,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "DurianTown_EventScript_KurtHouseSign"
     },
     {
       "type": "sign",
-      "x": 11,
-      "y": 16,
+      "x": 12,
+      "y": 17,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "DurianTown_EventScript_CitySign"
     },
     {
       "type": "sign",
-      "x": 7,
-      "y": 9,
+      "x": 8,
+      "y": 10,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "DurianTown_EventScript_GymSign"

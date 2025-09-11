@@ -4425,7 +4425,7 @@
       "id": "LAYOUT_ROUTE1",
       "name": "Route1_Layout",
       "width": 41,
-      "height": 62,
+      "height": 57,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Mossdeep",
       "border_filepath": "data/layouts/Route1/border.bin",
@@ -4434,8 +4434,8 @@
     {
       "id": "LAYOUT_DURIAN_TOWN",
       "name": "DurianTown_Layout",
-      "width": 28,
-      "height": 25,
+      "width": 31,
+      "height": 26,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Mossdeep",
       "border_filepath": "data/layouts/DurianTown/border.bin",
@@ -4464,8 +4464,8 @@
     {
       "id": "LAYOUT_ROUTE52",
       "name": "Route52_Layout",
-      "width": 30,
-      "height": 58,
+      "width": 24,
+      "height": 48,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Mossdeep",
       "border_filepath": "data/layouts/Route52/border.bin",
@@ -4580,6 +4580,46 @@
       "secondary_tileset": "gTileset_BattleArena",
       "border_filepath": "data/layouts/CitrusIsland_PlayerHouse/border.bin",
       "blockdata_filepath": "data/layouts/CitrusIsland_PlayerHouse/map.bin"
+    },
+    {
+      "id": "LAYOUT_COCONUT_GYM",
+      "name": "CoconutGym_Layout",
+      "width": 16,
+      "height": 28,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_DewfordGym",
+      "border_filepath": "data/layouts/CoconutGym/border.bin",
+      "blockdata_filepath": "data/layouts/CoconutGym/map.bin"
+    },
+    {
+      "id": "LAYOUT_CHERRY_WOODS",
+      "name": "CherryWoods_Layout",
+      "width": 58,
+      "height": 52,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Mossdeep",
+      "border_filepath": "data/layouts/CherryWoods/border.bin",
+      "blockdata_filepath": "data/layouts/CherryWoods/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE52_GATEHOUSE2",
+      "name": "Route52_Gatehouse2_Layout",
+      "width": 11,
+      "height": 14,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Gatehouse",
+      "border_filepath": "data/layouts/Route52_Gatehouse2/border.bin",
+      "blockdata_filepath": "data/layouts/Route52_Gatehouse2/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE52_GATEHOUSE3",
+      "name": "Route52_Gatehouse3_Layout",
+      "width": 11,
+      "height": 14,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Gatehouse",
+      "border_filepath": "data/layouts/Route52_Gatehouse3/border.bin",
+      "blockdata_filepath": "data/layouts/Route52_Gatehouse3/map.bin"
     }
   ]
 }

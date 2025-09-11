@@ -1,0 +1,35 @@
+{
+  "id": "MAP_CHERRY_WOODS",
+  "name": "CherryWoods",
+  "layout": "LAYOUT_CHERRY_WOODS",
+  "music": "MUS_MT_PYRE",
+  "region_map_section": "MAPSEC_VIRIDIAN_FOREST",
+  "requires_flash": false,
+  "weather": "WEATHER_SHADE",
+  "map_type": "MAP_TYPE_NONE",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [],
+  "warp_events": [
+    {
+      "x": 10,
+      "y": 46,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE51_GATEHOUSE",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 7,
+      "y": 4,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE52_GATEHOUSE2",
+      "dest_warp_id": "0"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": []
+}

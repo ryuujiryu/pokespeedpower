@@ -42,26 +42,26 @@ DurianGym_EventScript_GiveRound::
 	end
 
 DurianGym_Text_JunichiIntro:
-	.string "Don't take us GYM TRAINERS lightly!\n"
-	.string "I'll show you why we're better!$"
+	.string "Tell me how handsome I am!$"
 
 DurianGym_Text_JunichiDefeat:
-	.string "You were too good for me…$"
+	.string "I forgot that the TEMPLE's in the dark…$"
 
 DurianGym_Text_JunichiPostBattle:
-	.string "You haven't seen anything of the ROCK\n"
-	.string "type's terrifying power!$"
+	.string "BANJO had this 'great idea' to turn the\n"
+	.string "lights off as he couldn't think of a\p"
+	.string "SOUND-type themed puzzle…$"
 
 DurianGym_Text_DarianIntro:
-	.string "Don't take us GYM TRAINERS lightly!\n"
-	.string "I'll show you why we're better!$"
+	.string "I will defeat lots of challengers so\n"
+	.string "SHIRI will notice me!$"
 
 DurianGym_Text_DarianDefeat:
-	.string "You were too good for me…$"
+	.string "SHIRI!$"
 
 DurianGym_Text_DarianPostBattle:
-	.string "You haven't seen anything of the ROCK\n"
-	.string "type's terrifying power!$"
+	.string "She should be with me, not BANJO!\n"
+	.string "What does she see in that airhead?$"
 
 DurianGym_Text_ShiriAndBanjoIntro:
 	.string "BANJO: RIRI, RIRI, we got a challenger!\p"

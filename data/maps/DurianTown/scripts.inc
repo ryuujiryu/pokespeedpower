@@ -56,7 +56,7 @@ DurianTown_Text_GymSign:
 # 29 "data/maps/DurianTown/scripts.pory"
 DurianTown_Text_CitySign:
 # 30 "data/maps/DurianTown/scripts.pory"
-	.string "DURIAN TOWN\n"
+	.string "STRAWBERRY TOWN\n"
 # 31 "data/maps/DurianTown/scripts.pory"
 	.string "“United with nature and POKéMON”$"
 # 32 "data/maps/DurianTown/scripts.pory"

@@ -1,1 +1,14 @@
-mapscripts CitrusIsland_House2_MapScripts {}
+raw `
+CitrusIsland_House2_MapScripts::
+	.byte 0
+
+CitrusIsland_House2_EventScript_OldMan::
+	msgbox CitrusIsland_House2_Text_WifeGrave, MSGBOX_NPC
+	end
+
+CitrusIsland_House2_Text_WifeGrave:
+	.string "I'm fine never seeing my hometown\n"
+	.string "again. But I wish my wife was able\l"
+	.string "to be buried there at least…$"
+
+`

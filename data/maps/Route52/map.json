@@ -15,20 +15,20 @@
   "connections": [
     {
       "map": "MAP_DURIAN_TOWN",
-      "offset": 0,
+      "offset": -6,
       "direction": "down"
     },
     {
       "map": "MAP_ROUTE53",
-      "offset": -12,
+      "offset": -18,
       "direction": "up"
     }
   ],
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_PICNICKER",
-      "x": 14,
-      "y": 42,
+      "x": 7,
+      "y": 35,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
@@ -40,7 +40,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_CAMPER",
-      "x": 25,
+      "x": 18,
       "y": 6,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
@@ -52,7 +52,22 @@
       "flag": "0"
     }
   ],
-  "warp_events": [],
+  "warp_events": [
+    {
+      "x": 13,
+      "y": 27,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE51_GATEHOUSE",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 13,
+      "y": 13,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE52_GATEHOUSE2",
+      "dest_warp_id": "1"
+    }
+  ],
   "coord_events": [],
   "bg_events": []
 }

@@ -37,7 +37,8 @@
     "gMapGroup_TenkeiOutdoor",
     "gMapGroup_DurianTownIndoor",
     "gMapGroup_CoconutCityIndoor",
-    "gMapGroup_CitrusIslandIndoor"
+    "gMapGroup_CitrusIslandIndoor",
+    "gMapGroup_TenkeiDungeons"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PetalburgCity",
@@ -638,10 +639,13 @@
     "Route51_Gatehouse",
     "DurianGym",
     "DurianTown_House",
-    "DurianTown_KurtsHouse"
+    "DurianTown_KurtsHouse",
+    "Route52_Gatehouse2",
+    "Route52_Gatehouse3"
   ],
   "gMapGroup_CoconutCityIndoor": [
-    "Route53_Gatehouse"
+    "Route53_Gatehouse",
+    "CoconutGym"
   ],
   "gMapGroup_CitrusIslandIndoor": [
     "CitrusIsland_House1",
@@ -649,5 +653,8 @@
     "CitrusIsland_House3",
     "CitrusIsland_MitsuruHouse",
     "CitrusIsland_PlayerHouse"
+  ],
+  "gMapGroup_TenkeiDungeons": [
+    "CherryWoods"
   ]
 }

@@ -27,7 +27,7 @@ DurianTown_Text_GymSign:
 	.string "“The fearful harmony!”$"
 
 DurianTown_Text_CitySign:
-	.string "DURIAN TOWN\n"
+	.string "STRAWBERRY TOWN\n"
 	.string "“United with nature and POKéMON”$"
 
 DurianTown_Text_KurtHouseSign:

@@ -121,7 +121,7 @@ DurianTown_PokemonCenter_Text_LikeHisLook:
 # 61 "data/maps/DurianTown_PokemonCenter/scripts.pory"
 	.string "His new haircut is called…\l"
 # 62 "data/maps/DurianTown_PokemonCenter/scripts.pory"
-	.string "a “mostaraptor”, right?\p"
+	.string "a “MOSTARAPTOR”, right?\p"
 # 63 "data/maps/DurianTown_PokemonCenter/scripts.pory"
 	.string "Either way, SHIRI brought out\n"
 # 64 "data/maps/DurianTown_PokemonCenter/scripts.pory"
