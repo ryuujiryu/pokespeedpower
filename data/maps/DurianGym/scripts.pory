@@ -77,17 +77,17 @@ DurianGym_Text_ShiriAndBanjoIntro:
     .string "I am SHIRI, and this airheaded hunk…\p"
     .string "BANJO: Man, she called me a hunk!\p"
     .string "SHIRI: …WILL TELL YOU WHAT TYPE WE USE.\n"
-    .string "(The girl is clearly getting annoyed.)p"
+    .string "(The girl is clearly getting annoyed.)\p"
     .string "BANJO: Yes, ma’am! (Mockingly salutes her.)\n"
     .string "We use… ROCK-types, right?\p"
     .string "SHIRI: … (Explodes in a fit of rage.)\p"
     .string "WE USE SOUND-TYPES, SCATTERBUG BRAIN!\n"
-    .string "UGH, that’s ENOUGH! Go, JIGGLYPUFF!$"
+    .string "UGH, that’s ENOUGH! Let's just start!$"
 
 DurianGym_Text_ShiriAndBanjoDefeat:
 	.string "BANJO: Dude, that was sick!\n"
 	.string "SHIRI: Tch… quit praising them, we LOST!\p"
-    .string "BANJO: So… we give ‘em their STAMP, right?\n"
+    .string "BANJO: So, we give ‘em their STAMP, right?\n"
     .string "SHIRI: I can’t do this…\p"
     .string "(Yanks {PLAYER}’s TRAINER CARD\n"
     .string "and slaps the LIVEHOOD STAMP on it.)$"
@@ -104,14 +104,15 @@ DurianGym_Text_ExplainStamp:
 
 DurianGym_Text_ExplainTM:
     .string "SHIRI: It’s TM48, containing ROUND.\n"
-    .string "You DO know what a TECHNICAL MACHINE is,\l"
-    .string "yes? BANBAN is already too much for me.\p"
-    .string "BANJO: He~he… I forgot to teach\n"
+    .string "Unlike… someone, I hope you know what a\l"
+    .string "TECHNICAL MACHINE is, right…? …Right?\p"
+    .string "BANJO: Heh… I forgot to teach\n"
     .string "it to my NOIBAT…\p"
     .string "SHIRI: You WHAT?!\n"
     .string "(Whacks BANJO on the head.)\p"
     .string "ANYWAY! It will teach a POKéMON the move\n"
-    .string "ROUND. Very strong… if two POKéMON use it.$"
+    .string "ROUND. It gets stronger if a POKéMON\l
+    .string "use it after its ally did.$"
 
  DurianGym_Text_ShiriAndBanjoPostBattle:
     .string "BANJO: 'Ya smashed us like a guitar!\p"
