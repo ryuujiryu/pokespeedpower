@@ -166,3 +166,31 @@ Common_Movement_WalkRightFaster::
 Common_Movement_WalkLeftFaster::
     walk_faster_left
     step_end
+
+Common_Movement_Heart:
+	emote_heart
+	step_end
+
+Common_Movement_Music:
+	emote_music
+	step_end
+
+Common_Movement_Sad:
+	emote_sad
+	step_end
+
+Common_Movement_Upset:
+	emote_upset
+	step_end
+
+Common_Movement_Angry:
+	emote_angry
+	step_end
+
+Common_Movement_Pensive:
+	emote_pensive
+	step_end
+
+Common_Movement_Poisoned:
+	emote_poisoned
+	step_end

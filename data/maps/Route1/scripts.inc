@@ -181,7 +181,7 @@ Route1_Text_RouteSignDurian:
 # 91 "data/maps/Route1/scripts.pory"
 	.string "ROUTE 51\n"
 # 92 "data/maps/Route1/scripts.pory"
-	.string "{UP_ARROW} DURIAN TOWN$"
+	.string "{UP_ARROW} STRAWBERRY TOWN$"
 # 93 "data/maps/Route1/scripts.pory"
 
 # 94 "data/maps/Route1/scripts.pory"

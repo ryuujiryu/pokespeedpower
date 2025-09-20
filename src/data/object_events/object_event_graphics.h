@@ -389,6 +389,8 @@ const u16 gObjectEventPal_Lugia[] = INCBIN_U16("graphics/object_events/palettes/
 const u16 gObjectEventPal_Nurse[] = INCBIN_U16("graphics/object_events/palettes/nurse.gbapal");
 const u16 gObjectEventPal_NpcPg[] = INCBIN_U16("graphics/object_events/palettes/npc_pg.gbapal");
 const u16 gObjectEventPal_Shiban[] = INCBIN_U16("graphics/object_events/palettes/shiban.gbapal");
+const u16 gObjectEventPal_NpcBr[] = INCBIN_U16("graphics/object_events/palettes/npc_br.gbapal");
+const u16 gObjectEventPal_NpcRbw[] = INCBIN_U16("graphics/object_events/palettes/npc_rbw.gbapal");
 
 const u16 gObjectEventPaletteLight[] = INCBIN_U16("graphics/object_events/palettes/light.gbapal");
 const u16 gObjectEventPaletteLight2[] = INCBIN_U16("graphics/object_events/palettes/light2.gbapal");

@@ -89,7 +89,7 @@ Route1_Text_RouteSignPort:
 
 Route1_Text_RouteSignDurian:
 	.string "ROUTE 51\n"
-	.string "{UP_ARROW} DURIAN TOWN$"
+	.string "{UP_ARROW} STRAWBERRY TOWN$"
 
 Route1_Text_WantToBuySodaPop:
 	.string "On such a hot beach, only a\n"

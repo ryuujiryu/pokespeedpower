@@ -5769,7 +5769,7 @@ u16 GetBattleBGM(void)
     }
     else if (gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED_LINK))
     {
-        return MUS_VS_TRAINER;
+        return MUS_RG_VS_TRAINER;
     }
     else if (gBattleTypeFlags & BATTLE_TYPE_TRAINER)
     {
@@ -5813,12 +5813,12 @@ u16 GetBattleBGM(void)
         case TRAINER_CLASS_PYRAMID_KING:
             return MUS_VS_FRONTIER_BRAIN;
         default:
-            return MUS_VS_TRAINER;
+            return MUS_RG_VS_TRAINER;
         }
     }
     else
     {
-        return MUS_VS_WILD;
+        return MUS_RG_VS_WILD;
     }
 }
 

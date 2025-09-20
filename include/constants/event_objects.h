@@ -388,6 +388,8 @@
 #define OBJ_EVENT_PAL_TAG_NURSE                   0x1125
 #define OBJ_EVENT_PAL_TAG_NPC_PG                  0x1126
 #define OBJ_EVENT_PAL_TAG_SHIBAN                  0X1127
+#define OBJ_EVENT_PAL_TAG_NPC_BR                  0X1128
+#define OBJ_EVENT_PAL_TAG_NPC_RBW                 0X1129
 
 #if OW_FOLLOWERS_POKEBALLS
 // Vanilla

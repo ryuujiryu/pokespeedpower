@@ -4784,8 +4784,9 @@ VSSeeker_Text_TrainersNotReady::
 	.string "Let's wait till later.{PAUSE_UNTIL_PRESS}$"
 
 Route1_Text_TianaIntro:
-	.string "Arrgh, I'm struggling to get a tan!\n"
-	.string "Help me blow some steam!$"
+	.string "Teach said he'd take us to a cool\n"
+	.string "place, but this is boring as heck!\p"
+	.string "Hey, want to battle instead?$"
 
 Route1_Text_TianaDefeated:
 	.string "You blew me away!$"
@@ -4800,30 +4801,33 @@ Route1_Text_CalvinIntro:
 	.string "I'll show you funny!$"
 
 Route1_Text_CalvinDefeated:
-	.string "Maybe I'll start wearin' jeans...$"
+	.string "Maybe I'll start wearin' jeans…$"
 
 Route1_Text_CalvinPostBattle:
 	.string "Wait, no. Who would wear a pair\n"
 	.string "of jeans at the beach?$"
 
 Route1_Text_AllyIntro:
-	.string "I packed lunch, my swimsuit, and\n"
-	.string "sunscreen! I'm ready for everything!$"
+	.string "This place, is, like, so pink! It is\n"
+	.string "perfect for, like, battling!$"
 
 Route1_Text_AllyDefeated:
 	.string "I wasn't ready for a defeat…$"
 
 Route1_Text_AllyPostBattle:
-	.string "At least I still have my sandwich…$"
+	.string "At least I lost in a pretty battle…$"
 
 Route1_Text_RickIntro:
-	.string "Ahoy! What about a quick battle\n"
-	.string "before I set sail?$"
+	.string "Those rascals! I took them here from\n"
+	.string "WATERMELON CITY to learn about\p"
+	.string "STRAWBERRY TOWN'S crafting traditions\n"
+	.string "only for them to find them boring!$"
 
 Route1_Text_RickDefeated:
-	.string "Ow! Okay, okay, I'll go on deck!$"
+	.string "Hey, you're strong!$"
 
 Route1_Text_RickPostBattle:
-	.string "You’d make a fine deckhand\n"
-	.string "with skill like that!$"
+	.string "You know, enrollment in the TRAINERS\n"
+	.string "ACADEMY's new year will open soon!\l"
+	.string "You'd be a better student than them!$"
 	

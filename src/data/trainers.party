@@ -5934,11 +5934,11 @@ Double Battle: Yes
 AI: Check Bad Move
 
 Zigzagoon
-Level: 5
+Level: 7
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Poochyena
-Level: 5
+Level: 7
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_JUNICHI ===
@@ -5951,11 +5951,11 @@ Double Battle: Yes
 AI: Check Bad Move
 
 Whismur
-Level: 9
+Level: 10
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Poliwag
-Level: 9
+Level: 10
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_JOSH ===
@@ -6204,11 +6204,11 @@ Double Battle: Yes
 AI: Check Bad Move
 
 Bellsprout
-Level: 5
+Level: 8
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Oddish
-Level: 5
+Level: 8
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_TIMMY ===
@@ -11042,11 +11042,11 @@ Double Battle: Yes
 AI: Check Bad Move
 
 Zigzagoon
-Level: 4
+Level: 7
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-LOONA (Skitty)
-Level: 4
+Skitty
+Level: 7
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_HALEY_1 ===
@@ -11238,19 +11238,19 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_RICK ===
 Name: RICK
-Class: Sailor
-Pic: Sailor
+Class: Teacher
+Pic: Teacher
 Gender: Male
 Music: Male
 Double Battle: Yes
 AI: Check Bad Move
 
-Machop
-Level: 4
+Pichu
+Level: 7
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Lotad
-Level: 4
+Level: 7
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_LYLE ===
