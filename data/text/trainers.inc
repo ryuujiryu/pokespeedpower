@@ -4820,7 +4820,7 @@ Route1_Text_AllyPostBattle:
 Route1_Text_RickIntro:
 	.string "Those rascals! I took them here from\n"
 	.string "WATERMELON CITY to learn about\p"
-	.string "STRAWBERRY TOWN'S crafting traditions\n"
+	.string "STRAWBERRY TOWN'S crafting traditions,\n"
 	.string "only for them to find them boring!$"
 
 Route1_Text_RickDefeated:
