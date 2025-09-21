@@ -201,3 +201,10 @@
 .include "sound/voicegroups/rg_sevii_45.inc"
 .include "sound/voicegroups/rg_sevii_67.inc"
 .include "sound/voicegroups/drumsets/rg_credits.inc"
+
+@ Advance Wars 2
+.include "sound/voicegroups/advance_wars_2_main_1.inc"
+.include "sound/voicegroups/keysplits/keysplit_advance_wars_2.inc"
+.include "sound/voicegroups/advance_wars_2_main_2.inc"
+.include "sound/voicegroups/drumsets/allkeysplit_advance_wars_2_drum_1.inc"
+.include "sound/voicegroups/drumsets/allkeysplit_advance_wars_2_drum_2.inc"
