@@ -55,7 +55,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_LITTLE_BOY",
+      "graphics_id": "OBJ_EVENT_GFX_BOY_2",
       "x": 1,
       "y": 14,
       "elevation": 3,
@@ -68,7 +68,7 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_MAN_2",
+      "graphics_id": "OBJ_EVENT_GFX_JACK",
       "x": 13,
       "y": 10,
       "elevation": 0,
@@ -113,7 +113,7 @@
       "y": 18,
       "elevation": 3,
       "dest_map": "MAP_DURIAN_TOWN",
-      "dest_warp_id": "1"
+      "dest_warp_id": "0"
     },
     {
       "x": 0,

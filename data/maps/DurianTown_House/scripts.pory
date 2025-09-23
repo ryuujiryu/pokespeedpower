@@ -1,1 +1,11 @@
 mapscripts DurianTown_House_MapScripts {}
+
+script DurianTown_House_Lass {
+	lock
+	faceplayer
+	msgbox ("This town may be pretty, but there\n"
+	"is nothing to do here!\p"
+	"I wish I had a permit to move to\n" "WATERMELON CITY instead.$")
+	release
+	end
+}

@@ -24,15 +24,35 @@
       "direction": "up"
     }
   ],
-  "object_events": [],
-  "warp_events": [
+  "object_events": [
     {
-      "x": 4,
-      "y": 13,
+      "graphics_id": "OBJ_EVENT_GFX_BOY_1",
+      "x": 22,
+      "y": 18,
       "elevation": 0,
-      "dest_map": "MAP_ROUTE51_GATEHOUSE",
-      "dest_warp_id": "1"
+      "movement_type": "MOVEMENT_TYPE_WANDER_UP_AND_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "DurianTown_KurtApprentice",
+      "flag": "0"
     },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_LITTLE_GIRL",
+      "x": 27,
+      "y": 8,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "DurianTown_LittleGirl",
+      "flag": "0"
+    }
+  ],
+  "warp_events": [
     {
       "x": 9,
       "y": 18,
@@ -70,7 +90,7 @@
       "y": 15,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "DurianTown_EventScript_KurtHouseSign"
+      "script": "DurianTown_KurtSign"
     },
     {
       "type": "sign",
@@ -78,7 +98,7 @@
       "y": 17,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "DurianTown_EventScript_CitySign"
+      "script": "DurianTown_CitySign"
     },
     {
       "type": "sign",
@@ -86,7 +106,7 @@
       "y": 10,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "DurianTown_EventScript_GymSign"
+      "script": "DurianTown_GymSign"
     }
   ]
 }

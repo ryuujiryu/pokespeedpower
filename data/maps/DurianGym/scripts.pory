@@ -20,6 +20,29 @@ script DurianGym_Darian {
 
 script DurianGym_ShiriAndBanjo {
 	lock
+    if (defeated(TRAINER_JUNICHI) && defeated(TRAINER_DARIAN)) {
+    call(DurianGym_ShiriAndBanjoCheckBadge)
+    }
+    else {
+    msgbox ("The music is too loud!\n" "They cannot hear you!")
+    }
+    closemessage
+	release
+	end
+}
+
+script DurianGym_ShiriAndBanjoCheckBadge {
+	if (!flag(FLAG_DEFEATED_RUSTBORO_GYM)){call(DurianGym_ShiriAndBanjoBattle)}
+	else {
+	msgbox ("BANJO: 'Ya smashed us like a guitar!\p" "SHIRI: And what SEEDOTCASE would\n" "smash one to begin with?!")
+	}
+	closemessage
+	release
+	end
+}
+
+script DurianGym_ShiriAndBanjoBattle {
+	lock
 	applymovement (LOCALID_DURIANGYM_BANJO, Common_Movement_ExclamationMark)
 	waitmovement (0)
 	applymovement (LOCALID_DURIANGYM_BANJO, Common_Movement_Delay48)
@@ -57,11 +80,7 @@ script DurianGym_ShiriAndBanjo {
 	msgbox ("SHIRI: … … … … …\n" "… … … … …\l" "WE USE SOUND-TYPES, SCATTERBUG BRAIN!\p" "ENOUGH! Let's start the battle, c'mon!")
 	closemessage
 	trainerbattle_no_intro (TRAINER_SHIRI_AND_BANJO_1, format("BANJO: Dude, that was sick!\n" "SHIRI: Tch… quit praising 'em, we LOST!\p" "BANJO: So, we give ‘em their STAMP, right?\n" "SHIRI: I can’t do this…\p" "(Snatches {PLAYER}’s TRAINER CARD\n" "and slaps the LIVEHOOD STAMP on it.)"))
-	if (flag(!FLAG_RECEIVED_TM_ROCK_TOMB) == FALSE) { goto (DurianGym_ShiriAndBanjoDefeated)
-	}
-	if (flag(FLAG_RECEIVED_TM_ROCK_TOMB) == TRUE) { msgbox ("BANJO: 'Ya smashed us like a guitar!\p" "SHIRI: And what SEEDOTCASE would smash one?!")
-	}
-	release
+    call(DurianGym_ShiriAndBanjoDefeated)
     end
 }
 

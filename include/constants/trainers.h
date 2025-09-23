@@ -110,7 +110,16 @@
 #define TRAINER_PIC_RS_MAY                92
 #define TRAINER_PIC_TEACHER               93
 #define TRAINER_PIC_IDOL                  94
-#define TRAINER_PIC_COUNT                 95
+#define TRAINER_PIC_URPF_SOLDIER_M        95
+#define TRAINER_PIC_URPF_SOLDIER_F        96
+#define TRAINER_PIC_IRM_WARRIOR_M         97
+#define TRAINER_PIC_IRM_WARRIOR_F         98
+#define TRAINER_PIC_MONK                  99
+#define TRAINER_PIC_SHRINE_MAIDEN         100
+#define TRAINER_PIC_TOURIST_M             101
+#define TRAINER_PIC_TOURIST_F             102
+#define TRAINER_PIC_NURSE                 103
+#define TRAINER_PIC_COUNT                 104
 
 // The player back pics are assumed to alternate according to the gender values (MALE/FEMALE)
 #define TRAINER_BACK_PIC_BRENDAN                0
@@ -355,8 +364,14 @@
 #define TRAINER_CLASS_RS_PROTAG      0x41
 #define TRAINER_CLASS_TEACHER        0x42
 #define TRAINER_CLASS_IDOL           0x43
+#define TRAINER_CLASS_URPF_SOLDIER   0x44
+#define TRAINER_CLASS_IRM_WARRIOR    0x45
+#define TRAINER_CLASS_MONK           0x46
+#define TRAINER_CLASS_SHRINE_MAIDEN  0x47
+#define TRAINER_CLASS_TOURIST        0x48
+#define TRAINER_CLASS_NURSE          0x49
 
-#define TRAINER_CLASS_COUNT          0x44
+#define TRAINER_CLASS_COUNT          0x4a
 
 #define TRAINER_ENCOUNTER_MUSIC_MALE         0 // standard male encounter music
 #define TRAINER_ENCOUNTER_MUSIC_FEMALE       1 // standard female encounter music

@@ -1,34 +1,39 @@
-raw `
-DurianTown_MapScripts::
-	map_script MAP_SCRIPT_ON_TRANSITION, DurianTown_OnTransition
-	.byte 0
-`
-raw `
-
-DurianTown_OnTransition:
-	setflag FLAG_VISITED_DURIAN_TOWN
+mapscripts DurianTown_MapScripts {
+MAP_SCRIPT_ON_TRANSITION {
+	setflag (FLAG_VISITED_DURIAN_TOWN)
 	end
+        }
+}
 
-DurianTown_EventScript_GymSign::
-	msgbox DurianTown_Text_GymSign, MSGBOX_SIGN
+script DurianTown_GymSign {
+	msgbox ("ELEMENTAL TEMPLE OF LIVEHOOD\n" "GUARDIANS: SHIRI&BANJO\l" "“The fearful harmony!”$")
+	release
 	end
+}
 
-DurianTown_EventScript_CitySign::
-	msgbox DurianTown_Text_CitySign, MSGBOX_SIGN
+script DurianTown_CitySign {
+	msgbox ("STRAWBERRY TOWN\n" "“United with nature and POKéMON”$")
+	release
 	end
+}
 
-DurianTown_EventScript_KurtHouseSign::
-	msgbox DurianTown_Text_KurtHouseSign, MSGBOX_SIGN
+script DurianTown_KurtSign {
+	msgbox ("KURT'S HOUSE$")
 	end
+}
 
-DurianTown_Text_GymSign:
-	.string "ELEMENTAL TEMPLE OF LIVEHOOD\n"
-	.string "GUARDIANS: SHIRI&BANJO\l"
-	.string "“The fearful harmony!”$"
+script DurianTown_KurtApprentice {
+	lock
+	faceplayer
+	msgbox ("Are you a POKéMON WIELDER? Then come\n" "buy some handcrafted POKé BALLS!$")
+	release
+	end
+}
 
-DurianTown_Text_CitySign:
-	.string "STRAWBERRY TOWN\n"
-	.string "“United with nature and POKéMON”$"
-
-DurianTown_Text_KurtHouseSign:
-	.string "KURT'S HOUSE$"
+script DurianTown_LittleGirl {
+	lock
+	faceplayer
+	msgbox ("I'm pretending to be a gate guard like\n" "my grandpa when he was younger!$")
+	release
+	end
+}

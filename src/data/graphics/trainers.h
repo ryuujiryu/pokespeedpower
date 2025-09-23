@@ -298,6 +298,33 @@ const u16 gTrainerPalette_Teacher[] = INCBIN_U16("graphics/trainers/palettes/tea
 const u32 gTrainerFrontPic_Idol[] = INCBIN_U32("graphics/trainers/front_pics/idol_m.4bpp.lz");
 const u16 gTrainerPalette_Idol[] = INCBIN_U16("graphics/trainers/palettes/idol_m.gbapal");
 
+const u32 gTrainerFrontPic_UrpfSoldierM[] = INCBIN_U32("graphics/trainers/front_pics/urpf_m.4bpp.lz");
+const u16 gTrainerPalette_UrpfSoldierM[] = INCBIN_U16("graphics/trainers/palettes/urpf_m.gbapal");
+
+const u32 gTrainerFrontPic_UrpfSoldierF[] = INCBIN_U32("graphics/trainers/front_pics/urpf_f.4bpp.lz");
+const u16 gTrainerPalette_UrpfSoldierF[] = INCBIN_U16("graphics/trainers/palettes/urpf_f.gbapal");
+
+const u32 gTrainerFrontPic_IrmWarriorM[] = INCBIN_U32("graphics/trainers/front_pics/irm_m.4bpp.lz");
+const u16 gTrainerPalette_IrmWarriorM[] = INCBIN_U16("graphics/trainers/palettes/irm_m.gbapal");
+
+const u32 gTrainerFrontPic_IrmWarriorF[] = INCBIN_U32("graphics/trainers/front_pics/irm_f.4bpp.lz");
+const u16 gTrainerPalette_IrmWarriorF[] = INCBIN_U16("graphics/trainers/palettes/irm_f.gbapal");
+
+const u32 gTrainerFrontPic_Monk[] = INCBIN_U32("graphics/trainers/front_pics/monk.4bpp.lz");
+const u16 gTrainerPalette_Monk[] = INCBIN_U16("graphics/trainers/palettes/monk.gbapal");
+
+const u32 gTrainerFrontPic_ShrineMaiden[] = INCBIN_U32("graphics/trainers/front_pics/shrine_maiden.4bpp.lz");
+const u16 gTrainerPalette_ShrineMaiden[] = INCBIN_U16("graphics/trainers/palettes/shrine_maiden.gbapal");
+
+const u32 gTrainerFrontPic_TouristM[] = INCBIN_U32("graphics/trainers/front_pics/tourist_m.4bpp.lz");
+const u16 gTrainerPalette_TouristM[] = INCBIN_U16("graphics/trainers/palettes/tourist_m.gbapal");
+
+const u32 gTrainerFrontPic_TouristF[] = INCBIN_U32("graphics/trainers/front_pics/tourist_f.4bpp.lz");
+const u16 gTrainerPalette_TouristF[] = INCBIN_U16("graphics/trainers/palettes/tourist_f.gbapal");
+
+const u32 gTrainerFrontPic_Nurse[] = INCBIN_U32("graphics/trainers/front_pics/nurse.4bpp.lz");
+const u16 gTrainerPalette_Nurse[] = INCBIN_U16("graphics/trainers/palettes/nurse.gbapal");
+
 // The first two parameters invoke a front pic and palette by
 // calling a "TRAINER_PIC" constant (e.g. TRAINER_PIC_HIKER), and
 // gTrainerFrontPic/gTrainerPalette pointers, (e.g "gTrainerFrontPic_Hiker" and "gTrainerPalette_Hiker").
@@ -409,6 +436,15 @@ const struct TrainerSprite gTrainerSprites[] =
     TRAINER_SPRITE(TRAINER_PIC_RS_MAY, gTrainerFrontPic_RubySapphireMay, gTrainerPalette_RubySapphireMay),
     TRAINER_SPRITE(TRAINER_PIC_TEACHER, gTrainerFrontPic_Teacher, gTrainerPalette_Teacher),
     TRAINER_SPRITE(TRAINER_PIC_IDOL, gTrainerFrontPic_Idol, gTrainerPalette_Idol),
+    TRAINER_SPRITE(TRAINER_PIC_URPF_SOLDIER_M, gTrainerFrontPic_UrpfSoldierM, gTrainerPalette_UrpfSoldierM),
+    TRAINER_SPRITE(TRAINER_PIC_URPF_SOLDIER_F, gTrainerFrontPic_UrpfSoldierF, gTrainerPalette_UrpfSoldierF),
+    TRAINER_SPRITE(TRAINER_PIC_IRM_WARRIOR_M, gTrainerFrontPic_IrmWarriorM, gTrainerPalette_IrmWarriorM),
+    TRAINER_SPRITE(TRAINER_PIC_IRM_WARRIOR_F, gTrainerFrontPic_IrmWarriorF, gTrainerPalette_IrmWarriorF),
+    TRAINER_SPRITE(TRAINER_PIC_MONK, gTrainerFrontPic_Monk, gTrainerPalette_Monk),
+    TRAINER_SPRITE(TRAINER_PIC_SHRINE_MAIDEN, gTrainerFrontPic_ShrineMaiden, gTrainerPalette_ShrineMaiden),
+    TRAINER_SPRITE(TRAINER_PIC_TOURIST_M, gTrainerFrontPic_TouristM, gTrainerPalette_TouristM),
+    TRAINER_SPRITE(TRAINER_PIC_TOURIST_F, gTrainerFrontPic_TouristF, gTrainerPalette_TouristF),
+    TRAINER_SPRITE(TRAINER_PIC_NURSE, gTrainerFrontPic_Nurse, gTrainerPalette_Nurse),
 };
 
 static const union AnimCmd sAnimCmd_Hoenn[] =

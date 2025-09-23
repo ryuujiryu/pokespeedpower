@@ -336,7 +336,7 @@ const struct TrainerClass gTrainerClasses[TRAINER_CLASS_COUNT] =
     [TRAINER_CLASS_PSYCHIC] = { _("PSYCHIC"), 6 },
     [TRAINER_CLASS_GENTLEMAN] = { _("GENTLEMAN"), 20, BALL_LUXURY },
     [TRAINER_CLASS_ELITE_FOUR] = { _("DAIMYO"), 25, BALL_ULTRA },
-    [TRAINER_CLASS_LEADER] = { _("PATHGUARDIAN"), 25 },
+    [TRAINER_CLASS_LEADER] = { _("PATH GUARDIAN"), 25 },
     [TRAINER_CLASS_SCHOOL_KID] = { _("SCHOOL KID") },
     [TRAINER_CLASS_SR_AND_JR] = { _("SR. AND JR."), 4 },
     [TRAINER_CLASS_WINSTRATE] = { _("WINSTRATE"), 10 },
@@ -372,6 +372,12 @@ const struct TrainerClass gTrainerClasses[TRAINER_CLASS_COUNT] =
     [TRAINER_CLASS_RS_PROTAG] = { _("{PKMN} TRAINER") },
     [TRAINER_CLASS_TEACHER] = { _("TEACHER"), 2 },
     [TRAINER_CLASS_IDOL] = { _("IDOL"), 3 },
+    [TRAINER_CLASS_URPF_SOLDIER] = { _("URPF SOLDIER"), 5},
+    [TRAINER_CLASS_IRM_WARRIOR] = { _("IRM WARRIOR"), 5},
+    [TRAINER_CLASS_MONK] = { _("MONK"), 2},
+    [TRAINER_CLASS_SHRINE_MAIDEN] = { _("SHRINE MAIDEN"), 2},
+    [TRAINER_CLASS_TOURIST] = { _("TOURIST"), 10 },
+    [TRAINER_CLASS_NURSE] = { _("NURSE"), 3 },
 };
 
 static void (*const sTurnActionsFuncsTable[])(void) =

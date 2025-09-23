@@ -11853,7 +11853,7 @@ F_TRAINER_FEMALE |
     [DIFFICULTY_NORMAL][TRAINER_SHIRI_AND_BANJO_1] =
     {
 #line 4792
-        .trainerName = _("SHIRI&BANJO"),
+        .trainerName = _("SHIRI & BANJO"),
 #line 4793
         .trainerClass = TRAINER_CLASS_LEADER,
 #line 4794
