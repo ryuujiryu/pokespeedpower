@@ -300,8 +300,8 @@ DurianGym_Darian_Text_2:
 
 DurianGym_ShiriAndBanjo_Text_0:
 # 27 "data/maps/DurianGym/scripts.pory"
-	.string "The music is too loud! They\n"
-	.string "cannot hear you!$"
+	.string "The music is too loud!\n"
+	.string "They cannot hear you!$"
 
 DurianGym_ShiriAndBanjoCheckBadge_Text_0:
 # 37 "data/maps/DurianGym/scripts.pory"
