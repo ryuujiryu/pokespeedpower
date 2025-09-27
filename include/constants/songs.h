@@ -490,7 +490,6 @@
 #define MUS_RG_TRAINER_TOWER        556 // MUS_RG_T_TOWER
 #define MUS_RG_SLOW_PALLET          557 // MUS_RG_SLOWMASARA
 #define MUS_RG_TEACHY_TV_MENU       558 // MUS_RG_TVNOIZE
-#define END_MUS                     MUS_RG_TEACHY_TV_MENU
 
 // These PH_* constants are phoneme sounds used by the "bard" NPC (see src/bard_music.c and src/mauville_old_man.c).
 // Each comes in a triplet of PH_*_BLEND, PH_*_HELD, and PH_*_SOLO, and the name of each triplet incorporates the English phonetic sound it represents.
@@ -545,6 +544,57 @@
 #define PH_NURSE_BLEND              607
 #define PH_NURSE_HELD               608
 #define PH_NURSE_SOLO               609
+
+// Advance Wars 2
+#define MUS_AW2_201                 610
+#define MUS_AW2_202                 611
+#define MUS_AW2_203                 612
+#define MUS_AW2_205                 613
+#define MUS_AW2_209                 614
+#define MUS_AW2_210                 615
+#define MUS_AW2_211                 616
+#define MUS_AW2_212                 617
+#define MUS_AW2_213                 618
+#define MUS_AW2_214                 619
+#define MUS_AW2_216                 620
+#define MUS_AW2_217                 621
+#define MUS_AW2_218                 622
+#define MUS_AW2_219                 623
+#define MUS_AW2_220                 624
+#define MUS_AW2_300                 625
+#define MUS_AW2_301                 626
+#define MUS_AW2_302                 627
+#define MUS_AW2_303                 628
+#define MUS_AW2_304                 629
+#define MUS_AW2_400                 630
+#define MUS_AW2_401                 631
+#define MUS_AW2_402                 632
+#define MUS_AW2_403                 633
+#define MUS_AW2_404                 634
+#define MUS_AW2_405                 635
+#define MUS_AW2_406                 636
+#define MUS_AW2_407                 637
+#define MUS_AW2_408                 638
+#define MUS_AW2_409                 639
+#define MUS_AW2_410                 640
+#define MUS_AW2_411                 641
+#define MUS_AW2_412                 642
+#define MUS_AW2_413                 643
+#define MUS_AW2_414                 644
+#define MUS_AW2_415                 645
+#define MUS_AW2_416                 646
+#define MUS_AW2_417                 647
+#define MUS_AW2_418                 648
+#define MUS_AW2_419                 649
+#define MUS_AW2_420                 650
+#define MUS_AW2_421                 651
+#define MUS_AW2_422                 652
+#define MUS_AW2_423                 653
+#define MUS_AW2_424                 654
+#define MUS_AW2_425                 655
+#define MUS_AW2_426                 656
+
+#define END_MUS                     MUS_AW2_426
 
 #define MUS_ROUTE118                0x7FFF  // Map is split into 2 music sections. controlled by GetCurrLocationDefaultMusic().
 
