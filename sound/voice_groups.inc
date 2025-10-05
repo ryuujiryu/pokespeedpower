@@ -208,3 +208,32 @@
 .include "sound/voicegroups/advance_wars_2_main_2.inc"
 .include "sound/voicegroups/drumsets/allkeysplit_advance_wars_2_drum_1.inc"
 .include "sound/voicegroups/drumsets/allkeysplit_advance_wars_2_drum_2.inc"
+
+@ --Start HGSS Voicegroups--
+.include "sound/voicegroups/voicegroup216.inc"
+.include "sound/voicegroups/voicegroup219.inc"
+.include "sound/voicegroups/voicegroup220.inc"
+.include "sound/voicegroups/voicegroup232.inc"
+.include "sound/voicegroups/voicegroup251.inc"
+.include "sound/voicegroups/voicegroup255.inc"
+.include "sound/voicegroups/voicegroup272.inc"
+.include "sound/voicegroups/voicegroup273.inc"
+@ --End HGSS Voicegroups--
+
+@ [Main] GBA Golden Sun
+.include "sound/voicegroups/voicegroup601.inc" 
+.include "sound/voicegroups/voicegroup602.inc" @ GBA Golden Sun Drum
+
+@ Megaman Battle Network 6
+.include "sound/voicegroups/voicegroup805.inc"
+.include "sound/voicegroups/voicegroup806.inc"
+
+@ extra
+
+.include "sound/voicegroups/voicegroup191.inc"
+.include "sound/voicegroups/voicegroup192.inc"
+.include "sound/voicegroups/voicegroup193.inc"
+.include "sound/voicegroups/voicegroup196.inc"
+.include "sound/voicegroups/voicegroup230.inc"
+.include "sound/voicegroups/voicegroup244.inc"
+.include "sound/voicegroups/voicegroup248.inc"

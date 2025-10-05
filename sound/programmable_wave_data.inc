@@ -76,3 +76,9 @@ ProgrammableWaveData_24::
 
 ProgrammableWaveData_25::
 	.incbin "sound/programmable_wave_samples/25.pcm"
+
+ProgrammableWaveData_GoldenSun2pcm001::
+    .incbin "sound/programmable_wave_samples/golden_sun_2_pcm_001.pcm"
+
+ProgrammableWaveData_GoldenSun2pcm002::
+    .incbin "sound/programmable_wave_samples/golden_sun_2_pcm_002.pcm"
