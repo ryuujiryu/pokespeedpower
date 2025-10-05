@@ -162,3 +162,37 @@
 	.4byte \sample
 	.byte 0xff, 0, 0xff, 0
 	.endm
+
+	.macro set_synth_custom parameter1:req, parameter2:req, parameter3:req, parameter4:req
+	.4byte 0x40000000  @ Recognized as a looping Direct Sound wave sample in a voicegroup
+	.4byte 0x01058920  @ Frequency/Pitch control
+	.4byte 0x00000000  @ Supposedly a loop point, but in this case is solid 0
+	.4byte 0x00000000  @ Supposedly sample size, but in this case is solid 0
+	.byte  0x80        @ Unknown
+	.byte  0x00        @ Type 0
+	.byte  \parameter1
+	.byte  \parameter2
+	.byte  \parameter3
+	.byte  \parameter4
+	.2byte 0x0000      @ Padding
+	.endm
+
+	.macro set_synth_25
+	.4byte 0x40000000  @ Recognized as a looping Direct Sound wave sample in a voicegroup
+	.4byte 0x01058920  @ Frequency/Pitch control
+	.4byte 0x00000000  @ Supposedly a loop point, but in this case is solid 0
+	.4byte 0x00000000  @ Supposedly sample size, but in this case is solid 0
+	.byte  0x80        @ Unknown
+	.byte  0x01        @ Type 1
+	.2byte 0x0000      @ Padding
+	.endm
+
+	.macro set_synth_50
+	.4byte 0x40000000  @ Recognized as a looping Direct Sound wave sample in a voicegroup
+	.4byte 0x01058920  @ Frequency/Pitch control
+	.4byte 0x00000000  @ Supposedly a loop point, but in this case is solid 0
+	.4byte 0x00000000  @ Supposedly sample size, but in this case is solid 0
+	.byte  0x80        @ Unknown
+	.byte  0x02        @ Type 2
+	.2byte 0x0000      @ Padding
+	.endm

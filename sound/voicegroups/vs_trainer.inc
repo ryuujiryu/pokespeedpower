@@ -26,19 +26,19 @@ voice_group vs_trainer
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
-	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
-	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
-	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
-	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
-	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
-	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
-	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_fingered_bass, 255, 253, 0, 149
-	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
-	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
-	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
-	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
-	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_synth_bass, 255, 252, 0, 115
-	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
+	voice_directsound 60, 0, DirectSoundSynthData_Custom_Param_10F0E080, 85, 165, 193, 178
+	voice_directsound 60, 0, DirectSoundSynthData_Custom_Param_60204080, 85, 165, 193, 178
+	voice_directsound 60, 0, DirectSoundSynthData_Custom_Param_80404040, 85, 165, 193, 178
+	voice_directsound 60, 0, DirectSoundSynthData_Custom_Param_10F0E080, 22, 165, 193, 195
+	voice_directsound 60, 0, DirectSoundSynthData_Custom_Param_60204080, 22, 165, 193, 195
+	voice_directsound 60, 0, DirectSoundSynthData_Custom_Param_80404040, 22, 165, 193, 195
+	voice_directsound 60, 0, DirectSoundSynthData_Custom_Param_10F0E080, 255, 235, 90, 178
+	voice_directsound 60, 0, DirectSoundSynthData_Custom_Param_60204080, 255, 235, 90, 178
+	voice_directsound 60, 0, DirectSoundSynthData_Custom_Param_80404040, 255, 235, 90, 178
+	voice_directsound 60, 0, DirectSoundSynthData_Custom_Param_10F0E080, 255, 127, 90, 165
+	voice_directsound 60, 0, DirectSoundSynthData_Custom_Param_60204080, 255, 127, 90, 165
+	voice_directsound 60, 0, DirectSoundSynthData_Custom_Param_80404040, 255, 127, 90, 165
+	voice_directsound 60, 0, DirectSoundSynthData_Type_01, 22, 165, 167, 195
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
@@ -65,8 +65,8 @@ voice_group vs_trainer
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
-	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
-	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
+	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_fingered_bass, 255, 253, 0, 149
+	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_synth_bass, 255, 252, 0, 115
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
