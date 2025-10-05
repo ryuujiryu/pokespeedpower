@@ -4620,6 +4620,36 @@
       "secondary_tileset": "gTileset_Gatehouse",
       "border_filepath": "data/layouts/Route52_Gatehouse3/border.bin",
       "blockdata_filepath": "data/layouts/Route52_Gatehouse3/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE54",
+      "name": "Route54_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/Route54/border.bin",
+      "blockdata_filepath": "data/layouts/Route54/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE55",
+      "name": "Route55_Layout",
+      "width": 52,
+      "height": 25,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Coconut",
+      "border_filepath": "data/layouts/Route55/border.bin",
+      "blockdata_filepath": "data/layouts/Route55/map.bin"
+    },
+    {
+      "id": "LAYOUT_WATERMELON_CITY",
+      "name": "WatermelonCity_Layout",
+      "width": 60,
+      "height": 68,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Rustboro",
+      "border_filepath": "data/layouts/WatermelonCity/border.bin",
+      "blockdata_filepath": "data/layouts/WatermelonCity/map.bin"
     }
   ]
 }

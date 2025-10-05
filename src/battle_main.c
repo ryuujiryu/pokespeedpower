@@ -334,7 +334,7 @@ const struct TrainerClass gTrainerClasses[TRAINER_CLASS_COUNT] =
     [TRAINER_CLASS_PSYCHIC] = { _("PSYCHIC"), 6 },
     [TRAINER_CLASS_GENTLEMAN] = { _("GENTLEMAN"), 20, BALL_LUXURY },
     [TRAINER_CLASS_ELITE_FOUR] = { _("ELITE FOUR"), 25, BALL_ULTRA },
-    [TRAINER_CLASS_LEADER] = { _("LEADER"), 25 },
+    [TRAINER_CLASS_LEADER] = { _("PATH GUARDIAN"), 25 },
     [TRAINER_CLASS_SCHOOL_KID] = { _("SCHOOL KID") },
     [TRAINER_CLASS_SR_AND_JR] = { _("SR. AND JR."), 4 },
     [TRAINER_CLASS_WINSTRATE] = { _("WINSTRATE"), 10 },
@@ -2662,11 +2662,11 @@ static void SpriteCB_MoveWildMonToRight(struct Sprite *sprite)
     if ((gIntroSlideFlags & 1) == 0)
     {
         if (B_FAST_INTRO_NO_SLIDE == FALSE && !gTestRunnerHeadless)
-            sprite->x2 += 2;
+            sprite->x2 += 5;
         else
-            sprite->x2 = 0;
+            sprite->x2 = 5;
 
-        if (sprite->x2 == 0)
+        if (sprite->x2 == 5)
         {
             sprite->callback = SpriteCB_WildMonShowHealthbox;
         }

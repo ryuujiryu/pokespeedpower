@@ -632,7 +632,10 @@
     "DurianTown",
     "Route52",
     "Route53",
-    "CoconutCity"
+    "CoconutCity",
+    "Route54",
+    "Route55",
+    "WatermelonCity"
   ],
   "gMapGroup_DurianTownIndoor": [
     "DurianTown_PokemonCenter",

@@ -2,7 +2,7 @@
   "id": "MAP_DURIAN_TOWN",
   "name": "DurianTown",
   "layout": "LAYOUT_DURIAN_TOWN",
-  "music": "MUS_RG_SEVII_67",
+  "music": "MUS_AW2_212",
   "region_map_section": "MAPSEC_VIRIDIAN_CITY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

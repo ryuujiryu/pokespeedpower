@@ -124,7 +124,7 @@ voice_group rg_vs_gym_leader
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
-	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0
 	voice_noise_alt 60, 0, 0, 0, 2, 6, 2
 	voice_noise_alt 60, 0, 0, 0, 1, 6, 0
+	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_orchestra_cymbal_crash, 255, 246, 0, 216
 

@@ -79,7 +79,7 @@ const struct Outfit gOutfits[OUTFIT_COUNT] =
         //! DESC: trainer front & back pic index
         //! (see include/constants/trainers.h)
         .trainerPics = {
-            [MALE] =   { TRAINER_PIC_BRENDAN, TRAINER_BACK_PIC_BRENDAN, },
+            [MALE] =   { TRAINER_PIC_URPF_SOLDIER_M, TRAINER_BACK_PIC_BRENDAN, },
             [FEMALE] = { TRAINER_PIC_MAY, TRAINER_BACK_PIC_MAY, },
         },
 

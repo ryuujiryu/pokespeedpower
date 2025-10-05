@@ -1202,3 +1202,9 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/Route52_Gatehouse2/scripts.inc"
 
 	.include "data/maps/Route52_Gatehouse3/scripts.inc"
+
+	.include "data/maps/Route54/scripts.inc"
+
+	.include "data/maps/Route55/scripts.inc"
+
+	.include "data/maps/WatermelonCity/scripts.inc"
