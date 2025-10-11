@@ -213,7 +213,7 @@ Route1_Text_HereYouGo:
 # 107 "data/maps/Route1/scripts.pory"
 Route1_EventScript_Tiana::
 # 108 "data/maps/Route1/scripts.pory"
-	trainerbattle_single TRAINER_TIANA, Route1_Text_TianaIntro, Route1_Text_TianaDefeated
+	trainerbattle_single TRAINER_SP_KAZUHA, Route1_Text_TianaIntro, Route1_Text_TianaDefeated
 # 109 "data/maps/Route1/scripts.pory"
 	msgbox Route1_Text_TianaPostBattle, MSGBOX_AUTOCLOSE
 # 110 "data/maps/Route1/scripts.pory"
@@ -223,7 +223,7 @@ Route1_EventScript_Tiana::
 # 112 "data/maps/Route1/scripts.pory"
 Route1_EventScript_Calvin::
 # 113 "data/maps/Route1/scripts.pory"
-	trainerbattle_single TRAINER_CALVIN, Route1_Text_CalvinIntro, Route1_Text_CalvinDefeated
+	trainerbattle_single TRAINER_SP_KAZUKI, Route1_Text_CalvinIntro, Route1_Text_CalvinDefeated
 # 114 "data/maps/Route1/scripts.pory"
 	msgbox Route1_Text_CalvinPostBattle, MSGBOX_AUTOCLOSE
 # 115 "data/maps/Route1/scripts.pory"
@@ -233,7 +233,7 @@ Route1_EventScript_Calvin::
 # 117 "data/maps/Route1/scripts.pory"
 Route1_EventScript_Ally::
 # 118 "data/maps/Route1/scripts.pory"
-	trainerbattle_single TRAINER_ALLY, Route1_Text_AllyIntro, Route1_Text_AllyDefeated
+	trainerbattle_single TRAINER_SP_CHIKA, Route1_Text_AllyIntro, Route1_Text_AllyDefeated
 # 119 "data/maps/Route1/scripts.pory"
 	msgbox Route1_Text_AllyPostBattle, MSGBOX_AUTOCLOSE
 # 120 "data/maps/Route1/scripts.pory"
@@ -243,7 +243,7 @@ Route1_EventScript_Ally::
 # 122 "data/maps/Route1/scripts.pory"
 Route1_EventScript_Rick::
 # 123 "data/maps/Route1/scripts.pory"
-	trainerbattle_single TRAINER_RICK, Route1_Text_RickIntro, Route1_Text_RickDefeated
+	trainerbattle_single TRAINER_SP_ISAMU, Route1_Text_RickIntro, Route1_Text_RickDefeated
 # 124 "data/maps/Route1/scripts.pory"
 	msgbox Route1_Text_RickPostBattle, MSGBOX_AUTOCLOSE
 # 125 "data/maps/Route1/scripts.pory"

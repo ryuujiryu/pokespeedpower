@@ -7,7 +7,7 @@ DurianGym_MapScripts::
 
 DurianGym_Junichi::
 # 8 "data/maps/DurianGym/scripts.pory"
-	trainerbattle_single TRAINER_JUNICHI, DurianGym_Junichi_Text_0, DurianGym_Junichi_Text_1
+	trainerbattle_single TRAINER_SP_JUNICHI, DurianGym_Junichi_Text_0, DurianGym_Junichi_Text_1
 # 9 "data/maps/DurianGym/scripts.pory"
 	msgbox DurianGym_Junichi_Text_2
 # 10 "data/maps/DurianGym/scripts.pory"
@@ -17,7 +17,7 @@ DurianGym_Junichi::
 
 DurianGym_Darian::
 # 15 "data/maps/DurianGym/scripts.pory"
-	trainerbattle_single TRAINER_DARIAN, DurianGym_Darian_Text_0, DurianGym_Darian_Text_1
+	trainerbattle_single TRAINER_SP_DARIAN, DurianGym_Darian_Text_0, DurianGym_Darian_Text_1
 # 16 "data/maps/DurianGym/scripts.pory"
 	msgbox DurianGym_Darian_Text_2
 # 17 "data/maps/DurianGym/scripts.pory"
@@ -29,7 +29,7 @@ DurianGym_ShiriAndBanjo::
 # 22 "data/maps/DurianGym/scripts.pory"
 	lock
 # 23 "data/maps/DurianGym/scripts.pory"
-	checktrainerflag TRAINER_JUNICHI
+	checktrainerflag TRAINER_SP_JUNICHI
 	goto_if 1, DurianGym_ShiriAndBanjo_4
 DurianGym_ShiriAndBanjo_3:
 # 27 "data/maps/DurianGym/scripts.pory"
@@ -48,7 +48,7 @@ DurianGym_ShiriAndBanjo_2:
 
 DurianGym_ShiriAndBanjo_4:
 # 23 "data/maps/DurianGym/scripts.pory"
-	checktrainerflag TRAINER_DARIAN
+	checktrainerflag TRAINER_SP_DARIAN
 	goto_if 1, DurianGym_ShiriAndBanjo_2
 	goto DurianGym_ShiriAndBanjo_3
 

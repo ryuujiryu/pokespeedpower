@@ -119,7 +119,9 @@
 #define TRAINER_PIC_TOURIST_M             102
 #define TRAINER_PIC_TOURIST_F             103
 #define TRAINER_PIC_NURSE                 104
-#define TRAINER_PIC_COUNT                 105
+#define TRAINER_PIC_DELINQUENT            105
+#define TRAINER_PIC_SUKEBAN               106
+#define TRAINER_PIC_COUNT                 107
 
 // The player back pics are assumed to alternate according to the gender values (MALE/FEMALE)
 #define TRAINER_BACK_PIC_BRENDAN                0
@@ -372,6 +374,8 @@ enum TrainerClassID
     TRAINER_CLASS_SHRINE_MAIDEN,
     TRAINER_CLASS_TOURIST,
     TRAINER_CLASS_NURSE,
+    TRAINER_CLASS_DELINQUENT,
+    TRAINER_CLASS_SUKEBAN,
     TRAINER_CLASS_COUNT,
 };
 

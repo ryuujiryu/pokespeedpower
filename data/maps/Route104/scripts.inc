@@ -1701,7 +1701,7 @@ Route104_EventScript_Ivan::
 # 851 "data/maps/Route104/scripts.pory"
 Route104_EventScript_Billy::
 # 852 "data/maps/Route104/scripts.pory"
-	trainerbattle_single TRAINER_JUNICHI, Route104_Text_BillyIntro, Route104_Text_BillyDefeat
+	trainerbattle_single TRAINER_SP_JUNICHI, Route104_Text_BillyIntro, Route104_Text_BillyDefeat
 # 853 "data/maps/Route104/scripts.pory"
 	msgbox Route104_Text_BillyPostBattle, MSGBOX_AUTOCLOSE
 # 854 "data/maps/Route104/scripts.pory"
@@ -1985,7 +1985,7 @@ Route104_EventScript_Mia::
 # 993 "data/maps/Route104/scripts.pory"
 Route104_EventScript_Darian::
 # 994 "data/maps/Route104/scripts.pory"
-	trainerbattle_single TRAINER_DARIAN, Route104_Text_DarianIntro, Route104_Text_DarianDefeat
+	trainerbattle_single TRAINER_SP_DARIAN, Route104_Text_DarianIntro, Route104_Text_DarianDefeat
 # 995 "data/maps/Route104/scripts.pory"
 	msgbox Route104_Text_DarianPostBattle, MSGBOX_AUTOCLOSE
 # 996 "data/maps/Route104/scripts.pory"

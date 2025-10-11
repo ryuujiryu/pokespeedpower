@@ -11,8 +11,8 @@ Common_EventScript_SetGymTrainers::
 	end
 
 DurianGym_SetGymTrainers::
-	settrainerflag TRAINER_JUNICHI
-	settrainerflag TRAINER_DARIAN
+	settrainerflag TRAINER_SP_JUNICHI
+	settrainerflag TRAINER_SP_DARIAN
 	return
 
 DewfordTown_Gym_SetGymTrainers::

@@ -321,8 +321,8 @@
 #define TRAINER_SHELBY_3                    315
 #define TRAINER_SHELBY_4                    316
 #define TRAINER_SHELBY_5                    317
-#define TRAINER_CALVIN                      318
-#define TRAINER_JUNICHI                     319
+#define TRAINER_SP_KAZUKI                      318
+#define TRAINER_SP_JUNICHI                  319
 #define TRAINER_JOSH                        320
 #define TRAINER_TOMMY                       321
 #define TRAINER_JOEY                        322
@@ -331,12 +331,12 @@
 #define TRAINER_KATELYNN                    325
 #define TRAINER_JAYLEN                      326
 #define TRAINER_DILLON                      327
-#define TRAINER_CALVIN_2                    328
-#define TRAINER_CALVIN_3                    329
-#define TRAINER_CALVIN_4                    330
-#define TRAINER_CALVIN_5                    331
+#define TRAINER_SP_KAZUKI_2                    328
+#define TRAINER_SP_KAZUKI_3                    329
+#define TRAINER_SP_KAZUKI_4                    330
+#define TRAINER_SP_KAZUKI_5                    331
 #define TRAINER_EDDIE                       332
-#define TRAINER_ALLY                        333
+#define TRAINER_SP_CHIKA                    333
 #define TRAINER_TIMMY                       334
 #define TRAINER_WALLACE                     335
 #define TRAINER_ANDREW                      336
@@ -606,7 +606,7 @@
 #define TRAINER_MAY_RUSTBORO_MUDKIP         600
 #define TRAINER_MAXIE_MAGMA_HIDEOUT         601
 #define TRAINER_MAXIE_MT_CHIMNEY            602
-#define TRAINER_TIANA                       603
+#define TRAINER_SP_KAZUHA                       603
 #define TRAINER_HALEY_1                     604
 #define TRAINER_JANICE                      605
 #define TRAINER_VIVI                        606
@@ -618,7 +618,7 @@
 #define TRAINER_ROBIN                       612
 #define TRAINER_ANDREA                      613
 #define TRAINER_CRISSY                      614
-#define TRAINER_RICK                        615
+#define TRAINER_SP_ISAMU                        615
 #define TRAINER_LYLE                        616
 #define TRAINER_JOSE                        617
 #define TRAINER_DOUG                        618
@@ -699,7 +699,7 @@
 #define TRAINER_CHRIS                       693
 #define TRAINER_DAWSON                      694
 #define TRAINER_SARAH                       695
-#define TRAINER_DARIAN                      696
+#define TRAINER_SP_DARIAN                      696
 #define TRAINER_HAILEY                      697
 #define TRAINER_CHANDLER                    698
 #define TRAINER_KALEB                       699

@@ -5,14 +5,14 @@ DurianGym_MapScripts::
 `
 
 script DurianGym_Junichi {
-	trainerbattle_single (TRAINER_JUNICHI, format("BANJO is wasting his time, playing for that UNOVAN's raspy voice! The spotlight should be on me!"), format("Why is the spotlight on you?!"))
+	trainerbattle_single (TRAINER_SP_JUNICHI, format("BANJO is wasting his time, playing for that UNOVAN's raspy voice! The spotlight should be on me!"), format("Why is the spotlight on you?!"))
 	msgbox ("She ruined it all! I miss when we played\ntraditional TENKEIAN music…")
 	release
 	end
 }
 
 script DurianGym_Darian {
-	trainerbattle_single (TRAINER_DARIAN, format("I'll show SHIRI how a real guitarist plays AND fights!"), format("Not like this!"))
+	trainerbattle_single (TRAINER_SP_DARIAN, format("I'll show SHIRI how a real guitarist plays AND fights!"), format("Not like this!"))
 	msgbox ("Someday she'll realize she's wasting\ntime with that airhead!")
 	release
 	end
@@ -20,7 +20,7 @@ script DurianGym_Darian {
 
 script DurianGym_ShiriAndBanjo {
 	lock
-    if (defeated(TRAINER_JUNICHI) && defeated(TRAINER_DARIAN)) {
+    if (defeated(TRAINER_SP_JUNICHI) && defeated(TRAINER_SP_DARIAN)) {
     call(DurianGym_ShiriAndBanjoCheckBadge)
     }
     else {

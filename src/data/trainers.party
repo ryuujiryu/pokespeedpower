@@ -5924,13 +5924,13 @@ Hariyama
 Level: 39
 IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
 
-=== TRAINER_CALVIN ===
-Name: CALVIN
-Class: Youngster
-Pic: Youngster
+=== TRAINER_SP_KAZUKI ===
+Name: KAZUKI
+Class: Camper
+Pic: Camper
 Gender: Male
 Music: Male
-Double Battle: Yes
+Double Battle: No
 AI: Check Bad Move
 
 Zigzagoon
@@ -5941,7 +5941,7 @@ Poochyena
 Level: 7
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_JUNICHI ===
+=== TRAINER_SP_JUNICHI ===
 Name: JUNICHI
 Class: Idol
 Pic: Idol
@@ -6105,7 +6105,7 @@ Aron
 Level: 19
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_CALVIN_2 ===
+=== TRAINER_SP_KAZUKI_2 ===
 Name: CALVIN
 Class: Youngster
 Pic: Youngster
@@ -6118,7 +6118,7 @@ Mightyena
 Level: 27
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
-=== TRAINER_CALVIN_3 ===
+=== TRAINER_SP_KAZUKI_3 ===
 Name: CALVIN
 Class: Youngster
 Pic: Youngster
@@ -6135,7 +6135,7 @@ Mightyena
 Level: 30
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
-=== TRAINER_CALVIN_4 ===
+=== TRAINER_SP_KAZUKI_4 ===
 Name: CALVIN
 Class: Youngster
 Pic: Youngster
@@ -6156,7 +6156,7 @@ Mightyena
 Level: 33
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
-=== TRAINER_CALVIN_5 ===
+=== TRAINER_SP_KAZUKI_5 ===
 Name: CALVIN
 Class: Youngster
 Pic: Youngster
@@ -6194,13 +6194,13 @@ Zigzagoon
 Level: 16
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_ALLY ===
-Name: ALLY
+=== TRAINER_SP_CHIKA ===
+Name: CHIKA
 Class: Picnicker
 Pic: Picnicker
 Gender: Female
 Music: Girl
-Double Battle: Yes
+Double Battle: No
 AI: Check Bad Move
 
 Bellsprout
@@ -11032,13 +11032,13 @@ Camerupt
 Level: 25
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
-=== TRAINER_TIANA ===
-Name: TIANA
-Class: Lass
-Pic: Lass
+=== TRAINER_SP_KAZUHA ===
+Name: KAZUHA
+Class: Shrine Maiden
+Pic: Shrine Maiden
 Gender: Female
 Music: Female
-Double Battle: Yes
+Double Battle: No
 AI: Check Bad Move
 
 Zigzagoon
@@ -11236,10 +11236,10 @@ Wailmer
 Level: 39
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-=== TRAINER_RICK ===
-Name: RICK
-Class: Teacher
-Pic: Teacher
+=== TRAINER_SP_ISAMU ===
+Name: ISAMU
+Class: Fisherman
+Pic: Fisherman
 Gender: Male
 Music: Male
 Double Battle: Yes
@@ -12955,7 +12955,7 @@ Zigzagoon @ Nugget
 Level: 8
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_DARIAN ===
+=== TRAINER_SP_DARIAN ===
 Name: DARIAN
 Class: Guitarist
 Pic: Guitarist

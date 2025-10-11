@@ -41,13 +41,13 @@ Route102_EventScript_Boy::
 # 21 "data/maps/Route102/scripts.pory"
 Route102_EventScript_Calvin::
 # 22 "data/maps/Route102/scripts.pory"
-	trainerbattle_single TRAINER_CALVIN, Route102_Text_CalvinIntro, Route102_Text_CalvinDefeated, Route102_EventScript_CalvinRegisterMatchCallAfterBattle
+	trainerbattle_single TRAINER_SP_KAZUKI, Route102_Text_CalvinIntro, Route102_Text_CalvinDefeated, Route102_EventScript_CalvinRegisterMatchCallAfterBattle
 # 23 "data/maps/Route102/scripts.pory"
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 # 24 "data/maps/Route102/scripts.pory"
 	goto_if_eq VAR_RESULT, TRUE, Route102_EventScript_CalvinRematch
 # 25 "data/maps/Route102/scripts.pory"
-	setvar VAR_0x8004, TRAINER_CALVIN
+	setvar VAR_0x8004, TRAINER_SP_KAZUKI
 # 26 "data/maps/Route102/scripts.pory"
 	specialvar VAR_RESULT, IsTrainerRegistered
 # 27 "data/maps/Route102/scripts.pory"
@@ -79,7 +79,7 @@ Route102_EventScript_CalvinRegisterMatchCall::
 # 40 "data/maps/Route102/scripts.pory"
 	msgbox Route102_Text_CalvinRegisterShort, MSGBOX_DEFAULT
 # 41 "data/maps/Route102/scripts.pory"
-	register_matchcall TRAINER_CALVIN
+	register_matchcall TRAINER_SP_KAZUKI
 # 42 "data/maps/Route102/scripts.pory"
 	release
 # 43 "data/maps/Route102/scripts.pory"
@@ -103,7 +103,7 @@ Route102_EventScript_CalvinRegister::
 # 52 "data/maps/Route102/scripts.pory"
 	msgbox Route102_Text_CalvinRegister, MSGBOX_DEFAULT
 # 53 "data/maps/Route102/scripts.pory"
-	register_matchcall TRAINER_CALVIN
+	register_matchcall TRAINER_SP_KAZUKI
 # 54 "data/maps/Route102/scripts.pory"
 	release
 # 55 "data/maps/Route102/scripts.pory"
@@ -113,7 +113,7 @@ Route102_EventScript_CalvinRegister::
 # 57 "data/maps/Route102/scripts.pory"
 Route102_EventScript_CalvinRematch::
 # 58 "data/maps/Route102/scripts.pory"
-	trainerbattle_rematch TRAINER_CALVIN, Route102_Text_CalvinRematchIntro, Route102_Text_CalvinRematchDefeated
+	trainerbattle_rematch TRAINER_SP_KAZUKI, Route102_Text_CalvinRematchIntro, Route102_Text_CalvinRematchDefeated
 # 59 "data/maps/Route102/scripts.pory"
 	msgbox Route102_Text_CalvinRematchPostBattle, MSGBOX_AUTOCLOSE
 # 60 "data/maps/Route102/scripts.pory"
@@ -123,7 +123,7 @@ Route102_EventScript_CalvinRematch::
 # 62 "data/maps/Route102/scripts.pory"
 Route102_EventScript_Rick::
 # 63 "data/maps/Route102/scripts.pory"
-	trainerbattle_single TRAINER_RICK, Route102_Text_RickIntro, Route102_Text_RickDefeated
+	trainerbattle_single TRAINER_SP_ISAMU, Route102_Text_RickIntro, Route102_Text_RickDefeated
 # 64 "data/maps/Route102/scripts.pory"
 	msgbox Route102_Text_RickPostBattle, MSGBOX_AUTOCLOSE
 # 65 "data/maps/Route102/scripts.pory"
@@ -133,7 +133,7 @@ Route102_EventScript_Rick::
 # 67 "data/maps/Route102/scripts.pory"
 Route102_EventScript_Tiana::
 # 68 "data/maps/Route102/scripts.pory"
-	trainerbattle_single TRAINER_TIANA, Route1_Text_TianaIntro, Route1_Text_TianaDefeated
+	trainerbattle_single TRAINER_SP_KAZUHA, Route1_Text_TianaIntro, Route1_Text_TianaDefeated
 # 69 "data/maps/Route102/scripts.pory"
 	msgbox Route1_Text_TianaPostBattle, MSGBOX_AUTOCLOSE
 # 70 "data/maps/Route102/scripts.pory"

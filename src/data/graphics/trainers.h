@@ -325,6 +325,12 @@ const u16 gTrainerPalette_TouristF[] = INCBIN_U16("graphics/trainers/palettes/to
 const u32 gTrainerFrontPic_Nurse[] = INCBIN_U32("graphics/trainers/front_pics/nurse.4bpp.lz");
 const u16 gTrainerPalette_Nurse[] = INCBIN_U16("graphics/trainers/palettes/nurse.gbapal");
 
+const u32 gTrainerFrontPic_Delinquent[] = INCBIN_U32("graphics/trainers/front_pics/delinquent.4bpp.lz");
+const u16 gTrainerPalette_Delinquent[] = INCBIN_U16("graphics/trainers/palettes/delinquent.gbapal");
+
+const u32 gTrainerFrontPic_Sukeban[] = INCBIN_U32("graphics/trainers/front_pics/sukeban.4bpp.lz");
+const u16 gTrainerPalette_Sukeban[] = INCBIN_U16("graphics/trainers/palettes/sukeban.gbapal");
+
 // The first two parameters invoke a front pic and palette by
 // calling a "TRAINER_PIC" constant (e.g. TRAINER_PIC_HIKER), and
 // gTrainerFrontPic/gTrainerPalette pointers, (e.g "gTrainerFrontPic_Hiker" and "gTrainerPalette_Hiker").
@@ -445,6 +451,8 @@ const struct TrainerSprite gTrainerSprites[] =
     TRAINER_SPRITE(TRAINER_PIC_TOURIST_M, gTrainerFrontPic_TouristM, gTrainerPalette_TouristM),
     TRAINER_SPRITE(TRAINER_PIC_TOURIST_F, gTrainerFrontPic_TouristF, gTrainerPalette_TouristF),
     TRAINER_SPRITE(TRAINER_PIC_NURSE, gTrainerFrontPic_Nurse, gTrainerPalette_Nurse),
+    TRAINER_SPRITE(TRAINER_PIC_DELINQUENT, gTrainerFrontPic_Delinquent, gTrainerPalette_Delinquent),
+    TRAINER_SPRITE(TRAINER_PIC_SUKEBAN, gTrainerFrontPic_Sukeban, gTrainerPalette_Sukeban),
 };
 
 static const union AnimCmd sAnimCmd_Hoenn[] =

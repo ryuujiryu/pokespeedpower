@@ -105,22 +105,22 @@ Route1_Text_HereYouGo:
 	.string "Here you go!$"
 
 Route1_EventScript_Tiana::
-	trainerbattle_single TRAINER_TIANA, Route1_Text_TianaIntro, Route1_Text_TianaDefeated
+	trainerbattle_single TRAINER_SP_KAZUHA, Route1_Text_TianaIntro, Route1_Text_TianaDefeated
 	msgbox Route1_Text_TianaPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route1_EventScript_Calvin::
-	trainerbattle_single TRAINER_CALVIN, Route1_Text_CalvinIntro, Route1_Text_CalvinDefeated
+	trainerbattle_single TRAINER_SP_KAZUKI, Route1_Text_CalvinIntro, Route1_Text_CalvinDefeated
 	msgbox Route1_Text_CalvinPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route1_EventScript_Ally::
-	trainerbattle_single TRAINER_ALLY, Route1_Text_AllyIntro, Route1_Text_AllyDefeated
+	trainerbattle_single TRAINER_SP_CHIKA, Route1_Text_AllyIntro, Route1_Text_AllyDefeated
 	msgbox Route1_Text_AllyPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route1_EventScript_Rick::
-	trainerbattle_single TRAINER_RICK, Route1_Text_RickIntro, Route1_Text_RickDefeated
+	trainerbattle_single TRAINER_SP_ISAMU, Route1_Text_RickIntro, Route1_Text_RickDefeated
 	msgbox Route1_Text_RickPostBattle, MSGBOX_AUTOCLOSE
 	end
 
