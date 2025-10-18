@@ -29,7 +29,7 @@ gText_Birch_AndYouAre::
 	.string "I can't see you…$"
 
 gText_Birch_BoyOrGirl::
-	.string "First, put a mark here.$"
+	.string "Choose a twin!$"
 
 gText_Birch_WhatsYourName::
 	.string "Now, let's record your pseudonym.$"
@@ -45,14 +45,4 @@ gText_Birch_YourePlayer::
 	.string "$"
 
 gText_Birch_AreYouReady::
-	.string "The journey will be tough, and you may\n"
-	.string "end up fighting the URPF before you\l"
-	.string "are ready to beat them.\p"
-	.string "They know that the whole of TENKEI - no,\n"
-	.string "NIHON, is ready to fight for you, and\l"
-	.string "they fear it! They fear your birthright!\p"
-	.string "But you will rise to your role, and as you\n"
-	.string "gain the strength needed, restore\l"
-	.string "our mighty empire!\p"
-	.string "I will be waiting by the shore for you.\p"
 	.string "$"

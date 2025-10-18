@@ -8379,3 +8379,51 @@ DirectSoundWaveData_puresquare_12::
  	.align 2
 DirectSoundWaveData_puresquare_37::
 	.incbin "sound/direct_sound_samples/puresquare_37.bin"
+
+    .align 2
+DirectSoundWaveData_smt1_law_choir::
+    .incbin "sound/direct_sound_samples/smt1_law_choir.bin"
+
+    .align 2
+DirectSoundWaveData_smt1_chaos_choir::
+    .incbin "sound/direct_sound_samples/smt1_chaos_choir.bin"
+
+ 	.align 2
+DirectSoundWaveData_p2_beep::
+	.incbin "sound/direct_sound_samples/p2_beep.bin"
+
+    .align 2
+DirectSoundWaveData_p2_start::
+    .incbin "sound/direct_sound_samples/p2_start.bin"
+
+    .align 2
+DirectSoundWaveData_p2_guitar::
+    .incbin "sound/direct_sound_samples/p2_guitar.bin"
+
+    .align 2
+DirectSoundWaveData_p2_guitar2::
+    .incbin "sound/direct_sound_samples/p2_guitar2.bin"
+
+    .align 2
+DirectSoundWaveData_p2_weird::
+    .incbin "sound/direct_sound_samples/p2_weird.bin"
+
+    .align 2
+DirectSoundWaveData_col_guitar_1::
+    .incbin "sound/direct_sound_samples/col_guitar_1.bin"
+
+ 	.align 2
+DirectSoundWaveData_col_guitar_2::
+	.incbin "sound/direct_sound_samples/col_guitar_2.bin"
+
+    .align 2
+DirectSoundWaveData_col_guitar_3::
+    .incbin "sound/direct_sound_samples/col_guitar_3.bin"
+
+    .align 2
+DirectSoundWaveData_col_guitar_4::
+    .incbin "sound/direct_sound_samples/col_guitar_4.bin"
+
+    .align 2
+DirectSoundWaveData_col_guitar_5::
+    .incbin "sound/direct_sound_samples/col_guitar_5.bin"
