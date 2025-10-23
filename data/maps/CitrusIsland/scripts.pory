@@ -1,23 +1,38 @@
 raw `
 CitrusIsland_MapScripts::
 	.byte 0
-
-CitrusIsland_EventScript_Samurai::
-	msgbox CitrusIsland_Text_TrainingInSecret, MSGBOX_NPC
-	end
-
-CitrusIsland_EventScript_Girl::
-	msgbox CitrusIsland_Text_AreYouLeaving, MSGBOX_NPC
-	end
-
-CitrusIsland_Text_TrainingInSecret:
-	.string "Fear not, YOUR HIGHNESS!\n"
-	.string "All of us have kept training, even\p"
-	.string "after being sent here! We are\n"
-	.string "ready to serve you forever!$"
-
-CitrusIsland_Text_AreYouLeaving:
-	.string "YOUR HIGHNESS, I have heard you are\n"
-	.string "leaving for the mainland. Stay safe!$"
-
 `
+
+script CitrusIsland_Samurai {
+	lock
+	faceplayer
+    if (checkplayergender != MALE) {
+        msgbox("Fear not, FUUKA-denka!\n" "All of us have kept training, even\p" "after being sent here! We are ready\n" "to serve you forever!$")
+        closemessage
+    } else {
+        msgbox("Fear not, SHIN'YA-denka!\n" "All of us have kept training, even\p" "after being sent here! We are ready\n" "to serve you forever!$")
+        closemessage
+    }
+    release
+	end
+}
+
+script CitrusIsland_Girl {
+	lock
+	faceplayer
+	if (checkplayergender != MALE) {
+	    msgbox ("FUUKA-denka, I have heard you are\n" "leaving for the mainland. Stay safe!$")
+        closemessage
+    } else {
+	release
+		msgbox ("SHIN'YA-denka, I have heard you are\n" "leaving for the mainland. Stay safe!$")
+        closemessage
+	end
+    }
+}
+
+script CitrusIsland_House {
+	msgbox ("SUMERAGI CASTLE$")
+	release
+	end
+}

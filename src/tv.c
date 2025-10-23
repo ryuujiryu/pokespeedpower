@@ -6796,3 +6796,8 @@ void ResetTVShowState(void)
 {
     sTVShowState = 0;
 }
+
+void NamingScreenPlayer(void)
+{
+    DoNamingScreen(NAMING_SCREEN_PLAYER, gSaveBlock2Ptr->playerName, gSaveBlock2Ptr->playerGender, 0, 0, CB2_ReturnToFieldContinueScript);
+}

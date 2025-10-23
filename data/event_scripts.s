@@ -1098,6 +1098,12 @@ Common_EventScript_LegendaryFlewAway::
 	release
 	end
 
+Common_EventScript_NamingScreenPlayer::
+	fadescreen FADE_TO_BLACK
+	special NamingScreenPlayer
+	waitstate
+	return
+
 EventScript_VsSeekerChargingDone::
 	special VsSeekerFreezeObjectsAfterChargeComplete
 	waitstate

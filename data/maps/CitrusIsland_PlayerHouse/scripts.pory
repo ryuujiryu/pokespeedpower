@@ -1,1 +1,96 @@
-mapscripts CitrusIsland_PlayerHouse_MapScripts {}
+mapscripts CitrusIsland_PlayerHouse_MapScripts {
+MAP_SCRIPT_ON_TRANSITION {
+    call(Common_EventScript_SetupRivalGfxId)
+    end
+    }
+}
+
+script CitrusIsland_PlayerHouse_Rival {
+    lock
+    faceplayer
+    playbgm (MUS_ENCOUNTER_MAY, TRUE)
+    if (checkplayergender != MALE) {
+        msgbox("SHIN'YA: Anegimi, you finally woke up!\n" "Took you long enough.\p" "Come on. Let's go to the shore.$")
+        closemessage
+    } else {
+        msgbox("FUUKA: Anigimi, good morning!\n" "Get ready and let us make haste.\l" "We have to reach the shore.$")
+        closemessage
+    }
+    applymovement (LOCALID_CITRUS_RIVAL, Common_Movement_Music)
+    waitmovement (0)
+    msgbox ("After all, today is the day! Finally, we\n" "will leave CITRUS ISLAND!\p" "PROF. ZELKOVA will give us a POKéMON,\n" "and then we can take part in the\l" "ELEMENTAL CONQUEST!$")
+    closemessage
+    applymovement (LOCALID_CITRUS_RIVAL, Common_Movement_Pensive)
+    waitmovement (0)
+    applymovement (LOCALID_CITRUS_RIVAL, Common_Movement_Delay48)
+    waitmovement (0)
+    msgbox ("I wish MOM and DAD could see us.\p" "But then, you could kinda say it is their\n" "fault we were stuck there.$")
+    closemessage
+    applymovement (LOCALID_CITRUS_RIVAL, Common_Movement_ExclamationMark)
+    waitmovement (0)
+    applymovement (LOCALID_CITRUS_RIVAL, Common_Movement_Delay48)
+    waitmovement (0)
+    msgbox ("Hey, don't get angry now. T'was a joke.\n" "I have to deal with it somehow.\p" "I'll go first. I think MITSURU and\n" "RAKAN want to see us off, too.\p" "By the way, did 'ya decide what name\n" "you'll go by?$")
+    closemessage
+    call (Common_EventScript_NamingScreenPlayer)
+    msgbox ("{PLAYER}, huh? … … …$")
+    closemessage
+    applymovement (LOCALID_CITRUS_RIVAL, Common_Movement_Pensive)
+    waitmovement (0)
+    applymovement (LOCALID_CITRUS_RIVAL, Common_Movement_Delay48)
+    waitmovement (0)
+    if (checkplayergender != MALE) {
+        msgbox("Well, I'll go by HECTOR.\n" "It fits me, right? … … …\p" " … … …'Nyway. I'm going, then!\n" "$")
+    } else {
+        msgbox ("Maybe I'll choose ALICIA as mine.\n" "It seems nice enough.\p" "… … …Anyway! We need to go!$")
+    }
+    closemessage
+    applymovement(LOCALID_CITRUS_RIVAL, CitrusIsland_PlayerHouse_Movement_RivalLeave)
+    waitmovement(0)
+    applymovement (LOCALID_CITRUS_RIVAL, Common_Movement_Delay48)
+    waitmovement(0)
+    applymovement(LOCALID_CITRUS_RIVAL, Common_Movement_ExclamationMark)
+    waitmovement(0)
+    applymovement (LOCALID_CITRUS_RIVAL, Common_Movement_Delay48)
+    waitmovement(0)
+    call(CitrusIsland_PlayerHouse_Outfit)
+    }
+
+script CitrusIsland_PlayerHouse_Outfit {
+    msgbox ("Woah, I forgot!$")
+    closemessage
+    applymovement(LOCALID_CITRUS_RIVAL, CitrusIsland_PlayerHouse_Movement_RivalReturns)
+    waitmovement (0)
+    faceplayer
+    msgbox("I know we need to wear those\n" "ALLIED-style clothes so that our\l" "fake identies are more believable…$")
+    closemessage
+    applymovement (LOCALID_CITRUS_RIVAL, Common_Movement_Angry)
+    waitmovement (0)
+    applymovement (LOCALID_CITRUS_RIVAL, Common_Movement_Delay48)
+    waitmovement (0)
+    msgbox("But I have packed our traditional\n" "pajamas anyway. Here, catch!$")
+    closemessage
+    giveitem (ITEM_OUTFIT_BOX)
+    toggleoutfit (OUTFIT_UNUSUAL_RED, 0)
+    msgbox ("Now, though, let's actually go!$")
+    closemessage
+    applymovement(LOCALID_CITRUS_RIVAL, CitrusIsland_PlayerHouse_Movement_RivalLeave)
+    waitmovement(0)
+    playse (SE_SLIDING_DOOR)
+    removeobject(LOCALID_CITRUS_RIVAL)
+    fadedefaultbgm
+    setflag (FLAG_SYS_TC_GET)
+    setflag (FLAG_SYS_SAVE_GET)
+    release
+    end
+}
+
+movement CitrusIsland_PlayerHouse_Movement_RivalLeave {
+    walk_down * 3
+    step_end
+}
+
+movement CitrusIsland_PlayerHouse_Movement_RivalReturns {
+    walk_up * 3
+    step_end
+}

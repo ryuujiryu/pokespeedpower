@@ -58,7 +58,7 @@ DurianTown_LittleGirl::
 DurianTown_GymSign_Text_0:
 # 9 "data/maps/DurianTown/scripts.pory"
 	.string "ELEMENTAL TEMPLE OF LIVEHOOD\n"
-	.string "GUARDIANS: SHIRI & BANJO\l"
+	.string "GUARDIANS: SHIRI&BANJO\l"
 	.string "“The fearful harmony!”$"
 
 DurianTown_CitySign_Text_0:

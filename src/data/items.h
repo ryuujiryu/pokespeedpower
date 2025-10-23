@@ -14592,7 +14592,7 @@ const struct Item gItemsInfo[] =
 
     [ITEM_OUTFIT_BOX] =
     {
-        .name = ITEM_NAME("Outfit Box"),
+        .name = ITEM_NAME("APPAREL SATCHEL"),
         .price = 0,
         .importance = 1,
         .description = COMPOUND_STRING(

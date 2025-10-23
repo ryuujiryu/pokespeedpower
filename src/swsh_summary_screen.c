@@ -1065,6 +1065,10 @@ static const union AnimCmd sSpriteAnim_TypeStellar[] = {
     ANIMCMD_FRAME(TYPE_STELLAR * 8, 0, FALSE, FALSE),
     ANIMCMD_END
 };
+static const union AnimCmd sSpriteAnim_TypeSound[] = {
+    ANIMCMD_FRAME(TYPE_SOUND * 8, 0, FALSE, FALSE),
+    ANIMCMD_END
+};
 
 
 static const union AnimCmd *const sSpriteAnimTable_MoveTypes[NUMBER_OF_MON_TYPES] = {
@@ -1089,6 +1093,7 @@ static const union AnimCmd *const sSpriteAnimTable_MoveTypes[NUMBER_OF_MON_TYPES
     [TYPE_DARK] = sSpriteAnim_TypeDark,
     [TYPE_FAIRY] = sSpriteAnim_TypeFairy,
     [TYPE_STELLAR] = sSpriteAnim_TypeStellar,
+    [TYPE_SOUND] = sSpriteAnim_TypeSound,
 };
 
 static const struct CompressedSpriteSheet sSpriteSheet_MoveTypes =
@@ -1197,6 +1202,10 @@ static const union AnimCmd sSpriteAnim_TeraTypeStellar[] = {
     ANIMCMD_FRAME(TYPE_STELLAR * 4, 0, FALSE, FALSE),
     ANIMCMD_END
 };
+static const union AnimCmd sSpriteAnim_TeraTypeSound[] = {
+    ANIMCMD_FRAME(TYPE_SOUND * 4, 0, FALSE, FALSE),
+    ANIMCMD_END
+};
 
 static const union AnimCmd *const sSpriteAnimTable_TeraType[NUMBER_OF_MON_TYPES] = {
     [TYPE_NONE] = sSpriteAnim_TeraTypeNone,
@@ -1219,7 +1228,8 @@ static const union AnimCmd *const sSpriteAnimTable_TeraType[NUMBER_OF_MON_TYPES]
     [TYPE_DRAGON] = sSpriteAnim_TeraTypeDragon,
     [TYPE_DARK] = sSpriteAnim_TeraTypeDark,
     [TYPE_FAIRY] = sSpriteAnim_TeraTypeFairy,
-    [TYPE_STELLAR] = sSpriteAnim_TeraTypeStellar
+    [TYPE_STELLAR] = sSpriteAnim_TeraTypeStellar,
+    [TYPE_SOUND] = sSpriteAnim_TeraTypeSound
 };
 
 static const struct OamData sOamData_TeraType =
