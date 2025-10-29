@@ -141,65 +141,67 @@ CitrusIsland_PlayerHouse_Outfit::
 # 72 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
 	closemessage
 # 73 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	giveitem ITEM_OUTFIT_BOX
+	playfanfare MUS_OBTAIN_ITEM
 # 74 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	toggleoutfit OUTFIT_UNUSUAL_RED, 0
+	giveitem ITEM_OUTFIT_BOX
 # 75 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	msgbox CitrusIsland_PlayerHouse_Outfit_Text_3
+	waitfanfare
 # 76 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	closemessage
+	toggleoutfit OUTFIT_UNUSUAL_RED, 0
 # 77 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	applymovement LOCALID_CITRUS_RIVAL, CitrusIsland_PlayerHouse_Movement_RivalLeave
+	msgbox CitrusIsland_PlayerHouse_Outfit_Text_3
 # 78 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	waitmovement 0
+	closemessage
 # 79 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	playse SE_SLIDING_DOOR
+	applymovement LOCALID_CITRUS_RIVAL, CitrusIsland_PlayerHouse_Movement_RivalLeave
 # 80 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	removeobject LOCALID_CITRUS_RIVAL
+	waitmovement 0
 # 81 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	fadedefaultbgm
+	playse SE_SLIDING_DOOR
 # 82 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	setflag FLAG_SYS_TC_GET
+	removeobject LOCALID_CITRUS_RIVAL
 # 83 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	setflag FLAG_SYS_SAVE_GET
+	fadedefaultbgm
 # 84 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	setflag FLAG_SYS_SAVE_GET
+# 85 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
 	release
 	end
 
 
-# 88 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+# 89 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
 CitrusIsland_PlayerHouse_Movement_RivalLeave:
-# 89 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	walk_down
-# 89 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	walk_down
-# 89 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+# 90 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
 	walk_down
 # 90 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	walk_down
+# 90 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	walk_down
+# 91 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
 	step_end
 
-# 93 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+# 94 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
 CitrusIsland_PlayerHouse_Movement_RivalReturns:
-# 94 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	walk_up
-# 94 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	walk_up
-# 94 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+# 95 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
 	walk_up
 # 95 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	walk_up
+# 95 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	walk_up
+# 96 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
 	step_end
 
 CitrusIsland_PlayerHouse_Rival_Text_0:
 # 13 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
 	.string "SHIN'YA: Anegimi, you finally woke up!\n"
 	.string "Took you long enough.\p"
-	.string "Come on. Let's go to the shore.\p$"
+	.string "Come on. Let's go to the shore.$"
 
 CitrusIsland_PlayerHouse_Rival_Text_1:
 # 16 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
 	.string "FUUKA: Anigimi, good morning!\n"
 	.string "Get ready and let us make haste.\l"
-	.string "We have to reach the shore.\p$"
+	.string "We have to reach the shore.$"
 
 CitrusIsland_PlayerHouse_Rival_Text_2:
 # 21 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
@@ -232,12 +234,11 @@ CitrusIsland_PlayerHouse_Rival_Text_6:
 # 43 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
 	.string "Well, I'll go by HECTOR.\n"
 	.string "It fits me, right? … … …\p"
-	.string " … … …'Nyway. I'm going, then!\n"
-	.string "$"
+	.string " … … …'Nyway. I'm going, then!$"
 
 CitrusIsland_PlayerHouse_Rival_Text_7:
 # 45 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	.string "Maybe I'll choose ALICIA as mine.\n"
+	.string "Maybe I'll choose IRENE as mine.\n"
 	.string "It seems nice enough.\p"
 	.string "… … …Anyway! We need to go!$"
 
@@ -257,5 +258,5 @@ CitrusIsland_PlayerHouse_Outfit_Text_2:
 	.string "pajamas anyway. Here, catch!$"
 
 CitrusIsland_PlayerHouse_Outfit_Text_3:
-# 75 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+# 77 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
 	.string "Now, though, let's actually go!$"

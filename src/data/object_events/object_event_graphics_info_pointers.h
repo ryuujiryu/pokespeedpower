@@ -259,6 +259,9 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Idol;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Guitarist;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SoldierM;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SoldierF;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Mitsuru;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Zelkova;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Dnipro;
 
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
     [OBJ_EVENT_GFX_BRENDAN_NORMAL] =           &gObjectEventGraphicsInfo_BrendanNormal,
@@ -510,6 +513,9 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_GUITARIST] =                &gObjectEventGraphicsInfo_Guitarist,
     [OBJ_EVENT_GFX_SOLDIER_M] =                &gObjectEventGraphicsInfo_SoldierM,
     [OBJ_EVENT_GFX_SOLDIER_F] =                &gObjectEventGraphicsInfo_SoldierF,
+    [OBJ_EVENT_GFX_MITSURU] =                  &gObjectEventGraphicsInfo_Mitsuru,
+    [OBJ_EVENT_GFX_ZELKOVA] =                  &gObjectEventGraphicsInfo_Zelkova,
+    [OBJ_EVENT_GFX_DNIPRO] =                   &gObjectEventGraphicsInfo_Dnipro,
     [OBJ_EVENT_GFX_POKE_BALL] =                &gObjectEventGraphicsInfo_PokeBall,
     [OBJ_EVENT_GFX_OW_MON] =                   &gObjectEventGraphicsInfo_Follower,
     [OBJ_EVENT_GFX_LIGHT_SPRITE] =             &gObjectEventGraphicsInfo_BallLight,

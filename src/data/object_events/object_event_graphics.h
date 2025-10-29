@@ -369,6 +369,9 @@ const u32 gObjectEventPic_Idol[] = INCBIN_U32("graphics/object_events/pics/peopl
 const u32 gObjectEventPic_Guitarist[] = INCBIN_U32("graphics/object_events/pics/people/guitarist.4bpp");
 const u32 gObjectEventPic_SoldierM[] = INCBIN_U32("graphics/object_events/pics/people/soldier_m.4bpp");
 const u32 gObjectEventPic_SoldierF[] = INCBIN_U32("graphics/object_events/pics/people/soldier_f.4bpp");
+const u32 gObjectEventPic_Mitsuru[] = INCBIN_U32("graphics/object_events/pics/people/mitsuru.4bpp");
+const u32 gObjectEventPic_Zelkova[] = INCBIN_U32("graphics/object_events/pics/people/zelkova.4bpp");
+const u32 gObjectEventPic_Dnipro[] = INCBIN_U32("graphics/object_events/pics/people/dnipro.4bpp");
 const u32 gObjectEventPic_PokeBall[] = INCBIN_U32("graphics/object_events/pics/misc/ball_poke.4bpp");
 
 const u32 gObjectEventPic_DeoxysOld[] = INCBIN_U32("graphics/object_events/pics/pokemon_old/deoxys.4bpp");

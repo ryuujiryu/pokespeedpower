@@ -57,7 +57,7 @@ PetalburgWoods_EventScript_DevonResearcherLeft::
 # 29 "data/maps/PetalburgWoods/scripts.pory"
 	msgbox PetalburgWoods_Text_NoOneCrossesTeamAqua, MSGBOX_DEFAULT
 # 30 "data/maps/PetalburgWoods/scripts.pory"
-	trainerbattle_no_intro TRAINER_GRUNT_PETALBURG_WOODS, PetalburgWoods_Text_YoureKiddingMe
+	trainerbattle_no_intro TRAINER_SP_SOLDIER_ALPHA, PetalburgWoods_Text_YoureKiddingMe
 # 31 "data/maps/PetalburgWoods/scripts.pory"
 	applymovement LOCALID_PETALBURG_WOODS_GRUNT, PetalburgWoods_Movement_AquaBackOff
 # 32 "data/maps/PetalburgWoods/scripts.pory"
@@ -129,7 +129,7 @@ PetalburgWoods_EventScript_DevonResearcherRight::
 # 65 "data/maps/PetalburgWoods/scripts.pory"
 	msgbox PetalburgWoods_Text_NoOneCrossesTeamAqua, MSGBOX_DEFAULT
 # 66 "data/maps/PetalburgWoods/scripts.pory"
-	trainerbattle_no_intro TRAINER_GRUNT_PETALBURG_WOODS, PetalburgWoods_Text_YoureKiddingMe
+	trainerbattle_no_intro TRAINER_SP_SOLDIER_ALPHA, PetalburgWoods_Text_YoureKiddingMe
 # 67 "data/maps/PetalburgWoods/scripts.pory"
 	applymovement LOCALID_PETALBURG_WOODS_GRUNT, PetalburgWoods_Movement_AquaBackOff
 # 68 "data/maps/PetalburgWoods/scripts.pory"

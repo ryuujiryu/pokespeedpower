@@ -400,14 +400,14 @@ F_TRAINER_FEMALE |
         },
     },
 #line 225
-    [DIFFICULTY_NORMAL][TRAINER_GRUNT_PETALBURG_WOODS] =
+    [DIFFICULTY_NORMAL][TRAINER_SP_SOLDIER_ALPHA] =
     {
 #line 226
-        .trainerName = _("GRUNT"),
+        .trainerName = _("ALPHA"),
 #line 227
-        .trainerClass = TRAINER_CLASS_TEAM_AQUA,
+        .trainerClass = TRAINER_CLASS_URPF_SOLDIER,
 #line 228
-        .trainerPic = TRAINER_PIC_AQUA_GRUNT_M,
+        .trainerPic = TRAINER_PIC_URPF_SOLDIER_M,
         .encounterMusic_gender =
 #line 230
             TRAINER_ENCOUNTER_MUSIC_AQUA,
@@ -416,18 +416,18 @@ F_TRAINER_FEMALE |
 #line 232
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE,
 #line 0
-        .trainerBackPic = TRAINER_PIC_AQUA_GRUNT_M,
+        .trainerBackPic = TRAINER_PIC_URPF_SOLDIER_M,
         .partySize = 1,
         .party = (const struct TrainerMon[])
         {
             {
 #line 234
-            .species = SPECIES_POOCHYENA,
+            .species = SPECIES_SCRAGGY,
             .gender = TRAINER_MON_RANDOM_GENDER,
 #line 236
             .iv = TRAINER_PARTY_IVS(0, 0, 0, 0, 0, 0),
 #line 235
-            .lvl = 9,
+            .lvl = 5,
             .nature = NATURE_HARDY,
             .dynamaxLevel = MAX_DYNAMAX_LEVEL,
             },

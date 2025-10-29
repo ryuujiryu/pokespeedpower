@@ -1,7 +1,9 @@
-raw `
-CitrusIsland_MapScripts::
-	.byte 0
-`
+mapscripts CitrusIsland_MapScripts {
+MAP_SCRIPT_ON_TRANSITION {
+    call(Common_EventScript_SetupRivalGfxId)
+    end
+    }
+}
 
 script CitrusIsland_Samurai {
 	lock
@@ -35,4 +37,486 @@ script CitrusIsland_House {
 	msgbox ("SUMERAGI CASTLE$")
 	release
 	end
+}
+
+script CitrusIsland_Shore1 {
+	lockall
+	msgbox ("PROF. ZELKOVA: My liege!")
+	closemessage
+	applymovement (LOCALID_PLAYER, CitrusIsland_Movement_EnterScene1)
+    waitmovement (0)
+    call (CitrusIsland_Intro)
+}
+
+script CitrusIsland_Shore2 {
+	lockall
+	msgbox ("PROF. ZELKOVA: My liege!")
+	closemessage
+	applymovement (LOCALID_PLAYER, CitrusIsland_Movement_EnterScene2)
+    waitmovement (0)
+    call (CitrusIsland_Intro)
+}
+
+script CitrusIsland_Intro {
+    applymovement (LOCALID_CITRUSISLAND_RAKAN, Common_Movement_FacePlayer)
+    applymovement (LOCALID_CITRUSISLAND_MITSURU, Common_Movement_FacePlayer)
+    applymovement (LOCALID_CITRUSISLAND_RIVAL, Common_Movement_FacePlayer)
+	applymovement (LOCALID_CITRUSISLAND_ZELKOVA, CitrusIsland_Movement_WalkToPlayer)
+	applymovement (LOCALID_PLAYER, Common_Movement_FaceRight)
+    waitmovement (0)
+     if (checkplayergender != MALE) {
+         msgbox ("PROF. ZELKOVA: It's an honor to meet\n" "you in person, FUUKA-denka.\p" "You look just like your late mother,\n" "our beloved JADE EMPERESS.$")
+        closemessage
+    } else {
+        msgbox("PROF. ZELKOVA: It's an honor to meet\n" "you in person, SHIN'YA-denka.\p" "You look just like your late father,\n" "our beloved JADE EMPEROR.$")
+        closemessage
+    }
+    applymovement (LOCALID_CITRUSISLAND_ZELKOVA, Common_Movement_Sad)
+    waitmovement (0)
+    applymovement (LOCALID_CITRUSISLAND_ZELKOVA, Common_Movement_Delay48)
+    waitmovement (0)
+	applymovement (LOCALID_CITRUSISLAND_RIVAL, Common_Movement_WalkInPlaceUp)
+    waitmovement (0)
+     if (checkplayergender != MALE) {
+         msgbox ("SHIN'YA: 'Kay, 'kay! Let's not\n" "think 'bout that!$")
+        closemessage
+    } else {
+        msgbox("FUUKA: It's fine, PROFESSOR.\n" "Let us not ruin the mood.$")
+        closemessage
+    }
+    applymovement (LOCALID_CITRUSISLAND_ZELKOVA, Common_Movement_FaceDown)
+    msgbox("PROF. ZELKOVA: You are right, my liege.\p" "We need to be strong as the loyalists'\n" "numbers keep on dwindling.$")
+    closemessage
+    applymovement (LOCALID_CITRUSISLAND_ZELKOVA, Common_Movement_Angry)
+    waitmovement (0)
+    applymovement (LOCALID_CITRUSISLAND_ZELKOVA, Common_Movement_Delay48)
+    waitmovement (0)
+    msgbox("PROF. ZELKOVA: Those damned UNOVANS…\n" "the ARC's army is destroying NIHON!\p" "They've cut our empire to pieces,\n" "they're mocking our ancient rituals\l" "by reviving the ELEMENTAL CONQUEST\p" "just to elect a puppet ruler, and\n" "they even… our EMPEROR…$")
+    closemessage
+    applymovement (LOCALID_CITRUSISLAND_ZELKOVA, Common_Movement_Sad)
+    waitmovement (0)
+    applymovement (LOCALID_CITRUSISLAND_ZELKOVA, Common_Movement_Delay48)
+    waitmovement (0)
+    msgbox("RAKAN: Yes, that's what happens when you\n" "lose a war. The winners decide what\l" "will happen to the losing side.\p" "You're a smart one, ZELKOVA.$")
+    closemessage
+    applymovement (LOCALID_CITRUSISLAND_MITSURU, Common_Movement_Music)
+    waitmovement (0)
+    applymovement (LOCALID_PLAYER, Common_Movement_FaceDown)
+    waitmovement (0)
+    applymovement (LOCALID_CITRUSISLAND_ZELKOVA, Common_Movement_Angry)
+    waitmovement (0)
+    applymovement (LOCALID_CITRUSISLAND_ZELKOVA, CitrusIsland_Movement_MoveToRakan)
+    waitmovement (0)
+    applymovement (LOCALID_CITRUSISLAND_ZELKOVA, Common_Movement_Delay48)
+    waitmovement (0)
+    applymovement (LOCALID_CITRUSISLAND_RAKAN, Common_Movement_FaceRight)
+    waitmovement (0)
+    applymovement (LOCALID_CITRUSISLAND_ZELKOVA, Common_Movement_Delay48)
+    waitmovement (0)
+    msgbox("PROF. ZELKOVA: How can the empire's old\n" "tactician be so unbothered by this?!\p" "It's your fault we even lost the\n" "GREAT POKéMON WAR to begin with!$")
+    closemessage
+    applymovement (LOCALID_CITRUSISLAND_MITSURU, CitrusIsland_Movement_MoveToZelkova)
+    waitmovement (0)
+    applymovement (LOCALID_CITRUSISLAND_MITSURU, Common_Movement_Delay48)
+    waitmovement (0)
+    call (CitrusIsland_StarterEvent)
+}
+
+script CitrusIsland_StarterEvent {
+    msgbox ("MITSURU: Woah, woah. Let's calm down.\n" "Give those two their POKéMON.$")
+    applymovement (LOCALID_CITRUSISLAND_ZELKOVA, Common_Movement_FaceRight)
+    waitmovement (0)
+    applymovement (LOCALID_CITRUSISLAND_ZELKOVA, Common_Movement_Pensive)
+    waitmovement (0)
+    applymovement (LOCALID_CITRUSISLAND_ZELKOVA, Common_Movement_Delay48)
+    waitmovement (0)
+    msgbox("PROF. ZELKOVA: You are right,\n" "PEARL HEIR, sir. \p" "Let us ignore this… pathetic, sad\n" "excuse of a tactician.$")
+    closemessage
+    applymovement (LOCALID_CITRUSISLAND_RAKAN, Common_Movement_Pensive)
+    waitmovement (0)
+    applymovement (LOCALID_CITRUSISLAND_RAKAN, Common_Movement_Delay48)
+    waitmovement (0)
+    applymovement (LOCALID_CITRUSISLAND_MITSURU, Common_Movement_WalkDown)
+    waitmovement (0)
+    applymovement (LOCALID_CITRUSISLAND_MITSURU, Common_Movement_FaceUp)
+    waitmovement (0)
+    applymovement (LOCALID_CITRUSISLAND_MITSURU, Common_Movement_Delay48)
+    waitmovement (0)
+    applymovement (LOCALID_CITRUSISLAND_ZELKOVA, Common_Movement_WalkRight)
+    applymovement (LOCALID_CITRUSISLAND_ZELKOVA, Common_Movement_WalkRight)
+    waitmovement (0)
+    applymovement (LOCALID_CITRUSISLAND_ZELKOVA, Common_Movement_FaceLeft)
+    waitmovement (0)
+    applymovement (LOCALID_CITRUSISLAND_ZELKOVA, Common_Movement_Delay48)
+    waitmovement (0)
+    msgbox("PROF. ZELKOVA: My lieges. I have three\n" "POKéMON for you to choose from. Please,\l" "decide which of you will choose first.")
+    closemessage
+    applymovement (LOCALID_CITRUSISLAND_RIVAL, Common_Movement_WalkInPlaceUp)
+    waitmovement (0)
+    if (checkplayergender != MALE) {
+        msgbox("SHIN'YA: Anegimi, you can choose first!$")
+    } else {
+        msgbox ("FUUKA: Why don't you go first, anigimi?$")
+    }
+	setflag (FLAG_SYS_POKEMON_GET)
+	special (ChooseStarter)
+	waitstate
+	playfanfare (MUS_OBTAIN_ITEM)
+	waitfanfare
+	msgbox ("MITSURU: Hey, 'cuz, why don't ya give\n" "it a nickname?", MSGBOX_YESNO)
+    if (var(VAR_RESULT) != 1) {
+   	call (CitrusIsland_Pokedex)
+    } else {
+    call (Common_EventScript_NameReceivedPartyMon)
+    }
+    closemessage
+   	call (CitrusIsland_Pokedex)
+}
+
+script CitrusIsland_Pokedex {
+    applymovement (LOCALID_CITRUSISLAND_RAKAN, Common_Movement_WalkUpSlow)
+    waitmovement (0)
+    applymovement (LOCALID_CITRUSISLAND_RAKAN, Common_Movement_FacePlayer)
+    waitmovement (0)
+    applymovement (LOCALID_PLAYER, Common_Movement_FaceLeft)
+    applymovement (LOCALID_CITRUSISLAND_RAKAN, Common_Movement_Delay48)
+    waitmovement (0)
+    msgbox ("RAKAN: My liege, did you choose your\n" "pseudonym for the CONQUEST?$")
+    closemessage
+    applymovement (LOCALID_CITRUSISLAND_RAKAN, Common_Movement_Pensive)
+    waitmovement (0)
+    applymovement (LOCALID_CITRUSISLAND_RAKAN, Common_Movement_Delay48)
+    waitmovement (0)
+    msgbox ("{PLAYER}? That's a great name.\n" "Here are your TRAINER PASS.$")
+	playfanfare (MUS_OBTAIN_ITEM)
+	msgbox ("{PLAYER} received the TRAINER PASS!$")
+	waitfanfare
+	setflag (FLAG_SYS_TC_GET)
+    closemessage
+    applymovement (LOCALID_CITRUSISLAND_ZELKOVA, Common_Movement_ExclamationMark)
+    waitmovement (0)
+    applymovement (LOCALID_CITRUSISLAND_ZELKOVA, Common_Movement_WalkInPlaceUp)
+    waitmovement (0)
+    applymovement (LOCALID_CITRUSISLAND_ZELKOVA, Common_Movement_WalkUp)
+    waitmovement (0)
+    applymovement (LOCALID_CITRUSISLAND_ZELKOVA, Common_Movement_FacePlayer)
+    waitmovement (0)
+    applymovement (LOCALID_CITRUSISLAND_ZELKOVA, Common_Movement_Delay48)
+    waitmovement (0)
+    applymovement (LOCALID_PLAYER, Common_Movement_FaceRight)
+    msgbox ("PROF. ZELKOVA: Well, I have a POKéDEX\n" "to give instead!\p" "That will be a lot more useful!$")
+	playfanfare (MUS_OBTAIN_ITEM)
+	msgbox ("{PLAYER} received the POKéDEX!$")
+	waitfanfare
+	setflag (FLAG_SYS_POKEDEX_GET)
+	special (SetUnlockedPokedexFlags)
+	setflag (FLAG_RECEIVED_POKEDEX_FROM_BIRCH)
+    closemessage
+    applymovement (LOCALID_CITRUSISLAND_RAKAN, Common_Movement_Pensive)
+    waitmovement (0)
+    applymovement (LOCALID_CITRUSISLAND_RAKAN, Common_Movement_Delay48)
+    waitmovement (0)
+    msgbox ("RAKAN: Foolish woman, this is not a\n" "competition on which of us is the\l" "most loyal retainer.\p" "And do you recall that they cannot\n" "enter the ELEMENTAL CONQUEST\l" "without a TRAINER PASS?$")
+    closemessage
+    applymovement (LOCALID_CITRUSISLAND_ZELKOVA, Common_Movement_Angry)
+    waitmovement (0)
+    applymovement (LOCALID_CITRUSISLAND_ZELKOVA, Common_Movement_Delay48)
+    waitmovement (0)
+	applymovement (LOCALID_CITRUSISLAND_RIVAL, Common_Movement_WalkInPlaceUp)
+    waitmovement (0)
+    if (checkplayergender != MALE) {
+         msgbox ("SHIN'YA: What don't you two understand\n" "about calming down?!\p" "'Nyway, anegimi!$")
+    } else {
+        msgbox ("FUUKA: As MITSURU said, calm down.\n" "Stop being so childish.\p" "'Nyway, anigimi!$")
+    }
+    closemessage
+    applymovement (LOCALID_CITRUSISLAND_RIVAL, Common_Movement_Music)
+    waitmovement (0)
+    applymovement (LOCALID_CITRUSISLAND_RIVAL, Common_Movement_WalkUp)
+    waitmovement (0)
+    applymovement (LOCALID_CITRUSISLAND_RIVAL, Common_Movement_Delay48)
+    waitmovement (0)
+    applymovement (LOCALID_PLAYER, Common_Movement_FaceDown)
+    waitmovement (0)
+    msgbox ("Now that we both have a POKéMON, why\n" "don't we have a match…$")
+    closemessage
+    playse (SE_SHIP)
+    waitse
+    playbgm (MUS_ENCOUNTER_AQUA, FALSE)
+    msgbox ("???: Fwahaha! Move it, boys!\n" "Get off the damn ship, NOW!$")
+    closemessage
+    addobject (LOCALID_CITRUS_ARCSHIP)
+    applymovement (LOCALID_CITRUS_ARCSHIP, CitrusIsland_Movement_ARCShip)
+    waitmovement (0)
+    applymovement (LOCALID_CITRUSISLAND_ZELKOVA, Common_Movement_ExclamationMark)
+    waitmovement (0)
+    applymovement (LOCALID_CITRUSISLAND_ZELKOVA, Common_Movement_FaceRight)
+    waitmovement (0)
+    applymovement (LOCALID_CITRUSISLAND_MITSURU, Common_Movement_ExclamationMark)
+    waitmovement (0)
+    applymovement (LOCALID_CITRUSISLAND_MITSURU, Common_Movement_WalkUp)
+    waitmovement (0)
+    applymovement (LOCALID_CITRUSISLAND_MITSURU, Common_Movement_FaceRight)
+    waitmovement (0)
+    applymovement (LOCALID_CITRUSISLAND_RIVAL, Common_Movement_ExclamationMark)
+    waitmovement (0)
+    applymovement (LOCALID_CITRUSISLAND_RIVAL, Common_Movement_FaceRight)
+    waitmovement (0)
+    applymovement (LOCALID_PLAYER, Common_Movement_ExclamationMark)
+    waitmovement (0)
+    applymovement (LOCALID_PLAYER, Common_Movement_FaceRight)
+    waitmovement (0)
+    applymovement (LOCALID_CITRUSISLAND_RAKAN, Common_Movement_Pensive)
+    waitmovement (0)
+    applymovement (LOCALID_CITRUSISLAND_RAKAN, Common_Movement_FaceRight)
+    waitmovement (0)
+    msgbox ("PROF. ZELKOVA: The ARC…! But I made sure\n" "to cover my steps while coming here…!$")
+    closemessage
+    addobject (LOCALID_CITRUSISLAND_DNIPRO)
+    applymovement (LOCALID_CITRUSISLAND_DNIPRO, CitrusIsland_Movement_DniproShip)
+    waitmovement (0)
+    msgbox ("???: Heh! Didn't hide 'em good enough,\n" "sweetheart.$")
+    closemessage
+    applymovement (LOCALID_CITRUSISLAND_MITSURU, Common_Movement_FaceUp)
+    waitmovement (0)
+    applymovement (LOCALID_CITRUSISLAND_ZELKOVA, Common_Movement_WalkUp)
+    waitmovement (0)
+    applymovement (LOCALID_CITRUSISLAND_ZELKOVA, Common_Movement_FaceDown)
+    waitmovement (0)
+    msgbox ("PROF. ZELKOVA: GENERAL DNIPRO!$")
+    closemessage
+    applymovement (LOCALID_CITRUSISLAND_DNIPRO, Common_Movement_WalkLeft)
+    waitmovement (0)
+    applymovement (LOCALID_CITRUSISLAND_DNIPRO, Common_Movement_FaceUp)
+    waitmovement (0)
+    msgbox ("GEN. DNIPRO: That's right, lady.\n" "GENERAL DNIPRO of the ALLIED REGIONS\l" "COALITION, LANDORUS PLATOON's leader!$")
+    closemessage
+    applymovement (LOCALID_CITRUSISLAND_DNIPRO, Common_Movement_FaceLeft)
+    waitmovement (0)
+    msgbox ("GEN. DNIPRO: 'Ya oughta know better\n" "than this, y'know?\p" "Good kids don't disobey. If they're\n" "told not 'ta leave this island, then…\l" "they don't leave, partner.$")
+    closemessage
+    addobject (LOCALID_CITRUSISLAND_SOLDIER1)
+    applymovement (LOCALID_CITRUSISLAND_SOLDIER1, CitrusIsland_Movement_Soldier1)
+    waitmovement (0)
+    applymovement (LOCALID_CITRUSISLAND_SOLDIER1, Common_Movement_Delay48)
+    applymovement (LOCALID_PLAYER, Common_Movement_FaceUp)
+    waitmovement (0)
+    applymovement (LOCALID_PLAYER, Common_Movement_Delay48)
+    waitmovement (0)
+    applymovement (LOCALID_PLAYER, Common_Movement_FaceRight)
+    waitmovement (0)
+    addobject (LOCALID_CITRUSISLAND_SOLDIER2)
+    applymovement (LOCALID_CITRUSISLAND_SOLDIER2, CitrusIsland_Movement_Soldier2)
+    waitmovement (0)
+    applymovement (LOCALID_CITRUSISLAND_SOLDIER2, Common_Movement_Delay48)
+    waitmovement (0)
+    applymovement (LOCALID_CITRUSISLAND_RIVAL, Common_Movement_WalkInPlaceDown)
+    waitmovement (0)
+    applymovement (LOCALID_CITRUSISLAND_ZELKOVA, Common_Movement_Angry)
+    waitmovement (0)
+    applymovement (LOCALID_CITRUSISLAND_ZELKOVA, Common_Movement_Delay48)
+    waitmovement (0)
+    msgbox ("PROF. ZELKOVA: They have done nothing\n" "wrong, GENERAL!\p" "Why should two innocent kids\n" "pay for their parents' mistakes?$")
+    closemessage
+    applymovement (LOCALID_CITRUSISLAND_DNIPRO, Common_Movement_FaceUp)
+    waitmovement (0)
+    applymovement (LOCALID_CITRUSISLAND_DNIPRO, Common_Movement_Music)
+    waitmovement (0)
+    applymovement (LOCALID_CITRUSISLAND_DNIPRO, Common_Movement_Delay48)
+    waitmovement (0)
+    msgbox ("GEN. DNIPRO: Kids? Fwahaha! Didn't take\n" "'ya for a comedian. Love me a funny lady.\n" "'Nyway. They knew the deal. Also, innocent?\p" "'Ya were just crying about the ARC\n" "destroyin' the empire, hoping those two\l" "weaklings would somehow take it back.$")
+    closemessage
+    applymovement (LOCALID_CITRUSISLAND_SOLDIER2, Common_Movement_WalkInPlaceUp)
+    waitmovement (0)
+    msgbox ("ARC SOLDIER: GENERAL!\n" "This one is resisting arrest!$")
+    closemessage
+    applymovement (LOCALID_CITRUSISLAND_DNIPRO, Common_Movement_FaceLeft)
+    waitmovement (0)
+    applymovement (LOCALID_CITRUSISLAND_DNIPRO, Common_Movement_Music)
+    waitmovement (0)
+    applymovement (LOCALID_CITRUSISLAND_DNIPRO, Common_Movement_Delay48)
+    waitmovement (0)
+    msgbox ("GEN. DNIPRO: Oh, they got teeth!\n" "Bless their heart. They think they can\l" "actually fight us.\p" "But y'know what? Sure! Have some fun,\n" "ALPHA, BRAVO! Destroy 'em!$")
+    applymovement (LOCALID_CITRUSISLAND_SOLDIER1, Common_Movement_WalkInPlaceDown)
+    waitmovement (0)
+    msgbox ("ARC SOLDIER: Sir, yessir!$")
+    closemessage
+    trainerbattle_no_intro (TRAINER_SP_SOLDIER_ALPHA, format("Forgive me, sir!"))
+    call (CitrusIsland_SoldierDefeated)
+    end
+ }
+
+ script CitrusIsland_SoldierDefeated {
+    playbgm (MUS_ENCOUNTER_AQUA, FALSE)
+    applymovement (LOCALID_CITRUSISLAND_DNIPRO, Common_Movement_Angry)
+    waitmovement (0)
+    applymovement (LOCALID_CITRUSISLAND_DNIPRO, Common_Movement_Delay48)
+    waitmovement (0)
+    applymovement (LOCALID_CITRUSISLAND_DNIPRO, Common_Movement_WalkInPlaceLeft)
+    waitmovement (0)
+    msgbox ("GEN. DNIPRO: Tch.\n" "What the hell was that, huh?\p" "How can an elite squad lose against two\n" "twenty-somethings with hand-me down\l" "POKéMON they just got a minute ago?!$")
+    closemessage
+    applymovement (LOCALID_CITRUSISLAND_DNIPRO, Common_Movement_Music)
+    waitmovement (0)
+    applymovement (LOCALID_CITRUSISLAND_DNIPRO, Common_Movement_Delay48)
+    waitmovement (0)
+    msgbox ("GEN. DNIPRO: Oh, wait, lemme guess.\n" "'Ya two want 'ta see your GENERAL\l" "in battle, don'tcha?\p" "Fine, y'all want a show? Here!$")
+    closemessage
+    applymovement (LOCALID_CITRUSISLAND_MITSURU, Common_Movement_WalkInPlaceUp)
+    waitmovement (0)
+    applymovement (LOCALID_CITRUSISLAND_MITSURU, Common_Movement_Delay48)
+    waitmovement (0)
+    msgbox ("MITSURU: Easy there, big guy!\n" "Pick on someone your size!$")
+    closemessage
+    playse (SE_RG_BALL_CLICK)
+    waitse
+    playmoncry (SPECIES_GALLADE, CRY_MODE_NORMAL)
+    waitmoncry
+    msgbox ("GALLADE, use MASAMUNE!$")
+    closemessage
+    applymovement (LOCALID_CITRUSISLAND_DNIPRO, CitrusIsland_Movement_Masamune)
+    waitmovement (0)
+    applymovement (LOCALID_CITRUSISLAND_DNIPRO, Common_Movement_Delay48)
+    waitmovement (0)
+    msgbox ("GEN. DNIPRO: 'Ya dare doin' that, PEARL?\n" "Hah! If 'ya want to protect 'em,\l" "prepare to pay for it!$")
+    closemessage
+    msgbox ("MITSURU: How about you relax and go\n" "back to where you came from, hmm?$")
+    closemessage
+    msgbox ("GEN. DNIPRO: Mind your tone, boy!\n" "The orders came from high above.$")
+    closemessage
+    msgbox ("MITSURU: Yeah, see, here's the thing.\n" "I did not ask, nor do I care.\l" "Don't overstep your authority, UNOVAN.$")
+    closemessage
+    applymovement (LOCALID_CITRUSISLAND_DNIPRO, Common_Movement_Angry)
+    waitmovement (0)
+    applymovement (LOCALID_CITRUSISLAND_DNIPRO, Common_Movement_Delay48)
+    waitmovement (0)
+    msgbox ("GEN. DNIPRO: 'Ya wanna fight then, boy?\n" "'Ya better walk the talk then!$")
+    closemessage
+    applymovement (LOCALID_CITRUSISLAND_RAKAN, Common_Movement_WalkInPlaceRight)
+    waitmovement (0)
+    applymovement (LOCALID_CITRUSISLAND_RAKAN, Common_Movement_Delay48)
+    msgbox ("RAKAN: Please do not stand there,\n" "my lieges.$")
+    closemessage
+    playse (SE_RG_BALL_CLICK)
+    waitse
+    playmoncry (SPECIES_FLYGON, CRY_MODE_NORMAL)
+    waitmoncry
+    playse (SE_RG_BALL_CLICK)
+    waitse
+    playmoncry (SPECIES_XATU, CRY_MODE_NORMAL)
+    waitmoncry
+    msgbox ("FLYGON, XATU, please. Take them to the\n" "next step of their journey.$")
+    closemessage
+    call (CitrusIsland_RivalFlyAway)
+}
+
+script CitrusIsland_RivalFlyAway {
+    applymovement (LOCALID_CITRUSISLAND_RIVAL, Common_Movement_WalkInPlaceDown)
+    waitmovement (0)
+    delay (50)
+    setfieldeffectargument (0, 1)
+    dofieldeffect (FLDEFF_NPCFLY_OUT)
+    delay (15)
+    removeobject (LOCALID_CITRUSISLAND_RIVAL)
+    waitfieldeffect (FLDEFF_NPCFLY_OUT)
+    applymovement (LOCALID_CITRUSISLAND_DNIPRO, Common_Movement_Angry)
+    waitmovement (0)
+    applymovement (LOCALID_CITRUSISLAND_DNIPRO, Common_Movement_Delay48)
+    waitmovement (0)
+    msgbox ("GEN. DNIPRO: You…!$")
+    applymovement (LOCALID_PLAYER, Common_Movement_FaceDown)
+    waitmovement (0)
+    delay (50)
+    setfieldeffectargument (0, 1)
+    dofieldeffect (FLDEFF_NPCFLY_OUT)
+    delay (15)
+    applymovement (LOCALID_PLAYER, Common_Movement_Invisible)
+    warp (MAP_ROUTE1, 20, 39)
+    waitstate
+    release
+    end
+}
+
+movement CitrusIsland_Movement_EnterScene1 {
+    walk_fast_left * 6
+    walk_fast_down * 7
+    step_end
+}
+
+movement CitrusIsland_Movement_EnterScene2 {
+    walk_fast_left * 6
+    walk_fast_down * 6
+    step_end
+}
+
+movement CitrusIsland_Movement_WalkToPlayer {
+    walk_left
+    step_end
+}
+
+movement CitrusIsland_Movement_MoveToRakan {
+    walk_down
+    walk_left
+    walk_in_place_left
+    step_end
+}
+
+movement CitrusIsland_Movement_MoveToZelkova {
+    walk_down
+    walk_right * 3
+    walk_up * 2
+    face_left
+    walk_in_place_left
+    step_end
+}
+
+movement CitrusIsland_Movement_WalkToPlayer2 {
+    walk_right * 2
+    walk_up * 2
+    walk_left
+    face_left
+    step_end
+}
+
+movement CitrusIsland_Movement_ARCShip {
+    walk_fast_left * 3
+    step_end
+}
+
+movement CitrusIsland_Movement_DniproShip {
+    set_visible
+    jump_left
+    walk_left * 4
+    step_end
+}
+
+movement CitrusIsland_Movement_Soldier1 {
+    set_visible
+    jump_left
+    walk_left * 4
+    walk_up * 2
+    walk_left * 2
+    walk_down
+    step_end
+}
+
+movement CitrusIsland_Movement_Soldier2 {
+    set_visible
+    jump_left
+    walk_down
+    walk_left * 4
+    walk_down
+    walk_left * 2
+    face_up
+    step_end
+}
+
+movement CitrusIsland_Movement_Masamune {
+    emote_exclamation_mark
+    disable_jump_landing_ground_effect
+    jump_in_place_down
+    unlock_facing_direction
+    unlock_anim
+    face_down
+    step_end
 }

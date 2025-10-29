@@ -1396,3 +1396,15 @@ static const struct SpriteFrameImage sPicTable_SoldierM[] = {
 static const struct SpriteFrameImage sPicTable_SoldierF[] = {
     overworld_ascending_frames(gObjectEventPic_SoldierF, 2, 4),
 };
+
+static const struct SpriteFrameImage sPicTable_Mitsuru[] = {
+    overworld_ascending_frames(gObjectEventPic_Mitsuru, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_Zelkova[] = {
+    overworld_ascending_frames(gObjectEventPic_Zelkova, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_Dnipro[] = {
+    overworld_ascending_frames(gObjectEventPic_Dnipro, 2, 4),
+};

@@ -40,9 +40,9 @@ script CitrusIsland_PlayerHouse_Rival {
     applymovement (LOCALID_CITRUS_RIVAL, Common_Movement_Delay48)
     waitmovement (0)
     if (checkplayergender != MALE) {
-        msgbox("Well, I'll go by HECTOR.\n" "It fits me, right? … … …\p" " … … …'Nyway. I'm going, then!\n" "$")
+        msgbox("Well, I'll go by HECTOR.\n" "It fits me, right? … … …\p" " … … …'Nyway. I'm going, then!$")
     } else {
-        msgbox ("Maybe I'll choose ALICIA as mine.\n" "It seems nice enough.\p" "… … …Anyway! We need to go!$")
+        msgbox ("Maybe I'll choose IRENE as mine.\n" "It seems nice enough.\p" "… … …Anyway! We need to go!$")
     }
     closemessage
     applymovement(LOCALID_CITRUS_RIVAL, CitrusIsland_PlayerHouse_Movement_RivalLeave)
@@ -70,7 +70,9 @@ script CitrusIsland_PlayerHouse_Outfit {
     waitmovement (0)
     msgbox("But I have packed our traditional\n" "pajamas anyway. Here, catch!$")
     closemessage
+    playfanfare (MUS_OBTAIN_ITEM)
     giveitem (ITEM_OUTFIT_BOX)
+    waitfanfare
     toggleoutfit (OUTFIT_UNUSUAL_RED, 0)
     msgbox ("Now, though, let's actually go!$")
     closemessage
@@ -79,7 +81,6 @@ script CitrusIsland_PlayerHouse_Outfit {
     playse (SE_SLIDING_DOOR)
     removeobject(LOCALID_CITRUS_RIVAL)
     fadedefaultbgm
-    setflag (FLAG_SYS_TC_GET)
     setflag (FLAG_SYS_SAVE_GET)
     release
     end
