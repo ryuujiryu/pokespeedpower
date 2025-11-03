@@ -4784,28 +4784,23 @@ VSSeeker_Text_TrainersNotReady::
 	.string "Let's wait till later.{PAUSE_UNTIL_PRESS}$"
 
 Route1_Text_TianaIntro:
-	.string "Teach said he'd take us to a cool\n"
-	.string "place, but this is boring as heck!\p"
-	.string "Hey, want to battle instead?$"
+	.string "ALMIGHTY TENKEI, grant me strength!$"
 
 Route1_Text_TianaDefeated:
-	.string "You blew me away!$"
+	.string "I didn't gain enough strength…$"
 
 Route1_Text_TianaPostBattle:
-	.string "Maybe I'll go for a swim...$"
+	.string "Did I not pray enough…?$"
 
 Route1_Text_CalvinIntro:
-	.string "… … … … …\n"
-	.string "… … … … …\p"
-	.string "You find my shorts funny, huh?\n"
-	.string "I'll show you funny!$"
+	.string "Me and my girl are having a picnic.\n"
+	.string "Don't dare interrupting us!$"
 
 Route1_Text_CalvinDefeated:
-	.string "Maybe I'll start wearin' jeans…$"
+	.string "You made a fool of me in front of her…$"
 
 Route1_Text_CalvinPostBattle:
-	.string "Wait, no. Who would wear a pair\n"
-	.string "of jeans at the beach?$"
+	.string "Shoo, shoo! Leave us alone!$"
 
 Route1_Text_AllyIntro:
 	.string "This place, is, like, so pink! It is\n"
@@ -4815,19 +4810,21 @@ Route1_Text_AllyDefeated:
 	.string "I wasn't ready for a defeat…$"
 
 Route1_Text_AllyPostBattle:
-	.string "At least I lost in a pretty battle…$"
+	.string "At least I lost in a pretty place…$"
 
 Route1_Text_RickIntro:
-	.string "Those rascals! I took them here from\n"
-	.string "WATERMELON CITY to learn about\p"
-	.string "STRAWBERRY TOWN'S crafting traditions,\n"
-	.string "only for them to call it boring!$"
+	.string "Put your back into it!\n"
+	.string "Heave, ho! Heave, ho! œ\p"
+	.string ". . . . . . .\n"
+	.string "Oh! A bite!\p"
+	.string "{PLAYER}: Soran, soran, soran! Woo!\p"
+	.string "ISAMU: Argh! You made me lose the fish!$"
 
 Route1_Text_RickDefeated:
-	.string "Hey, you're strong!$"
+	.string "And i even lost the battle!$"
 
 Route1_Text_RickPostBattle:
-	.string "You know, enrollment in the TRAINERS\n"
-	.string "ACADEMY's new year will open soon!\l"
-	.string "You'd be a better student than them!$"
+	.string "{PLAYER}: If the WINGULLs could talk with\n"
+	.string "me, I'd like to exchange some news! œ\p"
+	.string "ISAMU: I'm not in the mood for singing, scram!$"
 	

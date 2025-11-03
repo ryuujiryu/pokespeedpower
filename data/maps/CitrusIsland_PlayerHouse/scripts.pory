@@ -87,11 +87,13 @@ script CitrusIsland_PlayerHouse_Outfit {
 }
 
 movement CitrusIsland_PlayerHouse_Movement_RivalLeave {
-    walk_down * 3
+    walk_right * 4
+    walk_down * 4
     step_end
 }
 
 movement CitrusIsland_PlayerHouse_Movement_RivalReturns {
-    walk_up * 3
+    walk_up * 4
+    walk_left * 4
     step_end
 }

@@ -943,7 +943,7 @@ gText_MonsHealedShouldBuyPotions::
 	.string "is down, please come see us.\p"
 	.string "If you're planning to go far in the\n"
 	.string "field, you should buy some POTIONS\l"
-	.string "at the POKéMON MART.\p"
+	.string "here at the POKéMON LODGE.\p"
 	.string "We hope you excel!$"
 
 gText_MonsHealed::
@@ -1214,3 +1214,5 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/Route55/scripts.inc"
 
 	.include "data/maps/WatermelonCity/scripts.inc"
+
+	.include "data/maps/Route51Sky/scripts.inc"

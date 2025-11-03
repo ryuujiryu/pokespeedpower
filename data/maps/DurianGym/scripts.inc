@@ -229,46 +229,48 @@ DurianGym_ShiriAndBanjoDefeated::
 # 124 "data/maps/DurianGym/scripts.pory"
 	closemessage
 # 125 "data/maps/DurianGym/scripts.pory"
+	setvar VAR_RIVALS_STATE, 3
+# 126 "data/maps/DurianGym/scripts.pory"
 	release
 	end
 
 
-# 129 "data/maps/DurianGym/scripts.pory"
-Movement_Punch:
 # 130 "data/maps/DurianGym/scripts.pory"
-	face_right
+Movement_Punch:
 # 131 "data/maps/DurianGym/scripts.pory"
-	lock_facing_direction
+	face_right
 # 132 "data/maps/DurianGym/scripts.pory"
-	lock_anim
+	lock_facing_direction
 # 133 "data/maps/DurianGym/scripts.pory"
-	walk_faster_right
+	lock_anim
 # 134 "data/maps/DurianGym/scripts.pory"
-	walk_faster_left
+	walk_faster_right
 # 135 "data/maps/DurianGym/scripts.pory"
-	unlock_facing_direction
+	walk_faster_left
 # 136 "data/maps/DurianGym/scripts.pory"
-	unlock_anim
+	unlock_facing_direction
 # 137 "data/maps/DurianGym/scripts.pory"
-	face_down
+	unlock_anim
 # 138 "data/maps/DurianGym/scripts.pory"
+	face_down
+# 139 "data/maps/DurianGym/scripts.pory"
 	step_end
 
-# 141 "data/maps/DurianGym/scripts.pory"
-Movement_Hit:
 # 142 "data/maps/DurianGym/scripts.pory"
-	disable_jump_landing_ground_effect
+Movement_Hit:
 # 143 "data/maps/DurianGym/scripts.pory"
-	jump_in_place_left
+	disable_jump_landing_ground_effect
 # 144 "data/maps/DurianGym/scripts.pory"
-	emote_exclamation_mark
+	jump_in_place_left
 # 145 "data/maps/DurianGym/scripts.pory"
-	unlock_facing_direction
+	emote_exclamation_mark
 # 146 "data/maps/DurianGym/scripts.pory"
-	unlock_anim
+	unlock_facing_direction
 # 147 "data/maps/DurianGym/scripts.pory"
-	face_down
+	unlock_anim
 # 148 "data/maps/DurianGym/scripts.pory"
+	face_down
+# 149 "data/maps/DurianGym/scripts.pory"
 	step_end
 
 DurianGym_Junichi_Text_0:

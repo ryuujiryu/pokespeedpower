@@ -4425,7 +4425,7 @@
       "id": "LAYOUT_ROUTE1",
       "name": "Route1_Layout",
       "width": 41,
-      "height": 57,
+      "height": 43,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Mossdeep",
       "border_filepath": "data/layouts/Route1/border.bin",
@@ -4624,10 +4624,10 @@
     {
       "id": "LAYOUT_ROUTE54",
       "name": "Route54_Layout",
-      "width": 20,
-      "height": 20,
+      "width": 60,
+      "height": 24,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Petalburg",
+      "secondary_tileset": "gTileset_Mossdeep",
       "border_filepath": "data/layouts/Route54/border.bin",
       "blockdata_filepath": "data/layouts/Route54/map.bin"
     },
@@ -4650,6 +4650,16 @@
       "secondary_tileset": "gTileset_Rustboro",
       "border_filepath": "data/layouts/WatermelonCity/border.bin",
       "blockdata_filepath": "data/layouts/WatermelonCity/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE51SKY",
+      "name": "Route51Sky_Layout",
+      "width": 25,
+      "height": 15,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Coconut",
+      "border_filepath": "data/layouts/Route51Sky/border.bin",
+      "blockdata_filepath": "data/layouts/Route51Sky/map.bin"
     }
   ]
 }

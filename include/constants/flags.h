@@ -1225,7 +1225,7 @@
 #define FLAG_SYS_TC_GET                                             0x493 // Unused Flag
 #define FLAG_SYS_SAVE_GET                                           0x494 // Unused Flag
 #define FLAG_HIDE_HOUSE_RIVAL                                       0x495 // Unused Flag
-#define FLAG_UNUSED_0x496                                           0x496 // Unused Flag
+#define FLAG_RIVAL_POKEBALLS                                        0x496 // Unused Flag
 #define FLAG_UNUSED_0x497                                           0x497 // Unused Flag
 #define FLAG_UNUSED_0x498                                           0x498 // Unused Flag
 #define FLAG_UNUSED_0x499                                           0x499 // Unused Flag

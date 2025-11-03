@@ -21,19 +21,6 @@
   ],
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_POKEFAN_M",
-      "x": 38,
-      "y": 27,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_INVISIBLE",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route1_EventScript_SodaPopShop",
-      "flag": "0"
-    },
-    {
       "graphics_id": "OBJ_EVENT_GFX_PICNICKER",
       "x": 20,
       "y": 6,
@@ -43,11 +30,11 @@
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "2",
-      "script": "Route1_EventScript_Ally",
+      "script": "Route51_Chika",
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_LASS",
+      "graphics_id": "OBJ_EVENT_GFX_SHRINE_MAIDEN",
       "x": 29,
       "y": 11,
       "elevation": 0,
@@ -56,20 +43,21 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "3",
-      "script": "Route1_EventScript_Tiana",
+      "script": "Route51_Kazuha",
       "flag": "0"
     },
     {
+      "local_id": "LOCALID_ROUTE1_ISAMU",
       "graphics_id": "OBJ_EVENT_GFX_FISHERMAN",
-      "x": 27,
-      "y": 37,
+      "x": 31,
+      "y": 34,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route1_EventScript_Rick",
+      "script": "Route1_Isamu",
       "flag": "0"
     },
     {
@@ -82,7 +70,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
       "trainer_sight_or_berry_tree_id": "2",
-      "script": "Route1_EventScript_Calvin",
+      "script": "Route51_Kazuki",
       "flag": "0"
     },
     {
@@ -95,7 +83,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "Route1_EventScript_AromaGirl",
+      "script": "Route51_AromaGirl",
       "flag": "0"
     },
     {
@@ -123,34 +111,32 @@
       "trainer_sight_or_berry_tree_id": "BERRY_TREE_ROUTE_1_PECHA",
       "script": "BerryTreeScript",
       "flag": "0"
-    }
-  ],
-  "warp_events": [
+    },
     {
-      "x": 18,
-      "y": 4,
+      "local_id": "LOCALID_ROUTE51_RIVAL",
+      "graphics_id": "OBJ_EVENT_GFX_VAR_0",
+      "x": 22,
+      "y": 32,
       "elevation": 0,
-      "dest_map": "MAP_ROUTE51_GATEHOUSE",
-      "dest_warp_id": "0"
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route51_Rival3",
+      "flag": "FLAG_BADGE01_GET"
     }
   ],
+  "warp_events": [],
   "coord_events": [],
   "bg_events": [
-    {
-      "type": "sign",
-      "x": 33,
-      "y": 30,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Route1_EventScript_RouteSignPort"
-    },
     {
       "type": "sign",
       "x": 21,
       "y": 14,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Route1_EventScript_RouteSignDurian"
+      "script": "Route51_Sign"
     }
   ]
 }

@@ -285,6 +285,17 @@ extern const u32 gBattleEnvironmentTilemap_Temple[];
 extern const u16 gBattleEnvironmentPalette_Temple[];
 extern const u32 gBattleEnvironmentAnimTiles_Temple[];
 extern const u32 gBattleEnvironmentAnimTilemap_Temple[];
+extern const u16 gBattleEnvironmentPalette_TempleShiban[];
+extern const u16 gBattleEnvironmentPalette_TempleKogaIga[];
+extern const u16 gBattleEnvironmentPalette_TempleKaneJudy[];
+extern const u16 gBattleEnvironmentPalette_TempleFalcKabu[];
+extern const u16 gBattleEnvironmentPalette_TempleMeliTosh[];
+extern const u16 gBattleEnvironmentPalette_TempleMiranda[];
+extern const u16 gBattleEnvironmentPalette_TempleFroy[];
+extern const u16 gBattleEnvironmentPalette_TempleAbigail[];
+extern const u32 gBattleEnvironmentTiles_Plain[];
+extern const u32 gBattleEnvironmentTilemap_Plain[];
+
 
 // Pokédex
 extern const u32 gPokedexInterface_Gfx[];

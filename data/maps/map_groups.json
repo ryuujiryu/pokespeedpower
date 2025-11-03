@@ -38,7 +38,8 @@
     "gMapGroup_DurianTownIndoor",
     "gMapGroup_CoconutCityIndoor",
     "gMapGroup_CitrusIslandIndoor",
-    "gMapGroup_TenkeiDungeons"
+    "gMapGroup_TenkeiDungeons",
+    "gMapGroup_Cutscenes"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PetalburgCity",
@@ -659,5 +660,8 @@
   ],
   "gMapGroup_TenkeiDungeons": [
     "CherryWoods"
+  ],
+  "gMapGroup_Cutscenes": [
+    "Route51Sky"
   ]
 }

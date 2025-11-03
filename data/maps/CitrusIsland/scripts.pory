@@ -124,6 +124,7 @@ script CitrusIsland_Intro {
 
 script CitrusIsland_StarterEvent {
     msgbox ("MITSURU: Woah, woah. Let's calm down.\n" "Give those two their POKéMON.$")
+    closemessage
     applymovement (LOCALID_CITRUSISLAND_ZELKOVA, Common_Movement_FaceRight)
     waitmovement (0)
     applymovement (LOCALID_CITRUSISLAND_ZELKOVA, Common_Movement_Pensive)
@@ -230,6 +231,7 @@ script CitrusIsland_Pokedex {
         msgbox ("FUUKA: As MITSURU said, calm down.\n" "Stop being so childish.\p" "'Nyway, anigimi!$")
     }
     closemessage
+    playbgm (MUS_ENCOUNTER_MAY, FALSE)
     applymovement (LOCALID_CITRUSISLAND_RIVAL, Common_Movement_Music)
     waitmovement (0)
     applymovement (LOCALID_CITRUSISLAND_RIVAL, Common_Movement_WalkUp)
@@ -242,7 +244,7 @@ script CitrusIsland_Pokedex {
     closemessage
     playse (SE_SHIP)
     waitse
-    playbgm (MUS_ENCOUNTER_AQUA, FALSE)
+    playbgm (MUS_AW2_405, FALSE)
     msgbox ("???: Fwahaha! Move it, boys!\n" "Get off the damn ship, NOW!$")
     closemessage
     addobject (LOCALID_CITRUS_ARCSHIP)
@@ -341,13 +343,15 @@ script CitrusIsland_Pokedex {
     waitmovement (0)
     msgbox ("ARC SOLDIER: Sir, yessir!$")
     closemessage
+    setflag (B_FLAG_NO_WHITEOUT)
     trainerbattle_no_intro (TRAINER_SP_SOLDIER_ALPHA, format("Forgive me, sir!"))
+    clearflag (B_FLAG_NO_WHITEOUT)
     call (CitrusIsland_SoldierDefeated)
     end
  }
 
  script CitrusIsland_SoldierDefeated {
-    playbgm (MUS_ENCOUNTER_AQUA, FALSE)
+    playbgm (MUS_AW2_405, FALSE)
     applymovement (LOCALID_CITRUSISLAND_DNIPRO, Common_Movement_Angry)
     waitmovement (0)
     applymovement (LOCALID_CITRUSISLAND_DNIPRO, Common_Movement_Delay48)
@@ -411,8 +415,6 @@ script CitrusIsland_Pokedex {
 }
 
 script CitrusIsland_RivalFlyAway {
-    applymovement (LOCALID_CITRUSISLAND_RIVAL, Common_Movement_WalkInPlaceDown)
-    waitmovement (0)
     delay (50)
     setfieldeffectargument (0, 1)
     dofieldeffect (FLDEFF_NPCFLY_OUT)
@@ -430,8 +432,9 @@ script CitrusIsland_RivalFlyAway {
     setfieldeffectargument (0, 1)
     dofieldeffect (FLDEFF_NPCFLY_OUT)
     delay (15)
+    setvar (VAR_RIVALS_STATE, 1)
     applymovement (LOCALID_PLAYER, Common_Movement_Invisible)
-    warp (MAP_ROUTE1, 20, 39)
+    warp (MAP_ROUTE1, 14, 33)
     waitstate
     release
     end

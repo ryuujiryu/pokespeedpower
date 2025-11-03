@@ -172,23 +172,43 @@ CitrusIsland_PlayerHouse_Outfit::
 # 89 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
 CitrusIsland_PlayerHouse_Movement_RivalLeave:
 # 90 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	walk_down
+	walk_right
 # 90 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	walk_down
+	walk_right
 # 90 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	walk_right
+# 90 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	walk_right
+# 91 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
 	walk_down
 # 91 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	walk_down
+# 91 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	walk_down
+# 91 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	walk_down
+# 92 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
 	step_end
 
-# 94 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+# 95 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
 CitrusIsland_PlayerHouse_Movement_RivalReturns:
-# 95 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	walk_up
-# 95 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	walk_up
-# 95 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+# 96 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
 	walk_up
 # 96 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	walk_up
+# 96 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	walk_up
+# 96 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	walk_up
+# 97 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	walk_left
+# 97 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	walk_left
+# 97 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	walk_left
+# 97 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	walk_left
+# 98 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
 	step_end
 
 CitrusIsland_PlayerHouse_Rival_Text_0:

@@ -1408,3 +1408,15 @@ static const struct SpriteFrameImage sPicTable_Zelkova[] = {
 static const struct SpriteFrameImage sPicTable_Dnipro[] = {
     overworld_ascending_frames(gObjectEventPic_Dnipro, 2, 4),
 };
+
+static const struct SpriteFrameImage sPicTable_Monk[] = {
+    overworld_ascending_frames(gObjectEventPic_Monk, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_ShrineMaiden[] = {
+    overworld_ascending_frames(gObjectEventPic_ShrineMaiden, 2, 4),
+};
+
+static const struct SpriteFrameImage sPicTable_StreetThug[] = {
+    overworld_ascending_frames(gObjectEventPic_StreetThug, 2, 4),
+};

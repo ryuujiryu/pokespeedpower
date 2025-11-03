@@ -236,838 +236,844 @@ CitrusIsland_StarterEvent::
 # 126 "data/maps/CitrusIsland/scripts.pory"
 	msgbox CitrusIsland_StarterEvent_Text_0
 # 127 "data/maps/CitrusIsland/scripts.pory"
-	applymovement LOCALID_CITRUSISLAND_ZELKOVA, Common_Movement_FaceRight
-# 128 "data/maps/CitrusIsland/scripts.pory"
-	waitmovement 0
-# 129 "data/maps/CitrusIsland/scripts.pory"
-	applymovement LOCALID_CITRUSISLAND_ZELKOVA, Common_Movement_Pensive
-# 130 "data/maps/CitrusIsland/scripts.pory"
-	waitmovement 0
-# 131 "data/maps/CitrusIsland/scripts.pory"
-	applymovement LOCALID_CITRUSISLAND_ZELKOVA, Common_Movement_Delay48
-# 132 "data/maps/CitrusIsland/scripts.pory"
-	waitmovement 0
-# 133 "data/maps/CitrusIsland/scripts.pory"
-	msgbox CitrusIsland_StarterEvent_Text_1
-# 134 "data/maps/CitrusIsland/scripts.pory"
 	closemessage
+# 128 "data/maps/CitrusIsland/scripts.pory"
+	applymovement LOCALID_CITRUSISLAND_ZELKOVA, Common_Movement_FaceRight
+# 129 "data/maps/CitrusIsland/scripts.pory"
+	waitmovement 0
+# 130 "data/maps/CitrusIsland/scripts.pory"
+	applymovement LOCALID_CITRUSISLAND_ZELKOVA, Common_Movement_Pensive
+# 131 "data/maps/CitrusIsland/scripts.pory"
+	waitmovement 0
+# 132 "data/maps/CitrusIsland/scripts.pory"
+	applymovement LOCALID_CITRUSISLAND_ZELKOVA, Common_Movement_Delay48
+# 133 "data/maps/CitrusIsland/scripts.pory"
+	waitmovement 0
+# 134 "data/maps/CitrusIsland/scripts.pory"
+	msgbox CitrusIsland_StarterEvent_Text_1
 # 135 "data/maps/CitrusIsland/scripts.pory"
-	applymovement LOCALID_CITRUSISLAND_RAKAN, Common_Movement_Pensive
+	closemessage
 # 136 "data/maps/CitrusIsland/scripts.pory"
-	waitmovement 0
+	applymovement LOCALID_CITRUSISLAND_RAKAN, Common_Movement_Pensive
 # 137 "data/maps/CitrusIsland/scripts.pory"
-	applymovement LOCALID_CITRUSISLAND_RAKAN, Common_Movement_Delay48
+	waitmovement 0
 # 138 "data/maps/CitrusIsland/scripts.pory"
-	waitmovement 0
+	applymovement LOCALID_CITRUSISLAND_RAKAN, Common_Movement_Delay48
 # 139 "data/maps/CitrusIsland/scripts.pory"
-	applymovement LOCALID_CITRUSISLAND_MITSURU, Common_Movement_WalkDown
+	waitmovement 0
 # 140 "data/maps/CitrusIsland/scripts.pory"
-	waitmovement 0
+	applymovement LOCALID_CITRUSISLAND_MITSURU, Common_Movement_WalkDown
 # 141 "data/maps/CitrusIsland/scripts.pory"
-	applymovement LOCALID_CITRUSISLAND_MITSURU, Common_Movement_FaceUp
+	waitmovement 0
 # 142 "data/maps/CitrusIsland/scripts.pory"
-	waitmovement 0
+	applymovement LOCALID_CITRUSISLAND_MITSURU, Common_Movement_FaceUp
 # 143 "data/maps/CitrusIsland/scripts.pory"
-	applymovement LOCALID_CITRUSISLAND_MITSURU, Common_Movement_Delay48
-# 144 "data/maps/CitrusIsland/scripts.pory"
 	waitmovement 0
+# 144 "data/maps/CitrusIsland/scripts.pory"
+	applymovement LOCALID_CITRUSISLAND_MITSURU, Common_Movement_Delay48
 # 145 "data/maps/CitrusIsland/scripts.pory"
-	applymovement LOCALID_CITRUSISLAND_ZELKOVA, Common_Movement_WalkRight
+	waitmovement 0
 # 146 "data/maps/CitrusIsland/scripts.pory"
 	applymovement LOCALID_CITRUSISLAND_ZELKOVA, Common_Movement_WalkRight
 # 147 "data/maps/CitrusIsland/scripts.pory"
-	waitmovement 0
+	applymovement LOCALID_CITRUSISLAND_ZELKOVA, Common_Movement_WalkRight
 # 148 "data/maps/CitrusIsland/scripts.pory"
-	applymovement LOCALID_CITRUSISLAND_ZELKOVA, Common_Movement_FaceLeft
+	waitmovement 0
 # 149 "data/maps/CitrusIsland/scripts.pory"
-	waitmovement 0
+	applymovement LOCALID_CITRUSISLAND_ZELKOVA, Common_Movement_FaceLeft
 # 150 "data/maps/CitrusIsland/scripts.pory"
-	applymovement LOCALID_CITRUSISLAND_ZELKOVA, Common_Movement_Delay48
-# 151 "data/maps/CitrusIsland/scripts.pory"
 	waitmovement 0
+# 151 "data/maps/CitrusIsland/scripts.pory"
+	applymovement LOCALID_CITRUSISLAND_ZELKOVA, Common_Movement_Delay48
 # 152 "data/maps/CitrusIsland/scripts.pory"
-	msgbox CitrusIsland_StarterEvent_Text_2
+	waitmovement 0
 # 153 "data/maps/CitrusIsland/scripts.pory"
-	closemessage
+	msgbox CitrusIsland_StarterEvent_Text_2
 # 154 "data/maps/CitrusIsland/scripts.pory"
-	applymovement LOCALID_CITRUSISLAND_RIVAL, Common_Movement_WalkInPlaceUp
+	closemessage
 # 155 "data/maps/CitrusIsland/scripts.pory"
+	applymovement LOCALID_CITRUSISLAND_RIVAL, Common_Movement_WalkInPlaceUp
+# 156 "data/maps/CitrusIsland/scripts.pory"
 	waitmovement 0
 	checkplayergender
 # 0 "data/maps/CitrusIsland/scripts.pory"
 	compare VAR_RESULT, MALE
 	goto_if_ne CitrusIsland_StarterEvent_2
-# 159 "data/maps/CitrusIsland/scripts.pory"
+# 160 "data/maps/CitrusIsland/scripts.pory"
 	msgbox CitrusIsland_StarterEvent_Text_4
 CitrusIsland_StarterEvent_1:
-# 161 "data/maps/CitrusIsland/scripts.pory"
-	setflag FLAG_SYS_POKEMON_GET
 # 162 "data/maps/CitrusIsland/scripts.pory"
-	special ChooseStarter
+	setflag FLAG_SYS_POKEMON_GET
 # 163 "data/maps/CitrusIsland/scripts.pory"
-	waitstate
+	special ChooseStarter
 # 164 "data/maps/CitrusIsland/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
+	waitstate
 # 165 "data/maps/CitrusIsland/scripts.pory"
-	waitfanfare
+	playfanfare MUS_OBTAIN_ITEM
 # 166 "data/maps/CitrusIsland/scripts.pory"
-	msgbox CitrusIsland_StarterEvent_Text_5, MSGBOX_YESNO
+	waitfanfare
 # 167 "data/maps/CitrusIsland/scripts.pory"
+	msgbox CitrusIsland_StarterEvent_Text_5, MSGBOX_YESNO
+# 168 "data/maps/CitrusIsland/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_ne CitrusIsland_StarterEvent_6
-# 170 "data/maps/CitrusIsland/scripts.pory"
+# 171 "data/maps/CitrusIsland/scripts.pory"
 	call Common_EventScript_NameReceivedPartyMon
 CitrusIsland_StarterEvent_5:
-# 172 "data/maps/CitrusIsland/scripts.pory"
-	closemessage
 # 173 "data/maps/CitrusIsland/scripts.pory"
+	closemessage
+# 174 "data/maps/CitrusIsland/scripts.pory"
 	call CitrusIsland_Pokedex
 	return
 
 CitrusIsland_StarterEvent_2:
-# 157 "data/maps/CitrusIsland/scripts.pory"
+# 158 "data/maps/CitrusIsland/scripts.pory"
 	msgbox CitrusIsland_StarterEvent_Text_3
 	goto CitrusIsland_StarterEvent_1
 
 CitrusIsland_StarterEvent_6:
-# 168 "data/maps/CitrusIsland/scripts.pory"
+# 169 "data/maps/CitrusIsland/scripts.pory"
 	call CitrusIsland_Pokedex
 	goto CitrusIsland_StarterEvent_5
 
 
 CitrusIsland_Pokedex::
-# 177 "data/maps/CitrusIsland/scripts.pory"
-	applymovement LOCALID_CITRUSISLAND_RAKAN, Common_Movement_WalkUpSlow
 # 178 "data/maps/CitrusIsland/scripts.pory"
-	waitmovement 0
+	applymovement LOCALID_CITRUSISLAND_RAKAN, Common_Movement_WalkUpSlow
 # 179 "data/maps/CitrusIsland/scripts.pory"
-	applymovement LOCALID_CITRUSISLAND_RAKAN, Common_Movement_FacePlayer
+	waitmovement 0
 # 180 "data/maps/CitrusIsland/scripts.pory"
-	waitmovement 0
+	applymovement LOCALID_CITRUSISLAND_RAKAN, Common_Movement_FacePlayer
 # 181 "data/maps/CitrusIsland/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_FaceLeft
+	waitmovement 0
 # 182 "data/maps/CitrusIsland/scripts.pory"
-	applymovement LOCALID_CITRUSISLAND_RAKAN, Common_Movement_Delay48
+	applymovement LOCALID_PLAYER, Common_Movement_FaceLeft
 # 183 "data/maps/CitrusIsland/scripts.pory"
-	waitmovement 0
+	applymovement LOCALID_CITRUSISLAND_RAKAN, Common_Movement_Delay48
 # 184 "data/maps/CitrusIsland/scripts.pory"
-	msgbox CitrusIsland_Pokedex_Text_0
+	waitmovement 0
 # 185 "data/maps/CitrusIsland/scripts.pory"
-	closemessage
+	msgbox CitrusIsland_Pokedex_Text_0
 # 186 "data/maps/CitrusIsland/scripts.pory"
-	applymovement LOCALID_CITRUSISLAND_RAKAN, Common_Movement_Pensive
+	closemessage
 # 187 "data/maps/CitrusIsland/scripts.pory"
-	waitmovement 0
-# 188 "data/maps/CitrusIsland/scripts.pory"
-	applymovement LOCALID_CITRUSISLAND_RAKAN, Common_Movement_Delay48
-# 189 "data/maps/CitrusIsland/scripts.pory"
-	waitmovement 0
-# 190 "data/maps/CitrusIsland/scripts.pory"
-	msgbox CitrusIsland_Pokedex_Text_1
-# 191 "data/maps/CitrusIsland/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
-# 192 "data/maps/CitrusIsland/scripts.pory"
-	msgbox CitrusIsland_Pokedex_Text_2
-# 193 "data/maps/CitrusIsland/scripts.pory"
-	waitfanfare
-# 194 "data/maps/CitrusIsland/scripts.pory"
-	setflag FLAG_SYS_TC_GET
-# 195 "data/maps/CitrusIsland/scripts.pory"
-	closemessage
-# 196 "data/maps/CitrusIsland/scripts.pory"
-	applymovement LOCALID_CITRUSISLAND_ZELKOVA, Common_Movement_ExclamationMark
-# 197 "data/maps/CitrusIsland/scripts.pory"
-	waitmovement 0
-# 198 "data/maps/CitrusIsland/scripts.pory"
-	applymovement LOCALID_CITRUSISLAND_ZELKOVA, Common_Movement_WalkInPlaceUp
-# 199 "data/maps/CitrusIsland/scripts.pory"
-	waitmovement 0
-# 200 "data/maps/CitrusIsland/scripts.pory"
-	applymovement LOCALID_CITRUSISLAND_ZELKOVA, Common_Movement_WalkUp
-# 201 "data/maps/CitrusIsland/scripts.pory"
-	waitmovement 0
-# 202 "data/maps/CitrusIsland/scripts.pory"
-	applymovement LOCALID_CITRUSISLAND_ZELKOVA, Common_Movement_FacePlayer
-# 203 "data/maps/CitrusIsland/scripts.pory"
-	waitmovement 0
-# 204 "data/maps/CitrusIsland/scripts.pory"
-	applymovement LOCALID_CITRUSISLAND_ZELKOVA, Common_Movement_Delay48
-# 205 "data/maps/CitrusIsland/scripts.pory"
-	waitmovement 0
-# 206 "data/maps/CitrusIsland/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
-# 207 "data/maps/CitrusIsland/scripts.pory"
-	msgbox CitrusIsland_Pokedex_Text_3
-# 208 "data/maps/CitrusIsland/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
-# 209 "data/maps/CitrusIsland/scripts.pory"
-	msgbox CitrusIsland_Pokedex_Text_4
-# 210 "data/maps/CitrusIsland/scripts.pory"
-	waitfanfare
-# 211 "data/maps/CitrusIsland/scripts.pory"
-	setflag FLAG_SYS_POKEDEX_GET
-# 212 "data/maps/CitrusIsland/scripts.pory"
-	special SetUnlockedPokedexFlags
-# 213 "data/maps/CitrusIsland/scripts.pory"
-	setflag FLAG_RECEIVED_POKEDEX_FROM_BIRCH
-# 214 "data/maps/CitrusIsland/scripts.pory"
-	closemessage
-# 215 "data/maps/CitrusIsland/scripts.pory"
 	applymovement LOCALID_CITRUSISLAND_RAKAN, Common_Movement_Pensive
-# 216 "data/maps/CitrusIsland/scripts.pory"
+# 188 "data/maps/CitrusIsland/scripts.pory"
 	waitmovement 0
-# 217 "data/maps/CitrusIsland/scripts.pory"
+# 189 "data/maps/CitrusIsland/scripts.pory"
 	applymovement LOCALID_CITRUSISLAND_RAKAN, Common_Movement_Delay48
-# 218 "data/maps/CitrusIsland/scripts.pory"
+# 190 "data/maps/CitrusIsland/scripts.pory"
 	waitmovement 0
-# 219 "data/maps/CitrusIsland/scripts.pory"
-	msgbox CitrusIsland_Pokedex_Text_5
-# 220 "data/maps/CitrusIsland/scripts.pory"
+# 191 "data/maps/CitrusIsland/scripts.pory"
+	msgbox CitrusIsland_Pokedex_Text_1
+# 192 "data/maps/CitrusIsland/scripts.pory"
+	playfanfare MUS_OBTAIN_ITEM
+# 193 "data/maps/CitrusIsland/scripts.pory"
+	msgbox CitrusIsland_Pokedex_Text_2
+# 194 "data/maps/CitrusIsland/scripts.pory"
+	waitfanfare
+# 195 "data/maps/CitrusIsland/scripts.pory"
+	setflag FLAG_SYS_TC_GET
+# 196 "data/maps/CitrusIsland/scripts.pory"
 	closemessage
-# 221 "data/maps/CitrusIsland/scripts.pory"
-	applymovement LOCALID_CITRUSISLAND_ZELKOVA, Common_Movement_Angry
-# 222 "data/maps/CitrusIsland/scripts.pory"
+# 197 "data/maps/CitrusIsland/scripts.pory"
+	applymovement LOCALID_CITRUSISLAND_ZELKOVA, Common_Movement_ExclamationMark
+# 198 "data/maps/CitrusIsland/scripts.pory"
 	waitmovement 0
-# 223 "data/maps/CitrusIsland/scripts.pory"
+# 199 "data/maps/CitrusIsland/scripts.pory"
+	applymovement LOCALID_CITRUSISLAND_ZELKOVA, Common_Movement_WalkInPlaceUp
+# 200 "data/maps/CitrusIsland/scripts.pory"
+	waitmovement 0
+# 201 "data/maps/CitrusIsland/scripts.pory"
+	applymovement LOCALID_CITRUSISLAND_ZELKOVA, Common_Movement_WalkUp
+# 202 "data/maps/CitrusIsland/scripts.pory"
+	waitmovement 0
+# 203 "data/maps/CitrusIsland/scripts.pory"
+	applymovement LOCALID_CITRUSISLAND_ZELKOVA, Common_Movement_FacePlayer
+# 204 "data/maps/CitrusIsland/scripts.pory"
+	waitmovement 0
+# 205 "data/maps/CitrusIsland/scripts.pory"
 	applymovement LOCALID_CITRUSISLAND_ZELKOVA, Common_Movement_Delay48
-# 224 "data/maps/CitrusIsland/scripts.pory"
+# 206 "data/maps/CitrusIsland/scripts.pory"
 	waitmovement 0
+# 207 "data/maps/CitrusIsland/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
+# 208 "data/maps/CitrusIsland/scripts.pory"
+	msgbox CitrusIsland_Pokedex_Text_3
+# 209 "data/maps/CitrusIsland/scripts.pory"
+	playfanfare MUS_OBTAIN_ITEM
+# 210 "data/maps/CitrusIsland/scripts.pory"
+	msgbox CitrusIsland_Pokedex_Text_4
+# 211 "data/maps/CitrusIsland/scripts.pory"
+	waitfanfare
+# 212 "data/maps/CitrusIsland/scripts.pory"
+	setflag FLAG_SYS_POKEDEX_GET
+# 213 "data/maps/CitrusIsland/scripts.pory"
+	special SetUnlockedPokedexFlags
+# 214 "data/maps/CitrusIsland/scripts.pory"
+	setflag FLAG_RECEIVED_POKEDEX_FROM_BIRCH
+# 215 "data/maps/CitrusIsland/scripts.pory"
+	closemessage
+# 216 "data/maps/CitrusIsland/scripts.pory"
+	applymovement LOCALID_CITRUSISLAND_RAKAN, Common_Movement_Pensive
+# 217 "data/maps/CitrusIsland/scripts.pory"
+	waitmovement 0
+# 218 "data/maps/CitrusIsland/scripts.pory"
+	applymovement LOCALID_CITRUSISLAND_RAKAN, Common_Movement_Delay48
+# 219 "data/maps/CitrusIsland/scripts.pory"
+	waitmovement 0
+# 220 "data/maps/CitrusIsland/scripts.pory"
+	msgbox CitrusIsland_Pokedex_Text_5
+# 221 "data/maps/CitrusIsland/scripts.pory"
+	closemessage
+# 222 "data/maps/CitrusIsland/scripts.pory"
+	applymovement LOCALID_CITRUSISLAND_ZELKOVA, Common_Movement_Angry
+# 223 "data/maps/CitrusIsland/scripts.pory"
+	waitmovement 0
+# 224 "data/maps/CitrusIsland/scripts.pory"
+	applymovement LOCALID_CITRUSISLAND_ZELKOVA, Common_Movement_Delay48
 # 225 "data/maps/CitrusIsland/scripts.pory"
-	applymovement LOCALID_CITRUSISLAND_RIVAL, Common_Movement_WalkInPlaceUp
+	waitmovement 0
 # 226 "data/maps/CitrusIsland/scripts.pory"
+	applymovement LOCALID_CITRUSISLAND_RIVAL, Common_Movement_WalkInPlaceUp
+# 227 "data/maps/CitrusIsland/scripts.pory"
 	waitmovement 0
 	checkplayergender
 # 0 "data/maps/CitrusIsland/scripts.pory"
 	compare VAR_RESULT, MALE
 	goto_if_ne CitrusIsland_Pokedex_2
-# 230 "data/maps/CitrusIsland/scripts.pory"
+# 231 "data/maps/CitrusIsland/scripts.pory"
 	msgbox CitrusIsland_Pokedex_Text_7
 CitrusIsland_Pokedex_1:
-# 232 "data/maps/CitrusIsland/scripts.pory"
-	closemessage
 # 233 "data/maps/CitrusIsland/scripts.pory"
-	applymovement LOCALID_CITRUSISLAND_RIVAL, Common_Movement_Music
+	closemessage
 # 234 "data/maps/CitrusIsland/scripts.pory"
-	waitmovement 0
+	playbgm MUS_ENCOUNTER_MAY, FALSE
 # 235 "data/maps/CitrusIsland/scripts.pory"
-	applymovement LOCALID_CITRUSISLAND_RIVAL, Common_Movement_WalkUp
+	applymovement LOCALID_CITRUSISLAND_RIVAL, Common_Movement_Music
 # 236 "data/maps/CitrusIsland/scripts.pory"
 	waitmovement 0
 # 237 "data/maps/CitrusIsland/scripts.pory"
-	applymovement LOCALID_CITRUSISLAND_RIVAL, Common_Movement_Delay48
+	applymovement LOCALID_CITRUSISLAND_RIVAL, Common_Movement_WalkUp
 # 238 "data/maps/CitrusIsland/scripts.pory"
 	waitmovement 0
 # 239 "data/maps/CitrusIsland/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_FaceDown
+	applymovement LOCALID_CITRUSISLAND_RIVAL, Common_Movement_Delay48
 # 240 "data/maps/CitrusIsland/scripts.pory"
 	waitmovement 0
 # 241 "data/maps/CitrusIsland/scripts.pory"
-	msgbox CitrusIsland_Pokedex_Text_8
+	applymovement LOCALID_PLAYER, Common_Movement_FaceDown
 # 242 "data/maps/CitrusIsland/scripts.pory"
-	closemessage
-# 243 "data/maps/CitrusIsland/scripts.pory"
-	playse SE_SHIP
-# 244 "data/maps/CitrusIsland/scripts.pory"
-	waitse
-# 245 "data/maps/CitrusIsland/scripts.pory"
-	playbgm MUS_ENCOUNTER_AQUA, FALSE
-# 246 "data/maps/CitrusIsland/scripts.pory"
-	msgbox CitrusIsland_Pokedex_Text_9
-# 247 "data/maps/CitrusIsland/scripts.pory"
-	closemessage
-# 248 "data/maps/CitrusIsland/scripts.pory"
-	addobject LOCALID_CITRUS_ARCSHIP
-# 249 "data/maps/CitrusIsland/scripts.pory"
-	applymovement LOCALID_CITRUS_ARCSHIP, CitrusIsland_Movement_ARCShip
-# 250 "data/maps/CitrusIsland/scripts.pory"
 	waitmovement 0
+# 243 "data/maps/CitrusIsland/scripts.pory"
+	msgbox CitrusIsland_Pokedex_Text_8
+# 244 "data/maps/CitrusIsland/scripts.pory"
+	closemessage
+# 245 "data/maps/CitrusIsland/scripts.pory"
+	playse SE_SHIP
+# 246 "data/maps/CitrusIsland/scripts.pory"
+	waitse
+# 247 "data/maps/CitrusIsland/scripts.pory"
+	playbgm MUS_AW2_405, FALSE
+# 248 "data/maps/CitrusIsland/scripts.pory"
+	msgbox CitrusIsland_Pokedex_Text_9
+# 249 "data/maps/CitrusIsland/scripts.pory"
+	closemessage
+# 250 "data/maps/CitrusIsland/scripts.pory"
+	addobject LOCALID_CITRUS_ARCSHIP
 # 251 "data/maps/CitrusIsland/scripts.pory"
-	applymovement LOCALID_CITRUSISLAND_ZELKOVA, Common_Movement_ExclamationMark
+	applymovement LOCALID_CITRUS_ARCSHIP, CitrusIsland_Movement_ARCShip
 # 252 "data/maps/CitrusIsland/scripts.pory"
 	waitmovement 0
 # 253 "data/maps/CitrusIsland/scripts.pory"
-	applymovement LOCALID_CITRUSISLAND_ZELKOVA, Common_Movement_FaceRight
+	applymovement LOCALID_CITRUSISLAND_ZELKOVA, Common_Movement_ExclamationMark
 # 254 "data/maps/CitrusIsland/scripts.pory"
 	waitmovement 0
 # 255 "data/maps/CitrusIsland/scripts.pory"
-	applymovement LOCALID_CITRUSISLAND_MITSURU, Common_Movement_ExclamationMark
+	applymovement LOCALID_CITRUSISLAND_ZELKOVA, Common_Movement_FaceRight
 # 256 "data/maps/CitrusIsland/scripts.pory"
 	waitmovement 0
 # 257 "data/maps/CitrusIsland/scripts.pory"
-	applymovement LOCALID_CITRUSISLAND_MITSURU, Common_Movement_WalkUp
+	applymovement LOCALID_CITRUSISLAND_MITSURU, Common_Movement_ExclamationMark
 # 258 "data/maps/CitrusIsland/scripts.pory"
 	waitmovement 0
 # 259 "data/maps/CitrusIsland/scripts.pory"
-	applymovement LOCALID_CITRUSISLAND_MITSURU, Common_Movement_FaceRight
+	applymovement LOCALID_CITRUSISLAND_MITSURU, Common_Movement_WalkUp
 # 260 "data/maps/CitrusIsland/scripts.pory"
 	waitmovement 0
 # 261 "data/maps/CitrusIsland/scripts.pory"
-	applymovement LOCALID_CITRUSISLAND_RIVAL, Common_Movement_ExclamationMark
+	applymovement LOCALID_CITRUSISLAND_MITSURU, Common_Movement_FaceRight
 # 262 "data/maps/CitrusIsland/scripts.pory"
 	waitmovement 0
 # 263 "data/maps/CitrusIsland/scripts.pory"
-	applymovement LOCALID_CITRUSISLAND_RIVAL, Common_Movement_FaceRight
+	applymovement LOCALID_CITRUSISLAND_RIVAL, Common_Movement_ExclamationMark
 # 264 "data/maps/CitrusIsland/scripts.pory"
 	waitmovement 0
 # 265 "data/maps/CitrusIsland/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
+	applymovement LOCALID_CITRUSISLAND_RIVAL, Common_Movement_FaceRight
 # 266 "data/maps/CitrusIsland/scripts.pory"
 	waitmovement 0
 # 267 "data/maps/CitrusIsland/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
+	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
 # 268 "data/maps/CitrusIsland/scripts.pory"
 	waitmovement 0
 # 269 "data/maps/CitrusIsland/scripts.pory"
-	applymovement LOCALID_CITRUSISLAND_RAKAN, Common_Movement_Pensive
+	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
 # 270 "data/maps/CitrusIsland/scripts.pory"
 	waitmovement 0
 # 271 "data/maps/CitrusIsland/scripts.pory"
-	applymovement LOCALID_CITRUSISLAND_RAKAN, Common_Movement_FaceRight
+	applymovement LOCALID_CITRUSISLAND_RAKAN, Common_Movement_Pensive
 # 272 "data/maps/CitrusIsland/scripts.pory"
 	waitmovement 0
 # 273 "data/maps/CitrusIsland/scripts.pory"
-	msgbox CitrusIsland_Pokedex_Text_10
+	applymovement LOCALID_CITRUSISLAND_RAKAN, Common_Movement_FaceRight
 # 274 "data/maps/CitrusIsland/scripts.pory"
-	closemessage
+	waitmovement 0
 # 275 "data/maps/CitrusIsland/scripts.pory"
-	addobject LOCALID_CITRUSISLAND_DNIPRO
+	msgbox CitrusIsland_Pokedex_Text_10
 # 276 "data/maps/CitrusIsland/scripts.pory"
-	applymovement LOCALID_CITRUSISLAND_DNIPRO, CitrusIsland_Movement_DniproShip
-# 277 "data/maps/CitrusIsland/scripts.pory"
-	waitmovement 0
-# 278 "data/maps/CitrusIsland/scripts.pory"
-	msgbox CitrusIsland_Pokedex_Text_11
-# 279 "data/maps/CitrusIsland/scripts.pory"
 	closemessage
-# 280 "data/maps/CitrusIsland/scripts.pory"
-	applymovement LOCALID_CITRUSISLAND_MITSURU, Common_Movement_FaceUp
-# 281 "data/maps/CitrusIsland/scripts.pory"
+# 277 "data/maps/CitrusIsland/scripts.pory"
+	addobject LOCALID_CITRUSISLAND_DNIPRO
+# 278 "data/maps/CitrusIsland/scripts.pory"
+	applymovement LOCALID_CITRUSISLAND_DNIPRO, CitrusIsland_Movement_DniproShip
+# 279 "data/maps/CitrusIsland/scripts.pory"
 	waitmovement 0
+# 280 "data/maps/CitrusIsland/scripts.pory"
+	msgbox CitrusIsland_Pokedex_Text_11
+# 281 "data/maps/CitrusIsland/scripts.pory"
+	closemessage
 # 282 "data/maps/CitrusIsland/scripts.pory"
-	applymovement LOCALID_CITRUSISLAND_ZELKOVA, Common_Movement_WalkUp
+	applymovement LOCALID_CITRUSISLAND_MITSURU, Common_Movement_FaceUp
 # 283 "data/maps/CitrusIsland/scripts.pory"
 	waitmovement 0
 # 284 "data/maps/CitrusIsland/scripts.pory"
-	applymovement LOCALID_CITRUSISLAND_ZELKOVA, Common_Movement_FaceDown
+	applymovement LOCALID_CITRUSISLAND_ZELKOVA, Common_Movement_WalkUp
 # 285 "data/maps/CitrusIsland/scripts.pory"
 	waitmovement 0
 # 286 "data/maps/CitrusIsland/scripts.pory"
-	msgbox CitrusIsland_Pokedex_Text_12
+	applymovement LOCALID_CITRUSISLAND_ZELKOVA, Common_Movement_FaceDown
 # 287 "data/maps/CitrusIsland/scripts.pory"
-	closemessage
-# 288 "data/maps/CitrusIsland/scripts.pory"
-	applymovement LOCALID_CITRUSISLAND_DNIPRO, Common_Movement_WalkLeft
-# 289 "data/maps/CitrusIsland/scripts.pory"
 	waitmovement 0
+# 288 "data/maps/CitrusIsland/scripts.pory"
+	msgbox CitrusIsland_Pokedex_Text_12
+# 289 "data/maps/CitrusIsland/scripts.pory"
+	closemessage
 # 290 "data/maps/CitrusIsland/scripts.pory"
-	applymovement LOCALID_CITRUSISLAND_DNIPRO, Common_Movement_FaceUp
+	applymovement LOCALID_CITRUSISLAND_DNIPRO, Common_Movement_WalkLeft
 # 291 "data/maps/CitrusIsland/scripts.pory"
 	waitmovement 0
 # 292 "data/maps/CitrusIsland/scripts.pory"
-	msgbox CitrusIsland_Pokedex_Text_13
+	applymovement LOCALID_CITRUSISLAND_DNIPRO, Common_Movement_FaceUp
 # 293 "data/maps/CitrusIsland/scripts.pory"
-	closemessage
+	waitmovement 0
 # 294 "data/maps/CitrusIsland/scripts.pory"
-	applymovement LOCALID_CITRUSISLAND_DNIPRO, Common_Movement_FaceLeft
+	msgbox CitrusIsland_Pokedex_Text_13
 # 295 "data/maps/CitrusIsland/scripts.pory"
-	waitmovement 0
-# 296 "data/maps/CitrusIsland/scripts.pory"
-	msgbox CitrusIsland_Pokedex_Text_14
-# 297 "data/maps/CitrusIsland/scripts.pory"
 	closemessage
+# 296 "data/maps/CitrusIsland/scripts.pory"
+	applymovement LOCALID_CITRUSISLAND_DNIPRO, Common_Movement_FaceLeft
+# 297 "data/maps/CitrusIsland/scripts.pory"
+	waitmovement 0
 # 298 "data/maps/CitrusIsland/scripts.pory"
-	addobject LOCALID_CITRUSISLAND_SOLDIER1
+	msgbox CitrusIsland_Pokedex_Text_14
 # 299 "data/maps/CitrusIsland/scripts.pory"
-	applymovement LOCALID_CITRUSISLAND_SOLDIER1, CitrusIsland_Movement_Soldier1
+	closemessage
 # 300 "data/maps/CitrusIsland/scripts.pory"
-	waitmovement 0
+	addobject LOCALID_CITRUSISLAND_SOLDIER1
 # 301 "data/maps/CitrusIsland/scripts.pory"
-	applymovement LOCALID_CITRUSISLAND_SOLDIER1, Common_Movement_Delay48
+	applymovement LOCALID_CITRUSISLAND_SOLDIER1, CitrusIsland_Movement_Soldier1
 # 302 "data/maps/CitrusIsland/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
-# 303 "data/maps/CitrusIsland/scripts.pory"
 	waitmovement 0
+# 303 "data/maps/CitrusIsland/scripts.pory"
+	applymovement LOCALID_CITRUSISLAND_SOLDIER1, Common_Movement_Delay48
 # 304 "data/maps/CitrusIsland/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_Delay48
+	applymovement LOCALID_PLAYER, Common_Movement_FaceUp
 # 305 "data/maps/CitrusIsland/scripts.pory"
 	waitmovement 0
 # 306 "data/maps/CitrusIsland/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
+	applymovement LOCALID_PLAYER, Common_Movement_Delay48
 # 307 "data/maps/CitrusIsland/scripts.pory"
 	waitmovement 0
 # 308 "data/maps/CitrusIsland/scripts.pory"
-	addobject LOCALID_CITRUSISLAND_SOLDIER2
+	applymovement LOCALID_PLAYER, Common_Movement_FaceRight
 # 309 "data/maps/CitrusIsland/scripts.pory"
-	applymovement LOCALID_CITRUSISLAND_SOLDIER2, CitrusIsland_Movement_Soldier2
-# 310 "data/maps/CitrusIsland/scripts.pory"
 	waitmovement 0
+# 310 "data/maps/CitrusIsland/scripts.pory"
+	addobject LOCALID_CITRUSISLAND_SOLDIER2
 # 311 "data/maps/CitrusIsland/scripts.pory"
-	applymovement LOCALID_CITRUSISLAND_SOLDIER2, Common_Movement_Delay48
+	applymovement LOCALID_CITRUSISLAND_SOLDIER2, CitrusIsland_Movement_Soldier2
 # 312 "data/maps/CitrusIsland/scripts.pory"
 	waitmovement 0
 # 313 "data/maps/CitrusIsland/scripts.pory"
-	applymovement LOCALID_CITRUSISLAND_RIVAL, Common_Movement_WalkInPlaceDown
+	applymovement LOCALID_CITRUSISLAND_SOLDIER2, Common_Movement_Delay48
 # 314 "data/maps/CitrusIsland/scripts.pory"
 	waitmovement 0
 # 315 "data/maps/CitrusIsland/scripts.pory"
-	applymovement LOCALID_CITRUSISLAND_ZELKOVA, Common_Movement_Angry
+	applymovement LOCALID_CITRUSISLAND_RIVAL, Common_Movement_WalkInPlaceDown
 # 316 "data/maps/CitrusIsland/scripts.pory"
 	waitmovement 0
 # 317 "data/maps/CitrusIsland/scripts.pory"
-	applymovement LOCALID_CITRUSISLAND_ZELKOVA, Common_Movement_Delay48
+	applymovement LOCALID_CITRUSISLAND_ZELKOVA, Common_Movement_Angry
 # 318 "data/maps/CitrusIsland/scripts.pory"
 	waitmovement 0
 # 319 "data/maps/CitrusIsland/scripts.pory"
-	msgbox CitrusIsland_Pokedex_Text_15
+	applymovement LOCALID_CITRUSISLAND_ZELKOVA, Common_Movement_Delay48
 # 320 "data/maps/CitrusIsland/scripts.pory"
-	closemessage
-# 321 "data/maps/CitrusIsland/scripts.pory"
-	applymovement LOCALID_CITRUSISLAND_DNIPRO, Common_Movement_FaceUp
-# 322 "data/maps/CitrusIsland/scripts.pory"
 	waitmovement 0
+# 321 "data/maps/CitrusIsland/scripts.pory"
+	msgbox CitrusIsland_Pokedex_Text_15
+# 322 "data/maps/CitrusIsland/scripts.pory"
+	closemessage
 # 323 "data/maps/CitrusIsland/scripts.pory"
-	applymovement LOCALID_CITRUSISLAND_DNIPRO, Common_Movement_Music
+	applymovement LOCALID_CITRUSISLAND_DNIPRO, Common_Movement_FaceUp
 # 324 "data/maps/CitrusIsland/scripts.pory"
 	waitmovement 0
 # 325 "data/maps/CitrusIsland/scripts.pory"
-	applymovement LOCALID_CITRUSISLAND_DNIPRO, Common_Movement_Delay48
+	applymovement LOCALID_CITRUSISLAND_DNIPRO, Common_Movement_Music
 # 326 "data/maps/CitrusIsland/scripts.pory"
 	waitmovement 0
 # 327 "data/maps/CitrusIsland/scripts.pory"
-	msgbox CitrusIsland_Pokedex_Text_16
+	applymovement LOCALID_CITRUSISLAND_DNIPRO, Common_Movement_Delay48
 # 328 "data/maps/CitrusIsland/scripts.pory"
-	closemessage
+	waitmovement 0
 # 329 "data/maps/CitrusIsland/scripts.pory"
-	applymovement LOCALID_CITRUSISLAND_SOLDIER2, Common_Movement_WalkInPlaceUp
+	msgbox CitrusIsland_Pokedex_Text_16
 # 330 "data/maps/CitrusIsland/scripts.pory"
-	waitmovement 0
-# 331 "data/maps/CitrusIsland/scripts.pory"
-	msgbox CitrusIsland_Pokedex_Text_17
-# 332 "data/maps/CitrusIsland/scripts.pory"
 	closemessage
-# 333 "data/maps/CitrusIsland/scripts.pory"
-	applymovement LOCALID_CITRUSISLAND_DNIPRO, Common_Movement_FaceLeft
-# 334 "data/maps/CitrusIsland/scripts.pory"
+# 331 "data/maps/CitrusIsland/scripts.pory"
+	applymovement LOCALID_CITRUSISLAND_SOLDIER2, Common_Movement_WalkInPlaceUp
+# 332 "data/maps/CitrusIsland/scripts.pory"
 	waitmovement 0
+# 333 "data/maps/CitrusIsland/scripts.pory"
+	msgbox CitrusIsland_Pokedex_Text_17
+# 334 "data/maps/CitrusIsland/scripts.pory"
+	closemessage
 # 335 "data/maps/CitrusIsland/scripts.pory"
-	applymovement LOCALID_CITRUSISLAND_DNIPRO, Common_Movement_Music
+	applymovement LOCALID_CITRUSISLAND_DNIPRO, Common_Movement_FaceLeft
 # 336 "data/maps/CitrusIsland/scripts.pory"
 	waitmovement 0
 # 337 "data/maps/CitrusIsland/scripts.pory"
-	applymovement LOCALID_CITRUSISLAND_DNIPRO, Common_Movement_Delay48
+	applymovement LOCALID_CITRUSISLAND_DNIPRO, Common_Movement_Music
 # 338 "data/maps/CitrusIsland/scripts.pory"
 	waitmovement 0
 # 339 "data/maps/CitrusIsland/scripts.pory"
-	msgbox CitrusIsland_Pokedex_Text_18
+	applymovement LOCALID_CITRUSISLAND_DNIPRO, Common_Movement_Delay48
 # 340 "data/maps/CitrusIsland/scripts.pory"
-	applymovement LOCALID_CITRUSISLAND_SOLDIER1, Common_Movement_WalkInPlaceDown
-# 341 "data/maps/CitrusIsland/scripts.pory"
 	waitmovement 0
+# 341 "data/maps/CitrusIsland/scripts.pory"
+	msgbox CitrusIsland_Pokedex_Text_18
 # 342 "data/maps/CitrusIsland/scripts.pory"
-	msgbox CitrusIsland_Pokedex_Text_19
+	applymovement LOCALID_CITRUSISLAND_SOLDIER1, Common_Movement_WalkInPlaceDown
 # 343 "data/maps/CitrusIsland/scripts.pory"
-	closemessage
+	waitmovement 0
 # 344 "data/maps/CitrusIsland/scripts.pory"
-	trainerbattle_no_intro TRAINER_SP_SOLDIER_ALPHA, CitrusIsland_Pokedex_Text_20
+	msgbox CitrusIsland_Pokedex_Text_19
 # 345 "data/maps/CitrusIsland/scripts.pory"
+	closemessage
+# 346 "data/maps/CitrusIsland/scripts.pory"
+	setflag B_FLAG_NO_WHITEOUT
+# 347 "data/maps/CitrusIsland/scripts.pory"
+	trainerbattle_no_intro TRAINER_SP_SOLDIER_ALPHA, CitrusIsland_Pokedex_Text_20
+# 348 "data/maps/CitrusIsland/scripts.pory"
+	clearflag B_FLAG_NO_WHITEOUT
+# 349 "data/maps/CitrusIsland/scripts.pory"
 	call CitrusIsland_SoldierDefeated
 	end
 
 CitrusIsland_Pokedex_2:
-# 228 "data/maps/CitrusIsland/scripts.pory"
+# 229 "data/maps/CitrusIsland/scripts.pory"
 	msgbox CitrusIsland_Pokedex_Text_6
 	goto CitrusIsland_Pokedex_1
 
 
 CitrusIsland_SoldierDefeated::
-# 350 "data/maps/CitrusIsland/scripts.pory"
-	playbgm MUS_ENCOUNTER_AQUA, FALSE
-# 351 "data/maps/CitrusIsland/scripts.pory"
-	applymovement LOCALID_CITRUSISLAND_DNIPRO, Common_Movement_Angry
-# 352 "data/maps/CitrusIsland/scripts.pory"
-	waitmovement 0
-# 353 "data/maps/CitrusIsland/scripts.pory"
-	applymovement LOCALID_CITRUSISLAND_DNIPRO, Common_Movement_Delay48
 # 354 "data/maps/CitrusIsland/scripts.pory"
-	waitmovement 0
+	playbgm MUS_AW2_405, FALSE
 # 355 "data/maps/CitrusIsland/scripts.pory"
-	applymovement LOCALID_CITRUSISLAND_DNIPRO, Common_Movement_WalkInPlaceLeft
+	applymovement LOCALID_CITRUSISLAND_DNIPRO, Common_Movement_Angry
 # 356 "data/maps/CitrusIsland/scripts.pory"
 	waitmovement 0
 # 357 "data/maps/CitrusIsland/scripts.pory"
-	msgbox CitrusIsland_SoldierDefeated_Text_0
+	applymovement LOCALID_CITRUSISLAND_DNIPRO, Common_Movement_Delay48
 # 358 "data/maps/CitrusIsland/scripts.pory"
-	closemessage
+	waitmovement 0
 # 359 "data/maps/CitrusIsland/scripts.pory"
-	applymovement LOCALID_CITRUSISLAND_DNIPRO, Common_Movement_Music
+	applymovement LOCALID_CITRUSISLAND_DNIPRO, Common_Movement_WalkInPlaceLeft
 # 360 "data/maps/CitrusIsland/scripts.pory"
 	waitmovement 0
 # 361 "data/maps/CitrusIsland/scripts.pory"
-	applymovement LOCALID_CITRUSISLAND_DNIPRO, Common_Movement_Delay48
+	msgbox CitrusIsland_SoldierDefeated_Text_0
 # 362 "data/maps/CitrusIsland/scripts.pory"
-	waitmovement 0
-# 363 "data/maps/CitrusIsland/scripts.pory"
-	msgbox CitrusIsland_SoldierDefeated_Text_1
-# 364 "data/maps/CitrusIsland/scripts.pory"
 	closemessage
+# 363 "data/maps/CitrusIsland/scripts.pory"
+	applymovement LOCALID_CITRUSISLAND_DNIPRO, Common_Movement_Music
+# 364 "data/maps/CitrusIsland/scripts.pory"
+	waitmovement 0
 # 365 "data/maps/CitrusIsland/scripts.pory"
-	applymovement LOCALID_CITRUSISLAND_MITSURU, Common_Movement_WalkInPlaceUp
+	applymovement LOCALID_CITRUSISLAND_DNIPRO, Common_Movement_Delay48
 # 366 "data/maps/CitrusIsland/scripts.pory"
 	waitmovement 0
 # 367 "data/maps/CitrusIsland/scripts.pory"
-	applymovement LOCALID_CITRUSISLAND_MITSURU, Common_Movement_Delay48
+	msgbox CitrusIsland_SoldierDefeated_Text_1
 # 368 "data/maps/CitrusIsland/scripts.pory"
-	waitmovement 0
+	closemessage
 # 369 "data/maps/CitrusIsland/scripts.pory"
-	msgbox CitrusIsland_SoldierDefeated_Text_2
+	applymovement LOCALID_CITRUSISLAND_MITSURU, Common_Movement_WalkInPlaceUp
 # 370 "data/maps/CitrusIsland/scripts.pory"
-	closemessage
+	waitmovement 0
 # 371 "data/maps/CitrusIsland/scripts.pory"
-	playse SE_RG_BALL_CLICK
+	applymovement LOCALID_CITRUSISLAND_MITSURU, Common_Movement_Delay48
 # 372 "data/maps/CitrusIsland/scripts.pory"
-	waitse
+	waitmovement 0
 # 373 "data/maps/CitrusIsland/scripts.pory"
-	playmoncry SPECIES_GALLADE, CRY_MODE_NORMAL
+	msgbox CitrusIsland_SoldierDefeated_Text_2
 # 374 "data/maps/CitrusIsland/scripts.pory"
-	waitmoncry
+	closemessage
 # 375 "data/maps/CitrusIsland/scripts.pory"
-	msgbox CitrusIsland_SoldierDefeated_Text_3
+	playse SE_RG_BALL_CLICK
 # 376 "data/maps/CitrusIsland/scripts.pory"
-	closemessage
+	waitse
 # 377 "data/maps/CitrusIsland/scripts.pory"
-	applymovement LOCALID_CITRUSISLAND_DNIPRO, CitrusIsland_Movement_Masamune
+	playmoncry SPECIES_GALLADE, CRY_MODE_NORMAL
 # 378 "data/maps/CitrusIsland/scripts.pory"
-	waitmovement 0
+	waitmoncry
 # 379 "data/maps/CitrusIsland/scripts.pory"
-	applymovement LOCALID_CITRUSISLAND_DNIPRO, Common_Movement_Delay48
+	msgbox CitrusIsland_SoldierDefeated_Text_3
 # 380 "data/maps/CitrusIsland/scripts.pory"
-	waitmovement 0
+	closemessage
 # 381 "data/maps/CitrusIsland/scripts.pory"
-	msgbox CitrusIsland_SoldierDefeated_Text_4
+	applymovement LOCALID_CITRUSISLAND_DNIPRO, CitrusIsland_Movement_Masamune
 # 382 "data/maps/CitrusIsland/scripts.pory"
-	closemessage
+	waitmovement 0
 # 383 "data/maps/CitrusIsland/scripts.pory"
-	msgbox CitrusIsland_SoldierDefeated_Text_5
+	applymovement LOCALID_CITRUSISLAND_DNIPRO, Common_Movement_Delay48
 # 384 "data/maps/CitrusIsland/scripts.pory"
-	closemessage
+	waitmovement 0
 # 385 "data/maps/CitrusIsland/scripts.pory"
-	msgbox CitrusIsland_SoldierDefeated_Text_6
+	msgbox CitrusIsland_SoldierDefeated_Text_4
 # 386 "data/maps/CitrusIsland/scripts.pory"
 	closemessage
 # 387 "data/maps/CitrusIsland/scripts.pory"
-	msgbox CitrusIsland_SoldierDefeated_Text_7
+	msgbox CitrusIsland_SoldierDefeated_Text_5
 # 388 "data/maps/CitrusIsland/scripts.pory"
 	closemessage
 # 389 "data/maps/CitrusIsland/scripts.pory"
-	applymovement LOCALID_CITRUSISLAND_DNIPRO, Common_Movement_Angry
+	msgbox CitrusIsland_SoldierDefeated_Text_6
 # 390 "data/maps/CitrusIsland/scripts.pory"
-	waitmovement 0
-# 391 "data/maps/CitrusIsland/scripts.pory"
-	applymovement LOCALID_CITRUSISLAND_DNIPRO, Common_Movement_Delay48
-# 392 "data/maps/CitrusIsland/scripts.pory"
-	waitmovement 0
-# 393 "data/maps/CitrusIsland/scripts.pory"
-	msgbox CitrusIsland_SoldierDefeated_Text_8
-# 394 "data/maps/CitrusIsland/scripts.pory"
 	closemessage
+# 391 "data/maps/CitrusIsland/scripts.pory"
+	msgbox CitrusIsland_SoldierDefeated_Text_7
+# 392 "data/maps/CitrusIsland/scripts.pory"
+	closemessage
+# 393 "data/maps/CitrusIsland/scripts.pory"
+	applymovement LOCALID_CITRUSISLAND_DNIPRO, Common_Movement_Angry
+# 394 "data/maps/CitrusIsland/scripts.pory"
+	waitmovement 0
 # 395 "data/maps/CitrusIsland/scripts.pory"
-	applymovement LOCALID_CITRUSISLAND_RAKAN, Common_Movement_WalkInPlaceRight
+	applymovement LOCALID_CITRUSISLAND_DNIPRO, Common_Movement_Delay48
 # 396 "data/maps/CitrusIsland/scripts.pory"
 	waitmovement 0
 # 397 "data/maps/CitrusIsland/scripts.pory"
-	applymovement LOCALID_CITRUSISLAND_RAKAN, Common_Movement_Delay48
+	msgbox CitrusIsland_SoldierDefeated_Text_8
 # 398 "data/maps/CitrusIsland/scripts.pory"
-	msgbox CitrusIsland_SoldierDefeated_Text_9
-# 399 "data/maps/CitrusIsland/scripts.pory"
 	closemessage
+# 399 "data/maps/CitrusIsland/scripts.pory"
+	applymovement LOCALID_CITRUSISLAND_RAKAN, Common_Movement_WalkInPlaceRight
 # 400 "data/maps/CitrusIsland/scripts.pory"
-	playse SE_RG_BALL_CLICK
+	waitmovement 0
 # 401 "data/maps/CitrusIsland/scripts.pory"
-	waitse
+	applymovement LOCALID_CITRUSISLAND_RAKAN, Common_Movement_Delay48
 # 402 "data/maps/CitrusIsland/scripts.pory"
-	playmoncry SPECIES_FLYGON, CRY_MODE_NORMAL
+	msgbox CitrusIsland_SoldierDefeated_Text_9
 # 403 "data/maps/CitrusIsland/scripts.pory"
-	waitmoncry
+	closemessage
 # 404 "data/maps/CitrusIsland/scripts.pory"
 	playse SE_RG_BALL_CLICK
 # 405 "data/maps/CitrusIsland/scripts.pory"
 	waitse
 # 406 "data/maps/CitrusIsland/scripts.pory"
-	playmoncry SPECIES_XATU, CRY_MODE_NORMAL
+	playmoncry SPECIES_FLYGON, CRY_MODE_NORMAL
 # 407 "data/maps/CitrusIsland/scripts.pory"
 	waitmoncry
 # 408 "data/maps/CitrusIsland/scripts.pory"
-	msgbox CitrusIsland_SoldierDefeated_Text_10
+	playse SE_RG_BALL_CLICK
 # 409 "data/maps/CitrusIsland/scripts.pory"
-	closemessage
+	waitse
 # 410 "data/maps/CitrusIsland/scripts.pory"
+	playmoncry SPECIES_XATU, CRY_MODE_NORMAL
+# 411 "data/maps/CitrusIsland/scripts.pory"
+	waitmoncry
+# 412 "data/maps/CitrusIsland/scripts.pory"
+	msgbox CitrusIsland_SoldierDefeated_Text_10
+# 413 "data/maps/CitrusIsland/scripts.pory"
+	closemessage
+# 414 "data/maps/CitrusIsland/scripts.pory"
 	call CitrusIsland_RivalFlyAway
 	return
 
 
 CitrusIsland_RivalFlyAway::
-# 414 "data/maps/CitrusIsland/scripts.pory"
-	applymovement LOCALID_CITRUSISLAND_RIVAL, Common_Movement_WalkInPlaceDown
-# 415 "data/maps/CitrusIsland/scripts.pory"
-	waitmovement 0
-# 416 "data/maps/CitrusIsland/scripts.pory"
-	delay 50
-# 417 "data/maps/CitrusIsland/scripts.pory"
-	setfieldeffectargument 0, 1
 # 418 "data/maps/CitrusIsland/scripts.pory"
-	dofieldeffect FLDEFF_NPCFLY_OUT
+	delay 50
 # 419 "data/maps/CitrusIsland/scripts.pory"
-	delay 15
+	setfieldeffectargument 0, 1
 # 420 "data/maps/CitrusIsland/scripts.pory"
-	removeobject LOCALID_CITRUSISLAND_RIVAL
+	dofieldeffect FLDEFF_NPCFLY_OUT
 # 421 "data/maps/CitrusIsland/scripts.pory"
-	waitfieldeffect FLDEFF_NPCFLY_OUT
+	delay 15
 # 422 "data/maps/CitrusIsland/scripts.pory"
-	applymovement LOCALID_CITRUSISLAND_DNIPRO, Common_Movement_Angry
+	removeobject LOCALID_CITRUSISLAND_RIVAL
 # 423 "data/maps/CitrusIsland/scripts.pory"
-	waitmovement 0
+	waitfieldeffect FLDEFF_NPCFLY_OUT
 # 424 "data/maps/CitrusIsland/scripts.pory"
-	applymovement LOCALID_CITRUSISLAND_DNIPRO, Common_Movement_Delay48
+	applymovement LOCALID_CITRUSISLAND_DNIPRO, Common_Movement_Angry
 # 425 "data/maps/CitrusIsland/scripts.pory"
 	waitmovement 0
 # 426 "data/maps/CitrusIsland/scripts.pory"
-	msgbox CitrusIsland_RivalFlyAway_Text_0
+	applymovement LOCALID_CITRUSISLAND_DNIPRO, Common_Movement_Delay48
 # 427 "data/maps/CitrusIsland/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_FaceDown
-# 428 "data/maps/CitrusIsland/scripts.pory"
 	waitmovement 0
+# 428 "data/maps/CitrusIsland/scripts.pory"
+	msgbox CitrusIsland_RivalFlyAway_Text_0
 # 429 "data/maps/CitrusIsland/scripts.pory"
-	delay 50
+	applymovement LOCALID_PLAYER, Common_Movement_FaceDown
 # 430 "data/maps/CitrusIsland/scripts.pory"
-	setfieldeffectargument 0, 1
+	waitmovement 0
 # 431 "data/maps/CitrusIsland/scripts.pory"
-	dofieldeffect FLDEFF_NPCFLY_OUT
+	delay 50
 # 432 "data/maps/CitrusIsland/scripts.pory"
-	delay 15
+	setfieldeffectargument 0, 1
 # 433 "data/maps/CitrusIsland/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_Invisible
+	dofieldeffect FLDEFF_NPCFLY_OUT
 # 434 "data/maps/CitrusIsland/scripts.pory"
-	warp MAP_ROUTE1, 20, 39
+	delay 15
 # 435 "data/maps/CitrusIsland/scripts.pory"
-	waitstate
+	setvar VAR_RIVALS_STATE, 1
 # 436 "data/maps/CitrusIsland/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_Invisible
+# 437 "data/maps/CitrusIsland/scripts.pory"
+	warp MAP_ROUTE1, 14, 33
+# 438 "data/maps/CitrusIsland/scripts.pory"
+	waitstate
+# 439 "data/maps/CitrusIsland/scripts.pory"
 	release
 	end
 
 
-# 440 "data/maps/CitrusIsland/scripts.pory"
-CitrusIsland_Movement_EnterScene1:
-# 441 "data/maps/CitrusIsland/scripts.pory"
-	walk_fast_left
-# 441 "data/maps/CitrusIsland/scripts.pory"
-	walk_fast_left
-# 441 "data/maps/CitrusIsland/scripts.pory"
-	walk_fast_left
-# 441 "data/maps/CitrusIsland/scripts.pory"
-	walk_fast_left
-# 441 "data/maps/CitrusIsland/scripts.pory"
-	walk_fast_left
-# 441 "data/maps/CitrusIsland/scripts.pory"
-	walk_fast_left
-# 442 "data/maps/CitrusIsland/scripts.pory"
-	walk_fast_down
-# 442 "data/maps/CitrusIsland/scripts.pory"
-	walk_fast_down
-# 442 "data/maps/CitrusIsland/scripts.pory"
-	walk_fast_down
-# 442 "data/maps/CitrusIsland/scripts.pory"
-	walk_fast_down
-# 442 "data/maps/CitrusIsland/scripts.pory"
-	walk_fast_down
-# 442 "data/maps/CitrusIsland/scripts.pory"
-	walk_fast_down
-# 442 "data/maps/CitrusIsland/scripts.pory"
-	walk_fast_down
 # 443 "data/maps/CitrusIsland/scripts.pory"
-	step_end
-
+CitrusIsland_Movement_EnterScene1:
+# 444 "data/maps/CitrusIsland/scripts.pory"
+	walk_fast_left
+# 444 "data/maps/CitrusIsland/scripts.pory"
+	walk_fast_left
+# 444 "data/maps/CitrusIsland/scripts.pory"
+	walk_fast_left
+# 444 "data/maps/CitrusIsland/scripts.pory"
+	walk_fast_left
+# 444 "data/maps/CitrusIsland/scripts.pory"
+	walk_fast_left
+# 444 "data/maps/CitrusIsland/scripts.pory"
+	walk_fast_left
+# 445 "data/maps/CitrusIsland/scripts.pory"
+	walk_fast_down
+# 445 "data/maps/CitrusIsland/scripts.pory"
+	walk_fast_down
+# 445 "data/maps/CitrusIsland/scripts.pory"
+	walk_fast_down
+# 445 "data/maps/CitrusIsland/scripts.pory"
+	walk_fast_down
+# 445 "data/maps/CitrusIsland/scripts.pory"
+	walk_fast_down
+# 445 "data/maps/CitrusIsland/scripts.pory"
+	walk_fast_down
+# 445 "data/maps/CitrusIsland/scripts.pory"
+	walk_fast_down
 # 446 "data/maps/CitrusIsland/scripts.pory"
-CitrusIsland_Movement_EnterScene2:
-# 447 "data/maps/CitrusIsland/scripts.pory"
-	walk_fast_left
-# 447 "data/maps/CitrusIsland/scripts.pory"
-	walk_fast_left
-# 447 "data/maps/CitrusIsland/scripts.pory"
-	walk_fast_left
-# 447 "data/maps/CitrusIsland/scripts.pory"
-	walk_fast_left
-# 447 "data/maps/CitrusIsland/scripts.pory"
-	walk_fast_left
-# 447 "data/maps/CitrusIsland/scripts.pory"
-	walk_fast_left
-# 448 "data/maps/CitrusIsland/scripts.pory"
-	walk_fast_down
-# 448 "data/maps/CitrusIsland/scripts.pory"
-	walk_fast_down
-# 448 "data/maps/CitrusIsland/scripts.pory"
-	walk_fast_down
-# 448 "data/maps/CitrusIsland/scripts.pory"
-	walk_fast_down
-# 448 "data/maps/CitrusIsland/scripts.pory"
-	walk_fast_down
-# 448 "data/maps/CitrusIsland/scripts.pory"
-	walk_fast_down
+	step_end
+
 # 449 "data/maps/CitrusIsland/scripts.pory"
-	step_end
-
+CitrusIsland_Movement_EnterScene2:
+# 450 "data/maps/CitrusIsland/scripts.pory"
+	walk_fast_left
+# 450 "data/maps/CitrusIsland/scripts.pory"
+	walk_fast_left
+# 450 "data/maps/CitrusIsland/scripts.pory"
+	walk_fast_left
+# 450 "data/maps/CitrusIsland/scripts.pory"
+	walk_fast_left
+# 450 "data/maps/CitrusIsland/scripts.pory"
+	walk_fast_left
+# 450 "data/maps/CitrusIsland/scripts.pory"
+	walk_fast_left
+# 451 "data/maps/CitrusIsland/scripts.pory"
+	walk_fast_down
+# 451 "data/maps/CitrusIsland/scripts.pory"
+	walk_fast_down
+# 451 "data/maps/CitrusIsland/scripts.pory"
+	walk_fast_down
+# 451 "data/maps/CitrusIsland/scripts.pory"
+	walk_fast_down
+# 451 "data/maps/CitrusIsland/scripts.pory"
+	walk_fast_down
+# 451 "data/maps/CitrusIsland/scripts.pory"
+	walk_fast_down
 # 452 "data/maps/CitrusIsland/scripts.pory"
+	step_end
+
+# 455 "data/maps/CitrusIsland/scripts.pory"
 CitrusIsland_Movement_WalkToPlayer:
-# 453 "data/maps/CitrusIsland/scripts.pory"
+# 456 "data/maps/CitrusIsland/scripts.pory"
 	walk_left
-# 454 "data/maps/CitrusIsland/scripts.pory"
-	step_end
-
 # 457 "data/maps/CitrusIsland/scripts.pory"
-CitrusIsland_Movement_MoveToRakan:
-# 458 "data/maps/CitrusIsland/scripts.pory"
-	walk_down
-# 459 "data/maps/CitrusIsland/scripts.pory"
-	walk_left
+	step_end
+
 # 460 "data/maps/CitrusIsland/scripts.pory"
-	walk_in_place_left
+CitrusIsland_Movement_MoveToRakan:
 # 461 "data/maps/CitrusIsland/scripts.pory"
-	step_end
-
-# 464 "data/maps/CitrusIsland/scripts.pory"
-CitrusIsland_Movement_MoveToZelkova:
-# 465 "data/maps/CitrusIsland/scripts.pory"
 	walk_down
-# 466 "data/maps/CitrusIsland/scripts.pory"
-	walk_right
-# 466 "data/maps/CitrusIsland/scripts.pory"
-	walk_right
-# 466 "data/maps/CitrusIsland/scripts.pory"
-	walk_right
-# 467 "data/maps/CitrusIsland/scripts.pory"
-	walk_up
-# 467 "data/maps/CitrusIsland/scripts.pory"
-	walk_up
-# 468 "data/maps/CitrusIsland/scripts.pory"
-	face_left
-# 469 "data/maps/CitrusIsland/scripts.pory"
+# 462 "data/maps/CitrusIsland/scripts.pory"
+	walk_left
+# 463 "data/maps/CitrusIsland/scripts.pory"
 	walk_in_place_left
+# 464 "data/maps/CitrusIsland/scripts.pory"
+	step_end
+
+# 467 "data/maps/CitrusIsland/scripts.pory"
+CitrusIsland_Movement_MoveToZelkova:
+# 468 "data/maps/CitrusIsland/scripts.pory"
+	walk_down
+# 469 "data/maps/CitrusIsland/scripts.pory"
+	walk_right
+# 469 "data/maps/CitrusIsland/scripts.pory"
+	walk_right
+# 469 "data/maps/CitrusIsland/scripts.pory"
+	walk_right
 # 470 "data/maps/CitrusIsland/scripts.pory"
-	step_end
-
-# 473 "data/maps/CitrusIsland/scripts.pory"
-CitrusIsland_Movement_WalkToPlayer2:
-# 474 "data/maps/CitrusIsland/scripts.pory"
-	walk_right
-# 474 "data/maps/CitrusIsland/scripts.pory"
-	walk_right
-# 475 "data/maps/CitrusIsland/scripts.pory"
 	walk_up
-# 475 "data/maps/CitrusIsland/scripts.pory"
+# 470 "data/maps/CitrusIsland/scripts.pory"
 	walk_up
-# 476 "data/maps/CitrusIsland/scripts.pory"
-	walk_left
-# 477 "data/maps/CitrusIsland/scripts.pory"
+# 471 "data/maps/CitrusIsland/scripts.pory"
 	face_left
+# 472 "data/maps/CitrusIsland/scripts.pory"
+	walk_in_place_left
+# 473 "data/maps/CitrusIsland/scripts.pory"
+	step_end
+
+# 476 "data/maps/CitrusIsland/scripts.pory"
+CitrusIsland_Movement_WalkToPlayer2:
+# 477 "data/maps/CitrusIsland/scripts.pory"
+	walk_right
+# 477 "data/maps/CitrusIsland/scripts.pory"
+	walk_right
 # 478 "data/maps/CitrusIsland/scripts.pory"
-	step_end
-
+	walk_up
+# 478 "data/maps/CitrusIsland/scripts.pory"
+	walk_up
+# 479 "data/maps/CitrusIsland/scripts.pory"
+	walk_left
+# 480 "data/maps/CitrusIsland/scripts.pory"
+	face_left
 # 481 "data/maps/CitrusIsland/scripts.pory"
+	step_end
+
+# 484 "data/maps/CitrusIsland/scripts.pory"
 CitrusIsland_Movement_ARCShip:
-# 482 "data/maps/CitrusIsland/scripts.pory"
+# 485 "data/maps/CitrusIsland/scripts.pory"
 	walk_fast_left
-# 482 "data/maps/CitrusIsland/scripts.pory"
+# 485 "data/maps/CitrusIsland/scripts.pory"
 	walk_fast_left
-# 482 "data/maps/CitrusIsland/scripts.pory"
+# 485 "data/maps/CitrusIsland/scripts.pory"
 	walk_fast_left
-# 483 "data/maps/CitrusIsland/scripts.pory"
-	step_end
-
 # 486 "data/maps/CitrusIsland/scripts.pory"
-CitrusIsland_Movement_DniproShip:
-# 487 "data/maps/CitrusIsland/scripts.pory"
-	set_visible
-# 488 "data/maps/CitrusIsland/scripts.pory"
-	jump_left
-# 489 "data/maps/CitrusIsland/scripts.pory"
-	walk_left
-# 489 "data/maps/CitrusIsland/scripts.pory"
-	walk_left
-# 489 "data/maps/CitrusIsland/scripts.pory"
-	walk_left
-# 489 "data/maps/CitrusIsland/scripts.pory"
-	walk_left
-# 490 "data/maps/CitrusIsland/scripts.pory"
 	step_end
 
-# 493 "data/maps/CitrusIsland/scripts.pory"
-CitrusIsland_Movement_Soldier1:
-# 494 "data/maps/CitrusIsland/scripts.pory"
+# 489 "data/maps/CitrusIsland/scripts.pory"
+CitrusIsland_Movement_DniproShip:
+# 490 "data/maps/CitrusIsland/scripts.pory"
 	set_visible
-# 495 "data/maps/CitrusIsland/scripts.pory"
+# 491 "data/maps/CitrusIsland/scripts.pory"
 	jump_left
-# 496 "data/maps/CitrusIsland/scripts.pory"
+# 492 "data/maps/CitrusIsland/scripts.pory"
 	walk_left
-# 496 "data/maps/CitrusIsland/scripts.pory"
+# 492 "data/maps/CitrusIsland/scripts.pory"
 	walk_left
-# 496 "data/maps/CitrusIsland/scripts.pory"
+# 492 "data/maps/CitrusIsland/scripts.pory"
 	walk_left
-# 496 "data/maps/CitrusIsland/scripts.pory"
+# 492 "data/maps/CitrusIsland/scripts.pory"
 	walk_left
+# 493 "data/maps/CitrusIsland/scripts.pory"
+	step_end
+
+# 496 "data/maps/CitrusIsland/scripts.pory"
+CitrusIsland_Movement_Soldier1:
 # 497 "data/maps/CitrusIsland/scripts.pory"
-	walk_up
-# 497 "data/maps/CitrusIsland/scripts.pory"
-	walk_up
+	set_visible
 # 498 "data/maps/CitrusIsland/scripts.pory"
-	walk_left
-# 498 "data/maps/CitrusIsland/scripts.pory"
+	jump_left
+# 499 "data/maps/CitrusIsland/scripts.pory"
 	walk_left
 # 499 "data/maps/CitrusIsland/scripts.pory"
-	walk_down
+	walk_left
+# 499 "data/maps/CitrusIsland/scripts.pory"
+	walk_left
+# 499 "data/maps/CitrusIsland/scripts.pory"
+	walk_left
 # 500 "data/maps/CitrusIsland/scripts.pory"
+	walk_up
+# 500 "data/maps/CitrusIsland/scripts.pory"
+	walk_up
+# 501 "data/maps/CitrusIsland/scripts.pory"
+	walk_left
+# 501 "data/maps/CitrusIsland/scripts.pory"
+	walk_left
+# 502 "data/maps/CitrusIsland/scripts.pory"
+	walk_down
+# 503 "data/maps/CitrusIsland/scripts.pory"
 	step_end
 
-# 503 "data/maps/CitrusIsland/scripts.pory"
-CitrusIsland_Movement_Soldier2:
-# 504 "data/maps/CitrusIsland/scripts.pory"
-	set_visible
-# 505 "data/maps/CitrusIsland/scripts.pory"
-	jump_left
 # 506 "data/maps/CitrusIsland/scripts.pory"
-	walk_down
+CitrusIsland_Movement_Soldier2:
 # 507 "data/maps/CitrusIsland/scripts.pory"
-	walk_left
-# 507 "data/maps/CitrusIsland/scripts.pory"
-	walk_left
-# 507 "data/maps/CitrusIsland/scripts.pory"
-	walk_left
-# 507 "data/maps/CitrusIsland/scripts.pory"
-	walk_left
+	set_visible
 # 508 "data/maps/CitrusIsland/scripts.pory"
+	jump_left
+# 509 "data/maps/CitrusIsland/scripts.pory"
 	walk_down
-# 509 "data/maps/CitrusIsland/scripts.pory"
-	walk_left
-# 509 "data/maps/CitrusIsland/scripts.pory"
+# 510 "data/maps/CitrusIsland/scripts.pory"
 	walk_left
 # 510 "data/maps/CitrusIsland/scripts.pory"
-	face_up
+	walk_left
+# 510 "data/maps/CitrusIsland/scripts.pory"
+	walk_left
+# 510 "data/maps/CitrusIsland/scripts.pory"
+	walk_left
 # 511 "data/maps/CitrusIsland/scripts.pory"
+	walk_down
+# 512 "data/maps/CitrusIsland/scripts.pory"
+	walk_left
+# 512 "data/maps/CitrusIsland/scripts.pory"
+	walk_left
+# 513 "data/maps/CitrusIsland/scripts.pory"
+	face_up
+# 514 "data/maps/CitrusIsland/scripts.pory"
 	step_end
 
-# 514 "data/maps/CitrusIsland/scripts.pory"
-CitrusIsland_Movement_Masamune:
-# 515 "data/maps/CitrusIsland/scripts.pory"
-	emote_exclamation_mark
-# 516 "data/maps/CitrusIsland/scripts.pory"
-	disable_jump_landing_ground_effect
 # 517 "data/maps/CitrusIsland/scripts.pory"
-	jump_in_place_down
+CitrusIsland_Movement_Masamune:
 # 518 "data/maps/CitrusIsland/scripts.pory"
-	unlock_facing_direction
+	emote_exclamation_mark
 # 519 "data/maps/CitrusIsland/scripts.pory"
-	unlock_anim
+	disable_jump_landing_ground_effect
 # 520 "data/maps/CitrusIsland/scripts.pory"
-	face_down
+	jump_in_place_down
 # 521 "data/maps/CitrusIsland/scripts.pory"
+	unlock_facing_direction
+# 522 "data/maps/CitrusIsland/scripts.pory"
+	unlock_anim
+# 523 "data/maps/CitrusIsland/scripts.pory"
+	face_down
+# 524 "data/maps/CitrusIsland/scripts.pory"
 	step_end
 
 CitrusIsland_Samurai_Text_0:
@@ -1162,57 +1168,57 @@ CitrusIsland_StarterEvent_Text_0:
 	.string "Give those two their POKéMON.$"
 
 CitrusIsland_StarterEvent_Text_1:
-# 133 "data/maps/CitrusIsland/scripts.pory"
+# 134 "data/maps/CitrusIsland/scripts.pory"
 	.string "PROF. ZELKOVA: You are right,\n"
 	.string "PEARL HEIR, sir. \p"
 	.string "Let us ignore this… pathetic, sad\n"
 	.string "excuse of a tactician.$"
 
 CitrusIsland_StarterEvent_Text_2:
-# 152 "data/maps/CitrusIsland/scripts.pory"
+# 153 "data/maps/CitrusIsland/scripts.pory"
 	.string "PROF. ZELKOVA: My lieges. I have three\n"
 	.string "POKéMON for you to choose from. Please,\l"
 	.string "decide which of you will choose first.$"
 
 CitrusIsland_StarterEvent_Text_3:
-# 157 "data/maps/CitrusIsland/scripts.pory"
+# 158 "data/maps/CitrusIsland/scripts.pory"
 	.string "SHIN'YA: Anegimi, you can choose first!$"
 
 CitrusIsland_StarterEvent_Text_4:
-# 159 "data/maps/CitrusIsland/scripts.pory"
+# 160 "data/maps/CitrusIsland/scripts.pory"
 	.string "FUUKA: Why don't you go first, anigimi?$"
 
 CitrusIsland_StarterEvent_Text_5:
-# 166 "data/maps/CitrusIsland/scripts.pory"
+# 167 "data/maps/CitrusIsland/scripts.pory"
 	.string "MITSURU: Hey, 'cuz, why don't ya give\n"
 	.string "it a nickname?$"
 
 CitrusIsland_Pokedex_Text_0:
-# 184 "data/maps/CitrusIsland/scripts.pory"
+# 185 "data/maps/CitrusIsland/scripts.pory"
 	.string "RAKAN: My liege, did you choose your\n"
 	.string "pseudonym for the CONQUEST?$"
 
 CitrusIsland_Pokedex_Text_1:
-# 190 "data/maps/CitrusIsland/scripts.pory"
+# 191 "data/maps/CitrusIsland/scripts.pory"
 	.string "{PLAYER}? That's a great name.\n"
 	.string "Here are your TRAINER PASS.$"
 
 CitrusIsland_Pokedex_Text_2:
-# 192 "data/maps/CitrusIsland/scripts.pory"
+# 193 "data/maps/CitrusIsland/scripts.pory"
 	.string "{PLAYER} received the TRAINER PASS!$"
 
 CitrusIsland_Pokedex_Text_3:
-# 207 "data/maps/CitrusIsland/scripts.pory"
+# 208 "data/maps/CitrusIsland/scripts.pory"
 	.string "PROF. ZELKOVA: Well, I have a POKéDEX\n"
 	.string "to give instead!\p"
 	.string "That will be a lot more useful!$"
 
 CitrusIsland_Pokedex_Text_4:
-# 209 "data/maps/CitrusIsland/scripts.pory"
+# 210 "data/maps/CitrusIsland/scripts.pory"
 	.string "{PLAYER} received the POKéDEX!$"
 
 CitrusIsland_Pokedex_Text_5:
-# 219 "data/maps/CitrusIsland/scripts.pory"
+# 220 "data/maps/CitrusIsland/scripts.pory"
 	.string "RAKAN: Foolish woman, this is not a\n"
 	.string "competition on which of us is the\l"
 	.string "most loyal retainer.\p"
@@ -1221,49 +1227,49 @@ CitrusIsland_Pokedex_Text_5:
 	.string "without a TRAINER PASS?$"
 
 CitrusIsland_Pokedex_Text_6:
-# 228 "data/maps/CitrusIsland/scripts.pory"
+# 229 "data/maps/CitrusIsland/scripts.pory"
 	.string "SHIN'YA: What don't you two understand\n"
 	.string "about calming down?!\p"
 	.string "'Nyway, anegimi!$"
 
 CitrusIsland_Pokedex_Text_7:
-# 230 "data/maps/CitrusIsland/scripts.pory"
+# 231 "data/maps/CitrusIsland/scripts.pory"
 	.string "FUUKA: As MITSURU said, calm down.\n"
 	.string "Stop being so childish.\p"
 	.string "'Nyway, anigimi!$"
 
 CitrusIsland_Pokedex_Text_8:
-# 241 "data/maps/CitrusIsland/scripts.pory"
+# 243 "data/maps/CitrusIsland/scripts.pory"
 	.string "Now that we both have a POKéMON, why\n"
 	.string "don't we have a match…$"
 
 CitrusIsland_Pokedex_Text_9:
-# 246 "data/maps/CitrusIsland/scripts.pory"
+# 248 "data/maps/CitrusIsland/scripts.pory"
 	.string "???: Fwahaha! Move it, boys!\n"
-	.string "Get off the damn boat!$"
+	.string "Get off the damn ship, NOW!$"
 
 CitrusIsland_Pokedex_Text_10:
-# 273 "data/maps/CitrusIsland/scripts.pory"
+# 275 "data/maps/CitrusIsland/scripts.pory"
 	.string "PROF. ZELKOVA: The ARC…! But I made sure\n"
 	.string "to cover my steps while coming here…!$"
 
 CitrusIsland_Pokedex_Text_11:
-# 278 "data/maps/CitrusIsland/scripts.pory"
+# 280 "data/maps/CitrusIsland/scripts.pory"
 	.string "???: Heh! Didn't hide 'em good enough,\n"
 	.string "sweetheart.$"
 
 CitrusIsland_Pokedex_Text_12:
-# 286 "data/maps/CitrusIsland/scripts.pory"
+# 288 "data/maps/CitrusIsland/scripts.pory"
 	.string "PROF. ZELKOVA: GENERAL DNIPRO!$"
 
 CitrusIsland_Pokedex_Text_13:
-# 292 "data/maps/CitrusIsland/scripts.pory"
+# 294 "data/maps/CitrusIsland/scripts.pory"
 	.string "GEN. DNIPRO: That's right, lady.\n"
 	.string "GENERAL DNIPRO of the ALLIED REGIONS\l"
 	.string "COALITION, LANDORUS PLATOON's leader!$"
 
 CitrusIsland_Pokedex_Text_14:
-# 296 "data/maps/CitrusIsland/scripts.pory"
+# 298 "data/maps/CitrusIsland/scripts.pory"
 	.string "GEN. DNIPRO: 'Ya oughta know better\n"
 	.string "than this, y'know?\p"
 	.string "Good kids don't disobey. If they're\n"
@@ -1271,14 +1277,14 @@ CitrusIsland_Pokedex_Text_14:
 	.string "they don't leave, partner.$"
 
 CitrusIsland_Pokedex_Text_15:
-# 319 "data/maps/CitrusIsland/scripts.pory"
+# 321 "data/maps/CitrusIsland/scripts.pory"
 	.string "PROF. ZELKOVA: They have done nothing\n"
 	.string "wrong, GENERAL!\p"
 	.string "Why should two innocent kids\n"
 	.string "pay for their parents' mistakes?$"
 
 CitrusIsland_Pokedex_Text_16:
-# 327 "data/maps/CitrusIsland/scripts.pory"
+# 329 "data/maps/CitrusIsland/scripts.pory"
 	.string "GEN. DNIPRO: Kids? Fwahaha! Didn't take\n"
 	.string "'ya for a comedian. Love me a funny lady.\n"
 	.string "'Nyway. They knew the deal. Also, innocent?\p"
@@ -1287,12 +1293,12 @@ CitrusIsland_Pokedex_Text_16:
 	.string "weaklings would somehow take it back.$"
 
 CitrusIsland_Pokedex_Text_17:
-# 331 "data/maps/CitrusIsland/scripts.pory"
+# 333 "data/maps/CitrusIsland/scripts.pory"
 	.string "ARC SOLDIER: GENERAL!\n"
 	.string "This one is resisting arrest!$"
 
 CitrusIsland_Pokedex_Text_18:
-# 339 "data/maps/CitrusIsland/scripts.pory"
+# 341 "data/maps/CitrusIsland/scripts.pory"
 	.string "GEN. DNIPRO: Oh, they got teeth!\n"
 	.string "Bless their heart. They think they can\l"
 	.string "actually fight us.\p"
@@ -1300,15 +1306,15 @@ CitrusIsland_Pokedex_Text_18:
 	.string "ALPHA, BRAVO! Destroy 'em!$"
 
 CitrusIsland_Pokedex_Text_19:
-# 342 "data/maps/CitrusIsland/scripts.pory"
+# 344 "data/maps/CitrusIsland/scripts.pory"
 	.string "ARC SOLDIER: Sir, yessir!$"
 
 CitrusIsland_Pokedex_Text_20:
-# 344 "data/maps/CitrusIsland/scripts.pory"
+# 347 "data/maps/CitrusIsland/scripts.pory"
 	.string "Forgive me, sir!$"
 
 CitrusIsland_SoldierDefeated_Text_0:
-# 357 "data/maps/CitrusIsland/scripts.pory"
+# 361 "data/maps/CitrusIsland/scripts.pory"
 	.string "GEN. DNIPRO: Tch.\n"
 	.string "What the hell was that, huh?\p"
 	.string "How can an elite squad lose against two\n"
@@ -1316,58 +1322,58 @@ CitrusIsland_SoldierDefeated_Text_0:
 	.string "POKéMON they just got a minute ago?!$"
 
 CitrusIsland_SoldierDefeated_Text_1:
-# 363 "data/maps/CitrusIsland/scripts.pory"
+# 367 "data/maps/CitrusIsland/scripts.pory"
 	.string "GEN. DNIPRO: Oh, wait, lemme guess.\n"
 	.string "'Ya two want 'ta see your GENERAL\l"
 	.string "in battle, don'tcha?\p"
 	.string "Fine, y'all want a show? Here!$"
 
 CitrusIsland_SoldierDefeated_Text_2:
-# 369 "data/maps/CitrusIsland/scripts.pory"
+# 373 "data/maps/CitrusIsland/scripts.pory"
 	.string "MITSURU: Easy there, big guy!\n"
 	.string "Pick on someone your size!$"
 
 CitrusIsland_SoldierDefeated_Text_3:
-# 375 "data/maps/CitrusIsland/scripts.pory"
+# 379 "data/maps/CitrusIsland/scripts.pory"
 	.string "GALLADE, use MASAMUNE!$"
 
 CitrusIsland_SoldierDefeated_Text_4:
-# 381 "data/maps/CitrusIsland/scripts.pory"
+# 385 "data/maps/CitrusIsland/scripts.pory"
 	.string "GEN. DNIPRO: 'Ya dare doin' that, PEARL?\n"
 	.string "Hah! If 'ya want to protect 'em,\l"
 	.string "prepare to pay for it!$"
 
 CitrusIsland_SoldierDefeated_Text_5:
-# 383 "data/maps/CitrusIsland/scripts.pory"
+# 387 "data/maps/CitrusIsland/scripts.pory"
 	.string "MITSURU: How about you relax and go\n"
 	.string "back to where you came from, hmm?$"
 
 CitrusIsland_SoldierDefeated_Text_6:
-# 385 "data/maps/CitrusIsland/scripts.pory"
+# 389 "data/maps/CitrusIsland/scripts.pory"
 	.string "GEN. DNIPRO: Mind your tone, boy!\n"
 	.string "The orders came from high above.$"
 
 CitrusIsland_SoldierDefeated_Text_7:
-# 387 "data/maps/CitrusIsland/scripts.pory"
+# 391 "data/maps/CitrusIsland/scripts.pory"
 	.string "MITSURU: Yeah, see, here's the thing.\n"
 	.string "I did not ask, nor do I care.\l"
 	.string "Don't overstep your authority, UNOVAN.$"
 
 CitrusIsland_SoldierDefeated_Text_8:
-# 393 "data/maps/CitrusIsland/scripts.pory"
+# 397 "data/maps/CitrusIsland/scripts.pory"
 	.string "GEN. DNIPRO: 'Ya wanna fight then, boy?\n"
 	.string "'Ya better walk the talk then!$"
 
 CitrusIsland_SoldierDefeated_Text_9:
-# 398 "data/maps/CitrusIsland/scripts.pory"
+# 402 "data/maps/CitrusIsland/scripts.pory"
 	.string "RAKAN: Please do not stand there,\n"
 	.string "my lieges.$"
 
 CitrusIsland_SoldierDefeated_Text_10:
-# 408 "data/maps/CitrusIsland/scripts.pory"
+# 412 "data/maps/CitrusIsland/scripts.pory"
 	.string "FLYGON, XATU, please. Take them to the\n"
 	.string "next step of their journey.$"
 
 CitrusIsland_RivalFlyAway_Text_0:
-# 426 "data/maps/CitrusIsland/scripts.pory"
+# 428 "data/maps/CitrusIsland/scripts.pory"
 	.string "GEN. DNIPRO: You…!$"

@@ -153,7 +153,7 @@ Route103_EventScript_StartMayBattleMudkip::
 # 77 "data/maps/Route103/scripts.pory"
 Route103_EventScript_StartBrendanBattleTreecko::
 # 78 "data/maps/Route103/scripts.pory"
-	trainerbattle_no_intro TRAINER_BRENDAN_ROUTE_103_TREECKO, Route103_Text_BrendanDefeated
+	trainerbattle_no_intro TRAINER_SP_FUUKA_DURIAN_GRA, Route103_Text_BrendanDefeated
 # 79 "data/maps/Route103/scripts.pory"
 	goto Route103_EventScript_AfterBrendanBattle
 # 80 "data/maps/Route103/scripts.pory"
@@ -173,7 +173,7 @@ Route103_EventScript_StartBrendanBattleTorchic::
 # 87 "data/maps/Route103/scripts.pory"
 Route103_EventScript_StartBrendanBattleMudkip::
 # 88 "data/maps/Route103/scripts.pory"
-	trainerbattle_no_intro TRAINER_BRENDAN_ROUTE_103_MUDKIP, Route103_Text_BrendanDefeated
+	trainerbattle_no_intro TRAINER_SP_SHINYA_DURIAN_GRA, Route103_Text_BrendanDefeated
 # 89 "data/maps/Route103/scripts.pory"
 	goto Route103_EventScript_AfterBrendanBattle
 # 90 "data/maps/Route103/scripts.pory"

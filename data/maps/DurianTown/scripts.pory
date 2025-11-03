@@ -1,8 +1,12 @@
 mapscripts DurianTown_MapScripts {
 MAP_SCRIPT_ON_TRANSITION {
+    call(Common_EventScript_SetupRivalGfxId)
 	setflag (FLAG_VISITED_DURIAN_TOWN)
 	end
         }
+MAP_SCRIPT_ON_FRAME_TABLE [
+    VAR_RIVALS_STATE, 3: DurianTown_Rival
+    ]
 }
 
 script DurianTown_GymSign {
@@ -25,7 +29,7 @@ script DurianTown_KurtSign {
 script DurianTown_KurtApprentice {
 	lock
 	faceplayer
-	msgbox ("Are you a POKéMON WIELDER? Then come\n" "buy some handcrafted POKé BALLS!$")
+	msgbox ("Are you a POKéMON TRAINER? Then come\n" "buy some handcrafted POKé BALLS!$")
 	release
 	end
 }
@@ -33,7 +37,122 @@ script DurianTown_KurtApprentice {
 script DurianTown_LittleGirl {
 	lock
 	faceplayer
+    applymovement (LOCALID_DURIANTOWN_LITTLE_GIRL, Common_Movement_Pensive)
+    waitmovement (0)
 	msgbox ("I'm pretending to be a gate guard like\n" "my grandpa when he was younger!$")
 	release
 	end
+}
+
+script DurianTown_Rival {
+	lock
+    applymovement (LOCALID_PLAYER, Common_Movement_FaceRight)
+    waitmovement (0)
+    applymovement (LOCALID_DURIANTOWN_RIVAL, Common_Movement_ExclamationMark)
+    waitmovement (0)
+    applymovement (LOCALID_DURIANTOWN_RIVAL, Common_Movement_WalkInPlaceLeft)
+    waitmovement (0)
+    playbgm (MUS_ENCOUNTER_MAY, TRUE)
+    if (checkplayergender != MALE) {
+        msgbox ("SHIN'YA: Anegimi! I'm guessing you got\n" "the STAMP, right?\p" "I knew you would do it.$")
+        closemessage
+    } else {
+        msgbox("FUUKA: …Oh, anigimi.\n" "You got your STAMP, didn't you?\l" "That's great.$")
+        closemessage
+    }
+    applymovement (LOCALID_DURIANTOWN_RIVAL, Common_Movement_Pensive)
+    waitmovement (0)
+    if (checkplayergender != MALE) {
+        msgbox ("SHIN'YA: Our first step in claiming\n" "back our birthright…$")
+    } else {
+        msgbox("FUUKA: The first step in claiming\n" "the throne we deserve…$")
+    }
+    msgbox ("Anyway. Since we did not have that\n" "match back in CITRUS ISLAND,\l" "why don't we have it right here?$")
+    closemessage
+    applymovement (LOCALID_DURIANTOWN_RIVAL, Common_Movement_Music)
+    waitmovement (0)
+    applymovement (LOCALID_DURIANTOWN_RIVAL, Common_Movement_Delay48)
+    waitmovement (0)
+    if (checkplayergender != MALE) {
+        msgbox ("SHIN'YA: Ready or not, here I come!$")
+    } else {
+        msgbox("FUUKA: Throw your POKéMON out!$")
+    }
+    closemessage
+    if (checkplayergender != MALE) {
+		call (DurianTown_ShinyaFight)
+    } else {
+ 		call (DurianTown_FuukaFight)
+    }
+	release
+	end
+}
+
+script DurianTown_ShinyaFight {
+	switch (var(VAR_STARTER_MON)) {
+        case 0:
+		trainerbattle_no_intro (TRAINER_SP_SHINYA_DURIAN_GRA, format("Oh yeah! Good job, anegimi!$"))
+		call (DurianTown_ShinyaDefeated)
+        case 1:
+		trainerbattle_no_intro (TRAINER_SP_SHINYA_DURIAN_FIR, format("Oh yeah! Good job, anegimi!$"))
+		call (DurianTown_ShinyaDefeated)
+        case 2:
+		trainerbattle_no_intro (TRAINER_SP_SHINYA_DURIAN_WAT, format("Oh yeah! Good job, anegimi!$"))
+		call (DurianTown_ShinyaDefeated)
+    }
+}
+
+script DurianTown_FuukaFight {
+	switch (var(VAR_STARTER_MON)) {
+        case 0:
+		trainerbattle_no_intro (TRAINER_SP_FUUKA_DURIAN_GRA, format("Nice fight.$"))
+		call (DurianTown_FuukaDefeated)
+        case 1:
+		trainerbattle_no_intro (TRAINER_SP_FUUKA_DURIAN_FIR, format("Nice fight.$"))
+		call (DurianTown_FuukaDefeated)
+        case 2:
+		trainerbattle_no_intro (TRAINER_SP_FUUKA_DURIAN_WAT, format("Nice fight.$"))
+		call (DurianTown_FuukaDefeated)
+    }
+}
+
+script DurianTown_ShinyaDefeated {
+    applymovement (LOCALID_PLAYER, Common_Movement_Music)
+    waitmovement (0)
+    msgbox ("SHIN'YA: Good job, good job!\p" "But hey, even if you have got the STAMP\n" "first, I'll destroy the PATH GUARDIANS\l" "harder than you did!\p" "Let's meet in COCONUT CITY, m'kay?$")
+    closemessage
+    applymovement (LOCALID_PLAYER, Common_Movement_WalkDown)
+    applymovement (LOCALID_PLAYER, Common_Movement_FaceUp)
+    waitmovement (0)
+    applymovement (LOCALID_DURIANTOWN_RIVAL, DurianTown_Movement_GoToTemple)
+    waitmovement (0)
+    removeobject(LOCALID_CITRUS_RIVAL)
+    fadedefaultbgm
+    setvar (VAR_RIVALS_STATE, 4)
+    setvar (VAR_ROUTE52_STATE, 1)
+	release
+	end
+}
+
+script DurianTown_FuukaDefeated {
+    applymovement (LOCALID_PLAYER, Common_Movement_Music)
+    waitmovement (0)
+    msgbox ("FUUKA: Nice fight, anigimi. I can only\n" "hope I'll grow this strong, too.\p" "Let's see if I can get the STAMP myself.\n" "Meanwhile, you can go to COCONUT CITY's\l" "temple first.$")
+    closemessage
+    applymovement (LOCALID_PLAYER, Common_Movement_WalkDown)
+    applymovement (LOCALID_PLAYER, Common_Movement_FaceUp)
+    waitmovement (0)
+    applymovement (LOCALID_DURIANTOWN_RIVAL, DurianTown_Movement_GoToTemple)
+    waitmovement (0)
+    removeobject(LOCALID_CITRUS_RIVAL)
+    fadedefaultbgm
+    setvar (VAR_RIVALS_STATE, 4)
+    setvar (VAR_ROUTE52_STATE, 1)   
+    release
+    end
+}
+
+movement DurianTown_Movement_GoToTemple {
+    walk_left
+    walk_up * 2
 }

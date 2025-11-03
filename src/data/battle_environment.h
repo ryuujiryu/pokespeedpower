@@ -30,7 +30,9 @@ const u32 gBattleEnvironmentTiles_Cave[] = INCBIN_U32("graphics/battle_environme
 const u16 gBattleEnvironmentPalette_Cave[] = INCBIN_U16("graphics/battle_environment/cave/palette.gbapal");
 const u32 gBattleEnvironmentTilemap_Cave[] = INCBIN_U32("graphics/battle_environment/cave/map.bin.smolTM");
 
+const u32 gBattleEnvironmentTiles_Plain[] = INCBIN_U32("graphics/battle_environment/plain/tiles.4bpp.smol");
 const u16 gBattleEnvironmentPalette_Plain[] = INCBIN_U16("graphics/battle_environment/plain/palette.gbapal");
+const u32 gBattleEnvironmentTilemap_Plain[] = INCBIN_U32("graphics/battle_environment/plain/map.bin.smolTM");
 
 const u32 gBattleEnvironmentTiles_Building[] = INCBIN_U32("graphics/battle_environment/building/tiles.4bpp.smol");
 const u16 gBattleEnvironmentPalette_Frontier[] = INCBIN_U16("graphics/battle_environment/stadium/battle_frontier.gbapal"); // this is also used for link battles
@@ -164,8 +166,8 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
         .camouflageType = B_CAMOUFLAGE_TYPES >= GEN_4 ? TYPE_GROUND : TYPE_NORMAL,
         .background =
         {
-            .tileset = gBattleEnvironmentTiles_Building,
-            .tilemap = gBattleEnvironmentTilemap_Building,
+            .tileset = gBattleEnvironmentTiles_Plain,
+            .tilemap = gBattleEnvironmentTilemap_Plain,
             .entryTileset = gBattleEnvironmentAnimTiles_Building,
             .entryTilemap = gBattleEnvironmentAnimTilemap_Building,
             .palette = gBattleEnvironmentPalette_Plain,
@@ -328,6 +330,102 @@ const struct BattleEnvironment gBattleEnvironmentInfo[BATTLE_ENVIRONMENT_COUNT] 
         },
     },
 
+    [BATTLE_ENVIRONMENT_SHIBAN] =
+    {
+        .background =
+        {
+            .tileset = gBattleEnvironmentTiles_Temple,
+            .tilemap = gBattleEnvironmentTilemap_Temple,
+            .entryTileset = gBattleEnvironmentAnimTiles_Temple,
+            .entryTilemap = gBattleEnvironmentAnimTilemap_Temple,
+            .palette = gBattleEnvironmentPalette_TempleShiban,
+        },
+    },
+
+    [BATTLE_ENVIRONMENT_KOGAIGA] =
+    {
+        .background =
+        {
+            .tileset = gBattleEnvironmentTiles_Temple,
+            .tilemap = gBattleEnvironmentTilemap_Temple,
+            .entryTileset = gBattleEnvironmentAnimTiles_Temple,
+            .entryTilemap = gBattleEnvironmentAnimTilemap_Temple,
+            .palette = gBattleEnvironmentPalette_TempleKogaIga,
+        },
+    },
+
+    [BATTLE_ENVIRONMENT_KANEJUDY] =
+    {
+        .background =
+        {
+            .tileset = gBattleEnvironmentTiles_Temple,
+            .tilemap = gBattleEnvironmentTilemap_Temple,
+            .entryTileset = gBattleEnvironmentAnimTiles_Temple,
+            .entryTilemap = gBattleEnvironmentAnimTilemap_Temple,
+            .palette = gBattleEnvironmentPalette_TempleKaneJudy,
+        },
+    },
+
+    [BATTLE_ENVIRONMENT_FALCKABU] =
+    {
+        .background =
+        {
+            .tileset = gBattleEnvironmentTiles_Temple,
+            .tilemap = gBattleEnvironmentTilemap_Temple,
+            .entryTileset = gBattleEnvironmentAnimTiles_Temple,
+            .entryTilemap = gBattleEnvironmentAnimTilemap_Temple,
+            .palette = gBattleEnvironmentPalette_TempleFalcKabu,
+        },
+    },
+
+    [BATTLE_ENVIRONMENT_MELITOSH] =
+    {
+        .background =
+        {
+            .tileset = gBattleEnvironmentTiles_Temple,
+            .tilemap = gBattleEnvironmentTilemap_Temple,
+            .entryTileset = gBattleEnvironmentAnimTiles_Temple,
+            .entryTilemap = gBattleEnvironmentAnimTilemap_Temple,
+            .palette = gBattleEnvironmentPalette_TempleMeliTosh,
+        },
+    },
+
+    [BATTLE_ENVIRONMENT_MIRANDA] =
+    {
+        .background =
+        {
+            .tileset = gBattleEnvironmentTiles_Temple,
+            .tilemap = gBattleEnvironmentTilemap_Temple,
+            .entryTileset = gBattleEnvironmentAnimTiles_Temple,
+            .entryTilemap = gBattleEnvironmentAnimTilemap_Temple,
+            .palette = gBattleEnvironmentPalette_TempleMiranda,
+        },
+    },
+
+    [BATTLE_ENVIRONMENT_FROY] =
+    {
+        .background =
+        {
+            .tileset = gBattleEnvironmentTiles_Temple,
+            .tilemap = gBattleEnvironmentTilemap_Temple,
+            .entryTileset = gBattleEnvironmentAnimTiles_Temple,
+            .entryTilemap = gBattleEnvironmentAnimTilemap_Temple,
+            .palette = gBattleEnvironmentPalette_TempleFroy,
+        },
+    },
+
+    [BATTLE_ENVIRONMENT_ABIGAIL] =
+    {
+        .background =
+        {
+            .tileset = gBattleEnvironmentTiles_Temple,
+            .tilemap = gBattleEnvironmentTilemap_Temple,
+            .entryTileset = gBattleEnvironmentAnimTiles_Temple,
+            .entryTilemap = gBattleEnvironmentAnimTilemap_Temple,
+            .palette = gBattleEnvironmentPalette_TempleAbigail,
+        },
+    },
+
     [BATTLE_ENVIRONMENT_RAYQUAZA] =
     {
         .background =
@@ -442,5 +540,13 @@ static const struct {
     {MAP_BATTLE_SCENE_PHOEBE,   BATTLE_ENVIRONMENT_PHOEBE},
     {MAP_BATTLE_SCENE_GLACIA,   BATTLE_ENVIRONMENT_GLACIA},
     {MAP_BATTLE_SCENE_DRAKE,    BATTLE_ENVIRONMENT_DRAKE},
-    {MAP_BATTLE_SCENE_FRONTIER, BATTLE_ENVIRONMENT_FRONTIER}
+    {MAP_BATTLE_SCENE_FRONTIER, BATTLE_ENVIRONMENT_FRONTIER},
+    {MAP_BATTLE_SCENE_SHIBAN,   BATTLE_ENVIRONMENT_SHIBAN},
+    {MAP_BATTLE_SCENE_KOGAIGA,  BATTLE_ENVIRONMENT_KOGAIGA},
+    {MAP_BATTLE_SCENE_KANEJUDY, BATTLE_ENVIRONMENT_KANEJUDY},
+    {MAP_BATTLE_SCENE_FALCKABU, BATTLE_ENVIRONMENT_FALCKABU},
+    {MAP_BATTLE_SCENE_MELITOSH, BATTLE_ENVIRONMENT_MELITOSH},
+    {MAP_BATTLE_SCENE_MIRANDA,  BATTLE_ENVIRONMENT_MIRANDA},
+    {MAP_BATTLE_SCENE_FROY,     BATTLE_ENVIRONMENT_FROY},
+    {MAP_BATTLE_SCENE_ABIGAIL,  BATTLE_ENVIRONMENT_ABIGAIL}
 };

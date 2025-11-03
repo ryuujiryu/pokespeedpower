@@ -203,7 +203,11 @@
       "id": "HEAL_LOCATION_DURIAN_TOWN",
       "map": "MAP_DURIAN_TOWN",
       "x": 9,
-      "y": 19
+      "y": 19,
+      "respawn_map": "MAP_DURIAN_TOWN_POKEMON_CENTER",
+      "respawn_npc": "LOCALID_DURIAN_NURSE",
+      "respawn_x": 8,
+      "respawn_y": 5
     }
   ]
 }

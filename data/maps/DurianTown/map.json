@@ -39,6 +39,7 @@
       "flag": "0"
     },
     {
+      "local_id": "LOCALID_DURIANTOWN_LITTLE_GIRL",
       "graphics_id": "OBJ_EVENT_GFX_LITTLE_GIRL",
       "x": 24,
       "y": 7,
@@ -49,6 +50,20 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "DurianTown_LittleGirl",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_DURIANTOWN_RIVAL",
+      "graphics_id": "OBJ_EVENT_GFX_VAR_0",
+      "x": 7,
+      "y": 11,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "DurianTown_Rival",
       "flag": "0"
     }
   ],
@@ -82,7 +97,17 @@
       "dest_warp_id": "0"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_RIVALS_STATE",
+      "var_value": "0",
+      "script": "DurianTown_Rival"
+    }
+  ],
   "bg_events": [
     {
       "type": "sign",

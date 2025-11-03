@@ -1,1 +1,107 @@
-mapscripts Route52_MapScripts {}
+mapscripts Route52_MapScripts {
+}
+
+script Route52_ReligiousDebate {
+	lock
+    applymovement (LOCALID_PLAYER, Common_Movement_FaceUp)
+    waitmovement (0)
+	playbgm (MUS_TRICK_HOUSE, FALSE)
+    applymovement (LOCALID_ROUTE52_RELIGIOUSNUTJOB_F, Common_Movement_Angry)
+    waitmovement (0)
+    applymovement (LOCALID_ROUTE52_RELIGIOUSNUTJOB_F, Common_Movement_WalkInPlaceLeft)
+    waitmovement (0)
+    applymovement (LOCALID_ROUTE52_RELIGIOUSNUTJOB_F, Common_Movement_Delay48)
+    waitmovement (0)
+	msgbox ("One more word, and ALMIGHTY TENKEI\n" "will zap you right where you stand!$")
+	closemessage
+    applymovement (LOCALID_ROUTE52_RELIGIOUSNUTJOB_F, Common_Movement_Music)
+    waitmovement (0)
+    applymovement (LOCALID_ROUTE52_RELIGIOUSNUTJOB_F, Common_Movement_Delay48)
+    waitmovement (0)
+    msgbox ("Praise be to Her holy THUNDER, for\n" "it will punish all the heretics!$")
+	closemessage
+    applymovement (LOCALID_ROUTE52_RELIGIOUSNUTJOB_M, Common_Movement_Angry)
+    waitmovement (0)
+    applymovement (LOCALID_ROUTE52_RELIGIOUSNUTJOB_M, Common_Movement_WalkInPlaceRight)
+    waitmovement (0)
+    applymovement (LOCALID_ROUTE52_RELIGIOUSNUTJOB_M, Common_Movement_Delay48)
+    waitmovement (0)
+    msgbox ("I won't even tell you to get lost, for\n" "you are already lead astray by lies!\p" "Everyone knows that ALMIGHTY TENKEI\n" "punishes with His holy fists, not by\l" "some puny lightning attack!$")
+	closemessage
+    applymovement (LOCALID_PLAYER, Common_Movement_Pensive)
+    waitmovement (0)
+    applymovement (LOCALID_PLAYER, Common_Movement_Delay48)
+    waitmovement (0)
+    msgbox ("{PLAYER}: Sorry, can I get through\n" "and then you can go back to arguing…?$")
+	closemessage
+    applymovement (LOCALID_ROUTE52_RELIGIOUSNUTJOB_F, Common_Movement_Angry)
+    waitmovement (0)
+    applymovement (LOCALID_ROUTE52_RELIGIOUSNUTJOB_F, Common_Movement_WalkInPlaceLeft)
+    waitmovement (0)
+    applymovement (LOCALID_ROUTE52_RELIGIOUSNUTJOB_F, Common_Movement_Delay48)
+    waitmovement (0)
+	msgbox ("Don't you dare refer to Her like that\n" "again, you brutish bald man!$")
+	closemessage
+    applymovement (LOCALID_ROUTE52_RELIGIOUSNUTJOB_M, Common_Movement_Angry)
+    waitmovement (0)
+    applymovement (LOCALID_ROUTE52_RELIGIOUSNUTJOB_M, Common_Movement_WalkInPlaceRight)
+    waitmovement (0)
+    applymovement (LOCALID_ROUTE52_RELIGIOUSNUTJOB_M, Common_Movement_Delay48)
+    waitmovement (0)
+	msgbox ("I am not bald, you vain maiden!\p" "We monks of the TEKKEN GAKKAI have to\n" "part with all distractions which\l" "prevent us from honing our bodies!\p" "We focus on martial arts, not on\n" "playing with our hair!$")
+	closemessage
+    applymovement (LOCALID_ROUTE52_RELIGIOUSNUTJOB_M, Common_Movement_Pensive)
+    waitmovement (0)
+    applymovement (LOCALID_ROUTE52_RELIGIOUSNUTJOB_M, Common_Movement_Delay48)
+    waitmovement (0)
+	msgbox ("But it's my fault for expecting a weirdo\n" "from the KAMINARI-NO-IE to know\l" "anything about non-possession.$")
+	closemessage
+    applymovement (LOCALID_PLAYER, Common_Movement_Pensive)
+    waitmovement (0)
+    applymovement (LOCALID_PLAYER, Common_Movement_Delay48)
+    waitmovement (0)
+    msgbox ("{PLAYER}: I SAID, can I get through…?!$")
+    applymovement (LOCALID_ROUTE52_RELIGIOUSNUTJOB_M, Common_Movement_Music)
+    waitmovement (0)
+    applymovement (LOCALID_ROUTE52_RELIGIOUSNUTJOB_M, Common_Movement_Delay48)
+    waitmovement (0)
+    msgbox ("After all, was KAMINARI-NO-IE's leader\n" "not recently found guilty by ATTORNEY\l" "GENERAL JUDY of stealing offerings?$")
+	closemessage
+    applymovement (LOCALID_ROUTE52_RELIGIOUSNUTJOB_F, Common_Movement_Angry)
+    waitmovement (0)
+    applymovement (LOCALID_ROUTE52_RELIGIOUSNUTJOB_F, Common_Movement_WalkInPlaceLeft)
+    waitmovement (0)
+    applymovement (LOCALID_ROUTE52_RELIGIOUSNUTJOB_F, Common_Movement_Delay48)
+    waitmovement (0)
+    msgbox ("Oh, that's IT!\p" "Send your POKéMON out, you scum!$")
+    closemessage
+    applymovement (LOCALID_PLAYER, Common_Movement_Angry)
+    waitmovement (0)
+    applymovement (LOCALID_PLAYER, Common_Movement_Delay48)
+    waitmovement (0)
+    applymovement (LOCALID_PLAYER, Common_Movement_WalkInPlaceUp)
+    waitmovement (0)
+    msgbox ("{PLAYER}: LET ME GET THROUGH, YOU\n" "DAMNED MUKHEADS!$")
+    closemessage
+    applymovement (LOCALID_ROUTE52_RELIGIOUSNUTJOB_F, Common_Movement_ExclamationMark)
+    applymovement (LOCALID_ROUTE52_RELIGIOUSNUTJOB_M, Common_Movement_ExclamationMark)
+    waitmovement (0)
+    applymovement (LOCALID_ROUTE52_RELIGIOUSNUTJOB_F, Common_Movement_WalkInPlaceDown)
+    applymovement (LOCALID_ROUTE52_RELIGIOUSNUTJOB_M, Common_Movement_WalkInPlaceDown)
+    waitmovement (0)
+    msgbox ("Not till this heretic gets away first!$")
+    closemessage
+    applymovement (LOCALID_PLAYER, Common_Movement_Angry)
+    waitmovement (0)
+    applymovement (LOCALID_PLAYER, Common_Movement_Delay48)
+    waitmovement (0)
+    applymovement (LOCALID_PLAYER, Common_Movement_WalkLeft)
+    applymovement (LOCALID_ROUTE52_RELIGIOUSNUTJOB_F, Common_Movement_FaceLeft)
+    applymovement (LOCALID_ROUTE52_RELIGIOUSNUTJOB_M, Common_Movement_FaceRight)
+    waitmovement (0)
+    applymovement (LOCALID_PLAYER, Common_Movement_Delay48)
+    waitmovement (0)
+	fadedefaultbgm
+	release
+	end
+}

@@ -1,142 +1,296 @@
-raw `
-Route1_MapScripts::
-	.byte 0
+mapscripts Route1_MapScripts {
+MAP_SCRIPT_ON_TRANSITION {
+    call(Common_EventScript_SetupRivalGfxId)
+    end
+    }
+MAP_SCRIPT_ON_FRAME_TABLE [
+    VAR_RIVALS_STATE, 1: Route51_Rival
+    ]
+}
  
-Route1_EventScript_Teacher::
-	msgbox Route1_Text_RockyBeach, MSGBOX_NPC
+script Route1_Isamu {
+    if (defeated(TRAINER_SP_ISAMU)) {
+    applymovement (LOCALID_PLAYER, Common_Movement_Music)
+    waitmovement (0)
+    applymovement (LOCALID_PLAYER, Common_Movement_WalkInPlaceRight)
+    waitmovement (0)
+    applymovement (LOCALID_PLAYER, Common_Movement_Delay48)
+    waitmovement (0)
+    msgbox ("{PLAYER}: If the WINGULLs could talk with\n" "me, I'd like to exchange some news! œ$")
+    closemessage
+    applymovement (LOCALID_ROUTE1_ISAMU, Common_Movement_Angry)
+    waitmovement (0)
+    applymovement (LOCALID_ROUTE1_ISAMU, Common_Movement_WalkInPlaceLeft)
+    waitmovement (0)
+    applymovement (LOCALID_ROUTE1_ISAMU, Common_Movement_Delay48)
+    waitmovement (0)
+    msgbox ("I'm not in the mood for singing! Scram!$")
+    release
+    end
+    }
+    else {
+    applymovement (LOCALID_ROUTE1_ISAMU, Common_Movement_Music)
+    waitmovement (0)
+    applymovement (LOCALID_ROUTE1_ISAMU, Common_Movement_Delay48)
+    waitmovement (0)
+    msgbox ("Put your back into it!\n" "Heave, ho! Heave, ho! œ\p" ". . . . . . .\n" "Oh! A bite!$")
+    closemessage
+	applymovement (LOCALID_PLAYER, Common_Movement_Music)
+    waitmovement (0)
+    applymovement (LOCALID_PLAYER, Common_Movement_WalkInPlaceRight)
+    waitmovement (0)
+    applymovement (LOCALID_PLAYER, Common_Movement_Delay48)
+    waitmovement (0)
+    msgbox ("{PLAYER}: Soran, soran, soran! Woo!$")
+    closemessage
+    playbgm (MUS_ENCOUNTER_HIKER, FALSE)
+   	applymovement (LOCALID_ROUTE1_ISAMU, Common_Movement_ExclamationMark)
+    waitmovement (0)
+    applymovement (LOCALID_ROUTE1_ISAMU, Common_Movement_WalkInPlaceLeft)
+    waitmovement (0)
+    applymovement (LOCALID_ROUTE1_ISAMU, Common_Movement_Delay48)
+    waitmovement (0)
+	msgbox ("Argh! You made me lose the fish!$")
+	trainerbattle_no_intro (TRAINER_SP_ISAMU, format("And i even lost the battle!$"))
+    release
 	end
+    }
+}
 
-Route1_EventScript_RouteSignPort::
-	msgbox Route1_Text_RouteSignPort, MSGBOX_SIGN
+script Route51_Sign {
+	msgbox ("ROUTE 51\n" "{UP_ARROW} STRAWBERRY TOWN$")
+	release
 	end
+}
 
-Route1_EventScript_RouteSignDurian::
-	msgbox Route1_Text_RouteSignDurian, MSGBOX_SIGN
-	end
-
-Route1_EventScript_AromaGirl::
+script Route51_AromaGirl {
 	lock
 	faceplayer
-	goto_if_unset FLAG_RECEIVED_WAILMER_PAIL, Route1_EventScript_GiveWailmerPail
-	msgbox Route1_Text_WailmerPailExplanation, MSGBOX_DEFAULT
+	if (!flag(FLAG_RECEIVED_WAILMER_PAIL)) {
+	    msgbox ("La-la-laœ… …\p" "Hmm…? Oh, hello!\n" "Are you into gardening, too?\p" "But I see that you don't have a\n" "WAILMER PAIL! Here, I got a spare!$")
+	    setflag (FLAG_RECEIVED_WAILMER_PAIL)
+		playfanfare (MUS_OBTAIN_ITEM)
+	    waitfanfare
+    } else {
+	msgbox ("While BERRY plants are growing,\n" "water them with the WAILMER PAIL.\p" "Oh, another thing.\p" "If you don't pick BERRIES for a while,\n" "they'll drop off onto the ground.\l" "But they'll sprout again.\p" "Isn't that awesome?\n" "It's like they have the will to live.$")
+	}
 	release
 	end
+}
 
-Route1_EventScript_GiveWailmerPail::
-	msgbox Route1_Text_YouCanHaveThis, MSGBOX_DEFAULT
-	giveitem ITEM_WAILMER_PAIL
-	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
-	msgbox Route1_Text_WailmerPailExplanation, MSGBOX_DEFAULT
-	setflag FLAG_RECEIVED_WAILMER_PAIL
+script Route51_Kazuki {
+	trainerbattle_single (TRAINER_SP_KAZUKI, format("Me and my girl are having a picnic.\n" "Don't dare interrupting us!$"), format("You made a fool of me in front of her…$"))
+	msgbox ("Shoo, shoo! Leave us alone!$")
 	release
 	end
+}
 
-
-Route1_EventScript_SodaPopShop::
-	showmoneybox 0, 0
-	msgbox Route1_Text_WantToBuySodaPop, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, YES, Route1_EventScript_BuySodaPop
-	msgbox Route1_Text_ThatsTooBad, MSGBOX_DEFAULT
-	hidemoneybox
+script Route51_Kazuha {
+	trainerbattle_single (TRAINER_SP_KAZUHA, format("ALMIGHTY TENKEI, grant me strength!$"), format("I didn't gain enough strength…$"))
+	msgbox ("Did I not pray enough…?$")
 	release
 	end
+}
 
-
-Route1_EventScript_BuySodaPop::
-	checkmoney 300
-	goto_if_eq VAR_RESULT, FALSE, Route1_EventScript_NotEnoughMoney
-	checkitemspace ITEM_SODA_POP
-	goto_if_eq VAR_RESULT, FALSE, Route1_EventScript_NotEnoughSpace
-	msgbox Route1_Text_HereYouGo, MSGBOX_DEFAULT
-	removemoney 300
-	updatemoneybox
-.if OW_SHOW_ITEM_DESCRIPTIONS != OW_ITEM_DESCRIPTIONS_OFF
-	hidemoneybox
-	giveitem ITEM_SODA_POP
-.else
-	giveitem ITEM_SODA_POP
-	hidemoneybox
-.endif
+script Route51_Chika {
+	trainerbattle_single (TRAINER_SP_CHIKA, format("This place, is, like, so pink! It is\n" "perfect for, like, battling!$"), format("I wasn't ready for a defeat…$"))
+	msgbox ("At least I lost in a pretty place…$")
 	release
 	end
+}
 
-Route1_Text_YouCanHaveThis:
-	.string "La-la-laœ… …\p"
-	.string "Hmm…? Oh, hello!\n"
-	.string "Are you into gardening, too?\p"
-	.string "But I see that you don't have a\n"
-	.string "WAILMER PAIL! Here, I got a spare!$"
+script Route51_Rival {
+    applymovement (LOCALID_PLAYER, Common_Movement_FaceUp)
+    waitmovement (0)
+    applymovement (LOCALID_PLAYER, Common_Movement_Delay48)
+    waitmovement (0)
+    applymovement (LOCALID_PLAYER, Common_Movement_FaceLeft)
+    waitmovement (0)
+    applymovement (LOCALID_PLAYER, Common_Movement_Delay48)
+    waitmovement (0)
+    msgbox("Where the heck is…")
+    closemessage
+    applymovement (LOCALID_PLAYER, Common_Movement_FaceRight)
+    waitmovement (0)
+    applymovement (LOCALID_PLAYER, Common_Movement_Delay48)
+    waitmovement (0)
+    applymovement (LOCALID_PLAYER, Common_Movement_ExclamationMark)
+    waitmovement (0)
+    applymovement (LOCALID_PLAYER, Route51_Movement_WalkToRival)
+    waitmovement (0)
+    addobject (LOCALID_ROUTE51_RIVAL)
+    faceplayer
+    if (checkplayergender != MALE) {
+         msgbox ("SHIN'YA: So… … … wow. T'was a great way\n" "to start our journey, huh…? … … …\p" "But I trust that the tactician and\n" "MITSURU have kicked them out.\p" "Can you call 'em, actually?\n" "It's been hours, so all that mess\l" "should be over by now.$" )
+        closemessage
+    } else {
+        msgbox("FUUKA: Nothing like nearly gettin’\n" "imprisoned to start a journey, huh.\p" "FUUKA: …Still. I trust that they\n" "took care of those UNOVANS by now.\p" "Say, why don't you call them?\n" "It’s been hours since we arrived.$")
+        closemessage
+    }
+    applymovement (LOCALID_PLAYER, Common_Movement_Pensive)
+    waitmovement (0)
+    applymovement (LOCALID_PLAYER, Common_Movement_Delay48)
+    waitmovement (0)
+    applymovement (LOCALID_PLAYER, Common_Movement_WalkInPlaceRight)
+    waitmovement (0)
+    applymovement (LOCALID_PLAYER, Common_Movement_Delay48)
+    waitmovement (0)
+    msgbox("That SOLDIER took my PŒDA from me\n" "during our fight… … …")
+    closemessage
+    applymovement (LOCALID_ROUTE51_RIVAL, Common_Movement_ExclamationMark)
+    waitmovement (0)
+    applymovement (LOCALID_ROUTE51_RIVAL, Common_Movement_WalkInPlaceLeft)
+    waitmovement (0)
+    applymovement (LOCALID_ROUTE51_RIVAL, Common_Movement_Delay48)
+    waitmovement (0)
+    if (checkplayergender != MALE) {
+        msgbox ("SHIN'YA: …Uhm. Well, I'll call 'em on mine.\n" "And we shall buy a new one soon!\p" "Why don't you heal your POKéMON\n" "while I call 'em?$")
+        closemessage
+    } else {
+        msgbox("FUUKA: Well, just your luck.\n" "Alright, I’ll call ‘em on mine.\p" "We’ll buy you a new one when we get\n" "to a shop or something.\p" "Why don't you heal your POKéMON\n" "while I call them?$")
+        closemessage
+    }
+    call (Common_EventScript_OutOfCenterPartyHeal)
+    pokenavcall ("Bzzt… … … … … bzz… … … … … …$")
+    waitmessage
+    fadenewbgm (MUS_AW2_405)
+    playse (SE_BANG)
+    waitse
+    playse (SE_M_EXPLOSION)
+    waitse
+    applymovement (LOCALID_PLAYER, Common_Movement_WalkInPlaceRight)
+    waitmovement (0)
+    applymovement (LOCALID_PLAYER, Common_Movement_Delay48)
+    waitmovement (0)
+    msgbox ("What the heck…")
+    closemessage
+    applymovement (LOCALID_ROUTE51_RIVAL, Common_Movement_ExclamationMark)
+    waitmovement (0)
+    applymovement (LOCALID_ROUTE51_RIVAL, Common_Movement_WalkInPlaceLeft)
+    waitmovement (0)
+    applymovement (LOCALID_ROUTE51_RIVAL, Common_Movement_Delay48)
+    waitmovement (0)
+    pokenavcall ("MITSURU: Bzz… … … 'cuz… bzz… … …\n" "ARC… … set … island ablaze…$")
+    waitmessage
+    applymovement (LOCALID_ROUTE51_RIVAL, Common_Movement_ExclamationMark)
+    waitmovement (0)
+    if (checkplayergender != MALE) {
+        msgbox ("SHIN'YA: What what what?! Anegimi!\n" "We have to go back and help them!\p" "FLYGON, SKARMORY, take us back!")
+        closemessage
+    } else {
+        msgbox("FUUKA: No, no, no! Why would they do this?\n" "The civilians have no fault!\p" "We have to go back to help!$")
+        closemessage
+    }
+    applymovement (LOCALID_PLAYER, Common_Movement_Pensive)
+    waitmovement (0)
+    applymovement (LOCALID_PLAYER, Common_Movement_Delay48)
+    waitmovement (0)
+    msgbox ("We cannot waste the chance they have\n" "given us to take back the throne!$")
+    closemessage
+    applymovement (LOCALID_ROUTE51_RIVAL, Common_Movement_Angry)
+    waitmovement (0)
+    applymovement (LOCALID_ROUTE51_RIVAL, Common_Movement_WalkInPlaceLeft)
+    waitmovement (0)
+    applymovement (LOCALID_ROUTE51_RIVAL, Common_Movement_Delay48)
+    waitmovement (0)
+    closemessage
+    if (checkplayergender != MALE) {
+        msgbox ("SHIN'YA: Anegimi! FUUKA! Who cares about\n" "the throne now! We have to… we have…$")
+        closemessage
+    } else {
+        msgbox("FUUKA: What kinds of rulers would we be\n" "if we did not help our loyal subjects?!\p" "SKARMORY, take me back!$")
+        closemessage
+    }
+    pokenavcall ("MITSURU: It's fine… … … we have… … …\n" "many FLYING… … …bzzt … and… …\l" "… WATER-types… … …to flee with…\p" "go… … …and free… … …NIHON…\p" "… … … … … … …$")
+    waitmessage
+    applymovement (LOCALID_ROUTE51_RIVAL, Common_Movement_Pensive)
+    waitmovement (0)
+    applymovement (LOCALID_ROUTE51_RIVAL, Common_Movement_Delay48)
+    waitmovement (0)
+    if (checkplayergender != MALE) {
+        applymovement (LOCALID_ROUTE51_RIVAL, Common_Movement_WalkInPlaceLeft)
+        waitmovement (0)
+        msgbox ("SHIN'YA: Cousin… was that supposed to\n" "calm me down…?$")
+        closemessage
+    } else {
+        msgbox("FUUKA: MITSURU… … … … … … … … Okay.$")
+        closemessage
+    }
+    applymovement (LOCALID_ROUTE51_RIVAL, Common_Movement_WalkDownSlow)
+    waitmovement (0)
+    if (checkplayergender != MALE) {
+        msgbox ("Or just make me worry more…$")
+        closemessage
+    } else {
+        msgbox("No matter their fate… … we have\n" "a throne to claim back.$")
+        closemessage
+    }
+    applymovement (LOCALID_ROUTE51_RIVAL, Common_Movement_WalkDownSlow)
+    waitmovement (0)
+    fadedefaultbgm
+    setvar (VAR_RIVALS_STATE, 2)
+    release
+    end
+}
 
-Route1_Text_WailmerPailExplanation:
-	.string "While BERRY plants are growing,\n"
-	.string "water them with the WAILMER PAIL.\p"
-	.string "Oh, another thing.\p"
-	.string "If you don't pick BERRIES for a while,\n"
-	.string "they'll drop off onto the ground.\l"
-	.string "But they'll sprout again.\p"
-	.string "Isn't that awesome?\n"
-	.string "It's like they have the will to live.$"
+script Route51_Rival2 {
+    if (checkplayergender != MALE) {
+        applymovement (LOCALID_ROUTE51_RIVAL, Common_Movement_Angry)
+        waitmovement (0)
+        msgbox ("SHIN'YA: CITRUS ISLAND…\n" "We finally left it, but at what cost?$")
+        closemessage
+        faceplayer
+        msgbox ("Anegimi. Go to the ELEMENTAL TEMPLE.\n" "I'll fight the local PATH GUARDIANS\l" "later. I need to calm myself first…$")
+        closemessage
+    } else {
+        applymovement (LOCALID_ROUTE51_RIVAL, Common_Movement_Pensive)
+        waitmovement (0)
+        msgbox("FUUKA: A ruler should be strong.\n" "For the sake of her subjects…$")
+        closemessage
+        faceplayer
+        msgbox ("Anigimi? Why are you still here? Go to\n" "the ELEMENTAL TEMPLE.\p" "I need to stay alone for a bit.\n" "I'll fight the PATH GUARDIANS later.$")
+        closemessage
+    }
+        applymovement (LOCALID_PLAYER, Common_Movement_Pensive)
+        waitmovement (0)
+        applymovement (LOCALID_PLAYER, Common_Movement_Delay48)
+        waitmovement (0)
+        applymovement (LOCALID_ROUTE51_RIVAL, Common_Movement_ExclamationMark)
+        waitmovement (0)
+        applymovement (LOCALID_ROUTE51_RIVAL, Common_Movement_Delay48)
+        waitmovement (0)
+    if (checkplayergender != MALE) {
+        msgbox ("SHIN'YA: What? I forgot something?\n" "Oh, you are right.$")
+        closemessage
+    } else {
+        msgbox ("FUUKA: Oh, yeah. The PROF. was\n" "supposed to give us those.$")
+        closemessage
+    }
+        faceplayer
+        giveitem (ITEM_POKE_BALL, 5)
+        msgbox ("I forgot, sorry… I'm not in the mood.$")
+        closemessage
+    applymovement (LOCALID_ROUTE51_RIVAL, Common_Movement_FaceDown)
+    setflag (FLAG_RIVAL_POKEBALLS)
+    release
+    end
+}
 
-Route1_Text_RockyBeach:
-	.string "Get a vacation, they said!\n"
-	.string "It will be fun, they said!\p"
-	.string "I can't even swim with all\n"
-	.string "these rocks!$"
+script Route51_Rival3 {
+    if (!flag(FLAG_RIVAL_POKEBALLS)){call(Route51_Rival2)}
+    else {
+    applymovement (LOCALID_ROUTE51_RIVAL, Common_Movement_FaceDown)
+    msgbox ("… … … … … … …$")
+    }
+    closemessage
+    release
+    end
+}
 
-Route1_Text_RouteSignPort:
-	.string "ROUTE 51\n"
-	.string "{DOWN_ARROW} ROUTE 51 PORT$"
-
-Route1_Text_RouteSignDurian:
-	.string "ROUTE 51\n"
-	.string "{UP_ARROW} STRAWBERRY TOWN$"
-
-Route1_Text_WantToBuySodaPop:
-	.string "On such a hot beach, only a\n"
-	.string "a SODA POP can quench your thirst!\p"
-	.string "Just ¥300 a bottle!\n"
-	.string "Buy some!$"
-
-Route1_Text_ThatsTooBad:
-	.string "No?\n"
-	.string "That's too bad.$"
-
-Route1_Text_HereYouGo:
-	.string "Here you go!$"
-
-Route1_EventScript_Tiana::
-	trainerbattle_single TRAINER_SP_KAZUHA, Route1_Text_TianaIntro, Route1_Text_TianaDefeated
-	msgbox Route1_Text_TianaPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Route1_EventScript_Calvin::
-	trainerbattle_single TRAINER_SP_KAZUKI, Route1_Text_CalvinIntro, Route1_Text_CalvinDefeated
-	msgbox Route1_Text_CalvinPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Route1_EventScript_Ally::
-	trainerbattle_single TRAINER_SP_CHIKA, Route1_Text_AllyIntro, Route1_Text_AllyDefeated
-	msgbox Route1_Text_AllyPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Route1_EventScript_Rick::
-	trainerbattle_single TRAINER_SP_ISAMU, Route1_Text_RickIntro, Route1_Text_RickDefeated
-	msgbox Route1_Text_RickPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Route1_EventScript_NotEnoughMoney::
-	msgbox Route1_Text_NotEnoughMoney, MSGBOX_DEFAULT
-	hidemoneybox
-	release
-	end
-
-Route1_EventScript_NotEnoughSpace::
-	msgbox gText_TooBadBagIsFull, MSGBOX_DEFAULT
-	hidemoneybox
-	release
-	end
-
-Route1_Text_NotEnoughMoney:
-	.string "You don't have the money.$"
-
-`
+movement Route51_Movement_WalkToRival {
+    walk_fast_right * 4
+    walk_fast_up * 1
+    walk_fast_right * 3
+    face_left
+    step_end
+}

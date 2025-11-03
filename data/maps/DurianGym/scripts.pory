@@ -122,6 +122,7 @@ script DurianGym_ShiriAndBanjoDefeated {
 	waitmovement (0)
 	msgbox ("ANYWAY! It will teach a POKéMON the move\n" "ROUND. It gets stronger if a POKéMON\l" "uses it after its ally did.")
 	closemessage
+    setvar (VAR_RIVALS_STATE, 3)
 	release
 	end
 }

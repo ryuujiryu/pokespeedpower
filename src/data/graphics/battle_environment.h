@@ -22,6 +22,14 @@ const u16 gBattleEnvironmentPalette_StadiumDrake[] = INCBIN_U16("graphics/battle
 const u16 gBattleEnvironmentPalette_StadiumWallace[] = INCBIN_U16("graphics/battle_environment/stadium/palette7.gbapal");
 const u16 gBattleEnvironmentPalette_Rayquaza[] = INCBIN_U16("graphics/battle_environment/sky/palette.gbapal");
 const u16 gBattleEnvironmentPalette_Temple[] = INCBIN_U16("graphics/battle_environment/temple/palette.gbapal");
+const u16 gBattleEnvironmentPalette_TempleShiban[] = INCBIN_U16("graphics/battle_environment/temple/palette1.gbapal");
+const u16 gBattleEnvironmentPalette_TempleKogaIga[] = INCBIN_U16("graphics/battle_environment/temple/palette2.gbapal");
+const u16 gBattleEnvironmentPalette_TempleKaneJudy[] = INCBIN_U16("graphics/battle_environment/temple/palette3.gbapal");
+const u16 gBattleEnvironmentPalette_TempleFalcKabu[] = INCBIN_U16("graphics/battle_environment/temple/palette4.gbapal");
+const u16 gBattleEnvironmentPalette_TempleMeliTosh[] = INCBIN_U16("graphics/battle_environment/temple/palette5.gbapal");
+const u16 gBattleEnvironmentPalette_TempleMiranda[] = INCBIN_U16("graphics/battle_environment/temple/palette6.gbapal");
+const u16 gBattleEnvironmentPalette_TempleFroy[] = INCBIN_U16("graphics/battle_environment/temple/palette7.gbapal");
+const u16 gBattleEnvironmentPalette_TempleAbigail[] = INCBIN_U16("graphics/battle_environment/temple/palette8.gbapal");
 
 const u32 gBattleEnvironmentAnimTiles_TallGrass[] = INCBIN_U32("graphics/battle_environment/tall_grass/anim_tiles.4bpp.smol");
 const u32 gBattleEnvironmentAnimTilemap_TallGrass[] = INCBIN_U32("graphics/battle_environment/tall_grass/anim_map.bin.smolTM");
