@@ -334,7 +334,7 @@ const struct TrainerClass gTrainerClasses[TRAINER_CLASS_COUNT] =
     [TRAINER_CLASS_PSYCHIC] = { _("PSYCHIC"), 6 },
     [TRAINER_CLASS_GENTLEMAN] = { _("GENTLEMAN"), 20, BALL_LUXURY },
     [TRAINER_CLASS_ELITE_FOUR] = { _("ELITE FOUR"), 25, BALL_ULTRA },
-    [TRAINER_CLASS_LEADER] = { _("PATH GUARDIAN"), 25 },
+    [TRAINER_CLASS_PATH_GUARDIAN] = { _("PATH GUARDIAN"), 25 },
     [TRAINER_CLASS_SCHOOL_KID] = { _("SCHOOL KID") },
     [TRAINER_CLASS_SR_AND_JR] = { _("SR. AND JR."), 4 },
     [TRAINER_CLASS_WINSTRATE] = { _("WINSTRATE"), 10 },
@@ -378,6 +378,7 @@ const struct TrainerClass gTrainerClasses[TRAINER_CLASS_COUNT] =
     [TRAINER_CLASS_NURSE] = { _("NURSE"), 5 },
     [TRAINER_CLASS_DELINQUENT] = { _("DELINQUENT"), 6 },
     [TRAINER_CLASS_SUKEBAN] = { _("SUKEBAN"), 6 },
+    [TRAINER_CLASS_PATH_DISCIPLE] = { _("PATH DISCIPLE"), 10 },
 };
 
 static void (*const sTurnActionsFuncsTable[])(void) =
@@ -5442,7 +5443,7 @@ static void HandleEndTurn_BattleWon(void)
         case TRAINER_CLASS_MAGMA_LEADER:
             PlayBGM(MUS_VICTORY_AQUA_MAGMA);
             break;
-        case TRAINER_CLASS_LEADER:
+        case TRAINER_CLASS_PATH_GUARDIAN:
             PlayBGM(MUS_VICTORY_GYM_LEADER);
             break;
         default:

@@ -61,6 +61,7 @@ script Route52_ReligiousDebate {
     applymovement (LOCALID_PLAYER, Common_Movement_Delay48)
     waitmovement (0)
     msgbox ("{PLAYER}: I SAID, can I get through…?!$")
+    closemessage
     applymovement (LOCALID_ROUTE52_RELIGIOUSNUTJOB_M, Common_Movement_Music)
     waitmovement (0)
     applymovement (LOCALID_ROUTE52_RELIGIOUSNUTJOB_M, Common_Movement_Delay48)
@@ -96,6 +97,7 @@ script Route52_ReligiousDebate {
     applymovement (LOCALID_PLAYER, Common_Movement_Delay48)
     waitmovement (0)
     applymovement (LOCALID_PLAYER, Common_Movement_WalkLeft)
+    waitmovement (0)
     applymovement (LOCALID_ROUTE52_RELIGIOUSNUTJOB_F, Common_Movement_FaceLeft)
     applymovement (LOCALID_ROUTE52_RELIGIOUSNUTJOB_M, Common_Movement_FaceRight)
     waitmovement (0)

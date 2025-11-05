@@ -55,7 +55,7 @@
     {
       "local_id": "LOCALID_DURIANTOWN_RIVAL",
       "graphics_id": "OBJ_EVENT_GFX_VAR_0",
-      "x": 7,
+      "x": 14,
       "y": 11,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
@@ -63,8 +63,8 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "DurianTown_Rival",
-      "flag": "0"
+      "script": "0x0",
+      "flag": "FLAG_HIDE_DURIAN_TOWN_RIVAL"
     }
   ],
   "warp_events": [
@@ -76,8 +76,8 @@
       "dest_warp_id": "0"
     },
     {
-      "x": 6,
-      "y": 10,
+      "x": 7,
+      "y": 9,
       "elevation": 0,
       "dest_map": "MAP_DURIAN_GYM",
       "dest_warp_id": "0"
@@ -100,8 +100,8 @@
   "coord_events": [
     {
       "type": "trigger",
-      "x": 6,
-      "y": 11,
+      "x": 7,
+      "y": 10,
       "elevation": 0,
       "var": "VAR_RIVALS_STATE",
       "var_value": "0",
@@ -127,7 +127,7 @@
     },
     {
       "type": "sign",
-      "x": 8,
+      "x": 11,
       "y": 10,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",

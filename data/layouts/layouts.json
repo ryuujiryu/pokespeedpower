@@ -4454,7 +4454,7 @@
     {
       "id": "LAYOUT_ROUTE51_GATEHOUSE",
       "name": "Route51_Gatehouse_Layout",
-      "width": 11,
+      "width": 9,
       "height": 14,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_Gatehouse",

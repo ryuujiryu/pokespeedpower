@@ -5262,7 +5262,7 @@ void AdjustFriendship(struct Pokemon *mon, u8 event)
             // Only if it's a trainer battle with league progression significance
             if (!(gBattleTypeFlags & BATTLE_TYPE_TRAINER))
                 return;
-            if (!(opponentTrainerClass == TRAINER_CLASS_LEADER
+            if (!(opponentTrainerClass == TRAINER_CLASS_PATH_GUARDIAN
                 || opponentTrainerClass == TRAINER_CLASS_ELITE_FOUR
                 || opponentTrainerClass == TRAINER_CLASS_CHAMPION))
                 return;
@@ -5827,7 +5827,7 @@ u16 GetBattleBGM(void)
         case TRAINER_CLASS_AQUA_ADMIN:
         case TRAINER_CLASS_MAGMA_ADMIN:
             return MUS_VS_AQUA_MAGMA;
-        case TRAINER_CLASS_LEADER:
+        case TRAINER_CLASS_PATH_GUARDIAN:
             return MUS_RG_VS_GYM_LEADER;
         case TRAINER_CLASS_CHAMPION:
             return MUS_VS_CHAMPION;
@@ -5835,7 +5835,7 @@ u16 GetBattleBGM(void)
             if (gBattleTypeFlags & BATTLE_TYPE_FRONTIER)
                 return MUS_VS_RIVAL;
             if (!StringCompare(GetTrainerNameFromId(TRAINER_BATTLE_PARAM.opponentA), gText_BattleWallyName))
-                return MUS_VS_TRAINER;
+                return MUS_GS2_ISAAC_BATTLE;
             return MUS_VS_RIVAL;
         case TRAINER_CLASS_ELITE_FOUR:
             return MUS_VS_ELITE_FOUR;
@@ -5853,7 +5853,7 @@ u16 GetBattleBGM(void)
     }
     else
     {
-        return MUS_VS_TRAINER;
+        return MUS_GS2_ISAAC_BATTLE;
     }
 }
 

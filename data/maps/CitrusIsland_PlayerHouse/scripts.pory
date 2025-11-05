@@ -78,7 +78,7 @@ script CitrusIsland_PlayerHouse_Outfit {
     closemessage
     applymovement(LOCALID_CITRUS_RIVAL, CitrusIsland_PlayerHouse_Movement_RivalLeave)
     waitmovement(0)
-    playse (SE_SLIDING_DOOR)
+    playse (SE_DOOR)
     removeobject(LOCALID_CITRUS_RIVAL)
     fadedefaultbgm
     setflag (FLAG_SYS_SAVE_GET)

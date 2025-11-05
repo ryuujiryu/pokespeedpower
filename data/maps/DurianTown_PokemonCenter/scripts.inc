@@ -153,26 +153,14 @@ DurianTown_PokemonCenter_EventScript_Clerk::
 # 77 "data/maps/DurianTown_PokemonCenter/scripts.pory"
 DurianTown_PokemonCenter_Pokemart:
 # 78 "data/maps/DurianTown_PokemonCenter/scripts.pory"
-	.2byte ITEM_GREAT_BALL
+	.2byte ITEM_POKE_BALL
 # 79 "data/maps/DurianTown_PokemonCenter/scripts.pory"
-	.2byte ITEM_NEST_BALL
+	.2byte ITEM_POTION
 # 80 "data/maps/DurianTown_PokemonCenter/scripts.pory"
-	.2byte ITEM_SUPER_POTION
-# 81 "data/maps/DurianTown_PokemonCenter/scripts.pory"
 	.2byte ITEM_ANTIDOTE
-# 82 "data/maps/DurianTown_PokemonCenter/scripts.pory"
+# 81 "data/maps/DurianTown_PokemonCenter/scripts.pory"
 	.2byte ITEM_PARALYZE_HEAL
-# 83 "data/maps/DurianTown_PokemonCenter/scripts.pory"
+# 82 "data/maps/DurianTown_PokemonCenter/scripts.pory"
 	.2byte ITEM_AWAKENING
-# 84 "data/maps/DurianTown_PokemonCenter/scripts.pory"
-	.2byte ITEM_BURN_HEAL
-# 85 "data/maps/DurianTown_PokemonCenter/scripts.pory"
-	.2byte ITEM_ICE_HEAL
-# 86 "data/maps/DurianTown_PokemonCenter/scripts.pory"
-	.2byte ITEM_REPEL
-# 87 "data/maps/DurianTown_PokemonCenter/scripts.pory"
-	.2byte ITEM_X_SP_ATK
-# 88 "data/maps/DurianTown_PokemonCenter/scripts.pory"
-	.2byte ITEM_FLUFFY_TAIL
-# 89 "data/maps/DurianTown_PokemonCenter/scripts.pory"
+# 83 "data/maps/DurianTown_PokemonCenter/scripts.pory"
 	pokemartlistend

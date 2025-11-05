@@ -4790,7 +4790,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 === TRAINER_SHIRI_AND_BANJO_1 ===
 Name: SHIRI&BANJO
-Class: Leader
+Class: Path Guardian
 Pic: Leader Roxanne
 Gender: Male
 Music: Intense
@@ -4808,7 +4808,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_BRAWLY_1 ===
 Name: BRAWLY
-Class: Leader
+Class: Path Guardian
 Pic: Leader Brawly
 Gender: Male
 Music: Male
@@ -4842,7 +4842,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 === TRAINER_WATTSON_1 ===
 Name: WATTSON
-Class: Leader
+Class: Path Guardian
 Pic: Leader Wattson
 Gender: Male
 Music: Male
@@ -4884,7 +4884,7 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 
 === TRAINER_FLANNERY_1 ===
 Name: FLANNERY
-Class: Leader
+Class: Path Guardian
 Pic: Leader Flannery
 Gender: Female
 Music: Female
@@ -4926,7 +4926,7 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 
 === TRAINER_NORMAN_1 ===
 Name: NORMAN
-Class: Leader
+Class: Path Guardian
 Pic: Leader Norman
 Gender: Male
 Music: Male
@@ -4968,7 +4968,7 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 
 === TRAINER_WINONA_1 ===
 Name: WINONA
-Class: Leader
+Class: Path Guardian
 Pic: Leader Winona
 Gender: Female
 Music: Female
@@ -5018,7 +5018,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 === TRAINER_TATE_AND_LIZA_1 ===
 Name: TATE&LIZA
-Class: Leader
+Class: Path Guardian
 Pic: Leader Tate And Liza
 Gender: Male
 Music: Female
@@ -5060,7 +5060,7 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 
 === TRAINER_JUAN_1 ===
 Name: JUAN
-Class: Leader
+Class: Path Guardian
 Pic: Leader Juan
 Gender: Male
 Music: Male
@@ -5943,7 +5943,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_SP_JUNICHI ===
 Name: JUNICHI
-Class: Idol
+Class: Path Disciple
 Pic: Idol
 Gender: Male
 Music: Cool
@@ -12949,7 +12949,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_SP_DARIAN ===
 Name: DARIAN
-Class: Guitarist
+Class: Path Disciple
 Pic: Guitarist
 Gender: Male
 Music: Intense
@@ -14139,7 +14139,7 @@ IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 === TRAINER_SHIRI_AND_BANJO_2 ===
 Name: ROXANNE
-Class: Leader
+Class: Path Guardian
 Pic: Leader Roxanne
 Gender: Female
 Music: Female
@@ -14181,7 +14181,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 === TRAINER_SHIRI_AND_BANJO_3 ===
 Name: ROXANNE
-Class: Leader
+Class: Path Guardian
 Pic: Leader Roxanne
 Gender: Female
 Music: Female
@@ -14231,7 +14231,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 === TRAINER_SHIRI_AND_BANJO_4 ===
 Name: ROXANNE
-Class: Leader
+Class: Path Guardian
 Pic: Leader Roxanne
 Gender: Female
 Music: Female
@@ -14281,7 +14281,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 === TRAINER_SHIRI_AND_BANJO_5 ===
 Name: ROXANNE
-Class: Leader
+Class: Path Guardian
 Pic: Leader Roxanne
 Gender: Female
 Music: Female
@@ -14339,7 +14339,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 === TRAINER_BRAWLY_2 ===
 Name: BRAWLY
-Class: Leader
+Class: Path Guardian
 Pic: Leader Brawly
 Gender: Male
 Music: Male
@@ -14381,7 +14381,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 === TRAINER_BRAWLY_3 ===
 Name: BRAWLY
-Class: Leader
+Class: Path Guardian
 Pic: Leader Brawly
 Gender: Male
 Music: Male
@@ -14423,7 +14423,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 === TRAINER_BRAWLY_4 ===
 Name: BRAWLY
-Class: Leader
+Class: Path Guardian
 Pic: Leader Brawly
 Gender: Male
 Music: Male
@@ -14473,7 +14473,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 === TRAINER_BRAWLY_5 ===
 Name: BRAWLY
-Class: Leader
+Class: Path Guardian
 Pic: Leader Brawly
 Gender: Male
 Music: Male
@@ -14531,7 +14531,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 === TRAINER_WATTSON_2 ===
 Name: WATTSON
-Class: Leader
+Class: Path Guardian
 Pic: Leader Wattson
 Gender: Male
 Music: Male
@@ -14573,7 +14573,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 === TRAINER_WATTSON_3 ===
 Name: WATTSON
-Class: Leader
+Class: Path Guardian
 Pic: Leader Wattson
 Gender: Male
 Music: Male
@@ -14623,7 +14623,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 === TRAINER_WATTSON_4 ===
 Name: WATTSON
-Class: Leader
+Class: Path Guardian
 Pic: Leader Wattson
 Gender: Male
 Music: Male
@@ -14673,7 +14673,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 === TRAINER_WATTSON_5 ===
 Name: WATTSON
-Class: Leader
+Class: Path Guardian
 Pic: Leader Wattson
 Gender: Male
 Music: Male
@@ -14731,7 +14731,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 === TRAINER_FLANNERY_2 ===
 Name: FLANNERY
-Class: Leader
+Class: Path Guardian
 Pic: Leader Flannery
 Gender: Female
 Music: Female
@@ -14773,7 +14773,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 === TRAINER_FLANNERY_3 ===
 Name: FLANNERY
-Class: Leader
+Class: Path Guardian
 Pic: Leader Flannery
 Gender: Female
 Music: Female
@@ -14823,7 +14823,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 === TRAINER_FLANNERY_4 ===
 Name: FLANNERY
-Class: Leader
+Class: Path Guardian
 Pic: Leader Flannery
 Gender: Female
 Music: Female
@@ -14881,7 +14881,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 === TRAINER_FLANNERY_5 ===
 Name: FLANNERY
-Class: Leader
+Class: Path Guardian
 Pic: Leader Flannery
 Gender: Female
 Music: Female
@@ -14939,7 +14939,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 === TRAINER_NORMAN_2 ===
 Name: NORMAN
-Class: Leader
+Class: Path Guardian
 Pic: Leader Norman
 Gender: Male
 Music: Male
@@ -14981,7 +14981,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 === TRAINER_NORMAN_3 ===
 Name: NORMAN
-Class: Leader
+Class: Path Guardian
 Pic: Leader Norman
 Gender: Male
 Music: Male
@@ -15031,7 +15031,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 === TRAINER_NORMAN_4 ===
 Name: NORMAN
-Class: Leader
+Class: Path Guardian
 Pic: Leader Norman
 Gender: Male
 Music: Male
@@ -15081,7 +15081,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 === TRAINER_NORMAN_5 ===
 Name: NORMAN
-Class: Leader
+Class: Path Guardian
 Pic: Leader Norman
 Gender: Male
 Music: Male
@@ -15139,7 +15139,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 === TRAINER_WINONA_2 ===
 Name: WINONA
-Class: Leader
+Class: Path Guardian
 Pic: Leader Winona
 Gender: Female
 Music: Female
@@ -15189,7 +15189,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 === TRAINER_WINONA_3 ===
 Name: WINONA
-Class: Leader
+Class: Path Guardian
 Pic: Leader Winona
 Gender: Female
 Music: Female
@@ -15247,7 +15247,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 === TRAINER_WINONA_4 ===
 Name: WINONA
-Class: Leader
+Class: Path Guardian
 Pic: Leader Winona
 Gender: Female
 Music: Female
@@ -15305,7 +15305,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 === TRAINER_WINONA_5 ===
 Name: WINONA
-Class: Leader
+Class: Path Guardian
 Pic: Leader Winona
 Gender: Female
 Music: Female
@@ -15363,7 +15363,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 === TRAINER_TATE_AND_LIZA_2 ===
 Name: TATE&LIZA
-Class: Leader
+Class: Path Guardian
 Pic: Leader Tate And Liza
 Gender: Male
 Music: Female
@@ -15413,7 +15413,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 === TRAINER_TATE_AND_LIZA_3 ===
 Name: TATE&LIZA
-Class: Leader
+Class: Path Guardian
 Pic: Leader Tate And Liza
 Gender: Male
 Music: Female
@@ -15471,7 +15471,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 === TRAINER_TATE_AND_LIZA_4 ===
 Name: TATE&LIZA
-Class: Leader
+Class: Path Guardian
 Pic: Leader Tate And Liza
 Gender: Male
 Music: Female
@@ -15529,7 +15529,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 === TRAINER_TATE_AND_LIZA_5 ===
 Name: TATE&LIZA
-Class: Leader
+Class: Path Guardian
 Pic: Leader Tate And Liza
 Gender: Male
 Music: Female
@@ -15587,7 +15587,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 === TRAINER_JUAN_2 ===
 Name: JUAN
-Class: Leader
+Class: Path Guardian
 Pic: Leader Juan
 Gender: Male
 Music: Male
@@ -15637,7 +15637,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 === TRAINER_JUAN_3 ===
 Name: JUAN
-Class: Leader
+Class: Path Guardian
 Pic: Leader Juan
 Gender: Male
 Music: Male
@@ -15687,7 +15687,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 === TRAINER_JUAN_4 ===
 Name: JUAN
-Class: Leader
+Class: Path Guardian
 Pic: Leader Juan
 Gender: Male
 Music: Male
@@ -15745,7 +15745,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 === TRAINER_JUAN_5 ===
 Name: JUAN
-Class: Leader
+Class: Path Guardian
 Pic: Leader Juan
 Gender: Male
 Music: Male

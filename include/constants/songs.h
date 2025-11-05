@@ -406,7 +406,7 @@
 #define MUS_B_DOME_LOBBY            473 // MUS_B_DOME1
 #define MUS_VS_WILD                 474 // MUS_BATTLE27
 #define MUS_VS_AQUA_MAGMA           475 // MUS_BATTLE31
-#define MUS_VS_TRAINER              476 // MUS_BATTLE20
+#define MUS_GS2_ISAAC_BATTLE        476 // MUS_BATTLE20
 #define MUS_VS_GYM_LEADER           477 // MUS_BATTLE32
 #define MUS_VS_CHAMPION             478 // MUS_BATTLE33
 #define MUS_VS_REGI                 479 // MUS_BATTLE36

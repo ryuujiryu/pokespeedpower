@@ -2,6 +2,7 @@ mapscripts DurianTown_MapScripts {
 MAP_SCRIPT_ON_TRANSITION {
     call(Common_EventScript_SetupRivalGfxId)
 	setflag (FLAG_VISITED_DURIAN_TOWN)
+    setflag(FLAG_HIDE_DURIAN_TOWN_RIVAL)
 	end
         }
 MAP_SCRIPT_ON_FRAME_TABLE [
@@ -46,18 +47,30 @@ script DurianTown_LittleGirl {
 
 script DurianTown_Rival {
 	lock
+    applymovement (LOCALID_PLAYER, Common_Movement_WalkDown)
+    waitmovement (0)
     applymovement (LOCALID_PLAYER, Common_Movement_FaceRight)
     waitmovement (0)
-    applymovement (LOCALID_DURIANTOWN_RIVAL, Common_Movement_ExclamationMark)
-    waitmovement (0)
-    applymovement (LOCALID_DURIANTOWN_RIVAL, Common_Movement_WalkInPlaceLeft)
+    applymovement (LOCALID_PLAYER, Common_Movement_ExclamationMark)
     waitmovement (0)
     playbgm (MUS_ENCOUNTER_MAY, TRUE)
     if (checkplayergender != MALE) {
-        msgbox ("SHIN'YA: Anegimi! I'm guessing you got\n" "the STAMP, right?\p" "I knew you would do it.$")
+        msgbox ("SHIN'YA: Anegimi!$")
         closemessage
     } else {
-        msgbox("FUUKA: …Oh, anigimi.\n" "You got your STAMP, didn't you?\l" "That's great.$")
+        msgbox("FUUKA: …Oh, anigimi.$")
+        closemessage
+    }
+    addobject (LOCALID_DURIANTOWN_RIVAL)
+    applymovement (LOCALID_DURIANTOWN_RIVAL, DurianTown_Movement_ComeToPlayer)
+    waitmovement (0)
+    applymovement (LOCALID_DURIANTOWN_RIVAL, Common_Movement_WalkInPlaceLeft)
+    waitmovement (0)
+    if (checkplayergender != MALE) {
+        msgbox ("SHIN'YA: I'm guessing you got the STAMP, right?\n" "I knew you would do it.$")
+        closemessage
+    } else {
+        msgbox("FUUKA: You got your STAMP, didn't you?\n" "That's great.$")
         closemessage
     }
     applymovement (LOCALID_DURIANTOWN_RIVAL, Common_Movement_Pensive)
@@ -126,8 +139,9 @@ script DurianTown_ShinyaDefeated {
     waitmovement (0)
     applymovement (LOCALID_DURIANTOWN_RIVAL, DurianTown_Movement_GoToTemple)
     waitmovement (0)
-    removeobject(LOCALID_CITRUS_RIVAL)
+    removeobject(LOCALID_DURIANTOWN_RIVAL)
     fadedefaultbgm
+    setflag(FLAG_HIDE_DURIAN_TOWN_RIVAL)
     setvar (VAR_RIVALS_STATE, 4)
     setvar (VAR_ROUTE52_STATE, 1)
 	release
@@ -137,15 +151,16 @@ script DurianTown_ShinyaDefeated {
 script DurianTown_FuukaDefeated {
     applymovement (LOCALID_PLAYER, Common_Movement_Music)
     waitmovement (0)
-    msgbox ("FUUKA: Nice fight, anigimi. I can only\n" "hope I'll grow this strong, too.\p" "Let's see if I can get the STAMP myself.\n" "Meanwhile, you can go to COCONUT CITY's\l" "temple first.$")
+    msgbox ("FUUKA: Nice fight, anigimi. I can only\n" "hope I'll grow this strong, too.\p" "Let's see if I can get the STAMP myself.\n" "Meanwhile, why don't you go to\l" "COCONUT CITY's TEMPLE first?$")
     closemessage
     applymovement (LOCALID_PLAYER, Common_Movement_WalkDown)
     applymovement (LOCALID_PLAYER, Common_Movement_FaceUp)
     waitmovement (0)
     applymovement (LOCALID_DURIANTOWN_RIVAL, DurianTown_Movement_GoToTemple)
     waitmovement (0)
-    removeobject(LOCALID_CITRUS_RIVAL)
+    removeobject(LOCALID_DURIANTOWN_RIVAL)
     fadedefaultbgm
+    setflag(FLAG_HIDE_DURIAN_TOWN_RIVAL)
     setvar (VAR_RIVALS_STATE, 4)
     setvar (VAR_ROUTE52_STATE, 1)   
     release
@@ -155,4 +170,8 @@ script DurianTown_FuukaDefeated {
 movement DurianTown_Movement_GoToTemple {
     walk_left
     walk_up * 2
+}
+
+movement DurianTown_Movement_ComeToPlayer {
+    walk_fast_left * 6
 }

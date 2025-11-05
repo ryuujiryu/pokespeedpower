@@ -12383,7 +12383,7 @@ F_TRAINER_FEMALE |
 #line 4792
         .trainerName = _("SHIRI&BANJO"),
 #line 4793
-        .trainerClass = TRAINER_CLASS_LEADER,
+        .trainerClass = TRAINER_CLASS_PATH_GUARDIAN,
 #line 4794
         .trainerPic = TRAINER_PIC_LEADER_ROXANNE,
         .encounterMusic_gender =
@@ -12430,7 +12430,7 @@ F_TRAINER_FEMALE |
 #line 4810
         .trainerName = _("BRAWLY"),
 #line 4811
-        .trainerClass = TRAINER_CLASS_LEADER,
+        .trainerClass = TRAINER_CLASS_PATH_GUARDIAN,
 #line 4812
         .trainerPic = TRAINER_PIC_LEADER_BRAWLY,
         .encounterMusic_gender =
@@ -12511,7 +12511,7 @@ F_TRAINER_FEMALE |
 #line 4844
         .trainerName = _("WATTSON"),
 #line 4845
-        .trainerClass = TRAINER_CLASS_LEADER,
+        .trainerClass = TRAINER_CLASS_PATH_GUARDIAN,
 #line 4846
         .trainerPic = TRAINER_PIC_LEADER_WATTSON,
         .encounterMusic_gender =
@@ -12610,7 +12610,7 @@ F_TRAINER_FEMALE |
 #line 4886
         .trainerName = _("FLANNERY"),
 #line 4887
-        .trainerClass = TRAINER_CLASS_LEADER,
+        .trainerClass = TRAINER_CLASS_PATH_GUARDIAN,
 #line 4888
         .trainerPic = TRAINER_PIC_LEADER_FLANNERY,
         .encounterMusic_gender =
@@ -12711,7 +12711,7 @@ F_TRAINER_FEMALE |
 #line 4928
         .trainerName = _("NORMAN"),
 #line 4929
-        .trainerClass = TRAINER_CLASS_LEADER,
+        .trainerClass = TRAINER_CLASS_PATH_GUARDIAN,
 #line 4930
         .trainerPic = TRAINER_PIC_LEADER_NORMAN,
         .encounterMusic_gender =
@@ -12810,7 +12810,7 @@ F_TRAINER_FEMALE |
 #line 4970
         .trainerName = _("WINONA"),
 #line 4971
-        .trainerClass = TRAINER_CLASS_LEADER,
+        .trainerClass = TRAINER_CLASS_PATH_GUARDIAN,
 #line 4972
         .trainerPic = TRAINER_PIC_LEADER_WINONA,
         .encounterMusic_gender =
@@ -12929,7 +12929,7 @@ F_TRAINER_FEMALE |
 #line 5020
         .trainerName = _("TATE&LIZA"),
 #line 5021
-        .trainerClass = TRAINER_CLASS_LEADER,
+        .trainerClass = TRAINER_CLASS_PATH_GUARDIAN,
 #line 5022
         .trainerPic = TRAINER_PIC_LEADER_TATE_AND_LIZA,
         .encounterMusic_gender =
@@ -13030,7 +13030,7 @@ F_TRAINER_FEMALE |
 #line 5062
         .trainerName = _("JUAN"),
 #line 5063
-        .trainerClass = TRAINER_CLASS_LEADER,
+        .trainerClass = TRAINER_CLASS_PATH_GUARDIAN,
 #line 5064
         .trainerPic = TRAINER_PIC_LEADER_JUAN,
         .encounterMusic_gender =
@@ -15370,7 +15370,7 @@ F_TRAINER_FEMALE |
 #line 5945
         .trainerName = _("JUNICHI"),
 #line 5946
-        .trainerClass = TRAINER_CLASS_IDOL,
+        .trainerClass = TRAINER_CLASS_PATH_DISCIPLE,
 #line 5947
         .trainerPic = TRAINER_PIC_IDOL,
         .encounterMusic_gender =
@@ -33848,7 +33848,7 @@ F_TRAINER_FEMALE |
 #line 12951
         .trainerName = _("DARIAN"),
 #line 12952
-        .trainerClass = TRAINER_CLASS_GUITARIST,
+        .trainerClass = TRAINER_CLASS_PATH_DISCIPLE,
 #line 12953
         .trainerPic = TRAINER_PIC_GUITARIST,
         .encounterMusic_gender =
@@ -37047,7 +37047,7 @@ F_TRAINER_FEMALE |
 #line 14141
         .trainerName = _("ROXANNE"),
 #line 14142
-        .trainerClass = TRAINER_CLASS_LEADER,
+        .trainerClass = TRAINER_CLASS_PATH_GUARDIAN,
 #line 14143
         .trainerPic = TRAINER_PIC_LEADER_ROXANNE,
         .encounterMusic_gender =
@@ -37150,7 +37150,7 @@ F_TRAINER_FEMALE |
 #line 14183
         .trainerName = _("ROXANNE"),
 #line 14184
-        .trainerClass = TRAINER_CLASS_LEADER,
+        .trainerClass = TRAINER_CLASS_PATH_GUARDIAN,
 #line 14185
         .trainerPic = TRAINER_PIC_LEADER_ROXANNE,
         .encounterMusic_gender =
@@ -37271,7 +37271,7 @@ F_TRAINER_FEMALE |
 #line 14233
         .trainerName = _("ROXANNE"),
 #line 14234
-        .trainerClass = TRAINER_CLASS_LEADER,
+        .trainerClass = TRAINER_CLASS_PATH_GUARDIAN,
 #line 14235
         .trainerPic = TRAINER_PIC_LEADER_ROXANNE,
         .encounterMusic_gender =
@@ -37392,7 +37392,7 @@ F_TRAINER_FEMALE |
 #line 14283
         .trainerName = _("ROXANNE"),
 #line 14284
-        .trainerClass = TRAINER_CLASS_LEADER,
+        .trainerClass = TRAINER_CLASS_PATH_GUARDIAN,
 #line 14285
         .trainerPic = TRAINER_PIC_LEADER_ROXANNE,
         .encounterMusic_gender =
@@ -37531,7 +37531,7 @@ F_TRAINER_FEMALE |
 #line 14341
         .trainerName = _("BRAWLY"),
 #line 14342
-        .trainerClass = TRAINER_CLASS_LEADER,
+        .trainerClass = TRAINER_CLASS_PATH_GUARDIAN,
 #line 14343
         .trainerPic = TRAINER_PIC_LEADER_BRAWLY,
         .encounterMusic_gender =
@@ -37632,7 +37632,7 @@ F_TRAINER_FEMALE |
 #line 14383
         .trainerName = _("BRAWLY"),
 #line 14384
-        .trainerClass = TRAINER_CLASS_LEADER,
+        .trainerClass = TRAINER_CLASS_PATH_GUARDIAN,
 #line 14385
         .trainerPic = TRAINER_PIC_LEADER_BRAWLY,
         .encounterMusic_gender =
@@ -37733,7 +37733,7 @@ F_TRAINER_FEMALE |
 #line 14425
         .trainerName = _("BRAWLY"),
 #line 14426
-        .trainerClass = TRAINER_CLASS_LEADER,
+        .trainerClass = TRAINER_CLASS_PATH_GUARDIAN,
 #line 14427
         .trainerPic = TRAINER_PIC_LEADER_BRAWLY,
         .encounterMusic_gender =
@@ -37852,7 +37852,7 @@ F_TRAINER_FEMALE |
 #line 14475
         .trainerName = _("BRAWLY"),
 #line 14476
-        .trainerClass = TRAINER_CLASS_LEADER,
+        .trainerClass = TRAINER_CLASS_PATH_GUARDIAN,
 #line 14477
         .trainerPic = TRAINER_PIC_LEADER_BRAWLY,
         .encounterMusic_gender =
@@ -37989,7 +37989,7 @@ F_TRAINER_FEMALE |
 #line 14533
         .trainerName = _("WATTSON"),
 #line 14534
-        .trainerClass = TRAINER_CLASS_LEADER,
+        .trainerClass = TRAINER_CLASS_PATH_GUARDIAN,
 #line 14535
         .trainerPic = TRAINER_PIC_LEADER_WATTSON,
         .encounterMusic_gender =
@@ -38090,7 +38090,7 @@ F_TRAINER_FEMALE |
 #line 14575
         .trainerName = _("WATTSON"),
 #line 14576
-        .trainerClass = TRAINER_CLASS_LEADER,
+        .trainerClass = TRAINER_CLASS_PATH_GUARDIAN,
 #line 14577
         .trainerPic = TRAINER_PIC_LEADER_WATTSON,
         .encounterMusic_gender =
@@ -38209,7 +38209,7 @@ F_TRAINER_FEMALE |
 #line 14625
         .trainerName = _("WATTSON"),
 #line 14626
-        .trainerClass = TRAINER_CLASS_LEADER,
+        .trainerClass = TRAINER_CLASS_PATH_GUARDIAN,
 #line 14627
         .trainerPic = TRAINER_PIC_LEADER_WATTSON,
         .encounterMusic_gender =
@@ -38328,7 +38328,7 @@ F_TRAINER_FEMALE |
 #line 14675
         .trainerName = _("WATTSON"),
 #line 14676
-        .trainerClass = TRAINER_CLASS_LEADER,
+        .trainerClass = TRAINER_CLASS_PATH_GUARDIAN,
 #line 14677
         .trainerPic = TRAINER_PIC_LEADER_WATTSON,
         .encounterMusic_gender =
@@ -38465,7 +38465,7 @@ F_TRAINER_FEMALE |
 #line 14733
         .trainerName = _("FLANNERY"),
 #line 14734
-        .trainerClass = TRAINER_CLASS_LEADER,
+        .trainerClass = TRAINER_CLASS_PATH_GUARDIAN,
 #line 14735
         .trainerPic = TRAINER_PIC_LEADER_FLANNERY,
         .encounterMusic_gender =
@@ -38570,7 +38570,7 @@ F_TRAINER_FEMALE |
 #line 14775
         .trainerName = _("FLANNERY"),
 #line 14776
-        .trainerClass = TRAINER_CLASS_LEADER,
+        .trainerClass = TRAINER_CLASS_PATH_GUARDIAN,
 #line 14777
         .trainerPic = TRAINER_PIC_LEADER_FLANNERY,
         .encounterMusic_gender =
@@ -38693,7 +38693,7 @@ F_TRAINER_FEMALE |
 #line 14825
         .trainerName = _("FLANNERY"),
 #line 14826
-        .trainerClass = TRAINER_CLASS_LEADER,
+        .trainerClass = TRAINER_CLASS_PATH_GUARDIAN,
 #line 14827
         .trainerPic = TRAINER_PIC_LEADER_FLANNERY,
         .encounterMusic_gender =
@@ -38834,7 +38834,7 @@ F_TRAINER_FEMALE |
 #line 14883
         .trainerName = _("FLANNERY"),
 #line 14884
-        .trainerClass = TRAINER_CLASS_LEADER,
+        .trainerClass = TRAINER_CLASS_PATH_GUARDIAN,
 #line 14885
         .trainerPic = TRAINER_PIC_LEADER_FLANNERY,
         .encounterMusic_gender =
@@ -38975,7 +38975,7 @@ F_TRAINER_FEMALE |
 #line 14941
         .trainerName = _("NORMAN"),
 #line 14942
-        .trainerClass = TRAINER_CLASS_LEADER,
+        .trainerClass = TRAINER_CLASS_PATH_GUARDIAN,
 #line 14943
         .trainerPic = TRAINER_PIC_LEADER_NORMAN,
         .encounterMusic_gender =
@@ -39076,7 +39076,7 @@ F_TRAINER_FEMALE |
 #line 14983
         .trainerName = _("NORMAN"),
 #line 14984
-        .trainerClass = TRAINER_CLASS_LEADER,
+        .trainerClass = TRAINER_CLASS_PATH_GUARDIAN,
 #line 14985
         .trainerPic = TRAINER_PIC_LEADER_NORMAN,
         .encounterMusic_gender =
@@ -39195,7 +39195,7 @@ F_TRAINER_FEMALE |
 #line 15033
         .trainerName = _("NORMAN"),
 #line 15034
-        .trainerClass = TRAINER_CLASS_LEADER,
+        .trainerClass = TRAINER_CLASS_PATH_GUARDIAN,
 #line 15035
         .trainerPic = TRAINER_PIC_LEADER_NORMAN,
         .encounterMusic_gender =
@@ -39314,7 +39314,7 @@ F_TRAINER_FEMALE |
 #line 15083
         .trainerName = _("NORMAN"),
 #line 15084
-        .trainerClass = TRAINER_CLASS_LEADER,
+        .trainerClass = TRAINER_CLASS_PATH_GUARDIAN,
 #line 15085
         .trainerPic = TRAINER_PIC_LEADER_NORMAN,
         .encounterMusic_gender =
@@ -39451,7 +39451,7 @@ F_TRAINER_FEMALE |
 #line 15141
         .trainerName = _("WINONA"),
 #line 15142
-        .trainerClass = TRAINER_CLASS_LEADER,
+        .trainerClass = TRAINER_CLASS_PATH_GUARDIAN,
 #line 15143
         .trainerPic = TRAINER_PIC_LEADER_WINONA,
         .encounterMusic_gender =
@@ -39572,7 +39572,7 @@ F_TRAINER_FEMALE |
 #line 15191
         .trainerName = _("WINONA"),
 #line 15192
-        .trainerClass = TRAINER_CLASS_LEADER,
+        .trainerClass = TRAINER_CLASS_PATH_GUARDIAN,
 #line 15193
         .trainerPic = TRAINER_PIC_LEADER_WINONA,
         .encounterMusic_gender =
@@ -39711,7 +39711,7 @@ F_TRAINER_FEMALE |
 #line 15249
         .trainerName = _("WINONA"),
 #line 15250
-        .trainerClass = TRAINER_CLASS_LEADER,
+        .trainerClass = TRAINER_CLASS_PATH_GUARDIAN,
 #line 15251
         .trainerPic = TRAINER_PIC_LEADER_WINONA,
         .encounterMusic_gender =
@@ -39850,7 +39850,7 @@ F_TRAINER_FEMALE |
 #line 15307
         .trainerName = _("WINONA"),
 #line 15308
-        .trainerClass = TRAINER_CLASS_LEADER,
+        .trainerClass = TRAINER_CLASS_PATH_GUARDIAN,
 #line 15309
         .trainerPic = TRAINER_PIC_LEADER_WINONA,
         .encounterMusic_gender =
@@ -39989,7 +39989,7 @@ F_TRAINER_FEMALE |
 #line 15365
         .trainerName = _("TATE&LIZA"),
 #line 15366
-        .trainerClass = TRAINER_CLASS_LEADER,
+        .trainerClass = TRAINER_CLASS_PATH_GUARDIAN,
 #line 15367
         .trainerPic = TRAINER_PIC_LEADER_TATE_AND_LIZA,
         .encounterMusic_gender =
@@ -40110,7 +40110,7 @@ F_TRAINER_FEMALE |
 #line 15415
         .trainerName = _("TATE&LIZA"),
 #line 15416
-        .trainerClass = TRAINER_CLASS_LEADER,
+        .trainerClass = TRAINER_CLASS_PATH_GUARDIAN,
 #line 15417
         .trainerPic = TRAINER_PIC_LEADER_TATE_AND_LIZA,
         .encounterMusic_gender =
@@ -40249,7 +40249,7 @@ F_TRAINER_FEMALE |
 #line 15473
         .trainerName = _("TATE&LIZA"),
 #line 15474
-        .trainerClass = TRAINER_CLASS_LEADER,
+        .trainerClass = TRAINER_CLASS_PATH_GUARDIAN,
 #line 15475
         .trainerPic = TRAINER_PIC_LEADER_TATE_AND_LIZA,
         .encounterMusic_gender =
@@ -40388,7 +40388,7 @@ F_TRAINER_FEMALE |
 #line 15531
         .trainerName = _("TATE&LIZA"),
 #line 15532
-        .trainerClass = TRAINER_CLASS_LEADER,
+        .trainerClass = TRAINER_CLASS_PATH_GUARDIAN,
 #line 15533
         .trainerPic = TRAINER_PIC_LEADER_TATE_AND_LIZA,
         .encounterMusic_gender =
@@ -40527,7 +40527,7 @@ F_TRAINER_FEMALE |
 #line 15589
         .trainerName = _("JUAN"),
 #line 15590
-        .trainerClass = TRAINER_CLASS_LEADER,
+        .trainerClass = TRAINER_CLASS_PATH_GUARDIAN,
 #line 15591
         .trainerPic = TRAINER_PIC_LEADER_JUAN,
         .encounterMusic_gender =
@@ -40646,7 +40646,7 @@ F_TRAINER_FEMALE |
 #line 15639
         .trainerName = _("JUAN"),
 #line 15640
-        .trainerClass = TRAINER_CLASS_LEADER,
+        .trainerClass = TRAINER_CLASS_PATH_GUARDIAN,
 #line 15641
         .trainerPic = TRAINER_PIC_LEADER_JUAN,
         .encounterMusic_gender =
@@ -40765,7 +40765,7 @@ F_TRAINER_FEMALE |
 #line 15689
         .trainerName = _("JUAN"),
 #line 15690
-        .trainerClass = TRAINER_CLASS_LEADER,
+        .trainerClass = TRAINER_CLASS_PATH_GUARDIAN,
 #line 15691
         .trainerPic = TRAINER_PIC_LEADER_JUAN,
         .encounterMusic_gender =
@@ -40902,7 +40902,7 @@ F_TRAINER_FEMALE |
 #line 15747
         .trainerName = _("JUAN"),
 #line 15748
-        .trainerClass = TRAINER_CLASS_LEADER,
+        .trainerClass = TRAINER_CLASS_PATH_GUARDIAN,
 #line 15749
         .trainerPic = TRAINER_PIC_LEADER_JUAN,
         .encounterMusic_gender =

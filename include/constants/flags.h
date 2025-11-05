@@ -1222,11 +1222,11 @@
 #define FLAG_ITEM_SAFARI_ZONE_NORTH_EAST_NUGGET                     0x491
 #define FLAG_ITEM_SAFARI_ZONE_SOUTH_EAST_BIG_PEARL                  0x492
 
-#define FLAG_SYS_TC_GET                                             0x493 // Unused Flag
-#define FLAG_SYS_SAVE_GET                                           0x494 // Unused Flag
-#define FLAG_HIDE_HOUSE_RIVAL                                       0x495 // Unused Flag
-#define FLAG_RIVAL_POKEBALLS                                        0x496 // Unused Flag
-#define FLAG_UNUSED_0x497                                           0x497 // Unused Flag
+#define FLAG_SYS_TC_GET                                             0x493 // SP Flag
+#define FLAG_SYS_SAVE_GET                                           0x494 // SP Flag
+#define FLAG_HIDE_HOUSE_RIVAL                                       0x495 // SP Flag
+#define FLAG_RIVAL_POKEBALLS                                        0x496 // SP Flag
+#define FLAG_HIDE_DURIAN_TOWN_RIVAL                                 0x497 // SP Flag
 #define FLAG_UNUSED_0x498                                           0x498 // Unused Flag
 #define FLAG_UNUSED_0x499                                           0x499 // Unused Flag
 #define FLAG_UNUSED_0x49A                                           0x49A // Unused Flag

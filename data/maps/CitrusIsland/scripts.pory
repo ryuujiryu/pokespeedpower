@@ -407,9 +407,9 @@ script CitrusIsland_Pokedex {
     waitmoncry
     playse (SE_RG_BALL_CLICK)
     waitse
-    playmoncry (SPECIES_XATU, CRY_MODE_NORMAL)
+    playmoncry (SPECIES_SKARMORY, CRY_MODE_NORMAL)
     waitmoncry
-    msgbox ("FLYGON, XATU, please. Take them to the\n" "next step of their journey.$")
+    msgbox ("FLYGON, SKARMORY, please. Take them to\n" "the next step of their journey.$")
     closemessage
     call (CitrusIsland_RivalFlyAway)
 }
