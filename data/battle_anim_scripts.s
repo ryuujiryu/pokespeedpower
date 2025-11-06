@@ -38009,3 +38009,121 @@ gBattleAnimGeneral_DynamaxGrowth:: @ PORTED FROM CFRU
 	createvisualtask AnimTask_DynamaxGrowth, 0x5, 0x1, 0x0
 	waitforvisualfinish
 	end
+
+gBattleAnimMove_Shout::
+	loadspritegfx ANIM_TAG_NOISE_LINE
+	createvisualtask SoundTask_PlayDoubleCry, 2, ANIM_ATTACKER, DOUBLE_CRY_GROWL
+	call ShoutEffect
+	delay 10
+	createvisualtask AnimTask_ShakeMon2, 2, ANIM_TARGET, 1, 0, 9, 1
+	waitforvisualfinish
+	createvisualtask SoundTask_PlayDoubleCry, 2, ANIM_ATTACKER, DOUBLE_CRY_GROWL
+	call ShoutEffect
+	delay 10
+	createvisualtask AnimTask_ShakeMon2, 2, ANIM_TARGET, 1, 0, 9, 1
+	waitforvisualfinish
+	createvisualtask SoundTask_WaitForCry, 5
+	waitforvisualfinish
+	end
+
+ShoutEffect:
+	createsprite gRoarNoiseLineSpriteTemplate, ANIM_ATTACKER, 0, 24, -8, 2, RGB(1, 23, 29) 
+	createsprite gRoarNoiseLineSpriteTemplate, ANIM_ATTACKER, 0, 24, 0, 3, RGB(1, 23, 29) 
+	return
+
+gBattleAnimMove_Slots::
+	fadetobg BG_RAINBOW
+	monbg ANIM_TARGET
+	setalpha 12, 8
+	loadspritegfx ANIM_TAG_CONFETTI
+	call CreateFlatterConfetti
+	call CreateFlatterConfetti
+	call CreateFlatterConfetti
+	call CreateFlatterConfetti
+	call CreateFlatterConfetti
+	call CreateFlatterConfetti
+	call CreateFlatterConfetti
+	call CreateFlatterConfetti
+	call CreateFlatterConfetti
+	call CreateFlatterConfetti
+	call CreateFlatterConfetti
+	call CreateFlatterConfetti
+	call CreateFlatterConfetti
+	call CreateFlatterConfetti
+	call CreateFlatterConfetti
+	call CreateFlatterConfetti
+	call CreateFlatterConfetti
+	call CreateFlatterConfetti
+	call CreateFlatterConfetti
+	delay 5
+	playsewithpan SE_M_ENCORE, 0
+	delay 14
+	waitforvisualfinish
+	clearmonbg ANIM_TARGET
+	blendoff
+	restorebg
+	waitbgfadein
+	waitforvisualfinish
+	end
+
+gBattleAnimMove_JalapenoBomb::
+	loadspritegfx ANIM_TAG_SMALL_EMBER
+	loadspritegfx ANIM_TAG_POISON_BUBBLE
+	loadspritegfx ANIM_TAG_SMALL_BUBBLES
+	monbg ANIM_DEF_PARTNER
+	splitbgprio ANIM_TARGET
+	playsewithpan SE_M_SWIFT, SOUND_PAN_ATTACKER
+	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_POISON_BUBBLE, 0, 12, 12, RGB(12, 29, 0)
+	call SludgeBombProjectile
+	call SludgeBombProjectile
+	call SludgeBombProjectile
+	call SludgeBombProjectile
+	createvisualtask AnimTask_ShakeMon2, 5, ANIM_TARGET, 3, 0, 15, 1
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_TARGET, 3, 9, 0, RGB_RED
+	createsprite gSludgeBombHitParticleSpriteTemplate, ANIM_TARGET, 2, 42, 0, 20
+	createsprite gSludgeBombHitParticleSpriteTemplate, ANIM_TARGET, 2, -43, -12, 20
+	createsprite gSludgeBombHitParticleSpriteTemplate, ANIM_TARGET, 2, 16, -46, 20
+	createsprite gSludgeBombHitParticleSpriteTemplate, ANIM_TARGET, 2, -16, 44, 20
+	playsewithpan SE_M_FLAME_WHEEL, SOUND_PAN_TARGET
+	delay 5
+	waitforvisualfinish
+	clearmonbg ANIM_DEF_PARTNER	
+	end
+
+gBattleAnimMove_SteamPurification::
+	loadspritegfx ANIM_TAG_MIST_CLOUD
+	monbg ANIM_ATK_PARTNER
+	setalpha 12, 8
+	loopsewithpan SE_M_MIST, SOUND_PAN_ATTACKER, 20, 15
+	call MistCloud
+	call MistCloud
+	call MistCloud
+	call MistCloud
+	call MistCloud
+	call MistCloud
+	call MistCloud
+	delay 32
+	createvisualtask AnimTask_BlendColorCycle, 2, F_PAL_ATK_SIDE, 8, 2, 0, 14, RGB_WHITE
+	clearmonbg ANIM_ATK_PARTNER
+	waitforvisualfinish
+	monbg ANIM_TARGET
+	splitbgprio ANIM_TARGET
+	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_MIST_CLOUD, 0, 6, 6, RGB_WHITE
+	loopsewithpan SE_M_MIST, SOUND_PAN_TARGET, 17, 10
+	call ClearSmogCloud
+	call ClearSmogCloud
+	call ClearSmogCloud
+	call ClearSmogCloud
+	call ClearSmogCloud
+	call ClearSmogCloud
+	call ClearSmogCloud
+	delay 120
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_TARGET, 3, 0, 16, RGB_WHITE
+	delay 8
+	createvisualtask AnimTask_ShakeMon, 2, ANIM_TARGET, 4, 0, 70, 0
+	delay 70
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_TARGET, 2, 16, 0, RGB_WHITE
+	waitforvisualfinish
+	clearmonbg ANIM_TARGET
+	blendoff
+	end

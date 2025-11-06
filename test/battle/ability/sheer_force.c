@@ -575,6 +575,7 @@ static inline bool32 IsMoveSheerForceBoosted(u32 move)
         case MOVE_SEED_FLARE:
         case MOVE_SHADOW_BONE:
         case MOVE_SHELL_SIDE_ARM:
+        case MOVE_SHOUT:
         case MOVE_SILVER_WIND:
         case MOVE_SKITTER_SMACK:
         case MOVE_SLUDGE:

@@ -67,7 +67,7 @@ script DurianTown_Rival {
     applymovement (LOCALID_DURIANTOWN_RIVAL, Common_Movement_WalkInPlaceLeft)
     waitmovement (0)
     if (checkplayergender != MALE) {
-        msgbox ("SHIN'YA: I'm guessing you got the STAMP, right?\n" "I knew you would do it.$")
+        msgbox ("SHIN'YA: I'm guessing you got the STAMP\n" ", right? I knew you would do it.$")
         closemessage
     } else {
         msgbox("FUUKA: You got your STAMP, didn't you?\n" "That's great.$")
@@ -80,7 +80,7 @@ script DurianTown_Rival {
     } else {
         msgbox("FUUKA: The first step in claiming\n" "the throne we deserve…$")
     }
-    msgbox ("Anyway. Since we did not have that\n" "match back in CITRUS ISLAND,\l" "why don't we have it right here?$")
+    msgbox ("Anyway. Since we did not have that\n" "match back in CITRUS ISLAND, why don't\l" "we have it right here?$")
     closemessage
     applymovement (LOCALID_DURIANTOWN_RIVAL, Common_Movement_Music)
     waitmovement (0)

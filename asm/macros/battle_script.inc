@@ -881,7 +881,7 @@
 	.byte 0x9e
 	.endm
 
-	.macro unused_0x9f
+	.macro slots
 	.byte 0x9f
 	.endm
 

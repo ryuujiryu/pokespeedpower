@@ -2269,7 +2269,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
 
     [MOVE_THUNDER_SHOCK] =
     {
-        .name = COMPOUND_STRING("Thunder Shock"),
+        .name = COMPOUND_STRING("JOLT"),
         .description = COMPOUND_STRING(
             "An electrical attack that\n"
             "may paralyze the foe."),
@@ -22738,5 +22738,106 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .category = DAMAGE_CATEGORY_PHYSICAL,
         .ignoresProtect = TRUE,
         .battleAnimScript = gBattleAnimMove_GMaxRapidFlow,
+    },
+
+    [MOVE_SHOUT] =
+    {
+        .name = COMPOUND_STRING("SHOUT"),
+        .description = COMPOUND_STRING(
+            "A weak sonorous attack that may\n"
+            "also leave the foe confused."),
+        .effect = EFFECT_HIT,
+        .power = 40,
+        .type = TYPE_SOUND,
+        .accuracy = 100,
+        .pp = 25,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_CONFUSION,
+            .chance = 10,
+        }),
+        .battleAnimScript = gBattleAnimMove_Shout,
+    },
+
+    [MOVE_SLOTS] =
+    {
+        .name = COMPOUND_STRING("SLOTS"),
+        .description = COMPOUND_STRING(
+            "Spin the slot! Œ Who knows\n"
+            " what will happen? Œ"),
+        .effect = EFFECT_SLOTS,
+        .power = 0,
+        .type = TYPE_NORMAL,
+        .accuracy = 0,
+        .pp = 10,
+        .target = MOVE_TARGET_DEPENDS,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_STATUS,
+        .ignoresProtect = TRUE,
+        .mirrorMoveBanned = TRUE,
+        .mimicBanned = TRUE,
+        .metronomeBanned = TRUE,
+        .copycatBanned = TRUE,
+        .sleepTalkBanned = B_UPDATED_MOVE_FLAGS >= GEN_3,
+        .instructBanned = TRUE,
+        .encoreBanned = TRUE,
+        .assistBanned = TRUE,
+        .contestEffect = CONTEST_EFFECT_REPETITION_NOT_BORING,
+        .contestCategory = CONTEST_CATEGORY_CUTE,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_Slots,
+        .validApprenticeMove = TRUE,
+    },
+
+    [MOVE_JALAPENO_BOMB] =
+    {
+        .name = COMPOUND_STRING("JALAPENO BOMB"),
+        .description = COMPOUND_STRING(
+            "Spits out spice bombs at the\n"
+            " foe 2 to 5 times. May cause burn."),
+        .effect = EFFECT_MULTI_HIT,
+        .power = 15,
+        .type = TYPE_GRASS,
+        .accuracy = 100,
+        .pp = 20,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_BURN,
+            .chance = 10,
+        }),
+        .contestEffect = CONTEST_EFFECT_STARTLE_MONS_SAME_TYPE_APPEAL,
+        .contestCategory = CONTEST_CATEGORY_BEAUTY,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_JalapenoBomb,
+    },
+
+    [MOVE_STEAM_PURIFICATION] =
+    {
+        .name = COMPOUND_STRING("PURIFYING STEAM"),
+        .description = COMPOUND_STRING(
+            "Purifies the battlefield\n"
+            "eliminating all stat changes."),
+        .effect = EFFECT_HIT,
+        .power = 50,
+        .type = TYPE_FIRE,
+        .accuracy = 0,
+        .pp = 15,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_CLEAR_SMOG,
+        }),
+        .contestEffect = CONTEST_EFFECT_STARTLE_MONS_SAME_TYPE_APPEAL,
+        .contestCategory = CONTEST_CATEGORY_BEAUTY,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_SteamPurification,
     },
 };

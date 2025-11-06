@@ -499,7 +499,7 @@ static void Cmd_transformdataexecution(void);
 static void Cmd_setsubstitute(void);
 static void Cmd_mimicattackcopy(void);
 static void Cmd_metronome(void);
-static void Cmd_unused_0x9f(void);
+static void Cmd_slots(void);
 static void Cmd_unused_0xA0(void);
 static void Cmd_counterdamagecalculator(void);
 static void Cmd_mirrorcoatdamagecalculator(void);
@@ -758,7 +758,7 @@ void (*const gBattleScriptingCommandsTable[])(void) =
     Cmd_setsubstitute,                           //0x9C
     Cmd_mimicattackcopy,                         //0x9D
     Cmd_metronome,                               //0x9E
-    Cmd_unused_0x9f,                             //0x9F
+    Cmd_slots,                                   //0x9F
     Cmd_unused_0xA0,                             //0xA0
     Cmd_counterdamagecalculator,                 //0xA1
     Cmd_mirrorcoatdamagecalculator,              //0xA2
@@ -11329,8 +11329,32 @@ static void Cmd_metronome(void)
     ResetValuesForCalledMove();
 }
 
-static void Cmd_unused_0x9f(void)
+static void Cmd_slots(void)
 {
+    static const u32 moveTable[] =
+    {
+        MOVE_MOONBLAST,
+        MOVE_THUNDER,
+        MOVE_HURRICANE,
+        MOVE_HYPER_BEAM,
+        MOVE_BLIZZARD,
+        MOVE_FIRE_BLAST,
+        MOVE_SPLASH,
+        MOVE_GUILLOTINE,
+        MOVE_REVIVAL_BLESSING,
+        MOVE_EXPLOSION,
+        MOVE_MAKE_IT_RAIN,
+        MOVE_HAPPY_HOUR,
+        MOVE_PRISMATIC_LASER,
+        MOVE_EARTHQUAKE,
+        MOVE_FOCUS_ENERGY,
+    };
+
+    gCurrentMove = RandomElement(RNG_METRONOME, moveTable);
+    PrepareStringBattle(STRINGID_SPINTHESLOT, gBattlerAttacker);
+    gBattlescriptCurrInstr = GetMoveBattleScript(gCurrentMove);
+    gBattlerTarget = GetBattleMoveTarget(gCurrentMove, NO_TARGET_OVERRIDE);
+    ResetValuesForCalledMove();
 }
 
 static void Cmd_unused_0xA0(void)

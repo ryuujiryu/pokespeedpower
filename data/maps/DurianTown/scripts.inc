@@ -383,8 +383,8 @@ DurianTown_Rival_Text_1:
 
 DurianTown_Rival_Text_2:
 # 70 "data/maps/DurianTown/scripts.pory"
-	.string "SHIN'YA: I'm guessing you got the STAMP, right?\n"
-	.string "I knew you would do it.$"
+	.string "SHIN'YA: I'm guessing you got the STAMP\n"
+	.string ", right? I knew you would do it.$"
 
 DurianTown_Rival_Text_3:
 # 73 "data/maps/DurianTown/scripts.pory"
@@ -404,8 +404,8 @@ DurianTown_Rival_Text_5:
 DurianTown_Rival_Text_6:
 # 83 "data/maps/DurianTown/scripts.pory"
 	.string "Anyway. Since we did not have that\n"
-	.string "match back in CITRUS ISLAND,\l"
-	.string "why don't we have it right here?$"
+	.string "match back in CITRUS ISLAND, why don't\l"
+	.string "we have it right here?$"
 
 DurianTown_Rival_Text_7:
 # 90 "data/maps/DurianTown/scripts.pory"

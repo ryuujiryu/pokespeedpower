@@ -157,7 +157,7 @@ CitrusIsland_PlayerHouse_Outfit::
 # 80 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
 	waitmovement 0
 # 81 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	playse SE_SLIDING_DOOR
+	playse SE_DOOR
 # 82 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
 	removeobject LOCALID_CITRUS_RIVAL
 # 83 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"

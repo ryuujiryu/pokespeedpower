@@ -9709,3 +9709,11 @@ BattleScript_ForfeitBattleGaveMoney::
 .endif
 	waitmessage B_WAIT_TIME_LONG
 	end2
+
+BattleScript_EffectSlots::
+	attackcanceler
+	attackstring
+	pause B_WAIT_TIME_SHORT
+	attackanimation
+	waitanimation
+	slots

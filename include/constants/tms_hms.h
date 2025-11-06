@@ -49,9 +49,10 @@
     F(ATTRACT) \
     F(THIEF) \
     F(STEEL_WING) \
-    F(SKILL_SWAP) \
+    F(ROUND) \
     F(SNATCH) \
-    F(OVERHEAT)
+    F(OVERHEAT) \
+    F(ROOST)
 
 #define FOREACH_HM(F) \
     F(CUT) \
@@ -61,7 +62,7 @@
     F(FLASH) \
     F(ROCK_SMASH) \
     F(WATERFALL) \
-    F(DIVE)
+    F(ROCK_CLIMB)
 
 #define FOREACH_TMHM(F) \
     FOREACH_TM(F) \

@@ -11609,7 +11609,7 @@ const struct Item gItemsInfo[] =
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM_SKILL_SWAP] =
+    [ITEM_TM_ROUND] =
     {
         .name = ITEM_NAME("TM48"),
         .price = 3000,
@@ -11655,7 +11655,10 @@ const struct Item gItemsInfo[] =
     {
         .name = ITEM_NAME("TM51"),
         .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .description = COMPOUND_STRING(
+            "Enables full-power\n"
+            "attack, but sharply\n"
+            "lowers Sp. Atk."),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -12299,7 +12302,7 @@ const struct Item gItemsInfo[] =
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_HM_DIVE] =
+    [ITEM_HM_ROCK_CLIMB] =
     {
         .name = ITEM_NAME("HM08"),
         .price = 0,

@@ -175,7 +175,7 @@ DurianGym_ShiriAndBanjoDefeated::
 # 97 "data/maps/DurianGym/scripts.pory"
 	call Common_EventScript_SetGymTrainers
 # 98 "data/maps/DurianGym/scripts.pory"
-	giveitem ITEM_TM_SKILL_SWAP
+	giveitem ITEM_TM_ROUND
 # 99 "data/maps/DurianGym/scripts.pory"
 	setflag FLAG_RECEIVED_TM_ROCK_TOMB
 # 100 "data/maps/DurianGym/scripts.pory"

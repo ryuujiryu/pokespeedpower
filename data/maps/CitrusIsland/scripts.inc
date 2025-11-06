@@ -801,7 +801,7 @@ CitrusIsland_SoldierDefeated::
 # 409 "data/maps/CitrusIsland/scripts.pory"
 	waitse
 # 410 "data/maps/CitrusIsland/scripts.pory"
-	playmoncry SPECIES_XATU, CRY_MODE_NORMAL
+	playmoncry SPECIES_SKARMORY, CRY_MODE_NORMAL
 # 411 "data/maps/CitrusIsland/scripts.pory"
 	waitmoncry
 # 412 "data/maps/CitrusIsland/scripts.pory"
@@ -1371,8 +1371,8 @@ CitrusIsland_SoldierDefeated_Text_9:
 
 CitrusIsland_SoldierDefeated_Text_10:
 # 412 "data/maps/CitrusIsland/scripts.pory"
-	.string "FLYGON, XATU, please. Take them to the\n"
-	.string "next step of their journey.$"
+	.string "FLYGON, SKARMORY, please. Take them to\n"
+	.string "the next step of their journey.$"
 
 CitrusIsland_RivalFlyAway_Text_0:
 # 428 "data/maps/CitrusIsland/scripts.pory"

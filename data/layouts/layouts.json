@@ -4634,8 +4634,8 @@
     {
       "id": "LAYOUT_ROUTE55",
       "name": "Route55_Layout",
-      "width": 52,
-      "height": 25,
+      "width": 32,
+      "height": 14,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Coconut",
       "border_filepath": "data/layouts/Route55/border.bin",

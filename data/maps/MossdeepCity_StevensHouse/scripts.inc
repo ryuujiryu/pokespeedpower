@@ -79,7 +79,7 @@ MossdeepCity_StevensHouse_EventScript_StevenGivesDive::
 # 40 "data/maps/MossdeepCity_StevensHouse/scripts.pory"
 	msgbox MossdeepCity_StevensHouse_Text_YouveEarnedHMDive, MSGBOX_DEFAULT
 # 41 "data/maps/MossdeepCity_StevensHouse/scripts.pory"
-	giveitem ITEM_HM_DIVE
+	giveitem ITEM_HM_ROCK_CLIMB
 # 42 "data/maps/MossdeepCity_StevensHouse/scripts.pory"
 	setflag FLAG_RECEIVED_HM_DIVE
 # 43 "data/maps/MossdeepCity_StevensHouse/scripts.pory"
@@ -291,7 +291,7 @@ MossdeepCity_StevensHouse_EventScript_Letter::
 # 146 "data/maps/MossdeepCity_StevensHouse/scripts.pory"
 MossdeepCity_StevensHouse_EventScript_DiveItemBall::
 # 147 "data/maps/MossdeepCity_StevensHouse/scripts.pory"
-	finditem ITEM_HM_DIVE
+	finditem ITEM_HM_ROCK_CLIMB
 # 148 "data/maps/MossdeepCity_StevensHouse/scripts.pory"
 	setflag FLAG_RECEIVED_HM_DIVE
 # 149 "data/maps/MossdeepCity_StevensHouse/scripts.pory"
