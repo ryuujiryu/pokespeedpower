@@ -30614,6 +30614,7 @@ gBattleAnimMove_WeatherBall::
 	jumpreteq ANIM_WEATHER_HAIL, WeatherBallIce
 	jumpreteq ANIM_WEATHER_SNOW, WeatherBallIce
 	jumpreteq ANIM_WEATHER_FOG, WeatherBallNormal
+	jumpreteq ANIM_WEATHER_ACID_RAIN, WeatherBallIce
 WeatherBallNormal:
 	loadspritegfx ANIM_TAG_IMPACT
 	createsprite gWeatherBallNormalDownSpriteTemplate, ANIM_TARGET, 2, -30, -100, 25, 1, 0, 0
@@ -31358,7 +31359,12 @@ gBattleAnimGeneral_Snow::
 	goto gBattleAnimMove_Snowscape
 
 gBattleAnimGeneral_Fog::
-	goto gBattleAnimMove_Haze
+	call RainDrops
+	end
+
+gBattleAnimGeneral_AcidRain::
+	call RainDrops
+	end
 
 gBattleAnimGeneral_LeechSeedDrain::
 	createvisualtask AnimTask_GetBattlersFromArg, 5
@@ -38027,8 +38033,8 @@ gBattleAnimMove_Shout::
 	end
 
 ShoutEffect:
-	createsprite gRoarNoiseLineSpriteTemplate, ANIM_ATTACKER, 0, 24, -8, 2, RGB(1, 23, 29) 
-	createsprite gRoarNoiseLineSpriteTemplate, ANIM_ATTACKER, 0, 24, 0, 3, RGB(1, 23, 29) 
+	createsprite gRoarNoiseLineSpriteTemplate, ANIM_ATTACKER, 0, 24, -8, 2, RGB(0, 20, 31)
+	createsprite gRoarNoiseLineSpriteTemplate, ANIM_ATTACKER, 0, 24, 0, 3, RGB(0, 20, 31)
 	return
 
 gBattleAnimMove_Slots::
@@ -38127,3 +38133,65 @@ gBattleAnimMove_SteamPurification::
 	clearmonbg ANIM_TARGET
 	blendoff
 	end
+
+gBattleAnimMove_AcidRain::
+	loadspritegfx ANIM_TAG_RAIN_DROPS
+	playsewithpan SE_M_RAIN_DANCE, SOUND_PAN_ATTACKER
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, (F_PAL_BG | F_PAL_BATTLERS_2), 2, 0, 4, RGB_BLACK
+	waitforvisualfinish
+	createvisualtask AnimTask_CreateRaindrops, 2, 0, 3, 120
+	createvisualtask AnimTask_CreateRaindrops, 2, 0, 3, 120
+	delay 120
+	delay 30
+	waitforvisualfinish
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, (F_PAL_BG | F_PAL_BATTLERS_2), 2, 4, 0, RGB_BLACK
+	waitforvisualfinish
+	end
+
+gBattleAnimMove_QiSacrifice::
+	loadspritegfx ANIM_TAG_FLOWER
+	loadspritegfx ANIM_TAG_IMPACT_2
+	monbg ANIM_ATTACKER
+	setalpha 12, 8
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 1, 0, 8, RGB(29, 19, 27)
+	waitforvisualfinish
+	delay 20
+	createsprite gPetalDanceBigFlowerSpriteTemplate, ANIM_ATTACKER, 2, 0x0, 0xffe8, 0x8, 0x8c
+	createsprite gPetalDanceSmallFlowerSpriteTemplate, ANIM_ATTACKER, 2, 0x10, 0xffe8, 0x8, 0x64
+	createsprite gPetalDanceSmallFlowerSpriteTemplate, ANIM_ATTACKER, 2, 0xfff0, 0xffe8, 0x8, 0x64
+	delay 15
+	call QiSacFlower
+	delay 41
+	createsprite gPetalDanceBigFlowerSpriteTemplate, ANIM_ATTACKER, 2, 0x0, 0xffe8, 0x8, 0x8c
+	createsprite gPetalDanceSmallFlowerSpriteTemplate, ANIM_ATTACKER, 2, 0x20, 0xffe8, 0x8, 0x64
+	createsprite gPetalDanceSmallFlowerSpriteTemplate, ANIM_ATTACKER, 2, 0xffe0, 0xffe8, 0x8, 0x64
+	delay 15
+	call QiSacFlower
+	delay 41
+	createsprite gPetalDanceBigFlowerSpriteTemplate, ANIM_ATTACKER, 2, 0x0, 0xffe8, 0x8, 0x8c
+	createsprite gPetalDanceSmallFlowerSpriteTemplate, ANIM_ATTACKER, 2, 0x18, 0xffe8, 0x8, 0x64
+	createsprite gPetalDanceSmallFlowerSpriteTemplate, ANIM_ATTACKER, 2, 0xffe8, 0xffe8, 0x8, 0x64
+	delay 30
+	call QiSacFlower
+	delay 41
+	createsprite gPetalDanceSmallFlowerSpriteTemplate, ANIM_ATTACKER, 2, 0x10, 0xffe8, 0x0, 0x64
+	createsprite gPetalDanceSmallFlowerSpriteTemplate, ANIM_ATTACKER, 2, 0xfff0, 0xffe8, 0x0, 0x64
+	delay 30
+	call QiSacFlower
+	delay 41
+	waitforvisualfinish
+	createsprite gAuraSphereBlast, ANIM_TARGET, 3, 0
+	playsewithpan SE_M_SWAGGER, SOUND_PAN_ATTACKER
+	delay 16
+	createvisualtask AnimTask_ShakeMon2, 2, ANIM_TARGET, 8, 0, 16, 1
+	playsewithpan SE_M_MEGA_KICK2, SOUND_PAN_TARGET
+	waitforvisualfinish
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 1, 8, 0, RGB(29, 19, 27)
+	blendoff
+	clearmonbg ANIM_ATTACKER
+	end
+
+QiSacFlower:
+	createvisualtask AnimTask_ShakeMon2, 2, ANIM_ATTACKER, 4, 0, 10, 0
+	playsewithpan SE_M_ABSORB_2, SOUND_PAN_ATTACKER
+	return

@@ -941,6 +941,8 @@ extern const u8 gBattleAnimMove_Shout[];
 extern const u8 gBattleAnimMove_Slots[];
 extern const u8 gBattleAnimMove_JalapenoBomb[];
 extern const u8 gBattleAnimMove_SteamPurification[];
+extern const u8 gBattleAnimMove_AcidRain[];
+extern const u8 gBattleAnimMove_QiSacrifice[];
 
 // status animations
 extern const u8 gBattleAnimStatus_Poison[];
@@ -1008,6 +1010,7 @@ extern const u8 gBattleAnimGeneral_TeraCharge[];
 extern const u8 gBattleAnimGeneral_TeraActivate[];
 extern const u8 gBattleAnimGeneral_SimpleHeal[];
 extern const u8 gBattleAnimGeneral_PowerConstruct[];
+extern const u8 gBattleAnimGeneral_AcidRain[];
 
 // special animations
 extern const u8 gBattleAnimSpecial_LevelUp[];

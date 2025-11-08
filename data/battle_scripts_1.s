@@ -9717,3 +9717,11 @@ BattleScript_EffectSlots::
 	attackanimation
 	waitanimation
 	slots
+
+BattleScript_EffectAcidRain::
+	attackcanceler
+	attackstring
+	ppreduce
+	call BattleScript_CheckPrimalWeather
+	setfieldweather BATTLE_WEATHER_ACID_RAIN
+	goto BattleScript_MoveWeatherChange

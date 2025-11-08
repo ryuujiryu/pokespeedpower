@@ -584,17 +584,6 @@ const struct SpriteTemplate gAquaTailHitSpriteTemplate =
     .callback = AnimAquaTail,
 };
 
-const struct SpriteTemplate gQiFlowerSpriteTemplate =
-{
-    .tileTag = ANIM_TAG_IMPACT_2,
-    .paletteTag = ANIM_TAG_GHOSTLY_SPIRIT,
-    .oam = &gOamData_AffineNormal_ObjNormal_32x32,
-    .anims = gDummySpriteAnimTable,
-    .images = NULL,
-    .affineAnims = gDummySpriteAffineAnimTable,
-    .callback = AnimGhostStatusSprite,
-};
-
 static const union AnimCmd sAnimCmdAnimatedSpark2[] = {
     ANIMCMD_FRAME((8 * 8) / (16 * 16) * 0, 8),
     ANIMCMD_FRAME((8 * 8) / (16 * 16) * 1, 8),
