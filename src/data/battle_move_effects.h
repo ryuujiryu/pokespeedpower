@@ -2255,4 +2255,12 @@ const struct BattleMoveEffect gBattleMoveEffects[NUM_BATTLE_MOVE_EFFECTS] =
         .battleTvScore = 1,
     },
 
+    [EFFECT_ACID_RAIN] =
+    {
+        .battleScript = BattleScript_EffectAcidRain,
+        .battleTvScore = 4,
+        .encourageEncore = TRUE,
+    },
+
+
 };

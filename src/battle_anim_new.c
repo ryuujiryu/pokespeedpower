@@ -9602,6 +9602,8 @@ void AnimTask_GetWeatherToSet(u8 taskId)
         gBattleAnimArgs[ARG_RET_ID] = ANIM_WEATHER_SANDSTORM;
     else if (MoveHasAdditionalEffect(gCurrentMove, MOVE_EFFECT_HAIL))
         gBattleAnimArgs[ARG_RET_ID] = ANIM_WEATHER_HAIL;
+    else if (MoveHasAdditionalEffect(gCurrentMove, MOVE_EFFECT_ACID_RAIN))
+        gBattleAnimArgs[ARG_RET_ID] = ANIM_WEATHER_ACID_RAIN;
 
     DestroyAnimVisualTask(taskId);
 }

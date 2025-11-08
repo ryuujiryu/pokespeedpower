@@ -202,6 +202,16 @@ static const struct BattleWeatherInfo sBattleWeatherInfo[BATTLE_WEATHER_COUNT] =
         .continuesMessage = B_MSG_WEATHER_TURN_STRONG_WINDS,
         .animation = B_ANIM_STRONG_WINDS,
     },
+
+    [BATTLE_WEATHER_ACID_RAIN] =
+    {
+        .flag = B_WEATHER_ACID_RAIN,
+        .rock = HOLD_EFFECT_SMOOTH_ROCK,
+        .endMessage = B_MSG_WEATHER_END_ACID_RAIN,
+        .continuesMessage = B_MSG_WEATHER_TURN_ACID_RAIN,
+        .animation = B_ANIM_ACID_RAIN_CONTINUES,
+    },
+
 };
 
 // Helper function for actual dmg calcs during battle. For simulated AI dmg, CalcTypeEffectivenessMultiplier should be used directly

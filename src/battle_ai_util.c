@@ -3024,6 +3024,16 @@ static bool32 BattlerAffectedByHail(u32 battlerId, u32 ability)
     return FALSE;
 }
 
+static bool32 BattlerAffectedByAcidRain(u32 battlerId, u32 ability)
+{
+    if (!IS_BATTLER_OF_TYPE(battlerId, TYPE_POISON)
+      && ability != ABILITY_SNOW_CLOAK
+      && ability != ABILITY_OVERCOAT
+      && ability != ABILITY_ICE_BODY)
+        return TRUE;
+    return FALSE;
+}
+
 static u32 GetWeatherDamage(u32 battlerId)
 {
     u32 ability = gAiLogicData->abilities[battlerId];
@@ -3057,6 +3067,18 @@ static u32 GetWeatherDamage(u32 battlerId)
                 damage = 1;
         }
     }
+    if (weather & B_WEATHER_ACID_RAIN)
+    {
+        if (BattlerAffectedByAcidRain(battlerId, ability)
+          && gBattleMons[battlerId].volatiles.semiInvulnerable != STATE_UNDERGROUND
+          && gBattleMons[battlerId].volatiles.semiInvulnerable != STATE_UNDERWATER
+          && holdEffect != HOLD_EFFECT_SAFETY_GOGGLES)
+        {
+            damage = GetNonDynamaxMaxHP(battlerId) / 16;
+            if (damage == 0)
+                damage = 1;
+        }
+    }
     return damage;
 }
 
@@ -3079,7 +3101,7 @@ u32 GetBattlerSecondaryDamage(u32 battlerId)
 
 bool32 BattlerWillFaintFromWeather(u32 battler, u32 ability)
 {
-    if ((BattlerAffectedBySandstorm(battler, ability) || BattlerAffectedByHail(battler, ability))
+    if ((BattlerAffectedBySandstorm(battler, ability) || BattlerAffectedByHail(battler, ability) || BattlerAffectedByAcidRain(battler, ability))
       && gBattleMons[battler].hp <= max(1, gBattleMons[battler].maxHP / 16))
         return TRUE;
 
@@ -3936,6 +3958,7 @@ static u32 GetAIEffectGroup(enum BattleMoveEffects effect)
     case EFFECT_SANDSTORM:
     case EFFECT_HAIL:
     case EFFECT_SNOWSCAPE:
+    case EFFECT_ACID_RAIN:
     case EFFECT_CHILLY_RECEPTION:
         aiEffect |= AI_EFFECT_WEATHER;
         break;
@@ -4012,6 +4035,7 @@ static u32 GetAIEffectGroupFromMove(u32 battler, u32 move)
         case MOVE_EFFECT_RAIN:
         case MOVE_EFFECT_SANDSTORM:
         case MOVE_EFFECT_HAIL:
+        case MOVE_EFFECT_ACID_RAIN:
             aiEffect |= AI_EFFECT_WEATHER;
             break;
         case MOVE_EFFECT_ELECTRIC_TERRAIN:

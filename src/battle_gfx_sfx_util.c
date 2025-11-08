@@ -549,6 +549,7 @@ static bool8 ShouldAnimBeDoneRegardlessOfSubstitute(u8 animId)
     case B_ANIM_HAIL_CONTINUES:
     case B_ANIM_SNOW_CONTINUES:
     case B_ANIM_FOG_CONTINUES:
+    case B_ANIM_ACID_RAIN_CONTINUES:
     case B_ANIM_SNATCH_MOVE:
         return TRUE;
     default:
