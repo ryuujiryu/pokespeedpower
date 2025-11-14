@@ -3,6 +3,7 @@
 #include "config/item.h"
 #include "constants/global.h"
 #include "constants/apprentice.h"
+#include "constants/apricorn_tree.h"
 #include "constants/battle.h"
 #include "constants/battle_arena.h"
 #include "constants/battle_dome.h"
@@ -1166,53 +1167,29 @@ EventScript_VsSeekerChargingDone::
 	.include "data/text/save.inc"
 	.include "data/text/birch_speech.inc"
 	.include "data/scripts/dexnav.inc"
-
 	.include "data/maps/CitrusIsland/scripts.inc"
-
 	.include "data/maps/Route1/scripts.inc"
-
 	.include "data/maps/DurianTown/scripts.inc"
-
 	.include "data/maps/DurianTown_PokemonCenter/scripts.inc"
-
 	.include "data/maps/Route51_Gatehouse/scripts.inc"
-
 	.include "data/maps/Route52/scripts.inc"
-
 	.include "data/maps/Route53/scripts.inc"
-
 	.include "data/maps/CoconutCity/scripts.inc"
-
 	.include "data/maps/Route53_Gatehouse/scripts.inc"
-
 	.include "data/maps/DurianGym/scripts.inc"
-
 	.include "data/maps/CitrusIsland_House1/scripts.inc"
-
 	.include "data/maps/CitrusIsland_House2/scripts.inc"
-
 	.include "data/maps/CitrusIsland_House3/scripts.inc"
-
 	.include "data/maps/CitrusIsland_MitsuruHouse/scripts.inc"
-
 	.include "data/maps/DurianTown_House/scripts.inc"
-
 	.include "data/maps/DurianTown_KurtsHouse/scripts.inc"
-
 	.include "data/maps/CitrusIsland_PlayerHouse/scripts.inc"
-
 	.include "data/maps/CoconutGym/scripts.inc"
-
 	.include "data/maps/CherryWoods/scripts.inc"
-
 	.include "data/maps/Route52_Gatehouse2/scripts.inc"
-
 	.include "data/maps/Route52_Gatehouse3/scripts.inc"
-
 	.include "data/maps/Route54/scripts.inc"
-
 	.include "data/maps/Route55/scripts.inc"
-
 	.include "data/maps/WatermelonCity/scripts.inc"
-
 	.include "data/maps/Route51Sky/scripts.inc"
+	.include "data/scripts/apricorn_tree.inc"

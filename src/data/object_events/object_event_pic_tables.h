@@ -1420,3 +1420,7 @@ static const struct SpriteFrameImage sPicTable_ShrineMaiden[] = {
 static const struct SpriteFrameImage sPicTable_StreetThug[] = {
     overworld_ascending_frames(gObjectEventPic_StreetThug, 2, 4),
 };
+
+static const struct SpriteFrameImage sPicTable_ApricornTree[] = {
+    overworld_frame(gObjectEventPic_ApricornTree, 2, 2, 0),
+};
