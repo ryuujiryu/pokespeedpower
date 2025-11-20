@@ -2408,4 +2408,27 @@ const struct Ability gAbilitiesInfo[ABILITIES_COUNT] =
         .cantBeSwapped = TRUE,
         .cantBeTraced = TRUE,
     },
+
+    [ABILITY_NUCLEAR_OUTBREAK] =
+    {
+        .name = _("NUCLEAR OUTBREAK"),
+        .description = COMPOUND_STRING("Summons acid rain in battle."),
+        .aiRating = 9,
+    },
+
+    [ABILITY_NOXIOUS_MANTLE] =
+    {
+        .name = _("NOXIOUS MANTLE"),
+        .description = COMPOUND_STRING("Raises EVASION in acid rain."),
+        .aiRating = 3,
+        .breakable = TRUE,
+    },
+
+    [ABILITY_RECALIBRATE] =
+    {
+        .name = _("RECALIBRATE"),
+        .description = COMPOUND_STRING("NORMAL moves become SOUND."),
+        .aiRating = 8,
+        .breakable = TRUE,
+    },
 };

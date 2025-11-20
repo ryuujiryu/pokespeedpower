@@ -3805,6 +3805,9 @@ void SetMoveEffect(u32 battler, u32 effectBattler, bool32 primary, bool32 certai
     case MOVE_EFFECT_SANDSTORM:
     case MOVE_EFFECT_HAIL:
     case MOVE_EFFECT_ACID_RAIN:
+    case MOVE_EFFECT_FAN_RALLY:
+    case MOVE_EFFECT_ECLIPSE:
+    case MOVE_EFFECT_HEAVENLY_PRAYER:
     {
         u8 weather = 0, msg = 0;
         switch (gBattleScripting.moveEffect)
@@ -3836,6 +3839,18 @@ void SetMoveEffect(u32 battler, u32 effectBattler, bool32 primary, bool32 certai
             case MOVE_EFFECT_ACID_RAIN:
                 weather = BATTLE_WEATHER_ACID_RAIN;
                 msg = B_MSG_STARTED_ACID_RAIN;
+                break;
+            case MOVE_EFFECT_FAN_RALLY:
+                weather = BATTLE_WEATHER_CROWD;
+                msg = B_MSG_STARTED_CROWD;
+                break;
+            case MOVE_EFFECT_ECLIPSE:
+                weather = BATTLE_WEATHER_ECLIPSE;
+                msg = B_MSG_STARTED_ECLIPSE;
+                break;
+            case MOVE_EFFECT_HEAVENLY_PRAYER:
+                weather = BATTLE_WEATHER_METEORS;
+                msg = B_MSG_STARTED_METEORS;
                 break;
         }
         if (TryChangeBattleWeather(gBattlerAttacker, weather, FALSE))
@@ -5464,7 +5479,10 @@ static void PlayAnimation(u32 battler, u8 animId, const u16 *argPtr, const u8 *n
           || animId == B_ANIM_HAIL_CONTINUES
           || animId == B_ANIM_SNOW_CONTINUES
           || animId == B_ANIM_FOG_CONTINUES
-          || animId == B_ANIM_ACID_RAIN_CONTINUES)
+          || animId == B_ANIM_ACID_RAIN_CONTINUES
+          || animId == B_ANIM_RALLYING_CROWD_CONTINUES
+          || animId == B_ANIM_FULL_MOON_CONTINUES
+          || animId == B_ANIM_METEOR_SHOWER_CONTINUES)
     {
         BtlController_EmitBattleAnimation(battler, B_COMM_TO_CONTROLLER, animId, &gDisableStructs[battler], *argPtr);
         MarkBattlerForControllerExec(battler);
@@ -9130,6 +9148,12 @@ static void RemoveAllWeather(void)
         gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_WEATHER_END_FOG;
     else if (gBattleWeather & B_WEATHER_ACID_RAIN)
         gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_WEATHER_END_ACID_RAIN;
+    else if (gBattleWeather & B_WEATHER_CROWD)
+        gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_WEATHER_END_CROWD;
+    else if (gBattleWeather & B_WEATHER_ECLIPSE)
+        gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_WEATHER_END_ECLIPSE;
+    else if (gBattleWeather & B_WEATHER_METEORS)
+        gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_WEATHER_END_METEORS;
     else
         gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_WEATHER_END_COUNT;  // failsafe
 
@@ -9749,6 +9773,15 @@ static void Cmd_setfieldweather(void)
         break;
     case BATTLE_WEATHER_ACID_RAIN:
         gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_STARTED_ACID_RAIN;
+        break;
+    case BATTLE_WEATHER_CROWD:
+        gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_STARTED_CROWD;
+        break;
+    case BATTLE_WEATHER_ECLIPSE:
+        gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_STARTED_ECLIPSE;
+        break;
+    case BATTLE_WEATHER_METEORS:
+        gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_STARTED_METEORS;
         break;
     }
 

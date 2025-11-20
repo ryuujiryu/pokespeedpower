@@ -1682,6 +1682,10 @@ const u32 gBattleAnimBgImage_Swamp[] = INCBIN_U32("graphics/battle_anims/backgro
 const u16 gBattleAnimBGPalette_Swamp[] = INCBIN_U16("graphics/battle_anims/backgrounds/swampswizzle.gbapal");
 const u32 gBattleAnimBgTilemap_Swamp[] = INCBIN_U32("graphics/battle_anims/backgrounds/swampswizzle.bin.smolTM");
 
+const u32 gBattleAnimBgImage_Crowd[] = INCBIN_U32("graphics/battle_anims/backgrounds/crowd.4bpp.smol");
+const u16 gBattleAnimBGPalette_Crowd[] = INCBIN_U16("graphics/battle_anims/backgrounds/crowd.gbapal");
+const u32 gBattleAnimBgTilemap_Crowd[] = INCBIN_U32("graphics/battle_anims/backgrounds/crowd.bin.smolTM");
+
 const u32 gPartyMenuBg_Gfx[] = INCBIN_U32("graphics/party_menu/bg.4bpp.smol");
 const u16 gPartyMenuBg_Pal[] = INCBIN_U16("graphics/party_menu/bg.gbapal");
 const u32 gPartyMenuBg_Tilemap[] = INCBIN_U32("graphics/party_menu/bg.bin.smolTM");

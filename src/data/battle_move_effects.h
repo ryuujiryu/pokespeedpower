@@ -2262,5 +2262,39 @@ const struct BattleMoveEffect gBattleMoveEffects[NUM_BATTLE_MOVE_EFFECTS] =
         .encourageEncore = TRUE,
     },
 
+    [EFFECT_SOIL_REGENERATION] =
+    {
+        .battleScript = BattleScript_EffectSoilRegeneration,
+        .battleTvScore = 4,
+        .encourageEncore = TRUE,
+    },
+
+    [EFFECT_ENERGY_BLAST] =
+    {
+        .battleScript = BattleScript_EffectHit,
+        .battleTvScore = 0, // TODO: Assign points
+    },
+
+
+    [EFFECT_FAN_RALLY] =
+    {
+        .battleScript = BattleScript_EffectFanRally,
+        .battleTvScore = 4,
+        .encourageEncore = TRUE,
+    },
+
+    [EFFECT_ECLIPSE] =
+    {
+        .battleScript = BattleScript_EffectEclipse,
+        .battleTvScore = 4,
+        .encourageEncore = TRUE,
+    },
+
+    [EFFECT_HEAVENLY_PRAYER] =
+    {
+        .battleScript = BattleScript_EffectHeavenlyPrayer,
+        .battleTvScore = 4,
+        .encourageEncore = TRUE,
+    },
 
 };

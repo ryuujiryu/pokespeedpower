@@ -26,6 +26,7 @@
   ],
   "object_events": [
     {
+      "local_id": "LOCALID_DURIANTOWN_APPRENTICE",
       "graphics_id": "OBJ_EVENT_GFX_BOY_1",
       "x": 15,
       "y": 18,

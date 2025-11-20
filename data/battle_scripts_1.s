@@ -9725,3 +9725,86 @@ BattleScript_EffectAcidRain::
 	call BattleScript_CheckPrimalWeather
 	setfieldweather BATTLE_WEATHER_ACID_RAIN
 	goto BattleScript_MoveWeatherChange
+
+BattleScript_AcidRainActivates::
+	pause B_WAIT_TIME_SHORT
+	call BattleScript_AbilityPopUp
+	printstring STRINGID_STARTEDACIDRAIN
+	waitstate
+	playanimation BS_BATTLER_0, B_ANIM_ACID_RAIN_CONTINUES
+	call BattleScript_ActivateWeatherAbilities
+	end3
+
+BattleScript_EffectSoilRegeneration::
+    attackcanceler
+    attackstring
+    pause B_WAIT_TIME_MED
+    ppreduce
+    waitstate
+    saveattacker
+    savetarget
+    trytidyup FALSE, BattleScript_EffectSoilRegenerationDoMoveAnimation
+    restoreattacker
+    restoretarget
+    goto BattleScript_RestoreHp
+
+BattleScript_EffectSoilRegenerationDoMoveAnimation::
+    attackanimation
+    waitanimation
+    trytidyup TRUE, NULL
+    printstring STRINGID_SOILRENEWALCOMPLETE
+    waitmessage B_WAIT_TIME_LONG
+    restoreattacker
+    restoretarget
+    goto BattleScript_RestoreHp
+
+BattleScript_EffectFanRally::
+	attackcanceler
+	attackstring
+	ppreduce
+	call BattleScript_CheckPrimalWeather
+	setfieldweather BATTLE_WEATHER_CROWD
+	goto BattleScript_MoveWeatherChange
+
+BattleScript_FanRallyActivates::
+	pause B_WAIT_TIME_SHORT
+	call BattleScript_AbilityPopUp
+	printstring STRINGID_EXCITEDCROWD
+	waitstate
+	playanimation BS_BATTLER_0, B_ANIM_RALLYING_CROWD_CONTINUES
+	call BattleScript_ActivateWeatherAbilities
+	end3
+
+BattleScript_EffectEclipse::
+	attackcanceler
+	attackstring
+	ppreduce
+	call BattleScript_CheckPrimalWeather
+	setfieldweather BATTLE_WEATHER_ECLIPSE
+	goto BattleScript_MoveWeatherChange
+
+BattleScript_EclipseActivates::
+	pause B_WAIT_TIME_SHORT
+	call BattleScript_AbilityPopUp
+	printstring STRINGID_MOONRISING
+	waitstate
+	playanimation BS_BATTLER_0, B_ANIM_FULL_MOON_CONTINUES
+	call BattleScript_ActivateWeatherAbilities
+	end3
+
+BattleScript_EffectHeavenlyPrayer::
+	attackcanceler
+	attackstring
+	ppreduce
+	call BattleScript_CheckPrimalWeather
+	setfieldweather BATTLE_WEATHER_METEORS
+	goto BattleScript_MoveWeatherChange
+
+BattleScript_HeavenlyPrayerActivates::
+	pause B_WAIT_TIME_SHORT
+	call BattleScript_AbilityPopUp
+	printstring STRINGID_METEORSFALLING
+	waitstate
+	playanimation BS_BATTLER_0, B_ANIM_METEOR_SHOWER_CONTINUES
+	call BattleScript_ActivateWeatherAbilities
+	end3

@@ -1643,7 +1643,16 @@ static s32 GetSwitchinWeatherImpact(void)
                 if (weatherImpact == 0)
                     weatherImpact = 1;
             }
+            else if ((gBattleWeather & B_WEATHER_ACID_RAIN)
+                && (gAiLogicData->switchinCandidate.battleMon.types[0] != TYPE_POISON && gAiLogicData->switchinCandidate.battleMon.types[1] != TYPE_POISON
+                && ability != ABILITY_NOXIOUS_MANTLE))
+            {
+                weatherImpact = maxHP / 16;
+                if (weatherImpact == 0)
+                    weatherImpact = 1;
+            }
         }
+
         if ((gBattleWeather & B_WEATHER_SUN) && holdEffect != HOLD_EFFECT_UTILITY_UMBRELLA
          && (ability == ABILITY_SOLAR_POWER || ability == ABILITY_DRY_SKIN))
         {

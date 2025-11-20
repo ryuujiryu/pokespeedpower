@@ -7587,3 +7587,4 @@ static void AnimAcrobaticsSlashes(struct Sprite *sprite)
     StoreSpriteCallbackInData6(sprite, DestroySpriteAndMatrix);
     sprite->callback = RunStoredCallbackWhenAnimEnds;
 }
+

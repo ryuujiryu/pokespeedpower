@@ -3,14 +3,14 @@
 
 #define FOREACH_TM(F) \
     F(FOCUS_PUNCH) \
-    F(DRAGON_CLAW) \
-    F(WATER_PULSE) \
+    F(LOVE_SPARK) \
+    F(ACID_DOWNPOUR) \
     F(CALM_MIND) \
     F(ROAR) \
     F(TOXIC) \
     F(HAIL) \
     F(BULK_UP) \
-    F(BULLET_SEED) \
+    F(BLACK_HOLE) \
     F(HIDDEN_POWER) \
     F(SUNNY_DAY) \
     F(TAUNT) \
@@ -21,38 +21,52 @@
     F(PROTECT) \
     F(RAIN_DANCE) \
     F(GIGA_DRAIN) \
-    F(SAFEGUARD) \
-    F(FRUSTRATION) \
-    F(SOLAR_BEAM) \
+    F(WRETCHED_HANDS) \
+    F(SOIL_REGENERATION) \
+    F(POWER_CHORD) \
     F(IRON_TAIL) \
     F(THUNDERBOLT) \
     F(THUNDER) \
     F(EARTHQUAKE) \
     F(RETURN) \
-    F(DIG) \
+    F(SPIRIT_GUN) \
     F(PSYCHIC) \
     F(SHADOW_BALL) \
     F(BRICK_BREAK) \
     F(DOUBLE_TEAM) \
     F(REFLECT) \
-    F(SHOCK_WAVE) \
+    F(FAN_RALLY) \
     F(FLAMETHROWER) \
     F(SLUDGE_BOMB) \
     F(SANDSTORM) \
     F(FIRE_BLAST) \
-    F(ROCK_TOMB) \
+    F(EXPOSITION) \
     F(AERIAL_ACE) \
-    F(TORMENT) \
+    F(RECOVER) \
     F(FACADE) \
-    F(SECRET_POWER) \
+    F(SUBSTITUTE) \
     F(REST) \
     F(ATTRACT) \
     F(THIEF) \
-    F(STEEL_WING) \
+    F(RECYCLE) \
     F(ROUND) \
-    F(SNATCH) \
-    F(OVERHEAT) \
-    F(ROOST)
+    F(BIZARRE_MAGICK) \
+    F(HEAVENLY_PRAYER) \
+    F(ROOST) \
+    F(LUSTER_CANDY) \
+    F(FALSE_SWIPE) \
+    F(ECLIPSE) \
+    F(SWIFT) \
+    F(DRAIN_PUNCH) \
+    F(SLEEP_TALK) \
+    F(MOLTEN_STONE) \
+    F(STEALTH_ROCK) \
+    F(ROCK_SLIDE) \
+    F(SWORDS_DANCE) \
+    F(X_SCISSOR) \
+    F(HEADBUTT) \
+    F(NOBLE_BREATH) \
+    F(TRICK_ROOM)
 
 #define FOREACH_HM(F) \
     F(CUT) \

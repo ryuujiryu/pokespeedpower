@@ -1747,6 +1747,8 @@ u32 AI_GetSwitchinWeather(struct BattlePokemon battleMon)
         return B_WEATHER_SANDSTORM;
     case ABILITY_SNOW_WARNING:
         return B_SNOW_WARNING >= GEN_9 ? B_WEATHER_SNOW : B_WEATHER_HAIL;
+    case ABILITY_NUCLEAR_OUTBREAK:
+        return B_WEATHER_ACID_RAIN;
     default:
         return gBattleWeather;
     }
@@ -1845,6 +1847,7 @@ bool32 IsHazardClearingMove(u32 move)
     {
     case EFFECT_RAPID_SPIN:
     case EFFECT_TIDY_UP:
+    case EFFECT_SOIL_REGENERATION:
         return TRUE;
     case EFFECT_DEFOG:
         if (B_DEFOG_EFFECT_CLEARING >= GEN_6)
@@ -3027,9 +3030,7 @@ static bool32 BattlerAffectedByHail(u32 battlerId, u32 ability)
 static bool32 BattlerAffectedByAcidRain(u32 battlerId, u32 ability)
 {
     if (!IS_BATTLER_OF_TYPE(battlerId, TYPE_POISON)
-      && ability != ABILITY_SNOW_CLOAK
-      && ability != ABILITY_OVERCOAT
-      && ability != ABILITY_ICE_BODY)
+      && ability != ABILITY_NOXIOUS_MANTLE)
         return TRUE;
     return FALSE;
 }
@@ -3959,6 +3960,9 @@ static u32 GetAIEffectGroup(enum BattleMoveEffects effect)
     case EFFECT_HAIL:
     case EFFECT_SNOWSCAPE:
     case EFFECT_ACID_RAIN:
+    case EFFECT_FAN_RALLY:
+    case EFFECT_ECLIPSE:
+    case EFFECT_HEAVENLY_PRAYER:
     case EFFECT_CHILLY_RECEPTION:
         aiEffect |= AI_EFFECT_WEATHER;
         break;
@@ -3978,6 +3982,7 @@ static u32 GetAIEffectGroup(enum BattleMoveEffects effect)
         break;
     case EFFECT_RAPID_SPIN:
     case EFFECT_TIDY_UP:
+    case EFFECT_SOIL_REGENERATION:
         aiEffect |= AI_EFFECT_CLEAR_HAZARDS;
         break;
     case EFFECT_BRICK_BREAK:
@@ -4036,6 +4041,9 @@ static u32 GetAIEffectGroupFromMove(u32 battler, u32 move)
         case MOVE_EFFECT_SANDSTORM:
         case MOVE_EFFECT_HAIL:
         case MOVE_EFFECT_ACID_RAIN:
+        case MOVE_EFFECT_FAN_RALLY:
+        case MOVE_EFFECT_ECLIPSE:
+        case MOVE_EFFECT_HEAVENLY_PRAYER:
             aiEffect |= AI_EFFECT_WEATHER;
             break;
         case MOVE_EFFECT_ELECTRIC_TERRAIN:

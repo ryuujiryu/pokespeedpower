@@ -1081,7 +1081,7 @@ SlateportCity_Pokemart_PowerTMs:
 # 541 "data/maps/SlateportCity/scripts.pory"
 	.2byte ITEM_TM_HIDDEN_POWER
 # 542 "data/maps/SlateportCity/scripts.pory"
-	.2byte ITEM_TM_SECRET_POWER
+	.2byte ITEM_TM_RECYCLE
 # 543 "data/maps/SlateportCity/scripts.pory"
 	pokemartlistend
 # 544 "data/maps/SlateportCity/scripts.pory"

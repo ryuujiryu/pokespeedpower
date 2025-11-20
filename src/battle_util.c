@@ -212,6 +212,33 @@ static const struct BattleWeatherInfo sBattleWeatherInfo[BATTLE_WEATHER_COUNT] =
         .animation = B_ANIM_ACID_RAIN_CONTINUES,
     },
 
+    [BATTLE_WEATHER_CROWD] =
+    {
+        .flag = B_WEATHER_CROWD,
+        .rock = HOLD_EFFECT_NONE,
+        .endMessage = B_MSG_WEATHER_END_CROWD,
+        .continuesMessage = B_MSG_WEATHER_TURN_CROWD,
+        .animation = B_ANIM_RALLYING_CROWD_CONTINUES,
+    },
+
+    [BATTLE_WEATHER_ECLIPSE] =
+    {
+        .flag = B_WEATHER_ECLIPSE,
+        .rock = HOLD_EFFECT_NONE,
+        .endMessage = B_MSG_WEATHER_END_ECLIPSE,
+        .continuesMessage = B_MSG_WEATHER_TURN_ECLIPSE,
+        .animation = B_ANIM_FULL_MOON_CONTINUES,
+    },
+
+    [BATTLE_WEATHER_METEORS] =
+    {
+        .flag = B_WEATHER_METEORS,
+        .rock = HOLD_EFFECT_SMOOTH_ROCK,
+        .endMessage = B_MSG_WEATHER_END_METEORS,
+        .continuesMessage = B_MSG_WEATHER_TURN_METEORS,
+        .animation = B_ANIM_METEOR_SHOWER_CONTINUES,
+    },
+
 };
 
 // Helper function for actual dmg calcs during battle. For simulated AI dmg, CalcTypeEffectivenessMultiplier should be used directly
@@ -3892,6 +3919,19 @@ u32 AbilityBattleEffects(u32 caseID, u32 battler, u32 ability, u32 special, u32 
             else if (GetGenConfig(GEN_SNOW_WARNING) < GEN_9 && TryChangeBattleWeather(battler, BATTLE_WEATHER_HAIL, TRUE))
             {
                 BattleScriptPushCursorAndCallback(BattleScript_SnowWarningActivatesHail);
+                effect++;
+            }
+            else if (gBattleWeather & B_WEATHER_PRIMAL_ANY && HasWeatherEffect() && !gSpecialStatuses[battler].switchInAbilityDone)
+            {
+                gSpecialStatuses[battler].switchInAbilityDone = TRUE;
+                BattleScriptPushCursorAndCallback(BattleScript_BlockedByPrimalWeatherEnd3);
+                effect++;
+            }
+            break;
+        case ABILITY_NUCLEAR_OUTBREAK:
+            if (TryChangeBattleWeather(battler, BATTLE_WEATHER_ACID_RAIN, TRUE))
+            {
+                BattleScriptPushCursorAndCallback(BattleScript_AcidRainActivates);
                 effect++;
             }
             else if (gBattleWeather & B_WEATHER_PRIMAL_ANY && HasWeatherEffect() && !gSpecialStatuses[battler].switchInAbilityDone)
@@ -8447,6 +8487,10 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageContext *ctx)
         if (moveType == TYPE_NORMAL && gBattleStruct->battlerState[battlerAtk].ateBoost && GetGenConfig(GEN_CONFIG_ATE_MULTIPLIER) >= GEN_7)
             modifier = uq4_12_multiply(modifier, UQ_4_12(1.2));
         break;
+    case ABILITY_RECALIBRATE:
+        if (moveType == TYPE_SOUND && gBattleStruct->battlerState[battlerAtk].ateBoost)
+            modifier = uq4_12_multiply(modifier, UQ_4_12(GetGenConfig(GEN_CONFIG_ATE_MULTIPLIER) >= GEN_7 ? 1.2 : 1.3));
+        break;
     case ABILITY_PUNK_ROCK:
         if (IsSoundMove(move))
             modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
@@ -8932,6 +8976,35 @@ static inline u32 CalcDefenseStat(struct DamageContext *ctx)
         defStage = gBattleMons[battlerDef].statStages[STAT_SPDEF];
     }
 
+    if (moveEffect == EFFECT_ENERGY_BLAST || IsBattleMoveSpecial(move)) // uses sp.def stat instead of defense
+    {
+        if (gFieldStatuses & STATUS_FIELD_WONDER_ROOM) // the defense stats are swapped
+        {
+            defStat = def;
+            usesDefStat = TRUE;
+        }
+        else
+        {
+            defStat = spDef;
+            usesDefStat = FALSE;
+        }
+        defStage = gBattleMons[battlerDef].statStages[STAT_SPDEF];
+    }
+    else // is physical
+    {
+        if (gFieldStatuses & STATUS_FIELD_WONDER_ROOM) // the defense stats are swapped
+        {
+            defStat = spDef;
+            usesDefStat = FALSE;
+        }
+        else
+        {
+            defStat = def;
+            usesDefStat = TRUE;
+        }
+        defStage = gBattleMons[battlerDef].statStages[STAT_DEF];
+    }
+
     // Self-destruct / Explosion cut defense in half
     if (B_EXPLOSION_DEFENSE < GEN_5 && (moveEffect == EFFECT_EXPLOSION
                                      || moveEffect == EFFECT_MISTY_EXPLOSION))
@@ -9103,6 +9176,24 @@ static uq4_12_t GetWeatherDamageModifier(struct DamageContext *ctx)
         if (ctx->moveType != TYPE_FIRE && ctx->moveType != TYPE_WATER)
             return UQ_4_12(1.0);
         return (ctx->moveType == TYPE_WATER) ? UQ_4_12(0.5) : UQ_4_12(1.5);
+    }
+    if (ctx->weather & B_WEATHER_CROWD)
+    {
+        if (ctx->moveType != TYPE_DARK && ctx->moveType != TYPE_FIGHTING)
+            return UQ_4_12(1.0);
+        return (ctx->moveType == TYPE_DARK) ? UQ_4_12(0.5) : UQ_4_12(1.5);
+    }
+    if (ctx->weather & B_WEATHER_ECLIPSE)
+    {
+        if (ctx->moveType != TYPE_DARK && ctx->moveType != TYPE_FIGHTING)
+            return UQ_4_12(1.0);
+        return (ctx->moveType == TYPE_FIGHTING) ? UQ_4_12(0.5) : UQ_4_12(1.5);
+    }
+    if (ctx->weather & B_WEATHER_METEORS)
+    {
+        if (ctx->moveType != TYPE_SOUND && ctx->moveType != TYPE_DRAGON)
+            return UQ_4_12(1.0);
+        return (ctx->moveType == TYPE_SOUND) ? UQ_4_12(0.5) : UQ_4_12(1.5);
     }
     return UQ_4_12(1.0);
 }
@@ -11807,6 +11898,10 @@ u32 GetTotalAccuracy(u32 battlerAtk, u32 battlerDef, u32 move, u32 atkAbility, u
         break;
     case ABILITY_SNOW_CLOAK:
         if (HasWeatherEffect() && (gBattleWeather & (B_WEATHER_HAIL | B_WEATHER_SNOW)))
+            calc = (calc * 80) / 100; // 1.2 snow cloak loss
+        break;
+    case ABILITY_NOXIOUS_MANTLE:
+        if (HasWeatherEffect() && gBattleWeather & B_WEATHER_ACID_RAIN)
             calc = (calc * 80) / 100; // 1.2 snow cloak loss
         break;
     case ABILITY_TANGLED_FEET:

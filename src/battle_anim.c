@@ -254,6 +254,9 @@ static const u8* const sBattleAnims_General[NUM_B_ANIMS_GENERAL] =
     [B_ANIM_SIMPLE_HEAL]            = gBattleAnimGeneral_SimpleHeal,
     [B_ANIM_POWER_CONSTRUCT]        = gBattleAnimGeneral_PowerConstruct,
     [B_ANIM_ACID_RAIN_CONTINUES]    = gBattleAnimGeneral_AcidRain,
+    [B_ANIM_RALLYING_CROWD_CONTINUES] = gBattleAnimGeneral_FanRally,
+    [B_ANIM_FULL_MOON_CONTINUES]    = gBattleAnimGeneral_Eclipse,
+    [B_ANIM_METEOR_SHOWER_CONTINUES] = gBattleAnimGeneral_HeavenlyPrayer,
 };
 
 static const u8* const sBattleAnims_Special[NUM_B_ANIMS_SPECIAL] =

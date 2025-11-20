@@ -79,7 +79,7 @@ static const u8 sText_WildFled[] = _("{PLAY_SE SE_FLEE}{B_LINK_OPPONENT1_NAME} f
 static const u8 sText_TwoWildFled[] = _("{PLAY_SE SE_FLEE}{B_LINK_OPPONENT1_NAME} and {B_LINK_OPPONENT2_NAME} fled!"); //not in gen 5+, replaced with match was forfeited text
 static const u8 sText_PlayerDefeatedLinkTrainerTrainer1[] = _("You defeated {B_TRAINER1_NAME_WITH_CLASS}!\p");
 static const u8 sText_OpponentMon1Appeared[] = _("{B_OPPONENT_MON1_NAME} appeared!\p");
-static const u8 sText_WildPkmnAppeared[] = _("You encountered a wild {B_OPPONENT_MON1_NAME}!\p");
+static const u8 sText_WildPkmnAppeared[] = _("Ah! A wild {B_OPPONENT_MON1_NAME} appeared!\p");
 static const u8 sText_LegendaryPkmnAppeared[] = _("You encountered a wild {B_OPPONENT_MON1_NAME}!\p");
 static const u8 sText_WildPkmnAppearedPause[] = _("You encountered a wild {B_OPPONENT_MON1_NAME}!{PAUSE 127}");
 static const u8 sText_TwoWildPkmnAppeared[] = _("Oh! A wild {B_OPPONENT_MON1_NAME} and {B_OPPONENT_MON2_NAME} appeared!\p");
@@ -111,30 +111,30 @@ static const u8 sText_Trainer1WithdrewPkmn[] = _("{B_TRAINER1_NAME_WITH_CLASS} w
 static const u8 sText_LinkTrainer1WithdrewPkmn[] = _("{B_LINK_OPPONENT1_NAME} withdrew {B_BUFF1}!");
 static const u8 sText_LinkTrainer2WithdrewPkmn[] = _("{B_LINK_SCR_TRAINER_NAME} withdrew {B_BUFF1}!");
 static const u8 sText_WildPkmnPrefix[] = _("The wild ");
-static const u8 sText_FoePkmnPrefix[] = _("The opposing ");
+static const u8 sText_FoePkmnPrefix[] = _("The enemy ");
 static const u8 sText_WildPkmnPrefixLower[] = _("the wild ");
-static const u8 sText_FoePkmnPrefixLower[] = _("the opposing ");
+static const u8 sText_FoePkmnPrefixLower[] = _("the enemy ");
 static const u8 sText_EmptyString8[] = _("");
-static const u8 sText_FoePkmnPrefix2[] = _("Opposing");
+static const u8 sText_FoePkmnPrefix2[] = _("Enemy");
 static const u8 sText_AllyPkmnPrefix[] = _("Ally");
-static const u8 sText_FoePkmnPrefix3[] = _("Opposing");
+static const u8 sText_FoePkmnPrefix3[] = _("Enemy");
 static const u8 sText_AllyPkmnPrefix2[] = _("Ally");
-static const u8 sText_FoePkmnPrefix4[] = _("Opposing");
+static const u8 sText_FoePkmnPrefix4[] = _("Enemy");
 static const u8 sText_AllyPkmnPrefix3[] = _("Ally");
-static const u8 sText_AttackerUsedX[] = _("{B_ATK_NAME_WITH_PREFIX} used {B_BUFF3}!");
+static const u8 sText_AttackerUsedX[] = _("{B_ATK_NAME_WITH_PREFIX} used\n{B_BUFF3}!");
 static const u8 sText_ExclamationMark[] = _("!");
 static const u8 sText_ExclamationMark2[] = _("!");
 static const u8 sText_ExclamationMark3[] = _("!");
 static const u8 sText_ExclamationMark4[] = _("!");
 static const u8 sText_ExclamationMark5[] = _("!");
 static const u8 sText_HP[] = _("HP");
-static const u8 sText_Attack[] = _("Attack");
-static const u8 sText_Defense[] = _("Defense");
-static const u8 sText_Speed[] = _("Speed");
-static const u8 sText_SpAttack[] = _("Sp. Atk");
-static const u8 sText_SpDefense[] = _("Sp. Def");
-static const u8 sText_Accuracy[] = _("accuracy");
-static const u8 sText_Evasiveness[] = _("evasiveness");
+static const u8 sText_Attack[] = _("ATTACK");
+static const u8 sText_Defense[] = _("DEFENSE");
+static const u8 sText_Speed[] = _("SPEED");
+static const u8 sText_SpAttack[] = _("SP.ATK");
+static const u8 sText_SpDefense[] = _("SP.DEF");
+static const u8 sText_Accuracy[] = _("ACCURACY");
+static const u8 sText_Evasiveness[] = _("EVASIVENESS");
 
 const u8 *const gStatNamesTable[NUM_BATTLE_STATS] =
 {
@@ -497,9 +497,9 @@ const u8 *const gBattleStringsTable[STRINGID_COUNT] =
     [STRINGID_PKMNMAKESGROUNDMISS]                  = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX} makes Ground-type moves miss with {B_DEF_ABILITY}!"), //not in gen 5+, ability popup
     [STRINGID_YOUTHROWABALLNOWRIGHT]                = COMPOUND_STRING("You throw a Ball now, right? I… I'll do my best!"),
     [STRINGID_PKMNSXTOOKATTACK]                     = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX}'s {B_DEF_ABILITY} took the attack!"), //In gen 5+ but without naming the ability
-    [STRINGID_PKMNCHOSEXASDESTINY]                  = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} chose Doom Desire as its destiny!"),
+    [STRINGID_PKMNCHOSEXASDESTINY]                  = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} chose DOOM DESIRE as its destiny!"),
     [STRINGID_PKMNLOSTFOCUS]                        = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} lost its focus and couldn't move!"),
-    [STRINGID_USENEXTPKMN]                          = COMPOUND_STRING("Use next Pokémon?"),
+    [STRINGID_USENEXTPKMN]                          = COMPOUND_STRING("Use next POKéMON?"),
     [STRINGID_PKMNFLEDUSINGITS]                     = COMPOUND_STRING("{PLAY_SE SE_FLEE}{B_ATK_NAME_WITH_PREFIX} fled using its {B_LAST_ITEM}!\p"),
     [STRINGID_PKMNFLEDUSING]                        = COMPOUND_STRING("{PLAY_SE SE_FLEE}{B_ATK_NAME_WITH_PREFIX} fled using {B_ATK_ABILITY}!\p"), //not in gen 5+
     [STRINGID_PKMNWASDRAGGEDOUT]                    = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX} was dragged out!\p"),
@@ -902,6 +902,16 @@ const u8 *const gBattleStringsTable[STRINGID_COUNT] =
     [STRINGID_STARTEDACIDRAIN]                      = COMPOUND_STRING("It started to rain acid!"),
     [STRINGID_ACIDRAINCONTINUES]                    = COMPOUND_STRING("Acid rain continues to fall."),
     [STRINGID_ACIDRAINSTOPPED]                      = COMPOUND_STRING("The acid rain stopped."),
+    [STRINGID_SOILRENEWALCOMPLETE]                  = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX} restored the terrain!"),
+    [STRINGID_EXCITEDCROWD]                         = COMPOUND_STRING("The crowd is getting excited!"),
+    [STRINGID_HYPEDCROWD]                           = COMPOUND_STRING("The crowd is in a frenzy!"),
+    [STRINGID_BOREDCROWD]                           = COMPOUND_STRING("The crowd calmed down."),
+    [STRINGID_MOONRISING]                           = COMPOUND_STRING("The full moon is rising!"),
+    [STRINGID_MOONSHINING]                          = COMPOUND_STRING("The full moon is shining."),
+    [STRINGID_MOONFALLING]                          = COMPOUND_STRING("The full moon disappeared."),
+    [STRINGID_METEORSFALLING]                       = COMPOUND_STRING("Meteors started falling down!"),
+    [STRINGID_METEORCONTINUING]                     = COMPOUND_STRING("The metor shower continues."),
+    [STRINGID_METEORSTOPPED]                        = COMPOUND_STRING("The meteor shower stopped.")
 };
 
 const u16 gTrainerUsedItemStringIds[] =
@@ -1030,6 +1040,9 @@ const u16 gMoveWeatherChangeStringIds[] =
     [B_MSG_STARTED_SNOW]      = STRINGID_STARTEDSNOW,
     [B_MSG_STARTED_FOG]       = STRINGID_FOGCREPTUP, // Unused, can use for custom moves that set fog
     [B_MSG_STARTED_ACID_RAIN] = STRINGID_STARTEDACIDRAIN,
+    [B_MSG_STARTED_CROWD]     = STRINGID_EXCITEDCROWD,
+    [B_MSG_STARTED_ECLIPSE]   = STRINGID_MOONRISING,
+    [B_MSG_STARTED_METEORS]   = STRINGID_METEORSFALLING,
 
 };
 
@@ -1043,6 +1056,10 @@ const u16 gWeatherEndsStringIds[B_MSG_WEATHER_END_COUNT] =
     [B_MSG_WEATHER_END_FOG]          = STRINGID_FOGLIFTED,
     [B_MSG_WEATHER_END_STRONG_WINDS] = STRINGID_STRONGWINDSDISSIPATED,
     [B_MSG_WEATHER_END_ACID_RAIN]    = STRINGID_ACIDRAINSTOPPED,
+    [B_MSG_WEATHER_END_CROWD]        = STRINGID_BOREDCROWD,
+    [B_MSG_WEATHER_END_ECLIPSE]      = STRINGID_MOONFALLING,
+    [B_MSG_WEATHER_END_METEORS]      = STRINGID_METEORSTOPPED,
+
 };
 
 const u16 gWeatherTurnStringIds[] =
@@ -1056,6 +1073,9 @@ const u16 gWeatherTurnStringIds[] =
     [B_MSG_WEATHER_TURN_FOG]          = STRINGID_FOGISDEEP,
     [B_MSG_WEATHER_TURN_STRONG_WINDS] = STRINGID_MYSTERIOUSAIRCURRENTBLOWSON,
     [B_MSG_WEATHER_TURN_ACID_RAIN]    = STRINGID_ACIDRAINCONTINUES,
+    [B_MSG_WEATHER_TURN_CROWD]        = STRINGID_HYPEDCROWD,
+    [B_MSG_WEATHER_TURN_ECLIPSE]      = STRINGID_MOONSHINING,
+    [B_MSG_WEATHER_TURN_METEORS]      = STRINGID_METEORCONTINUING,
 
 };
 

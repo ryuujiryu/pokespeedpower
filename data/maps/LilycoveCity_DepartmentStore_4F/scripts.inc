@@ -93,7 +93,7 @@ LilycoveCity_DepartmentStore_4F_Pokemart_DefenseTMs:
 # 47 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
 	.2byte ITEM_TM_PROTECT
 # 48 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
-	.2byte ITEM_TM_SAFEGUARD
+	.2byte ITEM_TM_WRETCHED_HANDS
 # 49 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"
 	.2byte ITEM_TM_REFLECT
 # 50 "data/maps/LilycoveCity_DepartmentStore_4F/scripts.pory"

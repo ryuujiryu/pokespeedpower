@@ -2269,7 +2269,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
 
     [MOVE_THUNDER_SHOCK] =
     {
-        .name = COMPOUND_STRING("JOLT"),
+        .name = COMPOUND_STRING("THUNDER SHOCK"),
         .description = COMPOUND_STRING(
             "An electrical attack that\n"
             "may paralyze the foe."),
@@ -12948,10 +12948,10 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
 
     [MOVE_SCALD] =
     {
-        .name = COMPOUND_STRING("Scald"),
+        .name = COMPOUND_STRING("SCALD"),
         .description = COMPOUND_STRING(
-            "Shoots boiling water at the\n"
-            "foe. May inflict a burn."),
+            "The user shoots boiling hot water\n"
+            "that may burn the foe."),
         .effect = EFFECT_HIT,
         .power = 80,
         .type = TYPE_WATER,
@@ -22882,11 +22882,617 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
         .argument = { .recoilPercentage = 33 },
-        .makesContact = TRUE,
         .contestEffect = CONTEST_EFFECT_USER_MORE_EASILY_STARTLED,
         .contestCategory = CONTEST_CATEGORY_TOUGH,
         .contestComboStarterId = 0,
         .contestComboMoves = {0},
         .battleAnimScript = gBattleAnimMove_QiSacrifice,
+    },
+
+    [MOVE_SOIL_REGENERATION] =
+    {
+        .name = COMPOUND_STRING("SOIL RENEWAL"),
+        .description = COMPOUND_STRING(
+            "The user restores the terrain, removing hazards\n"
+            "and raising its ATTACK and SPEED."),
+        .effect = EFFECT_SOIL_REGENERATION,
+        .power = 0,
+        .type = TYPE_GROUND,
+        .accuracy = 0,
+        .pp = 10,
+        .target = MOVE_TARGET_USER,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_STATUS,
+        .contestEffect = CONTEST_EFFECT_AVOID_STARTLE_ONCE,
+        .contestCategory = CONTEST_CATEGORY_COOL,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_SoilRegeneration,
+        .validApprenticeMove = TRUE,
+    },
+
+    [MOVE_SPIRIT_GUN] =
+    {
+        .name = COMPOUND_STRING("SPIRIT GUN"),
+        .description = COMPOUND_STRING(
+            "An energy attack that damages the\n"
+            "user a little and does special damage."),
+        .effect = EFFECT_ENERGY_BLAST,
+        .power = 110,
+        .type = TYPE_FIGHTING,
+        .accuracy = 95,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_RECOIL_HP_25,
+            .self = TRUE,
+        }),
+        .contestEffect = CONTEST_EFFECT_AVOID_STARTLE_ONCE,
+        .contestCategory = CONTEST_CATEGORY_COOL,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_SpiritGun,
+        .validApprenticeMove = TRUE,
+    },
+
+    [MOVE_TSUNAMI] =
+    {
+        .name = COMPOUND_STRING("TSUNAMI"),
+        .description = COMPOUND_STRING(
+            "Summons a huge wave which knocks\n"
+            "away and switches the foe."),
+        .effect = EFFECT_HIT_SWITCH_TARGET,
+        .power = 60,
+        .type = TYPE_WATER,
+        .accuracy = 90,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = -6,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .copycatBanned = TRUE,
+        .assistBanned = TRUE,
+        .contestEffect = CONTEST_EFFECT_SCRAMBLE_NEXT_TURN_ORDER,
+        .contestCategory = CONTEST_CATEGORY_COOL,
+        .contestComboStarterId = COMBO_STARTER_DRAGON_TAIL,
+        .contestComboMoves = {COMBO_STARTER_DRAGON_BREATH, COMBO_STARTER_DRAGON_DANCE, COMBO_STARTER_DRAGON_RAGE, COMBO_STARTER_DRAGON_RUSH},
+        .battleAnimScript = gBattleAnimMove_Tsunami,
+    },
+
+    [MOVE_ASGARDIAN_SPEAR] =
+    {
+        .name = COMPOUND_STRING("ASGARDIAN SPEAR"),
+        .description = COMPOUND_STRING(
+            "Hits with a mythical spear that may\n"
+            "freeze the foe. High critical-hit ratio."),
+        .effect = EFFECT_HIT,
+        .power = 75,
+        .type = TYPE_ICE,
+        .accuracy = 100,
+        .criticalHitStage = 1,
+        .pp = 20,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_FREEZE_OR_FROSTBITE,
+            .chance = 10,
+        }),
+        .makesContact = TRUE,
+        .slicingMove = TRUE,
+        .contestEffect = CONTEST_EFFECT_AFFECTED_BY_PREV_APPEAL,
+        .contestCategory = CONTEST_CATEGORY_COOL,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {COMBO_STARTER_SCRATCH, COMBO_STARTER_SWORDS_DANCE},
+        .battleAnimScript = gBattleAnimMove_AsgardianSpear,
+        .validApprenticeMove = TRUE,
+    },
+
+    [MOVE_PYROKINESIS] =
+    {
+        .name = COMPOUND_STRING("PYROKINESIS"),
+        .description = COMPOUND_STRING(
+            "Fires a scarlet light that\n"
+            "may burn the foe."),
+        .effect = EFFECT_HIT,
+        .power = 65,
+        .type = TYPE_PSYCHIC,
+        .accuracy = 100,
+        .pp = 20,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_BURN,
+            .chance = 10,
+        }),
+        .contestEffect = CONTEST_EFFECT_AFFECTED_BY_PREV_APPEAL,
+        .contestCategory = CONTEST_CATEGORY_COOL,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {COMBO_STARTER_SCRATCH, COMBO_STARTER_SWORDS_DANCE},
+        .battleAnimScript = gBattleAnimMove_Pyrokinesis,
+        .validApprenticeMove = TRUE,
+    },
+
+    [MOVE_PRESSURE_WAVE] =
+    {
+        .name = COMPOUND_STRING("PRESSURE WAVE"),
+        .description = COMPOUND_STRING(
+            "Hits the foe with small\n"
+            "tremors 2 to 5 times."),
+        .effect = EFFECT_MULTI_HIT,
+        .power = 15,
+        .type = TYPE_GROUND,
+        .accuracy = 85,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .contestEffect = CONTEST_EFFECT_AFFECTED_BY_PREV_APPEAL,
+        .contestCategory = CONTEST_CATEGORY_COOL,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {COMBO_STARTER_SCRATCH, COMBO_STARTER_SWORDS_DANCE},
+        .battleAnimScript = gBattleAnimMove_PressureWave,
+        .validApprenticeMove = TRUE,
+    },
+
+    [MOVE_MISTRAL_SQUALL] =
+    {
+        .name = COMPOUND_STRING("MISTRAL SQUALL"),
+        .description = COMPOUND_STRING(
+            "Summons a strong northern wind\n"
+            "that also may freeze."),
+        .effect = EFFECT_HIT,
+        .power = 70,
+        .type = TYPE_FLYING,
+        .accuracy = 100,
+        .pp = 15,
+        .target = MOVE_TARGET_BOTH,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_FREEZE_OR_FROSTBITE,
+            .chance = 10,
+        }),
+        .contestEffect = CONTEST_EFFECT_AFFECTED_BY_PREV_APPEAL,
+        .contestCategory = CONTEST_CATEGORY_COOL,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {COMBO_STARTER_SCRATCH, COMBO_STARTER_SWORDS_DANCE},
+        .battleAnimScript = gBattleAnimMove_MistralSquall,
+        .validApprenticeMove = TRUE,
+    },
+
+    [MOVE_SCIROCCO_GALE] =
+    {
+        .name = COMPOUND_STRING("SCIROCCO GALE"),
+        .description = COMPOUND_STRING(
+            "A windstorm of flames that\n"
+            "may also inflict burns."),
+        .effect = EFFECT_HIT,
+        .power = 70,
+        .type = TYPE_FLYING,
+        .accuracy = 100,
+        .pp = 15,
+        .target = MOVE_TARGET_BOTH,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_BURN,
+            .chance = 10,
+        }),
+        .contestEffect = CONTEST_EFFECT_AFFECTED_BY_PREV_APPEAL,
+        .contestCategory = CONTEST_CATEGORY_COOL,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {COMBO_STARTER_SCRATCH, COMBO_STARTER_SWORDS_DANCE},
+        .battleAnimScript = gBattleAnimMove_SciroccoGale,
+        .validApprenticeMove = TRUE,
+    },
+
+    [MOVE_COLD_SHOWER] =
+    {
+        .name = COMPOUND_STRING("COLD SHOWER"),
+        .description = COMPOUND_STRING(
+            "The user shoots cold water\n"
+            "that may freeze the foe."),
+        .effect = EFFECT_HIT,
+        .power = 80,
+        .type = TYPE_WATER,
+        .accuracy = 100,
+        .pp = 15,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_FREEZE,
+            .chance = 30,
+        }),
+        .contestEffect = CONTEST_EFFECT_HIGHLY_APPEALING,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = COMBO_STARTER_SCALD,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_ColdShower,
+    },
+
+    [MOVE_NIGHTCORE] =
+    {
+        .name = COMPOUND_STRING("NIGHTCORE"),
+        .description = COMPOUND_STRING(
+            "Attacks with a high-tempo tune.\n"
+            "Raises the user’s SPEED."),
+        .effect = EFFECT_HIT,
+        .power = 50,
+        .type = TYPE_SOUND,
+        .accuracy = 100,
+        .pp = 20,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .thawsUser = TRUE,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_SPD_PLUS_1,
+            .self = TRUE,
+            .chance = 100,
+        }),
+        .contestEffect = CONTEST_EFFECT_HIGHLY_APPEALING,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = COMBO_STARTER_SCALD,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_Nightcore,
+    },
+
+    [MOVE_LOVE_SPARK] =
+    {
+        .name = COMPOUND_STRING("LOVE SPARK"),
+        .description = COMPOUND_STRING(
+            "Makes the opposite gender fall\n"
+            "in love so much it gets hurt."),
+        .effect = EFFECT_HIT,
+        .power = 50,
+        .type = TYPE_ELECTRIC,
+        .accuracy = 80,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_STATUS,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_INFATUATE_SIDE,
+        }),
+        .zMove = { .effect = Z_EFFECT_RESET_STATS },
+        .magicCoatAffected = TRUE,
+        .ignoresSubstitute = TRUE,
+        .contestEffect = CONTEST_EFFECT_MAKE_FOLLOWING_MONS_NERVOUS,
+        .contestCategory = CONTEST_CATEGORY_CUTE,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_LoveSpark,
+        .validApprenticeMove = TRUE,
+    },
+
+    [MOVE_SAND_TORNADO] =
+    {
+        .name = COMPOUND_STRING("SAND TORNADO"),
+        .description = COMPOUND_STRING(
+            "Traps the foe in a fierce\n"
+            "sandstorm. May cause confusion."),
+        .effect = EFFECT_HIT,
+        .power = 120,
+        .type = TYPE_GROUND,
+        .accuracy = 70,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .windMove = TRUE,
+        .damagesAirborne = TRUE,
+        .accuracy50InSun = TRUE,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_CONFUSION,
+            .chance = 30,
+        }),
+        .contestEffect = CONTEST_EFFECT_STARTLE_PREV_MONS,
+        .contestCategory = CONTEST_CATEGORY_COOL,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_SandTornado,
+    },
+
+    [MOVE_BLACK_HOLE] =
+    {
+        .name = COMPOUND_STRING("COLD SHOWER"),
+        .description = COMPOUND_STRING(
+            "The user shoots cold water\n"
+            "that may freeze the foe."),
+        .effect = EFFECT_HIT,
+        .power = 80,
+        .type = TYPE_WATER,
+        .accuracy = 100,
+        .pp = 15,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_FREEZE,
+            .chance = 30,
+        }),
+        .contestEffect = CONTEST_EFFECT_HIGHLY_APPEALING,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = COMBO_STARTER_SCALD,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_ColdShower,
+    },
+
+    [MOVE_WRETCHED_HANDS] =
+    {
+        .name = COMPOUND_STRING("NIGHTCORE"),
+        .description = COMPOUND_STRING(
+            "Attacks with a high-tempo tune.\n"
+            "Raises the user’s SPEED."),
+        .effect = EFFECT_HIT,
+        .power = 50,
+        .type = TYPE_SOUND,
+        .accuracy = 100,
+        .pp = 20,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .thawsUser = TRUE,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_SPD_PLUS_1,
+            .self = TRUE,
+            .chance = 100,
+        }),
+        .contestEffect = CONTEST_EFFECT_HIGHLY_APPEALING,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = COMBO_STARTER_SCALD,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_Nightcore,
+    },
+
+    [MOVE_POWER_CHORD] =
+    {
+        .name = COMPOUND_STRING("LOVE SPARK"),
+        .description = COMPOUND_STRING(
+            "Makes the opposite gender fall\n"
+            "in love so much it gets hurt."),
+        .effect = EFFECT_HIT,
+        .power = 50,
+        .type = TYPE_ELECTRIC,
+        .accuracy = 80,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_STATUS,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_INFATUATE_SIDE,
+        }),
+        .zMove = { .effect = Z_EFFECT_RESET_STATS },
+        .magicCoatAffected = TRUE,
+        .ignoresSubstitute = TRUE,
+        .contestEffect = CONTEST_EFFECT_MAKE_FOLLOWING_MONS_NERVOUS,
+        .contestCategory = CONTEST_CATEGORY_CUTE,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_LoveSpark,
+        .validApprenticeMove = TRUE,
+    },
+
+    [MOVE_FAN_RALLY] =
+    {
+        .name = COMPOUND_STRING("FAN RALLY"),
+        .description = COMPOUND_STRING(
+            "Traps the foe in a fierce\n"
+            "sandstorm. May cause confusion."),
+        .effect = EFFECT_FAN_RALLY,
+        .power = 120,
+        .type = TYPE_GROUND,
+        .accuracy = 70,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .windMove = TRUE,
+        .damagesAirborne = TRUE,
+        .accuracy50InSun = TRUE,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_CONFUSION,
+            .chance = 30,
+        }),
+        .contestEffect = CONTEST_EFFECT_STARTLE_PREV_MONS,
+        .contestCategory = CONTEST_CATEGORY_COOL,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_FanRally,
+    },
+
+    [MOVE_EXPOSITION] =
+    {
+        .name = COMPOUND_STRING("NIGHTCORE"),
+        .description = COMPOUND_STRING(
+            "Attacks with a high-tempo tune.\n"
+            "Raises the user’s SPEED."),
+        .effect = EFFECT_HIT,
+        .power = 50,
+        .type = TYPE_SOUND,
+        .accuracy = 100,
+        .pp = 20,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .thawsUser = TRUE,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_SPD_PLUS_1,
+            .self = TRUE,
+            .chance = 100,
+        }),
+        .contestEffect = CONTEST_EFFECT_HIGHLY_APPEALING,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = COMBO_STARTER_SCALD,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_Nightcore,
+    },
+
+    [MOVE_BIZARRE_MAGICK] =
+    {
+        .name = COMPOUND_STRING("LOVE SPARK"),
+        .description = COMPOUND_STRING(
+            "Makes the opposite gender fall\n"
+            "in love so much it gets hurt."),
+        .effect = EFFECT_HIT,
+        .power = 50,
+        .type = TYPE_ELECTRIC,
+        .accuracy = 80,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_STATUS,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_INFATUATE_SIDE,
+        }),
+        .zMove = { .effect = Z_EFFECT_RESET_STATS },
+        .magicCoatAffected = TRUE,
+        .ignoresSubstitute = TRUE,
+        .contestEffect = CONTEST_EFFECT_MAKE_FOLLOWING_MONS_NERVOUS,
+        .contestCategory = CONTEST_CATEGORY_CUTE,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_LoveSpark,
+        .validApprenticeMove = TRUE,
+    },
+
+    [MOVE_HEAVENLY_PRAYER] =
+    {
+        .name = COMPOUND_STRING("HEAVENLY PRAYER"),
+        .description = COMPOUND_STRING(
+            "Traps the foe in a fierce\n"
+            "sandstorm. May cause confusion."),
+        .effect = EFFECT_HEAVENLY_PRAYER,
+        .power = 120,
+        .type = TYPE_GROUND,
+        .accuracy = 70,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .windMove = TRUE,
+        .damagesAirborne = TRUE,
+        .accuracy50InSun = TRUE,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_CONFUSION,
+            .chance = 30,
+        }),
+        .contestEffect = CONTEST_EFFECT_STARTLE_PREV_MONS,
+        .contestCategory = CONTEST_CATEGORY_COOL,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_HeavenlyPrayer,
+    },
+
+    [MOVE_LUSTER_CANDY] =
+    {
+        .name = COMPOUND_STRING("COLD SHOWER"),
+        .description = COMPOUND_STRING(
+            "The user shoots cold water\n"
+            "that may freeze the foe."),
+        .effect = EFFECT_HIT,
+        .power = 80,
+        .type = TYPE_WATER,
+        .accuracy = 100,
+        .pp = 15,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_FREEZE,
+            .chance = 30,
+        }),
+        .contestEffect = CONTEST_EFFECT_HIGHLY_APPEALING,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = COMBO_STARTER_SCALD,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_ColdShower,
+    },
+
+    [MOVE_ECLIPSE] =
+    {
+        .name = COMPOUND_STRING("ECLIPSE"),
+        .description = COMPOUND_STRING(
+            "Attacks with a high-tempo tune.\n"
+            "Raises the user’s SPEED."),
+        .effect = EFFECT_ECLIPSE,
+        .power = 50,
+        .type = TYPE_SOUND,
+        .accuracy = 100,
+        .pp = 20,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .thawsUser = TRUE,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_SPD_PLUS_1,
+            .self = TRUE,
+            .chance = 100,
+        }),
+        .contestEffect = CONTEST_EFFECT_HIGHLY_APPEALING,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = COMBO_STARTER_SCALD,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_Eclipse,
+    },
+
+    [MOVE_MOLTEN_STONE] =
+    {
+        .name = COMPOUND_STRING("LOVE SPARK"),
+        .description = COMPOUND_STRING(
+            "Makes the opposite gender fall\n"
+            "in love so much it gets hurt."),
+        .effect = EFFECT_HIT,
+        .power = 50,
+        .type = TYPE_ELECTRIC,
+        .accuracy = 80,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_STATUS,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_INFATUATE_SIDE,
+        }),
+        .zMove = { .effect = Z_EFFECT_RESET_STATS },
+        .magicCoatAffected = TRUE,
+        .ignoresSubstitute = TRUE,
+        .contestEffect = CONTEST_EFFECT_MAKE_FOLLOWING_MONS_NERVOUS,
+        .contestCategory = CONTEST_CATEGORY_CUTE,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_LoveSpark,
+        .validApprenticeMove = TRUE,
+    },
+
+    [MOVE_NOBLE_BREATH] =
+    {
+        .name = COMPOUND_STRING("RAGNAROK"),
+        .description = COMPOUND_STRING(
+            "Traps the foe in a fierce\n"
+            "sandstorm. May cause confusion."),
+        .effect = EFFECT_HIT,
+        .power = 120,
+        .type = TYPE_GROUND,
+        .accuracy = 70,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .windMove = TRUE,
+        .damagesAirborne = TRUE,
+        .accuracy50InSun = TRUE,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_CONFUSION,
+            .chance = 30,
+        }),
+        .contestEffect = CONTEST_EFFECT_STARTLE_PREV_MONS,
+        .contestCategory = CONTEST_CATEGORY_COOL,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_SandTornado,
     },
 };

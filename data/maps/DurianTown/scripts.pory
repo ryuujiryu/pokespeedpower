@@ -31,6 +31,11 @@ script DurianTown_KurtApprentice {
 	lock
 	faceplayer
 	msgbox ("Are you a POKéMON TRAINER? Then come\n" "buy some handcrafted POKé BALLS!$")
+    closemessage
+    applymovement (LOCALID_DURIANTOWN_APPRENTICE, Common_Movement_Sad)
+    waitmovement (0)
+    msgbox ("Please… my mentor, KURT, is even\n" "thinking about leaving TENKEI with how\p" "quickly STRAWBERRY TOWN is being\n" "abandoned since the DARK DECADE's end…$")
+    closemessage
 	release
 	end
 }
@@ -38,9 +43,9 @@ script DurianTown_KurtApprentice {
 script DurianTown_LittleGirl {
 	lock
 	faceplayer
-    applymovement (LOCALID_DURIANTOWN_LITTLE_GIRL, Common_Movement_Pensive)
+    applymovement (LOCALID_DURIANTOWN_LITTLE_GIRL, Common_Movement_Music)
     waitmovement (0)
-	msgbox ("I'm pretending to be a gate guard like\n" "my grandpa when he was younger!$")
+	msgbox ("I'm pretending to be a gate guard like\n" "my grandma when she was younger!\p" "In the past, she welcomed  visitors from\n" "all over the world, especially from\l" "HOENN, as it's relatively close!\p" "Though, she keeps talking about how\n" "HOENN is a part of this 'NIHON' place…$")
 	release
 	end
 }
@@ -67,7 +72,7 @@ script DurianTown_Rival {
     applymovement (LOCALID_DURIANTOWN_RIVAL, Common_Movement_WalkInPlaceLeft)
     waitmovement (0)
     if (checkplayergender != MALE) {
-        msgbox ("SHIN'YA: I'm guessing you got the STAMP\n" ", right? I knew you would do it.$")
+        msgbox ("SHIN'YA: I'm guessing you got the STAMP,\n" "right? I knew you could do it!$")
         closemessage
     } else {
         msgbox("FUUKA: You got your STAMP, didn't you?\n" "That's great.$")
@@ -76,10 +81,14 @@ script DurianTown_Rival {
     applymovement (LOCALID_DURIANTOWN_RIVAL, Common_Movement_Pensive)
     waitmovement (0)
     if (checkplayergender != MALE) {
-        msgbox ("SHIN'YA: Our first step in claiming\n" "back our birthright…$")
+        msgbox ("SHIN'YA: Our first step in claiming\n" "back our birthright…\p" "I'll make those UNOVANS pay for their\n" "actions, I swear to ALMIGHTY TENKEI!\p" "For our exile, their actions in CITRUS\n" "ISLAND, and for our parents' honor!"$)
+        closemessage
     } else {
-        msgbox("FUUKA: The first step in claiming\n" "the throne we deserve…$")
+        msgbox("FUUKA: The first step in claiming\n" "the throne we deserve…\p" "We need to be strong if we want to free\n" "NIHON from the ARC.$")
+        closemessage
     }
+    applymovement (LOCALID_DURIANTOWN_RIVAL, Common_Movement_Pensive)
+    waitmovement (0)
     msgbox ("Anyway. Since we did not have that\n" "match back in CITRUS ISLAND, why don't\l" "we have it right here?$")
     closemessage
     applymovement (LOCALID_DURIANTOWN_RIVAL, Common_Movement_Music)

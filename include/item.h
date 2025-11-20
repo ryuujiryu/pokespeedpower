@@ -138,7 +138,7 @@ static inline enum TMHMIndex GetItemTMHMIndex(u16 item)
         /* Expands to:
          * case ITEM_TM_FOCUS_PUNCH:
          *     return 1;
-         * case ITEM_TM_DRAGON_CLAW:
+         * case ITEM_TM_LOVE_SPARK:
          *      return 2;
          * etc */
         FOREACH_TM(UNPACK_ITEM_TO_TM_INDEX)
@@ -155,7 +155,7 @@ static inline u16 GetItemTMHMMoveId(u16 item)
         /* Expands to:
          * case ITEM_TM_FOCUS_PUNCH:
          *     return MOVE_FOCUS_PUNCH;
-         * case ITEM_TM_DRAGON_CLAW:
+         * case ITEM_TM_LOVE_SPARK:
          *      return MOVE_DRAGON_CLAW;
          * etc */
         FOREACH_TM(UNPACK_ITEM_TO_TM_MOVE_ID)

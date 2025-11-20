@@ -22317,6 +22317,13 @@ static const struct LevelUpMove sPecharuntLevelUpLearnset[] = {
 static const struct LevelUpMove sScavultLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_PECK),
     LEVEL_UP_MOVE( 1, MOVE_GROWL),
+    LEVEL_UP_MOVE( 7, MOVE_ASTONISH),
+    LEVEL_UP_MOVE( 13, MOVE_BESTOW),
+    LEVEL_UP_MOVE( 19, MOVE_PLUCK),
+    LEVEL_UP_MOVE( 23, MOVE_GROWL),
+    LEVEL_UP_MOVE( 26, MOVE_TAILWIND),
+    LEVEL_UP_MOVE( 30, MOVE_GROWL),
+    LEVEL_UP_MOVE( 35, MOVE_HEAL_BELL),
     LEVEL_UP_END
 };
 

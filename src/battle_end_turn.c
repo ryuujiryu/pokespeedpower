@@ -273,9 +273,7 @@ static bool32 HandleEndTurnWeatherDamage(u32 battler)
         }
         break;
     case BATTLE_WEATHER_ACID_RAIN:
-        if (ability != ABILITY_SAND_VEIL
-         && ability != ABILITY_SAND_FORCE
-         && ability != ABILITY_SAND_RUSH
+        if (ability != ABILITY_NOXIOUS_MANTLE
          && ability != ABILITY_OVERCOAT
          && !IS_BATTLER_ANY_TYPE(battler, TYPE_POISON)
          && gBattleMons[battler].volatiles.semiInvulnerable != STATE_UNDERGROUND

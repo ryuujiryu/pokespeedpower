@@ -943,6 +943,21 @@ extern const u8 gBattleAnimMove_JalapenoBomb[];
 extern const u8 gBattleAnimMove_SteamPurification[];
 extern const u8 gBattleAnimMove_AcidRain[];
 extern const u8 gBattleAnimMove_QiSacrifice[];
+extern const u8 gBattleAnimMove_SoilRegeneration[];
+extern const u8 gBattleAnimMove_SpiritGun[];
+extern const u8 gBattleAnimMove_Tsunami[];
+extern const u8 gBattleAnimMove_AsgardianSpear[];
+extern const u8 gBattleAnimMove_Pyrokinesis[];
+extern const u8 gBattleAnimMove_PressureWave[];
+extern const u8 gBattleAnimMove_MistralSquall[];
+extern const u8 gBattleAnimMove_SciroccoGale[];
+extern const u8 gBattleAnimMove_ColdShower[];
+extern const u8 gBattleAnimMove_Nightcore[];
+extern const u8 gBattleAnimMove_LoveSpark[];
+extern const u8 gBattleAnimMove_SandTornado[];
+extern const u8 gBattleAnimMove_Eclipse[];
+extern const u8 gBattleAnimMove_HeavenlyPrayer[];
+extern const u8 gBattleAnimMove_FanRally[];
 
 // status animations
 extern const u8 gBattleAnimStatus_Poison[];
@@ -1011,6 +1026,9 @@ extern const u8 gBattleAnimGeneral_TeraActivate[];
 extern const u8 gBattleAnimGeneral_SimpleHeal[];
 extern const u8 gBattleAnimGeneral_PowerConstruct[];
 extern const u8 gBattleAnimGeneral_AcidRain[];
+extern const u8 gBattleAnimGeneral_FanRally[];
+extern const u8 gBattleAnimGeneral_Eclipse[];
+extern const u8 gBattleAnimGeneral_HeavenlyPrayer[];
 
 // special animations
 extern const u8 gBattleAnimSpecial_LevelUp[];

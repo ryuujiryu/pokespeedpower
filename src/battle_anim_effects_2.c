@@ -1221,6 +1221,7 @@ const struct SpriteTemplate gJaggedMusicNoteSpriteTemplate =
     .callback = AnimJaggedMusicNote,
 };
 
+
 const union AffineAnimCmd gPerishSongMusicNoteAffineAnimCmds1[] =
 {
     AFFINEANIMCMD_FRAME(0x0, 0x0, 0, 5),
@@ -1267,6 +1268,18 @@ const struct SpriteTemplate gPerishSongMusicNote2SpriteTemplate =
     .affineAnims = gPerishSongMusicNoteAffineAnimTable,
     .callback = AnimPerishSongMusicNote2,
 };
+
+const struct SpriteTemplate gAsgardianMusicNoteSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_MUSIC_NOTES_2,
+    .paletteTag = ANIM_TAG_ICICLE_SPEAR,
+    .oam = &gOamData_AffineNormal_ObjNormal_16x16,
+    .anims = gMusicNotesAnimTable,
+    .images = NULL,
+    .affineAnims = gPerishSongMusicNoteAffineAnimTable,
+    .callback = AnimPerishSongMusicNote,
+};
+
 
 const union AffineAnimCmd gGuardRingAffineAnimCmds1[] =
 {

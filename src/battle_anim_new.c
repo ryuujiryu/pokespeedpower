@@ -9604,7 +9604,12 @@ void AnimTask_GetWeatherToSet(u8 taskId)
         gBattleAnimArgs[ARG_RET_ID] = ANIM_WEATHER_HAIL;
     else if (MoveHasAdditionalEffect(gCurrentMove, MOVE_EFFECT_ACID_RAIN))
         gBattleAnimArgs[ARG_RET_ID] = ANIM_WEATHER_ACID_RAIN;
-
+    else if (MoveHasAdditionalEffect(gCurrentMove, MOVE_EFFECT_FAN_RALLY))
+        gBattleAnimArgs[ARG_RET_ID] = ANIM_WEATHER_RALLYING_CROWD;
+    else if (MoveHasAdditionalEffect(gCurrentMove, MOVE_EFFECT_ECLIPSE))
+        gBattleAnimArgs[ARG_RET_ID] = ANIM_WEATHER_FULL_MOON;
+    else if (MoveHasAdditionalEffect(gCurrentMove, MOVE_EFFECT_HEAVENLY_PRAYER))
+        gBattleAnimArgs[ARG_RET_ID] = ANIM_WEATHER_METEOR_SHOWER;
     DestroyAnimVisualTask(taskId);
 }
 
