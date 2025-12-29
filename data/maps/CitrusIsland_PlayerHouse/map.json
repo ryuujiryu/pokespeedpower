@@ -3,7 +3,7 @@
   "name": "CitrusIsland_PlayerHouse",
   "layout": "LAYOUT_CITRUS_ISLAND_PLAYER_HOUSE",
   "music": "MUS_DUMMY",
-  "region_map_section": "MAPSEC_PALLET_TOWN",
+  "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_NONE",
@@ -17,7 +17,7 @@
     {
       "local_id": "LOCALID_CITRUS_RIVAL",
       "graphics_id": "OBJ_EVENT_GFX_VAR_0",
-      "x": 4,
+      "x": 9,
       "y": 10,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
@@ -35,9 +35,19 @@
       "y": 14,
       "elevation": 0,
       "dest_map": "MAP_CITRUS_ISLAND",
-      "dest_warp_id": "5"
+      "dest_warp_id": "4"
     }
   ],
-  "coord_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 1,
+      "y": 7,
+      "elevation": 0,
+      "var": "VAR_ROUTE102_STATE",
+      "var_value": "0",
+      "script": "CitrusIsland_PlayerHouse_Rival"
+    }
+  ],
   "bg_events": []
 }

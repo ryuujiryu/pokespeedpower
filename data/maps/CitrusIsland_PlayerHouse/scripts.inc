@@ -13,270 +13,299 @@ CitrusIsland_PlayerHouse_Rival::
 # 9 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
 	lock
 # 10 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	faceplayer
+	playse SE_DOOR
 # 11 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	applymovement LOCALID_CITRUS_RIVAL, CitrusIsland_PlayerHouse_Movement_RivalEnter
+# 12 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	waitmovement 0
+# 13 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	faceplayer
+# 14 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
 	playbgm MUS_ENCOUNTER_MAY, TRUE
 	checkplayergender
 # 0 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
 	compare VAR_RESULT, MALE
 	goto_if_ne CitrusIsland_PlayerHouse_Rival_2
-# 16 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	msgbox CitrusIsland_PlayerHouse_Rival_Text_1
-# 17 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	closemessage
-CitrusIsland_PlayerHouse_Rival_1:
-# 19 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	applymovement LOCALID_CITRUS_RIVAL, Common_Movement_Music
 # 20 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	waitmovement 0
+	setspeaker CitrusIsland_PlayerHouse_Rival_Text_2
 # 21 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	msgbox CitrusIsland_PlayerHouse_Rival_Text_2
+	msgbox CitrusIsland_PlayerHouse_Rival_Text_3
 # 22 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
 	closemessage
-# 23 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	applymovement LOCALID_CITRUS_RIVAL, Common_Movement_Pensive
+CitrusIsland_PlayerHouse_Rival_1:
 # 24 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	waitmovement 0
+	applymovement LOCALID_CITRUS_RIVAL, Common_Movement_Music
 # 25 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	applymovement LOCALID_CITRUS_RIVAL, Common_Movement_Delay48
-# 26 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	waitmovement 0
-# 27 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	msgbox CitrusIsland_PlayerHouse_Rival_Text_3
-# 28 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	closemessage
-# 29 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	applymovement LOCALID_CITRUS_RIVAL, Common_Movement_ExclamationMark
-# 30 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	waitmovement 0
-# 31 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	applymovement LOCALID_CITRUS_RIVAL, Common_Movement_Delay48
-# 32 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	waitmovement 0
-# 33 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	msgbox CitrusIsland_PlayerHouse_Rival_Text_4
-# 34 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	closemessage
-# 35 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	call Common_EventScript_NamingScreenPlayer
-# 36 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	msgbox CitrusIsland_PlayerHouse_Rival_Text_5
-# 37 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	closemessage
-# 38 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	applymovement LOCALID_CITRUS_RIVAL, Common_Movement_Pensive
-# 39 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	waitmovement 0
-# 40 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	applymovement LOCALID_CITRUS_RIVAL, Common_Movement_Delay48
-# 41 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
 	waitmovement 0
 	checkplayergender
 # 0 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
 	compare VAR_RESULT, MALE
 	goto_if_ne CitrusIsland_PlayerHouse_Rival_6
-# 45 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	msgbox CitrusIsland_PlayerHouse_Rival_Text_7
+# 30 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	setspeaker CitrusIsland_PlayerHouse_Rival_Text_2
+# 31 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	msgbox CitrusIsland_PlayerHouse_Rival_Text_5
 CitrusIsland_PlayerHouse_Rival_5:
-# 47 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+# 33 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
 	closemessage
+# 34 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	applymovement LOCALID_CITRUS_RIVAL, Common_Movement_Pensive
+# 35 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	waitmovement 0
+# 36 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	applymovement LOCALID_CITRUS_RIVAL, Common_Movement_Delay48
+# 37 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	waitmovement 0
+	checkplayergender
+# 0 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	compare VAR_RESULT, MALE
+	goto_if_ne CitrusIsland_PlayerHouse_Rival_10
+# 42 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	setspeaker CitrusIsland_PlayerHouse_Rival_Text_2
+# 43 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	msgbox CitrusIsland_PlayerHouse_Rival_Text_7
+CitrusIsland_PlayerHouse_Rival_9:
+# 45 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	closemessage
+# 46 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_Angry
+# 47 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	waitmovement 0
 # 48 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	applymovement LOCALID_CITRUS_RIVAL, CitrusIsland_PlayerHouse_Movement_RivalLeave
+	applymovement LOCALID_PLAYER, Common_Movement_Delay48
 # 49 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
 	waitmovement 0
 # 50 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	applymovement LOCALID_CITRUS_RIVAL, Common_Movement_Delay48
+	applymovement LOCALID_CITRUS_RIVAL, Common_Movement_ExclamationMark
 # 51 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
 	waitmovement 0
 # 52 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	applymovement LOCALID_CITRUS_RIVAL, Common_Movement_ExclamationMark
+	applymovement LOCALID_CITRUS_RIVAL, Common_Movement_Delay48
 # 53 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
 	waitmovement 0
-# 54 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	applymovement LOCALID_CITRUS_RIVAL, Common_Movement_Delay48
-# 55 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	checkplayergender
+# 0 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	compare VAR_RESULT, MALE
+	goto_if_ne CitrusIsland_PlayerHouse_Rival_14
+# 59 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	setspeaker CitrusIsland_PlayerHouse_Rival_Text_2
+# 60 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	msgbox CitrusIsland_PlayerHouse_Rival_Text_9
+# 61 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	closemessage
+CitrusIsland_PlayerHouse_Rival_13:
+# 63 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	applymovement LOCALID_CITRUS_RIVAL, Common_Movement_Pensive
+# 64 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
 	waitmovement 0
-# 56 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	call CitrusIsland_PlayerHouse_Outfit
-	return
+# 65 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	applymovement LOCALID_CITRUS_RIVAL, Common_Movement_Delay48
+# 66 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	waitmovement 0
+	checkplayergender
+# 0 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	compare VAR_RESULT, MALE
+	goto_if_ne CitrusIsland_PlayerHouse_Rival_18
+# 71 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	setspeaker CitrusIsland_PlayerHouse_Rival_Text_2
+# 72 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	msgbox CitrusIsland_PlayerHouse_Rival_Text_11
+CitrusIsland_PlayerHouse_Rival_17:
+# 74 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	closemessage
+# 75 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	applymovement LOCALID_CITRUS_RIVAL, CitrusIsland_PlayerHouse_Movement_RivalLeave
+# 76 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	waitmovement 0
+# 77 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	playse SE_DOOR
+# 78 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	removeobject LOCALID_CITRUS_RIVAL
+# 79 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	fadedefaultbgm
+# 80 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	release
+# 81 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	setvar VAR_ROUTE102_STATE, 1
+	end
 
 CitrusIsland_PlayerHouse_Rival_2:
-# 13 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	msgbox CitrusIsland_PlayerHouse_Rival_Text_0
-# 14 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+# 16 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	setspeaker CitrusIsland_PlayerHouse_Rival_Text_0
+# 17 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	msgbox CitrusIsland_PlayerHouse_Rival_Text_1
+# 18 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
 	closemessage
 	goto CitrusIsland_PlayerHouse_Rival_1
 
 CitrusIsland_PlayerHouse_Rival_6:
-# 43 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	msgbox CitrusIsland_PlayerHouse_Rival_Text_6
+# 27 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	setspeaker CitrusIsland_PlayerHouse_Rival_Text_0
+# 28 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	msgbox CitrusIsland_PlayerHouse_Rival_Text_4
 	goto CitrusIsland_PlayerHouse_Rival_5
 
+CitrusIsland_PlayerHouse_Rival_10:
+# 39 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	setspeaker CitrusIsland_PlayerHouse_Rival_Text_0
+# 40 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	msgbox CitrusIsland_PlayerHouse_Rival_Text_6
+	goto CitrusIsland_PlayerHouse_Rival_9
 
-CitrusIsland_PlayerHouse_Outfit::
-# 60 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	msgbox CitrusIsland_PlayerHouse_Outfit_Text_0
-# 61 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+CitrusIsland_PlayerHouse_Rival_14:
+# 55 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	setspeaker CitrusIsland_PlayerHouse_Rival_Text_0
+# 56 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	msgbox CitrusIsland_PlayerHouse_Rival_Text_8
+# 57 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
 	closemessage
-# 62 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	applymovement LOCALID_CITRUS_RIVAL, CitrusIsland_PlayerHouse_Movement_RivalReturns
-# 63 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	waitmovement 0
-# 64 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	faceplayer
-# 65 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	msgbox CitrusIsland_PlayerHouse_Outfit_Text_1
-# 66 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	closemessage
-# 67 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	applymovement LOCALID_CITRUS_RIVAL, Common_Movement_Angry
+	goto CitrusIsland_PlayerHouse_Rival_13
+
+CitrusIsland_PlayerHouse_Rival_18:
 # 68 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	waitmovement 0
+	setspeaker CitrusIsland_PlayerHouse_Rival_Text_0
 # 69 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	applymovement LOCALID_CITRUS_RIVAL, Common_Movement_Delay48
-# 70 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	waitmovement 0
-# 71 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	msgbox CitrusIsland_PlayerHouse_Outfit_Text_2
-# 72 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	closemessage
-# 73 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	playfanfare MUS_OBTAIN_ITEM
-# 74 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	giveitem ITEM_OUTFIT_BOX
-# 75 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	waitfanfare
-# 76 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	toggleoutfit OUTFIT_UNUSUAL_RED, 0
-# 77 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	msgbox CitrusIsland_PlayerHouse_Outfit_Text_3
-# 78 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	closemessage
-# 79 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	applymovement LOCALID_CITRUS_RIVAL, CitrusIsland_PlayerHouse_Movement_RivalLeave
-# 80 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	waitmovement 0
-# 81 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	playse SE_DOOR
-# 82 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	removeobject LOCALID_CITRUS_RIVAL
-# 83 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	fadedefaultbgm
-# 84 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	setflag FLAG_SYS_SAVE_GET
+	msgbox CitrusIsland_PlayerHouse_Rival_Text_10
+	goto CitrusIsland_PlayerHouse_Rival_17
+
+
 # 85 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	release
-	end
-
-
-# 89 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-CitrusIsland_PlayerHouse_Movement_RivalLeave:
-# 90 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	walk_right
-# 90 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	walk_right
-# 90 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	walk_right
-# 90 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	walk_right
-# 91 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	walk_down
-# 91 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	walk_down
-# 91 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	walk_down
-# 91 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	walk_down
-# 92 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+CitrusIsland_PlayerHouse_Movement_RivalEnter:
+# 86 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	walk_fast_left
+# 86 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	walk_fast_left
+# 86 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	walk_fast_left
+# 86 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	walk_fast_left
+# 86 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	walk_fast_left
+# 86 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	walk_fast_left
+# 86 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	walk_fast_left
+# 86 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	walk_fast_left
+# 87 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	walk_fast_up
+# 87 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	walk_fast_up
+# 88 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
 	step_end
 
+# 91 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+CitrusIsland_PlayerHouse_Movement_RivalLeave:
+# 92 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	walk_down
+# 92 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	walk_down
+# 93 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	walk_right
+# 93 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	walk_right
+# 93 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	walk_right
+# 93 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	walk_right
+# 93 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	walk_right
+# 93 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	walk_right
+# 93 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	walk_right
+# 94 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	walk_down
+# 94 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	walk_down
+# 94 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	walk_down
+# 94 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	walk_down
+# 94 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	walk_down
 # 95 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-CitrusIsland_PlayerHouse_Movement_RivalReturns:
-# 96 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	walk_up
-# 96 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	walk_up
-# 96 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	walk_up
-# 96 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	walk_up
-# 97 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	walk_left
-# 97 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	walk_left
-# 97 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	walk_left
-# 97 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	walk_left
-# 98 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
 	step_end
 
 CitrusIsland_PlayerHouse_Rival_Text_0:
-# 13 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	.string "SHIN'YA: Anegimi, you finally woke up!\n"
-	.string "Took you long enough.\p"
-	.string "Come on. Let's go to the shore.$"
+# 16 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	.string "SHINYA$"
 
 CitrusIsland_PlayerHouse_Rival_Text_1:
-# 16 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	.string "FUUKA: Anigimi, good morning!\n"
+# 17 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	.string "Anegimi, ya finally woke up!\n"
+	.string "Took'ya long enough.\p"
+	.string "C'mon. Let's go to the shore.$"
+
+CitrusIsland_PlayerHouse_Rival_Text_2:
+# 20 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	.string "FUUKA$"
+
+CitrusIsland_PlayerHouse_Rival_Text_3:
+# 21 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	.string "Anigimi, good morning!\n"
 	.string "Get ready and let us make haste.\l"
 	.string "We have to reach the shore.$"
 
-CitrusIsland_PlayerHouse_Rival_Text_2:
-# 21 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+CitrusIsland_PlayerHouse_Rival_Text_4:
+# 28 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	.string "After all, today is the day!\n"
+	.string "Finally, we'll leave CITRUS ISLAND!\p"
+	.string "PROF. ZELKOVA'll give us a POKéMON,\n"
+	.string "and then we can take part in the\l"
+	.string "ELEMENTAL CONQUEST!$"
+
+CitrusIsland_PlayerHouse_Rival_Text_5:
+# 31 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
 	.string "After all, today is the day! Finally, we\n"
 	.string "will leave CITRUS ISLAND!\p"
 	.string "PROF. ZELKOVA will give us a POKéMON,\n"
 	.string "and then we can take part in the\l"
 	.string "ELEMENTAL CONQUEST!$"
 
-CitrusIsland_PlayerHouse_Rival_Text_3:
-# 27 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	.string "I wish MOM and DAD could see us.\p"
-	.string "But then, you could kinda say it is their\n"
-	.string "fault we were stuck there.$"
-
-CitrusIsland_PlayerHouse_Rival_Text_4:
-# 33 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	.string "Hey, don't get angry now. T'was a joke.\n"
-	.string "I have to deal with it somehow.\p"
-	.string "I'll go first. I think MITSURU and\n"
-	.string "RAKAN want to see us off, too.\p"
-	.string "By the way, did 'ya decide what name\n"
-	.string "you'll go by?$"
-
-CitrusIsland_PlayerHouse_Rival_Text_5:
-# 36 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	.string "{PLAYER}, huh? … … …$"
-
 CitrusIsland_PlayerHouse_Rival_Text_6:
-# 43 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	.string "Well, I'll go by HECTOR.\n"
-	.string "It fits me, right? … … …\p"
-	.string " … … …'Nyway. I'm going, then!$"
+# 40 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	.string "I wish MOM and DAD could see us.\p"
+	.string "But then, ya could kinda say it's their\n"
+	.string "fault we're stuck there.$"
 
 CitrusIsland_PlayerHouse_Rival_Text_7:
-# 45 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	.string "Maybe I'll choose IRENE as mine.\n"
-	.string "It seems nice enough.\p"
-	.string "… … …Anyway! We need to go!$"
+# 43 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	.string "I wish MOM and DAD could see us.\n"
+	.string "Maybe if they did not start the WAR…\p"
+	.string "We would not have been exiled\n"
+	.string "to begin with.$"
 
-CitrusIsland_PlayerHouse_Outfit_Text_0:
+CitrusIsland_PlayerHouse_Rival_Text_8:
+# 56 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	.string "Hey, don't get angry at a joke now.\n"
+	.string "I gotta deal with it somehow.\p"
+	.string "I'll go first. I think MITSURU and\n"
+	.string "RAKAN want to see us off, too.$"
+
+CitrusIsland_PlayerHouse_Rival_Text_9:
 # 60 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	.string "Woah, I forgot!$"
+	.string "…Sorry, anigimi, that was not a nice\n"
+	.string "thing to say. You know what?\p"
+	.string "I will go to the shore first. MITSURU and\n"
+	.string "RAKAN want to see us off, too.$"
 
-CitrusIsland_PlayerHouse_Outfit_Text_1:
-# 65 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	.string "I know we need to wear those\n"
-	.string "ALLIED-style clothes so that our\l"
-	.string "fake identies are more believable…$"
+CitrusIsland_PlayerHouse_Rival_Text_10:
+# 69 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	.string "We ain't s'pos'ta leave this place, yeah.\n"
+	.string "But once we do the ARC can't do a thing!\p"
+	.string "If they try to, everyone'll know we're\n"
+	.string "alive, so the convenient story of us\l"
+	.string "being executed won't hold up!\p"
+	.string "Now, let's go! Let's not make\n"
+	.string "everyone keep on waiting!$"
 
-CitrusIsland_PlayerHouse_Outfit_Text_2:
-# 71 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	.string "But I have packed our traditional\n"
-	.string "pajamas anyway. Here, catch!$"
-
-CitrusIsland_PlayerHouse_Outfit_Text_3:
-# 77 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
-	.string "Now, though, let's actually go!$"
+CitrusIsland_PlayerHouse_Rival_Text_11:
+# 72 "data/maps/CitrusIsland_PlayerHouse/scripts.pory"
+	.string "Theorically, we should not try to leave.\n"
+	.string "But once we do, the ARC can't do a thing.\p"
+	.string "If they try to, say, hurt us in any way,\n"
+	.string "it destroys their propaganda of how\l"
+	.string "we died and so can't rule NIHON.\p"
+	.string "Now, let us go. We should not make\n"
+	.string "everyone keep on waiting.$"

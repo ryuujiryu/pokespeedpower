@@ -3,7 +3,7 @@
   "name": "CoconutCity",
   "layout": "LAYOUT_COCONUT_CITY",
   "music": "MUS_RG_SEVII_45",
-  "region_map_section": "MAPSEC_PEWTER_CITY",
+  "region_map_section": "MAPSEC_PETALBURG_CITY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_TOWN",

@@ -40,11 +40,13 @@ static void Task_DrawFieldMessage(u8 taskId)
             task->tState++;
             break;
         case 1:
+            {
             u32 nameboxWinId = GetNameboxWindowId();
             DrawDialogueFrame(0, TRUE);
             if (nameboxWinId != WINDOW_NONE)
                 DrawNamebox(nameboxWinId, TRUE);
             task->tState++;
+            }
             break;
         case 2:
             if (RunTextPrintersAndIsPrinter0Active() != TRUE)

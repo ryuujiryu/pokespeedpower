@@ -3,7 +3,7 @@
   "name": "CherryWoods",
   "layout": "LAYOUT_CHERRY_WOODS",
   "music": "MUS_MT_PYRE",
-  "region_map_section": "MAPSEC_VIRIDIAN_FOREST",
+  "region_map_section": "MAPSEC_PETALBURG_WOODS",
   "requires_flash": false,
   "weather": "WEATHER_SHADE",
   "map_type": "MAP_TYPE_NONE",

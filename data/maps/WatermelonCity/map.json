@@ -3,7 +3,7 @@
   "name": "WatermelonCity",
   "layout": "LAYOUT_WATERMELON_CITY",
   "music": "MUS_AW2_418",
-  "region_map_section": "MAPSEC_CERULEAN_CITY",
+  "region_map_section": "MAPSEC_RUSTBORO_CITY",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_NONE",

@@ -9,3 +9,15 @@ script DurianTown_House_Lass {
 	release
 	end
 }
+
+script DurianTown_House_Beauty {
+	lock
+	faceplayer
+	msgbox ("We tried to move to WATERMELON CITY,\n" "but were automatically refused from\l" "the good neighbourhoods, forcing us\p" "to spend ¥350.000 in an attempt to at\n" "least get a permit to move to the\l" "SWORD ALLEY or VIOLET STREET…$")
+	closemessage
+    applymovement (LOCALID_DURIANTOWN_WOMAN, Common_Movement_Angry)
+	msgbox ("We had to sell all our property to\n" "afford the fee, too… … …\p" "Only to be refused on the basis that if\n" "we did not own any business, etc… then\l" "we couldn't afford living there anyway…$")
+    waitmovement (0)
+	release
+	end
+}

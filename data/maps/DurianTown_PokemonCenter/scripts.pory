@@ -1,86 +1,182 @@
-raw `
-DurianTown_PokemonCenter_MapScripts::
-	map_script MAP_SCRIPT_ON_TRANSITION, DurianTown_PokemonCenter_OnTransition
-	map_script MAP_SCRIPT_ON_RESUME, CableClub_OnResume
-	.byte 0
+mapscripts DurianTown_PokemonCenter_MapScripts {
+MAP_SCRIPT_ON_TRANSITION {
+    setrespawn(HEAL_LOCATION_DURIAN_TOWN)
+    end
+    }
+}
 
-DurianTown_PokemonCenter_OnTransition:
-	setrespawn HEAL_LOCATION_DURIAN_TOWN
-	end
-
-DurianTown_PokemonCenter_EventScript_Nurse::
-	setvar VAR_0x800B, LOCALID_DURIAN_NURSE
-	call Common_EventScript_PkmnCenterNurse
+script DurianTown_PokemonCenter_EventScript_Nurse {
+	setvar (VAR_0x800B, LOCALID_DURIAN_NURSE)
+	call (Common_EventScript_PkmnCenterNurse)
 	waitmessage
 	waitbuttonpress
 	release
 	end
+}
 
-DurianTown_PokemonCenter_EventScript_Boy::
-	msgbox DurianTown_PokemonCenter_Text_Grandpa, MSGBOX_NPC
-	end
-
-DurianTown_PokemonCenter_EventScript_ExpertM::
-	msgbox DurianTown_PokemonCenter_Text_OldTimes, MSGBOX_NPC
-	end
-
-DurianTown_PokemonCenter_EventScript_Woman::
-	msgbox DurianTown_PokemonCenter_Text_Banjo, MSGBOX_NPC
-	end
-
-DurianTown_PokemonCenter_EventScript_Girl::
-	msgbox DurianTown_PokemonCenter_Text_LikeHisLook, MSGBOX_NPC
-	end
-
-DurianTown_PokemonCenter_Text_Grandpa:
-	.string "My grandpa only just woke up from\n"
-	.string "a coma he got during the DARK DECADE…\p"
-	.string "The shock of losing the war nearly took\n"
-	.string "him to an early grave.$"
-
-DurianTown_PokemonCenter_Text_OldTimes:
-	.string "At your age, I was a PATH DISCIPLE,\n"
-	.string "and our TEMPLE trained ROCK-types,\l"
-	.string "not any of this SOUND-type nonsense!\p"
-	.string "And now, the darn UNOVANS said they’ll\n"
-	.string "rename the ELEMENTAL CONQUEST to the\l"
-	.string "GYM CHALLENGE after this edition!\p"
-	.string "NIHON is doomed, I tell you!$"
-
-DurianTown_PokemonCenter_Text_Banjo:
-	.string "Till this year’s ELEMENTAL CONQUEST,\n"
-	.string "BANJO was the respectable\p"
-	.string "ISHIKI clan’s heir, musicians who\n"
-	.string "always guarded our TEMPLE!\p"
-	.string "But since he met that SHIRI girl…\p"
-	.string "Now he’s looking like a hooligan, and\n"
-	.string "he plays those horrible UNOVAN noises!$"
-
-DurianTown_PokemonCenter_Text_LikeHisLook:
-	.string "I think BANJO’s new look is cool!\n"
-	.string "His new haircut is called…\l"
-	.string "a “MOSTARAPTOR”, right?\p"
-	.string "Either way, SHIRI brought out\n"
-	.string "the real him!$"
-
-DurianTown_PokemonCenter_EventScript_Clerk::
+script DurianTown_PokemonCenter_EventScript_Boy {
 	lock
 	faceplayer
-	message gText_HowMayIServeYou
-	waitmessage
-	pokemart DurianTown_PokemonCenter_Pokemart
-	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+	msgbox ("My grandpa only just woke up from\n" "a coma he got during the DARK DECADE…\p" "The shock of losing the war nearly took\n" "him to an early grave.$")
 	release
 	end
+}
 
-	.align 2
-DurianTown_PokemonCenter_Pokemart:
-	.2byte ITEM_POKE_BALL
-	.2byte ITEM_POTION
-	.2byte ITEM_ANTIDOTE
-	.2byte ITEM_PARALYZE_HEAL
-	.2byte ITEM_AWAKENING
-	pokemartlistend
+script DurianTown_PokemonCenter_EventScript_ExpertM {
+	lock
+	faceplayer
+	msgbox ("At your age, I was a PATH DISCIPLE,\n" "and our TEMPLE trained ROCK-types,\l" "not any of this SOUND-type nonsense!\p" "And now, the darn UNOVANS said they’ll\n" "rename the ELEMENTAL CONQUEST to the\l" "GYM CHALLENGE after this edition!\p" "NIHON is doomed, I tell you!$")
+	release
+	end
+}
 
-`
+script DurianTown_PokemonCenter_EventScript_Woman {
+	lock
+	faceplayer
+	msgbox ("Till this year’s ELEMENTAL CONQUEST,\n" "BANJO was the respectable\p" "ISHIKI clan’s heir, musicians who\n" "always guarded our TEMPLE!\p" "But since he met that SHIRI girl…\p" "Now he’s looking like a hooligan, and\n" "he plays those horrible UNOVAN noises!$")
+	release
+	end
+}
 
+script DurianTown_PokemonCenter_EventScript_Girl {
+	lock
+	faceplayer
+	msgbox ( "I think BANJO’s new look is cool!\n" "His new haircut is called…\l" "a “MOSTARAPTOR”, right?\p" "Either way, SHIRI brought out\n" "the real him!$")
+	release
+	end
+}
+
+script DurianTown_PokemonCenter_EventScript_Clerk {
+	lock
+	faceplayer
+	msgbox (gText_HowMayIServeYou)
+	waitmessage
+	pokemart (DurianTown_PokemonCenter_Pokemart)
+	msgbox (gText_PleaseComeAgain)
+	release
+	end
+}
+
+mart DurianTown_PokemonCenter_Pokemart {
+    ITEM_POKE_BALL
+    ITEM_POTION
+    ITEM_ANTIDOTE
+    ITEM_PARALYZE_HEAL
+    ITEM_AWAKENING
+}
+
+script DurianTown_PokemonCenter_EventScript_Jukebox {
+	lock
+	faceplayer
+	showmoneybox (0, 0)
+	msgbox ("It's a JUKEBOX, the new invention\n" "from the UNOVA region!\p" "Do you want to play a song?\n" "It's only ¥200!$", MSGBOX_YESNO)
+    if (var(VAR_RESULT) == NO) {
+    hidemoneybox
+	release
+	end
+    } else {
+   	checkmoney (200)
+    if (var(VAR_RESULT) == FALSE) {
+    msgbox ("You don't have enough money!")
+    hidemoneybox
+	release
+	end
+    } elif (var(VAR_RESULT) == TRUE) {
+        removemoney (200)
+	    updatemoneybox
+        hidemoneybox
+        goto (DurianTown_PokemonCenter_EventScript_SongSelection)
+    }
+}
+}
+
+
+script DurianTown_PokemonCenter_EventScript_SongSelection {
+	msgbox ("Choose a song!$")
+	if(flag(FLAG_DISC_01_GET)){
+	dynmultipush ("CITRUS ISLAND", 0)
+	}
+	if(flag(FLAG_DISC_02_GET)){
+	dynmultipush ("BATTLE! WILD POKéMON", 1)
+	}
+	if(flag(FLAG_DISC_03_GET)){
+	dynmultipush ("STRAWBERRY TOWN", 2)
+	}
+	if(flag(FLAG_DISC_04_GET)){
+	dynmultipush ("BATTLE! TRAINER", 3)
+	}
+	if(flag(FLAG_DISC_05_GET)){
+	dynmultipush ("ELEMENTAL TEMPLE", 4)
+	}
+	if(flag(FLAG_DISC_06_GET)){
+	dynmultipush ("BATTLE! PATH GUARDIAN", 5)
+	}
+	if(flag(FLAG_DISC_07_GET)){
+	dynmultipush ("BATTLE! RIVAL", 6)
+	}
+	if(flag(FLAG_DISC_08_GET)){
+	dynmultipush ("COCONUT CITY", 7)
+	}
+	if(flag(FLAG_DISC_09_GET)){
+	dynmultipush ("BATTLE! ARC SOLDIER", 8)
+	}
+	if(flag(FLAG_DISC_09_GET)){
+	dynmultipush ("WATERMELON CITY", 9)
+	}
+	if(flag(FLAG_DISC_09_GET)){
+	dynmultipush ("LEMONSHORE CITY", 10)
+	}
+	dynmultipush ("I changed my mind.", 11)
+    dynmultistack(0, 0, FALSE, 5, FALSE, 0, DYN_MULTICHOICE_CB_NONE)
+	switch(var(VAR_RESULT)){
+        case 0:
+            playbgm (MUS_AW2_211, FALSE)
+        case 1:
+            playbgm (MUS_GS2_ISAAC_BATTLE, FALSE)
+        case 2:
+            playbgm (MUS_AW2_212, FALSE)
+        case 3:
+            playbgm (MUS_RG_VS_WILD, FALSE)
+        case 4:
+            playbgm (MUS_AW2_209, FALSE)
+        case 5:
+            playbgm (MUS_RG_VS_GYM_LEADER, FALSE)
+        case 6:
+            playbgm (MUS_RG_VS_WILD, FALSE)
+        case 7:
+            playbgm (MUS_RG_VS_WILD, FALSE)
+        case 8:
+            playbgm (MUS_AW2_211, FALSE)
+        case 9:
+            playbgm (MUS_AW2_418, FALSE)
+        case 10:
+            playbgm (MUS_RG_VS_WILD, FALSE)
+        case 11:
+            release
+            end
+        }
+    buffernumberstring(STR_VAR_1, VAR_RESULT)
+    closemessage
+    release
+    end
+}
+
+script DurianTown_PokemonCenter_EventScript_Disc {
+	if (flag(FLAG_DISC_04_GET)) {
+	lock
+	faceplayer
+	msgbox ("I just don't think this whole disc\n" "business isn't a fad, you know.\p" "Why not going to a live concert with\n" "live musicians, instead?$")
+	release
+	end
+    } else {
+    lock
+	faceplayer
+	msgbox ( "Have you seen that weird machine\n" "in the corner?\p" "It seems that if you insert a record,\n" "that gizmo will somehow play a song?\p" "What a weird invention, tsk. Music is\n" "something you play live, it shouldn't\l" "be stored in some magical disc.\p" "I've been given one as a gift, but I'm\n" "not into this recording music fad.\l" "Why don't you take it instead?$")
+	playfanfare (MUS_OBTAIN_ITEM)
+	msgbox ("{PLAYER} obtained a DISC!\n" "It's DISC 04, <<BATTLE! TRAINER!>>!$")
+	waitfanfare
+	setflag (FLAG_DISC_04_GET)
+	release
+	end
+    }
+}

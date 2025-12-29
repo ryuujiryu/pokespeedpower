@@ -64,150 +64,156 @@ Route52_ReligiousDebate::
 # 34 "data/maps/Route52/scripts.pory"
 	waitmovement 0
 # 35 "data/maps/Route52/scripts.pory"
-	msgbox Route52_ReligiousDebate_Text_3
+	setspeaker Route52_ReligiousDebate_Text_3
 # 36 "data/maps/Route52/scripts.pory"
-	closemessage
-# 37 "data/maps/Route52/scripts.pory"
-	applymovement LOCALID_ROUTE52_RELIGIOUSNUTJOB_F, Common_Movement_Angry
-# 38 "data/maps/Route52/scripts.pory"
-	waitmovement 0
-# 39 "data/maps/Route52/scripts.pory"
-	applymovement LOCALID_ROUTE52_RELIGIOUSNUTJOB_F, Common_Movement_WalkInPlaceLeft
-# 40 "data/maps/Route52/scripts.pory"
-	waitmovement 0
-# 41 "data/maps/Route52/scripts.pory"
-	applymovement LOCALID_ROUTE52_RELIGIOUSNUTJOB_F, Common_Movement_Delay48
-# 42 "data/maps/Route52/scripts.pory"
-	waitmovement 0
-# 43 "data/maps/Route52/scripts.pory"
 	msgbox Route52_ReligiousDebate_Text_4
+# 37 "data/maps/Route52/scripts.pory"
+	closemessage
+# 38 "data/maps/Route52/scripts.pory"
+	applymovement LOCALID_ROUTE52_RELIGIOUSNUTJOB_F, Common_Movement_Angry
+# 39 "data/maps/Route52/scripts.pory"
+	waitmovement 0
+# 40 "data/maps/Route52/scripts.pory"
+	applymovement LOCALID_ROUTE52_RELIGIOUSNUTJOB_F, Common_Movement_WalkInPlaceLeft
+# 41 "data/maps/Route52/scripts.pory"
+	waitmovement 0
+# 42 "data/maps/Route52/scripts.pory"
+	applymovement LOCALID_ROUTE52_RELIGIOUSNUTJOB_F, Common_Movement_Delay48
+# 43 "data/maps/Route52/scripts.pory"
+	waitmovement 0
 # 44 "data/maps/Route52/scripts.pory"
-	closemessage
-# 45 "data/maps/Route52/scripts.pory"
-	applymovement LOCALID_ROUTE52_RELIGIOUSNUTJOB_M, Common_Movement_Angry
-# 46 "data/maps/Route52/scripts.pory"
-	waitmovement 0
-# 47 "data/maps/Route52/scripts.pory"
-	applymovement LOCALID_ROUTE52_RELIGIOUSNUTJOB_M, Common_Movement_WalkInPlaceRight
-# 48 "data/maps/Route52/scripts.pory"
-	waitmovement 0
-# 49 "data/maps/Route52/scripts.pory"
-	applymovement LOCALID_ROUTE52_RELIGIOUSNUTJOB_M, Common_Movement_Delay48
-# 50 "data/maps/Route52/scripts.pory"
-	waitmovement 0
-# 51 "data/maps/Route52/scripts.pory"
 	msgbox Route52_ReligiousDebate_Text_5
+# 45 "data/maps/Route52/scripts.pory"
+	closemessage
+# 46 "data/maps/Route52/scripts.pory"
+	applymovement LOCALID_ROUTE52_RELIGIOUSNUTJOB_M, Common_Movement_Angry
+# 47 "data/maps/Route52/scripts.pory"
+	waitmovement 0
+# 48 "data/maps/Route52/scripts.pory"
+	applymovement LOCALID_ROUTE52_RELIGIOUSNUTJOB_M, Common_Movement_WalkInPlaceRight
+# 49 "data/maps/Route52/scripts.pory"
+	waitmovement 0
+# 50 "data/maps/Route52/scripts.pory"
+	applymovement LOCALID_ROUTE52_RELIGIOUSNUTJOB_M, Common_Movement_Delay48
+# 51 "data/maps/Route52/scripts.pory"
+	waitmovement 0
 # 52 "data/maps/Route52/scripts.pory"
-	closemessage
-# 53 "data/maps/Route52/scripts.pory"
-	applymovement LOCALID_ROUTE52_RELIGIOUSNUTJOB_M, Common_Movement_Pensive
-# 54 "data/maps/Route52/scripts.pory"
-	waitmovement 0
-# 55 "data/maps/Route52/scripts.pory"
-	applymovement LOCALID_ROUTE52_RELIGIOUSNUTJOB_M, Common_Movement_Delay48
-# 56 "data/maps/Route52/scripts.pory"
-	waitmovement 0
-# 57 "data/maps/Route52/scripts.pory"
 	msgbox Route52_ReligiousDebate_Text_6
-# 58 "data/maps/Route52/scripts.pory"
+# 53 "data/maps/Route52/scripts.pory"
 	closemessage
-# 59 "data/maps/Route52/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_Pensive
-# 60 "data/maps/Route52/scripts.pory"
+# 54 "data/maps/Route52/scripts.pory"
+	applymovement LOCALID_ROUTE52_RELIGIOUSNUTJOB_M, Common_Movement_Pensive
+# 55 "data/maps/Route52/scripts.pory"
 	waitmovement 0
-# 61 "data/maps/Route52/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_Delay48
-# 62 "data/maps/Route52/scripts.pory"
-	waitmovement 0
-# 63 "data/maps/Route52/scripts.pory"
-	msgbox Route52_ReligiousDebate_Text_7
-# 64 "data/maps/Route52/scripts.pory"
-	closemessage
-# 65 "data/maps/Route52/scripts.pory"
-	applymovement LOCALID_ROUTE52_RELIGIOUSNUTJOB_M, Common_Movement_Music
-# 66 "data/maps/Route52/scripts.pory"
-	waitmovement 0
-# 67 "data/maps/Route52/scripts.pory"
+# 56 "data/maps/Route52/scripts.pory"
 	applymovement LOCALID_ROUTE52_RELIGIOUSNUTJOB_M, Common_Movement_Delay48
+# 57 "data/maps/Route52/scripts.pory"
+	waitmovement 0
+# 58 "data/maps/Route52/scripts.pory"
+	msgbox Route52_ReligiousDebate_Text_7
+# 59 "data/maps/Route52/scripts.pory"
+	closemessage
+# 60 "data/maps/Route52/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_Pensive
+# 61 "data/maps/Route52/scripts.pory"
+	waitmovement 0
+# 62 "data/maps/Route52/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_Delay48
+# 63 "data/maps/Route52/scripts.pory"
+	waitmovement 0
+# 64 "data/maps/Route52/scripts.pory"
+	setspeaker Route52_ReligiousDebate_Text_3
+# 65 "data/maps/Route52/scripts.pory"
+	msgbox Route52_ReligiousDebate_Text_8
+# 66 "data/maps/Route52/scripts.pory"
+	closemessage
+# 67 "data/maps/Route52/scripts.pory"
+	applymovement LOCALID_ROUTE52_RELIGIOUSNUTJOB_M, Common_Movement_Music
 # 68 "data/maps/Route52/scripts.pory"
 	waitmovement 0
 # 69 "data/maps/Route52/scripts.pory"
-	msgbox Route52_ReligiousDebate_Text_8
+	applymovement LOCALID_ROUTE52_RELIGIOUSNUTJOB_M, Common_Movement_Delay48
 # 70 "data/maps/Route52/scripts.pory"
-	closemessage
-# 71 "data/maps/Route52/scripts.pory"
-	applymovement LOCALID_ROUTE52_RELIGIOUSNUTJOB_F, Common_Movement_Angry
-# 72 "data/maps/Route52/scripts.pory"
 	waitmovement 0
+# 71 "data/maps/Route52/scripts.pory"
+	msgbox Route52_ReligiousDebate_Text_9
+# 72 "data/maps/Route52/scripts.pory"
+	closemessage
 # 73 "data/maps/Route52/scripts.pory"
-	applymovement LOCALID_ROUTE52_RELIGIOUSNUTJOB_F, Common_Movement_WalkInPlaceLeft
+	applymovement LOCALID_ROUTE52_RELIGIOUSNUTJOB_F, Common_Movement_Angry
 # 74 "data/maps/Route52/scripts.pory"
 	waitmovement 0
 # 75 "data/maps/Route52/scripts.pory"
-	applymovement LOCALID_ROUTE52_RELIGIOUSNUTJOB_F, Common_Movement_Delay48
+	applymovement LOCALID_ROUTE52_RELIGIOUSNUTJOB_F, Common_Movement_WalkInPlaceLeft
 # 76 "data/maps/Route52/scripts.pory"
 	waitmovement 0
 # 77 "data/maps/Route52/scripts.pory"
-	msgbox Route52_ReligiousDebate_Text_9
+	applymovement LOCALID_ROUTE52_RELIGIOUSNUTJOB_F, Common_Movement_Delay48
 # 78 "data/maps/Route52/scripts.pory"
-	closemessage
-# 79 "data/maps/Route52/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_Angry
-# 80 "data/maps/Route52/scripts.pory"
 	waitmovement 0
+# 79 "data/maps/Route52/scripts.pory"
+	msgbox Route52_ReligiousDebate_Text_10
+# 80 "data/maps/Route52/scripts.pory"
+	closemessage
 # 81 "data/maps/Route52/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_Delay48
+	applymovement LOCALID_PLAYER, Common_Movement_Angry
 # 82 "data/maps/Route52/scripts.pory"
 	waitmovement 0
 # 83 "data/maps/Route52/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceUp
+	applymovement LOCALID_PLAYER, Common_Movement_Delay48
 # 84 "data/maps/Route52/scripts.pory"
 	waitmovement 0
 # 85 "data/maps/Route52/scripts.pory"
-	msgbox Route52_ReligiousDebate_Text_10
+	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceUp
 # 86 "data/maps/Route52/scripts.pory"
-	closemessage
-# 87 "data/maps/Route52/scripts.pory"
-	applymovement LOCALID_ROUTE52_RELIGIOUSNUTJOB_F, Common_Movement_ExclamationMark
-# 88 "data/maps/Route52/scripts.pory"
-	applymovement LOCALID_ROUTE52_RELIGIOUSNUTJOB_M, Common_Movement_ExclamationMark
-# 89 "data/maps/Route52/scripts.pory"
 	waitmovement 0
+# 87 "data/maps/Route52/scripts.pory"
+	setspeaker Route52_ReligiousDebate_Text_3
+# 88 "data/maps/Route52/scripts.pory"
+	msgbox Route52_ReligiousDebate_Text_11
+# 89 "data/maps/Route52/scripts.pory"
+	closemessage
 # 90 "data/maps/Route52/scripts.pory"
-	applymovement LOCALID_ROUTE52_RELIGIOUSNUTJOB_F, Common_Movement_WalkInPlaceDown
+	applymovement LOCALID_ROUTE52_RELIGIOUSNUTJOB_F, Common_Movement_ExclamationMark
 # 91 "data/maps/Route52/scripts.pory"
-	applymovement LOCALID_ROUTE52_RELIGIOUSNUTJOB_M, Common_Movement_WalkInPlaceDown
+	applymovement LOCALID_ROUTE52_RELIGIOUSNUTJOB_M, Common_Movement_ExclamationMark
 # 92 "data/maps/Route52/scripts.pory"
 	waitmovement 0
 # 93 "data/maps/Route52/scripts.pory"
-	msgbox Route52_ReligiousDebate_Text_11
+	applymovement LOCALID_ROUTE52_RELIGIOUSNUTJOB_F, Common_Movement_WalkInPlaceDown
 # 94 "data/maps/Route52/scripts.pory"
-	closemessage
+	applymovement LOCALID_ROUTE52_RELIGIOUSNUTJOB_M, Common_Movement_WalkInPlaceDown
 # 95 "data/maps/Route52/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_Angry
+	waitmovement 0
 # 96 "data/maps/Route52/scripts.pory"
-	waitmovement 0
+	msgbox Route52_ReligiousDebate_Text_12
 # 97 "data/maps/Route52/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_Delay48
+	closemessage
 # 98 "data/maps/Route52/scripts.pory"
-	waitmovement 0
+	applymovement LOCALID_PLAYER, Common_Movement_Angry
 # 99 "data/maps/Route52/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_WalkLeft
-# 100 "data/maps/Route52/scripts.pory"
 	waitmovement 0
+# 100 "data/maps/Route52/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_Delay48
 # 101 "data/maps/Route52/scripts.pory"
-	applymovement LOCALID_ROUTE52_RELIGIOUSNUTJOB_F, Common_Movement_FaceLeft
+	waitmovement 0
 # 102 "data/maps/Route52/scripts.pory"
-	applymovement LOCALID_ROUTE52_RELIGIOUSNUTJOB_M, Common_Movement_FaceRight
+	applymovement LOCALID_PLAYER, Common_Movement_WalkDown
 # 103 "data/maps/Route52/scripts.pory"
 	waitmovement 0
 # 104 "data/maps/Route52/scripts.pory"
-	applymovement LOCALID_PLAYER, Common_Movement_Delay48
+	applymovement LOCALID_ROUTE52_RELIGIOUSNUTJOB_F, Common_Movement_FaceLeft
 # 105 "data/maps/Route52/scripts.pory"
-	waitmovement 0
+	applymovement LOCALID_ROUTE52_RELIGIOUSNUTJOB_M, Common_Movement_FaceRight
 # 106 "data/maps/Route52/scripts.pory"
-	fadedefaultbgm
+	waitmovement 0
 # 107 "data/maps/Route52/scripts.pory"
+	applymovement LOCALID_PLAYER, Common_Movement_Delay48
+# 108 "data/maps/Route52/scripts.pory"
+	waitmovement 0
+# 109 "data/maps/Route52/scripts.pory"
+	fadedefaultbgm
+# 110 "data/maps/Route52/scripts.pory"
 	release
 	end
 
@@ -232,16 +238,20 @@ Route52_ReligiousDebate_Text_2:
 
 Route52_ReligiousDebate_Text_3:
 # 35 "data/maps/Route52/scripts.pory"
-	.string "{PLAYER}: Sorry, can I get through\n"
-	.string "and then you can go back to arguing…?$"
+	.string "{PLAYER}$"
 
 Route52_ReligiousDebate_Text_4:
-# 43 "data/maps/Route52/scripts.pory"
+# 36 "data/maps/Route52/scripts.pory"
+	.string "Sorry, can I get through and then\n"
+	.string "you can go back to arguing…?$"
+
+Route52_ReligiousDebate_Text_5:
+# 44 "data/maps/Route52/scripts.pory"
 	.string "Don't you dare refer to Her like that\n"
 	.string "again, you brutish bald man!$"
 
-Route52_ReligiousDebate_Text_5:
-# 51 "data/maps/Route52/scripts.pory"
+Route52_ReligiousDebate_Text_6:
+# 52 "data/maps/Route52/scripts.pory"
 	.string "I am not bald, you vain maiden!\p"
 	.string "We monks of the TEKKEN GAKKAI have to\n"
 	.string "part with all distractions which\l"
@@ -249,32 +259,32 @@ Route52_ReligiousDebate_Text_5:
 	.string "We focus on martial arts, not on\n"
 	.string "playing with our hair!$"
 
-Route52_ReligiousDebate_Text_6:
-# 57 "data/maps/Route52/scripts.pory"
+Route52_ReligiousDebate_Text_7:
+# 58 "data/maps/Route52/scripts.pory"
 	.string "But it's my fault for expecting a weirdo\n"
 	.string "from the KAMINARI-NO-IE to know\l"
 	.string "anything about non-possession.$"
 
-Route52_ReligiousDebate_Text_7:
-# 63 "data/maps/Route52/scripts.pory"
-	.string "{PLAYER}: I SAID, can I get through…?!$"
-
 Route52_ReligiousDebate_Text_8:
-# 69 "data/maps/Route52/scripts.pory"
+# 65 "data/maps/Route52/scripts.pory"
+	.string "I SAID, can I get through…?!$"
+
+Route52_ReligiousDebate_Text_9:
+# 71 "data/maps/Route52/scripts.pory"
 	.string "After all, was KAMINARI-NO-IE's leader\n"
 	.string "not recently found guilty by ATTORNEY\l"
 	.string "GENERAL JUDY of stealing offerings?$"
 
-Route52_ReligiousDebate_Text_9:
-# 77 "data/maps/Route52/scripts.pory"
+Route52_ReligiousDebate_Text_10:
+# 79 "data/maps/Route52/scripts.pory"
 	.string "Oh, that's IT!\p"
 	.string "Send your POKéMON out, you scum!$"
 
-Route52_ReligiousDebate_Text_10:
-# 85 "data/maps/Route52/scripts.pory"
-	.string "{PLAYER}: LET ME GET THROUGH, YOU\n"
+Route52_ReligiousDebate_Text_11:
+# 88 "data/maps/Route52/scripts.pory"
+	.string "LET ME GET THROUGH, YOU\n"
 	.string "DAMNED MUKHEADS!$"
 
-Route52_ReligiousDebate_Text_11:
-# 93 "data/maps/Route52/scripts.pory"
+Route52_ReligiousDebate_Text_12:
+# 96 "data/maps/Route52/scripts.pory"
 	.string "Not till this heretic gets away first!$"

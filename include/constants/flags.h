@@ -1295,26 +1295,26 @@
 #define FLAG_UNUSED_0x4D9                                           0x4D9 // Unused Flag
 #define FLAG_UNUSED_0x4DA                                           0x4DA // Unused Flag
 #define FLAG_UNUSED_0x4DB                                           0x4DB // Unused Flag
-#define FLAG_UNUSED_0x4DC                                           0x4DC // Unused Flag
-#define FLAG_UNUSED_0x4DD                                           0x4DD // Unused Flag
-#define FLAG_UNUSED_0x4DE                                           0x4DE // Unused Flag
-#define FLAG_UNUSED_0x4DF                                           0x4DF // Unused Flag
-#define FLAG_UNUSED_0x4E0                                           0x4E0 // Unused Flag
-#define FLAG_UNUSED_0x4E1                                           0x4E1 // Unused Flag
-#define FLAG_UNUSED_0x4E2                                           0x4E2 // Unused Flag
-#define FLAG_UNUSED_0x4E3                                           0x4E3 // Unused Flag
-#define FLAG_UNUSED_0x4E4                                           0x4E4 // Unused Flag
-#define FLAG_UNUSED_0x4E5                                           0x4E5 // Unused Flag
-#define FLAG_UNUSED_0x4E6                                           0x4E6 // Unused Flag
-#define FLAG_UNUSED_0x4E7                                           0x4E7 // Unused Flag
-#define FLAG_UNUSED_0x4E8                                           0x4E8 // Unused Flag
-#define FLAG_UNUSED_0x4E9                                           0x4E9 // Unused Flag
-#define FLAG_UNUSED_0x4EA                                           0x4EA // Unused Flag
-#define FLAG_UNUSED_0x4EB                                           0x4EB // Unused Flag
-#define FLAG_UNUSED_0x4EC                                           0x4EC // Unused Flag
-#define FLAG_UNUSED_0x4ED                                           0x4ED // Unused Flag
-#define FLAG_UNUSED_0x4EE                                           0x4EE // Unused Flag
-#define FLAG_UNUSED_0x4EF                                           0x4EF // Unused Flag
+#define FLAG_DISC_01_GET                                            0x4DC // Disc Flag
+#define FLAG_DISC_02_GET                                            0x4DD // Disc Flag
+#define FLAG_DISC_03_GET                                            0x4DE // Disc Flag
+#define FLAG_DISC_04_GET                                            0x4DF // Disc Flag
+#define FLAG_DISC_05_GET                                            0x4E0 // Disc Flag
+#define FLAG_DISC_06_GET                                            0x4E1 // Disc Flag
+#define FLAG_DISC_07_GET                                            0x4E2 // Disc Flag
+#define FLAG_DISC_08_GET                                            0x4E3 // Disc Flag
+#define FLAG_DISC_09_GET                                            0x4E4 // Disc Flag
+#define FLAG_DISC_10_GET                                            0x4E5 // Disc Flag
+#define FLAG_DISC_11_GET                                            0x4E6 // Disc Flag
+#define FLAG_DISC_12_GET                                            0x4E7 // Disc Flag
+#define FLAG_DISC_13_GET                                            0x4E8 // Disc Flag
+#define FLAG_DISC_14_GET                                            0x4E9 // Disc Flag
+#define FLAG_DISC_15_GET                                            0x4EA // Disc Flag
+#define FLAG_DISC_16_GET                                            0x4EB // Disc Flag
+#define FLAG_DISC_17_GET                                            0x4EC // Disc Flag
+#define FLAG_DISC_18_GET                                            0x4ED // Disc Flag
+#define FLAG_DISC_19_GET                                            0x4EE // Disc Flag
+#define FLAG_DISC_20_GET                                            0x4EF // Disc Flag
 
 #define FLAG_DEFEATED_RUSTBORO_GYM                                  0x4F0
 #define FLAG_DEFEATED_DEWFORD_GYM                                   0x4F1

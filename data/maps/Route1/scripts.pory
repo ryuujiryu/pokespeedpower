@@ -16,7 +16,8 @@ script Route1_Isamu {
     waitmovement (0)
     applymovement (LOCALID_PLAYER, Common_Movement_Delay48)
     waitmovement (0)
-    msgbox ("{PLAYER}: If the WINGULLs could talk with\n" "me, I'd like to exchange some news! œ$")
+    setspeaker("{PLAYER}")
+    msgbox ("If the WINGULLs could talk with\n" "me, I'd like to exchange some news! œ$")
     closemessage
     applymovement (LOCALID_ROUTE1_ISAMU, Common_Movement_Angry)
     waitmovement (0)
@@ -24,6 +25,7 @@ script Route1_Isamu {
     waitmovement (0)
     applymovement (LOCALID_ROUTE1_ISAMU, Common_Movement_Delay48)
     waitmovement (0)
+    setspeaker("ISAMU")
     msgbox ("I'm not in the mood for singing! Scram!$")
     release
     end
@@ -33,6 +35,7 @@ script Route1_Isamu {
     waitmovement (0)
     applymovement (LOCALID_ROUTE1_ISAMU, Common_Movement_Delay48)
     waitmovement (0)
+    setspeaker("ISAMU")
     msgbox ("Put your back into it!\n" "Heave, ho! Heave, ho! œ\p" ". . . . . . .\n" "Oh! A bite!$")
     closemessage
 	applymovement (LOCALID_PLAYER, Common_Movement_Music)
@@ -41,7 +44,8 @@ script Route1_Isamu {
     waitmovement (0)
     applymovement (LOCALID_PLAYER, Common_Movement_Delay48)
     waitmovement (0)
-    msgbox ("{PLAYER}: Soran, soran, soran! Woo!$")
+    setspeaker("{PLAYER}")
+    msgbox ("Soran, soran, soran! Woo!$")
     closemessage
     playbgm (MUS_ENCOUNTER_HIKER, FALSE)
    	applymovement (LOCALID_ROUTE1_ISAMU, Common_Movement_ExclamationMark)
@@ -50,6 +54,7 @@ script Route1_Isamu {
     waitmovement (0)
     applymovement (LOCALID_ROUTE1_ISAMU, Common_Movement_Delay48)
     waitmovement (0)
+    setspeaker("ISAMU")
 	msgbox ("Argh! You made me lose the fish!$")
 	trainerbattle_no_intro (TRAINER_SP_ISAMU, format("And i even lost the battle!$"))
     release
@@ -108,6 +113,7 @@ script Route51_Rival {
     waitmovement (0)
     applymovement (LOCALID_PLAYER, Common_Movement_Delay48)
     waitmovement (0)
+    setspeaker("{PLAYER}")
     msgbox("Where the heck is…")
     closemessage
     applymovement (LOCALID_PLAYER, Common_Movement_FaceRight)
@@ -121,10 +127,12 @@ script Route51_Rival {
     addobject (LOCALID_ROUTE51_RIVAL)
     faceplayer
     if (checkplayergender != MALE) {
-         msgbox ("SHIN'YA: So… … … wow. T'was a great way\n" "to start our journey, huh…? … … …\p" "But I trust that the tactician and\n" "MITSURU have kicked them out.\p" "Can you call 'em, actually?\n" "It's been hours, so all that mess\l" "should be over by now.$" )
+         setspeaker("SHINYA")
+         msgbox ("So… … … wow. T'was a great way 'ta start\n" "our journey, huh…? … … …\p" "But I'm sure they've kicked the ARC away.\n" "Can 'ya call MITSURU, actually?\n" "It's been hours, so all that mess\n" "should be over by now.$" )
         closemessage
     } else {
-        msgbox("FUUKA: Nothing like nearly gettin’\n" "imprisoned to start a journey, huh.\p" "FUUKA: …Still. I trust that they\n" "took care of those UNOVANS by now.\p" "Say, why don't you call them?\n" "It’s been hours since we arrived.$")
+        setspeaker("FUUKA")
+        msgbox("Nothing like nearly getting imprisoned\n" "to start a journey, huh.\p" "…Still. I trust that they took care of\n" "those ARC soldiers by now.\p" "Say, why don't you call them?\n" "It’s been hours since we arrived.$")
         closemessage
     }
     applymovement (LOCALID_PLAYER, Common_Movement_Pensive)
@@ -135,6 +143,7 @@ script Route51_Rival {
     waitmovement (0)
     applymovement (LOCALID_PLAYER, Common_Movement_Delay48)
     waitmovement (0)
+    setspeaker("{PLAYER}")
     msgbox("That SOLDIER took my PŒDA from me\n" "during our fight… … …")
     closemessage
     applymovement (LOCALID_ROUTE51_RIVAL, Common_Movement_ExclamationMark)
@@ -144,10 +153,12 @@ script Route51_Rival {
     applymovement (LOCALID_ROUTE51_RIVAL, Common_Movement_Delay48)
     waitmovement (0)
     if (checkplayergender != MALE) {
-        msgbox ("SHIN'YA: …Uhm. Well, I'll call 'em on mine.\n" "And we shall buy a new one soon!\p" "Why don't you heal your POKéMON\n" "while I call 'em?$")
+        setspeaker("SHINYA")
+        msgbox ("…Uhm. Well, I'll call 'em on mine.\n" "And we'll buy 'ya a new one soon!\p" "Why don'tcha heal your POKéMON\n" "while I call 'em?$")
         closemessage
     } else {
-        msgbox("FUUKA: Well, just your luck.\n" "Alright, I’ll call ‘em on mine.\p" "We’ll buy you a new one when we get\n" "to a shop or something.\p" "Why don't you heal your POKéMON\n" "while I call them?$")
+        setspeaker("FUUKA")
+        msgbox("Well, just your luck.\n" "No problem, I’ll call them on mine.\p" "We’ll buy you a new one when we get\n" "to a shop or something.\p" "Why don't you heal your POKéMON\n" "while I call them?$")
         closemessage
     }
     call (Common_EventScript_OutOfCenterPartyHeal)
@@ -162,6 +173,7 @@ script Route51_Rival {
     waitmovement (0)
     applymovement (LOCALID_PLAYER, Common_Movement_Delay48)
     waitmovement (0)
+    setspeaker("{PLAYER}")
     msgbox ("What the heck…")
     closemessage
     applymovement (LOCALID_ROUTE51_RIVAL, Common_Movement_ExclamationMark)
@@ -170,21 +182,25 @@ script Route51_Rival {
     waitmovement (0)
     applymovement (LOCALID_ROUTE51_RIVAL, Common_Movement_Delay48)
     waitmovement (0)
-    pokenavcall ("MITSURU: Bzz… … … 'cuz… bzz… … …\n" "ARC… … set … island ablaze…$")
+    setspeaker("MITSURU")
+    pokenavcall ("Bzz… … … 'cuz… bzz… … …\n" "ARC… … set … island ablaze…$")
     waitmessage
     applymovement (LOCALID_ROUTE51_RIVAL, Common_Movement_ExclamationMark)
     waitmovement (0)
     if (checkplayergender != MALE) {
-        msgbox ("SHIN'YA: What what what?! Anegimi!\n" "We have to go back and help them!\p" "FLYGON, SKARMORY, take us back!")
+        setspeaker("SHINYA")
+        msgbox ("What what what?! Anegimi!\n" "We have to go back and help them!\p" "FLYGON, SKARMORY, take us back!")
         closemessage
     } else {
-        msgbox("FUUKA: No, no, no! Why would they do this?\n" "The civilians have no fault!\p" "We have to go back to help!$")
+        setspeaker("FUUKA")
+        msgbox("No, no, no! Why would they do this?\n" "The civilians have no fault!\p" "We have to go back to help!$")
         closemessage
     }
     applymovement (LOCALID_PLAYER, Common_Movement_Pensive)
     waitmovement (0)
     applymovement (LOCALID_PLAYER, Common_Movement_Delay48)
     waitmovement (0)
+    setspeaker("{PLAYER}")
     msgbox ("We cannot waste the chance they have\n" "given us to take back the throne!$")
     closemessage
     applymovement (LOCALID_ROUTE51_RIVAL, Common_Movement_Angry)
@@ -195,33 +211,38 @@ script Route51_Rival {
     waitmovement (0)
     closemessage
     if (checkplayergender != MALE) {
-        msgbox ("SHIN'YA: Anegimi! FUUKA! Who cares about\n" "the throne now! We have to… we have…$")
+        setspeaker("SHINYA")
+        msgbox ("Anegimi! Who cares 'bout that now!?\n" "We have to… we have… to help…$")
         closemessage
     } else {
-        msgbox("FUUKA: What kinds of rulers would we be\n" "if we did not help our loyal subjects?!\p" "SKARMORY, take me back!$")
+        setspeaker("FUUKA")
+        msgbox("What kinds of rulers would we be if we\n" "did not help our loyal subjects?!\p" "SKARMORY, take me back!$")
         closemessage
     }
-    pokenavcall ("MITSURU: It's fine… … … we have… … …\n" "many FLYING… … …bzzt … and… …\l" "… WATER-types… … …to flee with…\p" "go… … …and free… … …NIHON…\p" "… … … … … … …$")
+    setspeaker("MITSURU")
+    pokenavcall ("It's fine… … … we are… … …\n" "fighting back… … …bzz …  if needed… …\l" "… got POKéMON… … …to flee with…\p" "Go… … …and free… … …NIHON…\p" "… … … … … … …$")
     waitmessage
     applymovement (LOCALID_ROUTE51_RIVAL, Common_Movement_Pensive)
     waitmovement (0)
     applymovement (LOCALID_ROUTE51_RIVAL, Common_Movement_Delay48)
     waitmovement (0)
     if (checkplayergender != MALE) {
-        applymovement (LOCALID_ROUTE51_RIVAL, Common_Movement_WalkInPlaceLeft)
-        waitmovement (0)
-        msgbox ("SHIN'YA: Cousin… was that supposed to\n" "calm me down…?$")
+        setspeaker("SHINYA")
+        msgbox ("Cousin… was that supposed to\n" "calm me down…?$")
         closemessage
     } else {
-        msgbox("FUUKA: MITSURU… … … … … … … … Okay.$")
+        setspeaker("FUUKA")
+        msgbox("MITSURU… … … … … … … … Okay.$")
         closemessage
     }
     applymovement (LOCALID_ROUTE51_RIVAL, Common_Movement_WalkDownSlow)
     waitmovement (0)
     if (checkplayergender != MALE) {
+        setspeaker("SHINYA")
         msgbox ("Or just make me worry more…$")
         closemessage
     } else {
+        setspeaker("FUUKA")
         msgbox("No matter their fate… … we have\n" "a throne to claim back.$")
         closemessage
     }
@@ -237,17 +258,21 @@ script Route51_Rival2 {
     if (checkplayergender != MALE) {
         applymovement (LOCALID_ROUTE51_RIVAL, Common_Movement_Angry)
         waitmovement (0)
-        msgbox ("SHIN'YA: CITRUS ISLAND…\n" "We finally left it, but at what cost?$")
+        setspeaker("SHINYA")
+        msgbox ("CITRUS ISLAND… we finally left it,\n" "but at what cost?$")
         closemessage
         faceplayer
+        setspeaker("SHINYA")
         msgbox ("Anegimi. Go to the ELEMENTAL TEMPLE.\n" "I'll fight the local PATH GUARDIANS\l" "later. I need to calm myself first…$")
         closemessage
     } else {
         applymovement (LOCALID_ROUTE51_RIVAL, Common_Movement_Pensive)
         waitmovement (0)
-        msgbox("FUUKA: A ruler should be strong.\n" "For the sake of her subjects…$")
+        setspeaker("FUUKA")
+        msgbox("A ruler has to be strong.\n" "For the sake of her subjects…$")
         closemessage
         faceplayer
+        setspeaker("FUUKA")
         msgbox ("Anigimi? Why are you still here? Go to\n" "the ELEMENTAL TEMPLE.\p" "I need to stay alone for a bit.\n" "I'll fight the PATH GUARDIANS later.$")
         closemessage
     }
@@ -260,16 +285,16 @@ script Route51_Rival2 {
         applymovement (LOCALID_ROUTE51_RIVAL, Common_Movement_Delay48)
         waitmovement (0)
     if (checkplayergender != MALE) {
-        msgbox ("SHIN'YA: What? I forgot something?\n" "Oh, you are right.$")
+        setspeaker("SHINYA")
+        msgbox ("What? I forgot something?\n" "Oh, 'ya right…\p" "I forgot, sorry… I'm not in the mood.$")
         closemessage
     } else {
-        msgbox ("FUUKA: Oh, yeah. The PROF. was\n" "supposed to give us those.$")
+        setspeaker("FUUKA")
+        msgbox ("Oh, true. The PROFESSOR was\n" "supposed to give us those.\p" "You sure could have waited a better\n" "moment to remind me, though…$")
         closemessage
     }
         faceplayer
         giveitem (ITEM_POKE_BALL, 5)
-        msgbox ("I forgot, sorry… I'm not in the mood.$")
-        closemessage
     applymovement (LOCALID_ROUTE51_RIVAL, Common_Movement_FaceDown)
     setflag (FLAG_RIVAL_POKEBALLS)
     release
@@ -280,11 +305,17 @@ script Route51_Rival3 {
     if (!flag(FLAG_RIVAL_POKEBALLS)){call(Route51_Rival2)}
     else {
     applymovement (LOCALID_ROUTE51_RIVAL, Common_Movement_FaceDown)
+    if (checkplayergender != MALE) {
+    setspeaker("SHINYA")
+    msgbox ("… … … … … … …$")
+    } else {
+    setspeaker("FUUKA")
     msgbox ("… … … … … … …$")
     }
     closemessage
     release
     end
+    }
 }
 
 movement Route51_Movement_WalkToRival {

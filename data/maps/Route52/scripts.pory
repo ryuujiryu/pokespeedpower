@@ -32,7 +32,8 @@ script Route52_ReligiousDebate {
     waitmovement (0)
     applymovement (LOCALID_PLAYER, Common_Movement_Delay48)
     waitmovement (0)
-    msgbox ("{PLAYER}: Sorry, can I get through\n" "and then you can go back to arguing…?$")
+    setspeaker("{PLAYER}")
+    msgbox ("Sorry, can I get through and then\n" "you can go back to arguing…?$")
 	closemessage
     applymovement (LOCALID_ROUTE52_RELIGIOUSNUTJOB_F, Common_Movement_Angry)
     waitmovement (0)
@@ -60,7 +61,8 @@ script Route52_ReligiousDebate {
     waitmovement (0)
     applymovement (LOCALID_PLAYER, Common_Movement_Delay48)
     waitmovement (0)
-    msgbox ("{PLAYER}: I SAID, can I get through…?!$")
+    setspeaker("{PLAYER}")
+    msgbox ("I SAID, can I get through…?!$")
     closemessage
     applymovement (LOCALID_ROUTE52_RELIGIOUSNUTJOB_M, Common_Movement_Music)
     waitmovement (0)
@@ -82,7 +84,8 @@ script Route52_ReligiousDebate {
     waitmovement (0)
     applymovement (LOCALID_PLAYER, Common_Movement_WalkInPlaceUp)
     waitmovement (0)
-    msgbox ("{PLAYER}: LET ME GET THROUGH, YOU\n" "DAMNED MUKHEADS!$")
+    setspeaker("{PLAYER}")
+    msgbox ("LET ME GET THROUGH, YOU\n" "DAMNED MUKHEADS!$")
     closemessage
     applymovement (LOCALID_ROUTE52_RELIGIOUSNUTJOB_F, Common_Movement_ExclamationMark)
     applymovement (LOCALID_ROUTE52_RELIGIOUSNUTJOB_M, Common_Movement_ExclamationMark)
@@ -96,7 +99,7 @@ script Route52_ReligiousDebate {
     waitmovement (0)
     applymovement (LOCALID_PLAYER, Common_Movement_Delay48)
     waitmovement (0)
-    applymovement (LOCALID_PLAYER, Common_Movement_WalkLeft)
+    applymovement (LOCALID_PLAYER, Common_Movement_WalkDown)
     waitmovement (0)
     applymovement (LOCALID_ROUTE52_RELIGIOUSNUTJOB_F, Common_Movement_FaceLeft)
     applymovement (LOCALID_ROUTE52_RELIGIOUSNUTJOB_M, Common_Movement_FaceRight)

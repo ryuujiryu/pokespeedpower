@@ -6,6 +6,10 @@ DurianGym_MapScripts::
 
 script DurianGym_Junichi {
 	trainerbattle_single (TRAINER_SP_JUNICHI, format("BANJO is wasting his time, playing for that UNOVAN's raspy voice! The spotlight should be on me!"), format("Why is the spotlight on you?!"))
+	applymovement (LOCALID_DURIANGYM_JUNICHI, Common_Movement_Sad)
+	waitmovement (0)
+	applymovement (LOCALID_DURIANGYM_JUNICHI, Common_Movement_Delay48)
+	waitmovement (0)
 	msgbox ("She ruined it all! I miss when we played\ntraditional TENKEIAN music…")
 	release
 	end
@@ -13,6 +17,10 @@ script DurianGym_Junichi {
 
 script DurianGym_Darian {
 	trainerbattle_single (TRAINER_SP_DARIAN, format("I'll show SHIRI how a real guitarist plays AND fights!"), format("Not like this!"))
+	applymovement (LOCALID_DURIANGYM_DARIAN, Common_Movement_Angry)
+	waitmovement (0)
+	applymovement (LOCALID_DURIANGYM_DARIAN, Common_Movement_Delay48)
+	waitmovement (0)
 	msgbox ("Someday she'll realize she's wasting\ntime with that airhead!")
 	release
 	end
@@ -34,7 +42,15 @@ script DurianGym_ShiriAndBanjo {
 script DurianGym_ShiriAndBanjoCheckBadge {
 	if (!flag(FLAG_DEFEATED_RUSTBORO_GYM)){call(DurianGym_ShiriAndBanjoBattle)}
 	else {
-	msgbox ("BANJO: 'Ya smashed us like a guitar!\p" "SHIRI: And what SEEDOTCASE would\n" "smash one to begin with?!")
+    setspeaker("BANJO")
+	msgbox ("'Ya smashed us like a guitar!$")
+	closemessage
+	applymovement (LOCALID_DURIANGYM_SHIRI, Common_Movement_Angry)
+	waitmovement (0)
+	applymovement (LOCALID_DURIANGYM_SHIRI, Common_Movement_Delay48)
+	waitmovement (0)
+    setspeaker("SHIRI")
+	msgbox ("And what SEEDOTCASE would\n" "smash one to begin with?!$")
 	}
 	closemessage
 	release
@@ -47,37 +63,53 @@ script DurianGym_ShiriAndBanjoBattle {
 	waitmovement (0)
 	applymovement (LOCALID_DURIANGYM_BANJO, Common_Movement_Delay48)
 	waitmovement (0)
-	msgbox ("BANJO: RIRI, RIRI, we got a challenger!\p" "SHIRI: Yes, BANBAN, I can see that.\nMy eyes work very fine, thanks.\p" "BANJO: It's our first challenger\ntogether!\p" "SHIRI: Then focus, my sweet PSYDUCK!\nYou have to introduce us!\p" "BANJO: Oh yeah! This is the FLASH of\nmy life, my girl RIRI!")
+    setspeaker("BANJO")
+	msgbox ("RIRI, RIRI, we got a challenger!$")
+	closemessage
+    setspeaker("SHIRI")
+	msgbox ("Yes, BANBAN, I can see that.\nMy eyes work very fine, thanks.$")
+	closemessage
+    setspeaker("BANJO")
+	msgbox ("It's our first challenger\ntogether!$")
+    setspeaker("SHIRI")
+	msgbox ("Then focus, my sweet PSYDUCK, we have\nto introduce ourselves!$")
+    setspeaker("BANJO")
+	msgbox ("Oh yeah! This is the FLASH of\nmy life, my girl RIRI!$")
 	closemessage
 	applymovement (LOCALID_DURIANGYM_SHIRI, Common_Movement_Pensive)
 	waitmovement (0)
 	applymovement (LOCALID_DURIANGYM_SHIRI, Common_Movement_Delay48)
 	waitmovement (0)
-	msgbox ("SHIRI: My dear SLOWPOKE… Anyway. We\nare STRAWBERRY TOWN’s PATH GUARDIANS.\lI am SHIRI, and this airheaded hunk…")
+    setspeaker("SHIRI")
+	msgbox ("My dear SLOWPOKE, that's not… Anyway. We\nare STRAWBERRY TOWN’s PATH GUARDIANS.\lI am SHIRI, and this airheaded hunk…$")
 	closemessage
 	applymovement (LOCALID_DURIANGYM_BANJO, Common_Movement_Heart)
 	waitmovement (0)
 	applymovement (LOCALID_DURIANGYM_BANJO, Common_Movement_Delay48)
 	waitmovement (0)
-	msgbox ("BANJO: Man, she called me a hunk!")
+    setspeaker("BANJO")
+	msgbox ("Man, she called me a hunk!")
 	closemessage
 	applymovement (LOCALID_DURIANGYM_SHIRI, Common_Movement_Upset)
 	waitmovement (0)
 	applymovement (LOCALID_DURIANGYM_SHIRI, Common_Movement_Delay48)
 	waitmovement (0)
-	msgbox ("SHIRI: …WILL TELL YOU WHAT TYPE WE USE.")
+    setspeaker("SHIRI")
+	msgbox ("…WILL TELL YOU WHAT TYPE WE USE.")
 	closemessage
 	applymovement (LOCALID_DURIANGYM_BANJO, Common_Movement_Music)
 	waitmovement (0)
 	applymovement (LOCALID_DURIANGYM_BANJO, Common_Movement_Delay48)
 	waitmovement (0)
-	msgbox ("BANJO: Yes, ma’am!\n" "We use… ROCK-types, right?")
+    setspeaker("BANJO")
+	msgbox ("Yes, ma’am!\n" "We use… ROCK-types, right?")
 	closemessage
 	applymovement (LOCALID_DURIANGYM_SHIRI, Common_Movement_Angry)
 	waitmovement (0)
 	applymovement (LOCALID_DURIANGYM_SHIRI, Common_Movement_Delay48)
 	waitmovement (0)
-	msgbox ("SHIRI: … … … … …\n" "… … … … …\l" "WE USE SOUND-TYPES, SCATTERBUG BRAIN!\p" "ENOUGH! Let's start the battle, c'mon!")
+    setspeaker("SHIRI")
+	msgbox ("… … … … …\n" "… … … … …\l" "WE USE SOUND-TYPES, SCATTERBUG BRAIN!\p" "ENOUGH! Let's start the battle, c'mon!")
 	closemessage
 	trainerbattle_no_intro (TRAINER_SHIRI_AND_BANJO_1, format("BANJO: Dude, that was sick!\n" "SHIRI: Tch… quit praising 'em, we LOST!\p" "BANJO: So, we give ‘em their STAMP, right?\n" "SHIRI: I can’t do this…\p" "(Snatches {PLAYER}’s TRAINER CARD\n" "and slaps the LIVEHOOD STAMP on it.)"))
     call(DurianGym_ShiriAndBanjoDefeated)
@@ -90,26 +122,34 @@ script DurianGym_ShiriAndBanjoDefeated {
 	waitmessage
 	playfanfare (MUS_OBTAIN_BADGE)
 	waitfanfare
-	msgbox ("BANJO: With the LIVEHOOD STAMP, uh…\n" "you can use POKéMON up to… LV 30…?\p" "SHIRI: …LV 20. It's LV 20. Also…\n" "orders from the LEAGUE. Take this.$")
+    setspeaker("BANJO")
+	msgbox ("With the LIVEHOOD STAMP, uh…\n" "you can use POKéMON up to… LV 30…?\p")
+	closemessage
+    setspeaker("SHIRI")
+    msgbox ("…LV 20. It's LV 20. Also…\n" "orders from the LEAGUE. Take this.$")
+	closemessage
 	setflag (FLAG_DEFEATED_RUSTBORO_GYM)
 	setflag (FLAG_BADGE01_GET)
 	setvar (VAR_0x8008, 1)
 	call (Common_EventScript_SetGymTrainers)
 	giveitem (ITEM_TM_ROUND)
 	setflag (FLAG_RECEIVED_TM_ROCK_TOMB)
-	msgbox ("SHIRI: It’s TM48, containing ROUND.\n" "Unlike… someone, I hope you know what a\l" "TECHNICAL MACHINE is, right…? …Right?")
+    setspeaker("SHIRI")
+	msgbox ("It’s TR48, containing ROUND.\n" "Unlike… someone, I hope you know what a\l" "TECHNICAL RECORD is, right…? …Right?")
 	closemessage
 	applymovement (LOCALID_DURIANGYM_BANJO, Common_Movement_Music)
 	waitmovement (0)
 	applymovement (LOCALID_DURIANGYM_BANJO, Common_Movement_Delay48)
 	waitmovement (0)
-	msgbox ("BANJO: Heh… I forgot to teach it\nto my NOIBAT…")
+    setspeaker("BANJO")
+	msgbox ("Heh… I forgot to teach it\nto my NOIBAT…")
 	closemessage
 	applymovement (LOCALID_DURIANGYM_SHIRI, Common_Movement_Angry)
 	waitmovement (0)
 	applymovement (LOCALID_DURIANGYM_SHIRI, Common_Movement_Delay48)
 	waitmovement (0)
-	msgbox ("SHIRI: … … … … … …\n" "… … … … … …\p" "You… are… a total IDIOT!")
+    setspeaker("SHIRI")
+	msgbox ("… … … … … …\n" "… … … … … …\p" "You… are… a total IDIOT!")
 	closemessage
 	applymovement (LOCALID_DURIANGYM_SHIRI, Movement_Punch)
 	waitmovement (0)
@@ -120,9 +160,40 @@ script DurianGym_ShiriAndBanjoDefeated {
 	waitmovement (0)
 	applymovement (LOCALID_DURIANGYM_SHIRI, Common_Movement_Delay48)
 	waitmovement (0)
+    setspeaker("SHIRI")
 	msgbox ("ANYWAY! It will teach a POKéMON the move\n" "ROUND. It gets stronger if a POKéMON\l" "uses it after its ally did.")
 	closemessage
     setvar (VAR_RIVALS_STATE, 3)
+	release
+	end
+}
+
+script DurianGym_Guide {
+	lock
+	faceplayer
+	if (!flag(FLAG_DEFEATED_RUSTBORO_GYM)){call(DurianGym_GuideIntro)}
+	else {
+	msgbox ("Huh. T'was beginner's luck.\n" "Still… … … not bad, bub.")
+	}
+	closemessage
+	release
+	end
+}
+
+script DurianGym_GuideIntro {
+	lock
+	faceplayer
+    msgbox ("Hey, bub. Yer new there, arent'cha?\n" "Tell 'yuh what, just go home, bub.$")
+    closemessage
+    applymovement (LOCALID_PLAYER, Common_Movement_ExclamationMark)
+    waitmovement (0)
+    applymovement (LOCALID_PLAYER, Common_Movement_Delay48)
+    waitmovement (0)
+    setspeaker("{PLAYER}")
+    msgbox ("Excuse me?!$")
+	closemessage
+    msgbox ("C'mon, don't kid yerself, bub.\n" "Have 'yuh looked at yerself?\l" "… … … … … … … … … … … … … … … … … … … … … … …\p" "Fine… … … don't come blamin' me when\n" "those two destroy 'yuh, though.\p" "The duo on stage quickly jumped on\n" "this SOUND-type bandwagon.\p" "It's POKéMON are s'pposed to be weak to\n" "GROUND, GRASS, ELECTRIC and other\p" "SOUND-types' moves, while resistin'\n" "WATER, PSYCHIC and DRAGON types.\p" "I don't think yuh can do it, bub, but I'll\n" "watch yer loss anyway.$")
+	closemessage
 	release
 	end
 }
