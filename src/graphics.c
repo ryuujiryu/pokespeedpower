@@ -1686,14 +1686,6 @@ const u32 gBattleAnimBgImage_Crowd[] = INCBIN_U32("graphics/battle_anims/backgro
 const u16 gBattleAnimBGPalette_Crowd[] = INCBIN_U16("graphics/battle_anims/backgrounds/crowd.gbapal");
 const u32 gBattleAnimBgTilemap_Crowd[] = INCBIN_U32("graphics/battle_anims/backgrounds/crowd.bin.smolTM");
 
-const u32 gPartyMenuBg_Gfx[] = INCBIN_U32("graphics/party_menu/bg.4bpp.smol");
-const u16 gPartyMenuBg_Pal[] = INCBIN_U16("graphics/party_menu/bg.gbapal");
-const u32 gPartyMenuBg_Tilemap[] = INCBIN_U32("graphics/party_menu/bg.bin.smolTM");
-
-const u32 gPartyMenuPokeball_Gfx[] = INCBIN_U32("graphics/party_menu/pokeball.4bpp.smol");
-const u32 gPartyMenuPokeballSmall_Gfx[] = INCBIN_U32("graphics/party_menu/pokeball_small.4bpp.smol"); //unused
-const u16 gPartyMenuPokeball_Pal[] = INCBIN_U16("graphics/party_menu/pokeball.gbapal");
-
 const u32 gStatusGfx_Icons[] = INCBIN_U32("graphics/interface/status_icons.4bpp.smol");
 const u16 gStatusPal_Icons[] = INCBIN_U16("graphics/interface/status_icons.gbapal");
 
