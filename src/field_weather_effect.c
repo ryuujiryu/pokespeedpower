@@ -29,6 +29,7 @@ const u8 gWeatherBubbleTiles[] = INCBIN_U8("graphics/weather/bubble.4bpp");
 const u8 gWeatherAshTiles[] = INCBIN_U8("graphics/weather/ash.4bpp");
 const u8 gWeatherRainTiles[] = INCBIN_U8("graphics/weather/rain.4bpp");
 const u8 gWeatherSandstormTiles[] = INCBIN_U8("graphics/weather/sandstorm.4bpp");
+const u8 gWeatherSakuraTiles[] = INCBIN_U8("graphics/weather/sakura.4bpp");
 
 //------------------------------------------------------------------------------
 // WEATHER_SUNNY_CLOUDS
@@ -762,6 +763,241 @@ static void DestroyRainSprites(void)
 #undef tState
 #undef tActive
 #undef tWaiting
+
+//------------------------------------------------------------------------------
+// Sakura
+//------------------------------------------------------------------------------
+
+
+static void UpdateSakuraSprite(struct Sprite *);
+static bool8 UpdateVisibleSakuraSprites(void);
+static bool8 CreateSakuraSprite(void);
+static bool8 DestroySakuraSprite(void);
+static void InitSakuraSpriteMovement(struct Sprite *);
+
+void Sakura_InitVars(void)
+{
+    gWeatherPtr->initStep = 0;
+    gWeatherPtr->weatherGfxLoaded = FALSE;
+    gWeatherPtr->targetColorMapIndex = 0;
+    gWeatherPtr->colorMapStepDelay = 20;
+    gWeatherPtr->targetSnowflakeSpriteCount = NUM_SNOWFLAKE_SPRITES;
+    gWeatherPtr->sakuraVisibleCounter = 0;
+    Weather_SetBlendCoeffs(8, BASE_SHADOW_INTENSITY); // preserve shadow darkness
+    gWeatherPtr->noShadows = FALSE;
+}
+
+void Sakura_InitAll(void)
+{
+    u16 i;
+
+    Sakura_InitVars();
+    while (gWeatherPtr->weatherGfxLoaded == FALSE)
+    {
+        Sakura_Main();
+        for (i = 0; i < gWeatherPtr->sakuraSpriteCount; i++)
+            UpdateSakuraSprite(gWeatherPtr->sprites.s1.sakuraSprites[i]);
+    }
+}
+
+void Sakura_Main(void)
+{
+    if (gWeatherPtr->initStep == 0 && !UpdateVisibleSakuraSprites())
+    {
+        gWeatherPtr->weatherGfxLoaded = TRUE;
+        gWeatherPtr->initStep++;
+    }
+}
+
+bool8 Sakura_Finish(void)
+{
+    switch (gWeatherPtr->finishStep)
+    {
+    case 0:
+        gWeatherPtr->targetSakuraSpriteCount = 0;
+        gWeatherPtr->sakuraVisibleCounter = 0;
+        gWeatherPtr->finishStep++;
+        // fall through
+    case 1:
+        if (!UpdateVisibleSakuraSprites())
+        {
+            gWeatherPtr->finishStep++;
+            return FALSE;
+        }
+        return TRUE;
+    }
+
+    return FALSE;
+}
+
+static bool8 UpdateVisibleSakuraSprites(void)
+{
+    if (gWeatherPtr->sakuraSpriteCount == gWeatherPtr->targetSakuraSpriteCount)
+        return FALSE;
+
+    if (++gWeatherPtr->sakuraVisibleCounter > 36)
+    {
+        gWeatherPtr->sakuraVisibleCounter = 0;
+        if (gWeatherPtr->sakuraSpriteCount < gWeatherPtr->targetSakuraSpriteCount)
+            CreateSakuraSprite();
+        else
+            DestroySakuraSprite();
+    }
+
+    return gWeatherPtr->sakuraSpriteCount != gWeatherPtr->targetSakuraSpriteCount;
+}
+
+static const struct OamData sSakuraSpriteOamData =
+{
+    .y = 0,
+    .affineMode = ST_OAM_AFFINE_OFF,
+    .objMode = ST_OAM_OBJ_NORMAL,
+    .mosaic = FALSE,
+    .bpp = ST_OAM_4BPP,
+    .shape = SPRITE_SHAPE(8x8),
+    .x = 0,
+    .matrixNum = 0,
+    .size = SPRITE_SIZE(8x8),
+    .tileNum = 0,
+    .priority = 1,
+    .paletteNum = 0,
+    .affineParam = 0,
+};
+
+static const struct SpriteFrameImage sSakuraSpriteImages[] =
+{
+    {gWeatherSakuraTiles, sizeof(gWeatherSakuraTiles)},
+};
+
+static const union AnimCmd sSakuraAnimCmd0[] =
+{
+    ANIMCMD_FRAME(0, 8),
+    ANIMCMD_FRAME(4, 8),
+    ANIMCMD_FRAME(8, 8),
+    ANIMCMD_FRAME(12, 8),
+    ANIMCMD_FRAME(0, 8),
+    ANIMCMD_FRAME(4, 8),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sSakuraAnimCmd1[] =
+{
+    ANIMCMD_FRAME(4, 8),
+    ANIMCMD_FRAME(8, 8),
+    ANIMCMD_FRAME(12, 8),
+    ANIMCMD_FRAME(0, 8),
+    ANIMCMD_FRAME(4, 8),
+    ANIMCMD_FRAME(0, 8),
+    ANIMCMD_FRAME(4, 8),
+    ANIMCMD_FRAME(8, 8),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd *const sSakuraAnimCmds[] =
+{
+    sSakuraAnimCmd0,
+    sSakuraAnimCmd1,
+};
+
+static const struct SpriteTemplate sSakuraSpriteTemplate =
+{
+    .tileTag = GFXTAG_SAKURA,
+    .paletteTag = GFXTAG_SAKURA,
+    .oam = &sSakuraSpriteOamData,
+    .anims = sSakuraAnimCmds,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = UpdateSakuraSprite,
+};
+
+static const struct SpriteSheet sSakuraSpriteSheet =
+{
+    .data = gWeatherSakuraTiles,
+    .size = sizeof(gWeatherSakuraTiles),
+    .tag = GFXTAG_SAKURA,
+};
+
+#define tPosY         data[0]
+#define tDeltaY       data[1]
+#define tWaveDelta    data[2]
+#define tWaveIndex    data[3]
+#define tSakuraId     data[4]
+#define tFallCounter  data[5]
+#define tFallDuration data[6]
+#define tDeltaY2      data[7]
+
+static bool8 CreateSakuraSprite(void)
+{
+    u8 spriteId = CreateSpriteAtEnd(&sSakuraSpriteTemplate, 0, 0, 78);
+    if (spriteId == MAX_SPRITES)
+        return FALSE;
+
+    gSprites[spriteId].tSakuraId = gWeatherPtr->sakuraSpriteCount;
+    InitSakuraSpriteMovement(&gSprites[spriteId]);
+    gSprites[spriteId].coordOffsetEnabled = TRUE;
+    gWeatherPtr->sprites.s1.sakuraSprites[gWeatherPtr->sakuraSpriteCount++] = &gSprites[spriteId];
+    return TRUE;
+}
+
+static bool8 DestroySakuraSprite(void)
+{
+    if (gWeatherPtr->sakuraSpriteCount)
+    {
+        DestroySprite(gWeatherPtr->sprites.s1.sakuraSprites[--gWeatherPtr->sakuraSpriteCount]);
+        return TRUE;
+    }
+
+    return FALSE;
+}
+
+static void InitSakuraSpriteMovement(struct Sprite *sprite)
+{
+    u16 rand;
+    u16 x = ((sprite->tSakuraId * 5) & 7) * 30 + (Random() % 30);
+
+    sprite->y = -3 - (gSpriteCoordOffsetY + sprite->centerToCornerVecY);
+    sprite->x = x - (gSpriteCoordOffsetX + sprite->centerToCornerVecX);
+    sprite->tPosY = sprite->y * 128;
+    sprite->x2 = 0;
+    rand = Random();
+    sprite->tDeltaY = (rand & 3) * 5 + 64;
+    sprite->tDeltaY2 = sprite->tDeltaY;
+    StartSpriteAnim(sprite, (rand & 1) ? 0 : 1);
+    sprite->tWaveIndex = 0;
+    sprite->tWaveDelta = ((rand & 3) == 0) ? 2 : 1;
+    sprite->tFallDuration = (rand & 0x1F) + 210;
+    sprite->tFallCounter = 0;
+}
+
+static void UpdateSakuraSprite(struct Sprite *sprite)
+{
+    s16 x;
+
+    sprite->tPosY += sprite->tDeltaY;
+    sprite->y = sprite->tPosY >> 7;
+    sprite->tWaveIndex += sprite->tWaveDelta;
+    sprite->tWaveIndex &= 0xFF;
+    sprite->x2 = gSineTable[sprite->tWaveIndex] / 64;
+
+    x = (sprite->x + sprite->centerToCornerVecX + gSpriteCoordOffsetX) & 0x1FF;
+    if (x & 0x100)
+        x |= -0x100;
+
+    if (x < -3)
+        sprite->x = 242 - (gSpriteCoordOffsetX + sprite->centerToCornerVecX);
+    else if (x > 242)
+        sprite->x = -3 - (gSpriteCoordOffsetX + sprite->centerToCornerVecX);
+}
+
+#undef tPosY
+#undef tDeltaY
+#undef tWaveDelta
+#undef tWaveIndex
+#undef tSakuraId
+#undef tFallCounter
+#undef tFallDuration
+#undef tDeltaY2
+
 
 //------------------------------------------------------------------------------
 // Snow
@@ -2632,6 +2868,7 @@ static u8 TranslateWeatherNum(u8 weather)
     case WEATHER_ABNORMAL:           return WEATHER_ABNORMAL;
     case WEATHER_ROUTE119_CYCLE:     return sWeatherCycleRoute119[gSaveBlock1Ptr->weatherCycleStage];
     case WEATHER_ROUTE123_CYCLE:     return sWeatherCycleRoute123[gSaveBlock1Ptr->weatherCycleStage];
+    case WEATHER_SAKURA:             return WEATHER_SAKURA;
     default:                         return WEATHER_NONE;
     }
 }

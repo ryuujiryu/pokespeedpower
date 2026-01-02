@@ -141,6 +141,7 @@ static const struct WeatherCallbacks sWeatherFuncs[] =
     [WEATHER_DROUGHT]            = {Drought_InitVars,       Drought_Main,       Drought_InitAll,       Drought_Finish},
     [WEATHER_DOWNPOUR]           = {Downpour_InitVars,      Thunderstorm_Main,  Downpour_InitAll,      Thunderstorm_Finish},
     [WEATHER_UNDERWATER_BUBBLES] = {Bubbles_InitVars,       Bubbles_Main,       Bubbles_InitAll,       Bubbles_Finish},
+    [WEATHER_SAKURA]             = {Sakura_InitVars,        Sakura_Main,        Sakura_InitAll,        Sakura_Finish},
 };
 
 void (*const gWeatherPalStateFuncs[])(void) =
@@ -215,6 +216,7 @@ void StartWeather(void)
         gWeatherPtr->sandstormSwirlSpritesCreated = 0;
         gWeatherPtr->bubblesSpritesCreated = 0;
         gWeatherPtr->lightenedFogSpritePalsCount = 0;
+        gWeatherPtr->sakuraSpriteCount = 0;
         Weather_SetBlendCoeffs(16, 0);
         gWeatherPtr->currWeather = 0;
         gWeatherPtr->palProcessingState = WEATHER_PAL_STATE_IDLE;
@@ -390,6 +392,7 @@ static void FadeInScreenWithWeather(void)
     case WEATHER_SANDSTORM:
     case WEATHER_FOG_DIAGONAL:
     case WEATHER_UNDERWATER:
+    case WEATHER_SAKURA:
     default:
         if (!gPaletteFade.active)
         {
@@ -1083,6 +1086,9 @@ static void UNUSED SetFieldWeather(u8 weather)
     case COORD_EVENT_WEATHER_SHADE:
         SetWeather(WEATHER_SHADE);
         break;
+    case COORD_EVENT_WEATHER_SAKURA:
+        SetWeather(WEATHER_SAKURA);
+        break;
     }
 }
 
@@ -1207,6 +1213,8 @@ static const u8 sWeatherNames[WEATHER_COUNT][24] = {
     [WEATHER_ROUTE119_CYCLE]     = _("ROUTE119 CYCLE"),
     [WEATHER_ROUTE123_CYCLE]     = _("ROUTE123 CYCLE"),
     [WEATHER_FOG]                = _("FOG"),
+    [WEATHER_SAKURA]             = _("SAKURA"),
+
 };
 
 static const u8 sDebugText_WeatherNotDefined[] = _("NOT DEFINED!!!");
