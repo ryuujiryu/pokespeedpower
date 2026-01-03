@@ -15,7 +15,7 @@ CitrusIsland_House1_Text_KidNeverSaw:
 	.string "he was able to go on an adventure.$"
 
 CitrusIsland_House1_Text_TheMainland:
-	.string "{PLAYER}-ehm, YOUR HIGHNESS, when\n"
-	.string "will we ever be allowed to leave?$"
+	.string "{PLAYER}-denka, will we ever\n"
+	.string "be allowed to leave?$"
 
 `

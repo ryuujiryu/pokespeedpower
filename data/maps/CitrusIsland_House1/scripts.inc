@@ -33,6 +33,6 @@ CitrusIsland_House1_Text_KidNeverSaw:
 # 17 "data/maps/CitrusIsland_House1/scripts.pory"
 CitrusIsland_House1_Text_TheMainland:
 # 18 "data/maps/CitrusIsland_House1/scripts.pory"
-	.string "{PLAYER}-ehm, YOUR HIGHNESS, when\n"
+	.string "{PLAYER}-denka, will we ever\n"
 # 19 "data/maps/CitrusIsland_House1/scripts.pory"
-	.string "will we ever be allowed to leave?$"
+	.string "be allowed to leave?$"

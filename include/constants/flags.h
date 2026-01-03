@@ -1227,7 +1227,7 @@
 #define FLAG_HIDE_HOUSE_RIVAL                                       0x495 // SP Flag
 #define FLAG_RIVAL_POKEBALLS                                        0x496 // SP Flag
 #define FLAG_HIDE_DURIAN_TOWN_RIVAL                                 0x497 // SP Flag
-#define FLAG_UNUSED_0x498                                           0x498 // Unused Flag
+#define FLAG_TOWN_MAP_GET                                           0x498 // Unused Flag
 #define FLAG_UNUSED_0x499                                           0x499 // Unused Flag
 #define FLAG_UNUSED_0x49A                                           0x49A // Unused Flag
 #define FLAG_UNUSED_0x49B                                           0x49B // Unused Flag

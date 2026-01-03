@@ -1,14 +1,39 @@
-raw `
-CitrusIsland_House3_MapScripts::
-	.byte 0
+mapscripts CitrusIsland_House3_MapScripts {}
 
-CitrusIsland_House3_EventScript_Kunoichi::
-	msgbox CitrusIsland_House3_Text_WrongSide, MSGBOX_NPC
+script CitrusIsland_House3_Kunoichi {
+	lock
+	faceplayer
+	if (!flag(FLAG_TOWN_MAP_GET)){call(CitrusIsland_House3_TownMap)}
+	else {
+	msgbox ("Good luck, {PLAYER}-denka…$")
+	}
+	closemessage
+	release
 	end
+}
 
-CitrusIsland_House3_Text_WrongSide:
-	.string "Tch. I wonder if it was worth it,\n"
-	.string "being exhiled here just because I\p"
-	.string "supported the SUMERAGI dynasty…$"
-
-`
+script CitrusIsland_House3_TownMap {
+	lock
+    applymovement (LOCALID_CITRUS_KUNOICHI, Common_Movement_Angry)
+    waitmovement (48)
+	msgbox ("Tch… I wonder if it was worth it,\n"
+	"being exhiled here just because I\l"
+	"supported the SUMERAGI dynasty…$")
+	closemessage
+    applymovement (LOCALID_CITRUS_KUNOICHI, Common_Movement_ExclamationMark)
+    waitmovement (48)
+	faceplayer
+	msgbox ("ALMIGHTY TENKEI… {PLAYER}-denka,\n"
+	"I beg your forgiveness for that…\l"
+	"outburst… of mine…$")
+	closemessage
+    applymovement (LOCALID_CITRUS_KUNOICHI, Common_Movement_Pensive)
+	msgbox ("I have heard that you will be\n"
+	"leaving the ISLAND, yes…?\p"
+	"Then this TOWN MAP will be of great\n"
+	"help in your journey…$")
+	giveitem (ITEM_TOWN_MAP)
+	setflag (FLAG_TOWN_MAP_GET)
+	release
+	end
+}
