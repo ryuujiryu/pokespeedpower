@@ -2,7 +2,7 @@
   "id": "MAP_CITRUS_ISLAND_MITSURU_HOUSE",
   "name": "CitrusIsland_MitsuruHouse",
   "layout": "LAYOUT_CITRUS_ISLAND_MITSURU_HOUSE",
-  "music": "MUS_DUMMY",
+  "music": "MUS_AW2_211",
   "region_map_section": "MAPSEC_LITTLEROOT_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

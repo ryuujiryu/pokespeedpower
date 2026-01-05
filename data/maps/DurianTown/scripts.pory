@@ -60,10 +60,12 @@ script DurianTown_Rival {
     waitmovement (0)
     playbgm (MUS_ENCOUNTER_MAY, TRUE)
     if (checkplayergender != MALE) {
-        msgbox ("SHIN'YA: Anegimi!$")
+        setspeaker("SHINYA")
+        msgbox ("Anegimi!$")
         closemessage
     } else {
-        msgbox("FUUKA: …Oh, anigimi.$")
+        setspeaker("FUUKA")
+        msgbox("…Oh, anigimi.$")
         closemessage
     }
     addobject (LOCALID_DURIANTOWN_RIVAL)
@@ -72,39 +74,30 @@ script DurianTown_Rival {
     applymovement (LOCALID_DURIANTOWN_RIVAL, Common_Movement_WalkInPlaceLeft)
     waitmovement (0)
     if (checkplayergender != MALE) {
-        msgbox ("SHIN'YA: I'm guessing you got the STAMP,\n" "right? I knew you could do it!$")
+        setspeaker("SHINYA")
+        msgbox ("I'm guessing 'ya got the STAMP, right?\n" "I knew you could do it!$")
         closemessage
     } else {
-        msgbox("FUUKA: You got your STAMP, didn't you?\n" "That's great.$")
-        closemessage
-    }
-    applymovement (LOCALID_DURIANTOWN_RIVAL, Common_Movement_Pensive)
-    waitmovement (0)
-    if (checkplayergender != MALE) {
-        msgbox ("SHIN'YA: Our first step in claiming\n" "back our birthright…\p" "I'll make those UNOVANS pay for their\n" "actions, I swear to ALMIGHTY TENKEI!\p" "For our exile, their actions in CITRUS\n" "ISLAND, and for our parents' honor!"$)
-        closemessage
-    } else {
-        msgbox("FUUKA: The first step in claiming\n" "the throne we deserve…\p" "We need to be strong if we want to free\n" "NIHON from the ARC.$")
+        setspeaker("FUUKA")
+        msgbox("You got your STAMP, didn't you?\n" "That's great.$")
         closemessage
     }
     applymovement (LOCALID_DURIANTOWN_RIVAL, Common_Movement_Pensive)
     waitmovement (0)
-    msgbox ("Anyway. Since we did not have that\n" "match back in CITRUS ISLAND, why don't\l" "we have it right here?$")
-    closemessage
-    applymovement (LOCALID_DURIANTOWN_RIVAL, Common_Movement_Music)
-    waitmovement (0)
-    applymovement (LOCALID_DURIANTOWN_RIVAL, Common_Movement_Delay48)
-    waitmovement (0)
     if (checkplayergender != MALE) {
-        msgbox ("SHIN'YA: Ready or not, here I come!$")
+        setspeaker("SHINYA")
+        msgbox ("Our first step in claiming\n" "back our birthright…\p" "I'll make those UNOVANS pay for their\n" "actions, I swear to ALMIGHTY TENKEI!\p" "For our exile, their actions in CITRUS\n" "ISLAND, and for our parents' honor!$")
+        applymovement (LOCALID_DURIANTOWN_RIVAL, Common_Movement_Music)
+        setspeaker("SHINYA")
+        msgbox ("'Nyway. Since we did not have that\n" "match back in CITRUS ISLAND, why don't\l" "we have it right here?\p" "Ready or not, here I come!$")
+        call (DurianTown_ShinyaFight)
     } else {
-        msgbox("FUUKA: Throw your POKéMON out!$")
-    }
-    closemessage
-    if (checkplayergender != MALE) {
-		call (DurianTown_ShinyaFight)
-    } else {
- 		call (DurianTown_FuukaFight)
+        setspeaker("FUUKA")
+        msgbox("The first step in claiming back\n" "the throne we deserve…\p" "We need to be strong if we want to free\n" "NIHON from the ARC.$")
+        applymovement (LOCALID_DURIANTOWN_RIVAL, Common_Movement_ExclamationMark)
+        setspeaker("FUUKA")
+        msgbox ("That reminds me, as we did not battle\n" "back in CITRUS ISLAND, why don't we\l" "instead have a match right here?$")
+        call (DurianTown_FuukaFight)
     }
 	release
 	end
@@ -141,16 +134,40 @@ script DurianTown_FuukaFight {
 script DurianTown_ShinyaDefeated {
     applymovement (LOCALID_PLAYER, Common_Movement_Music)
     waitmovement (0)
-    msgbox ("SHIN'YA: Good job, good job!\p" "But hey, even if you have got the STAMP\n" "first, I'll destroy the PATH GUARDIANS\l" "harder than you did!\p" "Let's meet in COCONUT CITY, m'kay?$")
+    setspeaker("SHINYA")
+    msgbox ("Good job, good job!\p" "But hey, even if you have got the STAMP\n" "first, I'll destroy the PATH GUARDIANS\l" "harder than you did!\p" "Let's meet in KIWANO CITY, m'kay?$")
     closemessage
     applymovement (LOCALID_PLAYER, Common_Movement_WalkDown)
     applymovement (LOCALID_PLAYER, Common_Movement_FaceUp)
     waitmovement (0)
+    fadedefaultbgm
     applymovement (LOCALID_DURIANTOWN_RIVAL, DurianTown_Movement_GoToTemple)
     waitmovement (0)
-    removeobject(LOCALID_DURIANTOWN_RIVAL)
+    opendoor (7, 9)
+    applymovement (LOCALID_DURIANTOWN_RIVAL, Common_Movement_ExclamationMark)
+    playbgm (MUS_ENCOUNTER_MAY, TRUE)
+    applymovement (LOCALID_DURIANTOWN_RIVAL, DurianTown_Movement_Run)
+    waitmovement (48)
+    setspeaker("SHINYA")
+    msgbox ("Anegimi, I had forgot 'bout it!\n" "I got a gift for 'ya, hey!\l" "C'mon, put 'em on!$")
+    closemessage
+    playfanfare (MUS_OBTAIN_ITEM)
+    waitfanfare
+    setflag (FLAG_RECEIVED_RUNNING_SHOES)
+    setspeaker("SHINYA")
+    msgbox ("…RUNNING SHOES! 'Cause ya'll need 'em!\n" "'Ya didn't think of travelling all\l" "over TENKEI on… those shoes, yeah…?$")
+    closemessage
+    applymovement (LOCALID_DURIANTOWN_RIVAL, Common_Movement_Pensive)
+    setspeaker("SHINYA")
+    msgbox ("…They're also to make up for not\n" "managin' to get 'ya a new PœDA.\p" "'Nyway! The TEMPLE! See ya!$")
+    waitmovement (48)
+    applymovement (LOCALID_DURIANTOWN_RIVAL, DurianTown_Movement_GoToTemple)
+    opendoor (7, 9)
+    waitdooranim
+    closedoor (7, 9)
     fadedefaultbgm
-    setflag(FLAG_HIDE_DURIAN_TOWN_RIVAL)
+    removeobject (LOCALID_DURIANTOWN_RIVAL)
+    setflag (FLAG_HIDE_DURIAN_TOWN_RIVAL)
     setvar (VAR_RIVALS_STATE, 4)
     setvar (VAR_ROUTE52_STATE, 1)
 	release
@@ -160,7 +177,14 @@ script DurianTown_ShinyaDefeated {
 script DurianTown_FuukaDefeated {
     applymovement (LOCALID_PLAYER, Common_Movement_Music)
     waitmovement (0)
-    msgbox ("FUUKA: Nice fight, anigimi. I can only\n" "hope I'll grow this strong, too.\p" "Let's see if I can get the STAMP myself.\n" "Meanwhile, why don't you go to\l" "COCONUT CITY's TEMPLE first?$")
+    setspeaker("FUUKA")
+    msgbox ("Nice fight, anigimi. I can only\n" "strive to grow this strong, too.\p" "Let us see if I can get the STAMP myself.\n" "By the way, anigimi, I got something\l" "I'm sure will be useful.$")
+    closemessage
+    playfanfare (MUS_OBTAIN_ITEM)
+    waitfanfare
+    setflag (FLAG_RECEIVED_RUNNING_SHOES)
+    setspeaker("FUUKA")
+    msgbox ("It's a pair of RUNNING SHOES. Our\n" "journey will be long, so we should be\l" "prepared in every way.\p" "I tried getting you a new PœDA, too,\n" "but they did not have any.\p" "Maybe you could try searching for\n" "one in KIWANO CITY?\p" "The next ELEMENTAL TEMPLE is\n" "there, too. Good luck, anigimi.$")
     closemessage
     applymovement (LOCALID_PLAYER, Common_Movement_WalkDown)
     applymovement (LOCALID_PLAYER, Common_Movement_FaceUp)
@@ -183,4 +207,8 @@ movement DurianTown_Movement_GoToTemple {
 
 movement DurianTown_Movement_ComeToPlayer {
     walk_fast_left * 6
+}
+
+movement DurianTown_Movement_Run {
+    walk_fast_down * 2
 }
