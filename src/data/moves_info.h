@@ -23156,7 +23156,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .priority = 0,
         .category = DAMAGE_CATEGORY_STATUS,
         .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_INFATUATE_SIDE,
+            .moveEffect = MOVE_EFFECT_ATTRACT,
         }),
         .zMove = { .effect = Z_EFFECT_RESET_STATS },
         .magicCoatAffected = TRUE,
@@ -23199,81 +23199,78 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
 
     [MOVE_BLACK_HOLE] =
     {
-        .name = COMPOUND_STRING("COLD SHOWER"),
+        .name = COMPOUND_STRING("BLACK HOLE"),
         .description = COMPOUND_STRING(
-            "The user shoots cold water\n"
-            "that may freeze the foe."),
+            "Allows a full-power attack,\n"
+            "but sharply lowers SP. ATK."),
         .effect = EFFECT_HIT,
-        .power = 80,
-        .type = TYPE_WATER,
+        .power = 90,
+        .type = TYPE_DARK,
         .accuracy = 100,
-        .pp = 15,
+        .pp = 10,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
         .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_FREEZE,
-            .chance = 30,
+            .moveEffect = MOVE_EFFECT_SP_ATK_MINUS_2,
+            .self = TRUE,
         }),
         .contestEffect = CONTEST_EFFECT_HIGHLY_APPEALING,
         .contestCategory = CONTEST_CATEGORY_TOUGH,
         .contestComboStarterId = COMBO_STARTER_SCALD,
         .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_ColdShower,
+        .battleAnimScript = gBattleAnimMove_BlackHole,
     },
 
     [MOVE_WRETCHED_HANDS] =
     {
-        .name = COMPOUND_STRING("NIGHTCORE"),
+        .name = COMPOUND_STRING("WRETCHED HANDS"),
         .description = COMPOUND_STRING(
-            "Attacks with a high-tempo tune.\n"
-            "Raises the user’s SPEED."),
+            "Traps the foe in a cluster of\n"
+            "hands for "BINDING_TURNS" turns."),
         .effect = EFFECT_HIT,
-        .power = 50,
-        .type = TYPE_SOUND,
-        .accuracy = 100,
-        .pp = 20,
+        .power = B_UPDATED_MOVE_DATA >= GEN_5 ? 35 : 15,
+        .type = TYPE_GHOST,
+        .accuracy = B_UPDATED_MOVE_DATA >= GEN_5 ? 85 : 70,
+        .pp = 15,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
-        .category = DAMAGE_CATEGORY_SPECIAL,
-        .thawsUser = TRUE,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .ignoresKingsRock = B_UPDATED_MOVE_FLAGS < GEN_3,
         .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_SPD_PLUS_1,
-            .self = TRUE,
-            .chance = 100,
+            .moveEffect = MOVE_EFFECT_WRAP,
+            .multistring.wrapped = B_MSG_WRAPPED_WRAP,
         }),
-        .contestEffect = CONTEST_EFFECT_HIGHLY_APPEALING,
-        .contestCategory = CONTEST_CATEGORY_TOUGH,
-        .contestComboStarterId = COMBO_STARTER_SCALD,
-        .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_Nightcore,
+        .contestEffect = CONTEST_EFFECT_DONT_EXCITE_AUDIENCE,
+        .contestCategory = CONTEST_CATEGORY_BEAUTY,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {COMBO_STARTER_SUNNY_DAY},
+        .battleAnimScript = gBattleAnimMove_WretchedHands,
+        .validApprenticeMove = TRUE,
     },
 
     [MOVE_POWER_CHORD] =
     {
-        .name = COMPOUND_STRING("LOVE SPARK"),
+        .name = COMPOUND_STRING("POWER CHORD"),
         .description = COMPOUND_STRING(
             "Makes the opposite gender fall\n"
             "in love so much it gets hurt."),
-        .effect = EFFECT_HIT,
-        .power = 50,
-        .type = TYPE_ELECTRIC,
-        .accuracy = 80,
+        .effect = EFFECT_TWO_TURNS_ATTACK,
+        .power = 120,
+        .type = TYPE_SOUND,
+        .accuracy = 90,
         .pp = 10,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
-        .category = DAMAGE_CATEGORY_STATUS,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .argument.twoTurnAttack = { .stringId = STRINGID_ELECTROSHOTCHARGING, .status = B_WEATHER_RAIN },
         .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_INFATUATE_SIDE,
+            .moveEffect = MOVE_EFFECT_SP_ATK_PLUS_1,
+            .self = TRUE,
+            .onChargeTurnOnly = TRUE,
+            .sheerForceOverride = TRUE,
         }),
-        .zMove = { .effect = Z_EFFECT_RESET_STATS },
-        .magicCoatAffected = TRUE,
-        .ignoresSubstitute = TRUE,
-        .contestEffect = CONTEST_EFFECT_MAKE_FOLLOWING_MONS_NERVOUS,
-        .contestCategory = CONTEST_CATEGORY_CUTE,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_LoveSpark,
+        .battleAnimScript = gBattleAnimMove_PowerChord,
         .validApprenticeMove = TRUE,
     },
 
@@ -23307,13 +23304,13 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
 
     [MOVE_EXPOSITION] =
     {
-        .name = COMPOUND_STRING("NIGHTCORE"),
+        .name = COMPOUND_STRING("EXPOSURE"),
         .description = COMPOUND_STRING(
             "Attacks with a high-tempo tune.\n"
             "Raises the user’s SPEED."),
         .effect = EFFECT_HIT,
         .power = 50,
-        .type = TYPE_SOUND,
+        .type = TYPE_DARK,
         .accuracy = 100,
         .pp = 20,
         .target = MOVE_TARGET_SELECTED,
@@ -23329,36 +23326,37 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .contestCategory = CONTEST_CATEGORY_TOUGH,
         .contestComboStarterId = COMBO_STARTER_SCALD,
         .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_Nightcore,
+        .battleAnimScript = gBattleAnimMove_Exposition,
     },
 
     [MOVE_BIZARRE_MAGICK] =
     {
-        .name = COMPOUND_STRING("LOVE SPARK"),
+        .name = COMPOUND_STRING("BIZARRE MAGICK"),
         .description = COMPOUND_STRING(
-            "Makes the opposite gender fall\n"
-            "in love so much it gets hurt."),
+            "Fires six types of spells.\n"
+        #if B_USE_FROSTBITE == TRUE
+            "May burn/para/frostbite."),
+        #else
+            "May inflict any status."),
+        #endif
         .effect = EFFECT_HIT,
-        .power = 50,
-        .type = TYPE_ELECTRIC,
-        .accuracy = 80,
+        .power = 80,
+        .type = TYPE_PSYCHIC,
+        .accuracy = 100,
         .pp = 10,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
-        .category = DAMAGE_CATEGORY_STATUS,
+        .category = DAMAGE_CATEGORY_SPECIAL,
         .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_INFATUATE_SIDE,
+            .moveEffect = MOVE_EFFECT_BIZARRE_MAGICK,
+            .chance = 20,
         }),
-        .zMove = { .effect = Z_EFFECT_RESET_STATS },
-        .magicCoatAffected = TRUE,
-        .ignoresSubstitute = TRUE,
-        .contestEffect = CONTEST_EFFECT_MAKE_FOLLOWING_MONS_NERVOUS,
-        .contestCategory = CONTEST_CATEGORY_CUTE,
+        .contestEffect = CONTEST_EFFECT_STARTLE_PREV_MONS,
+        .contestCategory = CONTEST_CATEGORY_BEAUTY,
         .contestComboStarterId = 0,
-        .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_LoveSpark,
-        .validApprenticeMove = TRUE,
-    },
+        .contestComboMoves = {COMBO_STARTER_LOCK_ON},
+        .battleAnimScript = gBattleAnimMove_BizarreMagick,
+        .validApprenticeMove = TRUE,    },
 
     [MOVE_HEAVENLY_PRAYER] =
     {
@@ -23390,27 +23388,24 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
 
     [MOVE_LUSTER_CANDY] =
     {
-        .name = COMPOUND_STRING("COLD SHOWER"),
+        .name = COMPOUND_STRING("LUSTER CANDY"),
         .description = COMPOUND_STRING(
             "The user shoots cold water\n"
             "that may freeze the foe."),
-        .effect = EFFECT_HIT,
-        .power = 80,
-        .type = TYPE_WATER,
-        .accuracy = 100,
-        .pp = 15,
-        .target = MOVE_TARGET_SELECTED,
+        .effect = EFFECT_ATTACK_UP_USER_ALLY,
+        .power = 0,
+        .type = TYPE_SOUND,
+        .accuracy = 0,
+        .pp = 40,
+        .target = MOVE_TARGET_USER, // Targeting is handled through the script
         .priority = 0,
-        .category = DAMAGE_CATEGORY_SPECIAL,
-        .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_FREEZE,
-            .chance = 30,
-        }),
+        .category = DAMAGE_CATEGORY_STATUS,
+        .zMove = { .effect = Z_EFFECT_ATK_UP_1 },
         .contestEffect = CONTEST_EFFECT_HIGHLY_APPEALING,
         .contestCategory = CONTEST_CATEGORY_TOUGH,
         .contestComboStarterId = COMBO_STARTER_SCALD,
         .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_ColdShower,
+        .battleAnimScript = gBattleAnimMove_LusterCandy,
     },
 
     [MOVE_ECLIPSE] =

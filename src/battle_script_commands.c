@@ -3181,6 +3181,26 @@ void SetMoveEffect(u32 battler, u32 effectBattler, bool32 primary, bool32 certai
             SetMoveEffect(battler, effectBattler, primary, certain);
         }
         break;
+    case MOVE_EFFECT_BIZARRE_MAGICK:
+        if (gBattleMons[gEffectBattler].status1)
+        {
+            gBattlescriptCurrInstr++;
+        }
+        else
+        {
+            static const u8 sBizarreMagickEffects[] =
+            {
+                MOVE_EFFECT_BURN,
+                MOVE_EFFECT_FREEZE_OR_FROSTBITE,
+                MOVE_EFFECT_PARALYSIS,
+                MOVE_EFFECT_POISON,
+                MOVE_EFFECT_SLEEP,
+                MOVE_EFFECT_CONFUSION
+            };
+            gBattleScripting.moveEffect = RandomElement(RNG_BIZARRE_MAGICK, sBizarreMagickEffects);
+            SetMoveEffect(battler, effectBattler, primary, certain);
+        }
+        break;
     case MOVE_EFFECT_WRAP:
         if (gBattleMons[gEffectBattler].volatiles.wrapped)
         {
@@ -4065,6 +4085,10 @@ void SetMoveEffect(u32 battler, u32 effectBattler, bool32 primary, bool32 certai
             BattleScriptPush(gBattlescriptCurrInstr + 1);
             gBattlescriptCurrInstr = BattleScript_EffectRecycleBerriesAllies;
         }
+        break;
+    case MOVE_EFFECT_ATTRACT:
+        BattleScriptPush(gBattlescriptCurrInstr + 1);
+        gBattlescriptCurrInstr = BattleScript_EffectAttractDmg;
         break;
     case MOVE_EFFECT_REMOVE_STATUS:
     {

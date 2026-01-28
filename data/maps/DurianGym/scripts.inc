@@ -311,102 +311,168 @@ DurianGym_ShiriAndBanjoDefeated::
 # 165 "data/maps/DurianGym/scripts.pory"
 	closemessage
 # 166 "data/maps/DurianGym/scripts.pory"
-	setvar VAR_RIVALS_STATE, 3
+	applymovement LOCALID_DURIANGYM_BANJO, Common_Movement_Poisoned
 # 167 "data/maps/DurianGym/scripts.pory"
+	waitmovement 0
+# 168 "data/maps/DurianGym/scripts.pory"
+	applymovement LOCALID_DURIANGYM_BANJO, Common_Movement_FaceLeft
+# 169 "data/maps/DurianGym/scripts.pory"
+	waitmovement 0
+# 170 "data/maps/DurianGym/scripts.pory"
+	applymovement LOCALID_DURIANGYM_BANJO, Common_Movement_Delay48
+# 171 "data/maps/DurianGym/scripts.pory"
+	waitmovement 0
+# 172 "data/maps/DurianGym/scripts.pory"
+	setspeaker DurianGym_ShiriAndBanjoCheckBadge_Text_0
+# 173 "data/maps/DurianGym/scripts.pory"
+	msgbox DurianGym_ShiriAndBanjoDefeated_Text_7
+# 174 "data/maps/DurianGym/scripts.pory"
+	closemessage
+# 175 "data/maps/DurianGym/scripts.pory"
+	applymovement LOCALID_DURIANGYM_SHIRI, Common_Movement_Upset
+# 176 "data/maps/DurianGym/scripts.pory"
+	waitmovement 0
+# 177 "data/maps/DurianGym/scripts.pory"
+	applymovement LOCALID_DURIANGYM_SHIRI, Common_Movement_FaceRight
+# 178 "data/maps/DurianGym/scripts.pory"
+	waitmovement 0
+# 179 "data/maps/DurianGym/scripts.pory"
+	applymovement LOCALID_DURIANGYM_SHIRI, Common_Movement_Delay48
+# 180 "data/maps/DurianGym/scripts.pory"
+	waitmovement 0
+# 181 "data/maps/DurianGym/scripts.pory"
+	setspeaker DurianGym_ShiriAndBanjoCheckBadge_Text_2
+# 182 "data/maps/DurianGym/scripts.pory"
+	msgbox DurianGym_ShiriAndBanjoDefeated_Text_8
+# 183 "data/maps/DurianGym/scripts.pory"
+	closemessage
+# 184 "data/maps/DurianGym/scripts.pory"
+	setspeaker DurianGym_ShiriAndBanjoCheckBadge_Text_0
+# 185 "data/maps/DurianGym/scripts.pory"
+	msgbox DurianGym_ShiriAndBanjoDefeated_Text_9
+# 186 "data/maps/DurianGym/scripts.pory"
+	closemessage
+# 187 "data/maps/DurianGym/scripts.pory"
+	applymovement LOCALID_DURIANGYM_SHIRI, Common_Movement_ExclamationMark
+# 188 "data/maps/DurianGym/scripts.pory"
+	waitmovement 0
+# 189 "data/maps/DurianGym/scripts.pory"
+	applymovement LOCALID_DURIANGYM_SHIRI, Common_Movement_FaceDown
+# 190 "data/maps/DurianGym/scripts.pory"
+	waitmovement 0
+# 191 "data/maps/DurianGym/scripts.pory"
+	applymovement LOCALID_DURIANGYM_SHIRI, Common_Movement_Delay48
+# 192 "data/maps/DurianGym/scripts.pory"
+	waitmovement 0
+# 193 "data/maps/DurianGym/scripts.pory"
+	applymovement LOCALID_DURIANGYM_BANJO, Common_Movement_FaceDown
+# 194 "data/maps/DurianGym/scripts.pory"
+	waitmovement 0
+# 195 "data/maps/DurianGym/scripts.pory"
+	setspeaker DurianGym_ShiriAndBanjoCheckBadge_Text_2
+# 196 "data/maps/DurianGym/scripts.pory"
+	msgbox DurianGym_ShiriAndBanjoDefeated_Text_10
+# 197 "data/maps/DurianGym/scripts.pory"
+	closemessage
+# 198 "data/maps/DurianGym/scripts.pory"
+	giveitem ITEM_TM_ROUND
+# 199 "data/maps/DurianGym/scripts.pory"
+	setvar VAR_RIVALS_STATE, 3
+# 200 "data/maps/DurianGym/scripts.pory"
 	release
 	end
 
 
 DurianGym_Guide::
-# 172 "data/maps/DurianGym/scripts.pory"
+# 205 "data/maps/DurianGym/scripts.pory"
 	lock
-# 173 "data/maps/DurianGym/scripts.pory"
+# 206 "data/maps/DurianGym/scripts.pory"
 	faceplayer
-# 174 "data/maps/DurianGym/scripts.pory"
+# 207 "data/maps/DurianGym/scripts.pory"
 	goto_if_unset FLAG_DEFEATED_RUSTBORO_GYM, DurianGym_Guide_2
-# 176 "data/maps/DurianGym/scripts.pory"
+# 209 "data/maps/DurianGym/scripts.pory"
 	msgbox DurianGym_Guide_Text_0
 DurianGym_Guide_1:
-# 178 "data/maps/DurianGym/scripts.pory"
+# 211 "data/maps/DurianGym/scripts.pory"
 	closemessage
-# 179 "data/maps/DurianGym/scripts.pory"
+# 212 "data/maps/DurianGym/scripts.pory"
 	release
 	end
 
 DurianGym_Guide_2:
-# 174 "data/maps/DurianGym/scripts.pory"
+# 207 "data/maps/DurianGym/scripts.pory"
 	call DurianGym_GuideIntro
 	goto DurianGym_Guide_1
 
 
 DurianGym_GuideIntro::
-# 184 "data/maps/DurianGym/scripts.pory"
+# 217 "data/maps/DurianGym/scripts.pory"
 	lock
-# 185 "data/maps/DurianGym/scripts.pory"
+# 218 "data/maps/DurianGym/scripts.pory"
 	faceplayer
-# 186 "data/maps/DurianGym/scripts.pory"
+# 219 "data/maps/DurianGym/scripts.pory"
 	msgbox DurianGym_GuideIntro_Text_0
-# 187 "data/maps/DurianGym/scripts.pory"
+# 220 "data/maps/DurianGym/scripts.pory"
 	closemessage
-# 188 "data/maps/DurianGym/scripts.pory"
+# 221 "data/maps/DurianGym/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_ExclamationMark
-# 189 "data/maps/DurianGym/scripts.pory"
+# 222 "data/maps/DurianGym/scripts.pory"
 	waitmovement 0
-# 190 "data/maps/DurianGym/scripts.pory"
+# 223 "data/maps/DurianGym/scripts.pory"
 	applymovement LOCALID_PLAYER, Common_Movement_Delay48
-# 191 "data/maps/DurianGym/scripts.pory"
+# 224 "data/maps/DurianGym/scripts.pory"
 	waitmovement 0
-# 192 "data/maps/DurianGym/scripts.pory"
+# 225 "data/maps/DurianGym/scripts.pory"
 	setspeaker DurianGym_GuideIntro_Text_1
-# 193 "data/maps/DurianGym/scripts.pory"
+# 226 "data/maps/DurianGym/scripts.pory"
 	msgbox DurianGym_GuideIntro_Text_2
-# 194 "data/maps/DurianGym/scripts.pory"
+# 227 "data/maps/DurianGym/scripts.pory"
 	closemessage
-# 195 "data/maps/DurianGym/scripts.pory"
+# 228 "data/maps/DurianGym/scripts.pory"
 	msgbox DurianGym_GuideIntro_Text_3
-# 196 "data/maps/DurianGym/scripts.pory"
+# 229 "data/maps/DurianGym/scripts.pory"
 	closemessage
-# 197 "data/maps/DurianGym/scripts.pory"
+# 230 "data/maps/DurianGym/scripts.pory"
 	release
 	end
 
 
-# 201 "data/maps/DurianGym/scripts.pory"
+# 234 "data/maps/DurianGym/scripts.pory"
 Movement_Punch:
-# 202 "data/maps/DurianGym/scripts.pory"
+# 235 "data/maps/DurianGym/scripts.pory"
 	face_right
-# 203 "data/maps/DurianGym/scripts.pory"
+# 236 "data/maps/DurianGym/scripts.pory"
 	lock_facing_direction
-# 204 "data/maps/DurianGym/scripts.pory"
+# 237 "data/maps/DurianGym/scripts.pory"
 	lock_anim
-# 205 "data/maps/DurianGym/scripts.pory"
+# 238 "data/maps/DurianGym/scripts.pory"
 	walk_faster_right
-# 206 "data/maps/DurianGym/scripts.pory"
+# 239 "data/maps/DurianGym/scripts.pory"
 	walk_faster_left
-# 207 "data/maps/DurianGym/scripts.pory"
+# 240 "data/maps/DurianGym/scripts.pory"
 	unlock_facing_direction
-# 208 "data/maps/DurianGym/scripts.pory"
+# 241 "data/maps/DurianGym/scripts.pory"
 	unlock_anim
-# 209 "data/maps/DurianGym/scripts.pory"
+# 242 "data/maps/DurianGym/scripts.pory"
 	face_down
-# 210 "data/maps/DurianGym/scripts.pory"
+# 243 "data/maps/DurianGym/scripts.pory"
 	step_end
 
-# 213 "data/maps/DurianGym/scripts.pory"
+# 246 "data/maps/DurianGym/scripts.pory"
 Movement_Hit:
-# 214 "data/maps/DurianGym/scripts.pory"
+# 247 "data/maps/DurianGym/scripts.pory"
 	disable_jump_landing_ground_effect
-# 215 "data/maps/DurianGym/scripts.pory"
+# 248 "data/maps/DurianGym/scripts.pory"
 	jump_in_place_left
-# 216 "data/maps/DurianGym/scripts.pory"
+# 249 "data/maps/DurianGym/scripts.pory"
 	emote_exclamation_mark
-# 217 "data/maps/DurianGym/scripts.pory"
+# 250 "data/maps/DurianGym/scripts.pory"
 	unlock_facing_direction
-# 218 "data/maps/DurianGym/scripts.pory"
+# 251 "data/maps/DurianGym/scripts.pory"
 	unlock_anim
-# 219 "data/maps/DurianGym/scripts.pory"
+# 252 "data/maps/DurianGym/scripts.pory"
 	face_down
-# 220 "data/maps/DurianGym/scripts.pory"
+# 253 "data/maps/DurianGym/scripts.pory"
 	step_end
 
 DurianGym_Junichi_Text_0:
@@ -546,28 +612,46 @@ DurianGym_ShiriAndBanjoDefeated_Text_6:
 # 164 "data/maps/DurianGym/scripts.pory"
 	.string "ANYWAY! It will teach a POKéMON the move\n"
 	.string "ROUND. It gets stronger if a POKéMON\l"
-	.string "uses it after its ally did.$"
+	.string "uses it after its ally did…$"
+
+DurianGym_ShiriAndBanjoDefeated_Text_7:
+# 173 "data/maps/DurianGym/scripts.pory"
+	.string "RI… RIRI…$"
+
+DurianGym_ShiriAndBanjoDefeated_Text_8:
+# 182 "data/maps/DurianGym/scripts.pory"
+	.string "Hmm?!$"
+
+DurianGym_ShiriAndBanjoDefeated_Text_9:
+# 185 "data/maps/DurianGym/scripts.pory"
+	.string "We have to give… two copies…\n"
+	.string "of the TECHNICAL ROUND…$"
+
+DurianGym_ShiriAndBanjoDefeated_Text_10:
+# 196 "data/maps/DurianGym/scripts.pory"
+	.string "…Well, surprisingly, he's right!\n"
+	.string "Here, catch.$"
 
 DurianGym_Guide_Text_0:
-# 176 "data/maps/DurianGym/scripts.pory"
+# 209 "data/maps/DurianGym/scripts.pory"
 	.string "Huh. T'was beginner's luck.\n"
 	.string "Still… … … not bad, bub.$"
 
 DurianGym_GuideIntro_Text_0:
-# 186 "data/maps/DurianGym/scripts.pory"
+# 219 "data/maps/DurianGym/scripts.pory"
 	.string "Hey, bub. Yer new there, arent'cha?\n"
 	.string "Tell 'yuh what, just go home, bub.$"
 
 DurianGym_GuideIntro_Text_1:
-# 192 "data/maps/DurianGym/scripts.pory"
+# 225 "data/maps/DurianGym/scripts.pory"
 	.string "{PLAYER}$"
 
 DurianGym_GuideIntro_Text_2:
-# 193 "data/maps/DurianGym/scripts.pory"
+# 226 "data/maps/DurianGym/scripts.pory"
 	.string "Excuse me?!$"
 
 DurianGym_GuideIntro_Text_3:
-# 195 "data/maps/DurianGym/scripts.pory"
+# 228 "data/maps/DurianGym/scripts.pory"
 	.string "C'mon, don't kid yerself, bub.\n"
 	.string "Have 'yuh looked at yerself?\l"
 	.string "… … … … … … … … … … … … … … … … … … … … … … …\p"

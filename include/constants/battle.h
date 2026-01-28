@@ -509,6 +509,8 @@ enum __attribute__((packed)) MoveEffect
     MOVE_EFFECT_FAN_RALLY,
     MOVE_EFFECT_ECLIPSE,
     MOVE_EFFECT_HEAVENLY_PRAYER,
+    MOVE_EFFECT_ATTRACT,
+    MOVE_EFFECT_BIZARRE_MAGICK,
     // Max move effects end. They can be used for (custom) normal moves.
 
     NUM_MOVE_EFFECTS

@@ -1,6 +1,7 @@
 mapscripts CitrusIsland_PlayerHouse_MapScripts {
 MAP_SCRIPT_ON_TRANSITION {
     call(Common_EventScript_SetupRivalGfxId)
+    setrespawn (HEAL_LOCATION_ROUTE1)
     end
     }
 }

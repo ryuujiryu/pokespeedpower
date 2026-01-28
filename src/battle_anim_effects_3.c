@@ -5385,9 +5385,9 @@ void AnimTask_SnatchOpposingMonMove(u8 taskId)
         spriteId = GetAnimBattlerSpriteId(ANIM_ATTACKER);
         gTasks[taskId].data[1] += 0x800;
         if (IsOnPlayerSide(gBattleAnimAttacker))
-            gSprites[spriteId].x2 += (gTasks[taskId].data[1] >> 8);
+            gSprites[spriteId].x2 += (gTasks[taskId].data[1] >> 7);
         else
-            gSprites[spriteId].x2 -= (gTasks[taskId].data[1] >> 8);
+            gSprites[spriteId].x2 -= (gTasks[taskId].data[1] >> 7);
 
         gTasks[taskId].data[1] &= 0xFF;
         x = gSprites[spriteId].x + gSprites[spriteId].x2;
@@ -5490,13 +5490,13 @@ void AnimTask_SnatchOpposingMonMove(u8 taskId)
         gTasks[taskId].data[1] += 0x800;
         if (IsOnPlayerSide(gBattleAnimAttacker))
         {
-            gSprites[spriteId].x2 += (gTasks[taskId].data[1] >> 8);
+            gSprites[spriteId].x2 += (gTasks[taskId].data[1] >> 7);
             if (gSprites[spriteId].x2 + gSprites[spriteId].x >= GetBattlerSpriteCoord(gBattleAnimAttacker, BATTLER_COORD_X))
                 gSprites[spriteId].x2 = 0;
         }
         else
         {
-            gSprites[spriteId].x2 -= (gTasks[taskId].data[1] >> 8);
+            gSprites[spriteId].x2 -= (gTasks[taskId].data[1] >> 7);
             if (gSprites[spriteId].x2 + gSprites[spriteId].x <= GetBattlerSpriteCoord(gBattleAnimAttacker, BATTLER_COORD_X))
                 gSprites[spriteId].x2 = 0;
         }

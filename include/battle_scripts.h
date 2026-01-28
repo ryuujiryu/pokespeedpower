@@ -872,6 +872,7 @@ extern const u8 BattleScript_EffectHeavenlyPrayer[];
 extern const u8 BattleScript_FanRallyActivates[];
 extern const u8 BattleScript_EclipseActivates[];
 extern const u8 BattleScript_HeavenlyPrayerActivates[];
+extern const u8 BattleScript_EffectAttractDmg[];
 extern const u8 BattleScript_FickleBeamDoubled[];
 extern const u8 BattleScript_QuestionForfeitBattle[];
 extern const u8 BattleScript_ForfeitBattleGaveMoney[];

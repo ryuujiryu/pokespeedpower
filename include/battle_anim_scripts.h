@@ -958,6 +958,12 @@ extern const u8 gBattleAnimMove_SandTornado[];
 extern const u8 gBattleAnimMove_Eclipse[];
 extern const u8 gBattleAnimMove_HeavenlyPrayer[];
 extern const u8 gBattleAnimMove_FanRally[];
+extern const u8 gBattleAnimMove_BlackHole[];
+extern const u8 gBattleAnimMove_WretchedHands[];
+extern const u8 gBattleAnimMove_PowerChord[];
+extern const u8 gBattleAnimMove_Exposition[];
+extern const u8 gBattleAnimMove_BizarreMagick[];
+extern const u8 gBattleAnimMove_LusterCandy[];
 
 // status animations
 extern const u8 gBattleAnimStatus_Poison[];

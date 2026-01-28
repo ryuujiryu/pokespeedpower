@@ -161,8 +161,41 @@ script DurianGym_ShiriAndBanjoDefeated {
 	applymovement (LOCALID_DURIANGYM_SHIRI, Common_Movement_Delay48)
 	waitmovement (0)
     setspeaker("SHIRI")
-	msgbox ("ANYWAY! It will teach a POKéMON the move\n" "ROUND. It gets stronger if a POKéMON\l" "uses it after its ally did.")
+	msgbox ("ANYWAY! It will teach a POKéMON the move\n" "ROUND. It gets stronger if a POKéMON\l" "uses it after its ally did…$")
 	closemessage
+	applymovement (LOCALID_DURIANGYM_BANJO, Common_Movement_Poisoned)
+	waitmovement (0)
+	applymovement (LOCALID_DURIANGYM_BANJO, Common_Movement_FaceLeft)
+	waitmovement (0)
+	applymovement (LOCALID_DURIANGYM_BANJO, Common_Movement_Delay48)
+	waitmovement (0)
+    setspeaker("BANJO")
+	msgbox ("RI… RIRI…$")
+	closemessage
+	applymovement (LOCALID_DURIANGYM_SHIRI, Common_Movement_Upset)
+	waitmovement (0)
+	applymovement (LOCALID_DURIANGYM_SHIRI, Common_Movement_FaceRight)
+	waitmovement (0)
+	applymovement (LOCALID_DURIANGYM_SHIRI, Common_Movement_Delay48)
+	waitmovement (0)
+    setspeaker("SHIRI")
+	msgbox ("Hmm?!")
+	closemessage
+    setspeaker("BANJO")
+	msgbox ("We have to give… two copies…\n" "of the TECHNICAL ROUND…$")
+	closemessage
+	applymovement (LOCALID_DURIANGYM_SHIRI, Common_Movement_ExclamationMark)
+	waitmovement (0)
+	applymovement (LOCALID_DURIANGYM_SHIRI, Common_Movement_FaceDown)
+	waitmovement (0)
+	applymovement (LOCALID_DURIANGYM_SHIRI, Common_Movement_Delay48)
+	waitmovement (0)
+	applymovement (LOCALID_DURIANGYM_BANJO, Common_Movement_FaceDown)
+	waitmovement (0)
+    setspeaker("SHIRI")
+	msgbox ("…Well, surprisingly, he's right!\n" "Here, catch.")
+	closemessage
+	giveitem (ITEM_TM_ROUND)
     setvar (VAR_RIVALS_STATE, 3)
 	release
 	end

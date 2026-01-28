@@ -9808,3 +9808,11 @@ BattleScript_HeavenlyPrayerActivates::
 	playanimation BS_BATTLER_0, B_ANIM_METEOR_SHOWER_CONTINUES
 	call BattleScript_ActivateWeatherAbilities
 	end3
+
+BattleScript_EffectAttractDmg::
+    jumpifability BS_TARGET_SIDE, ABILITY_AROMA_VEIL, BattleScript_AromaVeilProtects
+    tryinfatuating BattleScript_ButItFailed
+   	printstring STRINGID_PKMNFELLINLOVE
+	waitmessage B_WAIT_TIME_LONG
+    call BattleScript_TryDestinyKnotAttacker
+    return

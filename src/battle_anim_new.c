@@ -7626,6 +7626,17 @@ const struct SpriteTemplate gFreezyFrostRisingSpearSpriteTemplate =
     .callback = SpriteCB_GeyserTarget
 };
 
+const struct SpriteTemplate gWretchedHandsTemplate =
+{
+    .tileTag = ANIM_TAG_WRING_OUT,
+    .paletteTag = ANIM_TAG_WRING_OUT,
+    .oam = &gOamData_AffineOff_ObjNormal_32x32,
+    .anims = gDummySpriteAnimTable,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = AnimParticleInVortex
+};
+
 // functions
 //general
 void AnimTask_IsTargetPartner(u8 taskId)
