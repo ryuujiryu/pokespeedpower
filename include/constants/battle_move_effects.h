@@ -347,6 +347,7 @@ enum __attribute__((packed)) BattleMoveEffects
     EFFECT_ORDER_UP,
     EFFECT_RAPID_SPIN,
     EFFECT_SPECTRAL_THIEF,
+    EFFECT_EXPOSURE,
     EFFECT_RECOIL,
     EFFECT_SMACK_DOWN,
     EFFECT_LIFE_DEW,

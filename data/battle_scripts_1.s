@@ -9816,3 +9816,31 @@ BattleScript_EffectAttractDmg::
 	waitmessage B_WAIT_TIME_LONG
     call BattleScript_TryDestinyKnotAttacker
     return
+
+BattleScript_ExposureSteal::
+	setbyte sB_ANIM_TURN, 1
+	playmoveanimation MOVE_EXPOSITION
+	waitanimation
+	setbyte sB_ANIM_TURN, 0
+	printstring STRINGID_SPECTRALTHIEFSTEAL
+	waitmessage B_WAIT_TIME_LONG
+	setbyte sB_ANIM_ARG2, 0
+	spectralthiefprintstats
+	flushtextbox
+	goto BattleScript_EffectExposureFromDamage
+
+BattleScript_EffectExposure::
+	attackcanceler
+	accuracycheck BattleScript_PrintMoveMissed, ACC_CURR_MOVE
+	attackstring
+	ppreduce
+	typecalc
+	tryspectralthiefsteal BattleScript_ExposureSteal
+BattleScript_EffectExposureFromDamage:
+	critcalc
+	damagecalc
+	adjustdamage
+	call BattleScript_Hit_RetFromAtkAnimation
+	tryfaintmon BS_TARGET
+	moveendall
+	end

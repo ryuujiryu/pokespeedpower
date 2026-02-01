@@ -6465,6 +6465,30 @@ Cry_Scavult::
 	.incbin "sound/direct_sound_samples/cries/scavult.bin"
 
 	.align 2
+Cry_Masalizard::
+	.incbin "sound/direct_sound_samples/cries/masalizard.bin"
+
+	.align 2
+Cry_Elephlush::
+	.incbin "sound/direct_sound_samples/cries/elephlush.bin"
+
+	.align 2
+Cry_Lotpole::
+	.incbin "sound/direct_sound_samples/cries/lotpole.bin"
+
+	.align 2
+Cry_Tanook::
+	.incbin "sound/direct_sound_samples/cries/tanook.bin"
+
+	.align 2
+Cry_Pawtrain::
+	.incbin "sound/direct_sound_samples/cries/pawtrain.bin"
+
+	.align 2
+Cry_Kurstraw::
+	.incbin "sound/direct_sound_samples/cries/kurstraw.bin"
+
+	.align 2
 DirectSoundWaveData_register_noise::
 	.incbin "sound/direct_sound_samples/register_noise.bin"
 

@@ -2425,6 +2425,12 @@ gCryTable::
 	cry Cry_Pecharunt
 .endif @ P_FAMILY_PECHARUNT
 	cry Cry_Scavult
+	cry Cry_Masalizard
+	cry Cry_Elephlush
+	cry Cry_Lotpole
+	cry Cry_Tanook
+	cry Cry_Pawtrain
+	cry Cry_Kurstraw
 .endif @ P_CRIES_ENABLED
 
 	.align 2
@@ -4854,4 +4860,10 @@ gCryTable_Reverse::
 	cry_reverse Cry_Pecharunt
 .endif @ P_FAMILY_PECHARUNT
 	cry_reverse Cry_Scavult
+	cry_reverse Cry_Masalizard
+	cry_reverse Cry_Elephlush
+	cry_reverse Cry_Lotpole
+	cry_reverse Cry_Tanook
+	cry_reverse Cry_Pawtrain
+	cry_reverse Cry_Kurstraw
 .endif @ P_CRIES_ENABLED

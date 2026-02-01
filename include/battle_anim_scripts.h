@@ -964,6 +964,8 @@ extern const u8 gBattleAnimMove_PowerChord[];
 extern const u8 gBattleAnimMove_Exposition[];
 extern const u8 gBattleAnimMove_BizarreMagick[];
 extern const u8 gBattleAnimMove_LusterCandy[];
+extern const u8 gBattleAnimMove_MoltenStone[];
+extern const u8 gBattleAnimMove_NobleBreath[];
 
 // status animations
 extern const u8 gBattleAnimStatus_Poison[];

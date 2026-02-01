@@ -21,7 +21,7 @@
 #define SWSH_SUMMARY_SWSH_TYPE_ICONS                  FALSE      // use Gen 8 style type icons instead of the default ones
 #define SWSH_SUMMARY_SWSH_TYPE_ICONS_SV_PAL           FALSE     // use Scarlet/Violet palette for type icons
                                                                 // out of the box the vanilla icons don't fit well, this is mostly a compatibility
-#define SWSH_SUMMARY_SCROLLING_BG                     TRUE      // enables scrolling animated background
+#define SWSH_SUMMARY_SCROLLING_BG                     FALSE      // enables scrolling animated background
 #define SWSH_SUMMARY_BG_BLEND                         FALSE     // enables alpha blending for the main UI (semi-transparency)
 #define SWSH_SUMMARY_MON_IDLE_ANIMS                   TRUE      // loops the mon animations regularly as an "idle" anim
 #define SWSH_SUMMARY_MON_SHADOWS                      TRUE      // displays a shadow for the mon sprite

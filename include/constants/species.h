@@ -1638,8 +1638,14 @@
 #define SPECIES_MIMIKYU_BUSTED_TOTEM                    1523
 #define SPECIES_MIMIKYU_TOTEM_BUSTED                    SPECIES_MIMIKYU_BUSTED_TOTEM
 #define SPECIES_SCAVULT                                 1524
+#define SPECIES_MASALIZARD                              1525
+#define SPECIES_ELEPHLUSH                               1526
+#define SPECIES_LOTPOLE                                 1527
+#define SPECIES_TANOOK                                  1528
+#define SPECIES_PAWTRAIN                                1529
+#define SPECIES_KURSTRAW                                1530
 
-#define SPECIES_EGG                                     (SPECIES_SCAVULT + 1)
+#define SPECIES_EGG                                     (SPECIES_KURSTRAW + 1)
 
 #define NUM_SPECIES SPECIES_EGG
 

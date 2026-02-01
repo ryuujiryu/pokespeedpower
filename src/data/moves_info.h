@@ -23263,7 +23263,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
-        .argument.twoTurnAttack = { .stringId = STRINGID_ELECTROSHOTCHARGING, .status = B_WEATHER_RAIN },
+        .argument.twoTurnAttack = { .stringId = STRINGID_POWERCHORDCHARGING},
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_SP_ATK_PLUS_1,
             .self = TRUE,
@@ -23308,7 +23308,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .description = COMPOUND_STRING(
             "Attacks with a high-tempo tune.\n"
             "Raises the user’s SPEED."),
-        .effect = EFFECT_HIT,
+        .effect = EFFECT_EXPOSURE,
         .power = 50,
         .type = TYPE_DARK,
         .accuracy = 100,
@@ -23316,12 +23316,6 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
-        .thawsUser = TRUE,
-        .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_SPD_PLUS_1,
-            .self = TRUE,
-            .chance = 100,
-        }),
         .contestEffect = CONTEST_EFFECT_HIGHLY_APPEALING,
         .contestCategory = CONTEST_CATEGORY_TOUGH,
         .contestComboStarterId = COMBO_STARTER_SCALD,
@@ -23390,14 +23384,14 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("LUSTER CANDY"),
         .description = COMPOUND_STRING(
-            "The user shoots cold water\n"
-            "that may freeze the foe."),
-        .effect = EFFECT_ATTACK_UP_USER_ALLY,
+            "The user is embraced by a rainbow-colored\n"
+            "glow which boosts its ATTACK, DEFENSE and SPEED."),
+        .effect = EFFECT_VICTORY_DANCE,
         .power = 0,
-        .type = TYPE_SOUND,
+        .type = TYPE_NORMAL,
         .accuracy = 0,
-        .pp = 40,
-        .target = MOVE_TARGET_USER, // Targeting is handled through the script
+        .pp = 20,
+        .target = MOVE_TARGET_USER,
         .priority = 0,
         .category = DAMAGE_CATEGORY_STATUS,
         .zMove = { .effect = Z_EFFECT_ATK_UP_1 },
@@ -23412,8 +23406,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("ECLIPSE"),
         .description = COMPOUND_STRING(
-            "Attacks with a high-tempo tune.\n"
-            "Raises the user’s SPEED."),
+            "A full moon falls on stage,\n"
+            "powering up DARK-type moves."),
         .effect = EFFECT_ECLIPSE,
         .power = 50,
         .type = TYPE_SOUND,
@@ -23422,12 +23416,6 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
-        .thawsUser = TRUE,
-        .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_SPD_PLUS_1,
-            .self = TRUE,
-            .chance = 100,
-        }),
         .contestEffect = CONTEST_EFFECT_HIGHLY_APPEALING,
         .contestCategory = CONTEST_CATEGORY_TOUGH,
         .contestComboStarterId = COMBO_STARTER_SCALD,
@@ -23437,57 +23425,51 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
 
     [MOVE_MOLTEN_STONE] =
     {
-        .name = COMPOUND_STRING("LOVE SPARK"),
+        .name = COMPOUND_STRING("MOLTEN STONE"),
         .description = COMPOUND_STRING(
-            "Makes the opposite gender fall\n"
-            "in love so much it gets hurt."),
-        .effect = EFFECT_HIT,
-        .power = 50,
-        .type = TYPE_ELECTRIC,
-        .accuracy = 80,
+            "This attack does ROCK\n"
+            "and FIRE-type damage."),
+        .effect = EFFECT_TWO_TYPED_MOVE,
+        .power = 80,
+        .type = TYPE_ROCK,
+        .accuracy = 95,
         .pp = 10,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
-        .category = DAMAGE_CATEGORY_STATUS,
-        .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_INFATUATE_SIDE,
-        }),
-        .zMove = { .effect = Z_EFFECT_RESET_STATS },
-        .magicCoatAffected = TRUE,
-        .ignoresSubstitute = TRUE,
-        .contestEffect = CONTEST_EFFECT_MAKE_FOLLOWING_MONS_NERVOUS,
-        .contestCategory = CONTEST_CATEGORY_CUTE,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .zMove = { .powerOverride = 170 },
+        .argument = { .type = TYPE_FIRE },
+        .makesContact = TRUE,
+        .minimizeDoubleDamage = TRUE,
+        .gravityBanned = TRUE,
+        .skyBattleBanned = TRUE,
+        .contestEffect = CONTEST_EFFECT_HIGHLY_APPEALING,
+        .contestCategory = CONTEST_CATEGORY_COOL,
         .contestComboStarterId = 0,
         .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_LoveSpark,
+        .battleAnimScript = gBattleAnimMove_MoltenStone,
         .validApprenticeMove = TRUE,
     },
 
     [MOVE_NOBLE_BREATH] =
     {
-        .name = COMPOUND_STRING("RAGNAROK"),
+        .name = COMPOUND_STRING("NOBLE BREATH"),
         .description = COMPOUND_STRING(
-            "Traps the foe in a fierce\n"
-            "sandstorm. May cause confusion."),
-        .effect = EFFECT_HIT,
-        .power = 120,
-        .type = TYPE_GROUND,
-        .accuracy = 70,
+            "Double power if the user\n"
+            "moves before the target."),
+        .effect = EFFECT_BOLT_BEAK,
+        .power = 80,
+        .type = TYPE_DRAGON,
+        .accuracy = 100,
         .pp = 10,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
-        .category = DAMAGE_CATEGORY_SPECIAL,
-        .windMove = TRUE,
-        .damagesAirborne = TRUE,
-        .accuracy50InSun = TRUE,
-        .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_CONFUSION,
-            .chance = 30,
-        }),
-        .contestEffect = CONTEST_EFFECT_STARTLE_PREV_MONS,
-        .contestCategory = CONTEST_CATEGORY_COOL,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .contestEffect = CONTEST_EFFECT_BETTER_IF_FIRST,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
         .contestComboStarterId = 0,
         .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_SandTornado,
+        .battleAnimScript = gBattleAnimMove_NobleBreath,
     },
 };

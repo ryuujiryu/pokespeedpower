@@ -338,6 +338,7 @@ extern const u8 BattleScript_GrassySurgeActivates[];
 extern const u8 BattleScript_MistySurgeActivates[];
 extern const u8 BattleScript_ElectricSurgeActivates[];
 extern const u8 BattleScript_EffectSpectralThief[];
+extern const u8 BattleScript_EffectExposure[];
 extern const u8 BattleScript_EffectLifeDew[];
 extern const u8 BattleScript_EffectSteelRoller[];
 extern const u8 BattleScript_AbilityRaisesDefenderStat[];
