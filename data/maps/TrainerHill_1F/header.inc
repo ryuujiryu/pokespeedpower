@@ -7,7 +7,7 @@ TrainerHill_1F:
 	.4byte TrainerHill_1F_MapEvents
 	.4byte TrainerHill_1F_MapScripts
 	.4byte NULL
-	.2byte MUS_B_TOWER_RS
+	.2byte MUS_APPLEBURG_GYM
 	.2byte LAYOUT_TRAINER_HILL_1F
 	.byte MAPSEC_TRAINER_HILL
 	.byte FALSE

@@ -7,7 +7,7 @@ TrainerHill_Roof:
 	.4byte TrainerHill_Roof_MapEvents
 	.4byte TrainerHill_Roof_MapScripts
 	.4byte NULL
-	.2byte MUS_B_TOWER_RS
+	.2byte MUS_APPLEBURG_GYM
 	.2byte LAYOUT_TRAINER_HILL_ROOF
 	.byte MAPSEC_TRAINER_HILL
 	.byte FALSE

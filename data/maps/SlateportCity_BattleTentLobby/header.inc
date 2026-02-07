@@ -7,7 +7,7 @@ SlateportCity_BattleTentLobby:
 	.4byte SlateportCity_BattleTentLobby_MapEvents
 	.4byte SlateportCity_BattleTentLobby_MapScripts
 	.4byte NULL
-	.2byte MUS_B_TOWER_RS
+	.2byte MUS_APPLEBURG_GYM
 	.2byte LAYOUT_BATTLE_TENT_LOBBY
 	.byte MAPSEC_SLATEPORT_CITY
 	.byte FALSE

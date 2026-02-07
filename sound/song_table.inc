@@ -385,7 +385,7 @@ gSongTable::
 	song mus_abandoned_ship, 0, 0
 	song mus_fortree, 0, 0
 	song mus_birch_lab, 0, 0
-	song mus_b_tower_rs, 0, 0
+	song mus_appleburg_gym, 0, 0
 	song mus_encounter_swimmer, 0, 0
 	song mus_cave_of_origin, 0, 0
 	song mus_obtain_berry, 2, 2

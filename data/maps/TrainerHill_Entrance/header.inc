@@ -7,7 +7,7 @@ TrainerHill_Entrance:
 	.4byte TrainerHill_Entrance_MapEvents
 	.4byte TrainerHill_Entrance_MapScripts
 	.4byte NULL
-	.2byte MUS_B_TOWER_RS
+	.2byte MUS_APPLEBURG_GYM
 	.2byte LAYOUT_TRAINER_HILL_ENTRANCE
 	.byte MAPSEC_TRAINER_HILL
 	.byte FALSE

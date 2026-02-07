@@ -7,7 +7,7 @@ BattleFrontier_Lounge4:
 	.4byte BattleFrontier_Lounge4_MapEvents
 	.4byte BattleFrontier_Lounge4_MapScripts
 	.4byte NULL
-	.2byte MUS_B_TOWER_RS
+	.2byte MUS_APPLEBURG_GYM
 	.2byte LAYOUT_BATTLE_FRONTIER_LOUNGE2
 	.byte MAPSEC_BATTLE_FRONTIER
 	.byte FALSE

@@ -7,7 +7,7 @@ TrainerHill_Elevator:
 	.4byte TrainerHill_Elevator_MapEvents
 	.4byte TrainerHill_Elevator_MapScripts
 	.4byte NULL
-	.2byte MUS_B_TOWER_RS
+	.2byte MUS_APPLEBURG_GYM
 	.2byte LAYOUT_BATTLE_ELEVATOR
 	.byte MAPSEC_TRAINER_HILL
 	.byte FALSE

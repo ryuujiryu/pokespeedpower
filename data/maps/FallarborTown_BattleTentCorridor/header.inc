@@ -7,7 +7,7 @@ FallarborTown_BattleTentCorridor:
 	.4byte FallarborTown_BattleTentCorridor_MapEvents
 	.4byte FallarborTown_BattleTentCorridor_MapScripts
 	.4byte NULL
-	.2byte MUS_B_TOWER_RS
+	.2byte MUS_APPLEBURG_GYM
 	.2byte LAYOUT_BATTLE_TENT_CORRIDOR
 	.byte MAPSEC_FALLARBOR_TOWN
 	.byte FALSE

@@ -7,7 +7,7 @@ VerdanturfTown_BattleTentLobby:
 	.4byte VerdanturfTown_BattleTentLobby_MapEvents
 	.4byte VerdanturfTown_BattleTentLobby_MapScripts
 	.4byte NULL
-	.2byte MUS_B_TOWER_RS
+	.2byte MUS_APPLEBURG_GYM
 	.2byte LAYOUT_BATTLE_TENT_LOBBY
 	.byte MAPSEC_VERDANTURF_TOWN
 	.byte FALSE

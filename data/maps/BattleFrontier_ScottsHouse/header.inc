@@ -7,7 +7,7 @@ BattleFrontier_ScottsHouse:
 	.4byte BattleFrontier_ScottsHouse_MapEvents
 	.4byte BattleFrontier_ScottsHouse_MapScripts
 	.4byte NULL
-	.2byte MUS_B_TOWER_RS
+	.2byte MUS_APPLEBURG_GYM
 	.2byte LAYOUT_BATTLE_FRONTIER_SCOTTS_HOUSE
 	.byte MAPSEC_BATTLE_FRONTIER
 	.byte FALSE

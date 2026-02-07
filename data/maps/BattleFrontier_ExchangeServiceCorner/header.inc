@@ -7,7 +7,7 @@ BattleFrontier_ExchangeServiceCorner:
 	.4byte BattleFrontier_ExchangeServiceCorner_MapEvents
 	.4byte BattleFrontier_ExchangeServiceCorner_MapScripts
 	.4byte NULL
-	.2byte MUS_B_TOWER_RS
+	.2byte MUS_APPLEBURG_GYM
 	.2byte LAYOUT_BATTLE_FRONTIER_EXCHANGE_SERVICE_CORNER
 	.byte MAPSEC_BATTLE_FRONTIER
 	.byte FALSE
