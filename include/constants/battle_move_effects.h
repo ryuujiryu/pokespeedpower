@@ -357,7 +357,6 @@ enum __attribute__((packed)) BattleMoveEffects
     EFFECT_CEASELESS_EDGE, // Same applies to spikes
     EFFECT_SLOTS,
     EFFECT_ACID_RAIN,
-    EFFECT_SOIL_REGENERATION,
     EFFECT_ENERGY_BLAST,
     EFFECT_FAN_RALLY,
     EFFECT_ECLIPSE,

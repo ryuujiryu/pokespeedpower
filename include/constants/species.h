@@ -1644,8 +1644,21 @@
 #define SPECIES_TANOOK                                  1528
 #define SPECIES_PAWTRAIN                                1529
 #define SPECIES_KURSTRAW                                1530
+#define SPECIES_HABANAGA                                1531
+#define SPECIES_TABASILISK                              1532
+#define SPECIES_ELEPHUSION                              1533
+#define SPECIES_ELEPHANTEA                              1534
+#define SPECIES_PADMARA                                 1535
+#define SPECIES_PADMANDUKA                              1536
+#define SPECIES_TANOOKING                               1537
+#define SPECIES_LEDIRO                                  1538
+#define SPECIES_ASCLYPAS                                1539
+#define SPECIES_KRICKESTRO                              1540
+#define SPECIES_KEYNAIN                                 1541
+#define SPECIES_PANGSHI                                 1542
+#define SPECIES_CHIMENCORE                              1543
 
-#define SPECIES_EGG                                     (SPECIES_KURSTRAW + 1)
+#define SPECIES_EGG                                     (SPECIES_CHIMENCORE + 1)
 
 #define NUM_SPECIES SPECIES_EGG
 

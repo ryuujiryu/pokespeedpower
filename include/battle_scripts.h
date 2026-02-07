@@ -866,7 +866,6 @@ extern const u8 BattleScript_EffectFickleBeam[];
 extern const u8 BattleScript_EffectSlots[];
 extern const u8 BattleScript_EffectAcidRain[];
 extern const u8 BattleScript_AcidRainActivates[];
-extern const u8 BattleScript_EffectSoilRegeneration[];
 extern const u8 BattleScript_EffectFanRally[];
 extern const u8 BattleScript_EffectEclipse[];
 extern const u8 BattleScript_EffectHeavenlyPrayer[];

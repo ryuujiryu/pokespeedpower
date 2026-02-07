@@ -1847,7 +1847,6 @@ bool32 IsHazardClearingMove(u32 move)
     {
     case EFFECT_RAPID_SPIN:
     case EFFECT_TIDY_UP:
-    case EFFECT_SOIL_REGENERATION:
         return TRUE;
     case EFFECT_DEFOG:
         if (B_DEFOG_EFFECT_CLEARING >= GEN_6)
@@ -3982,7 +3981,6 @@ static u32 GetAIEffectGroup(enum BattleMoveEffects effect)
         break;
     case EFFECT_RAPID_SPIN:
     case EFFECT_TIDY_UP:
-    case EFFECT_SOIL_REGENERATION:
         aiEffect |= AI_EFFECT_CLEAR_HAZARDS;
         break;
     case EFFECT_BRICK_BREAK:

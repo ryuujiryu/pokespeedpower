@@ -22,13 +22,13 @@
     F(RAIN_DANCE) \
     F(GIGA_DRAIN) \
     F(WRETCHED_HANDS) \
-    F(SOIL_REGENERATION) \
+    F(FLOWER_TYPHOON) \
     F(POWER_CHORD) \
     F(IRON_TAIL) \
     F(THUNDERBOLT) \
     F(THUNDER) \
     F(EARTHQUAKE) \
-    F(RETURN) \
+    F(BODY_SLAM) \
     F(SPIRIT_GUN) \
     F(PSYCHIC) \
     F(SHADOW_BALL) \

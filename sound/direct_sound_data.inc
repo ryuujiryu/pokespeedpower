@@ -8451,3 +8451,15 @@ DirectSoundWaveData_col_guitar_4::
     .align 2
 DirectSoundWaveData_col_guitar_5::
     .incbin "sound/direct_sound_samples/col_guitar_5.bin"
+
+    .align 2
+DirectSoundWaveData_bouzouki_c4::
+    .incbin "sound/direct_sound_samples/bouzouki_c4.bin"
+
+    .align 2
+DirectSoundWaveData_dance_drums_kick::
+    .incbin "sound/direct_sound_samples/dance_drums_kick.bin"
+
+    .align 2
+DirectSoundWaveData_drum_and_percussion_stick::
+    .incbin "sound/direct_sound_samples/drum_and_percussion_stick.bin"

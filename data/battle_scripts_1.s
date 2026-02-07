@@ -9735,29 +9735,6 @@ BattleScript_AcidRainActivates::
 	call BattleScript_ActivateWeatherAbilities
 	end3
 
-BattleScript_EffectSoilRegeneration::
-    attackcanceler
-    attackstring
-    pause B_WAIT_TIME_MED
-    ppreduce
-    waitstate
-    saveattacker
-    savetarget
-    trytidyup FALSE, BattleScript_EffectSoilRegenerationDoMoveAnimation
-    restoreattacker
-    restoretarget
-    goto BattleScript_RestoreHp
-
-BattleScript_EffectSoilRegenerationDoMoveAnimation::
-    attackanimation
-    waitanimation
-    trytidyup TRUE, NULL
-    printstring STRINGID_SOILRENEWALCOMPLETE
-    waitmessage B_WAIT_TIME_LONG
-    restoreattacker
-    restoretarget
-    goto BattleScript_RestoreHp
-
 BattleScript_EffectFanRally::
 	attackcanceler
 	attackstring

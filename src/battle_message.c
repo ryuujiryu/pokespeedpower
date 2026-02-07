@@ -903,7 +903,6 @@ const u8 *const gBattleStringsTable[STRINGID_COUNT] =
     [STRINGID_STARTEDACIDRAIN]                      = COMPOUND_STRING("It started to rain acid!"),
     [STRINGID_ACIDRAINCONTINUES]                    = COMPOUND_STRING("Acid rain continues to fall."),
     [STRINGID_ACIDRAINSTOPPED]                      = COMPOUND_STRING("The acid rain stopped."),
-    [STRINGID_SOILRENEWALCOMPLETE]                  = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX} restored the terrain!"),
     [STRINGID_EXCITEDCROWD]                         = COMPOUND_STRING("The crowd is getting excited!"),
     [STRINGID_HYPEDCROWD]                           = COMPOUND_STRING("The crowd is in a frenzy!"),
     [STRINGID_BOREDCROWD]                           = COMPOUND_STRING("The crowd calmed down."),

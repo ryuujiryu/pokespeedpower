@@ -13,7 +13,7 @@ FallarborTown_CozmosHouse_EventScript_ProfCozmo::
 # 7 "data/maps/FallarborTown_CozmosHouse/scripts.pory"
 	faceplayer
 # 8 "data/maps/FallarborTown_CozmosHouse/scripts.pory"
-	goto_if_set FLAG_RECEIVED_TM_RETURN, FallarborTown_CozmosHouse_EventScript_GaveMeteorite
+	goto_if_set FLAG_RECEIVED_TM_BODY_SLAM, FallarborTown_CozmosHouse_EventScript_GaveMeteorite
 # 9 "data/maps/FallarborTown_CozmosHouse/scripts.pory"
 	checkitem ITEM_METEORITE
 # 10 "data/maps/FallarborTown_CozmosHouse/scripts.pory"
@@ -37,7 +37,7 @@ FallarborTown_CozmosHouse_EventScript_PlayerHasMeteorite::
 # 19 "data/maps/FallarborTown_CozmosHouse/scripts.pory"
 	msgbox FallarborTown_CozmosHouse_Text_PleaseUseThisTM, MSGBOX_DEFAULT
 # 20 "data/maps/FallarborTown_CozmosHouse/scripts.pory"
-	giveitem ITEM_TM_RETURN
+	giveitem ITEM_TM_BODY_SLAM
 # 21 "data/maps/FallarborTown_CozmosHouse/scripts.pory"
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 # 22 "data/maps/FallarborTown_CozmosHouse/scripts.pory"
@@ -45,7 +45,7 @@ FallarborTown_CozmosHouse_EventScript_PlayerHasMeteorite::
 # 23 "data/maps/FallarborTown_CozmosHouse/scripts.pory"
 	call Common_EventScript_PlayerHandedOverTheItem
 # 24 "data/maps/FallarborTown_CozmosHouse/scripts.pory"
-	setflag FLAG_RECEIVED_TM_RETURN
+	setflag FLAG_RECEIVED_TM_BODY_SLAM
 # 25 "data/maps/FallarborTown_CozmosHouse/scripts.pory"
 	msgbox FallarborTown_CozmosHouse_Text_ReallyGoingToHelpMyResearch, MSGBOX_DEFAULT
 # 26 "data/maps/FallarborTown_CozmosHouse/scripts.pory"
@@ -101,7 +101,7 @@ FallarborTown_CozmosHouse_EventScript_CozmosWife::
 # 51 "data/maps/FallarborTown_CozmosHouse/scripts.pory"
 	faceplayer
 # 52 "data/maps/FallarborTown_CozmosHouse/scripts.pory"
-	goto_if_set FLAG_RECEIVED_TM_RETURN, FallarborTown_CozmosHouse_EventScript_CozmoIsHappy
+	goto_if_set FLAG_RECEIVED_TM_BODY_SLAM, FallarborTown_CozmosHouse_EventScript_CozmoIsHappy
 # 53 "data/maps/FallarborTown_CozmosHouse/scripts.pory"
 	goto_if_set FLAG_DEFEATED_EVIL_TEAM_MT_CHIMNEY, FallarborTown_CozmosHouse_EventScript_CozmoIsSad
 # 54 "data/maps/FallarborTown_CozmosHouse/scripts.pory"

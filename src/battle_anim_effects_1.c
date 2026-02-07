@@ -2135,6 +2135,17 @@ const struct SpriteTemplate gMoonlightSparkleSpriteTemplate =
     .callback = AnimMoonlightSparkle,
 };
 
+const struct SpriteTemplate gOfferingSparkleSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_GREEN_SPARKLE,
+    .paletteTag = ANIM_TAG_GRAY_SMOKE,
+    .oam = &gOamData_AffineOff_ObjNormal_16x16,
+    .anims = gMoonlightSparkleAnimTable,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = AnimMoonlightSparkle,
+};
+
 const union AnimCmd gHealingBlueStarAnimCmds[] =
 {
     ANIMCMD_FRAME(0, 2),

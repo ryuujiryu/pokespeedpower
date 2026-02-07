@@ -4,6 +4,7 @@
 .include "sound/voicegroups/drumsets/rs.inc"
 .include "sound/voicegroups/drumsets/frlg.inc"
 .include "sound/voicegroups/drumsets/emerald_1.inc"
+.include "sound/voicegroups/drumsets/drill_dozer.inc"
 .include "sound/voicegroups/drumsets/emerald_2.inc"
 
 @ key splits

@@ -3068,69 +3068,69 @@ const struct WildPokemonInfo gMeteorFalls_StevensCave_Morning_LandMonsInfo = { 1
 
 const struct WildPokemon gRoute1_Morning_LandMons[] =
 {
-    { 2, 2, SPECIES_ZIGZAGOON },
+    { 2, 2, SPECIES_TANOOK },
     { 2, 2, SPECIES_SCAVULT },
-    { 3, 3, SPECIES_ZIGZAGOON },
+    { 3, 3, SPECIES_TANOOK },
     { 2, 2, SPECIES_CHERUBI },
     { 3, 3, SPECIES_SCAVULT },
     { 2, 2, SPECIES_LEDYBA },
-    { 3, 3, SPECIES_ZIGZAGOON },
-    { 3, 3, SPECIES_SCAVULT },
-    { 3, 3, SPECIES_LEDYBA },
+    { 3, 3, SPECIES_TANOOK },
     { 3, 3, SPECIES_CHERUBI },
-    { 3, 3, SPECIES_SCAVULT },
+    { 3, 3, SPECIES_LEDYBA },
+    { 3, 3, SPECIES_POLTCHAGEIST },
+    { 3, 3, SPECIES_POLTCHAGEIST },
     { 3, 3, SPECIES_LEDYBA },
 };
 const struct WildPokemonInfo gRoute1_Morning_LandMonsInfo = { 20, gRoute1_Morning_LandMons };
 
 const struct WildPokemon gRoute52_Morning_LandMons[] =
 {
-    { 3, 3, SPECIES_ZIGZAGOON },
-    { 3, 3, SPECIES_WURMPLE },
-    { 3, 3, SPECIES_SCAVULT },
-    { 3, 3, SPECIES_CHERUBI },
-    { 4, 4, SPECIES_SCAVULT },
-    { 4, 4, SPECIES_ZIGZAGOON },
-    { 3, 3, SPECIES_LOTAD },
-    { 4, 4, SPECIES_CHERUBI },
-    { 4, 4, SPECIES_LOTAD },
-    { 3, 3, SPECIES_GROWLITHE },
-    { 5, 5, SPECIES_LOTAD },
-    { 4, 4, SPECIES_GROWLITHE },
+    { 5, 5, SPECIES_TANOOK },
+    { 5, 5, SPECIES_LEDYBA },
+    { 5, 5, SPECIES_SCAVULT },
+    { 5, 5, SPECIES_CHERUBI },
+    { 6, 6, SPECIES_SCAVULT },
+    { 6, 6, SPECIES_TANOOK },
+    { 5, 5, SPECIES_CHERUBI },
+    { 6, 6, SPECIES_CHERUBI },
+    { 6, 6, SPECIES_PAWTRAIN },
+    { 5, 5, SPECIES_PAWTRAIN },
+    { 7, 7, SPECIES_PAWTRAIN },
+    { 6, 6, SPECIES_PAWTRAIN },
 };
 const struct WildPokemonInfo gRoute52_Morning_LandMonsInfo = { 10, gRoute52_Morning_LandMons };
 
 const struct WildPokemon gRoute53_Morning_LandMons[] =
 {
-    { 5, 5, SPECIES_HOPPIP },
-    { 5, 5, SPECIES_SCAVULT },
-    { 5, 5, SPECIES_HOPPIP },
-    { 5, 5, SPECIES_GEODUDE },
-    { 5, 5, SPECIES_HOPPIP },
-    { 5, 5, SPECIES_WHISMUR },
-    { 5, 5, SPECIES_GEODUDE },
-    { 5, 5, SPECIES_WHISMUR },
-    { 5, 5, SPECIES_NATU },
-    { 5, 5, SPECIES_WHISMUR },
-    { 5, 5, SPECIES_NATU },
-    { 5, 5, SPECIES_NATU },
+    { 12, 12, SPECIES_TANOOK },
+    { 12, 12, SPECIES_SCAVULT },
+    { 13, 13, SPECIES_SCAVULT },
+    { 13, 13, SPECIES_TANOOK },
+    { 13, 13, SPECIES_WINGULL },
+    { 12, 14, SPECIES_WINGULL },
+    { 11, 11, SPECIES_CHERUBI },
+    { 13, 13, SPECIES_CHERUBI },
+    { 14, 14, SPECIES_WINGULL },
+    { 11, 12, SPECIES_WHISMUR },
+    { 12, 12, SPECIES_WHISMUR },
+    { 14, 14, SPECIES_WHISMUR },
 };
 const struct WildPokemonInfo gRoute53_Morning_LandMonsInfo = { 10, gRoute53_Morning_LandMons };
 
 const struct WildPokemon gCherryWoods_Morning_LandMons[] =
 {
-    { 5, 5, SPECIES_CHERUBI },
-    { 5, 5, SPECIES_CHERRIM },
-    { 5, 5, SPECIES_CHERUBI },
-    { 5, 5, SPECIES_CHERRIM },
-    { 5, 5, SPECIES_CHERUBI },
-    { 5, 5, SPECIES_CHERRIM },
-    { 5, 5, SPECIES_ZIGZAGOON },
-    { 5, 5, SPECIES_CHERRIM },
-    { 5, 5, SPECIES_CHERUBI },
-    { 5, 5, SPECIES_CHERRIM },
-    { 5, 5, SPECIES_CHERUBI },
-    { 5, 5, SPECIES_CHERRIM },
+    { 9, 9, SPECIES_TANOOK },
+    { 9, 9, SPECIES_LEDYBA },
+    { 9, 9, SPECIES_CHERUBI },
+    { 10, 10, SPECIES_LEDYBA },
+    { 10, 10, SPECIES_TANOOK },
+    { 8, 8, SPECIES_POLTCHAGEIST },
+    { 10, 10, SPECIES_CHERUBI },
+    { 9, 9, SPECIES_POLTCHAGEIST },
+    { 11, 11, SPECIES_CHERUBI },
+    { 8, 8, SPECIES_KURSTRAW },
+    { 10, 10, SPECIES_KURSTRAW },
+    { 9, 9, SPECIES_PICHU },
 };
 const struct WildPokemonInfo gCherryWoods_Morning_LandMonsInfo = { 10, gCherryWoods_Morning_LandMons };
 

@@ -23,9 +23,9 @@
                                                                 // out of the box the vanilla icons don't fit well, this is mostly a compatibility
 #define SWSH_SUMMARY_SCROLLING_BG                     FALSE      // enables scrolling animated background
 #define SWSH_SUMMARY_BG_BLEND                         FALSE     // enables alpha blending for the main UI (semi-transparency)
-#define SWSH_SUMMARY_MON_IDLE_ANIMS                   TRUE      // loops the mon animations regularly as an "idle" anim
+#define SWSH_SUMMARY_MON_IDLE_ANIMS                   FALSE      // loops the mon animations regularly as an "idle" anim
 #define SWSH_SUMMARY_MON_SHADOWS                      TRUE      // displays a shadow for the mon sprite
-#define SWSH_SUMMARY_SHOW_GIGANTAMAX                  TRUE      // show gigantamax icon
+#define SWSH_SUMMARY_SHOW_GIGANTAMAX                  FALSE      // show gigantamax icon
 #define SWSH_SUMMARY_SHOW_TERA_TYPE                   FALSE      // show tera type icons
 
 // Looking for configs for renaming mons and relearning moves? Those use the standard expansion configs

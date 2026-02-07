@@ -52,20 +52,20 @@ const struct SpeciesInfo gSpeciesInfoTenkei[] =
         .iconPalIndex = 2,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         SHADOW(-2, 3, SHADOW_SIZE_S)
-        FOOTPRINT(Chespin)
+        FOOTPRINT(Pikachu)
         OVERWORLD(
-            sPicTable_Chespin,
+            sPicTable_Pikachu,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
             sAnimTable_Following,
-            gOverworldPalette_Chespin,
-            gShinyOverworldPalette_Chespin
+            gOverworldPalette_Pikachu,
+            gShinyOverworldPalette_Pikachu
         )
         .levelUpLearnset = sScavultLevelUpLearnset,
         .teachableLearnset = sScavultTeachableLearnset,
-        .eggMoveLearnset = sChespinEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 22, SPECIES_QUILLADIN}),
+        .eggMoveLearnset = sPichuEggMoveLearnset,
+        .evolutions = EVOLUTION({EVO_LEVEL, 22, SPECIES_PIKACHU}),
     },
 
     [SPECIES_MASALIZARD] =
@@ -117,20 +117,20 @@ const struct SpeciesInfo gSpeciesInfoTenkei[] =
         .iconPalIndex = 2,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         SHADOW(-2, 3, SHADOW_SIZE_S)
-        FOOTPRINT(Chespin)
+        FOOTPRINT(Pikachu)
         OVERWORLD(
-            sPicTable_Chespin,
+            sPicTable_Pikachu,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
             sAnimTable_Following,
-            gOverworldPalette_Chespin,
-            gShinyOverworldPalette_Chespin
+            gOverworldPalette_Pikachu,
+            gShinyOverworldPalette_Pikachu
         )
         .levelUpLearnset = sMasalizardLevelUpLearnset,
         .teachableLearnset = sMasalizardTeachableLearnset,
-        .eggMoveLearnset = sChespinEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 14, SPECIES_QUILLADIN}),
+        .eggMoveLearnset = sPichuEggMoveLearnset,
+        .evolutions = EVOLUTION({EVO_LEVEL, 14, SPECIES_PIKACHU}),
     },
 
     [SPECIES_ELEPHLUSH] =
@@ -182,20 +182,20 @@ const struct SpeciesInfo gSpeciesInfoTenkei[] =
         .iconPalIndex = 2,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         SHADOW(-2, 3, SHADOW_SIZE_S)
-        FOOTPRINT(Chespin)
+        FOOTPRINT(Pikachu)
         OVERWORLD(
-            sPicTable_Chespin,
+            sPicTable_Pikachu,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
             sAnimTable_Following,
-            gOverworldPalette_Chespin,
-            gShinyOverworldPalette_Chespin
+            gOverworldPalette_Pikachu,
+            gShinyOverworldPalette_Pikachu
         )
         .levelUpLearnset = sElephlushLevelUpLearnset,
         .teachableLearnset = sElephlushTeachableLearnset,
-        .eggMoveLearnset = sChespinEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 16, SPECIES_QUILLADIN}),
+        .eggMoveLearnset = sPichuEggMoveLearnset,
+        .evolutions = EVOLUTION({EVO_LEVEL, 16, SPECIES_PIKACHU}),
     },
 
     [SPECIES_LOTPOLE] =
@@ -247,20 +247,20 @@ const struct SpeciesInfo gSpeciesInfoTenkei[] =
         .iconPalIndex = 2,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         SHADOW(-2, 3, SHADOW_SIZE_S)
-        FOOTPRINT(Chespin)
+        FOOTPRINT(Pikachu)
         OVERWORLD(
-            sPicTable_Chespin,
+            sPicTable_Pikachu,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
             sAnimTable_Following,
-            gOverworldPalette_Chespin,
-            gShinyOverworldPalette_Chespin
+            gOverworldPalette_Pikachu,
+            gShinyOverworldPalette_Pikachu
         )
         .levelUpLearnset = sLotpoleLevelUpLearnset,
         .teachableLearnset = sLotpoleTeachableLearnset,
-        .eggMoveLearnset = sChespinEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 18, SPECIES_QUILLADIN}),
+        .eggMoveLearnset = sPichuEggMoveLearnset,
+        .evolutions = EVOLUTION({EVO_LEVEL, 18, SPECIES_PIKACHU}),
     },
 
     [SPECIES_TANOOK] =
@@ -312,20 +312,20 @@ const struct SpeciesInfo gSpeciesInfoTenkei[] =
         .iconPalIndex = 2,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         SHADOW(-2, 3, SHADOW_SIZE_S)
-        FOOTPRINT(Chespin)
+        FOOTPRINT(Pikachu)
         OVERWORLD(
-            sPicTable_Chespin,
+            sPicTable_Pikachu,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
             sAnimTable_Following,
-            gOverworldPalette_Chespin,
-            gShinyOverworldPalette_Chespin
+            gOverworldPalette_Pikachu,
+            gShinyOverworldPalette_Pikachu
         )
         .levelUpLearnset = sTanookLevelUpLearnset,
         .teachableLearnset = sTanookTeachableLearnset,
-        .eggMoveLearnset = sChespinEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 20, SPECIES_QUILLADIN}),
+        .eggMoveLearnset = sPichuEggMoveLearnset,
+        .evolutions = EVOLUTION({EVO_LEVEL, 20, SPECIES_PIKACHU}),
     },
 
     [SPECIES_PAWTRAIN] =
@@ -377,20 +377,20 @@ const struct SpeciesInfo gSpeciesInfoTenkei[] =
         .iconPalIndex = 2,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         SHADOW(-2, 3, SHADOW_SIZE_S)
-        FOOTPRINT(Chespin)
+        FOOTPRINT(Pikachu)
         OVERWORLD(
-            sPicTable_Chespin,
+            sPicTable_Pikachu,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
             sAnimTable_Following,
-            gOverworldPalette_Chespin,
-            gShinyOverworldPalette_Chespin
+            gOverworldPalette_Pikachu,
+            gShinyOverworldPalette_Pikachu
         )
         .levelUpLearnset = sPawtrainLevelUpLearnset,
         .teachableLearnset = sPawtrainTeachableLearnset,
-        .eggMoveLearnset = sChespinEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 30, SPECIES_QUILLADIN}),
+        .eggMoveLearnset = sPichuEggMoveLearnset,
+        .evolutions = EVOLUTION({EVO_LEVEL, 30, SPECIES_PIKACHU}),
     },
 
     [SPECIES_KURSTRAW] =
@@ -442,20 +442,855 @@ const struct SpeciesInfo gSpeciesInfoTenkei[] =
         .iconPalIndex = 2,
         .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
         SHADOW(-2, 3, SHADOW_SIZE_S)
-        FOOTPRINT(Chespin)
+        FOOTPRINT(Pikachu)
         OVERWORLD(
-            sPicTable_Chespin,
+            sPicTable_Pikachu,
             SIZE_32x32,
             SHADOW_SIZE_M,
             TRACKS_FOOT,
             sAnimTable_Following,
-            gOverworldPalette_Chespin,
-            gShinyOverworldPalette_Chespin
+            gOverworldPalette_Pikachu,
+            gShinyOverworldPalette_Pikachu
         )
         .levelUpLearnset = sKurstrawLevelUpLearnset,
         .teachableLearnset = sKurstrawTeachableLearnset,
-        .eggMoveLearnset = sChespinEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 25, SPECIES_QUILLADIN}),
+        .eggMoveLearnset = sPichuEggMoveLearnset,
+        .evolutions = EVOLUTION({EVO_LEVEL, 25, SPECIES_PIKACHU}),
+    },
+
+    [SPECIES_HABANAGA] =
+    {
+        .baseHP        = 49,
+        .baseAttack    = 63,
+        .baseDefense   = 45,
+        .baseSpeed     = 50,
+        .baseSpAttack  = 48,
+        .baseSpDefense = 40,
+        .types = MON_TYPES(TYPE_GHOST), 
+        .catchRate = 225,
+        .expYield = 97,
+        .evYield_Defense = 1,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 15,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FLYING),
+        .abilities = { ABILITY_HEALER, ABILITY_PERISH_BODY, ABILITY_NONE },
+        .bodyColor = BODY_COLOR_BROWN,
+        .speciesName = _("HABANAGA"),
+        .cryId = CRY_KURSTRAW,
+        .natDexNum = NATIONAL_DEX_KURSTRAW,
+        .categoryName = _("CURSED DOLL"),
+        .height = 4,
+        .weight = 10,
+        .description = COMPOUND_STRING(
+            "LOUD BUZZER SOUND This POKéMON is not\n"
+            "developed yet! Either you are a dev, or\n"
+            "you are a cheater! Either way, shoo!"),
+        .pokemonScale = 491,
+        .pokemonOffset = 12,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_Kurstraw,
+        .frontPicSize = MON_COORDS_SIZE(40, 48),
+        .frontPicYOffset = 3,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        .frontAnimId = ANIM_V_JUMPS_BIG,
+        .backPic = gMonBackPic_Kurstraw,
+        .backPicSize = MON_COORDS_SIZE(56, 64),
+        .backPicYOffset = 0,
+        .backAnimId = BACK_ANIM_V_SHAKE_LOW,
+        .palette = gMonPalette_Kurstraw,
+        .shinyPalette = gMonShinyPalette_Kurstraw,
+        .iconSprite = gMonIcon_Kurstraw,
+        .iconPalIndex = 2,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(-2, 3, SHADOW_SIZE_S)
+        FOOTPRINT(Pikachu)
+        OVERWORLD(
+            sPicTable_Pikachu,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Pikachu,
+            gShinyOverworldPalette_Pikachu
+        )
+        .levelUpLearnset = sKurstrawLevelUpLearnset,
+        .teachableLearnset = sKurstrawTeachableLearnset,
+        .eggMoveLearnset = sPichuEggMoveLearnset,
+        .evolutions = EVOLUTION({EVO_LEVEL, 25, SPECIES_PIKACHU}),
+    },
+
+    [SPECIES_TABASILISK] =
+    {
+        .baseHP        = 49,
+        .baseAttack    = 63,
+        .baseDefense   = 45,
+        .baseSpeed     = 50,
+        .baseSpAttack  = 48,
+        .baseSpDefense = 40,
+        .types = MON_TYPES(TYPE_GHOST), 
+        .catchRate = 225,
+        .expYield = 97,
+        .evYield_Defense = 1,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 15,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FLYING),
+        .abilities = { ABILITY_HEALER, ABILITY_PERISH_BODY, ABILITY_NONE },
+        .bodyColor = BODY_COLOR_BROWN,
+        .speciesName = _("TABASILISK"),
+        .cryId = CRY_KURSTRAW,
+        .natDexNum = NATIONAL_DEX_KURSTRAW,
+        .categoryName = _("CURSED DOLL"),
+        .height = 4,
+        .weight = 10,
+        .description = COMPOUND_STRING(
+            "LOUD BUZZER SOUND This POKéMON is not\n"
+            "developed yet! Either you are a dev, or\n"
+            "you are a cheater! Either way, shoo!"),
+        .pokemonScale = 491,
+        .pokemonOffset = 12,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_Kurstraw,
+        .frontPicSize = MON_COORDS_SIZE(40, 48),
+        .frontPicYOffset = 3,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        .frontAnimId = ANIM_V_JUMPS_BIG,
+        .backPic = gMonBackPic_Kurstraw,
+        .backPicSize = MON_COORDS_SIZE(56, 64),
+        .backPicYOffset = 0,
+        .backAnimId = BACK_ANIM_V_SHAKE_LOW,
+        .palette = gMonPalette_Kurstraw,
+        .shinyPalette = gMonShinyPalette_Kurstraw,
+        .iconSprite = gMonIcon_Kurstraw,
+        .iconPalIndex = 2,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(-2, 3, SHADOW_SIZE_S)
+        FOOTPRINT(Pikachu)
+        OVERWORLD(
+            sPicTable_Pikachu,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Pikachu,
+            gShinyOverworldPalette_Pikachu
+        )
+        .levelUpLearnset = sKurstrawLevelUpLearnset,
+        .teachableLearnset = sKurstrawTeachableLearnset,
+        .eggMoveLearnset = sPichuEggMoveLearnset,
+        .evolutions = EVOLUTION({EVO_LEVEL, 25, SPECIES_PIKACHU}),
+    },
+
+    [SPECIES_ELEPHUSION] =
+    {
+        .baseHP        = 49,
+        .baseAttack    = 63,
+        .baseDefense   = 45,
+        .baseSpeed     = 50,
+        .baseSpAttack  = 48,
+        .baseSpDefense = 40,
+        .types = MON_TYPES(TYPE_GHOST), 
+        .catchRate = 225,
+        .expYield = 97,
+        .evYield_Defense = 1,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 15,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FLYING),
+        .abilities = { ABILITY_HEALER, ABILITY_PERISH_BODY, ABILITY_NONE },
+        .bodyColor = BODY_COLOR_BROWN,
+        .speciesName = _("ELEPHUSION"),
+        .cryId = CRY_KURSTRAW,
+        .natDexNum = NATIONAL_DEX_KURSTRAW,
+        .categoryName = _("CURSED DOLL"),
+        .height = 4,
+        .weight = 10,
+        .description = COMPOUND_STRING(
+            "LOUD BUZZER SOUND This POKéMON is not\n"
+            "developed yet! Either you are a dev, or\n"
+            "you are a cheater! Either way, shoo!"),
+        .pokemonScale = 491,
+        .pokemonOffset = 12,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_Kurstraw,
+        .frontPicSize = MON_COORDS_SIZE(40, 48),
+        .frontPicYOffset = 3,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        .frontAnimId = ANIM_V_JUMPS_BIG,
+        .backPic = gMonBackPic_Kurstraw,
+        .backPicSize = MON_COORDS_SIZE(56, 64),
+        .backPicYOffset = 0,
+        .backAnimId = BACK_ANIM_V_SHAKE_LOW,
+        .palette = gMonPalette_Kurstraw,
+        .shinyPalette = gMonShinyPalette_Kurstraw,
+        .iconSprite = gMonIcon_Kurstraw,
+        .iconPalIndex = 2,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(-2, 3, SHADOW_SIZE_S)
+        FOOTPRINT(Pikachu)
+        OVERWORLD(
+            sPicTable_Pikachu,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Pikachu,
+            gShinyOverworldPalette_Pikachu
+        )
+        .levelUpLearnset = sKurstrawLevelUpLearnset,
+        .teachableLearnset = sKurstrawTeachableLearnset,
+        .eggMoveLearnset = sPichuEggMoveLearnset,
+        .evolutions = EVOLUTION({EVO_LEVEL, 25, SPECIES_PIKACHU}),
+    },
+
+
+    [SPECIES_ELEPHANTEA] =
+    {
+        .baseHP        = 49,
+        .baseAttack    = 63,
+        .baseDefense   = 45,
+        .baseSpeed     = 50,
+        .baseSpAttack  = 48,
+        .baseSpDefense = 40,
+        .types = MON_TYPES(TYPE_GHOST), 
+        .catchRate = 225,
+        .expYield = 97,
+        .evYield_Defense = 1,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 15,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FLYING),
+        .abilities = { ABILITY_HEALER, ABILITY_PERISH_BODY, ABILITY_NONE },
+        .bodyColor = BODY_COLOR_BROWN,
+        .speciesName = _("ELEPHANTEA"),
+        .cryId = CRY_KURSTRAW,
+        .natDexNum = NATIONAL_DEX_KURSTRAW,
+        .categoryName = _("CURSED DOLL"),
+        .height = 4,
+        .weight = 10,
+        .description = COMPOUND_STRING(
+            "LOUD BUZZER SOUND This POKéMON is not\n"
+            "developed yet! Either you are a dev, or\n"
+            "you are a cheater! Either way, shoo!"),
+        .pokemonScale = 491,
+        .pokemonOffset = 12,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_Kurstraw,
+        .frontPicSize = MON_COORDS_SIZE(40, 48),
+        .frontPicYOffset = 3,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        .frontAnimId = ANIM_V_JUMPS_BIG,
+        .backPic = gMonBackPic_Kurstraw,
+        .backPicSize = MON_COORDS_SIZE(56, 64),
+        .backPicYOffset = 0,
+        .backAnimId = BACK_ANIM_V_SHAKE_LOW,
+        .palette = gMonPalette_Kurstraw,
+        .shinyPalette = gMonShinyPalette_Kurstraw,
+        .iconSprite = gMonIcon_Kurstraw,
+        .iconPalIndex = 2,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(-2, 3, SHADOW_SIZE_S)
+        FOOTPRINT(Pikachu)
+        OVERWORLD(
+            sPicTable_Pikachu,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Pikachu,
+            gShinyOverworldPalette_Pikachu
+        )
+        .levelUpLearnset = sKurstrawLevelUpLearnset,
+        .teachableLearnset = sKurstrawTeachableLearnset,
+        .eggMoveLearnset = sPichuEggMoveLearnset,
+        .evolutions = EVOLUTION({EVO_LEVEL, 25, SPECIES_PIKACHU}),
+    },
+
+    [SPECIES_PADMARA] =
+    {
+        .baseHP        = 49,
+        .baseAttack    = 63,
+        .baseDefense   = 45,
+        .baseSpeed     = 50,
+        .baseSpAttack  = 48,
+        .baseSpDefense = 40,
+        .types = MON_TYPES(TYPE_GHOST), 
+        .catchRate = 225,
+        .expYield = 97,
+        .evYield_Defense = 1,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 15,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FLYING),
+        .abilities = { ABILITY_HEALER, ABILITY_PERISH_BODY, ABILITY_NONE },
+        .bodyColor = BODY_COLOR_BROWN,
+        .speciesName = _("PADMARA"),
+        .cryId = CRY_KURSTRAW,
+        .natDexNum = NATIONAL_DEX_KURSTRAW,
+        .categoryName = _("CURSED DOLL"),
+        .height = 4,
+        .weight = 10,
+        .description = COMPOUND_STRING(
+            "LOUD BUZZER SOUND This POKéMON is not\n"
+            "developed yet! Either you are a dev, or\n"
+            "you are a cheater! Either way, shoo!"),
+        .pokemonScale = 491,
+        .pokemonOffset = 12,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_Kurstraw,
+        .frontPicSize = MON_COORDS_SIZE(40, 48),
+        .frontPicYOffset = 3,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        .frontAnimId = ANIM_V_JUMPS_BIG,
+        .backPic = gMonBackPic_Kurstraw,
+        .backPicSize = MON_COORDS_SIZE(56, 64),
+        .backPicYOffset = 0,
+        .backAnimId = BACK_ANIM_V_SHAKE_LOW,
+        .palette = gMonPalette_Kurstraw,
+        .shinyPalette = gMonShinyPalette_Kurstraw,
+        .iconSprite = gMonIcon_Kurstraw,
+        .iconPalIndex = 2,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(-2, 3, SHADOW_SIZE_S)
+        FOOTPRINT(Pikachu)
+        OVERWORLD(
+            sPicTable_Pikachu,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Pikachu,
+            gShinyOverworldPalette_Pikachu
+        )
+        .levelUpLearnset = sKurstrawLevelUpLearnset,
+        .teachableLearnset = sKurstrawTeachableLearnset,
+        .eggMoveLearnset = sPichuEggMoveLearnset,
+        .evolutions = EVOLUTION({EVO_LEVEL, 25, SPECIES_PIKACHU}),
+    },
+
+    [SPECIES_PADMANDUKA] =
+    {
+        .baseHP        = 49,
+        .baseAttack    = 63,
+        .baseDefense   = 45,
+        .baseSpeed     = 50,
+        .baseSpAttack  = 48,
+        .baseSpDefense = 40,
+        .types = MON_TYPES(TYPE_GHOST), 
+        .catchRate = 225,
+        .expYield = 97,
+        .evYield_Defense = 1,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 15,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FLYING),
+        .abilities = { ABILITY_HEALER, ABILITY_PERISH_BODY, ABILITY_NONE },
+        .bodyColor = BODY_COLOR_BROWN,
+        .speciesName = _("PADMANDUKA"),
+        .cryId = CRY_KURSTRAW,
+        .natDexNum = NATIONAL_DEX_KURSTRAW,
+        .categoryName = _("CURSED DOLL"),
+        .height = 4,
+        .weight = 10,
+        .description = COMPOUND_STRING(
+            "LOUD BUZZER SOUND This POKéMON is not\n"
+            "developed yet! Either you are a dev, or\n"
+            "you are a cheater! Either way, shoo!"),
+        .pokemonScale = 491,
+        .pokemonOffset = 12,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_Kurstraw,
+        .frontPicSize = MON_COORDS_SIZE(40, 48),
+        .frontPicYOffset = 3,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        .frontAnimId = ANIM_V_JUMPS_BIG,
+        .backPic = gMonBackPic_Kurstraw,
+        .backPicSize = MON_COORDS_SIZE(56, 64),
+        .backPicYOffset = 0,
+        .backAnimId = BACK_ANIM_V_SHAKE_LOW,
+        .palette = gMonPalette_Kurstraw,
+        .shinyPalette = gMonShinyPalette_Kurstraw,
+        .iconSprite = gMonIcon_Kurstraw,
+        .iconPalIndex = 2,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(-2, 3, SHADOW_SIZE_S)
+        FOOTPRINT(Pikachu)
+        OVERWORLD(
+            sPicTable_Pikachu,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Pikachu,
+            gShinyOverworldPalette_Pikachu
+        )
+        .levelUpLearnset = sKurstrawLevelUpLearnset,
+        .teachableLearnset = sKurstrawTeachableLearnset,
+        .eggMoveLearnset = sPichuEggMoveLearnset,
+        .evolutions = EVOLUTION({EVO_LEVEL, 25, SPECIES_PIKACHU}),
+    },
+
+
+    [SPECIES_TANOOKING] =
+    {
+        .baseHP        = 49,
+        .baseAttack    = 63,
+        .baseDefense   = 45,
+        .baseSpeed     = 50,
+        .baseSpAttack  = 48,
+        .baseSpDefense = 40,
+        .types = MON_TYPES(TYPE_GHOST), 
+        .catchRate = 225,
+        .expYield = 97,
+        .evYield_Defense = 1,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 15,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FLYING),
+        .abilities = { ABILITY_HEALER, ABILITY_PERISH_BODY, ABILITY_NONE },
+        .bodyColor = BODY_COLOR_BROWN,
+        .speciesName = _("TANOOKING"),
+        .cryId = CRY_KURSTRAW,
+        .natDexNum = NATIONAL_DEX_KURSTRAW,
+        .categoryName = _("CURSED DOLL"),
+        .height = 4,
+        .weight = 10,
+        .description = COMPOUND_STRING(
+            "LOUD BUZZER SOUND This POKéMON is not\n"
+            "developed yet! Either you are a dev, or\n"
+            "you are a cheater! Either way, shoo!"),
+        .pokemonScale = 491,
+        .pokemonOffset = 12,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_Kurstraw,
+        .frontPicSize = MON_COORDS_SIZE(40, 48),
+        .frontPicYOffset = 3,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        .frontAnimId = ANIM_V_JUMPS_BIG,
+        .backPic = gMonBackPic_Kurstraw,
+        .backPicSize = MON_COORDS_SIZE(56, 64),
+        .backPicYOffset = 0,
+        .backAnimId = BACK_ANIM_V_SHAKE_LOW,
+        .palette = gMonPalette_Kurstraw,
+        .shinyPalette = gMonShinyPalette_Kurstraw,
+        .iconSprite = gMonIcon_Kurstraw,
+        .iconPalIndex = 2,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(-2, 3, SHADOW_SIZE_S)
+        FOOTPRINT(Pikachu)
+        OVERWORLD(
+            sPicTable_Pikachu,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Pikachu,
+            gShinyOverworldPalette_Pikachu
+        )
+        .levelUpLearnset = sKurstrawLevelUpLearnset,
+        .teachableLearnset = sKurstrawTeachableLearnset,
+        .eggMoveLearnset = sPichuEggMoveLearnset,
+        .evolutions = EVOLUTION({EVO_LEVEL, 25, SPECIES_PIKACHU}),
+    },
+
+    [SPECIES_LEDIRO] =
+    {
+        .baseHP        = 49,
+        .baseAttack    = 63,
+        .baseDefense   = 45,
+        .baseSpeed     = 50,
+        .baseSpAttack  = 48,
+        .baseSpDefense = 40,
+        .types = MON_TYPES(TYPE_GHOST), 
+        .catchRate = 225,
+        .expYield = 97,
+        .evYield_Defense = 1,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 15,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FLYING),
+        .abilities = { ABILITY_HEALER, ABILITY_PERISH_BODY, ABILITY_NONE },
+        .bodyColor = BODY_COLOR_BROWN,
+        .speciesName = _("LEDIRO"),
+        .cryId = CRY_KURSTRAW,
+        .natDexNum = NATIONAL_DEX_KURSTRAW,
+        .categoryName = _("CURSED DOLL"),
+        .height = 4,
+        .weight = 10,
+        .description = COMPOUND_STRING(
+            "LOUD BUZZER SOUND This POKéMON is not\n"
+            "developed yet! Either you are a dev, or\n"
+            "you are a cheater! Either way, shoo!"),
+        .pokemonScale = 491,
+        .pokemonOffset = 12,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_Kurstraw,
+        .frontPicSize = MON_COORDS_SIZE(40, 48),
+        .frontPicYOffset = 3,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        .frontAnimId = ANIM_V_JUMPS_BIG,
+        .backPic = gMonBackPic_Kurstraw,
+        .backPicSize = MON_COORDS_SIZE(56, 64),
+        .backPicYOffset = 0,
+        .backAnimId = BACK_ANIM_V_SHAKE_LOW,
+        .palette = gMonPalette_Kurstraw,
+        .shinyPalette = gMonShinyPalette_Kurstraw,
+        .iconSprite = gMonIcon_Kurstraw,
+        .iconPalIndex = 2,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(-2, 3, SHADOW_SIZE_S)
+        FOOTPRINT(Pikachu)
+        OVERWORLD(
+            sPicTable_Pikachu,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Pikachu,
+            gShinyOverworldPalette_Pikachu
+        )
+        .levelUpLearnset = sKurstrawLevelUpLearnset,
+        .teachableLearnset = sKurstrawTeachableLearnset,
+        .eggMoveLearnset = sPichuEggMoveLearnset,
+        .evolutions = EVOLUTION({EVO_LEVEL, 25, SPECIES_PIKACHU}),
+    },
+
+    [SPECIES_ASCLYPAS] =
+    {
+        .baseHP        = 49,
+        .baseAttack    = 63,
+        .baseDefense   = 45,
+        .baseSpeed     = 50,
+        .baseSpAttack  = 48,
+        .baseSpDefense = 40,
+        .types = MON_TYPES(TYPE_GHOST), 
+        .catchRate = 225,
+        .expYield = 97,
+        .evYield_Defense = 1,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 15,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FLYING),
+        .abilities = { ABILITY_HEALER, ABILITY_PERISH_BODY, ABILITY_NONE },
+        .bodyColor = BODY_COLOR_BROWN,
+        .speciesName = _("ASCLYPAS"),
+        .cryId = CRY_KURSTRAW,
+        .natDexNum = NATIONAL_DEX_KURSTRAW,
+        .categoryName = _("CURSED DOLL"),
+        .height = 4,
+        .weight = 10,
+        .description = COMPOUND_STRING(
+            "LOUD BUZZER SOUND This POKéMON is not\n"
+            "developed yet! Either you are a dev, or\n"
+            "you are a cheater! Either way, shoo!"),
+        .pokemonScale = 491,
+        .pokemonOffset = 12,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_Kurstraw,
+        .frontPicSize = MON_COORDS_SIZE(40, 48),
+        .frontPicYOffset = 3,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        .frontAnimId = ANIM_V_JUMPS_BIG,
+        .backPic = gMonBackPic_Kurstraw,
+        .backPicSize = MON_COORDS_SIZE(56, 64),
+        .backPicYOffset = 0,
+        .backAnimId = BACK_ANIM_V_SHAKE_LOW,
+        .palette = gMonPalette_Kurstraw,
+        .shinyPalette = gMonShinyPalette_Kurstraw,
+        .iconSprite = gMonIcon_Kurstraw,
+        .iconPalIndex = 2,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(-2, 3, SHADOW_SIZE_S)
+        FOOTPRINT(Pikachu)
+        OVERWORLD(
+            sPicTable_Pikachu,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Pikachu,
+            gShinyOverworldPalette_Pikachu
+        )
+        .levelUpLearnset = sKurstrawLevelUpLearnset,
+        .teachableLearnset = sKurstrawTeachableLearnset,
+        .eggMoveLearnset = sPichuEggMoveLearnset,
+        .evolutions = EVOLUTION({EVO_LEVEL, 25, SPECIES_PIKACHU}),
+    },
+
+
+    [SPECIES_KRICKESTRO] =
+    {
+        .baseHP        = 49,
+        .baseAttack    = 63,
+        .baseDefense   = 45,
+        .baseSpeed     = 50,
+        .baseSpAttack  = 48,
+        .baseSpDefense = 40,
+        .types = MON_TYPES(TYPE_GHOST), 
+        .catchRate = 225,
+        .expYield = 97,
+        .evYield_Defense = 1,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 15,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FLYING),
+        .abilities = { ABILITY_HEALER, ABILITY_PERISH_BODY, ABILITY_NONE },
+        .bodyColor = BODY_COLOR_BROWN,
+        .speciesName = _("KRICKESTRO"),
+        .cryId = CRY_KURSTRAW,
+        .natDexNum = NATIONAL_DEX_KURSTRAW,
+        .categoryName = _("CURSED DOLL"),
+        .height = 4,
+        .weight = 10,
+        .description = COMPOUND_STRING(
+            "LOUD BUZZER SOUND This POKéMON is not\n"
+            "developed yet! Either you are a dev, or\n"
+            "you are a cheater! Either way, shoo!"),
+        .pokemonScale = 491,
+        .pokemonOffset = 12,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_Kurstraw,
+        .frontPicSize = MON_COORDS_SIZE(40, 48),
+        .frontPicYOffset = 3,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        .frontAnimId = ANIM_V_JUMPS_BIG,
+        .backPic = gMonBackPic_Kurstraw,
+        .backPicSize = MON_COORDS_SIZE(56, 64),
+        .backPicYOffset = 0,
+        .backAnimId = BACK_ANIM_V_SHAKE_LOW,
+        .palette = gMonPalette_Kurstraw,
+        .shinyPalette = gMonShinyPalette_Kurstraw,
+        .iconSprite = gMonIcon_Kurstraw,
+        .iconPalIndex = 2,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(-2, 3, SHADOW_SIZE_S)
+        FOOTPRINT(Pikachu)
+        OVERWORLD(
+            sPicTable_Pikachu,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Pikachu,
+            gShinyOverworldPalette_Pikachu
+        )
+        .levelUpLearnset = sKurstrawLevelUpLearnset,
+        .teachableLearnset = sKurstrawTeachableLearnset,
+        .eggMoveLearnset = sPichuEggMoveLearnset,
+        .evolutions = EVOLUTION({EVO_LEVEL, 25, SPECIES_PIKACHU}),
+    },
+
+    [SPECIES_KEYNAIN] =
+    {
+        .baseHP        = 49,
+        .baseAttack    = 63,
+        .baseDefense   = 45,
+        .baseSpeed     = 50,
+        .baseSpAttack  = 48,
+        .baseSpDefense = 40,
+        .types = MON_TYPES(TYPE_GHOST), 
+        .catchRate = 225,
+        .expYield = 97,
+        .evYield_Defense = 1,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 15,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FLYING),
+        .abilities = { ABILITY_HEALER, ABILITY_PERISH_BODY, ABILITY_NONE },
+        .bodyColor = BODY_COLOR_BROWN,
+        .speciesName = _("KEYNAIN"),
+        .cryId = CRY_KURSTRAW,
+        .natDexNum = NATIONAL_DEX_KURSTRAW,
+        .categoryName = _("CURSED DOLL"),
+        .height = 4,
+        .weight = 10,
+        .description = COMPOUND_STRING(
+            "LOUD BUZZER SOUND This POKéMON is not\n"
+            "developed yet! Either you are a dev, or\n"
+            "you are a cheater! Either way, shoo!"),
+        .pokemonScale = 491,
+        .pokemonOffset = 12,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_Kurstraw,
+        .frontPicSize = MON_COORDS_SIZE(40, 48),
+        .frontPicYOffset = 3,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        .frontAnimId = ANIM_V_JUMPS_BIG,
+        .backPic = gMonBackPic_Kurstraw,
+        .backPicSize = MON_COORDS_SIZE(56, 64),
+        .backPicYOffset = 0,
+        .backAnimId = BACK_ANIM_V_SHAKE_LOW,
+        .palette = gMonPalette_Kurstraw,
+        .shinyPalette = gMonShinyPalette_Kurstraw,
+        .iconSprite = gMonIcon_Kurstraw,
+        .iconPalIndex = 2,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(-2, 3, SHADOW_SIZE_S)
+        FOOTPRINT(Pikachu)
+        OVERWORLD(
+            sPicTable_Pikachu,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Pikachu,
+            gShinyOverworldPalette_Pikachu
+        )
+        .levelUpLearnset = sKurstrawLevelUpLearnset,
+        .teachableLearnset = sKurstrawTeachableLearnset,
+        .eggMoveLearnset = sPichuEggMoveLearnset,
+        .evolutions = EVOLUTION({EVO_LEVEL, 25, SPECIES_PIKACHU}),
+    },
+
+    [SPECIES_PANGSHI] =
+    {
+        .baseHP        = 49,
+        .baseAttack    = 63,
+        .baseDefense   = 45,
+        .baseSpeed     = 50,
+        .baseSpAttack  = 48,
+        .baseSpDefense = 40,
+        .types = MON_TYPES(TYPE_GHOST), 
+        .catchRate = 225,
+        .expYield = 97,
+        .evYield_Defense = 1,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 15,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FLYING),
+        .abilities = { ABILITY_HEALER, ABILITY_PERISH_BODY, ABILITY_NONE },
+        .bodyColor = BODY_COLOR_BROWN,
+        .speciesName = _("PANGSHI"),
+        .cryId = CRY_KURSTRAW,
+        .natDexNum = NATIONAL_DEX_KURSTRAW,
+        .categoryName = _("CURSED DOLL"),
+        .height = 4,
+        .weight = 10,
+        .description = COMPOUND_STRING(
+            "LOUD BUZZER SOUND This POKéMON is not\n"
+            "developed yet! Either you are a dev, or\n"
+            "you are a cheater! Either way, shoo!"),
+        .pokemonScale = 491,
+        .pokemonOffset = 12,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_Kurstraw,
+        .frontPicSize = MON_COORDS_SIZE(40, 48),
+        .frontPicYOffset = 3,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        .frontAnimId = ANIM_V_JUMPS_BIG,
+        .backPic = gMonBackPic_Kurstraw,
+        .backPicSize = MON_COORDS_SIZE(56, 64),
+        .backPicYOffset = 0,
+        .backAnimId = BACK_ANIM_V_SHAKE_LOW,
+        .palette = gMonPalette_Kurstraw,
+        .shinyPalette = gMonShinyPalette_Kurstraw,
+        .iconSprite = gMonIcon_Kurstraw,
+        .iconPalIndex = 2,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(-2, 3, SHADOW_SIZE_S)
+        FOOTPRINT(Pikachu)
+        OVERWORLD(
+            sPicTable_Pikachu,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Pikachu,
+            gShinyOverworldPalette_Pikachu
+        )
+        .levelUpLearnset = sKurstrawLevelUpLearnset,
+        .teachableLearnset = sKurstrawTeachableLearnset,
+        .eggMoveLearnset = sPichuEggMoveLearnset,
+        .evolutions = EVOLUTION({EVO_LEVEL, 25, SPECIES_PIKACHU}),
+    },
+
+    [SPECIES_CHIMENCORE] =
+    {
+        .baseHP        = 49,
+        .baseAttack    = 63,
+        .baseDefense   = 45,
+        .baseSpeed     = 50,
+        .baseSpAttack  = 48,
+        .baseSpDefense = 40,
+        .types = MON_TYPES(TYPE_GHOST), 
+        .catchRate = 225,
+        .expYield = 97,
+        .evYield_Defense = 1,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 15,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FLYING),
+        .abilities = { ABILITY_HEALER, ABILITY_PERISH_BODY, ABILITY_NONE },
+        .bodyColor = BODY_COLOR_BROWN,
+        .speciesName = _("CHIMENCORE"),
+        .cryId = CRY_KURSTRAW,
+        .natDexNum = NATIONAL_DEX_KURSTRAW,
+        .categoryName = _("CURSED DOLL"),
+        .height = 4,
+        .weight = 10,
+        .description = COMPOUND_STRING(
+            "LOUD BUZZER SOUND This POKéMON is not\n"
+            "developed yet! Either you are a dev, or\n"
+            "you are a cheater! Either way, shoo!"),
+        .pokemonScale = 491,
+        .pokemonOffset = 12,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_Kurstraw,
+        .frontPicSize = MON_COORDS_SIZE(40, 48),
+        .frontPicYOffset = 3,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        .frontAnimId = ANIM_V_JUMPS_BIG,
+        .backPic = gMonBackPic_Kurstraw,
+        .backPicSize = MON_COORDS_SIZE(56, 64),
+        .backPicYOffset = 0,
+        .backAnimId = BACK_ANIM_V_SHAKE_LOW,
+        .palette = gMonPalette_Kurstraw,
+        .shinyPalette = gMonShinyPalette_Kurstraw,
+        .iconSprite = gMonIcon_Kurstraw,
+        .iconPalIndex = 2,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(-2, 3, SHADOW_SIZE_S)
+        FOOTPRINT(Pikachu)
+        OVERWORLD(
+            sPicTable_Pikachu,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Pikachu,
+            gShinyOverworldPalette_Pikachu
+        )
+        .levelUpLearnset = sKurstrawLevelUpLearnset,
+        .teachableLearnset = sKurstrawTeachableLearnset,
+        .eggMoveLearnset = sPichuEggMoveLearnset,
+        .evolutions = EVOLUTION({EVO_LEVEL, 25, SPECIES_PIKACHU}),
     },
 
 #ifdef __INTELLISENSE__

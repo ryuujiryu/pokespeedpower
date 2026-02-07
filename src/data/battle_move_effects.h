@@ -2268,13 +2268,6 @@ const struct BattleMoveEffect gBattleMoveEffects[NUM_BATTLE_MOVE_EFFECTS] =
         .encourageEncore = TRUE,
     },
 
-    [EFFECT_SOIL_REGENERATION] =
-    {
-        .battleScript = BattleScript_EffectSoilRegeneration,
-        .battleTvScore = 4,
-        .encourageEncore = TRUE,
-    },
-
     [EFFECT_ENERGY_BLAST] =
     {
         .battleScript = BattleScript_EffectHit,
