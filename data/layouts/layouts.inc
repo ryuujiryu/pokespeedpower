@@ -6895,7 +6895,7 @@ CherryWoods_Layout_Blockdata::
 
 	.align 2
 CherryWoods_Layout::
-	.4byte 58
+	.4byte 68
 	.4byte 52
 	.4byte CherryWoods_Layout_Border
 	.4byte CherryWoods_Layout_Blockdata
@@ -6940,12 +6940,12 @@ Route54_Layout_Blockdata::
 
 	.align 2
 Route54_Layout::
-	.4byte 60
-	.4byte 24
+	.4byte 70
+	.4byte 40
 	.4byte Route54_Layout_Border
 	.4byte Route54_Layout_Blockdata
 	.4byte gTileset_General
-	.4byte gTileset_Mossdeep
+	.4byte gTileset_Coconut
 
 Route55_Layout_Border::
 	.incbin "data/layouts/Route55/border.bin"
@@ -6955,8 +6955,8 @@ Route55_Layout_Blockdata::
 
 	.align 2
 Route55_Layout::
-	.4byte 32
-	.4byte 14
+	.4byte 72
+	.4byte 34
 	.4byte Route55_Layout_Border
 	.4byte Route55_Layout_Blockdata
 	.4byte gTileset_General

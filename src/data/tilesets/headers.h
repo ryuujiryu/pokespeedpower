@@ -861,7 +861,7 @@ const struct Tileset gTileset_Coconut =
     .palettes = gTilesetPalettes_Coconut,
     .metatiles = gMetatiles_Coconut,
     .metatileAttributes = gMetatileAttributes_Coconut,
-    .callback = NULL,
+    .callback = InitTilesetAnim_Coconut,
 };
 
 const struct Tileset gTileset_JapaneseBuilding =

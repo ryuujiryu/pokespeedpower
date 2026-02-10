@@ -4594,7 +4594,7 @@
     {
       "id": "LAYOUT_CHERRY_WOODS",
       "name": "CherryWoods_Layout",
-      "width": 58,
+      "width": 68,
       "height": 52,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Mossdeep",
@@ -4624,18 +4624,18 @@
     {
       "id": "LAYOUT_ROUTE54",
       "name": "Route54_Layout",
-      "width": 60,
-      "height": 24,
+      "width": 70,
+      "height": 40,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Mossdeep",
+      "secondary_tileset": "gTileset_Coconut",
       "border_filepath": "data/layouts/Route54/border.bin",
       "blockdata_filepath": "data/layouts/Route54/map.bin"
     },
     {
       "id": "LAYOUT_ROUTE55",
       "name": "Route55_Layout",
-      "width": 32,
-      "height": 14,
+      "width": 72,
+      "height": 34,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Coconut",
       "border_filepath": "data/layouts/Route55/border.bin",

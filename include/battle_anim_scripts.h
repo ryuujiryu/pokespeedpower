@@ -969,6 +969,7 @@ extern const u8 gBattleAnimMove_NobleBreath[];
 extern const u8 gBattleAnimMove_Bloodletting[];
 extern const u8 gBattleAnimMove_SpiritTheft[];
 extern const u8 gBattleAnimMove_SentinelStrike[];
+extern const u8 gBattleAnimMove_FlowerTyphoon[];
 
 // status animations
 extern const u8 gBattleAnimStatus_Poison[];

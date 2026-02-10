@@ -3134,6 +3134,23 @@ const struct WildPokemon gCherryWoods_Morning_LandMons[] =
 };
 const struct WildPokemonInfo gCherryWoods_Morning_LandMonsInfo = { 10, gCherryWoods_Morning_LandMons };
 
+const struct WildPokemon gRoute54_Morning_LandMons[] =
+{
+    { 50, 50, SPECIES_TANOOK },
+    { 50, 50, SPECIES_TANOOK },
+    { 50, 50, SPECIES_TANOOK },
+    { 50, 50, SPECIES_TANOOK },
+    { 50, 50, SPECIES_TANOOK },
+    { 50, 50, SPECIES_TANOOK },
+    { 50, 50, SPECIES_TANOOK },
+    { 50, 50, SPECIES_TANOOK },
+    { 5, 5, SPECIES_NONE },
+    { 5, 5, SPECIES_NONE },
+    { 5, 5, SPECIES_NONE },
+    { 5, 5, SPECIES_NONE },
+};
+const struct WildPokemonInfo gRoute54_Morning_LandMonsInfo = { 10, gRoute54_Morning_LandMons };
+
 const struct WildPokemon gBattlePyramid_1_Morning_LandMons[] =
 {
     { 5, 5, SPECIES_BULBASAUR },
@@ -5237,6 +5254,21 @@ const struct WildPokemonHeader gWildMonHeaders[] =
             [TIME_MORNING] = 
             {
                 .landMonsInfo = &gCherryWoods_Morning_LandMonsInfo,
+                .waterMonsInfo = NULL,
+                .rockSmashMonsInfo = NULL,
+                .fishingMonsInfo = NULL,
+                .hiddenMonsInfo = NULL,
+            },
+        },
+    },
+    {
+        .mapGroup = MAP_GROUP(MAP_ROUTE54),
+        .mapNum = MAP_NUM(MAP_ROUTE54),
+        .encounterTypes =
+        {
+            [TIME_MORNING] = 
+            {
+                .landMonsInfo = &gRoute54_Morning_LandMonsInfo,
                 .waterMonsInfo = NULL,
                 .rockSmashMonsInfo = NULL,
                 .fishingMonsInfo = NULL,

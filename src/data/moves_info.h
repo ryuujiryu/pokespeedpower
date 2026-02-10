@@ -643,7 +643,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
 
     [MOVE_SLAM] =
     {
-        .name = COMPOUND_STRING("Slam"),
+        .name = COMPOUND_STRING("SLAM"),
         .description = COMPOUND_STRING(
             "Slams the foe with a long\n"
             "tail, vine, etc."),
@@ -7187,7 +7187,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
 
     [MOVE_TRICK] =
     {
-        .name = COMPOUND_STRING("Trick"),
+        .name = COMPOUND_STRING("TRICK"),
         .description = COMPOUND_STRING(
             "Tricks the foe into trading\n"
             "held items."),
@@ -8585,7 +8585,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
 
     [MOVE_SHADOW_PUNCH] =
     {
-        .name = COMPOUND_STRING("Shadow Punch"),
+        .name = COMPOUND_STRING("SHADOW PUNCH"),
         .description = COMPOUND_STRING(
             "An unavoidable punch that\n"
             "is thrown from shadows."),
@@ -23257,8 +23257,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("FAN RALLY"),
         .description = COMPOUND_STRING(
-            "Traps the foe in a fierce\n"
-            "sandstorm. May cause confusion."),
+            "The crowd explodes into a passionate cheer,\n"
+            "powering up FIGHTING-type moves."),
         .effect = EFFECT_FAN_RALLY,
         .power = 0,
         .type = TYPE_FIGHTING,
@@ -23334,8 +23334,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("HEAVENLY PRAYER"),
         .description = COMPOUND_STRING(
-            "Traps the foe in a fierce\n"
-            "sandstorm. May cause confusion."),
+            "Ancient gods bring forth a meteor\n"
+            "shower, powering up DRAGON-type moves."),
         .effect = EFFECT_HEAVENLY_PRAYER,
         .power = 0,
         .type = TYPE_DRAGON,
@@ -23359,9 +23359,9 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("LUSTER CANDY"),
         .description = COMPOUND_STRING(
-            "The user is embraced by a rainbow-colored\n"
-            "glow which boosts its ATTACK, DEFENSE and SPEED."),
-        .effect = EFFECT_VICTORY_DANCE,
+            "The user uses some of its\n"
+            "HP to raise all its stats."),
+        .effect = EFFECT_CLANGOROUS_SOUL,
         .power = 0,
         .type = TYPE_NORMAL,
         .accuracy = 0,
@@ -23385,7 +23385,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "powering up DARK-type moves."),
         .effect = EFFECT_ECLIPSE,
         .power = 50,
-        .type = TYPE_SOUND,
+        .type = TYPE_DARK,
         .accuracy = 0,
         .pp = 5,
         .target = MOVE_TARGET_ALL_BATTLERS,
@@ -23523,5 +23523,32 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .contestComboStarterId = COMBO_STARTER_PAYBACK,
         .contestComboMoves = {COMBO_STARTER_REVENGE},
         .battleAnimScript = gBattleAnimMove_SentinelStrike,
+    },
+
+    [MOVE_FLOWER_TYPHOON] =
+    {
+        .name = COMPOUND_STRING("FLOWER TYPHOON"),
+        .description = COMPOUND_STRING(
+            "The user summon a storm of\n"
+            "flowers. May cause poison."),
+        .effect = EFFECT_HIT,
+        .power = 100,
+        .type = TYPE_GRASS,
+        .accuracy = 80,
+        .pp = 5,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .windMove = TRUE,
+        .damagesAirborne = TRUE,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_POISON,
+            .chance = 30,
+        }),
+        .contestEffect = CONTEST_EFFECT_STARTLE_PREV_MONS,
+        .contestCategory = CONTEST_CATEGORY_COOL,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_FlowerTyphoon,
     },
 };

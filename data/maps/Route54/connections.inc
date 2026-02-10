@@ -3,7 +3,7 @@
 @
 
 Route54_MapConnectionsList:
-	connection down, 39, MAP_ROUTE55
+	connection down, 25, MAP_ROUTE55
 
 Route54_MapConnections:
 	.4byte 1

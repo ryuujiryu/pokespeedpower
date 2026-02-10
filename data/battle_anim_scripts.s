@@ -31377,8 +31377,21 @@ gBattleAnimGeneral_Fog::
 	end
 
 gBattleAnimGeneral_AcidRain::
-	call RainDrops
+	call AcidRainDrops
 	end
+
+AcidRainDrops:
+	loadspritegfx ANIM_TAG_RAIN_DROPS
+	playsewithpan SE_M_RAIN_DANCE, SOUND_PAN_ATTACKER
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, (F_PAL_BG | F_PAL_BATTLERS_2), 2, 0, 4, RGB_BLACK
+	waitforvisualfinish
+	createvisualtask AnimTask_CreateAcidRaindrops, 2, 0, 3, 60
+	createvisualtask AnimTask_CreateAcidRaindrops, 2, 0, 3, 60
+	delay 50
+	waitforvisualfinish
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, (F_PAL_BG | F_PAL_BATTLERS_2), 2, 4, 0, RGB_BLACK
+	waitforvisualfinish
+	return
 
 gBattleAnimGeneral_LeechSeedDrain::
 	createvisualtask AnimTask_GetBattlersFromArg, 5
@@ -38149,18 +38162,16 @@ gBattleAnimMove_SteamPurification::
 gBattleAnimMove_AcidRain::
 	loadspritegfx ANIM_TAG_RAIN_DROPS
 	playsewithpan SE_M_RAIN_DANCE, SOUND_PAN_ATTACKER
-	fadetobg BG_SHATTERED_PSYCHE
 	createvisualtask AnimTask_BlendBattleAnimPal, 10, (F_PAL_BG | F_PAL_BATTLERS_2), 2, 0, 4, RGB_BLACK
 	waitforvisualfinish
-	createvisualtask AnimTask_CreateRaindrops, 2, 0, 3, 120
-	createvisualtask AnimTask_CreateRaindrops, 2, 0, 3, 120
+	createvisualtask AnimTask_CreateAcidRaindrops, 2, 0, 3, 120
+	createvisualtask AnimTask_CreateAcidRaindrops, 2, 0, 3, 120
 	delay 120
 	delay 30
 	waitforvisualfinish
-	restorebg
 	createvisualtask AnimTask_BlendBattleAnimPal, 10, (F_PAL_BG | F_PAL_BATTLERS_2), 2, 4, 0, RGB_BLACK
 	waitforvisualfinish
-	waitbgfadeout
+	restorebg
 	end
 
 gBattleAnimMove_QiSacrifice::
@@ -38552,22 +38563,39 @@ gBattleAnimMove_SandTornado::
 	end
 
 gBattleAnimGeneral_FanRally::
-goto gBattleAnimMove_FanRally
+	loadspritegfx ANIM_TAG_CONFETTI
+	call CreateFlatterConfetti
+	call CreateFlatterConfetti
+	call CreateFlatterConfetti
+	call CreateFlatterConfetti
+	call CreateFlatterConfetti
+	call CreateFlatterConfetti
+	call CreateFlatterConfetti
+	call CreateFlatterConfetti
+	call CreateFlatterConfetti
+	call CreateFlatterConfetti
+	call CreateFlatterConfetti
+	call CreateFlatterConfetti
+	call CreateFlatterConfetti
+	call CreateFlatterConfetti
+	call CreateFlatterConfetti
+	call CreateFlatterConfetti
+	call CreateFlatterConfetti
+	call CreateFlatterConfetti
+	call CreateFlatterConfetti
+	call CreateFlatterConfetti
+	waitforvisualfinish
+	end
 
 gBattleAnimMove_FanRally::
-	loadspritegfx ANIM_TAG_SPOTLIGHT
+	loadspritegfx ANIM_TAG_CONFETTI
 	loadspritegfx ANIM_TAG_TAG_HAND
-	createvisualtask AnimTask_CreateSpotlight, 2
-	createvisualtask AnimTask_HardwarePaletteFade, 2, (BLDCNT_TGT1_BG3 | BLDCNT_TGT1_OBJ | BLDCNT_TGT1_BD | BLDCNT_EFFECT_DARKEN), 3, 0, 10, FALSE
-	waitforvisualfinish
-	createsprite gSpotlightSpriteTemplate, ANIM_TARGET, 2, 0, -8
-	createsprite gSpotlightSpriteTemplate, ANIM_ATTACKER, 2, 0, -8
 	createsprite gClappingHandSpriteTemplate, ANIM_ATTACKER, 2, -2, 0, 0, 0, 9
 	createsprite gClappingHandSpriteTemplate, ANIM_ATTACKER, 2, 2, 0, 1, 0, 9
 	createsprite gClappingHand2SpriteTemplate, ANIM_ATTACKER, 3, -2, 0, 0, 0, 9
 	createsprite gClappingHand2SpriteTemplate, ANIM_ATTACKER, 3, 2, 0, 1, 0, 9
-	createsprite gClappingHandSpriteTemplate, ANIM_TARGET, 2, -2, 0, 0, 0, 9
-	createsprite gClappingHandSpriteTemplate, ANIM_TARGET, 2, 2, 0, 1, 0, 9
+	createsprite gClappingHandSpriteTemplate, ANIM_TARGET, 1, 100, -32, 0, 0, 9
+	createsprite gClappingHandSpriteTemplate, ANIM_TARGET, 1, 110, -32, 1, 0, 9
 	createsprite gClappingHand2SpriteTemplate, ANIM_TARGET, 3, -2, 0, 0, 0, 9
 	createsprite gClappingHand2SpriteTemplate, ANIM_TARGET, 3, 2, 0, 1, 0, 9
 	delay 16
@@ -38575,10 +38603,27 @@ gBattleAnimMove_FanRally::
 	createvisualtask AnimTask_SwayMon, 5, 1, 8, 1536, 5, ANIM_TARGET
 	createvisualtask SoundTask_PlaySE2WithPanning, 5, SE_M_ENCORE2, SOUND_PAN_ATTACKER
 	createvisualtask AnimTask_SwayMon, 5, 1, 8, 1536, 5, ANIM_ATTACKER
+	call CreateFlatterConfetti
+	call CreateFlatterConfetti
+	call CreateFlatterConfetti
+	call CreateFlatterConfetti
+	call CreateFlatterConfetti
+	call CreateFlatterConfetti
+	call CreateFlatterConfetti
+	call CreateFlatterConfetti
+	call CreateFlatterConfetti
+	call CreateFlatterConfetti
+	call CreateFlatterConfetti
+	call CreateFlatterConfetti
+	call CreateFlatterConfetti
+	call CreateFlatterConfetti
+	call CreateFlatterConfetti
+	call CreateFlatterConfetti
+	call CreateFlatterConfetti
+	call CreateFlatterConfetti
+	call CreateFlatterConfetti
+	call CreateFlatterConfetti
 	waitforvisualfinish
-	createvisualtask AnimTask_HardwarePaletteFade, 2, (BLDCNT_TGT1_BG3 | BLDCNT_TGT1_OBJ | BLDCNT_TGT1_BD | BLDCNT_EFFECT_DARKEN), 3, 10, 0, TRUE
-	waitforvisualfinish
-	createvisualtask AnimTask_RemoveSpotlight, 2
 	end
 
 gBattleAnimMove_Eclipse::
@@ -38837,8 +38882,6 @@ ExposureSteal:
 	loadspritegfx ANIM_TAG_TAG_HAND
 	loadspritegfx ANIM_TAG_IMPACT
 	loadspritegfx ANIM_TAG_HANDS_AND_FEET @Black Colour
-	loadspritegfx ANIM_TAG_QUICK_GUARD_HAND @Black Colour
-	loadspritegfx ANIM_TAG_ORBS @mimic
 	loadspritegfx ANIM_TAG_FOCUS_ENERGY @focus energy
 	createvisualtask AnimTask_CreateSpotlight, 2
 	createvisualtask AnimTask_HardwarePaletteFade, 2, (BLDCNT_TGT1_BG3 | BLDCNT_TGT1_OBJ | BLDCNT_TGT1_BD | BLDCNT_EFFECT_DARKEN), 3, 0, 10, FALSE
@@ -38859,6 +38902,7 @@ ExposureSteal:
 	waitforvisualfinish
 	setalpha 11, 5
 	splitbgprio_all
+	loadspritegfx ANIM_TAG_ORBS @mimic
 	panse SE_M_MINIMIZE, SOUND_PAN_TARGET, SOUND_PAN_ATTACKER, 0xfd, 0x0
 	delay 15
 	createsprite gSpectralThiefBlackOrbsTemplate, ANIM_TARGET, 2, 0xfff4, 0x18
@@ -39205,4 +39249,70 @@ gBattleAnimMove_SentinelStrike::
 	createvisualtask AnimTask_AllBattlersVisible, 0xA,
 	createvisualtask AnimTask_BlendBattleAnimPal, 10, (F_PAL_BG | F_PAL_BATTLERS_2), 1, 16, 0, RGB_WHITE @;From White
 	waitforvisualfinish
+	end
+
+gBattleAnimMove_FlowerTyphoon::
+	loadspritegfx ANIM_TAG_FLOWER @petal
+	loadspritegfx ANIM_TAG_RAZOR_LEAF @green
+	loadspritegfx ANIM_TAG_GUST @hurricane
+	loadspritegfx ANIM_TAG_VERTICAL_HEX @hex diamond
+	monbg ANIM_ATTACKER
+	setalpha 12, 8
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 1, 0, 4, RGB_GREEN
+	loopsewithpan SE_SHINY, SOUND_PAN_ATTACKER, 0x9, 0x3
+	createsprite gBloomDoomPetalSpinSpriteTemplate, ANIM_ATTACKER, 3, 0x0, 0x0, 0x38, 0x0
+	playsewithpan SE_M_ATTRACT, SOUND_PAN_ATTACKER
+	delay 2
+	createsprite gBloomDoomPetalSpinSpriteTemplate, ANIM_ATTACKER, 3, 0x0, 0x0, 0x38, 0x4
+	delay 2
+	createsprite gBloomDoomPetalSpinSpriteTemplate, ANIM_ATTACKER, 3, 0x0, 0x0, 0x38, 0x8
+	playsewithpan SE_M_ATTRACT, SOUND_PAN_ATTACKER
+	delay 2
+	createsprite gBloomDoomPetalSpinSpriteTemplate, ANIM_ATTACKER, 3, 0x0, 0x0, 0x38, 0xc
+	delay 2
+	createsprite gBloomDoomPetalSpinSpriteTemplate, ANIM_ATTACKER, 3, 0x0, 0x0, 0x38, 0x10
+	playsewithpan SE_M_ATTRACT, SOUND_PAN_ATTACKER
+	delay 2
+	createsprite gBloomDoomPetalSpinSpriteTemplate, ANIM_ATTACKER, 3, 0x0, 0x0, 0x38, 0x14
+	delay 2
+	createsprite gBloomDoomPetalSpinSpriteTemplate, ANIM_ATTACKER, 3, 0x0, 0x0, 0x38, 0x18
+	playsewithpan SE_M_ATTRACT, SOUND_PAN_ATTACKER
+	waitforvisualfinish
+	call BloomDoomHurricane
+	playsewithpan SE_M_PETAL_DANCE, SOUND_PAN_ATTACKER
+	call BloomDoomFlowerGeyser
+	call BloomDoomFlowerGeyser
+	call BloomDoomHurricane
+	playsewithpan SE_M_PETAL_DANCE, SOUND_PAN_ATTACKER
+	call BloomDoomFlowerGeyser
+	call BloomDoomFlowerGeyser
+	call BloomDoomHurricane
+	playsewithpan SE_M_PETAL_DANCE, SOUND_PAN_ATTACKER
+	call BloomDoomFlowerGeyser
+	call BloomDoomFlowerGeyser
+	call BloomDoomHurricane
+	loadspritegfx ANIM_TAG_ORBS
+	delay 5
+	createsprite gAromatherapySmallFlowerSpriteTemplate, ANIM_ATTACKER, 0, 0x18, 0x10, 0x0, 0x2, 0x2, 0x0, 0x0
+	createsprite gAromatherapySmallFlowerSpriteTemplate, ANIM_ATTACKER, 66, 0x40, 0x18, 0x0, 0x3, 0x1, 0x1, 0x0
+	createsprite gAromatherapyBigFlowerSpriteTemplate, ANIM_ATTACKER, 0, 0x10, 0x18, 0x0, 0x2, 0x1, 0x0, 0x0
+	delay 5
+	createsoundtask SoundTask_LoopSEAdjustPanning, 0xf0, 0xffc0, SOUND_PAN_TARGET, 0x1, 0xf, 0x0, 0x5
+	createvisualtask AnimTask_ShakeMon, 2, ANIM_ATTACKER, 0, 4, 50, 1		@ shake attacker
+	createvisualtask AnimTask_ShakeMon2, 2, ANIM_TARGET, 4, 0, 114, 1
+	createsprite gAromatherapySmallFlowerSpriteTemplate, ANIM_ATTACKER, 66, 0x30, 0xc, 0x0, 0x4, 0x3, 0x1, 0x0
+	createsprite gAromatherapySmallFlowerSpriteTemplate, ANIM_ATTACKER, 0, 0x64, 0x10, 0x0, 0x3, 0x2, 0x0, 0x0
+	createsprite gAromatherapySmallFlowerSpriteTemplate, ANIM_ATTACKER, 0, 0x4a, 0x18, 0xb4, 0x3, 0x2, 0x0, 0x0
+	createsprite gAromatherapySmallFlowerSpriteTemplate, ANIM_ATTACKER, 66, 0x50, 0x1e, 0x0, 0x4, 0x1, 0x1, 0x0
+	createsprite gAromatherapySmallFlowerSpriteTemplate, ANIM_ATTACKER, 0, 0x80, 0xc, 0x0, 0x3, 0x3, 0x0, 0x0
+	createsprite gAromatherapyBigFlowerSpriteTemplate, ANIM_ATTACKER, 0, 0x5a, 0x10, 0x0, 0x2, 0x1, 0x0, 0x0
+	delay 5
+	loadspritegfx ANIM_TAG_EXPLOSION @explosion
+	call BloomDoomPetalBlast
+	call BloomDoomPetalBlast
+	call BloomDoomPetalBlast
+	waitforvisualfinish
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 1, 4, 0, RGB_BLACK
+	waitforvisualfinish
+	clearmonbg ANIM_ATTACKER
 	end

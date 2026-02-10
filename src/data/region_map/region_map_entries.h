@@ -8,7 +8,7 @@
 
 static const u8 sMapName_CITRUS_ISLAND[] = _("CITRUS ISLAND");
 static const u8 sMapName_STRAWBERRY_TOWN[] = _("STRAWBERRY TOWN");
-static const u8 sMapName_DEWFORD_TOWN[] = _("DEWFORD TOWN");
+static const u8 sMapName_BANANA_VILLAGE[] = _("BANANA VILLAGE");
 static const u8 sMapName_LAVARIDGE_TOWN[] = _("LAVARIDGE TOWN");
 static const u8 sMapName_FALLARBOR_TOWN[] = _("FALLARBOR TOWN");
 static const u8 sMapName_VERDANTURF_TOWN[] = _("VERDANTURF TOWN");
@@ -212,7 +212,7 @@ const struct RegionMapLocation gRegionMapEntries[] = {
         .y = 14,
         .width = 1,
         .height = 1,
-        .name = sMapName_DEWFORD_TOWN,
+        .name = sMapName_BANANA_VILLAGE,
     },
     [MAPSEC_LAVARIDGE_TOWN] = {
         .x = 5,

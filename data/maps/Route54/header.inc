@@ -7,9 +7,9 @@ Route54:
 	.4byte Route54_MapEvents
 	.4byte Route54_MapScripts
 	.4byte Route54_MapConnections
-	.2byte MUS_DUMMY
+	.2byte MUS_AW2_422
 	.2byte LAYOUT_ROUTE54
-	.byte MAPSEC_ABANDONED_SHIP
+	.byte MAPSEC_DEWFORD_TOWN
 	.byte FALSE
 	.byte WEATHER_NONE
 	.byte MAP_TYPE_NONE
