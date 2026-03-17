@@ -111,7 +111,7 @@ script DurianGym_ShiriAndBanjoBattle {
     setspeaker("SHIRI")
 	msgbox ("… … … … …\n" "… … … … …\l" "WE USE SOUND-TYPES, SCATTERBUG BRAIN!\p" "ENOUGH! Let's start the battle, c'mon!")
 	closemessage
-	trainerbattle_no_intro (TRAINER_SHIRI_AND_BANJO_1, format("BANJO: Dude, that was sick!\n" "SHIRI: Tch… quit praising 'em, we LOST!\p" "BANJO: So, we give ‘em their STAMP, right?\n" "SHIRI: I can’t do this…\p" "(Snatches {PLAYER}’s TRAINER CARD\n" "and slaps the LIVEHOOD STAMP on it.)"))
+	trainerbattle_no_intro (TRAINER_SP_SHIRI_AND_BANJO_1, format("BANJO: Dude, that was sick!\n" "SHIRI: Tch… quit praising 'em, we LOST!\p" "BANJO: So, we give ‘em their STAMP, right?\n" "SHIRI: I can’t do this…\p" "(Snatches {PLAYER}’s TRAINER CARD\n" "and slaps the LIVEHOOD STAMP on it.)"))
     call(DurianGym_ShiriAndBanjoDefeated)
     end
 }

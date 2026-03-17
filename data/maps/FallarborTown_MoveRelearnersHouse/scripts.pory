@@ -4,8 +4,6 @@ FallarborTown_MoveRelearnersHouse_MapScripts::
 
 FallarborTown_MoveRelearnersHouse_EventScript_MoveRelearner::
 	lockall
-	applymovement LOCALID_MOVE_RELEARNER, Common_Movement_FacePlayer
-	waitmovement 0
 	msgbox FallarborTown_MoveRelearnersHouse_Text_ImTheMoveTutor, MSGBOX_YESNO
 	switch VAR_RESULT
 	case NO, FallarborTown_MoveRelearnersHouse_EventScript_ComeBackWithHeartScale
@@ -68,8 +66,8 @@ FallarborTown_MoveRelearnersHouse_Text_HandedOverHeartScale:
 	.string "in exchange.$"
 
 FallarborTown_MoveRelearnersHouse_Text_ComeBackWithHeartScale:
-	.string "If your POKéMON need to learn a move,\n"
-	.string "come back with a HEART SCALE.$"
+	.string "Well, if your POKéMON need to learn a\n"
+	.string "move, come back anytime.$"
 
 FallarborTown_MoveRelearnersHouse_Text_CantTeachEgg:
 	.string "Hunh? There isn't a single move that\n"

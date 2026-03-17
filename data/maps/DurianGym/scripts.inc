@@ -211,7 +211,7 @@ DurianGym_ShiriAndBanjoBattle::
 # 113 "data/maps/DurianGym/scripts.pory"
 	closemessage
 # 114 "data/maps/DurianGym/scripts.pory"
-	trainerbattle_no_intro TRAINER_SHIRI_AND_BANJO_1, DurianGym_ShiriAndBanjoBattle_Text_10
+	trainerbattle_no_intro TRAINER_SP_SHIRI_AND_BANJO_1, DurianGym_ShiriAndBanjoBattle_Text_10
 # 115 "data/maps/DurianGym/scripts.pory"
 	call DurianGym_ShiriAndBanjoDefeated
 	end

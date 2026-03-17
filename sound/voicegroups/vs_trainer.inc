@@ -1,5 +1,5 @@
 voice_group vs_trainer
-	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0                                                                   @ 0 | ---
+	voice_keysplit_all voicegroup_frlg_drumset
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0                                                                   @ 1 | ---
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0                                                                   @ 2 | ---
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0                                                                   @ 3 | ---
@@ -16,7 +16,7 @@ voice_group vs_trainer
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0                                                                   @ 14 | ---
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0                                                                   @ 15 | ---
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0                                                                   @ 16 | ---
-	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0                                                                   @ 17 | ---
+	voice_keysplit voicegroup_french_horn_keysplit, keysplit_french_horn
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0                                                                   @ 18 | ---
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0                                                                   @ 19 | ---
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0                                                                   @ 20 | ---
@@ -68,7 +68,7 @@ voice_group vs_trainer
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0                                                                   @ 66 | ---
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0                                                                   @ 67 | ---
 	voice_directsound 60, 0, DirectSoundWaveData_golden_sun_2_oboe, 255, 0, 255, 165                          @ 68 | Direct | GBA Golden Sun Oboe
-	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0                                                                   @ 69 | ---
+	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_tubular_bell, 255, 0, 255, 165
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0                                                                   @ 70 | ---
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0                                                                   @ 71 | ---
 	voice_directsound 60, 0, DirectSoundWaveData_golden_sun_2_piccolo, 255, 0, 255, 165                       @ 72 | Direct | GBA Golden Sun Piccolo
@@ -76,7 +76,7 @@ voice_group vs_trainer
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0                                                                   @ 74 | ---
 	voice_directsound 60, 0, DirectSoundWaveData_golden_sun_2_pan_flute, 255, 0, 255, 165                     @ 75 | Direct | GBA Golden Sun Pan Flute
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0                                                                   @ 76 | ---
-	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0                                                                   @ 77 | ---
+	voice_directsound 60, 0, DirectSoundWaveData_sd90_classical_overdrive_guitar, 255, 0, 255, 226
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0                                                                   @ 78 | ---
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0                                                                   @ 79 | ---
 	voice_directsound 60, 0, DirectSoundSynth_golden_sun_2_01, 85, 165, 193, 178                              @ 80 | Direct | GBA Golden Sun Synt
@@ -101,7 +101,7 @@ voice_group vs_trainer
 	voice_directsound 60, 0, DirectSoundSynth_golden_sun_2_05, 255, 127, 103, 165                             @ 99 | Direct | GBA Golden Sun Synt
 	voice_square_1_alt 60, 0, 0, 3, 0, 1, 7, 0                                                                @ 100 | Square-1 |
 	voice_square_2_alt 60, 0, 3, 0, 1, 7, 0                                                                   @ 101 | Square-2 |
-	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0                                                                   @ 102 | ---
+	voice_directsound 60, 0, DirectSoundWaveData_golden_sun_2_crystal_effect, 255, 242, 28, 165
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0                                                                   @ 103 | ---
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0                                                                   @ 104 | ---
 	voice_directsound 60, 0, DirectSoundWaveData_golden_sun_2_xylophone, 255, 235, 103, 178                   @ 105 | Direct | GBA Golden Sun Xylophone / Gamelan

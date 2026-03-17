@@ -15,5 +15,5 @@ LavaridgeTown_Gym_1F:
 	.byte MAP_TYPE_INDOOR
 	.2byte 0
 	map_header_flags allow_cycling=FALSE, allow_escaping=FALSE, allow_running=FALSE, show_map_name=FALSE
-	.byte MAP_BATTLE_SCENE_GYM
+	.byte MAP_BATTLE_SCENE_KANEJUDY
 

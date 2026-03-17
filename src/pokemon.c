@@ -5587,10 +5587,13 @@ u16 GetBattleBGM(void)
             return MUS_RG_VS_WILD;
         }
     }
-    else
-    {
+switch(VarGet(VAR_UNUSED_0x40F9))
+{
+    case 1:
+        return MUS_CYCLING;
+    default:
         return MUS_GS2_ISAAC_BATTLE;
-    }
+}
 }
 
 void PlayBattleBGM(void)

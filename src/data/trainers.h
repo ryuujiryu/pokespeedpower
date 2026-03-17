@@ -12375,7 +12375,7 @@ F_TRAINER_FEMALE |
         },
     },
 #line 4788
-    [DIFFICULTY_NORMAL][TRAINER_SHIRI_AND_BANJO_1] =
+    [DIFFICULTY_NORMAL][TRAINER_SP_SHIRI_AND_BANJO_1] =
     {
 #line 4789
         .trainerName = _("SHIRI&BANJO"),
@@ -12602,10 +12602,10 @@ F_TRAINER_FEMALE |
         },
     },
 #line 4882
-    [DIFFICULTY_NORMAL][TRAINER_FLANNERY_1] =
+    [DIFFICULTY_NORMAL][TRAINER_SP_KANE_1] =
     {
 #line 4883
-        .trainerName = _("FLANNERY"),
+        .trainerName = _("KANE"),
 #line 4884
         .trainerClass = TRAINER_CLASS_PATH_GUARDIAN,
 #line 4885
@@ -12703,10 +12703,10 @@ F_TRAINER_FEMALE |
         },
     },
 #line 4924
-    [DIFFICULTY_NORMAL][TRAINER_NORMAN_1] =
+    [DIFFICULTY_NORMAL][TRAINER_SP_JUDY_1] =
     {
 #line 4925
-        .trainerName = _("NORMAN"),
+        .trainerName = _("JUDY"),
 #line 4926
         .trainerClass = TRAINER_CLASS_PATH_GUARDIAN,
 #line 4927

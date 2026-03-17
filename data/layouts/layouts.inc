@@ -6670,8 +6670,8 @@ DurianTown_PokemonCenter_Layout_Blockdata::
 
 	.align 2
 DurianTown_PokemonCenter_Layout::
-	.4byte 18
 	.4byte 19
+	.4byte 13
 	.4byte DurianTown_PokemonCenter_Layout_Border
 	.4byte DurianTown_PokemonCenter_Layout_Blockdata
 	.4byte gTileset_Building
@@ -6940,7 +6940,7 @@ Route54_Layout_Blockdata::
 
 	.align 2
 Route54_Layout::
-	.4byte 70
+	.4byte 62
 	.4byte 40
 	.4byte Route54_Layout_Border
 	.4byte Route54_Layout_Blockdata

@@ -105,7 +105,7 @@ PetalburgCity_Gym_EventScript_MoveNormanToEntrance::
 # 53 "data/maps/PetalburgCity_Gym/scripts.pory"
 PetalburgCity_Gym_EventScript_CheckNormanForRematch::
 # 54 "data/maps/PetalburgCity_Gym/scripts.pory"
-	setorcopyvar VAR_TRAINER_BATTLE_OPPONENT_A, TRAINER_NORMAN_1
+	setorcopyvar VAR_TRAINER_BATTLE_OPPONENT_A, TRAINER_SP_JUDY_1
 # 55 "data/maps/PetalburgCity_Gym/scripts.pory"
 	specialvar VAR_RESULT, IsTrainerReadyForRematch
 # 56 "data/maps/PetalburgCity_Gym/scripts.pory"
@@ -685,7 +685,7 @@ PetalburgCity_Gym_EventScript_GiveFacade2::
 # 343 "data/maps/PetalburgCity_Gym/scripts.pory"
 PetalburgCity_Gym_EventScript_NormanRematch::
 # 344 "data/maps/PetalburgCity_Gym/scripts.pory"
-	trainerbattle_rematch_double TRAINER_NORMAN_1, PetalburgCity_Gym_Text_NormanPreRematch, PetalburgCity_Gym_Text_NormanRematchDefeat, PetalburgCity_Gym_Text_NormanRematchNeedTwoMons
+	trainerbattle_rematch_double TRAINER_SP_JUDY_1, PetalburgCity_Gym_Text_NormanPreRematch, PetalburgCity_Gym_Text_NormanRematchDefeat, PetalburgCity_Gym_Text_NormanRematchNeedTwoMons
 # 345 "data/maps/PetalburgCity_Gym/scripts.pory"
 	msgbox PetalburgCity_Gym_Text_NormanPostRematch, MSGBOX_AUTOCLOSE
 # 346 "data/maps/PetalburgCity_Gym/scripts.pory"
@@ -743,7 +743,7 @@ PetalburgCity_Gym_EventScript_NormanBattle::
 # 372 "data/maps/PetalburgCity_Gym/scripts.pory"
 	msgbox PetalburgCity_Gym_Text_NormanIntro, MSGBOX_DEFAULT
 # 373 "data/maps/PetalburgCity_Gym/scripts.pory"
-	trainerbattle_no_intro TRAINER_NORMAN_1, PetalburgCity_Gym_Text_NormanDefeat
+	trainerbattle_no_intro TRAINER_SP_JUDY_1, PetalburgCity_Gym_Text_NormanDefeat
 # 374 "data/maps/PetalburgCity_Gym/scripts.pory"
 	message PetalburgCity_Gym_Text_ReceivedBalanceBadge
 # 375 "data/maps/PetalburgCity_Gym/scripts.pory"

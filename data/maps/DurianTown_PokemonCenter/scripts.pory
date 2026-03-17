@@ -180,3 +180,9 @@ script DurianTown_PokemonCenter_EventScript_Disc {
 	end
     }
 }
+
+script DurianTown_PokemonCenter_EventScript_Ptest {
+trainerbattle_two_trainers (TRAINER_SP_KANE_1, format("Losing dialogue"), TRAINER_SP_JUDY_1, format("Losing dialogue"))
+	release
+	end
+}

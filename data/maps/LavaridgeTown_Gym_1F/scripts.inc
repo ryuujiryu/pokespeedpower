@@ -93,7 +93,7 @@ LavaridgeTown_Gym_1F_EventScript_EndCheckBuryTrainers::
 # 47 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
 LavaridgeTown_Gym_1F_EventScript_Flannery::
 # 48 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
-	trainerbattle_single TRAINER_FLANNERY_1, LavaridgeTown_Gym_1F_Text_FlanneryIntro, LavaridgeTown_Gym_1F_Text_FlanneryDefeat, LavaridgeTown_Gym_1F_EventScript_FlanneryDefeated, NO_MUSIC
+	trainerbattle_single TRAINER_SP_KANE_1, LavaridgeTown_Gym_1F_Text_FlanneryIntro, LavaridgeTown_Gym_1F_Text_FlanneryDefeat, LavaridgeTown_Gym_1F_EventScript_FlanneryDefeated, NO_MUSIC
 # 49 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 # 50 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
@@ -193,7 +193,7 @@ LavaridgeTown_Gym_1F_EventScript_GiveOverheat::
 # 97 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
 LavaridgeTown_Gym_1F_EventScript_FlanneryRematch::
 # 98 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
-	trainerbattle_rematch_double TRAINER_FLANNERY_1, LavaridgeTown_Gym_1F_Text_FlanneryPreRematch, LavaridgeTown_Gym_1F_Text_FlanneryRematchDefeat, LavaridgeTown_Gym_1F_Text_FlanneryRematchNeedTwoMons
+	trainerbattle_rematch_double TRAINER_SP_KANE_1, LavaridgeTown_Gym_1F_Text_FlanneryPreRematch, LavaridgeTown_Gym_1F_Text_FlanneryRematchDefeat, LavaridgeTown_Gym_1F_Text_FlanneryRematchNeedTwoMons
 # 99 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"
 	msgbox LavaridgeTown_Gym_1F_Text_FlanneryPostRematch, MSGBOX_AUTOCLOSE
 # 100 "data/maps/LavaridgeTown_Gym_1F/scripts.pory"

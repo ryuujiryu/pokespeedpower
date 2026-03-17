@@ -4785,7 +4785,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Rock Slide
 - Crunch
 
-=== TRAINER_SHIRI_AND_BANJO_1 ===
+=== TRAINER_SP_SHIRI_AND_BANJO_1 ===
 Name: SHIRI&BANJO
 Class: Path Guardian
 Pic: Leader Roxanne
@@ -4879,8 +4879,8 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - Shock Wave
 - Howl
 
-=== TRAINER_FLANNERY_1 ===
-Name: FLANNERY
+=== TRAINER_SP_KANE_1 ===
+Name: KANE
 Class: Path Guardian
 Pic: Leader Flannery
 Gender: Female
@@ -4921,8 +4921,8 @@ IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 - Body Slam
 - Attract
 
-=== TRAINER_NORMAN_1 ===
-Name: NORMAN
+=== TRAINER_SP_JUDY_1 ===
+Name: JUDY
 Class: Path Guardian
 Pic: Leader Norman
 Gender: Male

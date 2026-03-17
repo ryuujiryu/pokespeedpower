@@ -910,13 +910,6 @@ static const struct SpriteTemplate sSakuraSpriteTemplate =
     .callback = UpdateSakuraSprite,
 };
 
-static const struct SpriteSheet sSakuraSpriteSheet =
-{
-    .data = gWeatherSakuraTiles,
-    .size = sizeof(gWeatherSakuraTiles),
-    .tag = GFXTAG_SAKURA,
-};
-
 #define tPosY         data[0]
 #define tDeltaY       data[1]
 #define tWaveDelta    data[2]

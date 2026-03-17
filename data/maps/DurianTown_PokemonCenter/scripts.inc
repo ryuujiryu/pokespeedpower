@@ -378,6 +378,14 @@ DurianTown_PokemonCenter_EventScript_Disc_1:
 	end
 
 
+DurianTown_PokemonCenter_EventScript_Ptest::
+# 185 "data/maps/DurianTown_PokemonCenter/scripts.pory"
+	trainerbattle_two_trainers TRAINER_SP_KANE_1, DurianTown_PokemonCenter_EventScript_Ptest_Text_0, TRAINER_SP_JUDY_1, DurianTown_PokemonCenter_EventScript_Ptest_Text_0
+# 186 "data/maps/DurianTown_PokemonCenter/scripts.pory"
+	release
+	end
+
+
 DurianTown_PokemonCenter_EventScript_Boy_Text_0:
 # 20 "data/maps/DurianTown_PokemonCenter/scripts.pory"
 	.string "My grandpa only just woke up from\n"
@@ -500,3 +508,7 @@ DurianTown_PokemonCenter_EventScript_Disc_Text_2:
 # 176 "data/maps/DurianTown_PokemonCenter/scripts.pory"
 	.string "{PLAYER} obtained a DISC!\n"
 	.string "It's DISC 04, <<BATTLE! TRAINER!>>!$"
+
+DurianTown_PokemonCenter_EventScript_Ptest_Text_0:
+# 185 "data/maps/DurianTown_PokemonCenter/scripts.pory"
+	.string "Losing dialogue$"
