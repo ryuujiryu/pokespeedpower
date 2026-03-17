@@ -137,6 +137,7 @@ struct Weather
     u8 targetSakuraSpriteCount;
     u16 sakuraVisibleCounter;
     u8 sakuraSpriteCount;
+    u8 sakuraSpritesCreated;
 };
 
 // field_weather.c

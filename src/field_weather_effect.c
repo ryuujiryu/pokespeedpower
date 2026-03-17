@@ -20,6 +20,7 @@ EWRAM_DATA static u8 sCurrentAbnormalWeather = 0;
 
 const u16 gCloudsWeatherPalette[] = INCBIN_U16("graphics/weather/cloud.gbapal");
 const u16 gSandstormWeatherPalette[] = INCBIN_U16("graphics/weather/sandstorm.gbapal");
+const u16 gSakuraWeatherPalette[] = INCBIN_U16("graphics/weather/sakura.gbapal");
 const u8 gWeatherFogDiagonalTiles[] = INCBIN_U8("graphics/weather/fog_diagonal.4bpp");
 const u8 gWeatherFogHorizontalTiles[] = INCBIN_U8("graphics/weather/fog_horizontal.4bpp");
 const u8 gWeatherCloudTiles[] = INCBIN_U8("graphics/weather/cloud.4bpp");
@@ -781,7 +782,7 @@ void Sakura_InitVars(void)
     gWeatherPtr->weatherGfxLoaded = FALSE;
     gWeatherPtr->targetColorMapIndex = 0;
     gWeatherPtr->colorMapStepDelay = 20;
-    gWeatherPtr->targetSnowflakeSpriteCount = NUM_SNOWFLAKE_SPRITES;
+    gWeatherPtr->targetSakuraSpriteCount = NUM_SAKURA_SPRITES;
     gWeatherPtr->sakuraVisibleCounter = 0;
     Weather_SetBlendCoeffs(8, BASE_SHADOW_INTENSITY); // preserve shadow darkness
     gWeatherPtr->noShadows = FALSE;
@@ -902,13 +903,21 @@ static const union AnimCmd *const sSakuraAnimCmds[] =
 static const struct SpriteTemplate sSakuraSpriteTemplate =
 {
     .tileTag = GFXTAG_SAKURA,
-    .paletteTag = GFXTAG_SAKURA,
+    .paletteTag = PALTAG_WEATHER_2,
     .oam = &sSakuraSpriteOamData,
     .anims = sSakuraAnimCmds,
     .images = NULL,
     .affineAnims = gDummySpriteAffineAnimTable,
     .callback = UpdateSakuraSprite,
 };
+
+static const struct SpriteSheet sSakuraSpriteSheet =
+{
+    .data = gWeatherSakuraTiles,
+    .size = sizeof(gWeatherSakuraTiles),
+    .tag = GFXTAG_SAKURA,
+};
+
 
 #define tPosY         data[0]
 #define tDeltaY       data[1]
@@ -922,6 +931,7 @@ static const struct SpriteTemplate sSakuraSpriteTemplate =
 static bool8 CreateSakuraSprite(void)
 {
     u8 spriteId = CreateSpriteAtEnd(&sSakuraSpriteTemplate, 0, 0, 78);
+    LoadCustomWeatherSpritePalette(gSakuraWeatherPalette);
     if (spriteId == MAX_SPRITES)
         return FALSE;
 
@@ -951,7 +961,7 @@ static void InitSakuraSpriteMovement(struct Sprite *sprite)
     sprite->y = -3 - (gSpriteCoordOffsetY + sprite->centerToCornerVecY);
     sprite->x = x - (gSpriteCoordOffsetX + sprite->centerToCornerVecX);
     sprite->tPosY = sprite->y * 128;
-    sprite->x2 = 0;
+    sprite->x2 = 30;
     rand = Random();
     sprite->tDeltaY = (rand & 3) * 5 + 64;
     sprite->tDeltaY2 = sprite->tDeltaY;
@@ -970,7 +980,7 @@ static void UpdateSakuraSprite(struct Sprite *sprite)
     sprite->y = sprite->tPosY >> 7;
     sprite->tWaveIndex += sprite->tWaveDelta;
     sprite->tWaveIndex &= 0xFF;
-    sprite->x2 = gSineTable[sprite->tWaveIndex] / 64;
+    sprite->x2 = gSineTable[sprite->tWaveIndex] / 14;
 
     x = (sprite->x + sprite->centerToCornerVecX + gSpriteCoordOffsetX) & 0x1FF;
     if (x & 0x100)
