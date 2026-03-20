@@ -11,7 +11,7 @@ DurianTown:
 	.2byte LAYOUT_DURIAN_TOWN
 	.byte MAPSEC_OLDALE_TOWN
 	.byte FALSE
-	.byte WEATHER_NONE
+	.byte WEATHER_PINK_LEAVES
 	.byte MAP_TYPE_TOWN
 	.2byte 0
 	map_header_flags allow_cycling=TRUE, allow_escaping=FALSE, allow_running=TRUE, show_map_name=TRUE

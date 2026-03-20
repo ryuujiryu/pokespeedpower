@@ -380,7 +380,7 @@ DurianTown_PokemonCenter_EventScript_Disc_1:
 
 DurianTown_PokemonCenter_EventScript_Ptest::
 # 185 "data/maps/DurianTown_PokemonCenter/scripts.pory"
-	trainerbattle_two_trainers TRAINER_SP_KANE_1, DurianTown_PokemonCenter_EventScript_Ptest_Text_0, TRAINER_SP_JUDY_1, DurianTown_PokemonCenter_EventScript_Ptest_Text_0
+	trainerbattle_two_trainers TRAINER_SP_KOGA_1, DurianTown_PokemonCenter_EventScript_Ptest_Text_0, TRAINER_SP_IGA_1, DurianTown_PokemonCenter_EventScript_Ptest_Text_0
 # 186 "data/maps/DurianTown_PokemonCenter/scripts.pory"
 	release
 	end

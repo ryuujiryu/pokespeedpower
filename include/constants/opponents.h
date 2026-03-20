@@ -269,8 +269,8 @@
 #define TRAINER_GLACIA                      263
 #define TRAINER_DRAKE                       264
 #define TRAINER_SP_SHIRI_AND_BANJO_1        265
-#define TRAINER_BRAWLY_1                    266
-#define TRAINER_WATTSON_1                   267
+#define TRAINER_SP_IGA_1                    266
+#define TRAINER_SP_KOGA_1                   267
 #define TRAINER_SP_KANE_1                   268
 #define TRAINER_SP_JUDY_1                   269
 #define TRAINER_WINONA_1                    270

@@ -11,7 +11,7 @@ Route52:
 	.2byte LAYOUT_ROUTE52
 	.byte MAPSEC_ROUTE_102
 	.byte FALSE
-	.byte WEATHER_NONE
+	.byte WEATHER_PINK_LEAVES
 	.byte MAP_TYPE_ROUTE
 	.2byte 0
 	map_header_flags allow_cycling=TRUE, allow_escaping=FALSE, allow_running=TRUE, show_map_name=TRUE

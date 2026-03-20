@@ -19,7 +19,7 @@ DewfordTown_Gym_OnTransition:
 # 10 "data/maps/DewfordTown_Gym/scripts.pory"
 DewfordTown_Gym_EventScript_SetFlashLevel::
 # 11 "data/maps/DewfordTown_Gym/scripts.pory"
-	goto_if_defeated TRAINER_BRAWLY_1, DewfordTown_Gym_EventScript_SetLightsOn
+	goto_if_defeated TRAINER_SP_IGA_1, DewfordTown_Gym_EventScript_SetLightsOn
 # 12 "data/maps/DewfordTown_Gym/scripts.pory"
 	call DewfordTown_Gym_EventScript_CountTrainersDefeated
 # 13 "data/maps/DewfordTown_Gym/scripts.pory"
@@ -271,7 +271,7 @@ DewfordTown_Gym_EventScript_StopCountingTrainers::
 # 136 "data/maps/DewfordTown_Gym/scripts.pory"
 DewfordTown_Gym_EventScript_Brawly::
 # 137 "data/maps/DewfordTown_Gym/scripts.pory"
-	trainerbattle_single TRAINER_BRAWLY_1, DewfordTown_Gym_Text_BrawlyIntro, DewfordTown_Gym_Text_BrawlyDefeat, DewfordTown_Gym_EventScript_BrawlyDefeated, NO_MUSIC
+	trainerbattle_single TRAINER_SP_IGA_1, DewfordTown_Gym_Text_BrawlyIntro, DewfordTown_Gym_Text_BrawlyDefeat, DewfordTown_Gym_EventScript_BrawlyDefeated, NO_MUSIC
 # 138 "data/maps/DewfordTown_Gym/scripts.pory"
 	specialvar VAR_RESULT, ShouldTryRematchBattle
 # 139 "data/maps/DewfordTown_Gym/scripts.pory"
@@ -371,7 +371,7 @@ DewfordTown_Gym_EventScript_GiveBulkUp2:
 # 186 "data/maps/DewfordTown_Gym/scripts.pory"
 DewfordTown_Gym_EventScript_BrawlyRematch::
 # 187 "data/maps/DewfordTown_Gym/scripts.pory"
-	trainerbattle_rematch_double TRAINER_BRAWLY_1, DewfordTown_Gym_Text_BrawlyPreRematch, DewfordTown_Gym_Text_BrawlyRematchDefeat, DewfordTown_Gym_Text_BrawlyRematchNeedTwoMons
+	trainerbattle_rematch_double TRAINER_SP_IGA_1, DewfordTown_Gym_Text_BrawlyPreRematch, DewfordTown_Gym_Text_BrawlyRematchDefeat, DewfordTown_Gym_Text_BrawlyRematchNeedTwoMons
 # 188 "data/maps/DewfordTown_Gym/scripts.pory"
 	msgbox DewfordTown_Gym_Text_BrawlyPostRematch, MSGBOX_AUTOCLOSE
 # 189 "data/maps/DewfordTown_Gym/scripts.pory"

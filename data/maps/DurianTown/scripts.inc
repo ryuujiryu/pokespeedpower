@@ -557,7 +557,7 @@ DurianTown_LittleGirl_Text_0:
 # 48 "data/maps/DurianTown/scripts.pory"
 	.string "I'm pretending to be a gate guard like\n"
 	.string "my grandma when she was younger!\p"
-	.string "In the past, she welcomed  visitors from\n"
+	.string "In the past, she welcomed visitors from\n"
 	.string "all over the world, especially from\l"
 	.string "HOENN, as it's relatively close!\p"
 	.string "Though, she keeps talking about how\n"

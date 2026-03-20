@@ -11,7 +11,7 @@ CherryWoods:
 	.2byte LAYOUT_CHERRY_WOODS
 	.byte MAPSEC_PETALBURG_WOODS
 	.byte FALSE
-	.byte WEATHER_SHADE
+	.byte WEATHER_PINK_LEAVES
 	.byte MAP_TYPE_NONE
 	.2byte 0
 	map_header_flags allow_cycling=TRUE, allow_escaping=FALSE, allow_running=TRUE, show_map_name=TRUE

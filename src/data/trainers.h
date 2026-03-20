@@ -12422,10 +12422,10 @@ F_TRAINER_FEMALE |
         },
     },
 #line 4806
-    [DIFFICULTY_NORMAL][TRAINER_BRAWLY_1] =
+    [DIFFICULTY_NORMAL][TRAINER_SP_IGA_1] =
     {
 #line 4807
-        .trainerName = _("BRAWLY"),
+        .trainerName = _("IGA"),
 #line 4808
         .trainerClass = TRAINER_CLASS_PATH_GUARDIAN,
 #line 4809
@@ -12503,10 +12503,10 @@ F_TRAINER_FEMALE |
         },
     },
 #line 4840
-    [DIFFICULTY_NORMAL][TRAINER_WATTSON_1] =
+    [DIFFICULTY_NORMAL][TRAINER_SP_KOGA_1] =
     {
 #line 4841
-        .trainerName = _("WATTSON"),
+        .trainerName = _("KOGA"),
 #line 4842
         .trainerClass = TRAINER_CLASS_PATH_GUARDIAN,
 #line 4843
