@@ -911,7 +911,8 @@ const u8 *const gBattleStringsTable[STRINGID_COUNT] =
     [STRINGID_MOONFALLING]                          = COMPOUND_STRING("The full moon disappeared."),
     [STRINGID_METEORSFALLING]                       = COMPOUND_STRING("Meteors started falling down!"),
     [STRINGID_METEORCONTINUING]                     = COMPOUND_STRING("The metor shower continues."),
-    [STRINGID_METEORSTOPPED]                        = COMPOUND_STRING("The meteor shower stopped.")
+    [STRINGID_METEORSTOPPED]                        = COMPOUND_STRING("The meteor shower stopped."),
+    [STRINGID_PKMNHURTBYBLEED]                      = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} was hurt by its bleeding!"),
 };
 
 const u16 gTrainerUsedItemStringIds[] =
@@ -1243,6 +1244,18 @@ const u16 gFrostbiteHealedStringIds[] =
     [B_MSG_FROSTBITE_HEALED_BY_MOVE] = STRINGID_PKMNFROSTBITEHEALEDBY
 };
 
+const u16 gGotBledStringIds[] =
+{
+    [B_MSG_STATUSED]            = STRINGID_PKMNGOTBLED,
+    [B_MSG_STATUSED_BY_ABILITY] = STRINGID_PKMNGOTBLED
+};
+
+const u16 gBleedHealedStringIds[] =
+{
+    [B_MSG_BLEED_HEALED]         = STRINGID_PKMNBLEEDHEALED2,
+    [B_MSG_BLEED_HEALED_BY_MOVE] = STRINGID_PKMNBLEEDHEALEDBY
+};
+
 const u16 gGotFrozenStringIds[] =
 {
     [B_MSG_STATUSED]            = STRINGID_PKMNWASFROZEN,
@@ -1476,6 +1489,7 @@ const u8 gText_Paralysis[] = _("paralysis");
 const u8 gText_Ice[] = _("ice");
 const u8 gText_Confusion[] = _("confusion");
 const u8 gText_Love[] = _("love");
+const u8 gText_Bleed[] = _("bleed");
 const u8 gText_SpaceAndSpace[] = _(" and ");
 const u8 gText_CommaSpace[] = _(", ");
 const u8 gText_Space2[] = _(" ");

@@ -2960,6 +2960,10 @@ static void SetNonVolatileStatus(u32 effectBattler, enum MoveEffect effect, enum
         gBattleMons[effectBattler].status1 |= STATUS1_FROSTBITE;
         gBattlescriptCurrInstr = BattleScript_MoveEffectFrostbite;
         break;
+    case MOVE_EFFECT_BLEED:
+        gBattleMons[effectBattler].status1 |= STATUS1_BLEED;
+        gBattlescriptCurrInstr = BattleScript_MoveEffectBleed;
+        break;
     default:
         break;
     }
@@ -2978,7 +2982,8 @@ static void SetNonVolatileStatus(u32 effectBattler, enum MoveEffect effect, enum
     if (effect == MOVE_EFFECT_POISON
      || effect == MOVE_EFFECT_TOXIC
      || effect == MOVE_EFFECT_PARALYSIS
-     || effect == MOVE_EFFECT_BURN)
+     || effect == MOVE_EFFECT_BURN
+     || effect == MOVE_EFFECT_BLEED)
         gBattleStruct->synchronizeMoveEffect = effect;
 
     if (effect == MOVE_EFFECT_POISON || effect == MOVE_EFFECT_TOXIC)
@@ -3046,6 +3051,7 @@ void SetMoveEffect(u32 battler, u32 effectBattler, bool32 primary, bool32 certai
     case MOVE_EFFECT_PARALYSIS:
     case MOVE_EFFECT_TOXIC:
     case MOVE_EFFECT_FROSTBITE:
+    case MOVE_EFFECT_BLEED:
         if (gSideStatuses[GetBattlerSide(gEffectBattler)] & SIDE_STATUS_SAFEGUARD && !(gHitMarker & HITMARKER_STATUS_ABILITY_EFFECT) && !primary)
             gBattlescriptCurrInstr++;
         else if (CanSetNonVolatileStatus(
@@ -4123,6 +4129,9 @@ void SetMoveEffect(u32 battler, u32 effectBattler, bool32 primary, bool32 certai
             case STATUS1_TOXIC_POISON:
             case STATUS1_PSN_ANY:
                 gBattlescriptCurrInstr = BattleScript_TargetPoisonHealed;
+                break;
+            case STATUS1_BLEED:
+                gBattlescriptCurrInstr = BattleScript_TargetBleedHeal;
                 break;
             }
         }

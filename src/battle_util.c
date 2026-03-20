@@ -5709,6 +5709,19 @@ bool32 CanGetFrostbite(u32 battlerAtk, u32 battlerDef, u32 abilityDef)
     return FALSE;
 }
 
+bool32 CanBeBleeding(u32 battlerAtk, u32 battlerDef, u32 abilityDef)
+{
+    if (CanSetNonVolatileStatus(
+            battlerAtk,
+            battlerDef,
+            ABILITY_NONE, // attacker ability does not matter
+            abilityDef,
+            MOVE_EFFECT_BLEED,
+            CHECK_TRIGGER))
+        return TRUE;
+    return FALSE;
+}
+
 bool32 CanSetNonVolatileStatus(u32 battlerAtk, u32 battlerDef, u32 abilityAtk, u32 abilityDef, enum MoveEffect effect, enum FunctionCallOption option)
 {
     const u8 *battleScript = NULL;
@@ -5830,6 +5843,16 @@ bool32 CanSetNonVolatileStatus(u32 battlerAtk, u32 battlerDef, u32 abilityAtk, u
         else if (abilityDef == ABILITY_MAGMA_ARMOR)
         {
             abilityAffected = TRUE;
+            battleScript = BattleScript_NotAffected;
+        }
+        break;
+    case MOVE_EFFECT_BLEED:
+        if (gBattleMons[battlerDef].status1 & STATUS1_BLEED)
+        {
+            battleScript = BattleScript_AlreadyBleeding;
+        }
+        else if (IS_BATTLER_OF_TYPE(battlerDef, TYPE_GHOST))
+        {
             battleScript = BattleScript_NotAffected;
         }
         break;
@@ -6492,6 +6515,14 @@ static u8 ItemEffectMoveEnd(u32 battler, enum ItemHoldEffect holdEffect)
             effect = ITEM_EFFECT_OTHER;
         }
         break;
+    case HOLD_EFFECT_CURE_BLD:
+        if (gBattleMons[battler].status1 & STATUS1_BLEED && !UnnerveOn(battler, gLastUsedItem))
+        {
+            gBattleMons[battler].status1 &= ~STATUS1_BLEED;
+            BattleScriptCall(BattleScript_BerryCureBldRet);
+            effect = ITEM_STATUS_CHANGE;
+        }
+        break;
     case HOLD_EFFECT_MENTAL_HERB:
         if (GetMentalHerbEffect(battler))
         {
@@ -6525,6 +6556,9 @@ static u8 ItemEffectMoveEnd(u32 battler, enum ItemHoldEffect holdEffect)
 
             if (gBattleMons[battler].volatiles.confusionTurns > 0)
                 StringCopy(gBattleTextBuff1, gStatusConditionString_ConfusionJpn);
+
+            if (gBattleMons[battler].status1 & STATUS1_BLEED)
+                StringCopy(gBattleTextBuff1, gStatusConditionString_BleedJpn);
 
             gBattleMons[battler].status1 = 0;
             RemoveConfusionStatus(battler);
@@ -6590,6 +6624,11 @@ static inline bool32 TryCureStatus(u32 battler, enum ItemCaseId caseId)
         if (gBattleMons[battler].status1 & STATUS1_FREEZE || gBattleMons[battler].status1 & STATUS1_FROSTBITE)
         {
             StringCopy(gBattleTextBuff1, gStatusConditionString_IceJpn);
+            string++;
+        }
+        if (gBattleMons[battler].status1 & STATUS1_BLEED)
+        {
+            StringCopy(gBattleTextBuff1, gStatusConditionString_BleedJpn);
             string++;
         }
         if (gBattleMons[battler].volatiles.confusionTurns > 0)
@@ -6766,6 +6805,16 @@ u32 ItemBattleEffects(enum ItemCaseId caseID, u32 battler)
                     BattleScriptExecute(BattleScript_BerryCureSlpEnd2);
                     effect = ITEM_STATUS_CHANGE;
                     TryDeactivateSleepClause(GetBattlerSide(battler), gBattlerPartyIndexes[battler]);
+                }
+                break;
+            case HOLD_EFFECT_CURE_BLD:
+                if (B_BERRIES_INSTANT >= GEN_4
+                    && (gBattleMons[battler].status1 & STATUS1_BLEED)
+                    && !UnnerveOn(battler, gLastUsedItem))
+                {
+                    gBattleMons[battler].status1 &= ~STATUS1_BLEED;
+                    BattleScriptExecute(BattleScript_BerryCureBldEnd2);
+                    effect = ITEM_STATUS_CHANGE;
                 }
                 break;
             case HOLD_EFFECT_CURE_STATUS:
@@ -6965,6 +7014,14 @@ u32 ItemBattleEffects(enum ItemCaseId caseID, u32 battler)
                 {
                     gBattleMons[battler].status1 &= ~STATUS1_FROSTBITE;
                     BattleScriptExecute(BattleScript_BerryCureFrbEnd2);
+                    effect = ITEM_STATUS_CHANGE;
+                }
+                break;
+            case HOLD_EFFECT_CURE_BLD:
+                if (gBattleMons[battler].status1 & STATUS1_BLEED && !UnnerveOn(battler, gLastUsedItem))
+                {
+                    gBattleMons[battler].status1 &= ~STATUS1_BLEED;
+                    BattleScriptExecute(BattleScript_BerryCureBldEnd2);
                     effect = ITEM_STATUS_CHANGE;
                 }
                 break;
@@ -8348,7 +8405,7 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageContext *ctx)
     switch (moveEffect)
     {
     case EFFECT_FACADE:
-        if (gBattleMons[battlerAtk].status1 & (STATUS1_BURN | STATUS1_PSN_ANY | STATUS1_PARALYSIS | STATUS1_FROSTBITE))
+        if (gBattleMons[battlerAtk].status1 & (STATUS1_BURN | STATUS1_PSN_ANY | STATUS1_PARALYSIS | STATUS1_FROSTBITE | STATUS1_BLEED))
             modifier = uq4_12_multiply(modifier, UQ_4_12(2.0));
         break;
     case EFFECT_BRINE:

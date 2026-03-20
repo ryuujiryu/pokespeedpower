@@ -265,6 +265,7 @@ static bool32 ShouldSwitchIfHasBadOdds(u32 battler)
             || nonVolatileStatus == MOVE_EFFECT_TOXIC
             || nonVolatileStatus == MOVE_EFFECT_PARALYSIS
             || nonVolatileStatus == MOVE_EFFECT_BURN
+            || nonVolatileStatus == MOVE_EFFECT_BLEED
             || aiMoveEffect == EFFECT_YAWN
             || aiMoveEffect == EFFECT_TRICK || aiMoveEffect == EFFECT_TRICK_ROOM || aiMoveEffect== EFFECT_WONDER_ROOM || aiMoveEffect ==  EFFECT_PSYCHO_SHIFT || aiMoveEffect == EFFECT_FIRST_TURN_ONLY
             )
@@ -1784,6 +1785,15 @@ static u32 GetSwitchinStatusDamage(u32 battler)
             if (statusDamage == 0)
                 statusDamage = 1;
         }
+        else if (status & STATUS1_BLEED)
+        {
+            if (B_BURN_DAMAGE >= GEN_7)
+                statusDamage = maxHP / 16;
+            else
+                statusDamage = maxHP / 8;
+            if (statusDamage == 0)
+                statusDamage = 1;
+        }
         else if ((status & STATUS1_POISON) && ability != ABILITY_POISON_HEAL)
         {
             statusDamage = maxHP / 8;
@@ -2521,6 +2531,8 @@ static bool32 ShouldUseItem(u32 battler)
             if (itemEffects[3] & ITEM3_PARALYSIS && gBattleMons[battler].status1 & STATUS1_PARALYSIS)
                 shouldUse = TRUE;
             if (itemEffects[3] & ITEM3_CONFUSION && gBattleMons[battler].volatiles.confusionTurns > 0)
+                shouldUse = TRUE;
+            if (itemEffects[3] & ITEM3_BLEED && gBattleMons[battler].status1 & STATUS1_BLEED)
                 shouldUse = TRUE;
             break;
         case EFFECT_ITEM_INCREASE_STAT:

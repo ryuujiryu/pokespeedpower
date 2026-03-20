@@ -486,12 +486,14 @@ struct BattleTv_Mon
     u32 prlzMonId:3;
     u32 slpMonId:3;
     u32 frzMonId:3;
+    u32 bldMonId:3;
     u32 psnMoveSlot:2;
     u32 badPsnMoveSlot:2;
     u32 brnMoveSlot:2;
     u32 prlzMoveSlot:2;
     u32 slpMoveSlot:2;
     u32 frzMoveSlot:2;
+    u32 bldMoveSlot:2;
 };
 
 struct BattleTv

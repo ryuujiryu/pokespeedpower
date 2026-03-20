@@ -233,6 +233,8 @@ u32 ShouldTryToFlinch(u32 battlerAtk, u32 battlerDef, u32 atkAbility, u32 defAbi
 bool32 ShouldTrap(u32 battlerAtk, u32 battlerDef, u32 move);
 bool32 IsWakeupTurn(u32 battler);
 bool32 AI_IsBattlerAsleepOrComatose(u32 battlerId);
+bool32 ShouldBleed(u32 battlerAtk, u32 battlerDef, u32 abilityDef);
+bool32 AI_CanBleed(u32 battlerAtk, u32 battlerDef, u32 defAbility, u32 battlerAtkPartner, u32 move, u32 partnerMove);
 
 // ability logic
 bool32 IsMoxieTypeAbility(u32 ability);
@@ -284,6 +286,8 @@ void IncreaseParalyzeScore(u32 battlerAtk, u32 battlerDef, u32 move, s32 *score)
 void IncreaseSleepScore(u32 battlerAtk, u32 battlerDef, u32 move, s32 *score);
 void IncreaseConfusionScore(u32 battlerAtk, u32 battlerDef, u32 move, s32 *score);
 void IncreaseFrostbiteScore(u32 battlerAtk, u32 battlerDef, u32 move, s32 *score);
+void IncreaseBleedScore(u32 battlerAtk, u32 battlerDef, u32 move, s32 *score);
+
 
 s32 AI_CalcPartyMonDamage(u32 move, u32 battlerAtk, u32 battlerDef, struct BattlePokemon switchinCandidate, enum DamageCalcContext calcContext);
 u32 AI_WhoStrikesFirstPartyMon(u32 battlerAtk, u32 battlerDef, struct BattlePokemon switchinCandidate, u32 aiMoveConsidered, u32 playerMoveConsidered, enum ConsiderPriority ConsiderPriority);

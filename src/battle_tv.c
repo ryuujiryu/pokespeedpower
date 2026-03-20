@@ -59,6 +59,7 @@ enum {
     FNT_LEECH_SEED,
     FNT_POISON,
     FNT_BURN,
+    FNT_BLEED,
     FNT_NIGHTMARE,
     FNT_WRAP,
     FNT_SPIKES,
@@ -109,6 +110,7 @@ static const u16 sPoints_StatusDmg[] =
     3, // Poison
     3, // Toxic
     3, // Burn
+    3, // Bleed
     3, // Nightmare
     3  // Wrap (Trapping move)
 };
@@ -127,7 +129,7 @@ static const u16 sSpecialBattleStrings[] =
     STRINGID_PKMNPERISHCOUNTFELL, STRINGID_PKMNWISHCAMETRUE, STRINGID_PKMNLOSTPPGRUDGE,
     STRINGID_PKMNTOOKFOE, STRINGID_PKMNABSORBEDNUTRIENTS, STRINGID_PKMNANCHOREDITSELF,
     STRINGID_PKMNAFFLICTEDBYCURSE, STRINGID_PKMNSAPPEDBYLEECHSEED, STRINGID_PKMNLOCKEDINNIGHTMARE,
-    STRINGID_PKMNHURTBY, STRINGID_PKMNHURTBYBURN, STRINGID_PKMNHURTBYPOISON,
+    STRINGID_PKMNHURTBY, STRINGID_PKMNHURTBYBURN, STRINGID_PKMNHURTBYPOISON, STRINGID_PKMNHURTBYBLEED,
     STRINGID_PKMNHURTBYSPIKES, STRINGID_ATTACKERFAINTED, STRINGID_TARGETFAINTED,
     STRINGID_PKMNHITWITHRECOIL, STRINGID_PKMNCRASHED, TABLE_END
 };
@@ -364,6 +366,19 @@ void BattleTv_SetDataBasedOnString(enum StringID stringId)
             if (tvPtr->mon[atkSide][gBattlerPartyIndexes[gBattlerAttacker]].brnMonId != 0)
                 AddMovePoints(PTS_STATUS_DMG, 4, tvPtr->mon[atkSide][gBattlerPartyIndexes[gBattlerAttacker]].brnMonId - 1, tvPtr->mon[atkSide][gBattlerPartyIndexes[gBattlerAttacker]].brnMoveSlot);
             tvPtr->side[atkSide].faintCause = FNT_BURN;
+            tvPtr->side[atkSide].faintCauseMonId = gBattlerPartyIndexes[gBattlerAttacker];
+        }
+        break;
+    case STRINGID_PKMNGOTBLED:
+        tvPtr->mon[effSide][gBattlerPartyIndexes[gEffectBattler]].bldMonId = gBattlerPartyIndexes[gBattlerAttacker] + 1;
+        tvPtr->mon[effSide][gBattlerPartyIndexes[gEffectBattler]].bldMoveSlot = moveSlot;
+        break;
+    case STRINGID_PKMNHURTBYBLEED:
+        if (GetMonData(atkMon, MON_DATA_HP, NULL) != 0)
+        {
+            if (tvPtr->mon[atkSide][gBattlerPartyIndexes[gBattlerAttacker]].bldMonId != 0)
+                AddMovePoints(PTS_STATUS_DMG, 4, tvPtr->mon[atkSide][gBattlerPartyIndexes[gBattlerAttacker]].bldMonId - 1, tvPtr->mon[atkSide][gBattlerPartyIndexes[gBattlerAttacker]].bldMoveSlot);
+            tvPtr->side[atkSide].faintCause = FNT_BLEED;
             tvPtr->side[atkSide].faintCauseMonId = gBattlerPartyIndexes[gBattlerAttacker];
         }
         break;
@@ -819,6 +834,7 @@ static void AddMovePoints(u8 caseId, u16 arg1, u8 arg2, u8 arg3)
             baseFromEffect += 3;
             break;
         case MOVE_EFFECT_BURN:
+        case MOVE_EFFECT_BLEED:
         case MOVE_EFFECT_POISON:
             baseFromEffect += 4;
             break;
@@ -1109,6 +1125,13 @@ static void AddPointsOnFainting(bool8 targetFainted)
             {
                 AddMovePoints(PTS_FAINT, 0, atkSide ^ BIT_SIDE,
                 (tvPtr->mon[atkSide][atkArrId].brnMonId - 1) * 4 + tvPtr->mon[atkSide][atkArrId].brnMoveSlot);
+            }
+            break;
+        case FNT_BLEED:
+            if (tvPtr->mon[atkSide][atkArrId].bldMonId != 0)
+            {
+                AddMovePoints(PTS_FAINT, 0, atkSide ^ BIT_SIDE,
+                (tvPtr->mon[atkSide][atkArrId].bldMonId - 1) * 4 + tvPtr->mon[atkSide][atkArrId].bldMoveSlot);
             }
             break;
         case FNT_NIGHTMARE:

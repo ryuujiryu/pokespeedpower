@@ -910,6 +910,8 @@ u32 GetItemStatus1Mask(u16 itemId)
             return STATUS1_PSN_ANY | STATUS1_TOXIC_COUNTER;
         case ITEM3_SLEEP:
             return STATUS1_SLEEP;
+        case ITEM3_BLEED:
+            return STATUS1_BLEED;
         case ITEM3_STATUS_ALL:
             return STATUS1_ANY | STATUS1_TOXIC_COUNTER;
     }

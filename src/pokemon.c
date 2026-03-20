@@ -738,6 +738,7 @@ static const u32 sCompressedStatuses[] =
     STATUS1_PARALYSIS,
     STATUS1_TOXIC_POISON,
     STATUS1_FROSTBITE,
+    STATUS1_BLEED,
 };
 
 // Attempt to detect situations where the BoxPokemon struct is unable to
@@ -3577,6 +3578,8 @@ bool8 PokemonUseItemEffects(struct Pokemon *mon, u16 item, u8 partyIndex, u8 mov
             if ((itemEffect[i] & ITEM3_FREEZE) && HealStatusConditions(mon, STATUS1_FREEZE | STATUS1_FROSTBITE, battler) == 0)
                 retVal = FALSE;
             if ((itemEffect[i] & ITEM3_PARALYSIS) && HealStatusConditions(mon, STATUS1_PARALYSIS, battler) == 0)
+                retVal = FALSE;
+            if ((itemEffect[i] & ITEM3_BLEED) && HealStatusConditions(mon, STATUS1_BLEED, battler) == 0)
                 retVal = FALSE;
             break;
 

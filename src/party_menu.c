@@ -2009,6 +2009,8 @@ u8 GetAilmentFromStatus(u32 status)
         return AILMENT_BRN;
     if (status & STATUS1_FROSTBITE)
         return AILMENT_FRB;
+    if (status & STATUS1_BLEED)
+        return AILMENT_BLD;
     return AILMENT_NONE;
 }
 
@@ -6717,6 +6719,8 @@ u8 GetItemEffectType(u16 item)
             return ITEM_EFFECT_CURE_CONFUSION;
         else if (itemEffect[0] >> 7 && !statusCure)
             return ITEM_EFFECT_CURE_INFATUATION;
+        else if (statusCure == ITEM3_BLEED)
+            return ITEM_EFFECT_CURE_BLD;
         else
             return ITEM_EFFECT_CURE_ALL_STATUS;
     }

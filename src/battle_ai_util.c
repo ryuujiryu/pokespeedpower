@@ -1100,6 +1100,10 @@ static bool32 AI_IsMoveEffectInPlus(u32 battlerAtk, u32 battlerDef, u32 move, s3
                     if (ShouldTryToFlinch(battlerAtk, battlerDef, abilityAtk, abilityDef, move))
                         return TRUE;
                     break;
+                case MOVE_EFFECT_BLEED:
+                    if (AI_CanBleed(battlerAtk, battlerDef, abilityDef, BATTLE_PARTNER(battlerAtk), move, MOVE_NONE))
+                        return TRUE;
+                    break;
                 case MOVE_EFFECT_ATK_MINUS_1:
                 case MOVE_EFFECT_DEF_MINUS_1:
                 case MOVE_EFFECT_SPD_MINUS_1:
@@ -3511,6 +3515,26 @@ bool32 ShouldParalyze(u32 battlerAtk, u32 battlerDef, u32 abilityDef)
         return TRUE;
 }
 
+bool32 ShouldBleed(u32 battlerAtk, u32 battlerDef, u32 abilityDef)
+{
+    // Battler can bleed and has move/ability that synergizes with bleeding
+    if (CanBeBleeding(battlerAtk, battlerDef, abilityDef) && (
+        DoesBattlerBenefitFromAllVolatileStatus(battlerDef, abilityDef)
+        || abilityDef == ABILITY_HEATPROOF
+        || (abilityDef == ABILITY_FLARE_BOOST && HasMoveWithCategory(battlerDef, DAMAGE_CATEGORY_SPECIAL))))
+    {
+        if (battlerAtk == battlerDef) // Targeting self
+            return TRUE;
+        else
+            return FALSE;
+    }
+
+    if (battlerAtk == battlerDef)
+        return FALSE;
+    else
+        return TRUE;
+}
+
 bool32 AI_CanPoison(u32 battlerAtk, u32 battlerDef, u32 defAbility, u32 move, u32 partnerMove)
 {
     if (!CanBePoisoned(battlerAtk, battlerDef, gAiLogicData->abilities[battlerAtk], defAbility)
@@ -3589,6 +3613,19 @@ bool32 AI_CanBeInfatuated(u32 battlerAtk, u32 battlerDef, u32 defAbility)
       || !AreBattlersOfOppositeGender(battlerAtk, battlerDef)
       || AI_IsAbilityOnSide(battlerDef, ABILITY_AROMA_VEIL))
         return FALSE;
+    return TRUE;
+}
+
+
+bool32 AI_CanBleed(u32 battlerAtk, u32 battlerDef, u32 defAbility, u32 battlerAtkPartner, u32 move, u32 partnerMove)
+{
+    if (!CanBeBleeding(battlerAtk, battlerDef, defAbility)
+      || gAiLogicData->effectiveness[battlerAtk][battlerDef][gAiThinkingStruct->movesetIndex] == UQ_4_12(0.0)
+      || DoesSubstituteBlockMove(battlerAtk, battlerDef, move)
+      || PartnerMoveEffectIsStatusSameTarget(battlerAtkPartner, battlerDef, partnerMove))
+    {
+        return FALSE;
+    }
     return TRUE;
 }
 
@@ -4113,6 +4150,7 @@ bool32 PartnerMoveEffectIsStatusSameTarget(u32 battlerAtkPartner, u32 battlerDef
        || nonVolatileStatus == MOVE_EFFECT_SLEEP
        || nonVolatileStatus == MOVE_EFFECT_PARALYSIS
        || nonVolatileStatus == MOVE_EFFECT_BURN
+       || nonVolatileStatus == MOVE_EFFECT_BLEED
        || partnerEffect == EFFECT_YAWN))
         return TRUE;
     return FALSE;
@@ -4837,6 +4875,30 @@ void IncreaseFrostbiteScore(u32 battlerAtk, u32 battlerDef, u32 move, s32 *score
     }
 }
 
+
+void IncreaseBleedScore(u32 battlerAtk, u32 battlerDef, u32 move, s32 *score)
+{
+    if (((gAiThinkingStruct->aiFlags[battlerAtk] & AI_FLAG_TRY_TO_FAINT) && CanAIFaintTarget(battlerAtk, battlerDef, 0))
+            || gAiLogicData->holdEffects[battlerDef] == HOLD_EFFECT_CURE_BLD || gAiLogicData->holdEffects[battlerDef] == HOLD_EFFECT_CURE_STATUS)
+        return;
+
+    if (AI_CanPoison(battlerAtk, battlerDef, gAiLogicData->abilities[battlerDef], move, gAiLogicData->partnerMove) && gAiLogicData->hpPercents[battlerDef] > 20)
+    {
+        if (!HasDamagingMove(battlerDef))
+            ADJUST_SCORE_PTR(DECENT_EFFECT);
+
+        if (gAiThinkingStruct->aiFlags[battlerAtk] & AI_FLAG_STALL && HasMoveWithEffect(battlerAtk, EFFECT_PROTECT))
+            ADJUST_SCORE_PTR(WEAK_EFFECT);    // stall tactic
+
+        if (IsPowerBasedOnStatus(battlerAtk, EFFECT_DOUBLE_POWER_ON_ARG_STATUS, STATUS1_PSN_ANY)
+         || HasMoveWithEffect(battlerAtk, EFFECT_VENOM_DRENCH)
+         || gAiLogicData->abilities[battlerAtk] == ABILITY_MERCILESS)
+            ADJUST_SCORE_PTR(DECENT_EFFECT);
+        else
+            ADJUST_SCORE_PTR(WEAK_EFFECT);
+    }
+}
+
 bool32 AI_MoveMakesContact(u32 ability, enum ItemHoldEffect holdEffect, u32 move)
 {
     if (MoveMakesContact(move)
@@ -5298,6 +5360,7 @@ u32 IncreaseSubstituteMoveScore(u32 battlerAtk, u32 battlerDef, u32 move)
      || HasNonVolatileMoveEffect(battlerDef, MOVE_EFFECT_TOXIC)
      || HasNonVolatileMoveEffect(battlerDef, MOVE_EFFECT_PARALYSIS)
      || HasNonVolatileMoveEffect(battlerDef, MOVE_EFFECT_BURN)
+     || HasNonVolatileMoveEffect(battlerDef, MOVE_EFFECT_BLEED)
      || HasMoveWithEffect(battlerDef, EFFECT_CONFUSE)
      || HasMoveWithEffect(battlerDef, EFFECT_LEECH_SEED))
         scoreIncrease += GOOD_EFFECT;

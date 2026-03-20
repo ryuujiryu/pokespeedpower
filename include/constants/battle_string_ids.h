@@ -753,6 +753,13 @@ enum StringID
     STRINGID_METEORSFALLING,
     STRINGID_METEORCONTINUING,
     STRINGID_METEORSTOPPED,
+    STRINGID_PKMNHURTBYBLEED,
+    STRINGID_PKMNGOTBLED,
+    STRINGID_PKMNSITEMHEALEDBLEED,
+    STRINGID_ATTACKERHEALEDITSBLEED,
+    STRINGID_PKMNBLEEDHEALED,
+    STRINGID_PKMNBLEEDHEALED2,
+    STRINGID_PKMNBLEEDHEALEDBY,
     STRINGID_COUNT
 };
 
@@ -1070,7 +1077,7 @@ enum NoEscapeStringID
 };
 
 // gGotPoisonedStringIds / gGotParalyzedStringIds / gFellAsleepStringIds
-// gGotBurnedStringIds / gGotFrozenStringIds / gAttractUsedStringIds
+// gGotBurnedStringIds / gGotFrozenStringIds / gAttractUsedStringIds / gGotBledStringIds
 enum GotStatusedStringID
 {
     B_MSG_STATUSED,
@@ -1100,6 +1107,13 @@ enum FrostbiteHealedStringID
 {
     B_MSG_FROSTBITE_HEALED,
     B_MSG_FROSTBITE_HEALED_BY_MOVE,
+};
+
+// gBleedHealedStringIds
+enum BleedHealedStringID
+{
+    B_MSG_BLEED_HEALED,
+    B_MSG_BLEED_HEALED_BY_MOVE,
 };
 
 // gBattlePalaceFlavorTextTable
