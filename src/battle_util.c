@@ -9268,6 +9268,10 @@ static inline uq4_12_t GetBurnOrFrostBiteModifier(struct DamageContext *ctx)
         && IsBattleMoveSpecial(ctx->move)
         && (B_BURN_FACADE_DMG < GEN_6 || moveEffect != EFFECT_FACADE))
         return UQ_4_12(0.5);
+    if (gBattleMons[ctx->battlerAtk].status1 & STATUS1_BLEED
+        && IsBattleMoveSpecial(ctx->move)
+        && (B_BURN_FACADE_DMG < GEN_6 || moveEffect != EFFECT_FACADE))
+        return UQ_4_12(0.5);
     return UQ_4_12(1.0);
 }
 

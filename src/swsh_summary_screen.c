@@ -1405,8 +1405,13 @@ static const union AnimCmd sSpriteAnim_StatusFaint[] = {
     ANIMCMD_FRAME(24, 0, FALSE, FALSE),
     ANIMCMD_END
 };
-static const union AnimCmd sSpriteAnim_StatusFrostbite[] = {
+    static const union AnimCmd sSpriteAnim_StatusFrostbite[] = {
     ANIMCMD_FRAME(28, 0, FALSE, FALSE),
+    ANIMCMD_END
+};
+static const union AnimCmd sSpriteAnim_StatusBleed[] =
+{
+    ANIMCMD_FRAME(32, 0, FALSE, FALSE),
     ANIMCMD_END
 };
 
@@ -1419,6 +1424,7 @@ static const union AnimCmd *const sSpriteAnimTable_StatusCondition[] = {
     sSpriteAnim_StatusPokerus,
     sSpriteAnim_StatusFaint,
     sSpriteAnim_StatusFrostbite,
+    sSpriteAnim_StatusBleed,
 };
 
 
@@ -1429,7 +1435,7 @@ static const struct CompressedSpriteSheet sStatusIconsSpriteSheet =
 #else
     .data = gStatusGfx_Icons,
 #endif
-    .size = 0x400,
+    .size = 0x480,
     .tag = TAG_MON_STATUS
 };
 

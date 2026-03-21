@@ -4569,6 +4569,9 @@ static void GetMedicineItemEffectMessage(u16 item, u32 statusCured)
     case ITEM_EFFECT_CURE_BURN:
         StringExpandPlaceholders(gStringVar4, gText_PkmnBurnHealed);
         break;
+    case ITEM_EFFECT_CURE_BLEED:
+        StringExpandPlaceholders(gStringVar4, gText_PkmnBleedHealed);
+        break;
     case ITEM_EFFECT_CURE_FREEZE_FROSTBITE:
         if (statusCured & STATUS1_FREEZE)
             StringExpandPlaceholders(gStringVar4, gText_PkmnThawedOut);
@@ -6720,7 +6723,7 @@ u8 GetItemEffectType(u16 item)
         else if (itemEffect[0] >> 7 && !statusCure)
             return ITEM_EFFECT_CURE_INFATUATION;
         else if (statusCure == ITEM3_BLEED)
-            return ITEM_EFFECT_CURE_BLD;
+            return ITEM_EFFECT_CURE_BLEED;
         else
             return ITEM_EFFECT_CURE_ALL_STATUS;
     }

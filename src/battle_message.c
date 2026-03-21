@@ -912,7 +912,14 @@ const u8 *const gBattleStringsTable[STRINGID_COUNT] =
     [STRINGID_METEORSFALLING]                       = COMPOUND_STRING("Meteors started falling down!"),
     [STRINGID_METEORCONTINUING]                     = COMPOUND_STRING("The metor shower continues."),
     [STRINGID_METEORSTOPPED]                        = COMPOUND_STRING("The meteor shower stopped."),
+    [STRINGID_PKMNGOTBLED]                          = COMPOUND_STRING("{B_EFF_NAME_WITH_PREFIX} is bleeding!"),
+    [STRINGID_PKMNSITEMHEALEDBLEED]                 = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX}'s {B_LAST_ITEM} cured its bleeding!"),
+    [STRINGID_ATTACKERHEALEDITSBLEED]               = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} cured its bleeding through sheer determination so you wouldn't worry!"),
+    [STRINGID_PKMNBLEEDHEALED]                      = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX}'s bleeding was cured!"),
+    [STRINGID_PKMNBLEEDHEALED2]                     = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX}'s bleeding was cured!"),
+    [STRINGID_PKMNBLEEDHEALEDBY]                    = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX}'s {B_CURRENT_MOVE} cured its bleeding!"),
     [STRINGID_PKMNHURTBYBLEED]                      = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} was hurt by its bleeding!"),
+    [STRINGID_PKMNALREADYBLEEDING]                  = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX} is already bleeding!"),
 };
 
 const u16 gTrainerUsedItemStringIds[] =
