@@ -873,6 +873,7 @@ u8 GetItemBattleUsage(u16 itemId)
             case ITEM_EFFECT_CURE_ALL_STATUS:
             case ITEM_EFFECT_CURE_CONFUSION:
             case ITEM_EFFECT_CURE_INFATUATION:
+            case ITEM_EFFECT_CURE_BLEED:
                 return EFFECT_ITEM_CURE_STATUS;
             case ITEM_EFFECT_HEAL_PP:
                 return EFFECT_ITEM_RESTORE_PP;

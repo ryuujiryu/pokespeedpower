@@ -225,6 +225,7 @@ extern const u8 BattleScript_BerryCureFrbRet[];
 extern const u8 BattleScript_BerryCureSlpEnd2[];
 extern const u8 BattleScript_BerryCureSlpRet[];
 extern const u8 BattleScript_BerryCureBldRet[];
+extern const u8 BattleScript_BerryCureBldEnd2[];
 extern const u8 BattleScript_BerryCureConfusionEnd2[];
 extern const u8 BattleScript_BerryCureConfusionRet[];
 extern const u8 BattleScript_BerryCureChosenStatusEnd2[];

@@ -614,8 +614,8 @@ static const u16 sStatusIconColors[] =
     [PAL_STATUS_PAR] = RGB(23, 23, 3),
     [PAL_STATUS_SLP] = RGB(20, 20, 17),
     [PAL_STATUS_FRZ] = RGB(17, 22, 28),
-    [PAL_STATUS_BRN] = RGB(28, 14, 10),
-    [PAL_STATUS_BLD] = RGB(28, 14, 10),
+    [PAL_STATUS_BRN] = RGB(28, 14, 7),
+    [PAL_STATUS_BLD] = RGB(27, 11, 15),
 };
 
 static const struct WindowTemplate sHealthboxWindowTemplate = {
