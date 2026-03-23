@@ -509,7 +509,7 @@ gSongTable::
 	song mus_rg_route3, 0, 0
 	song mus_rg_route11, 0, 0
 	song mus_rg_victory_road, 0, 0
-	song mus_rg_vs_gym_leader, 0, 0
+	song mus_fighting_of_the_spirit, 0, 0
 	song mus_rg_vs_trainer, 0, 0
 	song mus_rg_vs_wild, 0, 0
 	song mus_rg_vs_champion, 0, 0

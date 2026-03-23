@@ -11,7 +11,7 @@ Route52_ObjectEvents:
 	object_event 4, OBJ_EVENT_GFX_MONK, 12, 30, 0, MOVEMENT_TYPE_FACE_RIGHT, 0, 0, TRAINER_TYPE_NONE, 0, Route52_ReligiousDebate, FLAG_BADGE01_GET
 
 Route52_MapWarps:
-	warp_def 13, 27, 0, 0, MAP_ROUTE51_GATEHOUSE
+	warp_def 13, 26, 0, 0, MAP_ROUTE51_GATEHOUSE
 	warp_def 13, 13, 0, 1, MAP_ROUTE52_GATEHOUSE2
 
 Route52_MapCoordEvents:

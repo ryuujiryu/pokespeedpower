@@ -439,7 +439,7 @@
 #define MUS_RG_ROUTE3               505 // MUS_RG_LOAD02
 #define MUS_RG_ROUTE11              506 // MUS_RG_LOAD03
 #define MUS_RG_VICTORY_ROAD         507 // MUS_RG_CHAMP_R
-#define MUS_RG_VS_GYM_LEADER        508 // MUS_RG_VS_GYM
+#define MUS_FIGHTING_OF_THE_SPIRIT        508 // MUS_RG_VS_GYM
 #define MUS_RG_VS_TRAINER           509 // MUS_RG_VS_TORE
 #define MUS_RG_VS_WILD              510 // MUS_RG_VS_YASEI
 #define MUS_RG_VS_CHAMPION          511 // MUS_RG_VS_LAST

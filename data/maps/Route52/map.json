@@ -83,7 +83,7 @@
   "warp_events": [
     {
       "x": 13,
-      "y": 27,
+      "y": 26,
       "elevation": 0,
       "dest_map": "MAP_ROUTE51_GATEHOUSE",
       "dest_warp_id": "0"

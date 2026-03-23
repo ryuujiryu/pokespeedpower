@@ -3610,7 +3610,7 @@ static void DebugAction_DestroyFollowerNPC(u8 taskId)
     X(MUS_RG_ROUTE3)                \
     X(MUS_RG_ROUTE11)               \
     X(MUS_RG_VICTORY_ROAD)          \
-    X(MUS_RG_VS_GYM_LEADER)         \
+    X(MUS_FIGHTING_OF_THE_SPIRIT)         \
     X(MUS_RG_VS_TRAINER)            \
     X(MUS_RG_VS_WILD)               \
     X(MUS_RG_VS_CHAMPION)           \

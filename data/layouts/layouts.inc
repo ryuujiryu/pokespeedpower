@@ -6760,8 +6760,8 @@ DurianGym_Layout_Blockdata::
 
 	.align 2
 DurianGym_Layout::
-	.4byte 10
-	.4byte 17
+	.4byte 12
+	.4byte 18
 	.4byte DurianGym_Layout_Border
 	.4byte DurianGym_Layout_Blockdata
 	.4byte gTileset_Building

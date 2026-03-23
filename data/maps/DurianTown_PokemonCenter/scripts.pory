@@ -140,7 +140,7 @@ script DurianTown_PokemonCenter_EventScript_SongSelection {
         case 4:
             playbgm (MUS_AW2_209, FALSE)
         case 5:
-            playbgm (MUS_RG_VS_GYM_LEADER, FALSE)
+            playbgm (MUS_FIGHTING_OF_THE_SPIRIT, FALSE)
         case 6:
             playbgm (MUS_RG_VS_WILD, FALSE)
         case 7:

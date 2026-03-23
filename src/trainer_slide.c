@@ -56,6 +56,10 @@ static const u8* const sTrainerSlides[DIFFICULTY_COUNT][TRAINERS_COUNT][TRAINER_
 {
     [DIFFICULTY_NORMAL] =
     {
+        [TRAINER_SP_SHIRI_AND_BANJO_1] = // use the Trainer's Id from include/constants/opponents.h
+        {
+            [TRAINER_SLIDE_PLAYER_LANDS_FIRST_CRITICAL_HIT] = COMPOUND_STRING("BANJO: Good job!\n SHIRI: Tch, don't praise 'em!{PAUSE_UNTIL_PRESS}")
+        }
     },
 };
 

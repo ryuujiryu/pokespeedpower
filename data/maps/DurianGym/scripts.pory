@@ -42,6 +42,10 @@ script DurianGym_ShiriAndBanjo {
 script DurianGym_ShiriAndBanjoCheckBadge {
 	if (!flag(FLAG_DEFEATED_RUSTBORO_GYM)){call(DurianGym_ShiriAndBanjoBattle)}
 	else {
+	applymovement (LOCALID_DURIANGYM_SHIRI, Common_Movement_FacePlayer)
+	waitmovement (0)
+	applymovement (LOCALID_DURIANGYM_BANJO, Common_Movement_FacePlayer)
+	waitmovement (0)
     setspeaker("BANJO")
 	msgbox ("'Ya smashed us like a guitar!$")
 	closemessage

@@ -4504,8 +4504,8 @@
     {
       "id": "LAYOUT_DURIAN_GYM",
       "name": "DurianGym_Layout",
-      "width": 10,
-      "height": 17,
+      "width": 12,
+      "height": 18,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_RustboroGym",
       "border_filepath": "data/layouts/DurianGym/border.bin",

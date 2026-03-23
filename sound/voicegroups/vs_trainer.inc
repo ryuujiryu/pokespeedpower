@@ -1,6 +1,6 @@
 voice_group vs_trainer
 	voice_keysplit_all voicegroup_frlg_drumset
-	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0                                                                   @ 1 | ---
+	voice_keysplit voicegroup_piano_keysplit, keysplit_piano
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0                                                                   @ 2 | ---
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0                                                                   @ 3 | ---
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0                                                                   @ 4 | ---
@@ -12,7 +12,7 @@ voice_group vs_trainer
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0                                                                   @ 10 | ---
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0                                                                   @ 11 | ---
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0                                                                   @ 12 | ---
-	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0                                                                   @ 13 | ---
+	voice_keysplit voicegroup_trumpet_keysplit, keysplit_trumpet
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0                                                                   @ 14 | ---
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0                                                                   @ 15 | ---
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0                                                                   @ 16 | ---
@@ -20,7 +20,7 @@ voice_group vs_trainer
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0                                                                   @ 18 | ---
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0                                                                   @ 19 | ---
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0                                                                   @ 20 | ---
-	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0                                                                   @ 21 | ---
+	voice_directsound 60, 0, DirectSoundWaveData_classical_choir_voice_ahhs, 128, 165, 128, 188
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0                                                                   @ 22 | ---
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0                                                                   @ 23 | ---
 	voice_directsound 60, 0, DirectSoundWaveData_golden_sun_2_nylon_guitar, 255, 0, 255, 165                  @ 24 | Direct | GBA Golden Sun Nylon Guitar
@@ -38,8 +38,8 @@ voice_group vs_trainer
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0                                                                   @ 36 | ---
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0                                                                   @ 37 | ---
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0                                                                   @ 38 | ---
-	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0                                                                   @ 39 | ---
-	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0                                                                   @ 40 | ---
+    voice_directsound 60, 0, DirectSoundWaveData_golden_sun_2_crystal_effect, 255, 242, 28, 165
+   	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0                                                                   @ 40 | ---
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0                                                                   @ 41 | ---
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0                                                                   @ 42 | ---
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0                                                                   @ 43 | ---

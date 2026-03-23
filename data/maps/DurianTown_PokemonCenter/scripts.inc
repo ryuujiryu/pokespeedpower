@@ -311,7 +311,7 @@ DurianTown_PokemonCenter_EventScript_SongSelection_40:
 
 DurianTown_PokemonCenter_EventScript_SongSelection_41:
 # 143 "data/maps/DurianTown_PokemonCenter/scripts.pory"
-	playbgm MUS_RG_VS_GYM_LEADER, FALSE
+	playbgm MUS_FIGHTING_OF_THE_SPIRIT, FALSE
 	goto DurianTown_PokemonCenter_EventScript_SongSelection_34
 
 DurianTown_PokemonCenter_EventScript_SongSelection_42:
