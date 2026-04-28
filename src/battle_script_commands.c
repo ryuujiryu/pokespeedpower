@@ -561,6 +561,7 @@ static void Cmd_setroom(void);
 static void Cmd_tryswapabilities(void);
 static void Cmd_tryimprison(void);
 static void Cmd_setstealthrock(void);
+static void Cmd_setwindshear(void);
 static void Cmd_trysetvolatile(void);
 static void Cmd_assistattackselect(void);
 static void Cmd_trysetmagiccoat(void);
@@ -829,7 +830,7 @@ void (*const gBattleScriptingCommandsTable[])(void) =
     Cmd_jumpifhasnohp,                           //0xE3
     Cmd_jumpifnotcurrentmoveargtype,             //0xE4
     Cmd_pickup,                                  //0xE5
-    Cmd_unused_0xE6,                             //0xE6
+    Cmd_setwindshear,                            //0xE6
     Cmd_unused_0xE7,                             //0xE7
     Cmd_settypebasedhalvers,                     //0xE8
     Cmd_jumpifsubstituteblocks,                  //0xE9
@@ -3572,7 +3573,6 @@ void SetMoveEffect(u32 battler, u32 effectBattler, bool32 primary, bool32 certai
 
             gBattleMons[gEffectBattler].volatiles.syrupBomb = TRUE;
             gDisableStructs[gEffectBattler].syrupBombTimer = 3;
-            gDisableStructs[gEffectBattler].syrupBombIsShiny = IsMonShiny(mon);
             gBattleStruct->stickySyrupdBy[gEffectBattler] = gBattlerAttacker;
             BattleScriptPush(gBattlescriptCurrInstr + 1);
             gBattlescriptCurrInstr = BattleScript_SyrupBombActivates;
@@ -7802,6 +7802,14 @@ void TryHazardsOnSwitchIn(u32 battler, u32 side, enum Hazards hazardType)
             gBattleStruct->moveDamage[battler] = GetStealthHazardDamage(TYPE_SIDE_HAZARD_POINTED_STONES, battler);
             if (gBattleStruct->moveDamage[battler] != 0)
                 SetDmgHazardsBattlescript(battler, B_MSG_STEALTHROCKDMG);
+        }
+        break;
+    case HAZARDS_WINDSHEAR:
+        if (IsBattlerAffectedByHazards(battler, FALSE) && GetBattlerAbility(battler) != ABILITY_MAGIC_GUARD)
+        {
+            gBattleStruct->moveDamage[battler] = GetStealthHazardDamage(TYPE_SIDE_HAZARD_HARSH_WINDS, battler);
+            if (gBattleStruct->moveDamage[battler] != 0)
+                SetDmgHazardsBattlescript(battler, B_MSG_WINDSHEARDMG);
         }
         break;
     case HAZARDS_STEELSURGE:
@@ -13290,6 +13298,22 @@ static void Cmd_setstealthrock(void)
     else
     {
         PushHazardTypeToQueue(targetSide, HAZARDS_STEALTH_ROCK);
+        gBattlescriptCurrInstr = cmd->nextInstr;
+    }
+}
+
+static void Cmd_setwindshear(void)
+{
+    CMD_ARGS(const u8 *failInstr);
+
+    u8 targetSide = GetBattlerSide(gBattlerTarget);
+    if (IsHazardOnSide(targetSide, HAZARDS_WINDSHEAR))
+    {
+        gBattlescriptCurrInstr = cmd->failInstr;
+    }
+    else
+    {
+        PushHazardTypeToQueue(targetSide, HAZARDS_WINDSHEAR);
         gBattlescriptCurrInstr = cmd->nextInstr;
     }
 }

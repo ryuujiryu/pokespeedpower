@@ -1293,6 +1293,135 @@ const struct SpeciesInfo gSpeciesInfoTenkei[] =
         .evolutions = EVOLUTION({EVO_LEVEL, 25, SPECIES_PIKACHU}),
     },
 
+    [SPECIES_TEMAKOI] =
+    {
+        .baseHP        = 20,
+        .baseAttack    = 15,
+        .baseDefense   = 35,
+        .baseSpeed     = 80,
+        .baseSpAttack  = 15,
+        .baseSpDefense = 35,
+        .types = MON_TYPES(TYPE_WATER),
+        .catchRate = 255,
+        .expYield = (P_UPDATED_EXP_YIELDS >= GEN_5) ? 40 : 61,
+        .evYield_Speed = 1,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 20,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_ERRATIC,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_WATER_1, EGG_GROUP_DRAGON),
+        .abilities = { ABILITY_SWIFT_SWIM, ABILITY_NONE, ABILITY_NONE },
+        .bodyColor = BODY_COLOR_BROWN,
+        .speciesName = _("TEMAKOI"),
+        .cryId = CRY_FEEBAS,
+        .natDexNum = NATIONAL_DEX_FEEBAS,
+        .categoryName = _("FISH"),
+        .height = 6,
+        .weight = 74,
+        .description = COMPOUND_STRING(
+            "A very weak POKéMON, yet able to\n"
+            "protect itself thanks to the hard\n"
+            "layer around its neck which emits\n"
+            "a strong odor scaring away predators."),
+        .pokemonScale = 423,
+        .pokemonOffset = -4,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_Feebas,
+        .frontPicSize = MON_COORDS_SIZE(40, 48),
+        .frontPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 13 : 10,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        .frontAnimId = ANIM_BOUNCE_ROTATE_TO_SIDES_SLOW,
+        .backPic = gMonBackPic_Feebas,
+        .backPicSize = MON_COORDS_SIZE(48, 56),
+        .backPicYOffset = P_GBA_STYLE_SPECIES_GFX ? 7 : 6,
+        .backAnimId = BACK_ANIM_H_SPRING,
+        .palette = gMonPalette_Feebas,
+        .shinyPalette = gMonShinyPalette_Feebas,
+        .iconSprite = gMonIcon_Feebas,
+        .iconPalIndex = 2,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(-2, 2, SHADOW_SIZE_S)
+        FOOTPRINT(Feebas)
+        OVERWORLD(
+            sPicTable_Feebas,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_SPOT,
+            sAnimTable_Following,
+            gOverworldPalette_Feebas,
+            gShinyOverworldPalette_Feebas
+        )
+        .levelUpLearnset = sFeebasLevelUpLearnset,
+        .teachableLearnset = sFeebasTeachableLearnset,
+        .eggMoveLearnset = sFeebasEggMoveLearnset,
+        .evolutions = EVOLUTION({EVO_LEVEL, 25, SPECIES_PIKACHU}),
+    },
+
+    [SPECIES_URAMAKON] =
+    {
+        .baseHP        = 49,
+        .baseAttack    = 63,
+        .baseDefense   = 45,
+        .baseSpeed     = 50,
+        .baseSpAttack  = 48,
+        .baseSpDefense = 40,
+        .types = MON_TYPES(TYPE_GHOST), 
+        .catchRate = 225,
+        .expYield = 97,
+        .evYield_Defense = 1,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 15,
+        .friendship = STANDARD_FRIENDSHIP,
+        .growthRate = GROWTH_FAST,
+        .eggGroups = MON_EGG_GROUPS(EGG_GROUP_FLYING),
+        .abilities = { ABILITY_HEALER, ABILITY_PERISH_BODY, ABILITY_NONE },
+        .bodyColor = BODY_COLOR_BROWN,
+        .speciesName = _("CHIMENCORE"),
+        .cryId = CRY_KURSTRAW,
+        .natDexNum = NATIONAL_DEX_KURSTRAW,
+        .categoryName = _("CURSED DOLL"),
+        .height = 4,
+        .weight = 10,
+        .description = COMPOUND_STRING(
+            "LOUD BUZZER SOUND This POKéMON is not\n"
+            "developed yet! Either you are a dev, or\n"
+            "you are a cheater! Either way, shoo!"),
+        .pokemonScale = 491,
+        .pokemonOffset = 12,
+        .trainerScale = 256,
+        .trainerOffset = 0,
+        .frontPic = gMonFrontPic_Kurstraw,
+        .frontPicSize = MON_COORDS_SIZE(40, 48),
+        .frontPicYOffset = 3,
+        .frontAnimFrames = sAnims_SingleFramePlaceHolder,
+        .frontAnimId = ANIM_V_JUMPS_BIG,
+        .backPic = gMonBackPic_Kurstraw,
+        .backPicSize = MON_COORDS_SIZE(56, 64),
+        .backPicYOffset = 0,
+        .backAnimId = BACK_ANIM_V_SHAKE_LOW,
+        .palette = gMonPalette_Kurstraw,
+        .shinyPalette = gMonShinyPalette_Kurstraw,
+        .iconSprite = gMonIcon_Kurstraw,
+        .iconPalIndex = 2,
+        .pokemonJumpType = PKMN_JUMP_TYPE_NONE,
+        SHADOW(-2, 3, SHADOW_SIZE_S)
+        FOOTPRINT(Pikachu)
+        OVERWORLD(
+            sPicTable_Pikachu,
+            SIZE_32x32,
+            SHADOW_SIZE_M,
+            TRACKS_FOOT,
+            sAnimTable_Following,
+            gOverworldPalette_Pikachu,
+            gShinyOverworldPalette_Pikachu
+        )
+        .levelUpLearnset = sKurstrawLevelUpLearnset,
+        .teachableLearnset = sKurstrawTeachableLearnset,
+        .eggMoveLearnset = sPichuEggMoveLearnset,
+        .evolutions = EVOLUTION({EVO_LEVEL, 25, SPECIES_PIKACHU}),
+    },
+
 #ifdef __INTELLISENSE__
 };
 #endif

@@ -1331,6 +1331,13 @@ const struct BattleMoveEffect gBattleMoveEffects[NUM_BATTLE_MOVE_EFFECTS] =
         .encourageEncore = TRUE,
     },
 
+    [EFFECT_WINDSHEAR] =
+    {
+        .battleScript = BattleScript_EffectWindshear,
+        .battleTvScore = 0, // TODO: Assign points
+        .encourageEncore = TRUE,
+    },
+
     [EFFECT_TELEKINESIS] =
     {
         .battleScript = BattleScript_EffectTelekinesis,

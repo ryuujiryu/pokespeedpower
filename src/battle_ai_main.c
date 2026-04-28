@@ -1871,6 +1871,11 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
               || PartnerMoveIsSameNoTarget(BATTLE_PARTNER(battlerAtk), move, aiData->partnerMove)) //Only one mon needs to set up Stealth Rocks
                 ADJUST_SCORE(-10);
             break;
+        case EFFECT_WINDSHEAR:
+            if (IsHazardOnSide(GetBattlerSide(battlerDef), HAZARDS_WINDSHEAR)
+              || PartnerMoveIsSameNoTarget(BATTLE_PARTNER(battlerAtk), move, aiData->partnerMove))
+                ADJUST_SCORE(-10);
+            break;
         case EFFECT_TOXIC_SPIKES:
             if (gSideTimers[GetBattlerSide(battlerDef)].toxicSpikesAmount >= 2)
                 ADJUST_SCORE(-10);
@@ -5882,6 +5887,7 @@ static s32 AI_ForceSetupFirstTurn(u32 battlerAtk, u32 battlerDef, u32 move, s32 
     case EFFECT_ELECTRIC_TERRAIN:
     case EFFECT_MISTY_TERRAIN:
     case EFFECT_STEALTH_ROCK:
+    case EFFECT_WINDSHEAR:
     case EFFECT_TOXIC_SPIKES:
     case EFFECT_TRICK_ROOM:
     case EFFECT_WONDER_ROOM:
@@ -6330,6 +6336,7 @@ static s32 AI_PowerfulStatus(u32 battlerAtk, u32 battlerDef, u32 move, s32 score
         break;
     case EFFECT_SPIKES:
     case EFFECT_STEALTH_ROCK:
+    case EFFECT_WINDSHEAR:
     case EFFECT_STICKY_WEB:
     case EFFECT_TOXIC_SPIKES:
         if (AI_ShouldSetUpHazards(battlerAtk, battlerDef, move, gAiLogicData))
@@ -6400,6 +6407,7 @@ bool32 DoesSideHaveDamagingHazards(u32 side)
         case HAZARDS_SPIKES:
         case HAZARDS_TOXIC_SPIKES:
         case HAZARDS_STEALTH_ROCK:
+        case HAZARDS_WINDSHEAR:
         case HAZARDS_STEELSURGE:
             return TRUE;
         default:
@@ -6458,6 +6466,7 @@ static s32 AI_PredictSwitch(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
     case EFFECT_MAGNET_RISE:
     case EFFECT_TRICK_ROOM:
     case EFFECT_STEALTH_ROCK:
+    case EFFECT_WINDSHEAR:
     case EFFECT_SPIKES:
     case EFFECT_TOXIC_SPIKES:
         ADJUST_SCORE(BEST_EFFECT);

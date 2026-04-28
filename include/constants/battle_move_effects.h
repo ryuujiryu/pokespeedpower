@@ -361,6 +361,7 @@ enum __attribute__((packed)) BattleMoveEffects
     EFFECT_FAN_RALLY,
     EFFECT_ECLIPSE,
     EFFECT_HEAVENLY_PRAYER,
+    EFFECT_WINDSHEAR,
     NUM_BATTLE_MOVE_EFFECTS,
 };
 

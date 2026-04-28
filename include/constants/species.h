@@ -1657,8 +1657,10 @@
 #define SPECIES_KEYNAIN                                 1541
 #define SPECIES_PANGSHI                                 1542
 #define SPECIES_CHIMENCORE                              1543
+#define SPECIES_TEMAKOI                                 1544
+#define SPECIES_URAMAKON                                1545
 
-#define SPECIES_EGG                                     (SPECIES_CHIMENCORE + 1)
+#define SPECIES_EGG                                     (SPECIES_URAMAKON + 1)
 
 #define NUM_SPECIES SPECIES_EGG
 

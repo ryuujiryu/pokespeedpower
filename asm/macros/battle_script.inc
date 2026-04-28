@@ -1186,6 +1186,11 @@
 	.4byte \failInstr
 	.endm
 
+	.macro setwindshear failInstr:req
+	.byte 0xdc
+	.4byte \failInstr
+	.endm
+
 	.macro trysetvolatile battler:req, _volatile:req, failInstr:req
 	.byte 0xdd
 	.byte \battler

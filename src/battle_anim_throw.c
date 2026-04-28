@@ -2708,6 +2708,9 @@ void AnimTask_GetTrappedMoveAnimId(u8 taskId)
     case MOVE_WRETCHED_HANDS:
         gBattleAnimArgs[0] = TRAP_ANIM_WRETCHED_HANDS;
         break;
+    case MOVE_CYCLONE:
+        gBattleAnimArgs[0] = TRAP_ANIM_CYCLONE;
+        break;
     default:
         gBattleAnimArgs[0] = TRAP_ANIM_BIND;
         break;

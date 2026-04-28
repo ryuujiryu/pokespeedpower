@@ -2466,6 +2466,17 @@ BattleScript_EffectStealthRock::
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_MoveEnd
 
+BattleScript_EffectWindshear::
+	attackcanceler
+	attackstring
+	ppreduce
+	setwindshear BattleScript_ButItFailed
+	attackanimation
+	waitanimation
+	printstring STRINGID_HARSHWINDS
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_MoveEnd
+
 BattleScript_EffectStickyWeb::
 	attackcanceler
 	attackstring

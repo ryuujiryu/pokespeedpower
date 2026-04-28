@@ -951,7 +951,7 @@ extern const u8 gBattleAnimMove_Pyrokinesis[];
 extern const u8 gBattleAnimMove_PressureWave[];
 extern const u8 gBattleAnimMove_MistralSquall[];
 extern const u8 gBattleAnimMove_SciroccoGale[];
-extern const u8 gBattleAnimMove_ColdShower[];
+extern const u8 gBattleAnimMove_CoolRinse[];
 extern const u8 gBattleAnimMove_Nightcore[];
 extern const u8 gBattleAnimMove_LoveSpark[];
 extern const u8 gBattleAnimMove_SandTornado[];
@@ -970,6 +970,16 @@ extern const u8 gBattleAnimMove_Bloodletting[];
 extern const u8 gBattleAnimMove_SpiritTheft[];
 extern const u8 gBattleAnimMove_SentinelStrike[];
 extern const u8 gBattleAnimMove_FlowerTyphoon[];
+extern const u8 gBattleAnimMove_CrashPunch[];
+extern const u8 gBattleAnimMove_Ectoplasm[];
+extern const u8 gBattleAnimMove_Fatality[];
+extern const u8 gBattleAnimMove_Remix[];
+extern const u8 gBattleAnimMove_Skyfall[];
+extern const u8 gBattleAnimMove_TropicalMelody[];
+extern const u8 gBattleAnimMove_Cyclone[];
+extern const u8 gBattleAnimMove_Overture[];
+extern const u8 gBattleAnimMove_Windshear[];
+extern const u8 gBattleAnimMove_SolarWildfire[];
 
 // status animations
 extern const u8 gBattleAnimStatus_Poison[];

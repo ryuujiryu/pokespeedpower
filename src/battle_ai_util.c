@@ -338,6 +338,7 @@ bool32 ShouldRecordStatusMove(u32 move)
         case EFFECT_REFLECT:
         case EFFECT_SPIKES:
         case EFFECT_STEALTH_ROCK:
+        case EFFECT_WINDSHEAR:
         case EFFECT_STICKY_WEB:
         case EFFECT_TOXIC_SPIKES:
             return RandomPercentage(RNG_AI_ASSUME_STATUS_MEDIUM_ODDS, ASSUME_STATUS_MEDIUM_ODDS);
@@ -1821,6 +1822,7 @@ bool32 IsHazardMove(u32 move)
     case EFFECT_CEASELESS_EDGE:
     case EFFECT_SPIKES:
     case EFFECT_STEALTH_ROCK:
+    case EFFECT_WINDSHEAR:
     case EFFECT_STICKY_WEB:
     case EFFECT_STONE_AXE:
     case EFFECT_TOXIC_SPIKES:
@@ -3175,6 +3177,8 @@ static bool32 PartyBattlerShouldAvoidHazards(u32 currBattler, u32 switchBattler)
         hazardDamage += GetStealthHazardDamageByTypesAndHP(TYPE_SIDE_HAZARD_POINTED_STONES, type1, type2, maxHp);
     if (IsHazardOnSide(side, HAZARDS_STEELSURGE))
         hazardDamage += GetStealthHazardDamageByTypesAndHP(TYPE_SIDE_HAZARD_SHARP_STEEL, type1, type2, maxHp);
+    if (IsHazardOnSide(side, HAZARDS_WINDSHEAR))
+        hazardDamage += GetStealthHazardDamageByTypesAndHP(TYPE_SIDE_HAZARD_HARSH_WINDS, type1, type2, maxHp);
 
     if (IsHazardOnSide(side, HAZARDS_SPIKES) && ((type1 != TYPE_FLYING && type2 != TYPE_FLYING
         && ability != ABILITY_LEVITATE && holdEffect != HOLD_EFFECT_AIR_BALLOON)

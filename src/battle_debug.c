@@ -145,6 +145,7 @@ enum
     LIST_SIDE_SPIKES,
     LIST_SIDE_TOXIC_SPIKES,
     LIST_SIDE_STEALTH_ROCK,
+    LIST_SIDE_WINDSHEAR,
     LIST_SIDE_STEELSURGE,
 };
 
@@ -403,6 +404,7 @@ static const struct ListMenuItem sHazardsListItems[] =
     {COMPOUND_STRING("Sticky Web"),   LIST_SIDE_STICKY_WEB},
     {COMPOUND_STRING("Toxic Spikes"), LIST_SIDE_TOXIC_SPIKES},
     {COMPOUND_STRING("Stealth Rock"), LIST_SIDE_STEALTH_ROCK},
+    {COMPOUND_STRING("Windshear"),    LIST_SIDE_WINDSHEAR},
     {COMPOUND_STRING("Steelsurge"),   LIST_SIDE_STEELSURGE},
 };
 
@@ -1717,6 +1719,12 @@ static void ChangeHazardsValue(struct BattleDebugMenu *data)
         else if (data->modifyArrows.currValue == 0)
             RemoveHazardFromField(side, HAZARDS_STEELSURGE);
         break;
+    case LIST_SIDE_WINDSHEAR:
+        if (data->modifyArrows.currValue > 0)
+            PushHazardTypeToQueue(side, HAZARDS_WINDSHEAR);
+        else if (data->modifyArrows.currValue == 0)
+            RemoveHazardFromField(side, HAZARDS_WINDSHEAR);
+        break;
     }
 }
 
@@ -1736,6 +1744,9 @@ static u32 GetHazardsValue(struct BattleDebugMenu *data)
         break;
     case LIST_SIDE_STEALTH_ROCK:
         hazardsLayers = IsHazardOnSide(GetBattlerSide(data->battlerId), HAZARDS_STEALTH_ROCK);
+        break;
+    case LIST_SIDE_WINDSHEAR:
+        hazardsLayers = IsHazardOnSide(GetBattlerSide(data->battlerId), HAZARDS_WINDSHEAR);
         break;
     case LIST_SIDE_STEELSURGE:
         hazardsLayers = IsHazardOnSide(GetBattlerSide(data->battlerId), HAZARDS_STEELSURGE);
@@ -2031,6 +2042,7 @@ static void SetUpModifyArrows(struct BattleDebugMenu *data)
             break;
         case LIST_SIDE_STICKY_WEB:
         case LIST_SIDE_STEALTH_ROCK:
+        case LIST_SIDE_WINDSHEAR:
         case LIST_SIDE_STEELSURGE:
             data->modifyArrows.maxValue = 1;
             break;

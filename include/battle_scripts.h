@@ -754,6 +754,7 @@ extern const u8 BattleScript_EffectMagnetRise[];
 extern const u8 BattleScript_EffectToxicSpikes[];
 extern const u8 BattleScript_EffectGastroAcid[];
 extern const u8 BattleScript_EffectStealthRock[];
+extern const u8 BattleScript_EffectWindshear[];
 extern const u8 BattleScript_EffectTelekinesis[];
 extern const u8 BattleScript_EffectPowerSwap[];
 extern const u8 BattleScript_EffectGuardSwap[];

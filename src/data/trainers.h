@@ -1200,10 +1200,10 @@ F_TRAINER_FEMALE |
         },
     },
 #line 526
-    [DIFFICULTY_NORMAL][TRAINER_MATT] =
+    [DIFFICULTY_NORMAL][TRAINER_SP_DNIPRO_1] =
     {
 #line 527
-        .trainerName = _("MATT"),
+        .trainerName = _("DNIPRO"),
 #line 528
         .trainerClass = TRAINER_CLASS_AQUA_ADMIN,
 #line 529

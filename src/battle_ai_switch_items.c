@@ -268,6 +268,7 @@ static bool32 ShouldSwitchIfHasBadOdds(u32 battler)
             || nonVolatileStatus == MOVE_EFFECT_BLEED
             || aiMoveEffect == EFFECT_YAWN
             || aiMoveEffect == EFFECT_TRICK || aiMoveEffect == EFFECT_TRICK_ROOM || aiMoveEffect== EFFECT_WONDER_ROOM || aiMoveEffect ==  EFFECT_PSYCHO_SHIFT || aiMoveEffect == EFFECT_FIRST_TURN_ONLY
+            || aiMoveEffect == EFFECT_WINDSHEAR
             )
             {
                 hasStatusMove = TRUE;
@@ -1576,6 +1577,9 @@ static u32 GetSwitchinHazardsDamage(u32 battler, struct BattlePokemon *battleMon
         // G-Max Steelsurge
         if (IsHazardOnSide(side, HAZARDS_STEELSURGE) && heldItemEffect != HOLD_EFFECT_HEAVY_DUTY_BOOTS)
             hazardDamage += GetStealthHazardDamageByTypesAndHP(TYPE_SIDE_HAZARD_SHARP_STEEL, defType1, defType2, battleMon->maxHP);
+        // Windshear
+        if (IsHazardOnSide(side, HAZARDS_WINDSHEAR) && heldItemEffect != HOLD_EFFECT_HEAVY_DUTY_BOOTS)
+            hazardDamage += GetStealthHazardDamageByTypesAndHP(TYPE_SIDE_HAZARD_HARSH_WINDS, defType1, defType2, battleMon->maxHP);        
         // Spikes
         if (IsHazardOnSide(side, HAZARDS_TOXIC_SPIKES) && IsMonGrounded(heldItemEffect, ability, defType1, defType2))
         {
